@@ -32,20 +32,31 @@ PUNHO_Y = 292         # do punho para baixo o braco se mexe inteiro
 # a mesma que fica "de perto" na vista de lado) usa o quadro k; a outra usa k+4.
 # (profundidade: + = pe mais para baixo na tela / mais perto da camera; altura do pe)  em px do desenho
 PE = [
-    (+13, 0),    # 0 contato na frente
-    (+7, 0),     # 1 recebe o peso
+    (+12, 0),    # 0 contato na frente
+    (+6, 0),     # 1 recebe o peso
     (0, 0),      # 2 passagem (apoio embaixo do corpo)
-    (-7, 0),     # 3 impulso
-    (-13, 0),    # 4 pe de tras, so a ponta no chao
-    (-9, 18),    # 5 pe sai do chao, joelho dobra para a camera
-    (0, 27),     # 6 passagem no ar (pe mais alto)
-    (+9, 12),    # 7 perna vai para a frente
+    (-6, 2),     # 3 impulso: o calcanhar comeca a subir
+    (-12, 6),    # 4 so a ponta do pe no chao
+    (-8, 18),    # 5 pe sai do chao, joelho vem para a camera
+    (0, 24),     # 6 passagem no ar (pe mais alto)
+    (+8, 12),    # 7 perna desce para a frente
 ]
-BOTA_ALTURA = [1.0, 1.0, 1.0, 1.0, 0.94, 0.88, 0.92, 1.0]   # bota "inclinada" (ponta para baixo) parece mais baixa
-SOBE_DESCE = L.SOBE_DESCE                                 # 1, 2, 1, 0 px do jogo
+ALTURA_MAX = 24
+BOTA_ALTURA = [1.0, 1.0, 1.0, 0.98, 0.94, 0.88, 0.9, 0.97]  # bota "inclinada" (ponta para baixo) parece mais baixa
+# Corpo mais calmo que no lado: no maximo 1 px para baixo e 1 px para o lado da perna de apoio, e o
+# balanco para o lado vem 1 quadro depois da descida. Assim a cabeca faz um caminho redondo
+# (desce, vai para o lado, sobe, volta ao centro) de 1 px por quadro, como numa caminhada de verdade,
+# em vez de quicar so para cima e para baixo.
+# Sempre em px inteiros do jogo (9 px do desenho) para o rosto nao "tremer" na reducao.
+SOBE_DESCE = [0, 9, 9, 0, 0, 9, 9, 0]
+BALANCO_LADO = [0, 0, -9, -9, 0, 0, +9, +9]
 COXA_PARTE = 0.7                                          # quanto do encurtamento fica na coxa
-BRACO_DESCE = 12                                          # px do desenho que a mao desce/sobe no balanco
-BRACO_LADO = 4                                            # px que a mao vai para fora (frente) / para dentro (tras)
+PE_PARA_DENTRO = 5                                        # o pe no ar vem um pouco para o meio
+JOELHO_LUZ = 0.07                                         # perna dobrada: coxa pega mais luz...
+CANELA_SOMBRA = 0.16                                      # ...e a canela fica mais escura
+BRACO_DESCE = 18                                          # px do desenho que a mao desce/sobe no balanco (2 px no jogo)
+BRACO_DENTRO = 7                                          # indo para a frente a mao passa na frente do quadril
+BRACO_FORA = 3                                            # indo para tras a mao abre um pouco
 DURACAO_MS = L.DURACAO_MS
 PAD_X, PAD_TOP = 60, 40
 
@@ -100,8 +111,9 @@ class RigFrente:
         self.CW, self.CH = self.W + 2 * PAD_X, self.H + PAD_TOP + 20
         self.off = np.array([PAD_X, PAD_TOP])
 
-    def perna(self, lado, k, bob):
-        """Calca + bota de um lado, ja na posicao do quadro k (no espaco do canvas)."""
+    def perna(self, lado, k, bob, balanco=0):
+        """Calca + bota de um lado, ja na posicao do quadro k (no espaco do canvas).
+        O quadril acompanha o corpo (balanco); o pe fica na sua faixa (o pe no ar vem um pouco para o meio)."""
         tmpl = self.p["perna_e" if lado == "e" else "perna_d"]
         prof, alt = PE[k % 8]
         topo_bota = BARRA_Y + prof - alt              # onde a barra da calca encosta na bota
@@ -113,35 +125,46 @@ class RigFrente:
         encurta = (BARRA_Y - CINTURA) - comp
         coxa = (JOELHO_Y - CINTURA) - COXA_PARTE * encurta
         canela = (BARRA_Y - JOELHO_Y) - (1 - COXA_PARTE) * encurta
+        dobra = alt / ALTURA_MAX                      # 0 = perna esticada, 1 = joelho mais dobrado
+        pe_dx = (1 if lado == "e" else -1) * PE_PARA_DENTRO * dobra
         cam = np.zeros((self.CH, self.CW, 4), np.int32)
         ox, oy = self.off
-        # linha de destino -> linha do desenho
         sb = BOTA_ALTURA[k % 8]
         alt_bota = CHAO + 1 - BARRA_Y
         y_fim = int(math.ceil(topo_bota + alt_bota * sb))
         for yd in range(300 + bob, y_fim):
             if yd < quadril:
-                ys = yd - bob
-            elif yd < quadril + coxa:
-                ys = CINTURA + (yd - quadril) * (JOELHO_Y - CINTURA) / coxa
+                ys = yd - bob; dx = balanco; luz = 1.0
             elif yd < topo_bota:
-                ys = JOELHO_Y + (yd - quadril - coxa) * (BARRA_Y - JOELHO_Y) / canela
+                t = (yd - quadril) / (topo_bota - quadril)
+                dx = balanco * (1 - t) + pe_dx * t
+                if yd < quadril + coxa:
+                    ys = CINTURA + (yd - quadril) * (JOELHO_Y - CINTURA) / coxa
+                    luz = 1 + JOELHO_LUZ * dobra * min(1, (yd - quadril) / max(coxa, 1) * 1.5)
+                else:
+                    ys = JOELHO_Y + (yd - quadril - coxa) * (BARRA_Y - JOELHO_Y) / canela
+                    luz = 1 - CANELA_SOMBRA * dobra
             else:
-                ys = BARRA_Y + (yd - topo_bota) / sb
+                ys = BARRA_Y + (yd - topo_bota) / sb; dx = pe_dx; luz = 1.0
             ys = int(math.floor(ys + 0.5))
             if 0 <= ys < self.H:
-                linha = tmpl[ys]
+                linha = tmpl[ys].copy()
                 m = linha[:, 3] > 0
-                cam[oy + yd, ox:ox + self.W][m] = linha[m]
+                if luz != 1.0:
+                    claro = m & (linha[:, :3].sum(1) >= R.ESCURO)
+                    linha[claro, :3] = (linha[claro, :3] * luz).clip(0, 255).astype(np.int32)
+                d = int(round(dx))
+                x0 = ox + d
+                cam[oy + yd, x0:x0 + self.W][m] = linha[m]
         return cam
 
-    def braco(self, lado, a_balanco, bob):
+    def braco(self, lado, a_balanco, bob, balanco=0):
         """Braco deformado: abaixo do ombro vai descendo/subindo ate o punho; do punho para baixo
-        anda inteiro. a_balanco: +1 = todo para a frente (desce, vai para fora), -1 = para tras."""
+        anda inteiro. a_balanco: +1 = todo para a frente (desce e passa na frente do quadril), -1 = para tras."""
         tmpl = self.p["braco_e" if lado == "e" else "braco_d"]
         dy_max = a_balanco * BRACO_DESCE
-        fora = -1 if lado == "e" else 1
-        dx_max = fora * a_balanco * BRACO_LADO
+        dentro = 1 if lado == "e" else -1
+        dx_max = dentro * (a_balanco * BRACO_DENTRO if a_balanco > 0 else a_balanco * BRACO_FORA)
         cam = np.zeros((self.CH, self.CW, 4), np.int32)
         ox, oy = self.off
         ys, xs = np.nonzero(tmpl[..., 3] > 0)
@@ -151,7 +174,7 @@ class RigFrente:
             t = np.clip((yf - OMBRO_Y) / (PUNHO_Y - OMBRO_Y), 0, 1)
             t = t * t * (3 - 2 * t)
             Y = np.floor(yf + bob + dy_max * t).astype(int) + oy
-            X = np.floor(xs + 0.5 + dx_max * t).astype(int) + ox
+            X = np.floor(xs + 0.5 + balanco + dx_max * t).astype(int) + ox
             ok = (Y >= 0) & (Y < self.CH) & (X >= 0) & (X < self.CW)
             cam[Y[ok], X[ok]] = cores[ok]
         return cam
@@ -162,7 +185,8 @@ class RigFrente:
         # balanco dos bracos: o braco da esquerda da imagem vai para tras quando a perna da esquerda vai para a frente
         a_e = -math.cos(2 * math.pi * (k - 0.5) / 8)
         a_d = -a_e
-        bracos = {"e": self.braco("e", a_e, bob), "d": self.braco("d", a_d, bob)}
+        bal = BALANCO_LADO[k % 8]
+        bracos = {"e": self.braco("e", a_e, bob, bal), "d": self.braco("d", a_d, bob, bal)}
         atras = [l for l, a in (("e", a_e), ("d", a_d)) if a < 0]
         frente = [l for l, a in (("e", a_e), ("d", a_d)) if a >= 0]
         for l in atras:
@@ -171,9 +195,9 @@ class RigFrente:
         pe_e, pe_d = PE[k % 8][0], PE[(k + 4) % 8][0]
         ordem = [("e", k), ("d", k + 4)] if pe_e <= pe_d else [("d", k + 4), ("e", k)]
         for lado, kk in ordem:
-            L.cola(dst, self.perna(lado, kk, bob))
+            L.cola(dst, self.perna(lado, kk, bob, bal))
         corpo = np.zeros_like(dst)
-        corpo[self.off[1] + bob:self.off[1] + bob + self.H, self.off[0]:self.off[0] + self.W] = self.p["corpo"]
+        corpo[self.off[1] + bob:self.off[1] + bob + self.H, self.off[0] + bal:self.off[0] + bal + self.W] = self.p["corpo"]
         L.cola(dst, corpo)
         for l in frente:
             L.cola(dst, bracos[l])
