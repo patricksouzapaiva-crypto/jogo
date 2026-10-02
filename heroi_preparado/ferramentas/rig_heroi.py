@@ -30,6 +30,12 @@ COTOVELO = (104, 286)
 ESCURO = 150          # soma RGB abaixo disso = contorno
 COSTAS_X = 80         # borda das costas na altura do ombro (y=250)
 COSTAS_INCLINA = 0.03 # a borda das costas desce quase reta
+# caixas (x0, x1, y0, y1) onde procurar cada parte do braco de perto
+MAO_CAIXA = (50, 141, 312, 427)
+PUNHO_CAIXA = (62, 140, 278, 322)
+CONTORNO_BRACO_CAIXA = (54, 143, 250, 428)
+CAMISA = (82, 146, 206)          # cor usada para completar o tronco atras do braco
+CAMISA_ESC = (63, 110, 159)      # sombra da camisa nas costas
 
 
 def carrega():
@@ -49,7 +55,9 @@ def caixa(shape, x0, x1, y0, y1):
     m = np.zeros(shape, bool); m[y0:y1, x0:x1] = True; return m
 
 
-def separa(a):
+def separa(a, c=None):
+    """c = modulo com as medidas do desenho (padrao: este, lado direito)."""
+    c = c or sys.modules[__name__]
     H, W = a.shape[:2]
     al = a[..., 3] > 0
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
@@ -58,19 +66,19 @@ def separa(a):
 
     # ---------- braco de perto ----------
     pele = (r > 200) & (g > 110) & (b < 160) & (g > b + 25)
-    mao = al & caixa(al.shape, 50, 141, 312, 427) & (pele | esc)
-    punho = al & caixa(al.shape, 62, 140, 278, 322) & (((r > 120) & (g > 150) & (b > 170)) | esc)
+    mao = al & caixa(al.shape, *c.MAO_CAIXA) & (pele | esc)
+    punho = al & caixa(al.shape, *c.PUNHO_CAIXA) & (((r > 120) & (g > 150) & (b > 170)) | esc)
     manga = al & (yy >= 252) & (yy < 290) & (xx >= 60) & (xx <= 134 + (yy - 262).clip(0) // 6)
     braco = mao | punho | manga
     perto = ndi.binary_dilation(braco, iterations=10)
-    braco |= perto & esc & caixa(al.shape, 54, 143, 250, 428)
+    braco |= perto & esc & caixa(al.shape, *c.CONTORNO_BRACO_CAIXA)
     braco = ndi.binary_fill_holes(braco) & al
     # mao: so o componente ligado ao punho
     lab, n = ndi.label(braco)
     if n > 1:
         tam = ndi.sum(np.ones_like(lab), lab, index=range(1, n + 1))
         braco = lab == (1 + int(np.argmax(tam)))
-    antebraco = braco & (yy >= COTOVELO[1] - 6)
+    antebraco = braco & (yy >= c.COTOVELO[1] - 6)
     braco_sup = braco & ~antebraco
 
     # ---------- perna de perto ----------
@@ -112,10 +120,10 @@ def separa(a):
     tira = braco | (yy >= 362)
     corpo_rgba[tira] = 0
     # tronco atras do braco: preenche com a camisa
-    camisa = (82, 146, 206); camisa_esc = (63, 110, 159); contorno = (20, 8, 10)
+    camisa = c.CAMISA; camisa_esc = c.CAMISA_ESC; contorno = (20, 8, 10)
     # as costas sao retas: o buraco so e preenchido ate a linha das costas (sem o formato do punho
     # e da mao, que criava uma "corcunda" quando o braco ia para a frente)
-    linha_costas = np.ceil(COSTAS_X - (yy - 250) * COSTAS_INCLINA).astype(int)
+    linha_costas = np.ceil(c.COSTAS_X - (yy - 250) * c.COSTAS_INCLINA).astype(int)
     buraco_tronco = braco & (yy < 338) & (yy >= 240) & (xx >= linha_costas)
     corpo_rgba[buraco_tronco, :3] = camisa
     corpo_rgba[buraco_tronco, 3] = 255

@@ -118,9 +118,11 @@ def contorna(rgba, larg=CONTORNO):
 
 
 class Rig:
-    def __init__(self):
-        self.a = R.carrega()
-        p = R.separa(self.a)
+    def __init__(self, medidas=None):
+        # medidas = modulo com as medidas do desenho (padrao: rig_heroi, lado direito)
+        self.R = medidas or R
+        self.a = self.R.carrega()
+        p = self.R.separa(self.a)
         self.p = p
         H, W = self.a.shape[:2]
         yy, xx = np.mgrid[0:H, 0:W]
@@ -129,18 +131,18 @@ class Rig:
         m = ndi.binary_fill_holes(m)
         perna[~m] = 0
         perna = sem_contorno(perna, CONTORNO)
-        jx, jy = R.JOELHO
+        jx, jy = self.R.JOELHO
         tampa = (xx - jx) ** 2 + (yy - jy) ** 2 <= 37 ** 2
         self.coxa = perna.copy(); self.coxa[~((yy <= jy) | tampa)] = 0
-        self.canela = perna.copy(); self.canela[~(((yy >= jy) | tampa) & (yy < 516))] = 0
-        self.bota = perna.copy(); self.bota[yy < 512] = 0
-        self.l1 = R.JOELHO[1] - R.QUADRIL[1]
-        self.l2 = R.TORNOZELO[1] - R.JOELHO[1]
+        self.canela = perna.copy(); self.canela[~(((yy >= jy) | tampa) & (yy < self.R.TORNOZELO[1] + 4))] = 0
+        self.bota = perna.copy(); self.bota[yy < self.R.TORNOZELO[1]] = 0
+        self.l1 = self.R.JOELHO[1] - self.R.QUADRIL[1]
+        self.l2 = self.R.TORNOZELO[1] - self.R.JOELHO[1]
         by, bx = np.nonzero(self.bota[..., 3] > 0)
-        self.bota_pts = np.stack([bx + 0.5, by + 0.5], -1) - np.array(R.TORNOZELO)
+        self.bota_pts = np.stack([bx + 0.5, by + 0.5], -1) - np.array(self.R.TORNOZELO)
         self.W, self.H = W, H
-        self.CW, self.CH = W + 2 * R.PAD_X, H + R.PAD_TOP + 20
-        self.off = np.array([R.PAD_X, R.PAD_TOP])
+        self.CW, self.CH = W + 2 * self.R.PAD_X, H + self.R.PAD_TOP + 20
+        self.off = np.array([self.R.PAD_X, self.R.PAD_TOP])
 
     def escurece(self, rgba, f):
         o = rgba.copy()
@@ -153,20 +155,20 @@ class Rig:
 
     def perna(self, dst, H, pe, escurecer=None):
         dx, ang, lift = pe
-        A = np.array([H[0] + dx, R.CHAO + self.off[1] - self.bota_altura(ang) - lift])
+        A = np.array([H[0] + dx, self.R.CHAO + self.off[1] - self.bota_altura(ang) - lift])
         K, tc, ts, A, est = ik(H, A, self.l1, self.l2)
         camada = np.zeros_like(dst)
-        coloca(camada, self.bota, np.array(R.TORNOZELO, float), A, ang)
-        coloca_canela(camada, self.canela, np.array(R.JOELHO, float), K, math.degrees(ts), ang, R.TORNOZELO[1])
-        coloca(camada, self.coxa, np.array(R.QUADRIL, float), H, math.degrees(tc))
+        coloca(camada, self.bota, np.array(self.R.TORNOZELO, float), A, ang)
+        coloca_canela(camada, self.canela, np.array(self.R.JOELHO, float), K, math.degrees(ts), ang, self.R.TORNOZELO[1])
+        coloca(camada, self.coxa, np.array(self.R.QUADRIL, float), H, math.degrees(tc))
         contorna(camada)
         if escurecer:
-            claro = camada[..., :3].sum(2) >= R.ESCURO
+            claro = camada[..., :3].sum(2) >= self.R.ESCURO
             camada[claro, :3] = (camada[claro, :3] * escurecer).astype(np.int32)
         return camada, est
 
     def braco(self, dst, desl, tu, tf, escurecer=None):
-        S = np.array(R.OMBRO, float); E0 = np.array(R.COTOVELO, float)
+        S = np.array(self.R.OMBRO, float); E0 = np.array(self.R.COTOVELO, float)
         S1 = S + self.off + desl
         E1 = S1 + rot(math.radians(tu)) @ (E0 - S)
         camada = np.zeros_like(dst)
@@ -174,14 +176,14 @@ class Rig:
         coloca(camada, sup, S, S1, tu)
         coloca(camada, ant, E0, E1, tu + tf)
         if escurecer:
-            claro = camada[..., :3].sum(2) >= R.ESCURO
+            claro = camada[..., :3].sum(2) >= self.R.ESCURO
             camada[claro, :3] = (camada[claro, :3] * escurecer).astype(np.int32)
         return camada
 
     def quadro(self, k):
         dst = np.zeros((self.CH, self.CW, 4), np.int32)
         bob = SOBE_DESCE[k % 8]
-        H = np.array(R.QUADRIL, float) + self.off + (0, bob)
+        H = np.array(self.R.QUADRIL, float) + self.off + (0, bob)
         tu = lambda kk: -BRACO_AMPL * math.cos(2 * math.pi * (kk - 0.5) / 8)
         tf = lambda t: 8 + 24 * max(0.0, t / BRACO_AMPL)
         # braco de longe (atras de tudo)
