@@ -28,6 +28,8 @@ OMBRO = (108, 252)
 COTOVELO = (104, 286)
 
 ESCURO = 150          # soma RGB abaixo disso = contorno
+COSTAS_X = 80         # borda das costas na altura do ombro (y=250)
+COSTAS_INCLINA = 0.03 # a borda das costas desce quase reta
 
 
 def carrega():
@@ -111,20 +113,23 @@ def separa(a):
     corpo_rgba[tira] = 0
     # tronco atras do braco: preenche com a camisa
     camisa = (82, 146, 206); camisa_esc = (63, 110, 159); contorno = (20, 8, 10)
-    buraco_tronco = braco & (yy < 338) & (yy >= 240)
+    # as costas sao retas: o buraco so e preenchido ate a linha das costas (sem o formato do punho
+    # e da mao, que criava uma "corcunda" quando o braco ia para a frente)
+    linha_costas = np.ceil(COSTAS_X - (yy - 250) * COSTAS_INCLINA).astype(int)
+    buraco_tronco = braco & (yy < 338) & (yy >= 240) & (xx >= linha_costas)
     corpo_rgba[buraco_tronco, :3] = camisa
     corpo_rgba[buraco_tronco, 3] = 255
     # cintura atras da mao: repete a faixa da cintura que aparece na frente
     for y in range(336, 362):
-        for x in range(72, 140):
-            if braco[y, x] or (corpo_rgba[y, x, 3] == 0 and x >= 76):
+        for x in range(linha_costas[y, 0], 140):
+            if braco[y, x] or corpo_rgba[y, x, 3] == 0:
                 corpo_rgba[y, x] = a[y, 140 + (x - 72) % 24]
     # sombra da camisa nas costas e contorno nas bordas novas
     m = corpo_rgba[..., 3] > 0
     borda = m & ~ndi.binary_erosion(m, iterations=7)
     novo = (buraco_tronco | caixa(al.shape, 72, 140, 336, 362)) & borda
     corpo_rgba[novo, :3] = contorno
-    costas = buraco_tronco & ~novo & (xx < 90)
+    costas = buraco_tronco & ~novo & (xx < linha_costas + 16)
     corpo_rgba[costas, :3] = camisa_esc
 
     braco_rgba = a.copy(); braco_rgba[~braco] = 0
