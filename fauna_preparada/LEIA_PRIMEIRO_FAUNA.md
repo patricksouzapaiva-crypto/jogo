@@ -1,9 +1,29 @@
-# Fauna preparada v1: relatório de preparação e teste
+# Fauna preparada v2: relatório de preparação e teste
 
 Origem: `MOVIMENTACOES_DOS_ANIMAIS_v1.zip` (as folhas de caminhada são idênticas às do `CAMINHADA_DOS_ANIMAIS.zip`; os hashes do manifesto conferem).
 Espécies: Penala, pato anfíbio, ovelha, Gruntho e vaca. Ao todo, 340 poses: 5 × 32 de caminhada e 5 × 36 de ações.
 
-**Situação:** os quadros estão preparados e a cena de teste roda no Godot 4.5 (116 de 116 verificações automáticas passaram). **A integração com o sistema de animais do jogo ainda não foi feita**, porque este trabalho foi feito fora do projeto. Isso fica para o chat principal (veja `PROMPT_CHAT_PRINCIPAL.md`). Há 3 defeitos que exigem redesenho e algumas decisões pendentes (abaixo).
+**Situação:** os quadros estão preparados e **a caminhada foi melhorada (v2)**. A cena de teste roda no Godot 4.5 (117 de 117 verificações automáticas passaram, estáveis em 3 rodadas). **A integração com o sistema de animais do jogo ainda não foi feita**, porque este trabalho foi feito fora do projeto. Isso fica para o chat principal (veja `PROMPT_CHAT_PRINCIPAL.md`). Há 3 defeitos que ainda exigem redesenho e algumas decisões pendentes (abaixo).
+
+
+---
+
+## v2: o que melhorou no andar
+
+A v1 continua em `revisao/v1/` para comparação, e o visualizador tem um botão v1/v2. As animações em `JogoFazenda/arte/preparado/fauna/` agora são da **v2**. Nada foi redesenhado e nenhuma parte do corpo foi recortada nem girada.
+
+| Melhoria | Antes (v1) | Depois (v2) |
+|---|---|---|
+| **Sobe e desce do corpo** | Em 16 dos 20 ciclos o topo da cabeça ficava parado, o que dava cara de andar duro, "deslizando" | O corpo sobe 1 px na passagem, 2 vezes por ciclo (uma por passo), em ritmo regular. A fase segue os pés. A linha do quadril é duplicada (a perna "estica" 1 px) e os pés continuam no chão. A vaca e o pato de costas já tinham sobe e desce desenhado e foram mantidos. |
+| **Pausas no ciclo** | Quadros quase repetidos ficavam o mesmo tempo que os outros. Exemplo: Penala para baixo, 0,20 s preso por ciclo | Quadros quase repetidos duram metade, e o tempo sobra para os outros (o ciclo continua com a mesma duração). Penala para baixo: 0,11 s. Ovelha para cima: de 0,29 s para 0,16 s |
+| **Cintilação da textura** | De 38% a 66% dos pixels do corpo mudavam de tom à toa entre quadros | Penala de 11% a 17%, Gruntho de 25% a 35%, ovelha de 24% a 41%, pato de 29% a 46%. A vaca melhorou pouco (de 43% a 49%, porque o corpo dela se move mais entre quadros). Contorno, cabeça e cauda que mexem de verdade não são tocados. |
+| **Gruntho de costas** | Só a pata traseira direita levantava | A esquerda também levanta, nos quadros 3 e 7 (correção provisória: a pata direita levantada foi espelhada para a esquerda sobre os quadros com as patas no chão; o corpo e a luz são os originais) |
+| **Parar e voltar a andar** | Parado para baixo, para cima ou para a esquerda segurava o quadro 0 (às vezes no meio do passo) | Cada direção tem uma **pose de parado** (patas juntas, dois pés no chão, sem a subida do passo). Ao voltar a andar, a animação começa no quadro seguinte. |
+| **Encaixe andar → ação** | Até 2 px de "pulo" quando o animal parava e virava para uma ação | As ações foram deslocadas para casar a silhueta com a caminhada para a direita (no máximo 1 px de diferença) |
+
+Comparação animada: `revisao/comparacao_v1_v2/andar_v1_v2_lado.gif` e `andar_v1_v2_frente.gif`.
+
+No JSON de cada caminhada: `duracoes` (por quadro), `parado` (quadro da pose de parado), `melhorias_v2` (o que mudou) e `ordem_sugerida_automatica` (só informativo; não aplicado).
 
 ---
 
@@ -34,13 +54,15 @@ Espécies: Penala, pato anfíbio, ovelha, Gruntho e vaca. Ao todo, 340 poses: 5 
 
 ### Especificação por espécie
 
-| Espécie | Altura de lado (px) | Canvas (px) | Pivot | Redução caminhada | Redução ações | Caminhada maior em | Caminhada (quadros/s) | Velocidade sugerida (px/s) | Cores |
-|---|---|---|---|---|---|---|---|---|---|
-| penala | 32 | 58×40 | 21, 38 | 0.167 | 0.200 | 20% | 10 | 30 | 32 |
-| pato | 30 | 60×38 | 24, 36 | 0.163 | 0.194 | 19% | 9 | 22 | 32 |
-| ovelha | 44 | 60×56 | 29, 54 | 0.251 | 0.274 | 9% | 7 | 26 | 28 |
-| gruntho | 38 | 74×54 | 36, 52 | 0.235 | 0.284 | 21% | 8 | 32 | 28 |
-| vaca | 54 | 96×84 | 49, 82 | 0.305 | 0.351 | 15% | 6 | 20 | 32 |
+| Espécie | Altura de lado (px) | Canvas (px) | Pivot | Redução caminhada | Redução ações | Caminhada maior em | Encaixe ações | Caminhada (quadros/s) | Velocidade sugerida (px/s) | Cores | Pose de parado (quadro) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| penala | 32 | 58×40 | 20, 38 | 0.167 | 0.200 | 20% | +1 | 10 | 30 | 32 | baixo 0, esquerda 6, direita 2, cima 0 |
+| pato | 30 | 60×38 | 25, 36 | 0.163 | 0.194 | 19% | −1 | 9 | 22 | 32 | baixo 0, esquerda 1, direita 0, cima 0 |
+| ovelha | 44 | 60×56 | 28, 54 | 0.251 | 0.274 | 9% | +1 | 7 | 26 | 28 | baixo 1, esquerda 1, direita 6, cima 0 |
+| gruntho | 38 | 74×54 | 36, 52 | 0.235 | 0.284 | 21% | 0 | 8 | 32 | 28 | baixo 3, esquerda 1, direita 2, cima 0 |
+| vaca | 54 | 96×84 | 48, 82 | 0.305 | 0.351 | 15% | +1 | 6 | 20 | 32 | baixo 2, esquerda 0, direita 1, cima 6 |
+
+Os quadros são numerados a partir de 0.
 
 - **As alturas são uma proposta** (protagonista ≈ 64 px, tile 48). Elas precisam ser conferidas com os animais que já estão no jogo. Para mudar, edite `ferramentas/escala_especies.json` e rode `rodar_tudo.py`.
 - O canvas é grande porque comporta todas as poses da espécie (as asas abertas da Penala e do pato e a vista de frente da vaca, que é mais alta).
@@ -58,9 +80,9 @@ JogoFazenda/testes/fauna/
   carregador_fauna.gd   monta SpriteFrames a partir do JSON (reutilizável)
   teste_fauna.tscn/.gd  cena de teste
   verificar_fauna.gd    verificação automática sem abrir o editor
-revisao/        pranchas, prints da cena no Godot, medidas em JSON
+revisao/        pranchas (v2), comparação v1 x v2 (GIFs), prints da cena no Godot, medidas, v1/ (atlas antigos)
 ferramentas/    scripts para refazer tudo a partir das folhas originais
-visualizador/   bancada_fauna.html (abre no navegador, inclusive no celular)
+visualizador/   bancada_fauna.html (abre no navegador, inclusive no celular; botão v1/v2)
 ```
 
 Os arquivos ficam em `arte/preparado/`, não em `arte/final/`, porque ainda não foram validados dentro do jogo. **Nada substitui os animais atuais.**
@@ -77,27 +99,27 @@ Os arquivos ficam em `arte/preparado/`, não em `arte/final/`, porque ainda não
 
 ## 5. Defeitos e decisões
 
-### ❌ Exigem redesenho
+### ❌ Ainda exigem redesenho
 | Animal | Animação | Direção | Quadros | Problema | Correção necessária |
 |---|---|---|---|---|---|
 | Vaca | caminhada | esquerda e direita | todos | Vista 3/4 e corpo curto (largura ≈ altura); as ações são de perfil e compridas (largura ≈ 1,5× a altura). A vaca muda de forma ao passar de andar para uma ação. | Redesenhar a caminhada lateral de perfil, com as mesmas proporções das ações (ou as ações em 3/4) |
 | Vaca | caminhada | cima | 1→2 | Cabeça e chifres crescem e sobem cerca de 4 px. As manchas variam mais que nas outras direções (≈10%). | Redesenhar o quadro 2 (e conferir 3–7) mantendo o tamanho da cabeça |
-| Gruntho | caminhada | cima | 1, 3, 5, 7 | Só a pata traseira direita levanta; a esquerda quase não se move (≈5% de mudança nas patas). Vai parecer que ele desliza. | Redesenhar com alternância clara: esquerda nos quadros 1–3, direita nos quadros 5–7 |
+| Pato | caminhada | cima | 0, 4, 6 | A cabeça fica 2–3 px mais baixa nesses quadros, de forma irregular | Redesenhar com um sobe e desce regular |
+| Gruntho | caminhada | cima | 3, 7 | **Corrigido provisoriamente na v2** (a pata esquerda levanta por transplante espelhado) | Um redesenho com alternância desenhada ficaria melhor |
 
-### ⚠ Atenção (técnico ou de revisão)
-| Animal | Animação | Problema | Sugestão |
-|---|---|---|---|
-| Penala | caminhada para baixo | Quadros 7, 0 e 1 quase iguais (pés juntos): pausa a cada ciclo | Redesenhar o quadro 0 como passagem, ou reduzir a duração de 7/0/1 depois de testar |
-| Penala | caminhada para cima | Pares 0-1 e 3-4 muito parecidos | Revisar no visualizador |
-| Ovelha | caminhada para cima | Quadros 3≈4 e 7≈0 | Revisar no visualizador |
-| Gruntho | caminhada para baixo | O passo aparece só nos quadros 1 e 4 (ritmo irregular) | Revisar; talvez redesenhar 2 quadros |
-| Vaca | caminhada para a direita | Topo sobe cerca de 4 px do quadro 0 para o 1 | Revisar no visualizador |
+### ⚠ Atenção
+| Animal | Animação | Situação na v2 |
+|---|---|---|
+| Penala | caminhada para baixo e para cima | Pausas encurtadas (quadros 0 e 7; 0 e 3) |
+| Ovelha | caminhada para cima | Pausas encurtadas (quadros 3 e 7) |
+| Gruntho | caminhada para baixo | O passo aparece só nos quadros 1 e 4; o quadro 2 (quase repetido) foi encurtado |
+| Vaca | caminhada para a direita | Topo sobe cerca de 4 px do quadro 0 para o 1 (desenhado assim); quadros 3 e 4 encurtados |
 
 As "ordens alternativas" sugeridas pela medida automática (no JSON) foram calculadas por menor movimento entre quadros. **Elas não foram aplicadas**: num ciclo de passos, a ordem com menos movimento nem sempre é a correta. A ordem original foi mantida.
 
 ### Decisões pendentes
 1. **Ações para a esquerda:** só existem viradas para a direita. Espelhar inverte a luz (que vem de cima à esquerda). É preciso decidir entre espelhar ou desenhar o lado esquerdo. A cena de teste tem a opção "Espelhar ações (teste)", desligada por padrão.
-2. **Parado de frente e de costas:** não há respirar/piscar nessas direções. Por enquanto, segura o 1º quadro da caminhada.
+2. **Parado de frente e de costas:** não há respirar/piscar nessas direções. Por enquanto, segura a pose de parado da caminhada (patas juntas).
 3. **Tamanhos finais:** confirmar com os animais atuais do jogo.
 4. **Fora deste pacote** (não improvisado): sono, repouso, levantar, nado e a segunda ave aquática.
 
@@ -108,9 +130,10 @@ Abra `res://testes/fauna/teste_fauna.tscn` e aperte F6.
 - Fundo terreno, claro ou escuro. Para usar o chão real, arraste a textura do jogo para `textura_terreno` no Inspetor.
 - "Chão andando", para ver se os pés escorregam. "Pivot e caixa", "Modo natural" e "Espelhar ações (teste)".
 - **Teclado:** setas/WASD para andar (testa as transições), E para a ação, Espaço para pausar, vírgula e ponto para ir quadro a quadro.
+- Ao soltar as setas, o animal para na pose de parado da direção. Ao andar de novo, começa do quadro seguinte.
 
 **Verificação automática** (sem abrir o editor):
 ```
 godot --headless --path <pasta do projeto> --script res://testes/fauna/verificar_fauna.gd
 ```
-Resultado obtido aqui, no Godot 4.5: **PASSOU, 116 de 116**.
+Resultado obtido aqui, no Godot 4.5: **PASSOU, 117 de 117** (3 rodadas seguidas). Entre os testes: ao parar, segura a pose de parado da direção, e ao voltar a andar começa do quadro seguinte.

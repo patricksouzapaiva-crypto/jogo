@@ -4,8 +4,9 @@ Copie a pasta `fauna_preparada/` para dentro da pasta do projeto, ao lado de `Jo
 
 ```
 Preparei fora do projeto as animações da fauna (Penala, pato anfíbio, ovelha,
-Gruntho e vaca) a partir do MOVIMENTACOES_DOS_ANIMAIS_v1. Está tudo em
-fauna_preparada/. Leia primeiro fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
+Gruntho e vaca) a partir do MOVIMENTACOES_DOS_ANIMAIS_v1, já com o andar
+melhorado (v2). Está tudo em fauna_preparada/. Leia primeiro
+fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
 
 1. INSPECIONE O PROJETO (nada foi feito aqui ainda)
 - Identifique o sistema atual de animação dos animais, a escala, a câmera,
@@ -20,7 +21,7 @@ fauna_preparada/. Leia primeiro fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
 - Confira a importação dos atlas: Nearest, sem mipmaps, compressão Lossless.
 - Rode a verificação:
   godot --headless --path . --script res://testes/fauna/verificar_fauna.gd
-  (fora do projeto deu PASSOU, 116 de 116).
+  (fora do projeto deu PASSOU, 117 de 117).
 
 3. CONFIRA A ESCALA
 - Compare os tamanhos propostos (tabela da seção 2 do relatório) com o
@@ -34,7 +35,10 @@ fauna_preparada/. Leia primeiro fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
   até os pés escorregarem o mínimo possível. Grave os valores.
 
 5. INTEGRE AOS ANIMAIS DO JOGO, SÓ DEPOIS DA MINHA APROVAÇÃO
-- Use pivot no chão (centered=false, offset=-pivot) e as durações do JSON.
+- Use pivot no chão (centered=false, offset=-pivot) e as durações do JSON
+  (cada quadro tem a sua duração).
+- Ao parar, use a pose de parado da direção ("parado" no JSON); ao voltar a
+  andar, comece do quadro seguinte. Para a direita, o parado é idle_blink.
 - Não reinicie a animação a cada atualização.
 - Respirar/piscar com pausa aleatória. Ações em intervalos variados.
   Não altere necessidades, produção nem outras regras do jogo.
@@ -42,8 +46,9 @@ fauna_preparada/. Leia primeiro fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
 
 6. ME TRAGA AS DECISÕES PENDENTES (seção 5 do relatório)
 - Ações para a esquerda: espelhar ou desenhar?
-- Parado de frente e de costas: segurar o 1º quadro da caminhada por enquanto?
-- Os 3 redesenhos (vaca de lado, vaca para cima, Gruntho para cima): prepare
+- Parado de frente e de costas: segurar a pose de parado da caminhada por enquanto?
+- Os redesenhos (vaca de lado, vaca para cima, pato para cima e, se quiser
+  deixar perfeito, Gruntho para cima): prepare
   um pedido para a IA de arte com animal, animação, direção, quadros e o que
   corrigir, anexando as folhas originais como referência.
 

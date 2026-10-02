@@ -91,6 +91,28 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
                 ax0 = (xr.min() + xr.max()) / 2
             for c in range(ncol):
                 poses.append(dict(tipo=tipo, anim=nome, q=c, arr=arrs[c], ax=ax0 - dxs[c], by=bys[c], score=scores[c]))
+    # ---- encaixe andar -> parado: desloca TODAS as acoes para a silhueta do respirar casar com a
+    #      caminhada para a direita (evita o "pulo" quando o animal para e vira acao) ----
+    def mascara_final(p):
+        f = fator[p["tipo"]]; al = p["arr"][..., 3] > 127
+        h, w = al.shape; img = Image.fromarray((al * 255).astype(np.uint8))
+        m = np.asarray(img.resize((max(1, round(w * f)), max(1, round(h * f))), Image.BOX)) > 127
+        return m, p["ax"] * f, p["by"] * f
+    def no_canvas(m, ax, by, cw=200, ch=200, cx=100, cy=180):
+        c = np.zeros((ch, cw), bool); ox, oy = int(round(cx - ax)), int(round(cy - by))
+        c[oy:oy + m.shape[0], ox:ox + m.shape[1]] = m; return c
+    walk_dir = [p for p in poses if p["tipo"] == "walk" and p["anim"] == "right"]
+    idle0 = [p for p in poses if p["tipo"] == "actions" and p["anim"] == "idle_blink" and p["q"] == 0][0]
+    mi = no_canvas(*mascara_final(idle0))
+    melhor = (0.0, 0)
+    for pw_ in walk_dir:
+        mw = no_canvas(*mascara_final(pw_))
+        for dx in range(-8, 9):
+            s_ = (np.roll(mw, dx, 1) & mi).sum() / (np.roll(mw, dx, 1) | mi).sum()
+            if s_ > melhor[0]: melhor = (s_, dx)
+    encaixe_px = -melhor[1]                   # px finais para deslocar as acoes
+    for p in poses:
+        if p["tipo"] == "actions": p["ax"] -= encaixe_px / fator["actions"]
     # ---- canvas comum (px finais) ----
     ext = []
     for p in poses:
@@ -135,6 +157,7 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
         quadros.append(dict(arquivo=nome, tipo=p["tipo"], anim=p["anim"], quadro=p["q"], ajuste_score=p["score"]))
     relatorio[esp] = dict(canvas=[W, H], pivot=[px, py], fator_reducao=dict(walk=round(fator["walk"], 4), actions=round(fator["actions"], 4)),
                           diferenca_escala_entre_folhas=round(fator["walk"] / fator["actions"], 3),
+                          encaixe_acoes_px=int(encaixe_px), encaixe_iou=round(float(melhor[0]), 3),
                           altura_lado_px=alvo, cores=len(pal), quadros=quadros)
-    print(f"{esp}: canvas {W}x{H} pivot ({px},{py}) fator walk {fator['walk']:.4f} actions {fator['actions']:.4f} (walk/actions {fator['walk']/fator['actions']:.3f})")
+    print(f"{esp}: encaixe acoes {encaixe_px:+d} px (IoU {melhor[0]:.2f}) | canvas {W}x{H} pivot ({px},{py}) fator walk {fator['walk']:.4f} actions {fator['actions']:.4f} (walk/actions {fator['walk']/fator['actions']:.3f})")
 json.dump(relatorio, open(os.path.join(OUT, "preparo.json"), "w"), indent=1, ensure_ascii=False)

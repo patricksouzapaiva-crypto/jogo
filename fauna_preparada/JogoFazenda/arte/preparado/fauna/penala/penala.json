@@ -1,12 +1,13 @@
 {
  "especie": "penala",
+ "versao": "v2",
  "atlas": "penala_atlas.png",
  "celula": [
   58,
   40
  ],
  "pivot": [
-  21,
+  20,
   38
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
@@ -17,6 +18,14 @@
   "actions": 0.2
  },
  "diferenca_escala_entre_folhas": 0.836,
+ "encaixe_acoes_px": 1,
+ "parado_por_direcao": {
+  "down": 0,
+  "left": 6,
+  "right": 2,
+  "up": 0
+ },
+ "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
  "velocidade_sugerida_px_s": 30,
  "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
  "acoes_fornecidas_para": "right",
@@ -27,21 +36,40 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
+    0.0571,
+    0.1143,
+    0.1143,
+    0.1143,
+    0.1143,
+    0.1143,
+    0.1143,
+    0.0571
    ],
    "fps": 10,
    "direcao": "down",
+   "parado": 0,
    "alertas": [
-    "VISUAL: Quadros 7, 0 e 1 quase iguais (pes juntos): pausa perceptivel a cada ciclo.",
-    "ordem alternativa com 20.3% menos movimento: [0, 3, 4, 2, 6, 5, 1, 7] (conferir a olho)"
-   ]
+    "VISUAL: AJUSTADO (v2): quadros 7 e 0 quase iguais (pausa) agora tem metade da duracao."
+   ],
+   "melhorias_v2": [
+    "textura estabilizada em 704 px (21.7% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 27)",
+    "quadros quase repetidos encurtados: 0, 7",
+    "parado = quadro 0"
+   ],
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     1,
+     5,
+     4,
+     6,
+     2,
+     3,
+     7
+    ],
+    "reducao_pct": 21.6
+   }
   },
   "walk_left": {
    "linha": 1,
@@ -59,48 +87,93 @@
    ],
    "fps": 10,
    "direcao": "left",
-   "alertas": [
-    "ordem alternativa com 21.8% menos movimento: [0, 5, 1, 3, 7, 2, 4, 6] (conferir a olho)"
-   ]
+   "parado": 6,
+   "alertas": [],
+   "melhorias_v2": [
+    "textura estabilizada em 922 px (24.9% do corpo)",
+    "sobe e desce de 1 px: ↑↑··↑↑·· (quadril na linha 28)",
+    "ritmo uniforme",
+    "parado = quadro 6"
+   ],
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     4,
+     6,
+     2,
+     7,
+     3,
+     1,
+     5
+    ],
+    "reducao_pct": 22.3
+   }
   },
   "walk_right": {
    "linha": 2,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
+    0.1067,
+    0.1067,
+    0.1067,
+    0.1067,
+    0.1067,
+    0.1067,
+    0.1067,
+    0.0533
    ],
    "fps": 10,
    "direcao": "right",
-   "alertas": []
+   "parado": 2,
+   "alertas": [],
+   "melhorias_v2": [
+    "textura estabilizada em 812 px (21.9% do corpo)",
+    "sobe e desce de 1 px: ↑↑··↑↑·· (quadril na linha 28)",
+    "quadros quase repetidos encurtados: 7",
+    "parado = quadro 2"
+   ],
+   "ordem_sugerida_automatica": null
   },
   "walk_up": {
    "linha": 3,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
+    0.0571,
+    0.1143,
+    0.1143,
+    0.0571,
+    0.1143,
+    0.1143,
+    0.1143,
+    0.1143
    ],
    "fps": 10,
    "direcao": "up",
+   "parado": 0,
    "alertas": [
-    "VISUAL: Pares 0-1 e 3-4 muito parecidos: pequenas pausas no ciclo.",
-    "ordem alternativa com 19.6% menos movimento: [0, 2, 7, 5, 6, 1, 4, 3] (conferir a olho)"
-   ]
+    "VISUAL: AJUSTADO (v2): quadros 0 e 3 quase repetidos encurtados."
+   ],
+   "melhorias_v2": [
+    "textura estabilizada em 710 px (22.0% do corpo)",
+    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 27)",
+    "quadros quase repetidos encurtados: 0, 3",
+    "parado = quadro 0"
+   ],
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     1,
+     6,
+     5,
+     2,
+     7,
+     4,
+     3
+    ],
+    "reducao_pct": 23.6
+   }
   },
   "idle_blink": {
    "linha": 4,
@@ -228,5 +301,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "1b2874d46c7b704b4a64bc1b86487e1537e857764716895ff9fd7a1a96ab1fc6"
+ "sha256_atlas": "9af2b754b5e9d2c216f8e02fe0c58de03e78493df627a28690266863fb1163ff"
 }

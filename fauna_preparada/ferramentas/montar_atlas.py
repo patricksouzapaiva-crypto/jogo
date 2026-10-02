@@ -24,15 +24,19 @@ LOOP_ACAO = {"ruminate": 3, "chew": 3, "tail_sway": 2}   # gestos que se repetem
 
 # alertas confirmados na inspecao visual (alem das medidas automaticas)
 ALERTAS_VISUAIS = {
-    "vaca": {"walk_left": "Vista 3/4 e corpo curto; as acoes sao de perfil e compridas: a vaca muda de forma ao passar de andar para acao. Redesenhar a caminhada lateral de perfil (ou as acoes em 3/4).",
-             "walk_right": "Mesmo problema da walk_left (3/4 x perfil). Quadro 0->1: topo sobe ~4 px.",
-             "walk_up": "Quadro 1->2: cabeca e chifres crescem/sobem ~4 px (tamanho mudando entre quadros); manchas variam mais que nas outras direcoes."},
-    "gruntho": {"walk_up": "Patas quase paradas (~5% de mudanca): so a traseira direita levanta (quadros 1,3,5,7); a esquerda quase nao. Vai parecer deslizar. Redesenhar com alternancia clara E/D.",
-                "walk_down": "O passo aparece so nos quadros 1 e 4 (ritmo irregular)."},
-    "penala": {"walk_down": "Quadros 7, 0 e 1 quase iguais (pes juntos): pausa perceptivel a cada ciclo.",
-               "walk_up": "Pares 0-1 e 3-4 muito parecidos: pequenas pausas no ciclo."},
-    "ovelha": {"walk_up": "Quadros 3~4 e 7~0 quase iguais: pequenas pausas no ciclo."},
+    "vaca": {"walk_left": "REDESENHAR: vista 3/4 e corpo curto; as acoes sao de perfil e compridas: a vaca muda de forma ao passar de andar para acao. Redesenhar a caminhada lateral de perfil (ou as acoes em 3/4).",
+             "walk_right": "REDESENHAR: mesmo problema da walk_left (3/4 x perfil).",
+             "walk_up": "REDESENHAR: quadro 1->2: cabeca e chifres crescem/sobem ~4 px (tamanho mudando entre quadros)."},
+    "gruntho": {"walk_up": "CORRIGIDO PROVISORIAMENTE (v2): a pata esquerda passou a levantar nos quadros 3 e 7 (transplante espelhado da direita). Um redesenho ainda deixaria melhor.",
+                "walk_down": "O passo aparece so nos quadros 1 e 4 (ritmo irregular); v2 encurtou o quadro quase repetido."},
+    "penala": {"walk_down": "AJUSTADO (v2): quadros 7 e 0 quase iguais (pausa) agora tem metade da duracao.",
+               "walk_up": "AJUSTADO (v2): quadros 0 e 3 quase repetidos encurtados."},
+    "ovelha": {"walk_up": "AJUSTADO (v2): quadros 3 e 7 quase repetidos encurtados."},
+    "pato": {"walk_up": "A cabeca sobe e desce de forma irregular (quadros 0, 4 e 6 mais baixos): desenhado assim; revisar."},
 }
+MELHORIAS = {}
+_mj = os.path.join(PREP, "melhorias_v2.json")
+if os.path.exists(_mj): MELHORIAS = json.load(open(_mj))
 
 manifest = {}
 for esp, d in rel.items():
@@ -49,12 +53,15 @@ for esp, d in rel.items():
             atlas.alpha_composite(Image.open(os.path.join(PREP, esp, q["arquivo"])), (q["quadro"] * W, li * H))
         nome = f"walk_{an}" if tipo == "walk" else an
         v = val[esp][f"{tipo}:{an}"]
-        alertas = list(v["alertas"])
+        alertas = [x for x in v["alertas"] if not x.startswith("ordem alternativa")]
         if nome in ALERTAS_VISUAIS.get(esp, {}): alertas.insert(0, "VISUAL: " + ALERTAS_VISUAIS[esp][nome])
         if tipo == "walk":
             fps = WALK_FPS[esp]
-            info[nome] = dict(linha=li, quadros=len(qs), loop=True, duracoes=[round(1 / fps, 4)] * len(qs), fps=fps,
-                              direcao=an, alertas=alertas)
+            durs = d.get("walk_duracoes", {}).get(an, [round(1 / fps, 4)] * len(qs))
+            info[nome] = dict(linha=li, quadros=len(qs), loop=True, duracoes=durs, fps=fps,
+                              direcao=an, parado=int(d.get("parado", {}).get(an, 0)), alertas=alertas,
+                              melhorias_v2=MELHORIAS.get(esp, {}).get(an, []),
+                              ordem_sugerida_automatica=v.get("ordem_sugerida"))
         elif an == "idle_blink":
             info[nome] = dict(linha=li, quadros=len(qs), loop=True, duracoes=[0.12] * len(qs), direcao="right",
                               pausa_no_quadro_0=[1.5, 4.0], alertas=alertas,
@@ -66,10 +73,13 @@ for esp, d in rel.items():
                               intervalo_natural_s=[4, 12], alertas=alertas)
     pasta = os.path.join(OUT, esp); os.makedirs(pasta, exist_ok=True)
     fn_atlas = f"{esp}_atlas.png"; atlas.save(os.path.join(pasta, fn_atlas))
-    meta = dict(especie=esp, atlas=fn_atlas, celula=[W, H], pivot=[px, py],
+    meta = dict(especie=esp, versao=d.get("versao", "v1"), atlas=fn_atlas, celula=[W, H], pivot=[px, py],
                 pivot_obs="Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
                 altura_lado_px=d["altura_lado_px"], cores_na_paleta=d["cores"],
                 fator_reducao=d["fator_reducao"], diferenca_escala_entre_folhas=d["diferenca_escala_entre_folhas"],
+                encaixe_acoes_px=d.get("encaixe_acoes_px", 0),
+                parado_por_direcao=d.get("parado", {}),
+                parado_obs="Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
                 velocidade_sugerida_px_s=VEL_SUGERIDA[esp],
                 velocidade_obs="Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
                 acoes_fornecidas_para="right",
@@ -79,5 +89,5 @@ for esp, d in rel.items():
     json.dump(meta, open(os.path.join(pasta, f"{esp}.json"), "w"), indent=1, ensure_ascii=False)
     manifest[esp] = dict(json=f"{esp}/{esp}.json", atlas=f"{esp}/{fn_atlas}", celula=[W, H], pivot=[px, py])
     print(esp, atlas.size, len(anims), "animacoes")
-json.dump(dict(pacote="FAUNA_PREPARADA_v1", origem="MOVIMENTACOES_DOS_ANIMAIS_v1", especies=manifest),
+json.dump(dict(pacote="FAUNA_PREPARADA_" + next(iter(rel.values())).get("versao", "v1"), origem="MOVIMENTACOES_DOS_ANIMAIS_v1", especies=manifest),
           open(os.path.join(OUT, "fauna_index.json"), "w"), indent=1, ensure_ascii=False)

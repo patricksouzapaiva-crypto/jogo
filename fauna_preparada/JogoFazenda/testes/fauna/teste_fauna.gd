@@ -132,10 +132,16 @@ func _parado_na_direcao() -> void:
 	if direcao == "right" or (direcao == "left" and espelhar_acoes):
 		_tocar("idle_blink")
 	else:
+		# segura a pose de parado da direcao (patas juntas, dois pes no chao)
 		_tocar("walk_" + direcao, true)
 		for s in animais:
 			s.pause()
-			s.frame = 0
+			s.frame = _quadro_parado(s, direcao)
+
+
+func _quadro_parado(s: AnimatedSprite2D, dir: String) -> int:
+	var e: String = s.get_meta("especie")
+	return int(dados[e]["animacoes"]["walk_" + dir].get("parado", 0))
 
 
 func _ao_repetir(s: AnimatedSprite2D) -> void:
@@ -180,7 +186,11 @@ func _process(delta: float) -> void:
 		direcao = nova
 		repeticoes_restantes = 0
 		if mudou:
-			_tocar("walk_" + direcao)
+			_tocar("walk_" + direcao, true)
+			# comeca a andar do quadro seguinte a pose de parado (sem "pulo" no 1o passo)
+			for s in animais:
+				var n := s.sprite_frames.get_frame_count(s.animation)
+				s.frame = (_quadro_parado(s, direcao) + 1) % n
 		# o mundo anda sob o animal (a camera acompanha o animal)
 		var e: String = animais[0].get_meta("especie")
 		var vel: float = float(dados[e]["velocidade_sugerida_px_s"]) * ui_vel.value

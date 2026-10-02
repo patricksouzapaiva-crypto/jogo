@@ -1,12 +1,13 @@
 {
  "especie": "ovelha",
+ "versao": "v2",
  "atlas": "ovelha_atlas.png",
  "celula": [
   60,
   56
  ],
  "pivot": [
-  29,
+  28,
   54
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
@@ -17,6 +18,14 @@
   "actions": 0.2741
  },
  "diferenca_escala_entre_folhas": 0.915,
+ "encaixe_acoes_px": 1,
+ "parado_por_direcao": {
+  "down": 1,
+  "left": 1,
+  "right": 6,
+  "up": 0
+ },
+ "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
  "velocidade_sugerida_px_s": 26,
  "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
  "acoes_fornecidas_para": "right",
@@ -38,68 +47,119 @@
    ],
    "fps": 7,
    "direcao": "down",
-   "alertas": [
-    "ordem alternativa com 21.0% menos movimento: [0, 1, 3, 5, 7, 2, 6, 4] (conferir a olho)"
-   ]
+   "parado": 1,
+   "alertas": [],
+   "melhorias_v2": [
+    "textura estabilizada em 1486 px (14.5% do corpo)",
+    "sobe e desce de 1 px: ↑··↑↑··↑ (quadril na linha 39)",
+    "ritmo uniforme",
+    "parado = quadro 1"
+   ],
+   "ordem_sugerida_automatica": null
   },
   "walk_left": {
    "linha": 1,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429
+    0.1524,
+    0.1524,
+    0.1524,
+    0.1524,
+    0.1524,
+    0.0762,
+    0.1524,
+    0.1524
    ],
    "fps": 7,
    "direcao": "left",
-   "alertas": [
-    "ordem alternativa com 24.1% menos movimento: [0, 4, 2, 7, 1, 3, 5, 6] (conferir a olho)"
-   ]
+   "parado": 1,
+   "alertas": [],
+   "melhorias_v2": [
+    "textura estabilizada em 1596 px (15.9% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 42)",
+    "quadros quase repetidos encurtados: 5",
+    "parado = quadro 1"
+   ],
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     3,
+     1,
+     4,
+     2,
+     7,
+     6,
+     5
+    ],
+    "reducao_pct": 16.7
+   }
   },
   "walk_right": {
    "linha": 2,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429
+    0.1524,
+    0.1524,
+    0.1524,
+    0.1524,
+    0.1524,
+    0.0762,
+    0.1524,
+    0.1524
    ],
    "fps": 7,
    "direcao": "right",
-   "alertas": []
+   "parado": 6,
+   "alertas": [],
+   "melhorias_v2": [
+    "textura estabilizada em 1690 px (16.4% do corpo)",
+    "sobe e desce de 1 px: ↑↑··↑↑·· (quadril na linha 41)",
+    "quadros quase repetidos encurtados: 5",
+    "parado = quadro 6"
+   ],
+   "ordem_sugerida_automatica": null
   },
   "walk_up": {
    "linha": 3,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429
+    0.1633,
+    0.1633,
+    0.1633,
+    0.0816,
+    0.1633,
+    0.1633,
+    0.1633,
+    0.0816
    ],
    "fps": 7,
    "direcao": "up",
+   "parado": 0,
    "alertas": [
-    "VISUAL: Quadros 3~4 e 7~0 quase iguais: pequenas pausas no ciclo.",
-    "ordem alternativa com 25.9% menos movimento: [0, 4, 3, 6, 1, 5, 2, 7] (conferir a olho)"
-   ]
+    "VISUAL: AJUSTADO (v2): quadros 3 e 7 quase repetidos encurtados."
+   ],
+   "melhorias_v2": [
+    "textura estabilizada em 2150 px (23.5% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 39)",
+    "quadros quase repetidos encurtados: 3, 7",
+    "parado = quadro 0"
+   ],
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     2,
+     7,
+     6,
+     3,
+     4,
+     1,
+     5
+    ],
+    "reducao_pct": 27.1
+   }
   },
   "idle_blink": {
    "linha": 4,
@@ -227,5 +287,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "faacaf5454b4727a136e72c28dfbb62f46f3762baf00d2af5f6b000682b8f8f5"
+ "sha256_atlas": "f8eef5ad54d29ac1f44511c0fd69c37077bd679158fe07ab90ffe4d4bb3cd0f6"
 }

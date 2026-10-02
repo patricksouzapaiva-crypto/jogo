@@ -1,32 +1,27 @@
 {
- "especie": "gruntho",
- "versao": "v2",
- "atlas": "gruntho_atlas.png",
+ "especie": "penala",
+ "versao": "v1",
+ "atlas": "penala_atlas.png",
  "celula": [
-  74,
-  54
+  58,
+  40
  ],
  "pivot": [
-  36,
-  52
+  20,
+  38
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
- "altura_lado_px": 38,
- "cores_na_paleta": 28,
+ "altura_lado_px": 32,
+ "cores_na_paleta": 32,
  "fator_reducao": {
-  "walk": 0.2346,
-  "actions": 0.2836
+  "walk": 0.1671,
+  "actions": 0.2
  },
- "diferenca_escala_entre_folhas": 0.827,
- "encaixe_acoes_px": 0,
- "parado_por_direcao": {
-  "down": 3,
-  "left": 1,
-  "right": 2,
-  "up": 0
- },
+ "diferenca_escala_entre_folhas": 0.836,
+ "encaixe_acoes_px": 1,
+ "parado_por_direcao": {},
  "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
- "velocidade_sugerida_px_s": 32,
+ "velocidade_sugerida_px_s": 30,
  "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
  "acoes_fornecidas_para": "right",
  "acoes_esquerda": "PENDENTE: as acoes so existem viradas para a direita. Espelhar inverte a luz (cima-esquerda). Decidir: espelhar ou desenhar a esquerda.",
@@ -36,39 +31,34 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1333,
-    0.1333,
-    0.0667,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
-   "fps": 8,
+   "fps": 10,
    "direcao": "down",
-   "parado": 3,
+   "parado": 0,
    "alertas": [
-    "VISUAL: O passo aparece so nos quadros 1 e 4 (ritmo irregular); v2 encurtou o quadro quase repetido."
+    "VISUAL: AJUSTADO (v2): quadros 7 e 0 quase iguais (pausa) agora tem metade da duracao."
    ],
-   "melhorias_v2": [
-    "textura estabilizada em 1668 px (20.5% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 44)",
-    "quadros quase repetidos encurtados: 2",
-    "parado = quadro 3"
-   ],
+   "melhorias_v2": [],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
      3,
-     7,
-     5,
+     4,
      2,
      6,
+     5,
      1,
-     4
+     7
     ],
-    "reducao_pct": 26.9
+    "reducao_pct": 19.7
    }
   },
   "walk_left": {
@@ -76,37 +66,32 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.0667,
-    0.1333,
-    0.1333
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
-   "fps": 8,
+   "fps": 10,
    "direcao": "left",
-   "parado": 1,
+   "parado": 0,
    "alertas": [],
-   "melhorias_v2": [
-    "textura estabilizada em 1806 px (19.1% do corpo)",
-    "sobe e desce de 1 px: ↑··↑↑··↑ (quadril na linha 44)",
-    "quadros quase repetidos encurtados: 5",
-    "parado = quadro 1"
-   ],
+   "melhorias_v2": [],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
-     2,
-     6,
      5,
      1,
      3,
      7,
-     4
+     2,
+     4,
+     6
     ],
-    "reducao_pct": 16.0
+    "reducao_pct": 21.6
    }
   },
   "walk_right": {
@@ -114,79 +99,55 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.0714,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.0714
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
-   "fps": 8,
+   "fps": 10,
    "direcao": "right",
-   "parado": 2,
+   "parado": 0,
    "alertas": [],
-   "melhorias_v2": [
-    "textura estabilizada em 1911 px (20.2% do corpo)",
-    "sobe e desce de 1 px: ↑··↑↑··↑ (quadril na linha 44)",
-    "quadros quase repetidos encurtados: 0, 7",
-    "parado = quadro 2"
-   ],
-   "ordem_sugerida_automatica": {
-    "ordem": [
-     0,
-     1,
-     5,
-     6,
-     2,
-     4,
-     7,
-     3
-    ],
-    "reducao_pct": 20.0
-   }
+   "melhorias_v2": [],
+   "ordem_sugerida_automatica": null
   },
   "walk_up": {
    "linha": 3,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.0769,
-    0.0769,
-    0.1538,
-    0.1538,
-    0.0769,
-    0.1538,
-    0.1538,
-    0.1538
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
-   "fps": 8,
+   "fps": 10,
    "direcao": "up",
    "parado": 0,
    "alertas": [
-    "VISUAL: CORRIGIDO PROVISORIAMENTE (v2): a pata esquerda passou a levantar nos quadros 3 e 7 (transplante espelhado da direita). Um redesenho ainda deixaria melhor."
+    "VISUAL: AJUSTADO (v2): quadros 0 e 3 quase repetidos encurtados."
    ],
-   "melhorias_v2": [
-    "quadro 3: pata esquerda levanta (base 2, pata espelhada do quadro 3, linhas 38-52)",
-    "quadro 7: pata esquerda levanta (base 6, pata espelhada do quadro 7, linhas 31-52)",
-    "textura estabilizada em 2084 px (21.9% do corpo)",
-    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 42)",
-    "quadros quase repetidos encurtados: 0, 1, 4",
-    "parado = quadro 0"
-   ],
+   "melhorias_v2": [],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
-     4,
-     2,
-     3,
-     7,
-     6,
      1,
-     5
+     6,
+     5,
+     7,
+     2,
+     4,
+     3
     ],
-    "reducao_pct": 23.8
+    "reducao_pct": 20.4
    }
   },
   "idle_blink": {
@@ -206,13 +167,10 @@
     1.5,
     4.0
    ],
-   "alertas": [
-    "emenda do loop 5->0 muda 38% (mediana 18%): ruptura no loop",
-    "quadro 0->1: mudanca brusca (45% vs mediana 18%)"
-   ],
+   "alertas": [],
    "obs": "Fica no quadro 0 por um tempo aleatorio e entao toca o respirar/piscar."
   },
-  "sniff": {
+  "scratch": {
    "linha": 5,
    "quadros": 6,
    "loop": false,
@@ -233,7 +191,7 @@
    ],
    "alertas": []
   },
-  "root": {
+  "peck": {
    "linha": 6,
    "quadros": 6,
    "loop": false,
@@ -254,7 +212,7 @@
    ],
    "alertas": []
   },
-  "chew": {
+  "preen": {
    "linha": 7,
    "quadros": 6,
    "loop": false,
@@ -267,7 +225,7 @@
     0.12
    ],
    "direcao": "right",
-   "repeticoes": 3,
+   "repeticoes": 1,
    "volta_para": "idle_blink",
    "intervalo_natural_s": [
     4,
@@ -275,16 +233,16 @@
    ],
    "alertas": []
   },
-  "bristle_shake": {
+  "wing_stretch": {
    "linha": 8,
    "quadros": 6,
    "loop": false,
    "duracoes": [
-    0.1,
-    0.07,
-    0.07,
-    0.07,
-    0.08,
+    0.14,
+    0.14,
+    0.2,
+    0.36,
+    0.2,
     0.14
    ],
    "direcao": "right",
@@ -296,16 +254,16 @@
    ],
    "alertas": []
   },
-  "rub": {
+  "cluck": {
    "linha": 9,
    "quadros": 6,
    "loop": false,
    "duracoes": [
     0.12,
     0.1,
-    0.16,
     0.2,
-    0.14,
+    0.28,
+    0.16,
     0.12
    ],
    "direcao": "right",
@@ -318,5 +276,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "3ce713c855ef19a6fa3115b51a309c723af27991bbd4b30e926c38f815573a02"
+ "sha256_atlas": "077a4944aaefa8312a81bb760d4aa6a538c5640957d4173177e55f00349dbfd2"
 }

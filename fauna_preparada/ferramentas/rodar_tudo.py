@@ -17,17 +17,22 @@ ap.add_argument("--entrada", required=True, help="pasta com <animal>_walk.png e 
 ap.add_argument("--metadata", required=True, help="METADATA_ANIMAIS.json do pacote")
 ap.add_argument("--saida", required=True, help="pasta de saida dos atlas (ex.: JogoFazenda/arte/preparado/fauna)")
 ap.add_argument("--escala", default=os.path.join(aqui, "escala_especies.json"))
+ap.add_argument("--sem-melhorias", action="store_true", help="gera a v1 (sem as melhorias do andar)")
 a = ap.parse_args()
 
 tmp = tempfile.mkdtemp(prefix="fauna_")
-seg, prep = os.path.join(tmp, "seg"), os.path.join(tmp, "prep")
+seg, prep, prep2 = os.path.join(tmp, "seg"), os.path.join(tmp, "prep"), os.path.join(tmp, "prep_v2")
 def rodar(script, *args):
     print(">>", script, *args, flush=True)
     subprocess.check_call([sys.executable, os.path.join(aqui, script), *args])
 rodar("segmentar.py", a.entrada, seg, a.metadata)
 rodar("preparar.py", seg, prep, a.escala, a.metadata)
-rodar("validar.py", prep)
-rodar("montar_atlas.py", prep, a.saida)
-rodar("pranchas.py", prep, os.path.join(tmp, "pranchas"), "3")
+final = prep
+if not a.sem_melhorias:
+    rodar("melhorar_andar.py", prep, prep2)    # v2: sobe e desce, ritmo, textura, pose de parado
+    final = prep2
+rodar("validar.py", final)
+rodar("montar_atlas.py", final, a.saida)
+rodar("pranchas.py", final, os.path.join(tmp, "pranchas"), "3")
 print("\nPronto. Atlas e JSON em", a.saida)
 print("Pranchas de revisao e medidas em", tmp)

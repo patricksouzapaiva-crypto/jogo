@@ -33,9 +33,14 @@ for esp, d in rel.items():
         cx = np.array(cx)
         # diferenca entre quadros (pixels que mudam de cor ou de alpha), em % da area
         def dif(i, j):
-            a, b = A[i], A[j]
-            mud = (al[i] != al[j]) | (al[i] & al[j] & (np.abs(a[..., :3] - b[..., :3]).sum(-1) > 60))
-            return mud.sum() / max(1, (al[i] | al[j]).sum()) * 100
+            # compensa o sobe e desce de ate 1 px (movimento intencional do corpo) antes de comparar
+            melhor = 1e9
+            for dy in (-1, 0, 1):
+                a, b = A[i], np.roll(A[j], dy, 0)
+                ai, bj = al[i], np.roll(al[j], dy, 0)
+                mud = (ai != bj) | (ai & bj & (np.abs(a[..., :3] - b[..., :3]).sum(-1) > 60))
+                melhor = min(melhor, mud.sum() / max(1, (ai | bj).sum()) * 100)
+            return melhor
         cons = [dif(i, (i + 1) % n) for i in range(n)]       # inclui ultimo->primeiro
         med = np.median(cons[:-1]) if n > 2 else cons[0]
         # patas visiveis: trechos opacos na faixa de baixo (3 linhas acima da base)

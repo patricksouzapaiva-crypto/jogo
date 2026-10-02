@@ -48,6 +48,12 @@ func _initialize() -> void:
 	var s: AnimatedSprite2D = cena.animais[0]
 	_ok(s.is_playing(), "cena abriu e a animacao esta tocando (%s)" % s.animation)
 	Input.action_press("ui_right")
+	await process_frame
+	var par_dir: int = int(cena.dados["penala"]["animacoes"]["walk_right"].get("parado", 0))
+	# tolera 1 passo: no primeiro quadro do motor a animacao pode ja ter avancado
+	var esperado := (par_dir + 1) % 8
+	_ok(s.animation == &"walk_right" and (s.frame == esperado or s.frame == (esperado + 1) % 8),
+		"parado -> andar comeca logo depois da pose de parado (quadro %d, visto %d)" % [esperado, s.frame])
 	for i in 10: await process_frame
 	_ok(s.animation == &"walk_right" and s.is_playing(), "parado -> andar para a direita")
 	var q0 := s.frame
@@ -59,7 +65,8 @@ func _initialize() -> void:
 	_ok(s.animation == &"walk_up", "troca de direcao: direita -> cima")
 	Input.action_release("ui_up")
 	for i in 5: await process_frame
-	_ok(s.animation == &"walk_up" and not s.is_playing() and s.frame == 0, "andar -> parado (cima segura o 1o quadro: nao ha respirar de costas)")
+	var par_cima: int = int(cena.dados["penala"]["animacoes"]["walk_up"].get("parado", 0))
+	_ok(s.animation == &"walk_up" and not s.is_playing() and s.frame == par_cima, "andar -> parado (cima segura a pose de parado, quadro %d)" % par_cima)
 	Input.action_press("ui_right")
 	for i in 3: await process_frame
 	Input.action_release("ui_right")
