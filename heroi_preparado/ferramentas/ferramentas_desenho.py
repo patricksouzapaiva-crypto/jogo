@@ -73,7 +73,7 @@ ARTESANAIS = {
     "picareta": dict(arquivo="03_picareta.png", alvo=35, pega_frac=0.15, cabeca="metal"),
     "pa":       dict(arquivo="04_pa.png", alvo=38, pega_frac=0.08, cabeca="metal"),
     "foice":    dict(arquivo="05_foice_mao.png", alvo=19, pega_frac=0.30, cabeca="metal"),
-    "regador":  dict(arquivo="06_regador_cobre.png", alvo=20, cabeca="pendurado"),
+    "regador":  dict(arquivo="06_regador_cobre.png", alvo=20, cabeca="pendurado", pega_asa=True),
     "vara":     dict(arquivo="07_vara_pescar.png", alvo=48, pega_frac=0.17, cabeca="ponta"),
 }
 V1 = {
@@ -193,10 +193,18 @@ def prepara(nome):
         if fim_max > fim_min:
             eixo = -eixo; proj = -proj
     if cfg["cabeca"] == "pendurado":
-        # regador: pega no meio da alca de cima; fica de pe; "comprimento" = largura
+        # regador: fica de pe; "comprimento" = largura
         topo = ys.min()
-        faixa = (ys < topo + 0.035 * (ys.max() - topo))
-        pega = np.array([xs[faixa].mean(), topo + 0.02 * (ys.max() - topo)]) if "pega" not in cfg else np.array(cfg["pega"], float)
+        larg_total = xs.max() - xs.min()
+        if "pega" in cfg:
+            pega = np.array(cfg["pega"], float)
+        elif cfg.get("pega_asa"):
+            # pega pela ASA DE TRAS (o lado oposto ao bico): na barra de fora da asa, na altura do meio dela
+            asa = xs < xs.min() + 0.10 * larg_total
+            pega = np.array([xs.min() + 0.035 * larg_total, np.median(ys[asa])])
+        else:                                       # alca de cima (para carregar)
+            faixa = (ys < topo + 0.035 * (ys.max() - topo))
+            pega = np.array([xs[faixa].mean(), topo + 0.02 * (ys.max() - topo)])
         graus = 0.0
         comprimento = xs.max() - xs.min()
     else:

@@ -40,15 +40,15 @@ ENXADA = [
 # agua: 0 sem agua, 1 primeiras gotas, 2/3 regando (gotas em alturas alternadas), 4 ultimas gotas.
 _REG = dict(incl=0, desce=0, atras=False, chao=False, terra=0)
 REGADOR = [
-    dict(nome="segurar", ombro=42, cotovelo=22, cabo=0, agua=0, dur=0.12, **_REG),
-    dict(nome="levantar", ombro=55, cotovelo=24, cabo=-14, agua=0, dur=0.10, **_REG),
-    dict(nome="inclinar", ombro=60, cotovelo=24, cabo=-36, agua=1, dur=0.10, **_REG),
-    dict(nome="regando_a", ombro=62, cotovelo=24, cabo=-42, agua=2, dur=0.12, **_REG),
-    dict(nome="regando_b", ombro=62, cotovelo=24, cabo=-42, agua=3, dur=0.12, **_REG),
-    dict(nome="regando_a", ombro=62, cotovelo=24, cabo=-42, agua=2, dur=0.12, **_REG),
-    dict(nome="regando_b", ombro=62, cotovelo=24, cabo=-42, agua=3, dur=0.12, **_REG),
-    dict(nome="voltar", ombro=52, cotovelo=23, cabo=-12, agua=4, dur=0.10, **_REG),
-    dict(nome="segurar", ombro=42, cotovelo=22, cabo=0, agua=0, dur=0.12, **_REG),
+    dict(nome="segurar", ombro=26, cotovelo=16, cabo=0, agua=0, dur=0.12, **_REG),
+    dict(nome="levantar", ombro=40, cotovelo=18, cabo=-12, agua=0, dur=0.10, **_REG),
+    dict(nome="inclinar", ombro=48, cotovelo=18, cabo=-32, agua=1, dur=0.10, **_REG),
+    dict(nome="regando_a", ombro=50, cotovelo=18, cabo=-40, agua=2, dur=0.12, **_REG),
+    dict(nome="regando_b", ombro=50, cotovelo=18, cabo=-40, agua=3, dur=0.12, **_REG),
+    dict(nome="regando_a", ombro=50, cotovelo=18, cabo=-40, agua=2, dur=0.12, **_REG),
+    dict(nome="regando_b", ombro=50, cotovelo=18, cabo=-40, agua=3, dur=0.12, **_REG),
+    dict(nome="voltar", ombro=38, cotovelo=17, cabo=-10, agua=4, dur=0.10, **_REG),
+    dict(nome="segurar", ombro=26, cotovelo=16, cabo=0, agua=0, dur=0.12, **_REG),
 ]
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
 TERRA = (148, 98, 58); TERRA_CLARA = (182, 130, 82)
