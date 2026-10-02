@@ -76,6 +76,18 @@ PICARETA = [
     dict(nome="pedra", ombro=48, cotovelo=8, cabo=45, incl=9, desce=9, chao=True, pedra=2, dur=0.16, **_PIC),
     dict(nome="voltar", ombro=34, cotovelo=14, cabo=44, incl=0, desce=0, chao=True, folga=30, pedra=3, dur=0.11, **_PIC),
 ]
+# Foice (uma mao): puxa para tras perto do quadril e passa baixo e rapido para a frente, cortando o mato;
+# pedacinhos de capim voam.
+_FOI = dict(atras=False, terra=0, lascas=0, pedra=0, chao=False)
+FOICE = [
+    dict(nome="preparar", ombro=10, cotovelo=25, cabo=20, incl=0, desce=0, capim=0, dur=0.10, **_FOI),
+    dict(nome="puxar", ombro=-28, cotovelo=30, cabo=-30, incl=-9, desce=9, capim=0, dur=0.14, **_FOI),
+    dict(nome="golpe", ombro=4, cotovelo=6, cabo=48, incl=0, desce=18, capim=0, dur=0.05, **_FOI),
+    dict(nome="corte", ombro=30, cotovelo=0, cabo=78, incl=9, desce=18, capim=1, dur=0.09, **_FOI),
+    dict(nome="seguir", ombro=60, cotovelo=12, cabo=110, incl=9, desce=9, capim=2, dur=0.14, **_FOI),
+    dict(nome="voltar", ombro=22, cotovelo=22, cabo=38, incl=0, desce=0, capim=3, dur=0.12, **_FOI),
+]
+CAPIM = (96, 160, 58); CAPIM_CLARO = (164, 214, 96)
 PEDRA = (138, 146, 158); PEDRA_CLARA = (196, 202, 210); FAISCA = (255, 246, 190); FAISCA_COR = (255, 196, 64)
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
 TERRA = (148, 98, 58); TERRA_CLARA = (182, 130, 82)
@@ -213,7 +225,7 @@ def gera(rig, nome_ferr, poses, extra=16):
     A borda da ferramenta nao e escurecida (o desenho dela ja tem contorno)."""
     grandes, mascaras, frentes, ponto = [], [], [], None
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
-        if q.get("terra") == 1 or q.get("lascas") == 1 or q.get("pedra") == 1:
+        if q.get("terra") == 1 or q.get("lascas") == 1 or q.get("pedra") == 1 or q.get("capim") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
     bicos = []
     for q in poses:
@@ -255,6 +267,8 @@ def gera(rig, nome_ferr, poses, extra=16):
                 desenha_particulas(f, gx, gy, "lascas", q["lascas"])
             if q.get("pedra"):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
+            if q.get("capim"):
+                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "capim", q["capim"])
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
             bx = pivot[0] + (b[0] - px_src) / R.ESCALA
@@ -270,6 +284,9 @@ def desenha_particulas(f, x0, y0, tipo, fase):
     if tipo == "terra":
         cores = (TERRA_CLARA, TERRA); forma = [(0, 0), (1, 0), (0, 1), (1, 1)]
         trajetos = [(-6, -4), (1, -7), (6, -3)]
+    elif tipo == "capim":
+        cores = (CAPIM_CLARO, CAPIM); forma = [(0, 0), (0, 1)]
+        trajetos = [(2, -6), (6, -9), (9, -4), (-2, -8), (12, -7)]
     elif tipo == "pedra":
         cores = (PEDRA_CLARA, PEDRA); forma = [(0, 0), (1, 0), (0, 1), (1, 1)]
         trajetos = [(-7, -6), (-1, -10), (5, -8), (8, -3)]
@@ -342,7 +359,7 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
 
 
 ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
-         "picareta": ("picareta", PICARETA)}
+         "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE)}
 
 
 if __name__ == "__main__":
