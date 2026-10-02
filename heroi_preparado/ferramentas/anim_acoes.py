@@ -64,6 +64,19 @@ MACHADO = [
     dict(nome="voltar", ombro=46, cotovelo=12, cabo=64, incl=0, desce=0, lascas=3, dur=0.11, **_MAC),
 ]
 LASCA = (220, 172, 110); LASCA_CLARA = (246, 214, 160)
+# Picareta: arco da enxada ate o chao (onde ficam as pedras); no impacto, faisca e lascas de pedra.
+_PIC = dict(atras=False, terra=0, lascas=0)
+PICARETA = [
+    dict(nome="preparar", ombro=30, cotovelo=15, cabo=42, incl=0, desce=0, chao=True, pedra=0, dur=0.10, **_PIC),
+    dict(nome="levantar", ombro=105, cotovelo=25, cabo=165, incl=0, desce=0, chao=False, pedra=0, dur=0.09, **_PIC),
+    dict(nome="no_alto", ombro=168, cotovelo=22, cabo=228, incl=-9, desce=0, chao=False, pedra=0, dur=0.16,
+         **{**_PIC, "atras": True}),
+    dict(nome="golpe", ombro=95, cotovelo=10, cabo=118, incl=0, desce=0, chao=False, pedra=0, dur=0.05, **_PIC),
+    dict(nome="impacto", ombro=48, cotovelo=8, cabo=45, incl=9, desce=9, chao=True, pedra=1, dur=0.11, **_PIC),
+    dict(nome="pedra", ombro=48, cotovelo=8, cabo=45, incl=9, desce=9, chao=True, pedra=2, dur=0.16, **_PIC),
+    dict(nome="voltar", ombro=34, cotovelo=14, cabo=44, incl=0, desce=0, chao=True, folga=30, pedra=3, dur=0.11, **_PIC),
+]
+PEDRA = (138, 146, 158); PEDRA_CLARA = (196, 202, 210); FAISCA = (255, 246, 190); FAISCA_COR = (255, 196, 64)
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
 TERRA = (148, 98, 58); TERRA_CLARA = (182, 130, 82)
 
@@ -200,7 +213,7 @@ def gera(rig, nome_ferr, poses, extra=16):
     A borda da ferramenta nao e escurecida (o desenho dela ja tem contorno)."""
     grandes, mascaras, frentes, ponto = [], [], [], None
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
-        if q.get("terra") == 1 or q.get("lascas") == 1:
+        if q.get("terra") == 1 or q.get("lascas") == 1 or q.get("pedra") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
     bicos = []
     for q in poses:
@@ -240,6 +253,8 @@ def gera(rig, nome_ferr, poses, extra=16):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "terra", q["terra"])
             if q.get("lascas"):
                 desenha_particulas(f, gx, gy, "lascas", q["lascas"])
+            if q.get("pedra"):
+                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
             bx = pivot[0] + (b[0] - px_src) / R.ESCALA
@@ -255,6 +270,15 @@ def desenha_particulas(f, x0, y0, tipo, fase):
     if tipo == "terra":
         cores = (TERRA_CLARA, TERRA); forma = [(0, 0), (1, 0), (0, 1), (1, 1)]
         trajetos = [(-6, -4), (1, -7), (6, -3)]
+    elif tipo == "pedra":
+        cores = (PEDRA_CLARA, PEDRA); forma = [(0, 0), (1, 0), (0, 1), (1, 1)]
+        trajetos = [(-7, -6), (-1, -10), (5, -8), (8, -3)]
+        if fase == 1:                                 # faisca no ponto do golpe
+            for (dx, dy), cor in (((0, -1), FAISCA), ((-1, -1), FAISCA_COR), ((1, -1), FAISCA_COR),
+                                  ((0, -2), FAISCA_COR), ((0, 0), FAISCA_COR), ((-2, -3), FAISCA), ((2, -3), FAISCA)):
+                x, y = int(round(x0 + dx)), int(round(y0 + dy))
+                if 0 <= x < W and 0 <= y < H:
+                    f[y, x, :3] = cor; f[y, x, 3] = 255
     else:
         cores = (LASCA_CLARA, LASCA); forma = [(0, 0), (1, 0)]
         trajetos = [(-9, -7), (-3, -11), (4, -9), (9, -4)]
@@ -317,7 +341,8 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
     return np.concatenate([pal_heroi, novas])
 
 
-ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO)}
+ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
+         "picareta": ("picareta", PICARETA)}
 
 
 if __name__ == "__main__":

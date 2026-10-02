@@ -133,6 +133,9 @@ def _tira_contorno(t, larg=16, limite=200):
     m = t[..., 3] > 0
     faixa = m & ~_ndi.binary_erosion(m, iterations=larg)
     ruim = faixa & (t[..., :3].sum(2) < limite)
+    # restos do fundo magenta presos em vaos do desenho (mistura de magenta com o contorno)
+    r, g, b = t[..., 0], t[..., 1], t[..., 2]
+    ruim |= m & (r - g > 50) & (b - g > 25)
     bom = m & ~ruim
     if not bom.any():
         return t
