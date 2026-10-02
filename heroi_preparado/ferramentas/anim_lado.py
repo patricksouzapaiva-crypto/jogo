@@ -57,6 +57,26 @@ def coloca(dst, peca, piv0, piv1, graus):
     reg[ok] = src[ok]
 
 
+def coloca_canela(dst, peca, K0, K1, canela_graus, bota_graus, y_tornozelo, faixa=30):
+    """Cola a canela girada em volta do joelho, mas a barra da calca (ultimos 'faixa' px) vai virando
+    ate ficar no angulo da bota: assim a barra sempre encosta no cano da bota, sem abrir vao."""
+    ys, xs = np.nonzero(peca[..., 3] > 0)
+    cores = peca[ys, xs]
+    tc = math.radians(canela_graus)
+    for oy in (1 / 6, 0.5, 5 / 6):
+        for ox in (1 / 6, 0.5, 5 / 6):
+            u = xs + ox - K0[0]
+            v = ys + oy - K0[1]
+            t = np.clip((ys + oy - (y_tornozelo - faixa)) / faixa, 0, 1)
+            t = t * t * (3 - 2 * t)
+            th = np.radians(canela_graus + (bota_graus - canela_graus) * t)
+            X = K1[0] + v * math.sin(tc) + u * np.cos(th)
+            Y = K1[1] + v * math.cos(tc) - u * np.sin(th)
+            X = np.floor(X).astype(int); Y = np.floor(Y).astype(int)
+            ok = (X >= 0) & (Y >= 0) & (X < dst.shape[1]) & (Y < dst.shape[0])
+            dst[Y[ok], X[ok]] = cores[ok]
+
+
 def ik(H, A, l1, l2):
     d = np.subtract(A, H).astype(float)
     dist = math.hypot(*d)
@@ -137,7 +157,7 @@ class Rig:
         K, tc, ts, A, est = ik(H, A, self.l1, self.l2)
         camada = np.zeros_like(dst)
         coloca(camada, self.bota, np.array(R.TORNOZELO, float), A, ang)
-        coloca(camada, self.canela, np.array(R.JOELHO, float), K, math.degrees(ts))
+        coloca_canela(camada, self.canela, np.array(R.JOELHO, float), K, math.degrees(ts), ang, R.TORNOZELO[1])
         coloca(camada, self.coxa, np.array(R.QUADRIL, float), H, math.degrees(tc))
         contorna(camada)
         if escurecer:

@@ -90,9 +90,9 @@ def separa(a):
         if y < 420:
             x0 = sep[420]
         elif y <= 512:
-            x0 = sep[y]
+            x0 = sep[y] if y < 496 else max(sep[y], 105)   # perto da bota a linha encosta na bota de tras: corta a lasca
         else:
-            x0 = 108
+            x0 = 110
         perna[y, x0:] = al[y, x0:]
     # parte da perna escondida atras da mao: copia a coluna de baixo (calca e reta)
     escondida = perna & braco
