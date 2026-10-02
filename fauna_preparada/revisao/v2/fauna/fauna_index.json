@@ -1,5 +1,5 @@
 {
- "pacote": "FAUNA_PREPARADA_v3",
+ "pacote": "FAUNA_PREPARADA_v2",
  "origem": "MOVIMENTACOES_DOS_ANIMAIS_v1",
  "especies": {
   "penala": {
@@ -55,11 +55,11 @@
    "atlas": "vaca/vaca_atlas.png",
    "celula": [
     96,
-    82
+    84
    ],
    "pivot": [
-    49,
-    80
+    48,
+    82
    ]
   }
  }

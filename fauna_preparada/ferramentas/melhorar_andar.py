@@ -60,8 +60,11 @@ for esp, d in rel.items():
         lateral = dn in ("left", "right")
         hip = linha_quadril(A, py)
         notas = []
-        # 5. transplante da pata (Gruntho de costas)
-        for c, (base_i, src_i) in TRANSPLANTE_PATA.get((esp, dn), {}).items():
+        rigado = dn in d.get("caminhada_gerada_por_esqueleto", [])
+        if rigado:
+            notas.append("caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)")
+        # 5. transplante da pata (Gruntho de costas) - so se a direcao NAO veio do esqueleto
+        for c, (base_i, src_i) in ({} if rigado else TRANSPLANTE_PATA.get((esp, dn), {})).items():
             base, src = A[base_i].copy(), A[src_i]
             # regiao onde a pata direita levantada difere do quadro com as patas no chao (lado direito)
             difere = ((base[..., 3] != src[..., 3]) |

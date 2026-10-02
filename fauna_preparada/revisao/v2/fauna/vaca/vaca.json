@@ -1,14 +1,14 @@
 {
  "especie": "vaca",
- "versao": "v3",
+ "versao": "v2",
  "atlas": "vaca_atlas.png",
  "celula": [
   96,
-  82
+  84
  ],
  "pivot": [
-  49,
-  80
+  48,
+  82
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
  "altura_lado_px": 54,
@@ -18,12 +18,12 @@
   "actions": 0.3506
  },
  "diferenca_escala_entre_folhas": 0.87,
- "encaixe_acoes_px": 0,
+ "encaixe_acoes_px": 1,
  "parado_por_direcao": {
-  "down": 1,
-  "left": 7,
-  "right": 7,
-  "up": 0
+  "down": 2,
+  "left": 0,
+  "right": 1,
+  "up": 6
  },
  "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
  "velocidade_sugerida_px_s": 20,
@@ -36,32 +36,24 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222
+    0.0952,
+    0.1905,
+    0.1905,
+    0.1905,
+    0.1905,
+    0.0952,
+    0.1905,
+    0.1905
    ],
    "fps": 6,
    "direcao": "down",
-   "parado": 1,
-   "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
-    "quadros 2 e 3 quase iguais (1.3% muda): repetido?",
-    "quadros 4 e 5 quase iguais (2.1% muda): repetido?",
-    "quadros 6 e 7 quase iguais (1.0% muda): repetido?",
-    "quadro 0->1: mudanca brusca (27% vs mediana 7%)",
-    "quadro 3->4: mudanca brusca (30% vs mediana 7%)"
-   ],
+   "parado": 2,
+   "alertas": [],
    "melhorias_v2": [
-    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 3629 px (21.0% do corpo)",
-    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 68)",
-    "quadros quase repetidos encurtados: 0, 2, 4, 6",
-    "parado = quadro 1"
+    "textura estabilizada em 1569 px (9.4% do corpo)",
+    "sobe e desce ja desenhado: mantido",
+    "quadros quase repetidos encurtados: 0, 5",
+    "parado = quadro 2"
    ],
    "ordem_sugerida_automatica": null
   },
@@ -81,22 +73,49 @@
    ],
    "fps": 6,
    "direcao": "left",
-   "parado": 7,
+   "parado": 0,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida).",
-    "quadro 1->2: mudanca brusca (25% vs mediana 11%)"
+    "VISUAL: REDESENHAR: vista 3/4 e corpo curto; as acoes sao de perfil e compridas: a vaca muda de forma ao passar de andar para acao. Redesenhar a caminhada lateral de perfil (ou as acoes em 3/4)."
    ],
    "melhorias_v2": [
-    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 4206 px (21.5% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
+    "textura estabilizada em 1419 px (9.6% do corpo)",
+    "sobe e desce ja desenhado: mantido",
     "ritmo uniforme",
-    "parado = quadro 7"
+    "parado = quadro 0"
    ],
    "ordem_sugerida_automatica": null
   },
   "walk_right": {
    "linha": 2,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.1905,
+    0.1905,
+    0.1905,
+    0.0952,
+    0.0952,
+    0.1905,
+    0.1905,
+    0.1905
+   ],
+   "fps": 6,
+   "direcao": "right",
+   "parado": 1,
+   "alertas": [
+    "VISUAL: REDESENHAR: mesmo problema da walk_left (3/4 x perfil).",
+    "quadro 0->1: topo salta -4 px (balanco > 3 px)"
+   ],
+   "melhorias_v2": [
+    "textura estabilizada em 1020 px (7.2% do corpo)",
+    "sobe e desce ja desenhado: mantido",
+    "quadros quase repetidos encurtados: 3, 4",
+    "parado = quadro 1"
+   ],
+   "ordem_sugerida_automatica": null
+  },
+  "walk_up": {
+   "linha": 3,
    "quadros": 8,
    "loop": true,
    "duracoes": [
@@ -110,52 +129,31 @@
     0.1667
    ],
    "fps": 6,
-   "direcao": "right",
-   "parado": 7,
-   "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede."
-   ],
-   "melhorias_v2": [
-    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 4188 px (21.4% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
-    "ritmo uniforme",
-    "parado = quadro 7"
-   ],
-   "ordem_sugerida_automatica": null
-  },
-  "walk_up": {
-   "linha": 3,
-   "quadros": 8,
-   "loop": true,
-   "duracoes": [
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222
-   ],
-   "fps": 6,
    "direcao": "up",
-   "parado": 0,
+   "parado": 6,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
-    "quadros 0 e 1 quase iguais (1.7% muda): repetido?",
-    "quadros 2 e 3 quase iguais (2.9% muda): repetido?",
-    "quadros 4 e 5 quase iguais (2.2% muda): repetido?",
-    "quadros 6 e 7 quase iguais (2.3% muda): repetido?"
+    "VISUAL: REDESENHAR: quadro 1->2: cabeca e chifres crescem/sobem ~4 px (tamanho mudando entre quadros).",
+    "quadro 1->2: topo salta -4 px (balanco > 3 px)"
    ],
    "melhorias_v2": [
-    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 351 px (1.7% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 77)",
-    "quadros quase repetidos encurtados: 0, 2, 4, 6",
-    "parado = quadro 0"
+    "textura estabilizada em 1428 px (7.9% do corpo)",
+    "sobe e desce ja desenhado: mantido",
+    "ritmo uniforme",
+    "parado = quadro 6"
    ],
-   "ordem_sugerida_automatica": null
+   "ordem_sugerida_automatica": {
+    "ordem": [
+     0,
+     2,
+     7,
+     6,
+     3,
+     5,
+     1,
+     4
+    ],
+    "reducao_pct": 19.3
+   }
   },
   "idle_blink": {
    "linha": 4,
@@ -283,5 +281,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "f1c96fec75ba76355dceab2bf9be6e281409c92e73fa668dd891281246f20577"
+ "sha256_atlas": "ce4fd6aa263855bd00069b66c6079cea077778a0ac6f1061f842fca0c6c65707"
 }

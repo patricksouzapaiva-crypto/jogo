@@ -55,7 +55,10 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
     pw = {(p["linha"], p["coluna"]): p for p in seg[fw]["poses"]}
     pa = {(p["linha"], p["coluna"]): p for p in seg[fa]["poses"]}
     r_lado_w = ow.index("right"); r_idle = oa.index("idle_blink")
-    h_lado_w = np.median([pw[(r_lado_w, c)]["h"] for c in range(8)])
+    # se a caminhada lateral foi gerada pelo esqueleto (a partir das acoes), a escala da folha de
+    # caminhada vem da altura lateral ORIGINAL guardada pelo rig_patas.py
+    h_lado_w = seg[fw].get("h_lado_original") or np.median([pw[(r_lado_w, c)]["h"] for c in range(8)])
+    rigados = sorted({ow[p["linha"]] for p in seg[fw]["poses"] if p.get("gerado_por_rig")})
     h_idle_a = np.median([pa[(r_idle, c)]["h"] for c in range(6)])
     fator = {"walk": alvo / h_lado_w, "actions": alvo / h_idle_a}
     # ---- ancoras (px da folha): x do corpo e y da base, por pose ----
@@ -90,11 +93,12 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
                 mr = faixa(ref_al, 0.30, 0.70); xr = np.where(mr.any(0))[0]
                 ax0 = (xr.min() + xr.max()) / 2
             for c in range(ncol):
-                poses.append(dict(tipo=tipo, anim=nome, q=c, arr=arrs[c], ax=ax0 - dxs[c], by=bys[c], score=scores[c]))
+                esc = P[(ri, c)].get("escala_da_folha", tipo)
+                poses.append(dict(tipo=tipo, escala=esc, anim=nome, q=c, arr=arrs[c], ax=ax0 - dxs[c], by=bys[c], score=scores[c]))
     # ---- encaixe andar -> parado: desloca TODAS as acoes para a silhueta do respirar casar com a
     #      caminhada para a direita (evita o "pulo" quando o animal para e vira acao) ----
     def mascara_final(p):
-        f = fator[p["tipo"]]; al = p["arr"][..., 3] > 127
+        f = fator[p["escala"]]; al = p["arr"][..., 3] > 127
         h, w = al.shape; img = Image.fromarray((al * 255).astype(np.uint8))
         m = np.asarray(img.resize((max(1, round(w * f)), max(1, round(h * f))), Image.BOX)) > 127
         return m, p["ax"] * f, p["by"] * f
@@ -116,7 +120,7 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
     # ---- canvas comum (px finais) ----
     ext = []
     for p in poses:
-        f = fator[p["tipo"]]; h, w = p["arr"].shape[:2]
+        f = fator[p["escala"]]; h, w = p["arr"].shape[:2]
         ext.append(((0 - p["ax"]) * f, (w - p["ax"]) * f, (0 - p["by"]) * f, (h - p["by"]) * f))
     L = int(np.floor(min(e[0] for e in ext))) - 1; Rr = int(np.ceil(max(e[1] for e in ext))) + 1
     T = int(np.floor(min(e[2] for e in ext))) - 1; Bm = 2
@@ -125,7 +129,7 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
     # ---- reduz cada pose: posiciona no canvas da folha com o pivot fixo e reduz o canvas inteiro ----
     finais = []
     for p in poses:
-        f = fator[p["tipo"]]
+        f = fator[p["escala"]]
         Ws, Hs = int(round(W / f)), int(round(H / f))
         src = Image.new("RGBA", (Ws, Hs), (0, 0, 0, 0))
         ox = int(round(px / f - p["ax"])); oy = int(round(py / f - p["by"] - 1))
@@ -158,6 +162,7 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
     relatorio[esp] = dict(canvas=[W, H], pivot=[px, py], fator_reducao=dict(walk=round(fator["walk"], 4), actions=round(fator["actions"], 4)),
                           diferenca_escala_entre_folhas=round(fator["walk"] / fator["actions"], 3),
                           encaixe_acoes_px=int(encaixe_px), encaixe_iou=round(float(melhor[0]), 3),
+                          caminhada_gerada_por_esqueleto=rigados,
                           altura_lado_px=alvo, cores=len(pal), quadros=quadros)
     print(f"{esp}: encaixe acoes {encaixe_px:+d} px (IoU {melhor[0]:.2f}) | canvas {W}x{H} pivot ({px},{py}) fator walk {fator['walk']:.4f} actions {fator['actions']:.4f} (walk/actions {fator['walk']/fator['actions']:.3f})")
 json.dump(relatorio, open(os.path.join(OUT, "preparo.json"), "w"), indent=1, ensure_ascii=False)

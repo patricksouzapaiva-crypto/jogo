@@ -54,7 +54,13 @@ for esp, d in rel.items():
         nome = f"walk_{an}" if tipo == "walk" else an
         v = val[esp][f"{tipo}:{an}"]
         alertas = [x for x in v["alertas"] if not x.startswith("ordem alternativa")]
-        if nome in ALERTAS_VISUAIS.get(esp, {}): alertas.insert(0, "VISUAL: " + ALERTAS_VISUAIS[esp][nome])
+        rigado = tipo == "walk" and an in d.get("caminhada_gerada_por_esqueleto", [])
+        if rigado:
+            nota = "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede." if an in ("left", "right") else \
+                   "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros."
+            if an == "left": nota += " Espelho da direita (a luz fica invertida)."
+            alertas.insert(0, nota)
+        elif nome in ALERTAS_VISUAIS.get(esp, {}): alertas.insert(0, "VISUAL: " + ALERTAS_VISUAIS[esp][nome])
         if tipo == "walk":
             fps = WALK_FPS[esp]
             durs = d.get("walk_duracoes", {}).get(an, [round(1 / fps, 4)] * len(qs))
@@ -73,7 +79,7 @@ for esp, d in rel.items():
                               intervalo_natural_s=[4, 12], alertas=alertas)
     pasta = os.path.join(OUT, esp); os.makedirs(pasta, exist_ok=True)
     fn_atlas = f"{esp}_atlas.png"; atlas.save(os.path.join(pasta, fn_atlas))
-    meta = dict(especie=esp, versao=d.get("versao", "v1"), atlas=fn_atlas, celula=[W, H], pivot=[px, py],
+    meta = dict(especie=esp, versao=("v3" if d.get("caminhada_gerada_por_esqueleto") else d.get("versao", "v1")), atlas=fn_atlas, celula=[W, H], pivot=[px, py],
                 pivot_obs="Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
                 altura_lado_px=d["altura_lado_px"], cores_na_paleta=d["cores"],
                 fator_reducao=d["fator_reducao"], diferenca_escala_entre_folhas=d["diferenca_escala_entre_folhas"],
@@ -89,5 +95,5 @@ for esp, d in rel.items():
     json.dump(meta, open(os.path.join(pasta, f"{esp}.json"), "w"), indent=1, ensure_ascii=False)
     manifest[esp] = dict(json=f"{esp}/{esp}.json", atlas=f"{esp}/{fn_atlas}", celula=[W, H], pivot=[px, py])
     print(esp, atlas.size, len(anims), "animacoes")
-json.dump(dict(pacote="FAUNA_PREPARADA_" + next(iter(rel.values())).get("versao", "v1"), origem="MOVIMENTACOES_DOS_ANIMAIS_v1", especies=manifest),
+json.dump(dict(pacote="FAUNA_PREPARADA_" + ("v3" if any(r.get("caminhada_gerada_por_esqueleto") for r in rel.values()) else next(iter(rel.values())).get("versao", "v1")), origem="MOVIMENTACOES_DOS_ANIMAIS_v1", especies=manifest),
           open(os.path.join(OUT, "fauna_index.json"), "w"), indent=1, ensure_ascii=False)

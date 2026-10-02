@@ -18,6 +18,7 @@ ap.add_argument("--metadata", required=True, help="METADATA_ANIMAIS.json do paco
 ap.add_argument("--saida", required=True, help="pasta de saida dos atlas (ex.: JogoFazenda/arte/preparado/fauna)")
 ap.add_argument("--escala", default=os.path.join(aqui, "escala_especies.json"))
 ap.add_argument("--sem-melhorias", action="store_true", help="gera a v1 (sem as melhorias do andar)")
+ap.add_argument("--sem-esqueleto", action="store_true", help="gera a v2 (Gruntho e vaca com as caminhadas originais)")
 a = ap.parse_args()
 
 tmp = tempfile.mkdtemp(prefix="fauna_")
@@ -26,6 +27,10 @@ def rodar(script, *args):
     print(">>", script, *args, flush=True)
     subprocess.check_call([sys.executable, os.path.join(aqui, script), *args])
 rodar("segmentar.py", a.entrada, seg, a.metadata)
+if not a.sem_melhorias and not a.sem_esqueleto:
+    seg3 = os.path.join(tmp, "seg_v3")
+    rodar("rig_patas.py", seg, seg3, a.metadata)   # v3: caminhada do Gruntho e da vaca pelo esqueleto de patas
+    seg = seg3
 rodar("preparar.py", seg, prep, a.escala, a.metadata)
 final = prep
 if not a.sem_melhorias:

@@ -79,56 +79,62 @@
  },
  "gruntho": {
   "down": [
-   "textura estabilizada em 1668 px (20.5% do corpo)",
-   "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 44)",
-   "quadros quase repetidos encurtados: 2",
-   "parado = quadro 3"
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 1556 px (19.1% do corpo)",
+   "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 44)",
+   "quadros quase repetidos encurtados: 0, 2, 4, 6",
+   "parado = quadro 0"
   ],
   "left": [
-   "textura estabilizada em 1806 px (19.1% do corpo)",
-   "sobe e desce de 1 px: ↑··↑↑··↑ (quadril na linha 44)",
-   "quadros quase repetidos encurtados: 5",
-   "parado = quadro 1"
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 2224 px (21.6% do corpo)",
+   "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 45)",
+   "quadros quase repetidos encurtados: 0",
+   "parado = quadro 4"
   ],
   "right": [
-   "textura estabilizada em 1911 px (20.2% do corpo)",
-   "sobe e desce de 1 px: ↑··↑↑··↑ (quadril na linha 44)",
-   "quadros quase repetidos encurtados: 0, 7",
-   "parado = quadro 2"
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 2218 px (21.6% do corpo)",
+   "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 45)",
+   "ritmo uniforme",
+   "parado = quadro 5"
   ],
   "up": [
-   "quadro 3: pata esquerda levanta (base 2, pata espelhada do quadro 3, linhas 38-52)",
-   "quadro 7: pata esquerda levanta (base 6, pata espelhada do quadro 7, linhas 31-52)",
-   "textura estabilizada em 2084 px (21.9% do corpo)",
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 22 px (0.2% do corpo)",
    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 42)",
-   "quadros quase repetidos encurtados: 0, 1, 4",
+   "quadros quase repetidos encurtados: 0, 2, 4, 6",
    "parado = quadro 0"
   ]
  },
  "vaca": {
   "down": [
-   "textura estabilizada em 1569 px (9.4% do corpo)",
-   "sobe e desce ja desenhado: mantido",
-   "quadros quase repetidos encurtados: 0, 5",
-   "parado = quadro 2"
-  ],
-  "left": [
-   "textura estabilizada em 1419 px (9.6% do corpo)",
-   "sobe e desce ja desenhado: mantido",
-   "ritmo uniforme",
-   "parado = quadro 0"
-  ],
-  "right": [
-   "textura estabilizada em 1020 px (7.2% do corpo)",
-   "sobe e desce ja desenhado: mantido",
-   "quadros quase repetidos encurtados: 3, 4",
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 3629 px (21.0% do corpo)",
+   "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 68)",
+   "quadros quase repetidos encurtados: 0, 2, 4, 6",
    "parado = quadro 1"
   ],
-  "up": [
-   "textura estabilizada em 1428 px (7.9% do corpo)",
-   "sobe e desce ja desenhado: mantido",
+  "left": [
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 4206 px (21.5% do corpo)",
+   "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
    "ritmo uniforme",
-   "parado = quadro 6"
+   "parado = quadro 7"
+  ],
+  "right": [
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 4188 px (21.4% do corpo)",
+   "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
+   "ritmo uniforme",
+   "parado = quadro 7"
+  ],
+  "up": [
+   "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+   "textura estabilizada em 351 px (1.7% do corpo)",
+   "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 77)",
+   "quadros quase repetidos encurtados: 0, 2, 4, 6",
+   "parado = quadro 0"
   ]
  }
 }

@@ -5,7 +5,8 @@ Copie a pasta `fauna_preparada/` para dentro da pasta do projeto, ao lado de `Jo
 ```
 Preparei fora do projeto as animações da fauna (Penala, pato anfíbio, ovelha,
 Gruntho e vaca) a partir do MOVIMENTACOES_DOS_ANIMAIS_v1, já com o andar
-melhorado (v2). Está tudo em fauna_preparada/. Leia primeiro
+melhorado (v3: o Gruntho e a vaca andam com um esqueleto de patas, a vaca de
+perfil igual às ações). Está tudo em fauna_preparada/. Leia primeiro
 fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
 
 1. INSPECIONE O PROJETO (nada foi feito aqui ainda)
@@ -47,8 +48,9 @@ fauna_preparada/LEIA_PRIMEIRO_FAUNA.md.
 6. ME TRAGA AS DECISÕES PENDENTES (seção 5 do relatório)
 - Ações para a esquerda: espelhar ou desenhar?
 - Parado de frente e de costas: segurar a pose de parado da caminhada por enquanto?
-- Os redesenhos (vaca de lado, vaca para cima, pato para cima e, se quiser
-  deixar perfeito, Gruntho para cima): prepare
+- Redesenho que ainda falta (pato para cima) e, se quiser deixar perfeito,
+  caminhadas desenhadas à mão para o Gruntho e a vaca para a esquerda (hoje
+  são o espelho da direita): prepare
   um pedido para a IA de arte com animal, animação, direção, quadros e o que
   corrigir, anexando as folhas originais como referência.
 
