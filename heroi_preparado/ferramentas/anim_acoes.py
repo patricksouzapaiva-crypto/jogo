@@ -98,6 +98,20 @@ PA = [
     dict(nome="jogar", ombro=98, cotovelo=16, cabo=112, incl=9, desce=0, chao=False, terra=0, jogar=2, dur=0.12, **_PA),
     dict(nome="voltar", ombro=46, cotovelo=18, cabo=40, incl=0, desce=0, chao=False, terra=0, jogar=3, dur=0.12, **_PA),
 ]
+# Vara de pescar: so o heroi com a vara (a linha e a boia sao desenhadas pelo jogo, da ponta da vara
+# ate a boia; a posicao da ponta em cada quadro vai no info.json).
+_VAR = dict(terra=0, lascas=0, pedra=0, capim=0, chao=False, desce=0)
+PESCA = [
+    dict(nome="segurar", ombro=45, cotovelo=35, cabo=135, incl=0, atras=False, dur=0.14, **_VAR),
+    dict(nome="recuar", ombro=150, cotovelo=40, cabo=200, incl=-9, atras=True, dur=0.18, **_VAR),
+    dict(nome="lancar", ombro=95, cotovelo=15, cabo=125, incl=0, atras=False, dur=0.06, **_VAR),
+    dict(nome="soltar", ombro=68, cotovelo=12, cabo=104, incl=9, atras=False, dur=0.14, **_VAR),
+    dict(nome="esperar_a", ombro=55, cotovelo=30, cabo=120, incl=0, atras=False, dur=0.40, **_VAR),
+    dict(nome="esperar_b", ombro=55, cotovelo=30, cabo=117, incl=0, atras=False, dur=0.40, **_VAR),
+    dict(nome="fisgar", ombro=100, cotovelo=32, cabo=162, incl=-9, atras=False, dur=0.12, **_VAR),
+    dict(nome="recolher_a", ombro=82, cotovelo=30, cabo=150, incl=0, atras=False, dur=0.12, **_VAR),
+    dict(nome="recolher_b", ombro=80, cotovelo=32, cabo=146, incl=0, atras=False, dur=0.12, **_VAR),
+]
 CAPIM = (96, 160, 58); CAPIM_CLARO = (164, 214, 96)
 PEDRA = (138, 146, 158); PEDRA_CLARA = (196, 202, 210); FAISCA = (255, 246, 190); FAISCA_COR = (255, 196, 64)
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
@@ -283,6 +297,8 @@ def gera(rig, nome_ferr, poses, extra=16):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
             if q.get("capim"):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "capim", q["capim"])
+    rig.pontas_jogo = [(float(pivot[0] + (pt[0] - px_src) / R.ESCALA), float(pivot[1] + (pt[1] - chao_src) / R.ESCALA))
+                       for pt in pontas]
     for f, q, pt, pu in zip(finais[1:], poses, pontas, punhos):   # pa: monte de terra na lamina e terra jogada
         tx = pivot[0] + (pt[0] - px_src) / R.ESCALA
         ty = pivot[1] + (pt[1] - chao_src) / R.ESCALA
@@ -398,7 +414,7 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
 
 ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
          "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE),
-         "pa": ("pa", PA)}
+         "pa": ("pa", PA), "vara": ("vara", PESCA)}
 
 
 if __name__ == "__main__":
@@ -414,6 +430,7 @@ if __name__ == "__main__":
         for i, g in enumerate(grandes):
             Image.fromarray(g.clip(0, 255).astype(np.uint8), "RGBA").save(os.path.join(pasta, f"grande_{i}.png"))
     json.dump(dict(pivot=list(pivot), tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
-                   quadros=[dict(nome=q["nome"], duracao_s=q["dur"]) for q in poses]),
+                   quadros=[dict(nome=q["nome"], duracao_s=q["dur"],
+                                 ponta_ferramenta=[round(v, 1) for v in rig.pontas_jogo[i]]) for i, q in enumerate(poses)]),
               open(os.path.join(pasta, "info.json"), "w"), indent=1)
     print(acao, "quadro", finais[0].shape[1::-1], "pivo", pivot, "cores", len(pal))
