@@ -257,13 +257,17 @@ def paleta(reduzidos, cores=32):
     return np.array(amostra.quantize(colors=cores, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).getpalette()[:3 * cores]).reshape(-1, 3)
 
 
-def aplica_paleta(reduzidos, pal):
-    """Escurece a borda de fora (contorno) e troca cada cor pela mais proxima da paleta."""
+def aplica_paleta(reduzidos, pal, sem_escurecer=None):
+    """Escurece a borda de fora (contorno) e troca cada cor pela mais proxima da paleta.
+    sem_escurecer: lista de mascaras (uma por quadro) onde a borda NAO e escurecida
+    (ex.: ferramentas que ja tem contorno proprio no desenho)."""
     out = []
-    for r in reduzidos:
+    for i, r in enumerate(reduzidos):
         al = r[..., 3] == 255
         rgb = r[..., :3].astype(float)
         borda = al & ndi.binary_dilation(~al, structure=[[0, 1, 0], [1, 1, 1], [0, 1, 0]])
+        if sem_escurecer is not None:
+            borda &= ~sem_escurecer[i]
         rgb[borda] *= 0.45
         o = np.zeros_like(r)
         d = ((rgb[al][:, None, :] - pal[None]) ** 2).sum(-1)

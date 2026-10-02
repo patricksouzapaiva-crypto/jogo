@@ -39,7 +39,7 @@ def enxada():
     return np.array(im).astype(np.int32)
 
 
-FERRAMENTAS = {"enxada": enxada}
+FERRAMENTAS = {"enxada_simples": enxada}      # primeira enxada (teste); as do jogo sao as artesanais abaixo
 
 
 if __name__ == "__main__":
@@ -54,39 +54,58 @@ if __name__ == "__main__":
 
 
 # ---------------------------------------------------------------------------------------------
-# Ferramentas desenhadas no ChatGPT (fonte/ferramentas/tools_source.png, 6 celulas de 512x512 com
-# fundo magenta). Cada uma e recortada, tem o fundo tirado, e girada para a mesma posicao da enxada
-# (pega em PEGA, cabo descendo, cabeca embaixo, lado de corte virado para -x) e reduzida para a escala
-# do desenho do heroi (9x o tamanho do jogo). A pegada e calculada pelo proprio desenho: os pontos de
-# pegada do METADATA.json ficavam fora do cabo no machado, na picareta e na vara.
+# Ferramentas desenhadas no ChatGPT. Cada uma tem o fundo magenta tirado, e girada para a mesma
+# posicao da enxada de teste (pega em cima, cabo descendo, cabeca embaixo, lado de corte para -x) e
+# reduzida para a escala do desenho do heroi (9x o tamanho do jogo). A pegada e calculada pelo
+# proprio desenho (eixo do cabo + fracao do comprimento a partir da ponta do cabo).
+#
+# ARTESANAIS (fonte/ferramentas_artesanais/0*.png, 1 por imagem): as 7 aprovadas, usadas no jogo.
+# V1 (fonte/ferramentas/tools_source.png, 6 celulas): primeiro pacote, mantido so como referencia.
 # ---------------------------------------------------------------------------------------------
 import os as _os
 import math as _math
 
-FONTE_CHATGPT = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "fonte", "ferramentas", "tools_source.png")
-# celula (x, y), comprimento no jogo (px, da ponta do cabo ate a ponta mais longe), onde a mao segura
-# (fracao do comprimento a partir da ponta do cabo, ou ponto fixo na celula), para onde fica a cabeca
-CHATGPT = {
-    "pa":       dict(celula=(0, 0), alvo=34, pega_frac=0.10, cabeca="metal"),
-    "foice":    dict(celula=(512, 0), alvo=17, pega=(368, 352), cabeca="metal"),
-    "regador":  dict(celula=(1024, 0), alvo=21, pega=(298, 150), cabeca="pendurado"),
-    "machado":  dict(celula=(0, 512), alvo=30, pega_frac=0.14, cabeca="metal"),
-    "picareta": dict(celula=(512, 512), alvo=31, pega_frac=0.14, cabeca="metal"),
-    "vara":     dict(celula=(1024, 512), alvo=44, pega_frac=0.20, cabeca="ponta", sem_linha=True),
+_FONTE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "fonte")
+# alvo = comprimento no jogo (px, da ponta do cabo ate a ponta mais longe; no regador, a largura)
+ARTESANAIS = {
+    "enxada":   dict(arquivo="01_enxada.png", alvo=38, pega_frac=0.16, cabeca="metal"),
+    "machado":  dict(arquivo="02_machado.png", alvo=34, pega_frac=0.15, cabeca="metal"),
+    "picareta": dict(arquivo="03_picareta.png", alvo=35, pega_frac=0.15, cabeca="metal"),
+    "pa":       dict(arquivo="04_pa.png", alvo=38, pega_frac=0.08, cabeca="metal"),
+    "foice":    dict(arquivo="05_foice_mao.png", alvo=19, pega_frac=0.30, cabeca="metal"),
+    "regador":  dict(arquivo="06_regador_cobre.png", alvo=24, cabeca="pendurado"),
+    "vara":     dict(arquivo="07_vara_pescar.png", alvo=48, pega_frac=0.17, cabeca="ponta"),
 }
-_FONTE_CACHE = {}
+V1 = {
+    "pa_v1":       dict(celula=(0, 0), alvo=34, pega_frac=0.10, cabeca="metal"),
+    "foice_v1":    dict(celula=(512, 0), alvo=17, pega=(368, 352), cabeca="metal"),
+    "regador_v1":  dict(celula=(1024, 0), alvo=21, pega=(298, 150), cabeca="pendurado", bico_esquerda=True),
+    "machado_v1":  dict(celula=(0, 512), alvo=30, pega_frac=0.14, cabeca="metal"),
+    "picareta_v1": dict(celula=(512, 512), alvo=31, pega_frac=0.14, cabeca="metal"),
+    "vara_v1":     dict(celula=(1024, 512), alvo=44, pega_frac=0.20, cabeca="ponta", sem_linha=True),
+}
+_CACHE = {}
+_PEGA = {}
 
 
-def _celula(cx, cy):
-    from PIL import Image as _I
+def _sem_fundo(rgb):
     import fundo_magenta as _fm
-    if "img" not in _FONTE_CACHE:
-        _FONTE_CACHE["img"] = np.array(_I.open(FONTE_CHATGPT).convert("RGB")).astype(np.int32)
-    a = _FONTE_CACHE["img"][cy:cy + 512, cx:cx + 512]
-    out, fg, puro, _ = _fm.remove_fundo(a.astype(np.uint8))
-    rgba = np.zeros((512, 512, 4), np.int32)
+    out, fg, puro, _ = _fm.remove_fundo(rgb.astype(np.uint8))
+    rgba = np.zeros(rgb.shape[:2] + (4,), np.int32)
     rgba[..., :3] = out; rgba[..., 3] = np.where(fg, 255, 0)
     return rgba
+
+
+def original(nome):
+    """Imagem da ferramenta sem o fundo (antes de girar e reduzir)."""
+    from PIL import Image as _I
+    if nome in ARTESANAIS:
+        cam = _os.path.join(_FONTE, "ferramentas_artesanais", ARTESANAIS[nome]["arquivo"])
+        return _sem_fundo(np.array(_I.open(cam).convert("RGB")).astype(np.int32))
+    cx, cy = V1[nome]["celula"]
+    if "v1" not in _CACHE:
+        _CACHE["v1"] = np.array(_I.open(_os.path.join(_FONTE, "ferramentas", "tools_source.png")).convert("RGB")).astype(np.int32)
+    return _sem_fundo(_CACHE["v1"][cy:cy + 512, cx:cx + 512])
 
 
 def _maior_pedaco(m):
@@ -98,87 +117,88 @@ def _maior_pedaco(m):
     return lab == (1 + int(np.argmax(tam)))
 
 
-def chatgpt(nome):
-    """Ferramenta do ChatGPT pronta para o esqueleto (mesma convencao da enxada)."""
+def _eh_metal(t):
+    r, g, b = t[..., 0], t[..., 1], t[..., 2]
+    return (t[..., 3] > 0) & (np.abs(r - g) < 30) & (b >= r - 12) & (np.abs(g - b) < 45) & (r > 70)
+
+
+def prepara(nome):
+    """Ferramenta pronta para o esqueleto: (imagem RGBA, ponto da pega)."""
     from PIL import Image as _I
-    cfg = CHATGPT[nome]
-    t = _celula(*cfg["celula"])
-    r, g, b, al = t[..., 0], t[..., 1], t[..., 2], t[..., 3] > 0
+    import anim_lado as _L
+    cfg = ARTESANAIS.get(nome) or V1[nome]
+    t = original(nome)
+    r, g, b = t[..., 0], t[..., 1], t[..., 2]
+    al = t[..., 3] > 0
     if cfg.get("sem_linha"):                       # tira a linha e o anzol desenhados (a linha sera um efeito)
-        amarelo = al & (r > 170) & (g > 150) & (b < 170) & (np.abs(r - g) < 70)
-        al = _maior_pedaco(al & ~amarelo)
-        t[~al] = 0
-    else:
-        al = _maior_pedaco(al); t[~al] = 0
+        al &= ~((r > 170) & (g > 150) & (b < 170) & (np.abs(r - g) < 70))
+    al = _maior_pedaco(al); t[~al] = 0
     ys, xs = np.nonzero(al)
     pts = np.stack([xs, ys], -1).astype(float)
-    madeira = al & (r > 170) & (g > 55) & (g < 200) & (b < 60)
-    metal = al & (np.abs(r - g) < 28) & (np.abs(g - b) < 34) & (r > 105)
-    # eixo do cabo (madeira) e ponta do cabo (o lado oposto a cabeca)
-    wy, wx = np.nonzero(madeira if madeira.sum() > 200 else al)   # o regador nao tem madeira
+    madeira = al & (r > 140) & (g > 55) & (b < 120) & (r - b > 70) & (r > g)
+    wy, wx = np.nonzero(madeira if madeira.sum() > 500 else al)
     centro = np.array([wx.mean(), wy.mean()])
     _, _, vt = np.linalg.svd(np.stack([wx, wy], -1) - centro, full_matrices=False)
     eixo = vt[0]
-    if cfg["cabeca"] == "metal":
-        my, mx = np.nonzero(metal); cab = np.array([mx.mean(), my.mean()])
-    elif cfg["cabeca"] == "pendurado":
-        cab = pts.mean(0)
-    else:
-        cab = None
     proj = (pts - centro) @ eixo
-    if cab is not None and (cab - centro) @ eixo < 0:
-        eixo = -eixo; proj = -proj
-    if cab is None:                                # vara: a ponta e o lado mais comprido
-        if proj.max() < -proj.min():
-            eixo = -eixo; proj = -proj
     comprimento = proj.max() - proj.min()
-    if "pega" in cfg:
-        pega = np.array(cfg["pega"], float)
-    else:
-        pega = centro + eixo * (proj.min() + cfg["pega_frac"] * comprimento)
-    # direcao pega -> cabeca no padrao do esqueleto (0 = para baixo, 90 = +x)
-    alvo_dir = (cab if cab is not None else centro + eixo * proj.max()) - pega
+    if cfg["cabeca"] == "metal":
+        # a cabeca e a ponta que tem mais metal perto dela
+        met = _eh_metal(t)[ys, xs]
+        perto_max = met & (proj > proj.max() - 0.3 * comprimento)
+        perto_min = met & (proj < proj.min() + 0.3 * comprimento)
+        if perto_min.sum() > perto_max.sum():
+            eixo = -eixo; proj = -proj
+    elif cfg["cabeca"] == "ponta":                  # vara: a ponta e o lado mais fino (menos pixels)
+        fim_max = (proj > proj.max() - 0.2 * comprimento).sum()
+        fim_min = (proj < proj.min() + 0.2 * comprimento).sum()
+        if fim_max > fim_min:
+            eixo = -eixo; proj = -proj
     if cfg["cabeca"] == "pendurado":
-        graus = 0.0                                 # o regador fica de pe, pendurado pela alca
-        comprimento = xs.max() - xs.min()           # para o regador o "comprimento" e a largura
+        # regador: pega no meio da alca de cima; fica de pe; "comprimento" = largura
+        topo = ys.min()
+        faixa = (ys < topo + 0.035 * (ys.max() - topo))
+        pega = np.array([xs[faixa].mean(), topo + 0.02 * (ys.max() - topo)]) if "pega" not in cfg else np.array(cfg["pega"], float)
+        graus = 0.0
+        comprimento = xs.max() - xs.min()
     else:
+        pega = np.array(cfg["pega"], float) if "pega" in cfg else centro + eixo * (proj.min() + cfg["pega_frac"] * comprimento)
+        alvo_dir = eixo
         graus = _math.degrees(_math.atan2(alvo_dir[0], alvo_dir[1]))
     esc = cfg["alvo"] * 9 / comprimento
-    # reduz para a escala do heroi (media em blocos, alpha so 0/255) e gira deixando a cabeca para baixo
     im = _I.fromarray(t.clip(0, 255).astype(np.uint8), "RGBA")
-    W2, H2 = max(1, round(512 * esc)), max(1, round(512 * esc))
+    W2, H2 = max(1, round(t.shape[1] * esc)), max(1, round(t.shape[0] * esc))
     red = np.array(im.convert("RGBa").resize((W2, H2), _I.BOX).convert("RGBA")).astype(np.int32)
     red[..., 3] = np.where(red[..., 3] >= 128, 255, 0)
-    pega_r = pega * esc
+    pega_r = pega * np.array([W2 / t.shape[1], H2 / t.shape[0]])
     lado = int(cfg["alvo"] * 9 * 2.4) + 40
     out = np.zeros((lado, lado, 4), np.int32)
     centro_out = np.array([lado / 2, lado * 0.25])
-    import anim_lado as _L
     _L.coloca(out, red, pega_r, centro_out, -graus)
-    # lado de corte para -x (como a enxada); o regador fica com o bico para +x (frente do heroi)
+    # lado de corte para -x (como a enxada de teste); o regador fica com o bico para +x
     m = out[..., 3] > 0
-    yy, xx = np.nonzero(m)
-    met = m & (np.abs(out[..., 0] - out[..., 1]) < 28) & (np.abs(out[..., 1] - out[..., 2]) < 34) & (out[..., 0] > 105)
     if cfg["cabeca"] == "pendurado":
-        bico_esq = (xx < centro_out[0]).sum() > (xx > centro_out[0]).sum()
-        espelha = bico_esq
-    elif met.any():
-        espelha = np.nonzero(met)[1].mean() > centro_out[0]
+        espelha = bool(cfg.get("bico_esquerda", False))
     else:
-        espelha = False
+        met = _eh_metal(out)
+        espelha = bool(met.any() and np.nonzero(met)[1].mean() > centro_out[0] + 2)
     if espelha:
         out = out[:, ::-1].copy()
         centro_out = np.array([lado - centro_out[0], centro_out[1]])
-    _CHATGPT_PEGA[nome] = tuple(centro_out)
-    return out
-
-
-_CHATGPT_PEGA = {}
+    _PEGA[nome] = tuple(centro_out)
+    return out, tuple(centro_out)
 
 
 def pega_de(nome):
-    return _CHATGPT_PEGA.get(nome, PEGA)
+    return _PEGA.get(nome, PEGA)
 
 
-for _n in CHATGPT:
-    FERRAMENTAS[_n] = (lambda n: (lambda: chatgpt(n)))(_n)
+def _carregador(n):
+    def f():
+        img, _ = prepara(n)
+        return img
+    return f
+
+
+for _n in list(ARTESANAIS) + list(V1):
+    FERRAMENTAS[_n] = _carregador(_n)

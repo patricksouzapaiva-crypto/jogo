@@ -48,9 +48,15 @@ class RigAcao(L.Rig):
         self.off = self.off + np.array(MARGEM)
         self.CW += 2 * MARGEM[0]
         self.CH += MARGEM[1]
-        self.ferr = {}
-        for nome, f in FD.FERRAMENTAS.items():
-            t = f(); L.contorna(t); self.ferr[nome] = t
+        self.ferr = {}                 # carrega cada ferramenta so quando for usada
+
+    def _ferr(self, nome):
+        if nome not in self.ferr:
+            t = FD.FERRAMENTAS[nome]()
+            if nome == "enxada_simples":           # so a enxada de teste nao tem contorno no desenho
+                L.contorna(t)
+            self.ferr[nome] = t
+        return self.ferr[nome]
 
     def mao(self, desl, ombro, cotovelo):
         """Posicao do punho (no canvas) para os angulos do braco."""
@@ -62,7 +68,7 @@ class RigAcao(L.Rig):
     def ferramenta(self, nome, punho, cabo, encostar, folga=0):
         """Camada da ferramenta. Se encostar=True, ajusta o angulo do cabo ate a lamina ficar 'folga' px
         acima do chao (0 = tocando o chao)."""
-        t = self.ferr[nome]
+        t = self._ferr(nome)
         chao = self.R.CHAO + self.off[1] - folga
         if encostar:
             ys, xs = np.nonzero(t[..., 3] > 0)
@@ -105,14 +111,21 @@ class RigAcao(L.Rig):
         desl = np.array((incl, bob), float)
         punho = self.mao(desl, q["ombro"], q["cotovelo"])
         ferr, cabo = self.ferramenta(nome_ferr, punho, q["cabo"], q["chao"], q.get("folga", 0))
+        visivel = np.zeros(dst.shape[:2], bool)          # onde a ferramenta aparece no quadro final
+
+        def cola(cam, eh_ferr=False):
+            m = cam[..., 3] > 0
+            dst[m] = cam[m]
+            visivel[m] = eh_ferr
+
         if q["atras"]:
-            L.cola(dst, ferr)
+            cola(ferr, True)
         corpo = np.zeros_like(dst)
         corpo[self.off[1] + bob:self.off[1] + bob + self.H, self.off[0] + incl:self.off[0] + incl + self.W] = self.p["corpo"]
-        L.cola(dst, corpo)
+        cola(corpo)
         if not q["atras"]:
-            L.cola(dst, ferr)
-        L.cola(dst, self.braco(dst, desl, q["ombro"], q["cotovelo"]))
+            cola(ferr, True)
+        cola(self.braco(dst, desl, q["ombro"], q["cotovelo"]))
         if q["terra"] and ponto_chao is not None:
             self.terra(dst, ponto_chao, q["terra"])
         # ponto onde a lamina toca o chao (para a terra)
@@ -120,7 +133,28 @@ class RigAcao(L.Rig):
         ys, xs = np.nonzero(m)
         baixo = ys.max()
         ponto = (int(xs[ys >= baixo - 6].mean()), int(baixo))
+        self.visivel = visivel
         return dst, ponto, cabo
+
+
+def gera(rig, nome_ferr, poses, extra=16):
+    """Quadros grandes -> reduzidos (9x) com a paleta do heroi + cores da ferramenta.
+    A borda da ferramenta nao e escurecida (o desenho dela ja tem contorno)."""
+    grandes, mascaras, ponto = [], [], None
+    for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
+        if q.get("terra") == 1:
+            ponto = rig.quadro_acao(nome_ferr, q, None)[1]
+    for q in poses:
+        f = rig.quadro_acao(nome_ferr, q, ponto)[0]
+        grandes.append(f)
+        mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255
+        mascaras.append(mk)
+    red, pivot = L.reduz_box([rig.parado()] + grandes, rig, (R.QUADRIL[0], R.CHAO))
+    red_m, _ = L.reduz_box([np.zeros_like(mascaras[0])] + mascaras, rig, (R.QUADRIL[0], R.CHAO))
+    sem = [m[..., 3] == 255 for m in red_m]
+    pal_heroi = np.array(json.load(open(os.path.join(ARTE, "heroi.json")))["paleta"])
+    pal = paleta_com_ferramenta(red, pal_heroi, extra)
+    return L.aplica_paleta(red, pal, sem), pivot, pal, grandes
 
 
 def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
@@ -137,23 +171,12 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
 if __name__ == "__main__":
     pasta = os.path.join(SAIDA, "enxada_lado"); os.makedirs(pasta, exist_ok=True)
     rig = RigAcao()
-    grandes, ponto = [], None
-    for q in ENXADA:
-        f, p, cabo = rig.quadro_acao("enxada", q, ponto)
-        if q["nome"] == "impacto":
-            ponto = p
-        grandes.append((f, q))
-    # refaz os quadros com terra (precisam do ponto do impacto)
-    grandes = [(rig.quadro_acao("enxada", q, ponto)[0], q) for q in ENXADA]
-    red, pivot = L.reduz_box([rig.parado()] + [g[0] for g in grandes], rig, (R.QUADRIL[0], R.CHAO))
-    pal_heroi = np.array(json.load(open(os.path.join(ARTE, "heroi.json")))["paleta"])
-    pal = paleta_com_ferramenta(red, pal_heroi)
-    finais = L.aplica_paleta(red, pal)
+    finais, pivot, pal, grandes = gera(rig, "enxada", ENXADA)
     Image.fromarray(finais[0], "RGBA").save(os.path.join(pasta, "parado.png"))
     for i, (f, q) in enumerate(zip(finais[1:], ENXADA)):
         Image.fromarray(f, "RGBA").save(os.path.join(pasta, f"enxada_{i}_{q['nome']}.png"))
     if "--grande" in sys.argv:
-        for i, (g, q) in enumerate(grandes):
+        for i, g in enumerate(grandes):
             Image.fromarray(g.clip(0, 255).astype(np.uint8), "RGBA").save(os.path.join(pasta, f"grande_{i}.png"))
     json.dump(dict(pivot=list(pivot), tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
                    quadros=[dict(nome=q["nome"], duracao_s=q["dur"]) for q in ENXADA]),
