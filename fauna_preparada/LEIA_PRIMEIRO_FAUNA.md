@@ -1,10 +1,33 @@
-# Fauna preparada v3: relatório de preparação e teste
+# Fauna preparada v4: relatório de preparação e teste
 
 Origem: `MOVIMENTACOES_DOS_ANIMAIS_v1.zip` (as folhas de caminhada são idênticas às do `CAMINHADA_DOS_ANIMAIS.zip`; os hashes do manifesto conferem).
 Espécies: Penala, pato anfíbio, ovelha, Gruntho e vaca. Ao todo, 340 poses: 5 × 32 de caminhada e 5 × 36 de ações.
 
-**Situação:** os quadros estão preparados e a caminhada foi melhorada em duas etapas: v2 para todos os animais e **v3 para o Gruntho e a vaca (esqueleto de patas)**. A cena de teste roda no Godot 4.5 (117 de 117 verificações automáticas passaram). **A integração com o sistema de animais do jogo ainda não foi feita**, porque este trabalho foi feito fora do projeto. Isso fica para o chat principal (veja `PROMPT_CHAT_PRINCIPAL.md`). Ainda há 1 defeito que pede redesenho (pato de costas) e algumas decisões pendentes (abaixo).
+**Situação:** os quadros estão preparados e **os cinco animais andam com o esqueleto de patas (v4)**. A cena de teste roda no Godot 4.5 (117 de 117 verificações automáticas passaram). **A integração com o sistema de animais do jogo ainda não foi feita**, porque este trabalho foi feito fora do projeto. Isso fica para o chat principal (veja `PROMPT_CHAT_PRINCIPAL.md`). Restam só melhorias opcionais e decisões (abaixo).
 
+
+---
+
+## v4: o esqueleto de patas nos cinco animais
+
+A técnica que deu certo no Gruntho e na vaca (v3) foi aplicada também à **ovelha, ao pato e à Penala**:
+- **Ovelha (quadrúpede):** as quatro patas andam na sequência traseira → dianteira → traseira → dianteira. De lado, a pose-base é a de respirar/piscar (o mesmo desenho das ações). De frente e de costas, as patas alternam.
+- **Pato e Penala (aves, duas pernas):** as pernas alternam meio ciclo uma da outra, ficando cerca de 60% do ciclo apoiadas e 40% no ar, com o pé levantado. De frente e de costas, o **pato ginga** para o lado do pé apoiado (cerca de 1 px, com os pés fixos no chão), e a Penala ginga de leve.
+- **Pés no chão:** nas poses-base da ovelha e do pato havia um pé desenhado um pouco erguido (7 px na folha, no pato). Quando apoiado, esse pé agora estica até o chão.
+- **Pose com os dois pés apoiados:** na ovelha de costas, no pato de frente e de costas e na Penala de frente e de costas, um pé estava mais alto em todos os quadros. A pose-base recebeu o espelho do pé apoiado (como já tinha sido feito no Gruntho de costas).
+- **Corpo estável (vale para os cinco):** os 8 quadros de cada direção usam o mesmo recorte e não são realinhados pelo pé mais baixo. Assim, o corpo não afunda quando o pé de baixo levanta. Isso também tirou um deslocamento irregular de 1 px que existia no Gruntho e na vaca da v3. Agora o único movimento vertical é o sobe e desce regular de 1 px, nas 20 direções.
+- **Pixels soltos:** as pontas de garra que se soltavam na redução (6 px na Penala) são removidas.
+
+**Resultado:** encaixe entre andar e parado de 0,96 a 0,99 nos cinco (andar, parar e as ações usam o mesmo desenho). Godot 4.5: 117 de 117.
+
+| Pose-base | Ovelha | Pato | Penala |
+|---|---|---|---|
+| De lado (direita) | respirar/piscar, quadro 0 | respirar/piscar, quadro 0 | respirar/piscar, quadro 0 |
+| De lado (esquerda) | espelho da direita | espelho da direita | espelho da direita |
+| De frente | caminhada, quadro 1 | caminhada, quadro 3 (pé direito espelhado) | caminhada, quadro 0 (pé direito espelhado) |
+| De costas | caminhada, quadro 2 (pé esquerdo espelhado) | caminhada, quadro 2 (pé esquerdo espelhado) | caminhada, quadro 2 (pé direito espelhado) |
+
+Comparação animada: `revisao/comparacoes/andar_antes_agora_ovelha_pato_penala.gif`. As versões anteriores ficam em `revisao/v1/`, `v2/` e `v3/`.
 
 ---
 
@@ -80,13 +103,13 @@ No JSON de cada caminhada: `duracoes` (por quadro), `parado` (quadro da pose de 
 
 ### Especificação por espécie
 
-| Espécie | Altura de lado (px) | Canvas (px) | Pivot | Redução caminhada | Redução ações | Caminhada maior em | Encaixe ações | Caminhada (quadros/s) | Velocidade sugerida (px/s) | Cores | Pose de parado (quadro) |
+| Espécie | Altura de lado (px) | Canvas (px) | Pivot | Redução caminhada | Redução ações | Caminhada maior em | Encaixe ações (IoU) | Caminhada (quadros/s) | Velocidade sugerida (px/s) | Cores | Pose de parado (quadro) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| penala | 32 | 58×40 | 20, 38 | 0.167 | 0.200 | 20% | +1 | 10 | 30 | 32 | baixo 0, esquerda 6, direita 2, cima 0 |
-| pato | 30 | 60×38 | 25, 36 | 0.163 | 0.194 | 19% | −1 | 9 | 22 | 32 | baixo 0, esquerda 1, direita 0, cima 0 |
-| ovelha | 44 | 60×56 | 28, 54 | 0.251 | 0.274 | 9% | +1 | 7 | 26 | 28 | baixo 1, esquerda 1, direita 6, cima 0 |
-| gruntho | 38 | 74×54 | 36, 52 | 0.235 | 0.284 | 21% | 0 | 8 | 32 | 28 | baixo 0, esquerda 4, direita 5, cima 0 |
-| vaca | 54 | 96×82 | 49, 80 | 0.305 | 0.351 | 15% | 0 | 6 | 20 | 32 | baixo 1, esquerda 7, direita 7, cima 0 |
+| penala | 32 | 58×40 | 21, 38 | 0.167 | 0.200 | 20% | 0 (0.97) | 10 | 30 | 32 | baixo 0, esquerda 4, direita 4, cima 0 |
+| pato | 30 | 60×38 | 24, 36 | 0.163 | 0.194 | 19% | 0 (0.99) | 9 | 22 | 32 | baixo 0, esquerda 5, direita 4, cima 0 |
+| ovelha | 44 | 60×55 | 29, 53 | 0.251 | 0.274 | 9% | 0 (0.96) | 7 | 26 | 28 | baixo 0, esquerda 0, direita 0, cima 0 |
+| gruntho | 38 | 74×54 | 36, 52 | 0.235 | 0.284 | 21% | 0 (0.96) | 8 | 32 | 28 | baixo 0, esquerda 4, direita 5, cima 0 |
+| vaca | 54 | 96×82 | 49, 80 | 0.305 | 0.351 | 15% | 0 (0.97) | 6 | 20 | 32 | baixo 0, esquerda 7, direita 7, cima 0 |
 
 Os quadros são numerados a partir de 0.
 
@@ -106,9 +129,9 @@ JogoFazenda/testes/fauna/
   carregador_fauna.gd   monta SpriteFrames a partir do JSON (reutilizável)
   teste_fauna.tscn/.gd  cena de teste
   verificar_fauna.gd    verificação automática sem abrir o editor
-revisao/        pranchas (v3), comparações em GIF (v1 x v2, v2 x v3), prints da cena no Godot, medidas, v1/ e v2/ (atlas antigos)
+revisao/        pranchas (v4), comparações em GIF, prints da cena no Godot, medidas, v1/ v2/ v3/ (atlas antigos)
 ferramentas/    scripts para refazer tudo a partir das folhas originais
-visualizador/   bancada_fauna.html (abre no navegador, inclusive no celular; botão v1/v2/v3)
+visualizador/   bancada_fauna.html (abre no navegador, inclusive no celular; botão v4/v2/v1)
 ```
 
 Os arquivos ficam em `arte/preparado/`, não em `arte/final/`, porque ainda não foram validados dentro do jogo. **Nada substitui os animais atuais.**
@@ -125,10 +148,19 @@ Os arquivos ficam em `arte/preparado/`, não em `arte/final/`, porque ainda não
 
 ## 5. Defeitos e decisões
 
-### ❌ Ainda pede redesenho
-| Animal | Animação | Direção | Quadros | Problema | Correção necessária |
-|---|---|---|---|---|---|
-| Pato | caminhada | cima | 0, 4, 6 | A cabeça fica 2–3 px mais baixa nesses quadros, de forma irregular | Redesenhar com um sobe e desce regular |
+### Melhorias opcionais (nada bloqueia)
+| Animal | O que poderia ficar melhor |
+|---|---|
+| Os cinco | Para a esquerda, a caminhada é o espelho da direita (a luz fica invertida). Um desenho próprio para a esquerda ficaria melhor. |
+| Pato e Penala | A cabeça não faz o "vai e vem" típico de ave ao andar (o esqueleto move só as pernas e o corpo inteiro). |
+| Os cinco | O movimento das patas é calculado: é regular, mas mais simples que uma animação desenhada à mão. |
+
+### ✅ Resolvidos na v4
+| Animal | Problema anterior | Situação |
+|---|---|---|
+| Pato | Caminhada para cima com a cabeça subindo e descendo de forma irregular | Corpo idêntico em todos os quadros; só o sobe e desce regular |
+| Ovelha, pato, Penala | Patas e texturas variavam entre quadros (desenho da IA) | Mesma pose em todos os quadros; as patas seguem o ciclo |
+| Os cinco | Corpo afundando 1 px aos trancos quando o pé mais baixo levantava | Mesmo recorte nos 8 quadros, sem realinhar pelos pés |
 
 ### ✅ Resolvidos na v3 (esqueleto de patas)
 | Animal | Problema anterior | Situação |
@@ -166,4 +198,4 @@ Abra `res://testes/fauna/teste_fauna.tscn` e aperte F6.
 ```
 godot --headless --path <pasta do projeto> --script res://testes/fauna/verificar_fauna.gd
 ```
-Resultado obtido aqui, no Godot 4.5, com a v3: **PASSOU, 117 de 117**. Entre os testes: ao parar, segura a pose de parado da direção, e ao voltar a andar começa do quadro seguinte.
+Resultado obtido aqui, no Godot 4.5, com a v4: **PASSOU, 117 de 117** (2 rodadas). Entre os testes: ao parar, segura a pose de parado da direção, e ao voltar a andar começa do quadro seguinte.

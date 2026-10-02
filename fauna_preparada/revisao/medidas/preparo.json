@@ -5,7 +5,7 @@
    40
   ],
   "pivot": [
-   20,
+   21,
    38
   ],
   "fator_reducao": {
@@ -13,9 +13,14 @@
    "actions": 0.2
   },
   "diferenca_escala_entre_folhas": 0.836,
-  "encaixe_acoes_px": 1,
-  "encaixe_iou": 0.856,
-  "caminhada_gerada_por_esqueleto": [],
+  "encaixe_acoes_px": 0,
+  "encaixe_iou": 0.969,
+  "caminhada_gerada_por_esqueleto": [
+   "down",
+   "left",
+   "right",
+   "up"
+  ],
   "altura_lado_px": 32,
   "cores": 32,
   "quadros": [
@@ -31,49 +36,49 @@
     "tipo": "walk",
     "anim": "down",
     "quadro": 1,
-    "ajuste_score": 0.981
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_2.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 2,
-    "ajuste_score": 0.978
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_3.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 3,
-    "ajuste_score": 0.965
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_4.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 4,
-    "ajuste_score": 0.962
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_5.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 5,
-    "ajuste_score": 0.963
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_6.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 6,
-    "ajuste_score": 0.974
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_down_7.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 7,
-    "ajuste_score": 0.99
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_0.png",
@@ -87,49 +92,49 @@
     "tipo": "walk",
     "anim": "left",
     "quadro": 1,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_2.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 2,
-    "ajuste_score": 0.92
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_3.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 3,
-    "ajuste_score": 0.95
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_4.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 4,
-    "ajuste_score": 0.94
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_5.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 5,
-    "ajuste_score": 0.949
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_6.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 6,
-    "ajuste_score": 0.958
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_left_7.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 7,
-    "ajuste_score": 0.924
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_0.png",
@@ -143,49 +148,49 @@
     "tipo": "walk",
     "anim": "right",
     "quadro": 1,
-    "ajuste_score": 0.968
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_2.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 2,
-    "ajuste_score": 0.934
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_3.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 3,
-    "ajuste_score": 0.929
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_4.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 4,
-    "ajuste_score": 0.957
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_5.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 5,
-    "ajuste_score": 0.931
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_6.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 6,
-    "ajuste_score": 0.959
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_right_7.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 7,
-    "ajuste_score": 0.974
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_0.png",
@@ -199,49 +204,49 @@
     "tipo": "walk",
     "anim": "up",
     "quadro": 1,
-    "ajuste_score": 0.98
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_2.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 2,
-    "ajuste_score": 0.977
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_3.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 3,
-    "ajuste_score": 0.981
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_4.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 4,
-    "ajuste_score": 0.981
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_5.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 5,
-    "ajuste_score": 0.975
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_6.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 6,
-    "ajuste_score": 0.98
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_walk_up_7.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 7,
-    "ajuste_score": 0.976
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "penala_actions_idle_blink_0.png",
@@ -498,14 +503,14 @@
   ],
   "walk_duracoes": {
    "down": [
+    0.1143,
+    0.1143,
     0.0571,
     0.1143,
     0.1143,
     0.1143,
-    0.1143,
-    0.1143,
-    0.1143,
-    0.0571
+    0.0571,
+    0.1143
    ],
    "left": [
     0.1,
@@ -518,30 +523,30 @@
     0.1
    ],
    "right": [
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.0533
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
    "up": [
-    0.0571,
     0.1143,
     0.1143,
     0.0571,
     0.1143,
     0.1143,
     0.1143,
+    0.0571,
     0.1143
    ]
   },
   "parado": {
    "down": 0,
-   "left": 6,
-   "right": 2,
+   "left": 4,
+   "right": 4,
    "up": 0
   },
   "versao": "v2"
@@ -549,20 +554,25 @@
  "ovelha": {
   "canvas": [
    60,
-   56
+   55
   ],
   "pivot": [
-   28,
-   54
+   29,
+   53
   ],
   "fator_reducao": {
    "walk": 0.2507,
    "actions": 0.2741
   },
   "diferenca_escala_entre_folhas": 0.915,
-  "encaixe_acoes_px": 1,
-  "encaixe_iou": 0.864,
-  "caminhada_gerada_por_esqueleto": [],
+  "encaixe_acoes_px": 0,
+  "encaixe_iou": 0.964,
+  "caminhada_gerada_por_esqueleto": [
+   "down",
+   "left",
+   "right",
+   "up"
+  ],
   "altura_lado_px": 44,
   "cores": 28,
   "quadros": [
@@ -578,49 +588,49 @@
     "tipo": "walk",
     "anim": "down",
     "quadro": 1,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_2.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 2,
-    "ajuste_score": 0.964
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_3.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 3,
-    "ajuste_score": 0.954
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_4.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 4,
-    "ajuste_score": 0.983
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_5.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 5,
-    "ajuste_score": 0.963
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_6.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 6,
-    "ajuste_score": 0.98
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_down_7.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 7,
-    "ajuste_score": 0.974
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_0.png",
@@ -634,49 +644,49 @@
     "tipo": "walk",
     "anim": "right",
     "quadro": 1,
-    "ajuste_score": 0.986
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_2.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 2,
-    "ajuste_score": 0.94
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_3.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 3,
-    "ajuste_score": 0.964
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_4.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 4,
-    "ajuste_score": 0.97
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_5.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 5,
-    "ajuste_score": 0.967
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_6.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 6,
-    "ajuste_score": 0.987
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_right_7.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 7,
-    "ajuste_score": 0.917
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_0.png",
@@ -690,49 +700,49 @@
     "tipo": "walk",
     "anim": "left",
     "quadro": 1,
-    "ajuste_score": 0.948
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_2.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 2,
-    "ajuste_score": 0.947
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_3.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 3,
-    "ajuste_score": 0.962
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_4.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 4,
-    "ajuste_score": 0.93
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_5.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 5,
-    "ajuste_score": 0.966
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_6.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 6,
-    "ajuste_score": 0.967
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_left_7.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 7,
-    "ajuste_score": 0.947
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_0.png",
@@ -746,49 +756,49 @@
     "tipo": "walk",
     "anim": "up",
     "quadro": 1,
-    "ajuste_score": 0.981
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_2.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 2,
-    "ajuste_score": 0.983
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_3.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 3,
-    "ajuste_score": 0.989
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_4.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 4,
-    "ajuste_score": 0.984
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_5.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 5,
-    "ajuste_score": 0.979
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_6.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 6,
-    "ajuste_score": 0.976
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_walk_up_7.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 7,
-    "ajuste_score": 0.989
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "ovelha_actions_idle_blink_0.png",
@@ -1045,6 +1055,16 @@
   ],
   "walk_duracoes": {
    "down": [
+    0.1633,
+    0.1633,
+    0.0816,
+    0.1633,
+    0.1633,
+    0.1633,
+    0.0816,
+    0.1633
+   ],
+   "left": [
     0.1429,
     0.1429,
     0.1429,
@@ -1054,41 +1074,31 @@
     0.1429,
     0.1429
    ],
-   "left": [
-    0.1524,
-    0.1524,
-    0.1524,
-    0.1524,
-    0.1524,
-    0.0762,
-    0.1524,
-    0.1524
-   ],
    "right": [
-    0.1524,
-    0.1524,
-    0.1524,
-    0.1524,
-    0.1524,
-    0.0762,
-    0.1524,
-    0.1524
+    0.1429,
+    0.1429,
+    0.1429,
+    0.1429,
+    0.1429,
+    0.1429,
+    0.1429,
+    0.1429
    ],
    "up": [
-    0.1633,
     0.1633,
     0.1633,
     0.0816,
     0.1633,
     0.1633,
     0.1633,
-    0.0816
+    0.0816,
+    0.1633
    ]
   },
   "parado": {
-   "down": 1,
-   "left": 1,
-   "right": 6,
+   "down": 0,
+   "left": 0,
+   "right": 0,
    "up": 0
   },
   "versao": "v2"
@@ -1099,7 +1109,7 @@
    38
   ],
   "pivot": [
-   25,
+   24,
    36
   ],
   "fator_reducao": {
@@ -1107,9 +1117,14 @@
    "actions": 0.1935
   },
   "diferenca_escala_entre_folhas": 0.84,
-  "encaixe_acoes_px": -1,
-  "encaixe_iou": 0.826,
-  "caminhada_gerada_por_esqueleto": [],
+  "encaixe_acoes_px": 0,
+  "encaixe_iou": 0.99,
+  "caminhada_gerada_por_esqueleto": [
+   "down",
+   "left",
+   "right",
+   "up"
+  ],
   "altura_lado_px": 30,
   "cores": 32,
   "quadros": [
@@ -1125,49 +1140,49 @@
     "tipo": "walk",
     "anim": "down",
     "quadro": 1,
-    "ajuste_score": 0.976
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_2.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 2,
-    "ajuste_score": 0.935
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_3.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 3,
-    "ajuste_score": 0.93
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_4.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 4,
-    "ajuste_score": 0.938
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_5.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 5,
-    "ajuste_score": 0.952
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_6.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 6,
-    "ajuste_score": 0.922
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_down_7.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 7,
-    "ajuste_score": 0.918
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_0.png",
@@ -1181,49 +1196,49 @@
     "tipo": "walk",
     "anim": "left",
     "quadro": 1,
-    "ajuste_score": 0.922
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_2.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 2,
-    "ajuste_score": 0.934
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_3.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 3,
-    "ajuste_score": 0.95
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_4.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 4,
-    "ajuste_score": 0.933
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_5.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 5,
-    "ajuste_score": 0.921
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_6.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 6,
-    "ajuste_score": 0.952
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_left_7.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 7,
-    "ajuste_score": 0.905
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_0.png",
@@ -1237,49 +1252,49 @@
     "tipo": "walk",
     "anim": "right",
     "quadro": 1,
-    "ajuste_score": 0.974
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_2.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 2,
-    "ajuste_score": 0.967
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_3.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 3,
-    "ajuste_score": 0.929
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_4.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 4,
-    "ajuste_score": 0.94
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_5.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 5,
-    "ajuste_score": 0.951
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_6.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 6,
-    "ajuste_score": 0.975
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_right_7.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 7,
-    "ajuste_score": 0.964
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_0.png",
@@ -1293,49 +1308,49 @@
     "tipo": "walk",
     "anim": "up",
     "quadro": 1,
-    "ajuste_score": 0.75
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_2.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 2,
-    "ajuste_score": 0.787
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_3.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 3,
-    "ajuste_score": 0.753
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_4.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 4,
-    "ajuste_score": 0.884
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_5.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 5,
-    "ajuste_score": 0.748
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_6.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 6,
-    "ajuste_score": 0.875
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_walk_up_7.png",
     "tipo": "walk",
     "anim": "up",
     "quadro": 7,
-    "ajuste_score": 0.814
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "pato_actions_idle_blink_0.png",
@@ -1592,24 +1607,24 @@
   ],
   "walk_duracoes": {
    "down": [
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.0593,
-    0.1185
+    0.0741,
+    0.1481,
+    0.0741,
+    0.1481,
+    0.0741,
+    0.1481,
+    0.0741,
+    0.1481
    ],
    "left": [
-    0.1111,
-    0.1111,
-    0.1111,
-    0.1111,
-    0.1111,
-    0.1111,
-    0.1111,
-    0.1111
+    0.0635,
+    0.127,
+    0.127,
+    0.127,
+    0.0635,
+    0.127,
+    0.127,
+    0.127
    ],
    "right": [
     0.1111,
@@ -1622,20 +1637,20 @@
     0.1111
    ],
    "up": [
-    0.1185,
-    0.0593,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185,
-    0.1185
+    0.0684,
+    0.1368,
+    0.0684,
+    0.1368,
+    0.0684,
+    0.1368,
+    0.1368,
+    0.1368
    ]
   },
   "parado": {
    "down": 0,
-   "left": 1,
-   "right": 0,
+   "left": 5,
+   "right": 4,
    "up": 0
   },
   "versao": "v2"
@@ -1705,21 +1720,21 @@
     "tipo": "walk",
     "anim": "down",
     "quadro": 5,
-    "ajuste_score": 0.973
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_down_6.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 6,
-    "ajuste_score": 0.973
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_down_7.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 7,
-    "ajuste_score": 0.973
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_0.png",
@@ -1740,42 +1755,42 @@
     "tipo": "walk",
     "anim": "left",
     "quadro": 2,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_3.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 3,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_4.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 4,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_5.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 5,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_6.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 6,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_left_7.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 7,
-    "ajuste_score": 0.944
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_0.png",
@@ -1796,42 +1811,42 @@
     "tipo": "walk",
     "anim": "right",
     "quadro": 2,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_3.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 3,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_4.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 4,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_5.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 5,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_6.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 6,
-    "ajuste_score": 0.907
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_right_7.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 7,
-    "ajuste_score": 0.944
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "gruntho_walk_up_0.png",
@@ -2144,24 +2159,24 @@
   ],
   "walk_duracoes": {
    "down": [
-    0.0833,
-    0.1667,
-    0.0833,
-    0.1667,
-    0.0833,
-    0.1667,
-    0.0833,
-    0.1667
+    0.0769,
+    0.1538,
+    0.0769,
+    0.1538,
+    0.1538,
+    0.1538,
+    0.0769,
+    0.1538
    ],
    "left": [
-    0.0667,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333,
-    0.1333
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
    ],
    "right": [
     0.125,
@@ -2229,21 +2244,21 @@
     "tipo": "walk",
     "anim": "down",
     "quadro": 1,
-    "ajuste_score": 0.949
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_down_2.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 2,
-    "ajuste_score": 0.949
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_down_3.png",
     "tipo": "walk",
     "anim": "down",
     "quadro": 3,
-    "ajuste_score": 0.949
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_down_4.png",
@@ -2292,35 +2307,35 @@
     "tipo": "walk",
     "anim": "left",
     "quadro": 2,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_left_3.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 3,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_left_4.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 4,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_left_5.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 5,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_left_6.png",
     "tipo": "walk",
     "anim": "left",
     "quadro": 6,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_left_7.png",
@@ -2348,35 +2363,35 @@
     "tipo": "walk",
     "anim": "right",
     "quadro": 2,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_right_3.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 3,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_right_4.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 4,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_right_5.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 5,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_right_6.png",
     "tipo": "walk",
     "anim": "right",
     "quadro": 6,
-    "ajuste_score": 0.955
+    "ajuste_score": 1.0
    },
    {
     "arquivo": "vaca_walk_right_7.png",
@@ -2696,14 +2711,14 @@
   ],
   "walk_duracoes": {
    "down": [
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222
+    0.2051,
+    0.2051,
+    0.1026,
+    0.2051,
+    0.1026,
+    0.2051,
+    0.1026,
+    0.2051
    ],
    "left": [
     0.1667,
@@ -2737,7 +2752,7 @@
    ]
   },
   "parado": {
-   "down": 1,
+   "down": 0,
    "left": 7,
    "right": 7,
    "up": 0

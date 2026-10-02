@@ -20,7 +20,7 @@
  "diferenca_escala_entre_folhas": 0.87,
  "encaixe_acoes_px": 0,
  "parado_por_direcao": {
-  "down": 1,
+  "down": 0,
   "left": 7,
   "right": 7,
   "up": 0
@@ -36,32 +36,27 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222,
-    0.1111,
-    0.2222
+    0.2051,
+    0.2051,
+    0.1026,
+    0.2051,
+    0.1026,
+    0.2051,
+    0.1026,
+    0.2051
    ],
    "fps": 6,
    "direcao": "down",
-   "parado": 1,
+   "parado": 0,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
-    "quadros 2 e 3 quase iguais (1.3% muda): repetido?",
-    "quadros 4 e 5 quase iguais (2.1% muda): repetido?",
-    "quadros 6 e 7 quase iguais (1.0% muda): repetido?",
-    "quadro 0->1: mudanca brusca (27% vs mediana 7%)",
-    "quadro 3->4: mudanca brusca (30% vs mediana 7%)"
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros."
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 3629 px (21.0% do corpo)",
-    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 68)",
-    "quadros quase repetidos encurtados: 0, 2, 4, 6",
-    "parado = quadro 1"
+    "textura estabilizada em 240 px (1.4% do corpo)",
+    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 68)",
+    "quadros quase repetidos encurtados: 2, 4, 6",
+    "parado = quadro 0"
    ],
    "ordem_sugerida_automatica": null
   },
@@ -83,12 +78,11 @@
    "direcao": "left",
    "parado": 7,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida).",
-    "quadro 1->2: mudanca brusca (25% vs mediana 11%)"
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida)."
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 4206 px (21.5% do corpo)",
+    "textura estabilizada em 133 px (0.7% do corpo)",
     "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
     "ritmo uniforme",
     "parado = quadro 7"
@@ -117,7 +111,7 @@
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 4188 px (21.4% do corpo)",
+    "textura estabilizada em 135 px (0.7% do corpo)",
     "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 65)",
     "ritmo uniforme",
     "parado = quadro 7"
@@ -150,7 +144,7 @@
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 351 px (1.7% do corpo)",
+    "textura estabilizada em 352 px (1.7% do corpo)",
     "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 77)",
     "quadros quase repetidos encurtados: 0, 2, 4, 6",
     "parado = quadro 0"
@@ -283,5 +277,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "f1c96fec75ba76355dceab2bf9be6e281409c92e73fa668dd891281246f20577"
+ "sha256_atlas": "ec3d6810eff9fc22c66ea56e9fa4b407b53ced4fc265ef391b74417e8c8c6699"
 }

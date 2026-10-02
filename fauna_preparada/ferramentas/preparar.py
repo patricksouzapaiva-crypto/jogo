@@ -74,7 +74,14 @@ for esp in ["penala", "ovelha", "pato", "gruntho", "vaca"]:
             else:
                 ref_m = None
             dxs, scores = [], []
+            rig_linha = tipo == "walk" and all(P[(ri, c)].get("gerado_por_rig") for c in range(ncol))
+            if rig_linha:
+                # quadros do esqueleto: mesmo recorte e corpo identico -> sem realinhar (preserva o
+                # gingado e evita o corpo "afundar" quando o pe mais baixo levanta)
+                bys = [max(bys)] * ncol
             for c in range(ncol):
+                if rig_linha:
+                    dxs.append(0); scores.append(1.0); continue
                 if tipo == "walk":
                     dx, sc = melhor_dx(ref_m, movs[c], bys[0], bys[c])
                 else:

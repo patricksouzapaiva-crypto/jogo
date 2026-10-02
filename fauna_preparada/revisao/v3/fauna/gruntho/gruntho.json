@@ -1,32 +1,32 @@
 {
- "especie": "ovelha",
+ "especie": "gruntho",
  "versao": "v3",
- "atlas": "ovelha_atlas.png",
+ "atlas": "gruntho_atlas.png",
  "celula": [
-  60,
-  55
+  74,
+  54
  ],
  "pivot": [
-  29,
-  53
+  36,
+  52
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
- "altura_lado_px": 44,
+ "altura_lado_px": 38,
  "cores_na_paleta": 28,
  "fator_reducao": {
-  "walk": 0.2507,
-  "actions": 0.2741
+  "walk": 0.2346,
+  "actions": 0.2836
  },
- "diferenca_escala_entre_folhas": 0.915,
+ "diferenca_escala_entre_folhas": 0.827,
  "encaixe_acoes_px": 0,
  "parado_por_direcao": {
   "down": 0,
-  "left": 0,
-  "right": 0,
+  "left": 4,
+  "right": 5,
   "up": 0
  },
  "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
- "velocidade_sugerida_px_s": 26,
+ "velocidade_sugerida_px_s": 32,
  "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
  "acoes_fornecidas_para": "right",
  "acoes_esquerda": "PENDENTE: as acoes so existem viradas para a direita. Espelhar inverte a luz (cima-esquerda). Decidir: espelhar ou desenhar a esquerda.",
@@ -36,68 +36,63 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1633,
-    0.1633,
-    0.0816,
-    0.1633,
-    0.1633,
-    0.1633,
-    0.0816,
-    0.1633
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667
    ],
-   "fps": 7,
+   "fps": 8,
    "direcao": "down",
    "parado": 0,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
+    "quadros 0 e 1 quase iguais (1.5% muda): repetido?",
+    "quadros 2 e 3 quase iguais (0.4% muda): repetido?",
+    "quadros 6 e 7 quase iguais (1.1% muda): repetido?",
+    "emenda do loop 7->0 muda 9% (mediana 4%): ruptura no loop"
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 0 px (0.0% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 38)",
-    "quadros quase repetidos encurtados: 2, 6",
+    "textura estabilizada em 1556 px (19.1% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 44)",
+    "quadros quase repetidos encurtados: 0, 2, 4, 6",
     "parado = quadro 0"
    ],
-   "ordem_sugerida_automatica": {
-    "ordem": [
-     0,
-     3,
-     2,
-     1,
-     5,
-     6,
-     7,
-     4
-    ],
-    "reducao_pct": 27.0
-   }
+   "ordem_sugerida_automatica": null
   },
   "walk_left": {
    "linha": 1,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429
+    0.0667,
+    0.1333,
+    0.1333,
+    0.1333,
+    0.1333,
+    0.1333,
+    0.1333,
+    0.1333
    ],
-   "fps": 7,
+   "fps": 8,
    "direcao": "left",
-   "parado": 0,
+   "parado": 4,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida)."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida).",
+    "emenda do loop 7->0 muda 29% (mediana 9%): ruptura no loop",
+    "quadro 1->2: mudanca brusca (35% vs mediana 9%)",
+    "quadro 6->7: mudanca brusca (21% vs mediana 9%)"
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 70 px (0.7% do corpo)",
-    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 41)",
-    "ritmo uniforme",
-    "parado = quadro 0"
+    "textura estabilizada em 2224 px (21.6% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 45)",
+    "quadros quase repetidos encurtados: 0",
+    "parado = quadro 4"
    ],
    "ordem_sugerida_automatica": null
   },
@@ -106,27 +101,29 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429,
-    0.1429
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
    ],
-   "fps": 7,
+   "fps": 8,
    "direcao": "right",
-   "parado": 0,
+   "parado": 5,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede.",
+    "emenda do loop 7->0 muda 29% (mediana 9%): ruptura no loop",
+    "quadro 1->2: mudanca brusca (35% vs mediana 9%)"
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 69 px (0.7% do corpo)",
-    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 41)",
+    "textura estabilizada em 2218 px (21.6% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 45)",
     "ritmo uniforme",
-    "parado = quadro 0"
+    "parado = quadro 5"
    ],
    "ordem_sugerida_automatica": null
   },
@@ -135,40 +132,44 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1633,
-    0.1633,
-    0.0816,
-    0.1633,
-    0.1633,
-    0.1633,
-    0.0816,
-    0.1633
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667,
+    0.0833,
+    0.1667
    ],
-   "fps": 7,
+   "fps": 8,
    "direcao": "up",
    "parado": 0,
    "alertas": [
-    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
+    "quadros 0 e 1 quase iguais (0.7% muda): repetido?",
+    "quadros 2 e 3 quase iguais (0.3% muda): repetido?",
+    "quadros 4 e 5 quase iguais (1.0% muda): repetido?",
+    "quadros 6 e 7 quase iguais (0.2% muda): repetido?"
    ],
    "melhorias_v2": [
     "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
-    "textura estabilizada em 0 px (0.0% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 38)",
-    "quadros quase repetidos encurtados: 2, 6",
+    "textura estabilizada em 22 px (0.2% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 42)",
+    "quadros quase repetidos encurtados: 0, 2, 4, 6",
     "parado = quadro 0"
    ],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
+     1,
      3,
      2,
-     1,
-     5,
      6,
      7,
+     5,
      4
     ],
-    "reducao_pct": 24.3
+    "reducao_pct": 17.8
    }
   },
   "idle_blink": {
@@ -188,11 +189,35 @@
     1.5,
     4.0
    ],
-   "alertas": [],
+   "alertas": [
+    "emenda do loop 5->0 muda 38% (mediana 17%): ruptura no loop",
+    "quadro 0->1: mudanca brusca (45% vs mediana 17%)"
+   ],
    "obs": "Fica no quadro 0 por um tempo aleatorio e entao toca o respirar/piscar."
   },
-  "graze": {
+  "sniff": {
    "linha": 5,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "root": {
+   "linha": 6,
    "quadros": 6,
    "loop": false,
    "duracoes": [
@@ -212,20 +237,20 @@
    ],
    "alertas": []
   },
-  "bleat": {
-   "linha": 6,
+  "chew": {
+   "linha": 7,
    "quadros": 6,
    "loop": false,
    "duracoes": [
     0.12,
     0.1,
-    0.2,
-    0.28,
     0.16,
+    0.2,
+    0.14,
     0.12
    ],
    "direcao": "right",
-   "repeticoes": 1,
+   "repeticoes": 3,
    "volta_para": "idle_blink",
    "intervalo_natural_s": [
     4,
@@ -233,8 +258,8 @@
    ],
    "alertas": []
   },
-  "fleece_shake": {
-   "linha": 7,
+  "bristle_shake": {
+   "linha": 8,
    "quadros": 6,
    "loop": false,
    "duracoes": [
@@ -254,8 +279,8 @@
    ],
    "alertas": []
   },
-  "scratch": {
-   "linha": 8,
+  "rub": {
+   "linha": 9,
    "quadros": 6,
    "loop": false,
    "duracoes": [
@@ -274,28 +299,7 @@
     12
    ],
    "alertas": []
-  },
-  "drink": {
-   "linha": 9,
-   "quadros": 6,
-   "loop": false,
-   "duracoes": [
-    0.14,
-    0.12,
-    0.3,
-    0.4,
-    0.18,
-    0.14
-   ],
-   "direcao": "right",
-   "repeticoes": 1,
-   "volta_para": "idle_blink",
-   "intervalo_natural_s": [
-    4,
-    12
-   ],
-   "alertas": []
   }
  },
- "sha256_atlas": "56325b3c5851847a0d6d164e7591d136066e959932a7cd4af6c75930c6b6a0c6"
+ "sha256_atlas": "9028f229759fc82480b3c461ac656efde1ee1ff2697223822a5c7332ebe0afc1"
 }

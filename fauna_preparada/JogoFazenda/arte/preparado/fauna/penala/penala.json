@@ -1,13 +1,13 @@
 {
  "especie": "penala",
- "versao": "v2",
+ "versao": "v3",
  "atlas": "penala_atlas.png",
  "celula": [
   58,
   40
  ],
  "pivot": [
-  20,
+  21,
   38
  ],
  "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
@@ -18,11 +18,11 @@
   "actions": 0.2
  },
  "diferenca_escala_entre_folhas": 0.836,
- "encaixe_acoes_px": 1,
+ "encaixe_acoes_px": 0,
  "parado_por_direcao": {
   "down": 0,
-  "left": 6,
-  "right": 2,
+  "left": 4,
+  "right": 4,
   "up": 0
  },
  "parado_obs": "Parado para baixo/cima/esquerda (sem espelhar) usa este quadro da caminhada. Para a direita, usa idle_blink. Ao comecar a andar, comece do quadro seguinte.",
@@ -36,39 +36,42 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
+    0.1143,
+    0.1143,
     0.0571,
     0.1143,
     0.1143,
     0.1143,
-    0.1143,
-    0.1143,
-    0.1143,
-    0.0571
+    0.0571,
+    0.1143
    ],
    "fps": 10,
    "direcao": "down",
    "parado": 0,
    "alertas": [
-    "VISUAL: AJUSTADO (v2): quadros 7 e 0 quase iguais (pausa) agora tem metade da duracao."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
+    "quadros 2 e 3 quase iguais (0.2% muda): repetido?",
+    "quadros 6 e 7 quase iguais (0.4% muda): repetido?"
    ],
    "melhorias_v2": [
-    "textura estabilizada em 704 px (21.7% do corpo)",
+    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+    "textura estabilizada em 558 px (17.0% do corpo)",
     "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 27)",
-    "quadros quase repetidos encurtados: 0, 7",
+    "quadros quase repetidos encurtados: 2, 6",
     "parado = quadro 0"
    ],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
-     1,
-     5,
      4,
-     6,
-     2,
+     1,
      3,
-     7
+     2,
+     6,
+     7,
+     5
     ],
-    "reducao_pct": 21.6
+    "reducao_pct": 21.8
    }
   },
   "walk_left": {
@@ -87,51 +90,49 @@
    ],
    "fps": 10,
    "direcao": "left",
-   "parado": 6,
-   "alertas": [],
-   "melhorias_v2": [
-    "textura estabilizada em 922 px (24.9% do corpo)",
-    "sobe e desce de 1 px: ↑↑··↑↑·· (quadril na linha 28)",
-    "ritmo uniforme",
-    "parado = quadro 6"
+   "parado": 4,
+   "alertas": [
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede. Espelho da direita (a luz fica invertida).",
+    "emenda do loop 7->0 muda 11% (mediana 5%): ruptura no loop"
    ],
-   "ordem_sugerida_automatica": {
-    "ordem": [
-     0,
-     4,
-     6,
-     2,
-     7,
-     3,
-     1,
-     5
-    ],
-    "reducao_pct": 22.3
-   }
+   "melhorias_v2": [
+    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+    "textura estabilizada em 0 px (0.0% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 30)",
+    "ritmo uniforme",
+    "parado = quadro 4",
+    "3 px soltos removidos"
+   ],
+   "ordem_sugerida_automatica": null
   },
   "walk_right": {
    "linha": 2,
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.1067,
-    0.0533
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ],
    "fps": 10,
    "direcao": "right",
-   "parado": 2,
-   "alertas": [],
+   "parado": 4,
+   "alertas": [
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; corpo, cabeca e textura identicos em todos os quadros; 4 patas na sequencia de quadrupede.",
+    "emenda do loop 7->0 muda 11% (mediana 6%): ruptura no loop"
+   ],
    "melhorias_v2": [
-    "textura estabilizada em 812 px (21.9% do corpo)",
-    "sobe e desce de 1 px: ↑↑··↑↑·· (quadril na linha 28)",
-    "quadros quase repetidos encurtados: 7",
-    "parado = quadro 2"
+    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+    "textura estabilizada em 0 px (0.0% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 30)",
+    "ritmo uniforme",
+    "parado = quadro 4",
+    "3 px soltos removidos"
    ],
    "ordem_sugerida_automatica": null
   },
@@ -140,39 +141,42 @@
    "quadros": 8,
    "loop": true,
    "duracoes": [
-    0.0571,
     0.1143,
     0.1143,
     0.0571,
     0.1143,
     0.1143,
     0.1143,
+    0.0571,
     0.1143
    ],
    "fps": 10,
    "direcao": "up",
    "parado": 0,
    "alertas": [
-    "VISUAL: AJUSTADO (v2): quadros 0 e 3 quase repetidos encurtados."
+    "ESQUELETO (v3): gerada a partir de uma pose limpa; as duas patas visiveis levantam alternadamente; corpo identico em todos os quadros.",
+    "quadros 2 e 3 quase iguais (0.6% muda): repetido?",
+    "quadros 6 e 7 quase iguais (0.6% muda): repetido?"
    ],
    "melhorias_v2": [
-    "textura estabilizada em 710 px (22.0% do corpo)",
-    "sobe e desce de 1 px: ·↑↑··↑↑· (quadril na linha 27)",
-    "quadros quase repetidos encurtados: 0, 3",
+    "caminhada gerada pelo esqueleto de patas (corpo identico em todos os quadros)",
+    "textura estabilizada em 708 px (21.9% do corpo)",
+    "sobe e desce de 1 px: ··↑↑··↑↑ (quadril na linha 27)",
+    "quadros quase repetidos encurtados: 2, 6",
     "parado = quadro 0"
    ],
    "ordem_sugerida_automatica": {
     "ordem": [
      0,
-     1,
-     6,
-     5,
-     2,
-     7,
      4,
-     3
+     1,
+     2,
+     3,
+     6,
+     7,
+     5
     ],
-    "reducao_pct": 23.6
+    "reducao_pct": 20.8
    }
   },
   "idle_blink": {
@@ -301,5 +305,5 @@
    "alertas": []
   }
  },
- "sha256_atlas": "9af2b754b5e9d2c216f8e02fe0c58de03e78493df627a28690266863fb1163ff"
+ "sha256_atlas": "b9fd0002045f4eea40bc1ed1e7a2b41f93b699e85b25ac18a92131f7eb8eb491"
 }

@@ -137,6 +137,18 @@ for esp, d in rel.items():
         par = int(np.argmin(score))
         d["parado"][dn] = par
         notas.append(f"parado = quadro {par}")
+        # pixels soltos: pecas de ate 3 px desconectadas do corpo (ponta de garra que se soltou na reducao)
+        from scipy import ndimage as ndi
+        soltos = 0
+        for c in range(8):
+            al = A[c][..., 3] == 255
+            lab, k = ndi.label(al, structure=np.ones((3, 3)))
+            if k > 1:
+                tam = ndi.sum(al, lab, range(1, k + 1))
+                for i, t in enumerate(tam):
+                    if t <= 3:
+                        A[c][lab == i + 1] = 0; soltos += int(t)
+        if soltos: notas.append(f"{soltos} px soltos removidos")
         for c in range(8):
             Image.fromarray(A[c], "RGBA").save(os.path.join(OUT, esp, f"{esp}_walk_{dn}_{c}.png"))
         log[esp][dn] = notas
