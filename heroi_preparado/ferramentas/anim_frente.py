@@ -54,9 +54,11 @@ COXA_PARTE = 0.7                                          # quanto do encurtamen
 PE_PARA_DENTRO = 5                                        # o pe no ar vem um pouco para o meio
 JOELHO_LUZ = 0.07                                         # perna dobrada: coxa pega mais luz...
 CANELA_SOMBRA = 0.16                                      # ...e a canela fica mais escura
-BRACO_DESCE = 18                                          # px do desenho que a mao desce/sobe no balanco (2 px no jogo)
-BRACO_DENTRO = 7                                          # indo para a frente a mao passa na frente do quadril
-BRACO_FORA = 3                                            # indo para tras a mao abre um pouco
+# bracos: como na primeira versao (aprovada): a mao desce/sobe 12 px do desenho e abre 4 px para fora
+# quando vai para a frente (entra 4 px quando vai para tras). Os bracos acompanham o corpo (descida e
+# balanco para o lado) para nao descolar do ombro.
+BRACO_DESCE = 12
+BRACO_LADO = 4
 DURACAO_MS = L.DURACAO_MS
 PAD_X, PAD_TOP = 60, 40
 
@@ -160,11 +162,11 @@ class RigFrente:
 
     def braco(self, lado, a_balanco, bob, balanco=0):
         """Braco deformado: abaixo do ombro vai descendo/subindo ate o punho; do punho para baixo
-        anda inteiro. a_balanco: +1 = todo para a frente (desce e passa na frente do quadril), -1 = para tras."""
+        anda inteiro. a_balanco: +1 = todo para a frente (desce, vai para fora), -1 = para tras."""
         tmpl = self.p["braco_e" if lado == "e" else "braco_d"]
         dy_max = a_balanco * BRACO_DESCE
-        dentro = 1 if lado == "e" else -1
-        dx_max = dentro * (a_balanco * BRACO_DENTRO if a_balanco > 0 else a_balanco * BRACO_FORA)
+        fora = -1 if lado == "e" else 1
+        dx_max = fora * a_balanco * BRACO_LADO
         cam = np.zeros((self.CH, self.CW, 4), np.int32)
         ox, oy = self.off
         ys, xs = np.nonzero(tmpl[..., 3] > 0)
