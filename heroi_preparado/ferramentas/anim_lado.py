@@ -227,11 +227,13 @@ def recorta_quadril(cam, rig, bob):
     return cam
 
 
-def reduz(frames, rig, cores=32):
-    """Reduz 9x com a grade alinhada ao pivot (quadril / chao), paleta fixa e contorno escuro."""
+def reduz(frames, rig, cores=32, pivo=None):
+    """Reduz 9x com a grade alinhada ao pivot (quadril / chao), paleta fixa e contorno escuro.
+    pivo = (x do meio dos pes, linha da sola) no desenho original; padrao = vista de lado."""
     e = R.ESCALA
-    px = R.QUADRIL[0] + rig.off[0]
-    chao = R.CHAO + rig.off[1] + 1
+    pivo_x, chao_y = pivo if pivo else (R.QUADRIL[0], R.CHAO)
+    px = pivo_x + rig.off[0]
+    chao = chao_y + rig.off[1] + 1
     x0 = px - 4 - e * ((px - 4) // e)
     y0 = chao - e * (chao // e)
     Wf = (rig.CW - x0) // e; Hf = (rig.CH - y0) // e
