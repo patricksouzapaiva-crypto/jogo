@@ -1,0 +1,237 @@
+{
+ "especie": "gruntho",
+ "atlas": "gruntho_atlas.png",
+ "celula": [
+  74,
+  54
+ ],
+ "pivot": [
+  36,
+  52
+ ],
+ "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
+ "altura_lado_px": 38,
+ "cores_na_paleta": 28,
+ "fator_reducao": {
+  "walk": 0.2346,
+  "actions": 0.2836
+ },
+ "diferenca_escala_entre_folhas": 0.827,
+ "velocidade_sugerida_px_s": 32,
+ "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
+ "acoes_fornecidas_para": "right",
+ "acoes_esquerda": "PENDENTE: as acoes so existem viradas para a direita. Espelhar inverte a luz (cima-esquerda). Decidir: espelhar ou desenhar a esquerda.",
+ "animacoes": {
+  "walk_down": {
+   "linha": 0,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
+   ],
+   "fps": 8,
+   "direcao": "down",
+   "alertas": [
+    "VISUAL: O passo aparece so nos quadros 1 e 4 (ritmo irregular).",
+    "ordem alternativa com 32.9% menos movimento: [0, 1, 4, 6, 2, 5, 7, 3] (conferir a olho)"
+   ]
+  },
+  "walk_left": {
+   "linha": 1,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
+   ],
+   "fps": 8,
+   "direcao": "left",
+   "alertas": [
+    "ordem alternativa com 15.9% menos movimento: [0, 1, 5, 6, 3, 7, 4, 2] (conferir a olho)"
+   ]
+  },
+  "walk_right": {
+   "linha": 2,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
+   ],
+   "fps": 8,
+   "direcao": "right",
+   "alertas": [
+    "ordem alternativa com 23.1% menos movimento: [0, 1, 5, 3, 7, 6, 2, 4] (conferir a olho)"
+   ]
+  },
+  "walk_up": {
+   "linha": 3,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125,
+    0.125
+   ],
+   "fps": 8,
+   "direcao": "up",
+   "alertas": [
+    "VISUAL: Patas quase paradas (~5% de mudanca): so a traseira direita levanta (quadros 1,3,5,7); a esquerda quase nao. Vai parecer deslizar. Redesenhar com alternancia clara E/D.",
+    "ordem alternativa com 24.7% menos movimento: [0, 3, 5, 1, 7, 6, 2, 4] (conferir a olho)"
+   ]
+  },
+  "idle_blink": {
+   "linha": 4,
+   "quadros": 6,
+   "loop": true,
+   "duracoes": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "direcao": "right",
+   "pausa_no_quadro_0": [
+    1.5,
+    4.0
+   ],
+   "alertas": [
+    "emenda do loop 5->0 muda 38% (mediana 18%): ruptura no loop",
+    "quadro 0->1: mudanca brusca (45% vs mediana 18%)"
+   ],
+   "obs": "Fica no quadro 0 por um tempo aleatorio e entao toca o respirar/piscar."
+  },
+  "sniff": {
+   "linha": 5,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "root": {
+   "linha": 6,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.14,
+    0.12,
+    0.3,
+    0.4,
+    0.18,
+    0.14
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "chew": {
+   "linha": 7,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 3,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "bristle_shake": {
+   "linha": 8,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.1,
+    0.07,
+    0.07,
+    0.07,
+    0.08,
+    0.14
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "rub": {
+   "linha": 9,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  }
+ },
+ "sha256_atlas": "def2b08684c345c4bdf1986c2b8915e205d76008a91d7641385b76730e18b15c"
+}

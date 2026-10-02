@@ -1,0 +1,66 @@
+{
+ "pacote": "FAUNA_PREPARADA_v1",
+ "origem": "MOVIMENTACOES_DOS_ANIMAIS_v1",
+ "especies": {
+  "penala": {
+   "json": "penala/penala.json",
+   "atlas": "penala/penala_atlas.png",
+   "celula": [
+    58,
+    40
+   ],
+   "pivot": [
+    21,
+    38
+   ]
+  },
+  "ovelha": {
+   "json": "ovelha/ovelha.json",
+   "atlas": "ovelha/ovelha_atlas.png",
+   "celula": [
+    60,
+    56
+   ],
+   "pivot": [
+    29,
+    54
+   ]
+  },
+  "pato": {
+   "json": "pato/pato.json",
+   "atlas": "pato/pato_atlas.png",
+   "celula": [
+    60,
+    38
+   ],
+   "pivot": [
+    24,
+    36
+   ]
+  },
+  "gruntho": {
+   "json": "gruntho/gruntho.json",
+   "atlas": "gruntho/gruntho_atlas.png",
+   "celula": [
+    74,
+    54
+   ],
+   "pivot": [
+    36,
+    52
+   ]
+  },
+  "vaca": {
+   "json": "vaca/vaca.json",
+   "atlas": "vaca/vaca_atlas.png",
+   "celula": [
+    96,
+    84
+   ],
+   "pivot": [
+    49,
+    82
+   ]
+  }
+ }
+}

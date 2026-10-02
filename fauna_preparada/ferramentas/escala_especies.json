@@ -1,0 +1,9 @@
+{
+  "_explicacao": "Altura final (px do jogo) do animal PARADO DE LADO, dos pés ao topo da cabeça/crista. Referência: protagonista ~64 px de altura, tile 48x48. Mude um número e rode o preparar.py de novo.",
+  "penala":  {"altura_lado_px": 32, "cores": 32},
+  "pato":    {"altura_lado_px": 30, "cores": 32},
+  "ovelha":  {"altura_lado_px": 44, "cores": 28},
+  "gruntho": {"altura_lado_px": 38, "cores": 28},
+  "vaca":    {"altura_lado_px": 54, "cores": 32},
+  "contorno": {"aplicar": true, "escurecer": 0.45, "_obs": "pixels da borda externa ficam com a mesma cor escurecida (contorno escuro colorido, nunca preto)"}
+}

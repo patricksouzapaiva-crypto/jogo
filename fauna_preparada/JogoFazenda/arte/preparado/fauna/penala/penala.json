@@ -1,0 +1,232 @@
+{
+ "especie": "penala",
+ "atlas": "penala_atlas.png",
+ "celula": [
+  58,
+  40
+ ],
+ "pivot": [
+  21,
+  38
+ ],
+ "pivot_obs": "Ponto de contato com o chao dentro da celula. No Godot: centered=false e offset=-pivot.",
+ "altura_lado_px": 32,
+ "cores_na_paleta": 32,
+ "fator_reducao": {
+  "walk": 0.1671,
+  "actions": 0.2
+ },
+ "diferenca_escala_entre_folhas": 0.836,
+ "velocidade_sugerida_px_s": 30,
+ "velocidade_obs": "Estimativa inicial. Os ciclos nao tem um pe apoiado recuando de forma regular; ajustar a olho com o chao em movimento.",
+ "acoes_fornecidas_para": "right",
+ "acoes_esquerda": "PENDENTE: as acoes so existem viradas para a direita. Espelhar inverte a luz (cima-esquerda). Decidir: espelhar ou desenhar a esquerda.",
+ "animacoes": {
+  "walk_down": {
+   "linha": 0,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "fps": 10,
+   "direcao": "down",
+   "alertas": [
+    "VISUAL: Quadros 7, 0 e 1 quase iguais (pes juntos): pausa perceptivel a cada ciclo.",
+    "ordem alternativa com 20.3% menos movimento: [0, 3, 4, 2, 6, 5, 1, 7] (conferir a olho)"
+   ]
+  },
+  "walk_left": {
+   "linha": 1,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "fps": 10,
+   "direcao": "left",
+   "alertas": [
+    "ordem alternativa com 21.8% menos movimento: [0, 5, 1, 3, 7, 2, 4, 6] (conferir a olho)"
+   ]
+  },
+  "walk_right": {
+   "linha": 2,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "fps": 10,
+   "direcao": "right",
+   "alertas": []
+  },
+  "walk_up": {
+   "linha": 3,
+   "quadros": 8,
+   "loop": true,
+   "duracoes": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "fps": 10,
+   "direcao": "up",
+   "alertas": [
+    "VISUAL: Pares 0-1 e 3-4 muito parecidos: pequenas pausas no ciclo.",
+    "ordem alternativa com 19.6% menos movimento: [0, 2, 7, 5, 6, 1, 4, 3] (conferir a olho)"
+   ]
+  },
+  "idle_blink": {
+   "linha": 4,
+   "quadros": 6,
+   "loop": true,
+   "duracoes": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "direcao": "right",
+   "pausa_no_quadro_0": [
+    1.5,
+    4.0
+   ],
+   "alertas": [],
+   "obs": "Fica no quadro 0 por um tempo aleatorio e entao toca o respirar/piscar."
+  },
+  "scratch": {
+   "linha": 5,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "peck": {
+   "linha": 6,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.14,
+    0.12,
+    0.3,
+    0.4,
+    0.18,
+    0.14
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "preen": {
+   "linha": 7,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.16,
+    0.2,
+    0.14,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "wing_stretch": {
+   "linha": 8,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.14,
+    0.14,
+    0.2,
+    0.36,
+    0.2,
+    0.14
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  },
+  "cluck": {
+   "linha": 9,
+   "quadros": 6,
+   "loop": false,
+   "duracoes": [
+    0.12,
+    0.1,
+    0.2,
+    0.28,
+    0.16,
+    0.12
+   ],
+   "direcao": "right",
+   "repeticoes": 1,
+   "volta_para": "idle_blink",
+   "intervalo_natural_s": [
+    4,
+    12
+   ],
+   "alertas": []
+  }
+ },
+ "sha256_atlas": "1b2874d46c7b704b4a64bc1b86487e1537e857764716895ff9fd7a1a96ab1fc6"
+}

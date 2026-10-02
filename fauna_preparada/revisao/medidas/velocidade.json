@@ -1,0 +1,162 @@
+{
+ "penala": {
+  "detalhe": {
+   "right": {
+    "desloc_por_quadro": [
+     -3,
+     -8,
+     -1,
+     -2,
+     0,
+     0,
+     0,
+     -1
+    ],
+    "pe_apoiado_px_por_quadro": 2.0
+   },
+   "left": {
+    "desloc_por_quadro": [
+     -1,
+     0,
+     0,
+     -8,
+     8,
+     -8,
+     8,
+     1
+    ],
+    "pe_apoiado_px_por_quadro": 8.0
+   }
+  },
+  "px_por_quadro": 5.0,
+  "vel_8fps": 40.0
+ },
+ "ovelha": {
+  "detalhe": {
+   "right": {
+    "desloc_por_quadro": [
+     0,
+     2,
+     0,
+     -8,
+     1,
+     0,
+     1,
+     -8
+    ],
+    "pe_apoiado_px_por_quadro": 8.0
+   },
+   "left": {
+    "desloc_por_quadro": [
+     -2,
+     -4,
+     1,
+     -8,
+     1,
+     0,
+     -5,
+     8
+    ],
+    "pe_apoiado_px_por_quadro": 1.0
+   }
+  },
+  "px_por_quadro": 4.5,
+  "vel_8fps": 36.0
+ },
+ "pato": {
+  "detalhe": {
+   "right": {
+    "desloc_por_quadro": [
+     -2,
+     2,
+     -1,
+     -2,
+     2,
+     1,
+     -1,
+     -2
+    ],
+    "pe_apoiado_px_por_quadro": 2.0
+   },
+   "left": {
+    "desloc_por_quadro": [
+     3,
+     -3,
+     0,
+     -1,
+     1,
+     -3,
+     0,
+     -2
+    ],
+    "pe_apoiado_px_por_quadro": 2.0
+   }
+  },
+  "px_por_quadro": 2.0,
+  "vel_8fps": 16.0
+ },
+ "gruntho": {
+  "detalhe": {
+   "right": {
+    "desloc_por_quadro": [
+     0,
+     8,
+     -7,
+     7,
+     -8,
+     8,
+     -7,
+     0
+    ],
+    "pe_apoiado_px_por_quadro": 7.0
+   },
+   "left": {
+    "desloc_por_quadro": [
+     -7,
+     6,
+     -8,
+     7,
+     -7,
+     0,
+     0,
+     0
+    ],
+    "pe_apoiado_px_por_quadro": 6.5
+   }
+  },
+  "px_por_quadro": 6.75,
+  "vel_8fps": 54.0
+ },
+ "vaca": {
+  "detalhe": {
+   "right": {
+    "desloc_por_quadro": [
+     -2,
+     2,
+     2,
+     0,
+     1,
+     -5,
+     4,
+     -3
+    ],
+    "pe_apoiado_px_por_quadro": 3.0
+   },
+   "left": {
+    "desloc_por_quadro": [
+     -3,
+     3,
+     -3,
+     0,
+     0,
+     3,
+     -3,
+     1
+    ],
+    "pe_apoiado_px_por_quadro": 3.0
+   }
+  },
+  "px_por_quadro": 3.0,
+  "vel_8fps": 24.0
+ }
+}
