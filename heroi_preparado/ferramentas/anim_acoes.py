@@ -36,6 +36,21 @@ ENXADA = [
     dict(nome="terra", ombro=48, cotovelo=8, cabo=45, incl=9, desce=9, atras=False, chao=True, terra=2, dur=0.16),
     dict(nome="voltar", ombro=34, cotovelo=14, cabo=44, incl=0, desce=0, atras=False, chao=True, folga=30, terra=3, dur=0.11),
 ]
+# Regador: o "cabo" e a inclinacao (0 = pendurado em pe; negativo = bico para baixo).
+# agua: 0 sem agua, 1 primeiras gotas, 2/3 regando (gotas em alturas alternadas), 4 ultimas gotas.
+_REG = dict(incl=0, desce=0, atras=False, chao=False, terra=0)
+REGADOR = [
+    dict(nome="segurar", ombro=42, cotovelo=22, cabo=0, agua=0, dur=0.12, **_REG),
+    dict(nome="levantar", ombro=55, cotovelo=24, cabo=-14, agua=0, dur=0.10, **_REG),
+    dict(nome="inclinar", ombro=60, cotovelo=24, cabo=-36, agua=1, dur=0.10, **_REG),
+    dict(nome="regando_a", ombro=62, cotovelo=24, cabo=-42, agua=2, dur=0.12, **_REG),
+    dict(nome="regando_b", ombro=62, cotovelo=24, cabo=-42, agua=3, dur=0.12, **_REG),
+    dict(nome="regando_a", ombro=62, cotovelo=24, cabo=-42, agua=2, dur=0.12, **_REG),
+    dict(nome="regando_b", ombro=62, cotovelo=24, cabo=-42, agua=3, dur=0.12, **_REG),
+    dict(nome="voltar", ombro=52, cotovelo=23, cabo=-12, agua=4, dur=0.10, **_REG),
+    dict(nome="segurar", ombro=42, cotovelo=22, cabo=0, agua=0, dur=0.12, **_REG),
+]
+AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
 TERRA = (148, 98, 58); TERRA_CLARA = (182, 130, 82)
 
 
@@ -112,6 +127,13 @@ class RigAcao(L.Rig):
         desl = np.array((incl, bob), float)
         punho = self.mao(desl, q["ombro"], q["cotovelo"])
         ferr, cabo = self.ferramenta(nome_ferr, punho, q["cabo"], q["chao"], q.get("folga", 0))
+        self.bico = None
+        if nome_ferr == "regador":                       # ponta do chuveirinho (de onde sai a agua)
+            t = self._ferr(nome_ferr)
+            ys, xs = np.nonzero(t[..., 3] > 0)
+            x_max = xs.max()
+            ponta = np.array([x_max - 4, ys[xs >= x_max - 10].mean() + 10], float) - np.array(FD.pega_de(nome_ferr))
+            self.bico = punho + rot(cabo) @ ponta
         visivel = np.zeros(dst.shape[:2], bool)          # onde a ferramenta aparece no quadro final
         frente = np.zeros(dst.shape[:2], bool)           # o que foi desenhado por cima da ferramenta
         ja_colou = [False]
@@ -152,9 +174,10 @@ def gera(rig, nome_ferr, poses, extra=16):
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
         if q.get("terra") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
+    bicos = []
     for q in poses:
         f = rig.quadro_acao(nome_ferr, q, ponto)[0]
-        grandes.append(f)
+        grandes.append(f); bicos.append(rig.bico)
         mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255; mascaras.append(mk)
         fr = np.zeros(f.shape, np.int32); fr[rig.frente] = 255; frentes.append(fr)
     piv_src = (R.QUADRIL[0], R.CHAO)
@@ -179,7 +202,46 @@ def gera(rig, nome_ferr, poses, extra=16):
         # contorno firme de 1 px em volta (menos onde o braco/mao esta por cima)
         anel = ndi.binary_dilation(fm, structure=ninho) & ~fm & ~fr
         f[anel, :3] = FD.CONTORNO_JOGO; f[anel, 3] = 255
+    # agua (desenhada direto no tamanho do jogo, pixel a pixel, para ficar nitida)
+    px_src = R.QUADRIL[0] + rig.off[0]; chao_src = R.CHAO + rig.off[1] + 1
+    for f, q, b in zip(finais[1:], poses, bicos):
+        if q.get("agua") and b is not None:
+            bx = pivot[0] + (b[0] - px_src) / R.ESCALA
+            by = pivot[1] + (b[1] - chao_src) / R.ESCALA
+            desenha_agua(f, bx, by, pivot[1] - 1, q["agua"])
     return finais, pivot, np.concatenate([pal_heroi, pal_ferr, [FD.CONTORNO_JOGO]]), grandes
+
+
+def desenha_agua(f, bx, by, chao_y, fase):
+    """Gotas caindo do chuveirinho ate o chao (duas colunas, alturas alternadas) e respingo no chao."""
+    H, W = f.shape[:2]
+
+    def px(x, y, cor):
+        x, y = int(round(x)), int(round(y))
+        if 0 <= x < W and 0 <= y < H:
+            f[y, x, :3] = cor; f[y, x, 3] = 255
+
+    def gota(x, y):
+        px(x, y, AGUA_CLARA); px(x, y + 1, AGUA)
+
+    queda = chao_y - by
+    if queda <= 2:
+        return
+    fracoes = {1: [(0, 0.08), (1, 0.22)], 2: [(0, 0.12), (1, 0.30), (0, 0.48), (1, 0.66), (0, 0.84)],
+               3: [(1, 0.04), (0, 0.21), (1, 0.39), (0, 0.57), (1, 0.75), (0, 0.93)], 4: [(0, 0.62)]}[fase]
+    for coluna, fr in fracoes:
+        x = bx - 1 + 2 * coluna + 2.0 * fr           # cai um pouco para a frente
+        y = by + 1 + fr * (queda - 2)
+        if y < chao_y - 1:
+            gota(x, y)
+    if fase in (2, 3, 4):                             # respingo no chao
+        x0 = bx + 2.0
+        for dx in (-1, 0, 1, 2):
+            px(x0 + dx, chao_y, AGUA)
+        px(x0 + (-2 if fase == 2 else 3), chao_y - 1, AGUA_CLARA)
+        if fase != 4:
+            px(x0 + (3 if fase == 2 else -2), chao_y - 2, AGUA_CLARA)
+        px(x0, chao_y - 1, AGUA_ESC)
 
 
 def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
@@ -193,17 +255,22 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
     return np.concatenate([pal_heroi, novas])
 
 
+ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR)}
+
+
 if __name__ == "__main__":
-    pasta = os.path.join(SAIDA, "enxada_lado"); os.makedirs(pasta, exist_ok=True)
+    acao = next((a for a in sys.argv[1:] if not a.startswith("--")), "enxada")
+    ferr_nome, poses = ACOES[acao]
+    pasta = os.path.join(SAIDA, f"{acao}_lado"); os.makedirs(pasta, exist_ok=True)
     rig = RigAcao()
-    finais, pivot, pal, grandes = gera(rig, "enxada", ENXADA)
+    finais, pivot, pal, grandes = gera(rig, ferr_nome, poses)
     Image.fromarray(finais[0], "RGBA").save(os.path.join(pasta, "parado.png"))
-    for i, (f, q) in enumerate(zip(finais[1:], ENXADA)):
-        Image.fromarray(f, "RGBA").save(os.path.join(pasta, f"enxada_{i}_{q['nome']}.png"))
+    for i, (f, q) in enumerate(zip(finais[1:], poses)):
+        Image.fromarray(f, "RGBA").save(os.path.join(pasta, f"{acao}_{i}_{q['nome']}.png"))
     if "--grande" in sys.argv:
         for i, g in enumerate(grandes):
             Image.fromarray(g.clip(0, 255).astype(np.uint8), "RGBA").save(os.path.join(pasta, f"grande_{i}.png"))
     json.dump(dict(pivot=list(pivot), tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
-                   quadros=[dict(nome=q["nome"], duracao_s=q["dur"]) for q in ENXADA]),
+                   quadros=[dict(nome=q["nome"], duracao_s=q["dur"]) for q in poses]),
               open(os.path.join(pasta, "info.json"), "w"), indent=1)
-    print("quadro", finais[0].shape[1::-1], "pivo", pivot, "cores", len(pal))
+    print(acao, "quadro", finais[0].shape[1::-1], "pivo", pivot, "cores", len(pal))

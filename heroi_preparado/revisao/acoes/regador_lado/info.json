@@ -1,0 +1,49 @@
+{
+ "pivot": [
+  54,
+  98
+ ],
+ "tamanho": [
+  110,
+  100
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "segurar",
+   "duracao_s": 0.12
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.1
+  },
+  {
+   "nome": "inclinar",
+   "duracao_s": 0.1
+  },
+  {
+   "nome": "regando_a",
+   "duracao_s": 0.12
+  },
+  {
+   "nome": "regando_b",
+   "duracao_s": 0.12
+  },
+  {
+   "nome": "regando_a",
+   "duracao_s": 0.12
+  },
+  {
+   "nome": "regando_b",
+   "duracao_s": 0.12
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.1
+  },
+  {
+   "nome": "segurar",
+   "duracao_s": 0.12
+  }
+ ]
+}

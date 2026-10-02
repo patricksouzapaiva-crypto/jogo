@@ -73,7 +73,7 @@ ARTESANAIS = {
     "picareta": dict(arquivo="03_picareta.png", alvo=35, pega_frac=0.15, cabeca="metal"),
     "pa":       dict(arquivo="04_pa.png", alvo=38, pega_frac=0.08, cabeca="metal"),
     "foice":    dict(arquivo="05_foice_mao.png", alvo=19, pega_frac=0.30, cabeca="metal"),
-    "regador":  dict(arquivo="06_regador_cobre.png", alvo=24, cabeca="pendurado"),
+    "regador":  dict(arquivo="06_regador_cobre.png", alvo=20, cabeca="pendurado"),
     "vara":     dict(arquivo="07_vara_pescar.png", alvo=48, pega_frac=0.17, cabeca="ponta"),
 }
 V1 = {
