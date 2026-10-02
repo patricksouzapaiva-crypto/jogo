@@ -1,0 +1,41 @@
+{
+ "pivot": [
+  54,
+  98
+ ],
+ "tamanho": [
+  110,
+  100
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "preparar",
+   "duracao_s": 0.1
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.09
+  },
+  {
+   "nome": "no_alto",
+   "duracao_s": 0.15
+  },
+  {
+   "nome": "golpe",
+   "duracao_s": 0.05
+  },
+  {
+   "nome": "impacto",
+   "duracao_s": 0.11
+  },
+  {
+   "nome": "lascas",
+   "duracao_s": 0.16
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.11
+  }
+ ]
+}

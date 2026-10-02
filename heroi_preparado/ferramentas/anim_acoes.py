@@ -50,6 +50,20 @@ REGADOR = [
     dict(nome="voltar", ombro=38, cotovelo=17, cabo=-10, agua=4, dur=0.10, **_REG),
     dict(nome="segurar", ombro=26, cotovelo=16, cabo=0, agua=0, dur=0.12, **_REG),
 ]
+# Machado: mesmo arco da enxada (por cima do ombro), mas o golpe termina na altura do joelho, onde
+# bateria no tronco da arvore; saem lascas de madeira em vez de terra.
+_MAC = dict(atras=False, chao=False, terra=0)
+MACHADO = [
+    dict(nome="preparar", ombro=40, cotovelo=15, cabo=62, incl=0, desce=0, lascas=0, dur=0.10, **_MAC),
+    dict(nome="levantar", ombro=110, cotovelo=25, cabo=168, incl=0, desce=0, lascas=0, dur=0.09, **_MAC),
+    dict(nome="no_alto", ombro=166, cotovelo=24, cabo=232, incl=-9, desce=0, lascas=0, dur=0.15,
+         **{**_MAC, "atras": True}),
+    dict(nome="golpe", ombro=100, cotovelo=10, cabo=122, incl=0, desce=0, lascas=0, dur=0.05, **_MAC),
+    dict(nome="impacto", ombro=64, cotovelo=6, cabo=82, incl=9, desce=9, lascas=1, dur=0.11, **_MAC),
+    dict(nome="lascas", ombro=64, cotovelo=6, cabo=82, incl=9, desce=9, lascas=2, dur=0.16, **_MAC),
+    dict(nome="voltar", ombro=46, cotovelo=12, cabo=64, incl=0, desce=0, lascas=3, dur=0.11, **_MAC),
+]
+LASCA = (220, 172, 110); LASCA_CLARA = (246, 214, 160)
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
 TERRA = (148, 98, 58); TERRA_CLARA = (182, 130, 82)
 
@@ -114,6 +128,21 @@ class RigAcao(L.Rig):
             m = pedra[..., 3] > 0
             reg[m[:reg.shape[0], :reg.shape[1]]] = pedra[:reg.shape[0], :reg.shape[1]][m[:reg.shape[0], :reg.shape[1]]]
 
+    def lascas(self, cam, ponto, fase):
+        """Lascas de madeira saltando do ponto do golpe (para tras e para cima)."""
+        if fase == 0:
+            return
+        sobe = {1: 0.35, 2: 1.0, 3: 0.55}[fase]
+        for dx, alt, larg, alt_l in ((-70, 80, 26, 14), (-25, 120, 20, 12), (30, 95, 22, 12), (60, 50, 18, 10)):
+            x = int(ponto[0] + dx * sobe); y = int(ponto[1] - alt * sobe + (40 * sobe * sobe if fase == 3 else 0))
+            pedaco = np.zeros((alt_l + 14, larg + 14, 4), np.int32)
+            pedaco[3:-3, 3:-3] = (*LASCA, 255); pedaco[3:9, 3:-6, :3] = LASCA_CLARA
+            L.contorna(pedaco, 6)
+            y0, x0 = y - pedaco.shape[0] // 2, x - pedaco.shape[1] // 2
+            reg = cam[y0:y0 + pedaco.shape[0], x0:x0 + pedaco.shape[1]]
+            m = pedaco[:reg.shape[0], :reg.shape[1], 3] > 0
+            reg[m] = pedaco[:reg.shape[0], :reg.shape[1]][m]
+
     def quadro_acao(self, nome_ferr, q, ponto_chao=None):
         dst = np.zeros((self.CH, self.CW, 4), np.int32)
         bob, incl = q["desce"], q["incl"]
@@ -155,8 +184,7 @@ class RigAcao(L.Rig):
         if not q["atras"]:
             cola(ferr, True)
         cola(self.braco(dst, desl, q["ombro"], q["cotovelo"]))
-        if q["terra"] and ponto_chao is not None:
-            self.terra(dst, ponto_chao, q["terra"])
+        # (terra e lascas sao desenhadas depois, no tamanho do jogo: veja desenha_particulas)
         # ponto onde a lamina toca o chao (para a terra)
         m = ferr[..., 3] > 0
         ys, xs = np.nonzero(m)
@@ -172,7 +200,7 @@ def gera(rig, nome_ferr, poses, extra=16):
     A borda da ferramenta nao e escurecida (o desenho dela ja tem contorno)."""
     grandes, mascaras, frentes, ponto = [], [], [], None
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
-        if q.get("terra") == 1:
+        if q.get("terra") == 1 or q.get("lascas") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
     bicos = []
     for q in poses:
@@ -202,14 +230,48 @@ def gera(rig, nome_ferr, poses, extra=16):
         # contorno firme de 1 px em volta (menos onde o braco/mao esta por cima)
         anel = ndi.binary_dilation(fm, structure=ninho) & ~fm & ~fr
         f[anel, :3] = FD.CONTORNO_JOGO; f[anel, 3] = 255
-    # agua (desenhada direto no tamanho do jogo, pixel a pixel, para ficar nitida)
+    # agua, terra e lascas (desenhadas direto no tamanho do jogo, pixel a pixel, para ficarem nitidas)
     px_src = R.QUADRIL[0] + rig.off[0]; chao_src = R.CHAO + rig.off[1] + 1
+    if ponto is not None:
+        gx = pivot[0] + (ponto[0] - px_src) / R.ESCALA
+        gy = pivot[1] + (ponto[1] - chao_src) / R.ESCALA
+        for f, q in zip(finais[1:], poses):
+            if q.get("terra"):
+                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "terra", q["terra"])
+            if q.get("lascas"):
+                desenha_particulas(f, gx, gy, "lascas", q["lascas"])
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
             bx = pivot[0] + (b[0] - px_src) / R.ESCALA
             by = pivot[1] + (b[1] - chao_src) / R.ESCALA
             desenha_agua(f, bx, by, pivot[1] - 1, q["agua"])
     return finais, pivot, np.concatenate([pal_heroi, pal_ferr, [FD.CONTORNO_JOGO]]), grandes
+
+
+def desenha_particulas(f, x0, y0, tipo, fase):
+    """Torroes de terra (enxada) ou lascas de madeira (machado) com contorno de 1 px, no tamanho do jogo.
+    fase 1 = acabaram de sair, 2 = no alto, 3 = caindo."""
+    H, W = f.shape[:2]
+    if tipo == "terra":
+        cores = (TERRA_CLARA, TERRA); forma = [(0, 0), (1, 0), (0, 1), (1, 1)]
+        trajetos = [(-6, -4), (1, -7), (6, -3)]
+    else:
+        cores = (LASCA_CLARA, LASCA); forma = [(0, 0), (1, 0)]
+        trajetos = [(-9, -7), (-3, -11), (4, -9), (9, -4)]
+    andou = {1: 0.35, 2: 1.0, 3: 0.75}[fase]
+    cai = {1: 0, 2: 0, 3: 3}[fase]
+    for i, (dx, dy) in enumerate(trajetos):
+        if fase == 1 and i % 2:
+            continue
+        cx = int(round(x0 + dx * andou)); cy = int(round(y0 + dy * andou + cai))
+        pts = [(cx + a, cy + b) for a, b in forma]
+        anel = {(x + ax, y + ay) for x, y in pts for ax, ay in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(pts)
+        for x, y in anel:
+            if 0 <= x < W and 0 <= y < H and f[y, x, 3] == 0:
+                f[y, x, :3] = FD.CONTORNO_JOGO; f[y, x, 3] = 255
+        for k, (x, y) in enumerate(pts):
+            if 0 <= x < W and 0 <= y < H:
+                f[y, x, :3] = cores[0] if (y == cy) else cores[1]; f[y, x, 3] = 255
 
 
 def desenha_agua(f, bx, by, chao_y, fase):
@@ -255,7 +317,7 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
     return np.concatenate([pal_heroi, novas])
 
 
-ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR)}
+ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO)}
 
 
 if __name__ == "__main__":
