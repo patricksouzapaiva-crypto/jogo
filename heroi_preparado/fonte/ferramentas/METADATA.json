@@ -1,0 +1,104 @@
+{
+  "source_size": [
+    1536,
+    1024
+  ],
+  "source_mode": "RGB",
+  "source_preserved": true,
+  "transparency": "RUNTIME_SHADER_NOT_RGBA_PNG",
+  "tools": [
+    {
+      "id": "pa",
+      "atlas_region": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        300,
+        245
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    },
+    {
+      "id": "foice",
+      "atlas_region": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        365,
+        335
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    },
+    {
+      "id": "regador",
+      "atlas_region": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        355,
+        240
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    },
+    {
+      "id": "machado",
+      "atlas_region": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        225,
+        295
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    },
+    {
+      "id": "picareta",
+      "atlas_region": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        255,
+        295
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    },
+    {
+      "id": "vara_pescar",
+      "atlas_region": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "grip_source_px": [
+        245,
+        265
+      ],
+      "grip_status": "INITIAL_REQUIRES_CHARACTER_CALIBRATION",
+      "suggested_scale": 0.09
+    }
+  ],
+  "animated_frames": false,
+  "character_integration_tested": false,
+  "native_pixel_grid_certified": false
+}

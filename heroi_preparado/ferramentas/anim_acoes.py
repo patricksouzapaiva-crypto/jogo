@@ -66,7 +66,7 @@ class RigAcao(L.Rig):
         chao = self.R.CHAO + self.off[1] - folga
         if encostar:
             ys, xs = np.nonzero(t[..., 3] > 0)
-            pts = np.stack([xs + 0.5, ys + 0.5], -1) - np.array(FD.PEGA)
+            pts = np.stack([xs + 0.5, ys + 0.5], -1) - np.array(FD.pega_de(nome))
             melhor = None
             for c in np.arange(cabo - 25, cabo + 25.01, 0.5):
                 baixo = (pts @ rot(c).T)[:, 1].max() + punho[1]
@@ -75,7 +75,7 @@ class RigAcao(L.Rig):
                     melhor = (err, c)
             cabo = melhor[1]
         cam = np.zeros((self.CH, self.CW, 4), np.int32)
-        L.coloca(cam, t, np.array(FD.PEGA, float), punho, cabo)
+        L.coloca(cam, t, np.array(FD.pega_de(nome), float), punho, cabo)
         return cam, cabo
 
     def terra(self, cam, ponto, fase):
