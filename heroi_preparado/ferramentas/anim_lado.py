@@ -229,9 +229,10 @@ def recorta_quadril(cam, rig, bob):
     return cam
 
 
-def reduz(frames, rig, cores=32, pivo=None):
-    """Reduz 9x com a grade alinhada ao pivot (quadril / chao), paleta fixa e contorno escuro.
-    pivo = (x do meio dos pes, linha da sola) no desenho original; padrao = vista de lado."""
+def reduz_box(frames, rig, pivo=None):
+    """Reduz 9x (media de cada bloco 9x9) com a grade alinhada ao pivot (meio dos pes / chao).
+    pivo = (x do meio dos pes, linha da sola) no desenho original; padrao = vista de lado.
+    Devolve os quadros reduzidos (alpha so 0 ou 255, ainda sem paleta) e o pivot no quadro."""
     e = R.ESCALA
     pivo_x, chao_y = pivo if pivo else (R.QUADRIL[0], R.CHAO)
     px = pivo_x + rig.off[0]
@@ -245,11 +246,21 @@ def reduz(frames, rig, cores=32, pivo=None):
         r = np.asarray(im.convert("RGBa").resize((Wf, Hf), Image.BOX).convert("RGBA")).copy()
         r[..., 3] = np.where(r[..., 3] >= 128, 255, 0)
         red.append(r)
-    todos = np.concatenate([r[r[..., 3] == 255][:, :3] for r in red])
+    pivot = (int((px - x0) // e), int((chao - y0) // e))
+    return red, pivot
+
+
+def paleta(reduzidos, cores=32):
+    """Paleta fixa (corte pela mediana) a partir de todos os pixels opacos dos quadros."""
+    todos = np.concatenate([r[r[..., 3] == 255][:, :3] for r in reduzidos])
     amostra = Image.fromarray(todos.reshape(-1, 1, 3).astype(np.uint8), "RGB")
-    pal = np.array(amostra.quantize(colors=cores, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).getpalette()[:3 * cores]).reshape(-1, 3)
+    return np.array(amostra.quantize(colors=cores, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).getpalette()[:3 * cores]).reshape(-1, 3)
+
+
+def aplica_paleta(reduzidos, pal):
+    """Escurece a borda de fora (contorno) e troca cada cor pela mais proxima da paleta."""
     out = []
-    for r in red:
+    for r in reduzidos:
         al = r[..., 3] == 255
         rgb = r[..., :3].astype(float)
         borda = al & ndi.binary_dilation(~al, structure=[[0, 1, 0], [1, 1, 1], [0, 1, 0]])
@@ -258,8 +269,13 @@ def reduz(frames, rig, cores=32, pivo=None):
         d = ((rgb[al][:, None, :] - pal[None]) ** 2).sum(-1)
         o[al, :3] = pal[d.argmin(1)]; o[al, 3] = 255
         out.append(o)
-    pivot = (int((px - x0) // e), int((chao - y0) // e))
-    return out, pivot
+    return out
+
+
+def reduz(frames, rig, cores=32, pivo=None):
+    """Reduz 9x, paleta fixa so destes quadros e contorno escuro."""
+    red, pivot = reduz_box(frames, rig, pivo)
+    return aplica_paleta(red, paleta(red, cores)), pivot
 
 
 if __name__ == "__main__":

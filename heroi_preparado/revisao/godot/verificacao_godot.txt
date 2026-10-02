@@ -1,0 +1,38 @@
+== Dados
+  OK    heroi.json carregado
+  OK    celula 48x72 (mesmo tamanho do personagem atual)
+  OK    walk_down: 8 quadros
+  OK    walk_down: nenhum quadro vazio
+  OK    idle_down: 2 quadros
+  OK    idle_down: nenhum quadro vazio
+  OK    idle_down: pes no chao (linha do pivo)
+  OK    walk_down: 75 ms por quadro
+  OK    walk_left: 8 quadros
+  OK    walk_left: nenhum quadro vazio
+  OK    idle_left: 2 quadros
+  OK    idle_left: nenhum quadro vazio
+  OK    idle_left: pes no chao (linha do pivo)
+  OK    walk_left: 75 ms por quadro
+  OK    walk_right: 8 quadros
+  OK    walk_right: nenhum quadro vazio
+  OK    idle_right: 2 quadros
+  OK    idle_right: nenhum quadro vazio
+  OK    idle_right: pes no chao (linha do pivo)
+  OK    walk_right: 75 ms por quadro
+  OK    walk_up: 8 quadros
+  OK    walk_up: nenhum quadro vazio
+  OK    idle_up: 2 quadros
+  OK    idle_up: nenhum quadro vazio
+  OK    idle_up: pes no chao (linha do pivo)
+  OK    walk_up: 75 ms por quadro
+  OK    alpha sem semi-transparencia (pixel nitido)
+== Transicoes na cena de teste
+  OK    comeca parado olhando para baixo (respirando)
+  OK    parado -> andar para a direita comeca no quadro 0 (visto 0)
+  OK    anda para a direita (andou 10.2 px em 0.21 s)
+  OK    troca de direcao andando: direita -> cima
+  OK    na troca continua no mesmo ponto do passo (3 -> 3)
+  OK    solta a tecla: para e respira olhando para cima
+  OK    toque rapido para a esquerda: vira e fica parado olhando para a esquerda
+  OK    modo demonstracao passa por andar e parado nas direcoes (walk_right, idle_right, walk_down, idle_down, walk_left, idle_left, walk_up, idle_up)
+== Resultado: TUDO OK
