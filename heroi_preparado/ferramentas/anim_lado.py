@@ -222,7 +222,7 @@ def cola(dst, cam):
 def recorta_quadril(cam, rig, bob):
     """Acima da cintura a perna so pode aparecer dentro da largura do tronco (o resto fica escondido)."""
     y_cint = rig.off[1] + 336 + bob
-    x0, x1 = rig.off[0] + 76, rig.off[0] + 194
+    x0, x1 = rig.off[0] + 76 + getattr(rig.R, "COSTAS_RECUO", 0), rig.off[0] + 194
     cam[:y_cint, :x0] = 0
     cam[:y_cint, x1:] = 0
     cam[:rig.off[1] + 300 + bob] = 0

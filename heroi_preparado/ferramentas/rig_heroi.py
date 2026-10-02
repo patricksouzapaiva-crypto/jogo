@@ -30,6 +30,7 @@ COTOVELO = (104, 286)
 ESCURO = 150          # soma RGB abaixo disso = contorno
 COSTAS_X = 80         # borda das costas na altura do ombro (y=250)
 COSTAS_INCLINA = 0.03 # a borda das costas desce quase reta
+COSTAS_RECUO = 26     # do ombro para baixo as costas entram (curva) ate 26 px: menos camisa atras do braco
 # caixas (x0, x1, y0, y1) onde procurar cada parte do braco de perto
 MAO_CAIXA = (50, 141, 312, 427)
 PUNHO_CAIXA = (62, 140, 278, 322)
@@ -123,7 +124,9 @@ def separa(a, c=None):
     camisa = c.CAMISA; camisa_esc = c.CAMISA_ESC; contorno = (20, 8, 10)
     # as costas sao retas: o buraco so e preenchido ate a linha das costas (sem o formato do punho
     # e da mao, que criava uma "corcunda" quando o braco ia para a frente)
-    linha_costas = np.ceil(c.COSTAS_X - (yy - 250) * c.COSTAS_INCLINA).astype(int)
+    curva = np.clip((yy - 256) / 44.0, 0, 1)
+    curva = curva * curva * (3 - 2 * curva)
+    linha_costas = np.ceil(c.COSTAS_X - (yy - 250) * c.COSTAS_INCLINA + c.COSTAS_RECUO * curva).astype(int)
     buraco_tronco = braco & (yy < 338) & (yy >= 240) & (xx >= linha_costas)
     corpo_rgba[buraco_tronco, :3] = camisa
     corpo_rgba[buraco_tronco, 3] = 255
@@ -137,7 +140,7 @@ def separa(a, c=None):
     borda = m & ~ndi.binary_erosion(m, iterations=7)
     novo = (buraco_tronco | caixa(al.shape, 72, 140, 336, 362)) & borda
     corpo_rgba[novo, :3] = contorno
-    costas = buraco_tronco & ~novo & (xx < linha_costas + 16)
+    costas = buraco_tronco & ~novo & (xx < linha_costas + 12)
     corpo_rgba[costas, :3] = camisa_esc
 
     braco_rgba = a.copy(); braco_rgba[~braco] = 0
