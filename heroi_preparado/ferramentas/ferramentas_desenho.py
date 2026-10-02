@@ -122,6 +122,41 @@ def _eh_metal(t):
     return (t[..., 3] > 0) & (np.abs(r - g) < 30) & (b >= r - 12) & (np.abs(g - b) < 45) & (r > 70)
 
 
+CONTORNO_JOGO = (36, 20, 14)          # contorno de 1 px em volta da ferramenta, no tamanho do jogo
+_PALETA = {}
+
+
+def _tira_contorno(t, larg=16, limite=200):
+    """Troca o contorno escuro do desenho pela cor de dentro (o contorno e refeito no tamanho do
+    jogo, com 1 pixel firme). Detalhes escuros de dentro (couro, sombras) ficam."""
+    from scipy import ndimage as _ndi
+    m = t[..., 3] > 0
+    faixa = m & ~_ndi.binary_erosion(m, iterations=larg)
+    ruim = faixa & (t[..., :3].sum(2) < limite)
+    bom = m & ~ruim
+    if not bom.any():
+        return t
+    _, (iy, ix) = _ndi.distance_transform_edt(~bom, return_indices=True)
+    o = t.copy()
+    o[ruim] = t[iy[ruim], ix[ruim]]
+    return o
+
+
+def _paleta_propria(t, cores=12):
+    """Cores da propria ferramenta (sem contorno), para ela nao se misturar com as cores do heroi."""
+    from PIL import Image as _I
+    px = t[t[..., 3] > 0][:, :3]
+    if len(px) > 200000:
+        px = px[np.random.default_rng(1).choice(len(px), 200000, replace=False)]
+    amostra = _I.fromarray(px.reshape(-1, 1, 3).astype(np.uint8), "RGB")
+    q = amostra.quantize(colors=cores, method=_I.Quantize.MEDIANCUT, dither=_I.Dither.NONE)
+    return np.array(q.getpalette()[:3 * cores]).reshape(-1, 3)
+
+
+def paleta_de(nome):
+    return _PALETA.get(nome)
+
+
 def prepara(nome):
     """Ferramenta pronta para o esqueleto: (imagem RGBA, ponto da pega)."""
     from PIL import Image as _I
@@ -133,6 +168,9 @@ def prepara(nome):
     if cfg.get("sem_linha"):                       # tira a linha e o anzol desenhados (a linha sera um efeito)
         al &= ~((r > 170) & (g > 150) & (b < 170) & (np.abs(r - g) < 70))
     al = _maior_pedaco(al); t[~al] = 0
+    if nome in ARTESANAIS:
+        t = _tira_contorno(t)
+        _PALETA[nome] = _paleta_propria(t)
     ys, xs = np.nonzero(al)
     pts = np.stack([xs, ys], -1).astype(float)
     madeira = al & (r > 140) & (g > 55) & (b < 120) & (r - b > 70) & (r > g)

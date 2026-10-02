@@ -8,6 +8,7 @@ a frente no golpe (sempre em px inteiros do jogo, para o rosto nao tremer).
 import json, math, os, sys
 import numpy as np
 from PIL import Image
+from scipy import ndimage as ndi
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import anim_lado as L
@@ -112,11 +113,17 @@ class RigAcao(L.Rig):
         punho = self.mao(desl, q["ombro"], q["cotovelo"])
         ferr, cabo = self.ferramenta(nome_ferr, punho, q["cabo"], q["chao"], q.get("folga", 0))
         visivel = np.zeros(dst.shape[:2], bool)          # onde a ferramenta aparece no quadro final
+        frente = np.zeros(dst.shape[:2], bool)           # o que foi desenhado por cima da ferramenta
+        ja_colou = [False]
 
         def cola(cam, eh_ferr=False):
             m = cam[..., 3] > 0
             dst[m] = cam[m]
             visivel[m] = eh_ferr
+            if eh_ferr:
+                ja_colou[0] = True; frente[m] = False
+            elif ja_colou[0]:
+                frente[m] = True
 
         if q["atras"]:
             cola(ferr, True)
@@ -134,27 +141,45 @@ class RigAcao(L.Rig):
         baixo = ys.max()
         ponto = (int(xs[ys >= baixo - 6].mean()), int(baixo))
         self.visivel = visivel
+        self.frente = frente
         return dst, ponto, cabo
 
 
 def gera(rig, nome_ferr, poses, extra=16):
     """Quadros grandes -> reduzidos (9x) com a paleta do heroi + cores da ferramenta.
     A borda da ferramenta nao e escurecida (o desenho dela ja tem contorno)."""
-    grandes, mascaras, ponto = [], [], None
+    grandes, mascaras, frentes, ponto = [], [], [], None
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
         if q.get("terra") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
     for q in poses:
         f = rig.quadro_acao(nome_ferr, q, ponto)[0]
         grandes.append(f)
-        mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255
-        mascaras.append(mk)
-    red, pivot = L.reduz_box([rig.parado()] + grandes, rig, (R.QUADRIL[0], R.CHAO))
-    red_m, _ = L.reduz_box([np.zeros_like(mascaras[0])] + mascaras, rig, (R.QUADRIL[0], R.CHAO))
-    sem = [m[..., 3] == 255 for m in red_m]
+        mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255; mascaras.append(mk)
+        fr = np.zeros(f.shape, np.int32); fr[rig.frente] = 255; frentes.append(fr)
+    piv_src = (R.QUADRIL[0], R.CHAO)
+    red, pivot = L.reduz_box([rig.parado()] + grandes, rig, piv_src)
+    vazio = np.zeros_like(mascaras[0])
+    ferr_m = [m[..., 3] >= 128 for m in L.reduz_box([vazio] + mascaras, rig, piv_src)[0]]
+    frente_m = [m[..., 3] >= 128 for m in L.reduz_box([vazio] + frentes, rig, piv_src)[0]]
     pal_heroi = np.array(json.load(open(os.path.join(ARTE, "heroi.json")))["paleta"])
-    pal = paleta_com_ferramenta(red, pal_heroi, extra)
-    return L.aplica_paleta(red, pal, sem), pivot, pal, grandes
+    pal_ferr = FD.paleta_de(nome_ferr)
+    if pal_ferr is None:                                  # ferramenta sem paleta propria (enxada de teste)
+        pal = paleta_com_ferramenta(red, pal_heroi, extra)
+        return L.aplica_paleta(red, pal, ferr_m), pivot, pal, grandes
+    finais = L.aplica_paleta(red, pal_heroi, ferr_m)
+    ninho = [[0, 1, 0], [1, 1, 1], [0, 1, 0]]
+    for f, r, fm, fr in zip(finais, red, ferr_m, frente_m):
+        fm = fm & (r[..., 3] == 255)
+        if not fm.any():
+            continue
+        # cores da propria ferramenta (nitidas, sem misturar com as do heroi)
+        cor = r[fm][:, :3].astype(int)
+        f[fm, :3] = pal_ferr[((cor[:, None, :] - pal_ferr[None]) ** 2).sum(-1).argmin(1)]
+        # contorno firme de 1 px em volta (menos onde o braco/mao esta por cima)
+        anel = ndi.binary_dilation(fm, structure=ninho) & ~fm & ~fr
+        f[anel, :3] = FD.CONTORNO_JOGO; f[anel, 3] = 255
+    return finais, pivot, np.concatenate([pal_heroi, pal_ferr, [FD.CONTORNO_JOGO]]), grandes
 
 
 def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
