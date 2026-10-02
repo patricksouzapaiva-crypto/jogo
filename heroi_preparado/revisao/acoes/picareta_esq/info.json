@@ -1,0 +1,69 @@
+{
+ "pivot": [
+  54,
+  98
+ ],
+ "tamanho": [
+  110,
+  100
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "preparar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    32.3,
+    97.9
+   ]
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.09,
+   "ponta_ferramenta": [
+    28.7,
+    28.7
+   ]
+  },
+  {
+   "nome": "no_alto",
+   "duracao_s": 0.16,
+   "ponta_ferramenta": [
+    74.6,
+    19.7
+   ]
+  },
+  {
+   "nome": "golpe",
+   "duracao_s": 0.05,
+   "ponta_ferramenta": [
+    13.9,
+    54.2
+   ]
+  },
+  {
+   "nome": "impacto",
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    30.7,
+    97.8
+   ]
+  },
+  {
+   "nome": "pedra",
+   "duracao_s": 0.16,
+   "ponta_ferramenta": [
+    30.7,
+    97.8
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    28.1,
+    94.6
+   ]
+  }
+ ]
+}

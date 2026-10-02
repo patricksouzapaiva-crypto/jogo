@@ -1,0 +1,69 @@
+{
+ "pivot": [
+  54,
+  98
+ ],
+ "tamanho": [
+  110,
+  100
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "preparar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    22.8,
+    95.2
+   ]
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    14.4,
+    79.8
+   ]
+  },
+  {
+   "nome": "cravar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    23.6,
+    98.2
+   ]
+  },
+  {
+   "nome": "alavanca",
+   "duracao_s": 0.14,
+   "ponta_ferramenta": [
+    22.2,
+    94.8
+   ]
+  },
+  {
+   "nome": "erguer",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    12.7,
+    76.6
+   ]
+  },
+  {
+   "nome": "jogar",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    11.3,
+    43.6
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    24.1,
+    96.1
+   ]
+  }
+ ]
+}

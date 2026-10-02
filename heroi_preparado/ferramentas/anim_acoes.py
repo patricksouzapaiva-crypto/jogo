@@ -261,7 +261,8 @@ def gera(rig, nome_ferr, poses, extra=16):
         grandes.append(f); bicos.append(rig.bico); pontas.append(rig.ponta); punhos.append(rig.punho)
         mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255; mascaras.append(mk)
         fr = np.zeros(f.shape, np.int32); fr[rig.frente] = 255; frentes.append(fr)
-    piv_src = (R.QUADRIL[0], R.CHAO)
+    RR = rig.R
+    piv_src = (RR.QUADRIL[0], RR.CHAO)
     red, pivot = L.reduz_box([rig.parado()] + grandes, rig, piv_src)
     vazio = np.zeros_like(mascaras[0])
     ferr_m = [m[..., 3] >= 128 for m in L.reduz_box([vazio] + mascaras, rig, piv_src)[0]]
@@ -284,10 +285,10 @@ def gera(rig, nome_ferr, poses, extra=16):
         anel = ndi.binary_dilation(fm, structure=ninho) & ~fm & ~fr
         f[anel, :3] = FD.CONTORNO_JOGO; f[anel, 3] = 255
     # agua, terra e lascas (desenhadas direto no tamanho do jogo, pixel a pixel, para ficarem nitidas)
-    px_src = R.QUADRIL[0] + rig.off[0]; chao_src = R.CHAO + rig.off[1] + 1
+    px_src = RR.QUADRIL[0] + rig.off[0]; chao_src = RR.CHAO + rig.off[1] + 1
     if ponto is not None:
-        gx = pivot[0] + (ponto[0] - px_src) / R.ESCALA
-        gy = pivot[1] + (ponto[1] - chao_src) / R.ESCALA
+        gx = pivot[0] + (ponto[0] - px_src) / RR.ESCALA
+        gy = pivot[1] + (ponto[1] - chao_src) / RR.ESCALA
         for f, q in zip(finais[1:], poses):
             if q.get("terra"):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "terra", q["terra"])
@@ -297,11 +298,11 @@ def gera(rig, nome_ferr, poses, extra=16):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
             if q.get("capim"):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "capim", q["capim"])
-    rig.pontas_jogo = [(float(pivot[0] + (pt[0] - px_src) / R.ESCALA), float(pivot[1] + (pt[1] - chao_src) / R.ESCALA))
+    rig.pontas_jogo = [(float(pivot[0] + (pt[0] - px_src) / RR.ESCALA), float(pivot[1] + (pt[1] - chao_src) / RR.ESCALA))
                        for pt in pontas]
     for f, q, pt, pu in zip(finais[1:], poses, pontas, punhos):   # pa: monte de terra na lamina e terra jogada
-        tx = pivot[0] + (pt[0] - px_src) / R.ESCALA
-        ty = pivot[1] + (pt[1] - chao_src) / R.ESCALA
+        tx = pivot[0] + (pt[0] - px_src) / RR.ESCALA
+        ty = pivot[1] + (pt[1] - chao_src) / RR.ESCALA
         if q.get("monte"):
             # em cima da lamina: 4 px para tras da ponta (na direcao da mao) e 2 px acima
             d = np.array(pt) - np.array(pu); d /= max(1e-6, np.hypot(*d))
@@ -310,8 +311,8 @@ def gera(rig, nome_ferr, poses, extra=16):
             desenha_particulas(f, tx + 2, ty - 2, "terra", q["jogar"])
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
-            bx = pivot[0] + (b[0] - px_src) / R.ESCALA
-            by = pivot[1] + (b[1] - chao_src) / R.ESCALA
+            bx = pivot[0] + (b[0] - px_src) / RR.ESCALA
+            by = pivot[1] + (b[1] - chao_src) / RR.ESCALA
             desenha_agua(f, bx, by, pivot[1] - 1, q["agua"])
     return finais, pivot, np.concatenate([pal_heroi, pal_ferr, [FD.CONTORNO_JOGO]]), grandes
 
@@ -417,20 +418,58 @@ ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado
          "pa": ("pa", PA), "vara": ("vara", PESCA)}
 
 
+def gera_acao(acao, esquerda=False):
+    """Gera uma acao (lado direito, ou esquerdo com o desenho da esquerda: as contas sao feitas numa
+    copia virada e cada quadro e desvirado no fim, como no andar). Devolve quadros, pivo e info."""
+    ferr_nome, poses = ACOES[acao]
+    if esquerda:
+        import rig_heroi_esq as RE
+        rig = RigAcao(RE)
+    else:
+        rig = RigAcao()
+    finais, pivot, pal, grandes = gera(rig, ferr_nome, poses)
+    pontas = list(rig.pontas_jogo)
+    if esquerda:
+        larg = finais[0].shape[1]
+        finais = [np.ascontiguousarray(f[:, ::-1]) for f in finais]
+        pivot = (larg - 1 - pivot[0], pivot[1])
+        pontas = [(larg - 1 - x, y) for x, y in pontas]
+    info = dict(pivot=[int(v) for v in pivot], tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
+                quadros=[dict(nome=q["nome"], duracao_s=q["dur"], ponta_ferramenta=[round(v, 1) for v in pontas[i]])
+                         for i, q in enumerate(poses)])
+    return finais, pivot, info, grandes
+
+
+def gera_acao(acao, esquerda=False):
+    """Gera uma acao (lado direito, ou esquerdo com o desenho da esquerda: as contas sao feitas numa
+    copia virada e cada quadro e desvirado no fim, como no andar). Devolve quadros, pivo e info."""
+    ferr_nome, poses = ACOES[acao]
+    if esquerda:
+        import rig_heroi_esq as RE
+        rig = RigAcao(RE)
+    else:
+        rig = RigAcao()
+    finais, pivot, pal, grandes = gera(rig, ferr_nome, poses)
+    pontas = list(rig.pontas_jogo)
+    if esquerda:
+        larg = finais[0].shape[1]
+        finais = [np.ascontiguousarray(f[:, ::-1]) for f in finais]
+        pivot = (larg - 1 - pivot[0], pivot[1])
+        pontas = [(larg - 1 - x, y) for x, y in pontas]
+    info = dict(pivot=[int(v) for v in pivot], tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
+                quadros=[dict(nome=q["nome"], duracao_s=q["dur"], ponta_ferramenta=[round(v, 1) for v in pontas[i]])
+                         for i, q in enumerate(poses)])
+    return finais, pivot, info, grandes
+
+
 if __name__ == "__main__":
     acao = next((a for a in sys.argv[1:] if not a.startswith("--")), "enxada")
-    ferr_nome, poses = ACOES[acao]
-    pasta = os.path.join(SAIDA, f"{acao}_lado"); os.makedirs(pasta, exist_ok=True)
-    rig = RigAcao()
-    finais, pivot, pal, grandes = gera(rig, ferr_nome, poses)
+    esq = "--esq" in sys.argv
+    pasta = os.path.join(SAIDA, f"{acao}_{'esq' if esq else 'lado'}"); os.makedirs(pasta, exist_ok=True)
+    finais, pivot, info, grandes = gera_acao(acao, esq)
+    poses = ACOES[acao][1]
     Image.fromarray(finais[0], "RGBA").save(os.path.join(pasta, "parado.png"))
     for i, (f, q) in enumerate(zip(finais[1:], poses)):
         Image.fromarray(f, "RGBA").save(os.path.join(pasta, f"{acao}_{i}_{q['nome']}.png"))
-    if "--grande" in sys.argv:
-        for i, g in enumerate(grandes):
-            Image.fromarray(g.clip(0, 255).astype(np.uint8), "RGBA").save(os.path.join(pasta, f"grande_{i}.png"))
-    json.dump(dict(pivot=list(pivot), tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
-                   quadros=[dict(nome=q["nome"], duracao_s=q["dur"],
-                                 ponta_ferramenta=[round(v, 1) for v in rig.pontas_jogo[i]]) for i, q in enumerate(poses)]),
-              open(os.path.join(pasta, "info.json"), "w"), indent=1)
-    print(acao, "quadro", finais[0].shape[1::-1], "pivo", pivot, "cores", len(pal))
+    json.dump(info, open(os.path.join(pasta, "info.json"), "w"), indent=1)
+    print(acao, "esq" if esq else "dir", "quadro", info["tamanho"], "pivo", pivot)

@@ -1,0 +1,61 @@
+{
+ "pivot": [
+  54,
+  98
+ ],
+ "tamanho": [
+  110,
+  100
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "preparar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    50.6,
+    87.6
+   ]
+  },
+  {
+   "nome": "puxar",
+   "duracao_s": 0.14,
+   "ponta_ferramenta": [
+    70.9,
+    86.4
+   ]
+  },
+  {
+   "nome": "golpe",
+   "duracao_s": 0.05,
+   "ponta_ferramenta": [
+    49.4,
+    88.8
+   ]
+  },
+  {
+   "nome": "corte",
+   "duracao_s": 0.09,
+   "ponta_ferramenta": [
+    38.7,
+    81.8
+   ]
+  },
+  {
+   "nome": "seguir",
+   "duracao_s": 0.14,
+   "ponta_ferramenta": [
+    30.9,
+    66.2
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    44.6,
+    85.2
+   ]
+  }
+ ]
+}
