@@ -22,7 +22,7 @@ W, H = TW // Z, TH // Z
 HX, CHAO = 70, 96                     # pes do heroi na cena
 AGUA_X, AGUA_Y = 112, 92              # onde comeca o lago
 POUSO = (172, 104)                    # onde a boia cai
-LINHA = (236, 236, 226); CONT = (36, 20, 14)
+LINHA = (232, 224, 200); CONT = (36, 20, 14)
 fonte = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 30)
 
 
@@ -56,23 +56,85 @@ def ponto(img, x, y, cor):
         img[y, x] = cor
 
 
+def _bresenham(x0, y0, x1, y1):
+    dx, dy = abs(x1 - x0), -abs(y1 - y0)
+    sx, sy = (1 if x0 < x1 else -1), (1 if y0 < y1 else -1)
+    err = dx + dy
+    while True:
+        yield x0, y0
+        if x0 == x1 and y0 == y1:
+            return
+        e2 = 2 * err
+        if e2 >= dy:
+            err += dy; x0 += sx
+        if e2 <= dx:
+            err += dx; y0 += sy
+
+
 def linha(img, a, b, curva):
-    n = int(max(abs(b[0] - a[0]), abs(b[1] - a[1]))) * 2 + 2
+    """Linha de pesca de 1 px, continua e sem 'degraus' dobrados (pixel perfeito)."""
+    n = max(2, int(max(abs(b[0] - a[0]), abs(b[1] - a[1])) / 3))
+    pts = []
     for i in range(n + 1):
         t = i / n
-        x = a[0] + (b[0] - a[0]) * t
-        y = a[1] + (b[1] - a[1]) * t + curva * 4 * t * (1 - t)
+        pts.append((int(round(a[0] + (b[0] - a[0]) * t)), int(round(a[1] + (b[1] - a[1]) * t + curva * 4 * t * (1 - t)))))
+    caminho = []
+    for (x0, y0), (x1, y1) in zip(pts[:-1], pts[1:]):
+        for q in _bresenham(x0, y0, x1, y1):
+            if not caminho or caminho[-1] != q:
+                caminho.append(q)
+    limpo = []                                   # tira os cantos em "L" (pixel a mais nas curvas)
+    for i, q in enumerate(caminho):
+        if 0 < i < len(caminho) - 1 and limpo:
+            p0, p1 = limpo[-1], caminho[i + 1]
+            if abs(p0[0] - p1[0]) == 1 and abs(p0[1] - p1[1]) == 1:
+                continue
+        limpo.append(q)
+    for x, y in limpo:
         ponto(img, x, y, LINHA)
 
 
-def boia(img, x, y, afunda=0):
-    x, y = int(round(x)), int(round(y + afunda))
-    for dx in (-2, -1, 0, 1, 2):
-        for dy in (-3, -2, -1, 0, 1):
-            if abs(dx) == 2 or dy in (-3, 1):
-                ponto(img, x + dx, y + dy, CONT)
-    for dx in (-1, 0, 1):
-        ponto(img, x + dx, y - 2, (224, 64, 52)); ponto(img, x + dx, y - 1, (224, 64, 52)); ponto(img, x + dx, y, (246, 246, 240))
+# boia no estilo do jogo: contorno escuro, vermelho com sombra e brilho, branco embaixo, haste no topo
+_K, _R, _r, _h, _B, _b = (36, 20, 14), (220, 60, 48), (158, 36, 34), (255, 170, 150), (246, 242, 230), (196, 190, 178)
+BOIA = [
+    "..K..",
+    ".KhK.",
+    "KhRrK",
+    "KRRrK",
+    "KBBbK",
+    ".KbK.",
+    "..K..",
+]
+_COR = {"K": _K, "R": _R, "r": _r, "h": _h, "B": _B, "b": _b}
+AGUA_CLARA = (170, 216, 242); AGUA_ESPUMA = (226, 244, 252)
+
+
+def boia(img, x, y, afunda=0, na_agua=False, onda=0):
+    """(x, y) = ponto de contato com a agua. Na agua so aparece a parte de cima + ondinhas."""
+    x, y = int(round(x)), int(round(y))
+    topo = y - 4 + afunda
+    linhas = BOIA if not na_agua else BOIA[:max(1, 5 - afunda)]
+    for j, lin in enumerate(linhas):
+        for i, c in enumerate(lin):
+            if c != ".":
+                ponto(img, x - 2 + i, topo + j, _COR[c])
+    if na_agua:
+        lar = 3 + onda                            # ondinha (anel achatado) em volta da boia
+        for dx in range(-lar, lar + 1):
+            if abs(dx) >= 2:
+                ponto(img, x + dx, y + 1, AGUA_CLARA)
+        for dx in range(-lar + 1, lar):
+            if abs(dx) >= 3:
+                ponto(img, x + dx, y + 2, AGUA_CLARA)
+
+
+def respingo(img, x, y, fase):
+    x, y = int(round(x)), int(round(y))
+    alt = [2, 4, 3][fase]
+    for dx, dy in ((-3, -alt), (3, -alt), (-1, -alt - 2), (1, -alt - 2)):
+        ponto(img, x + dx, y + dy, AGUA_ESPUMA)
+    for dx in range(-4, 5):
+        ponto(img, x + dx, y + 1, AGUA_CLARA)
 
 
 def roteiro():
@@ -101,7 +163,9 @@ def roteiro():
             seq_voo.append(nome)
     for i, nome in enumerate(seq_voo):
         t = (i + 1) / len(seq_voo)
-        seq.append((nome, voo(t, ini), 2.0, 0))
+        seq.append((nome, voo(t, ini), 2.0, -1 if t < 0.999 else 0))
+    for k in range(9):                          # respingo ao cair
+        seq.append(("esperar_a", (POUSO[0], POUSO[1], 1), 3.0, -(10 + k // 3)))
     # esperando: a boia balanca; perto do fim, duas mordidas (afunda)
     T = 2.4; n = round(T * FPS)
     for i in range(n):
@@ -110,7 +174,7 @@ def roteiro():
         afunda = 1 if math.sin(t * 6) > 0.6 else 0
         if t > 1.7:
             afunda = 3 if int((t - 1.7) / 0.18) % 2 == 0 else 0
-        seq.append((nome, (POUSO[0], POUSO[1], afunda), 3.0, 1 + (i // 20) % 3))
+        seq.append((nome, (POUSO[0], POUSO[1], afunda), 3.0, (i // 24) % 3))
     for i in range(round(0.12 * FPS)):
         seq.append(("fisgar", (POUSO[0] - 3, POUSO[1], 1), 0.0, 2))
     # recolhendo: a boia vem ate a margem e sai da agua
@@ -136,11 +200,14 @@ def quadros():
             cola(img, spr, HX - px, CHAO - py)
             if b is not None:
                 tx, ty = HX - px + pt[0], CHAO - py + pt[1]
-                if onda:
-                    for dx in range(-2 - onda, 3 + onda):
-                        ponto(img, b[0] + dx, b[1] + 2, (150, 200, 238))
-                linha(img, (tx, ty), (b[0], b[1] - 2 + b[2]), curva)
-                boia(img, b[0], b[1], b[2])
+                no_ar = onda == -1
+                linha(img, (tx, ty), (b[0], b[1] - 4 + b[2]), curva)
+                if no_ar:
+                    boia(img, b[0], b[1], 0, na_agua=False)
+                else:
+                    boia(img, b[0], b[1], b[2], na_agua=True, onda=max(0, onda) if onda >= 0 else 1)
+                    if onda <= -10:
+                        respingo(img, b[0], b[1], -onda - 10)
         g = Image.fromarray(img).resize((W * Z, H * Z), Image.NEAREST)
         d = ImageDraw.Draw(g)
         texto = "Pescando (tamanho real x5) - linha e boia feitas pelo jogo"
