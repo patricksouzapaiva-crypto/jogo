@@ -87,6 +87,17 @@ FOICE = [
     dict(nome="seguir", ombro=60, cotovelo=12, cabo=110, incl=9, desce=9, capim=2, dur=0.14, **_FOI),
     dict(nome="voltar", ombro=22, cotovelo=22, cabo=38, incl=0, desce=0, capim=3, dur=0.12, **_FOI),
 ]
+# Pa: crava na terra, faz alavanca, ergue um monte de terra na lamina e joga para a frente.
+_PA = dict(atras=False, lascas=0, pedra=0, capim=0)
+PA = [
+    dict(nome="preparar", ombro=34, cotovelo=18, cabo=26, incl=0, desce=0, chao=True, folga=12, terra=0, dur=0.10, **_PA),
+    dict(nome="levantar", ombro=68, cotovelo=22, cabo=62, incl=-9, desce=0, chao=False, terra=0, dur=0.10, **_PA),
+    dict(nome="cravar", ombro=36, cotovelo=8, cabo=20, incl=9, desce=9, chao=True, terra=1, dur=0.10, **_PA),
+    dict(nome="alavanca", ombro=26, cotovelo=14, cabo=34, incl=0, desce=9, chao=True, folga=10, terra=2, monte=True, dur=0.14, **_PA),
+    dict(nome="erguer", ombro=62, cotovelo=22, cabo=70, incl=-9, desce=0, chao=False, terra=0, monte=True, dur=0.12, **_PA),
+    dict(nome="jogar", ombro=98, cotovelo=16, cabo=112, incl=9, desce=0, chao=False, terra=0, jogar=2, dur=0.12, **_PA),
+    dict(nome="voltar", ombro=46, cotovelo=18, cabo=40, incl=0, desce=0, chao=False, terra=0, jogar=3, dur=0.12, **_PA),
+]
 CAPIM = (96, 160, 58); CAPIM_CLARO = (164, 214, 96)
 PEDRA = (138, 146, 158); PEDRA_CLARA = (196, 202, 210); FAISCA = (255, 246, 190); FAISCA_COR = (255, 196, 64)
 AGUA = (112, 186, 236); AGUA_CLARA = (210, 240, 255); AGUA_ESC = (52, 104, 160)
@@ -215,6 +226,9 @@ class RigAcao(L.Rig):
         ys, xs = np.nonzero(m)
         baixo = ys.max()
         ponto = (int(xs[ys >= baixo - 6].mean()), int(baixo))
+        d2 = (xs - punho[0]) ** 2 + (ys - punho[1]) ** 2
+        self.ponta = (float(xs[d2.argmax()]), float(ys[d2.argmax()]))
+        self.punho = (float(punho[0]), float(punho[1]))
         self.visivel = visivel
         self.frente = frente
         return dst, ponto, cabo
@@ -227,10 +241,10 @@ def gera(rig, nome_ferr, poses, extra=16):
     for q in poses:                                       # 1a passada: acha o ponto do impacto (terra)
         if q.get("terra") == 1 or q.get("lascas") == 1 or q.get("pedra") == 1 or q.get("capim") == 1:
             ponto = rig.quadro_acao(nome_ferr, q, None)[1]
-    bicos = []
+    bicos, pontas, punhos = [], [], []
     for q in poses:
         f = rig.quadro_acao(nome_ferr, q, ponto)[0]
-        grandes.append(f); bicos.append(rig.bico)
+        grandes.append(f); bicos.append(rig.bico); pontas.append(rig.ponta); punhos.append(rig.punho)
         mk = np.zeros(f.shape, np.int32); mk[rig.visivel] = 255; mascaras.append(mk)
         fr = np.zeros(f.shape, np.int32); fr[rig.frente] = 255; frentes.append(fr)
     piv_src = (R.QUADRIL[0], R.CHAO)
@@ -269,6 +283,15 @@ def gera(rig, nome_ferr, poses, extra=16):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
             if q.get("capim"):
                 desenha_particulas(f, gx, min(gy, pivot[1] - 1), "capim", q["capim"])
+    for f, q, pt, pu in zip(finais[1:], poses, pontas, punhos):   # pa: monte de terra na lamina e terra jogada
+        tx = pivot[0] + (pt[0] - px_src) / R.ESCALA
+        ty = pivot[1] + (pt[1] - chao_src) / R.ESCALA
+        if q.get("monte"):
+            # em cima da lamina: 4 px para tras da ponta (na direcao da mao) e 2 px acima
+            d = np.array(pt) - np.array(pu); d /= max(1e-6, np.hypot(*d))
+            desenha_monte(f, tx - 4 * d[0], ty - 4 * d[1] - 2)
+        if q.get("jogar"):
+            desenha_particulas(f, tx + 2, ty - 2, "terra", q["jogar"])
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
             bx = pivot[0] + (b[0] - px_src) / R.ESCALA
@@ -315,6 +338,21 @@ def desenha_particulas(f, x0, y0, tipo, fase):
                 f[y, x, :3] = cores[0] if (y == cy) else cores[1]; f[y, x, 3] = 255
 
 
+def desenha_monte(f, x0, y0):
+    """Montinho de terra em cima da lamina da pa (5x3 px com contorno)."""
+    H, W = f.shape[:2]
+    cx, cy = int(round(x0)), int(round(y0)) - 2
+    forma = [(-1, 0), (0, 0), (1, 0), (2, 0), (-2, 1), (-1, 1), (0, 1), (1, 1), (2, 1), (3, 1), (0, -1), (1, -1)]
+    pts = [(cx + a, cy + b) for a, b in forma]
+    anel = {(x + ax, y + ay) for x, y in pts for ax, ay in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(pts)
+    for x, y in anel:
+        if 0 <= x < W and 0 <= y < H and f[y, x, 3] == 0:
+            f[y, x, :3] = FD.CONTORNO_JOGO; f[y, x, 3] = 255
+    for x, y in pts:
+        if 0 <= x < W and 0 <= y < H:
+            f[y, x, :3] = TERRA_CLARA if y <= cy else TERRA; f[y, x, 3] = 255
+
+
 def desenha_agua(f, bx, by, chao_y, fase):
     """Gotas caindo do chuveirinho ate o chao (duas colunas, alturas alternadas) e respingo no chao."""
     H, W = f.shape[:2]
@@ -359,7 +397,8 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
 
 
 ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
-         "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE)}
+         "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE),
+         "pa": ("pa", PA)}
 
 
 if __name__ == "__main__":
