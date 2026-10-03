@@ -1,0 +1,85 @@
+{
+ "pivot": [
+  48,
+  98
+ ],
+ "tamanho": [
+  97,
+  110
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "segurar",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.9,
+    69.3
+   ]
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    80.8,
+    72.4
+   ]
+  },
+  {
+   "nome": "inclinar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    79.8,
+    78.1
+   ]
+  },
+  {
+   "nome": "regando_a",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    78.6,
+    80.3
+   ]
+  },
+  {
+   "nome": "regando_b",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    78.6,
+    80.3
+   ]
+  },
+  {
+   "nome": "regando_a",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    78.6,
+    80.3
+   ]
+  },
+  {
+   "nome": "regando_b",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    78.6,
+    80.3
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    80.8,
+    72.2
+   ]
+  },
+  {
+   "nome": "segurar",
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.9,
+    69.3
+   ]
+  }
+ ]
+}

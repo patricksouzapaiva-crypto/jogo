@@ -8,7 +8,10 @@ from PIL import Image, ImageDraw, ImageFont
 import imageio_ffmpeg
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-PASTA = sys.argv[1] if len(sys.argv) > 1 else os.path.join(AQUI, "..", "revisao", "acoes", "vara_lado")
+# uso: previa_pesca.py [lado|frente|costas]  (ou o caminho de uma pasta vara_*, que conta como "lado")
+VISTA = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ("lado", "frente", "costas") else "lado"
+PASTA = os.path.join(AQUI, "..", "revisao", "acoes", f"vara_{VISTA}") if VISTA != "lado" or len(sys.argv) < 2 or \
+    sys.argv[1] == "lado" else sys.argv[1]
 info = json.load(open(os.path.join(PASTA, "info.json")))
 px, py = info["pivot"]
 arqs = sorted(glob.glob(os.path.join(PASTA, "vara_*.png")), key=lambda f: int(os.path.basename(f).split("_")[1]))
@@ -19,9 +22,14 @@ parado = np.asarray(Image.open(os.path.join(PASTA, "parado.png")).convert("RGBA"
 FPS, Z = 60, 5
 TW, TH = 1280, 720
 W, H = TW // Z, TH // Z
-HX, CHAO = 70, 96                     # pes do heroi na cena
-AGUA_X, AGUA_Y = 112, 92              # onde comeca o lago
-POUSO = (172, 104)                    # onde a boia cai
+# cena de cada vista: pes do heroi, lago (x0, y0, x1, y1), onde a boia cai e ate onde ela volta
+CENAS = {
+    "lado": dict(HX=70, CHAO=96, LAGO=(112, 92, W, H), POUSO=(172, 104), VOLTA=(116, 104), ARCO=30),
+    "frente": dict(HX=128, CHAO=88, LAGO=(0, 102, W, H), POUSO=(92, 128), VOLTA=(100, 106), ARCO=22),
+    "costas": dict(HX=128, CHAO=134, LAGO=(0, 0, W, 66), POUSO=(166, 38), VOLTA=(158, 62), ARCO=10),
+}
+_c = CENAS[VISTA]
+HX, CHAO, LAGO, POUSO, VOLTA, ARCO = (_c[k] for k in ("HX", "CHAO", "LAGO", "POUSO", "VOLTA", "ARCO"))
 LINHA = (232, 224, 200); CONT = (36, 20, 14)
 fonte = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 30)
 
@@ -32,11 +40,17 @@ def cenario():
     for _ in range(W * H // 30):
         x, y = rng.integers(0, W), rng.integers(0, H)
         a[y, x] = (84, 132, 56) if rng.random() < .6 else (118, 170, 80)
-    a[AGUA_Y:, AGUA_X:] = (62, 128, 190)
-    a[AGUA_Y:AGUA_Y + 2, AGUA_X:] = (150, 120, 80)            # margem de terra
-    a[AGUA_Y:, AGUA_X:AGUA_X + 2] = (150, 120, 80)
+    x0, y0, x1, y1 = LAGO
+    a[y0:y1, x0:x1] = (62, 128, 190)
+    margem = (150, 120, 80)                                     # margem de terra (so do lado da grama)
+    if y0 > 0:
+        a[y0:y0 + 2, x0:x1] = margem
+    if y1 < H:
+        a[y1 - 2:y1, x0:x1] = margem
+    if x0 > 0:
+        a[y0:y1, x0:x0 + 2] = margem
     for _ in range(60):
-        x, y = rng.integers(AGUA_X + 4, W), rng.integers(AGUA_Y + 4, H)
+        x, y = rng.integers(x0 + 4, x1 - 3), rng.integers(y0 + 4, y1 - 3)
         a[y, x:x + 3] = (112, 176, 226)
     return a
 
@@ -152,7 +166,7 @@ def roteiro():
     def voo(t, ini=None):
         x0, y0 = ini
         x = x0 + (POUSO[0] - x0) * t
-        y = y0 + (POUSO[1] - y0) * t - 30 * math.sin(math.pi * t)
+        y = y0 + (POUSO[1] - y0) * t - ARCO * math.sin(math.pi * t)
         return (x, y, 0)
     tip = lambda nome: (HX - px + Q[nome][1][0], CHAO - py + Q[nome][1][1])
     ini = tip("lancar")
@@ -176,14 +190,16 @@ def roteiro():
             afunda = 3 if int((t - 1.7) / 0.18) % 2 == 0 else 0
         seq.append((nome, (POUSO[0], POUSO[1], afunda), 3.0, (i // 24) % 3))
     for i in range(round(0.12 * FPS)):
-        seq.append(("fisgar", (POUSO[0] - 3, POUSO[1], 1), 0.0, 2))
+        puxa = (np.array(VOLTA, float) - POUSO) / max(1e-6, np.hypot(*(np.array(VOLTA, float) - POUSO))) * 3
+        seq.append(("fisgar", (POUSO[0] + puxa[0], POUSO[1] + puxa[1], 1), 0.0, 2))
     # recolhendo: a boia vem ate a margem e sai da agua
     T = 1.4; n = round(T * FPS)
     for i in range(n):
         t = i / n
         nome = "recolher_a" if int(i / (0.12 * FPS)) % 2 == 0 else "recolher_b"
-        x = POUSO[0] + (AGUA_X + 4 - POUSO[0]) * t
-        seq.append((nome, (x, POUSO[1], 0), 0.5, 0))
+        x = POUSO[0] + (VOLTA[0] - POUSO[0]) * t
+        y = POUSO[1] + (VOLTA[1] - POUSO[1]) * t
+        seq.append((nome, (x, y, 0), 0.5, 0))
     add("segurar", 0.5)
     add("parado", 0.6)
     return seq
@@ -210,7 +226,7 @@ def quadros():
                         respingo(img, b[0], b[1], -onda - 10)
         g = Image.fromarray(img).resize((W * Z, H * Z), Image.NEAREST)
         d = ImageDraw.Draw(g)
-        texto = "Pescando (tamanho real x5) - linha e boia feitas pelo jogo"
+        texto = f"Pescando {dict(lado='de lado', frente='de frente', costas='de costas')[VISTA]} (x5) - linha e boia feitas pelo jogo"
         d.rounded_rectangle((20, 18, 40 + d.textlength(texto, font=fonte), 66), 10, fill=(30, 30, 36))
         d.text((30, 24), texto, font=fonte, fill=(255, 255, 255))
         yield g
@@ -218,7 +234,7 @@ def quadros():
 
 if __name__ == "__main__":
     ff = imageio_ffmpeg.get_ffmpeg_exe()
-    saida = os.path.join(PASTA, "heroi_pescando_lado.mp4")
+    saida = os.path.join(PASTA, f"heroi_pescando_{VISTA}.mp4")
     p = subprocess.Popen([ff, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{TW}x{TH}", "-r", str(FPS),
                           "-i", "-", "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p",
                           "-movflags", "+faststart", saida], stdin=subprocess.PIPE)

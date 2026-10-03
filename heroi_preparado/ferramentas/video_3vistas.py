@@ -50,6 +50,9 @@ def tela(t, lento):
         tw = dr.textlength(nome, font=fonte)
         dr.rounded_rectangle((cx - tw / 2 - 12, 14, cx + tw / 2 + 12, 54), 8, fill=(30, 30, 36))
         dr.text((cx - tw / 2, 19), nome, font=fonte, fill=(255, 255, 255))
+    nomes = dict(enxada="Enxada", picareta="Picareta", machado="Machado", pa="Pa", foice="Foice",
+                 regador="Regador", vara="Vara de pescar")
+    dr.text((20, TH - 44), nomes.get(acao, acao), font=fonte, fill=(255, 255, 255))
     if lento > 1:
         txt = f"camera lenta ({lento}x)"
         dr.text((TW - dr.textlength(txt, font=fonte) - 20, TH - 44), txt, font=fonte, fill=(255, 255, 255))

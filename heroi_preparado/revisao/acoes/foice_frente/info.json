@@ -13,48 +13,48 @@
    "nome": "preparar",
    "duracao_s": 0.1,
    "ponta_ferramenta": [
-    33.2,
-    86.0
+    29.7,
+    83.6
    ]
   },
   {
    "nome": "puxar",
-   "duracao_s": 0.14,
+   "duracao_s": 0.12,
    "ponta_ferramenta": [
-    23.7,
-    77.6
+    21.7,
+    70.8
    ]
   },
   {
    "nome": "golpe",
    "duracao_s": 0.05,
    "ponta_ferramenta": [
-    41.1,
-    89.9
+    37.4,
+    89.2
    ]
   },
   {
    "nome": "corte",
-   "duracao_s": 0.09,
+   "duracao_s": 0.08,
    "ponta_ferramenta": [
-    52.1,
-    88.1
+    51.8,
+    88.0
    ]
   },
   {
    "nome": "seguir",
-   "duracao_s": 0.14,
+   "duracao_s": 0.12,
    "ponta_ferramenta": [
-    63.1,
-    80.4
+    61.7,
+    79.3
    ]
   },
   {
    "nome": "voltar",
-   "duracao_s": 0.12,
+   "duracao_s": 0.1,
    "ponta_ferramenta": [
-    38.8,
-    87.6
+    39.2,
+    86.9
    ]
   }
  ]

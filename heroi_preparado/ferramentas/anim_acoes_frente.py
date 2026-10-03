@@ -28,7 +28,8 @@ SAIDA = A.SAIDA
 MARGEM = (230, 260)          # espaco extra dos lados e em cima (a ferramenta passa por cima da cabeca)
 MARGEM_BAIXO = 90            # e embaixo (de frente a ferramenta bate no chao na frente dos pes)
 VAO_MAOS = 24                # distancia entre as duas maos no cabo (px do desenho)
-CABECA_RIGIDA = {"enxada": 472}   # linha onde comeca a cabeca vista de frente (ela nao encurta com o cabo)
+# linha (no desenho da ferramenta) onde comeca a cabeca: ela nao encurta com o cabo (fica sempre "de frente")
+CABECA_RIGIDA = {"enxada": 472, "picareta": 406, "machado": 378, "pa": 428}
 
 
 def rot(t):
@@ -351,8 +352,72 @@ ENXADA = [
     dict(nome="voltar", maos=(150, 352), cabo=0, chao=True, folga=10, terra=3, dur=0.075),
 ]
 
+# Picareta: o mesmo golpe da enxada; no impacto, faisca e lascas de pedra
+PICARETA = [dict({k: v for k, v in q.items() if k != "terra"}, pedra=q["terra"]) for q in ENXADA]
+PICARETA[4] = dict(PICARETA[4], nome="pedra")
+# Machado: o mesmo golpe, mas para na altura do tronco (a cabeca fica na linha dos pes); lascas de madeira
+MACHADO = [dict({k: v for k, v in q.items() if k != "terra"}, lascas=q["terra"]) for q in ENXADA]
+MACHADO[3] = dict(MACHADO[3], folga=40)
+MACHADO[4] = dict(MACHADO[4], nome="lascas", folga=40)
+MACHADO[5] = dict(MACHADO[5], folga=48)
+# Pa: crava na frente dos pes, faz alavanca, ergue o monte de terra e joga para o lado
+PA = [
+    dict(nome="preparar", maos=(150, 340), cabo=0, chao=True, folga=10, terra=0, dur=0.10),
+    dict(nome="cravar", maos=(150, 356), cabo=0, chao=True, folga=-4, desce=9, terra=1, dur=0.10),
+    dict(nome="alavanca", maos=(150, 374), cabo=0, chao=True, folga=4, desce=9, terra=2, monte=True, dur=0.14),
+    dict(nome="erguer", maos=(150, 300), cabo=0, k=0.4, monte=True, terra=0, dur=0.12),
+    dict(nome="jogar", maos=(122, 280), cabo=-72, k=0.8, jogar=2, terra=0, dur=0.12),
+    dict(nome="voltar", maos=(146, 326), cabo=-14, k=0.45, jogar=3, terra=0, dur=0.12),
+]
+# Foice (so a mao direita): puxa para fora e passa baixo e rapido na frente, cortando o mato
+_F = dict(uma_mao=True, k=1.0)
+FOICE = [
+    dict(nome="preparar", maos=(56, 356), cabo=-24, capim=0, dur=0.10, **_F),
+    dict(nome="puxar", maos=(34, 322), cabo=-70, capim=0, dur=0.12, **_F),
+    dict(nome="golpe", maos=(96, 382), cabo=-8, desce=9, capim=0, dur=0.05, **_F),
+    dict(nome="corte", maos=(150, 392), cabo=34, desce=9, capim=1, dur=0.08, **_F),
+    dict(nome="seguir", maos=(196, 368), cabo=72, desce=9, capim=2, dur=0.12, **_F),
+    dict(nome="voltar", maos=(96, 366), cabo=0, capim=3, dur=0.10, **_F),
+]
+# Regador (mao direita, pela asa de tras): do lado de fora do corpo, com o bico para fora; inclina e rega
+_R = dict(uma_mao=True, espelho=True, k=1.0)
+REGADOR = [
+    dict(nome="segurar", maos=(34, 356), cabo=0, agua=0, dur=0.12, **_R),
+    dict(nome="levantar", maos=(28, 344), cabo=12, agua=0, dur=0.10, **_R),
+    dict(nome="inclinar", maos=(24, 338), cabo=32, agua=1, dur=0.10, **_R),
+    dict(nome="regando_a", maos=(24, 336), cabo=40, agua=2, dur=0.12, **_R),
+    dict(nome="regando_b", maos=(24, 336), cabo=40, agua=3, dur=0.12, **_R),
+    dict(nome="regando_a", maos=(24, 336), cabo=40, agua=2, dur=0.12, **_R),
+    dict(nome="regando_b", maos=(24, 336), cabo=40, agua=3, dur=0.12, **_R),
+    dict(nome="voltar", maos=(28, 346), cabo=10, agua=4, dur=0.10, **_R),
+    dict(nome="segurar", maos=(34, 356), cabo=0, agua=0, dur=0.12, **_R),
+]
+# Vara: de frente lanca para a camera (a vara aponta para baixo na tela, encurtada, e a boia cai na
+# frente dele); de costas lanca para longe (a vara aponta para cima, por cima do chapeu).
+PESCA = [
+    dict(nome="segurar", maos=(116, 338), cabo=220, k=0.72, dur=0.14),
+    dict(nome="recuar", maos=(150, 150), cabo=180, k=0.9, atras=True, dur=0.18,
+         costas=dict(maos=(150, 150), cabo=0, k=0.45)),
+    dict(nome="lancar", maos=(150, 286), cabo=0, k=0.25, dur=0.06,
+         costas=dict(maos=(150, 200), cabo=180, k=1.0)),
+    dict(nome="soltar", maos=(128, 330), cabo=-42, k=0.5, dur=0.14,
+         costas=dict(cabo=150, k=0.85)),
+    dict(nome="esperar_a", maos=(118, 338), cabo=-56, k=0.56, dur=0.40,
+         costas=dict(cabo=140, k=0.75)),
+    dict(nome="esperar_b", maos=(118, 338), cabo=-53, k=0.56, dur=0.40,
+         costas=dict(cabo=143, k=0.75)),
+    dict(nome="fisgar", maos=(112, 300), cabo=222, k=0.85, dur=0.12,
+         costas=dict(cabo=172, k=1.0)),
+    dict(nome="recolher_a", maos=(118, 330), cabo=-62, k=0.5, dur=0.12,
+         costas=dict(cabo=136, k=0.7)),
+    dict(nome="recolher_b", maos=(118, 330), cabo=-58, k=0.5, dur=0.12,
+         costas=dict(cabo=139, k=0.7)),
+]
 
-ACOES = {"enxada": ("enxada", ENXADA)}
+
+ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
+         "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE),
+         "pa": ("pa", PA), "vara": ("vara", PESCA)}
 
 
 def gera_acao(acao, costas=False):
