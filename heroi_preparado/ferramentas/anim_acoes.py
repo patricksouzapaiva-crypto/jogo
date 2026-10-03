@@ -286,18 +286,26 @@ def gera(rig, nome_ferr, poses, extra=16):
         f[anel, :3] = FD.CONTORNO_JOGO; f[anel, 3] = 255
     # agua, terra e lascas (desenhadas direto no tamanho do jogo, pixel a pixel, para ficarem nitidas)
     px_src = RR.QUADRIL[0] + rig.off[0]; chao_src = RR.CHAO + rig.off[1] + 1
+    # vistas de frente/costas: a ferramenta bate no chao na frente (abaixo) ou atras (acima) dos pes, e
+    # de costas os efeitos ficam atras do heroi (so pintam onde o quadro esta vazio)
+    chao_ef = pivot[1] - 1 + round(getattr(rig, "CHAO_BATIDA", 0) / RR.ESCALA)
+    atras = getattr(rig, "EFEITO_ATRAS", False)
+    ct = getattr(rig, "DE_FRENTE", False)
+    fora = 0
     if ponto is not None:
         gx = pivot[0] + (ponto[0] - px_src) / RR.ESCALA
         gy = pivot[1] + (ponto[1] - chao_src) / RR.ESCALA
+        if hasattr(rig, "DE_FRENTE"):
+            fora = (1 if gx > pivot[0] else -1) if abs(gx - pivot[0]) > 3 else 2
         for f, q in zip(finais[1:], poses):
             if q.get("terra"):
-                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "terra", q["terra"])
+                desenha_particulas(f, gx, min(gy, chao_ef), "terra", q["terra"], atras, ct, fora)
             if q.get("lascas"):
-                desenha_particulas(f, gx, gy, "lascas", q["lascas"])
+                desenha_particulas(f, gx, gy, "lascas", q["lascas"], atras, ct, fora)
             if q.get("pedra"):
-                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "pedra", q["pedra"])
+                desenha_particulas(f, gx, min(gy, chao_ef), "pedra", q["pedra"], atras, ct, fora)
             if q.get("capim"):
-                desenha_particulas(f, gx, min(gy, pivot[1] - 1), "capim", q["capim"])
+                desenha_particulas(f, gx, min(gy, chao_ef), "capim", q["capim"], atras, ct, fora)
     rig.pontas_jogo = [(float(pivot[0] + (pt[0] - px_src) / RR.ESCALA), float(pivot[1] + (pt[1] - chao_src) / RR.ESCALA))
                        for pt in pontas]
     for f, q, pt, pu in zip(finais[1:], poses, pontas, punhos):   # pa: monte de terra na lamina e terra jogada
@@ -306,18 +314,18 @@ def gera(rig, nome_ferr, poses, extra=16):
         if q.get("monte"):
             # em cima da lamina: 4 px para tras da ponta (na direcao da mao) e 2 px acima
             d = np.array(pt) - np.array(pu); d /= max(1e-6, np.hypot(*d))
-            desenha_monte(f, tx - 4 * d[0], ty - 4 * d[1] - 2)
+            desenha_monte(f, tx - 4 * d[0], ty - 4 * d[1] - 2, atras and not q.get("atras"))
         if q.get("jogar"):
-            desenha_particulas(f, tx + 2, ty - 2, "terra", q["jogar"])
+            desenha_particulas(f, tx + 2, ty - 2, "terra", q["jogar"], atras and not q.get("atras"), ct)
     for f, q, b in zip(finais[1:], poses, bicos):
         if q.get("agua") and b is not None:
             bx = pivot[0] + (b[0] - px_src) / RR.ESCALA
             by = pivot[1] + (b[1] - chao_src) / RR.ESCALA
-            desenha_agua(f, bx, by, pivot[1] - 1, q["agua"])
+            desenha_agua(f, bx, by, chao_ef, q["agua"], getattr(rig, "AGUA_DIR", 1), atras)
     return finais, pivot, np.concatenate([pal_heroi, pal_ferr, [FD.CONTORNO_JOGO]]), grandes
 
 
-def desenha_particulas(f, x0, y0, tipo, fase):
+def desenha_particulas(f, x0, y0, tipo, fase, so_vazio=False, contorno_total=False, fora=0):
     """Torroes de terra (enxada) ou lascas de madeira (machado) com contorno de 1 px, no tamanho do jogo.
     fase 1 = acabaram de sair, 2 = no alto, 3 = caindo."""
     H, W = f.shape[:2]
@@ -334,11 +342,21 @@ def desenha_particulas(f, x0, y0, tipo, fase):
             for (dx, dy), cor in (((0, -1), FAISCA), ((-1, -1), FAISCA_COR), ((1, -1), FAISCA_COR),
                                   ((0, -2), FAISCA_COR), ((0, 0), FAISCA_COR), ((-2, -3), FAISCA), ((2, -3), FAISCA)):
                 x, y = int(round(x0 + dx)), int(round(y0 + dy))
-                if 0 <= x < W and 0 <= y < H:
+                if 0 <= x < W and 0 <= y < H and not (so_vazio and f[y, x, 3]):
                     f[y, x, :3] = cor; f[y, x, 3] = 255
     else:
         cores = (LASCA_CLARA, LASCA); forma = [(0, 0), (1, 0)]
         trajetos = [(-9, -7), (-3, -11), (4, -9), (9, -4)]
+    if fora:                                          # frente/costas: tudo voa para fora do corpo e mais alto
+        trajetos = {"terra": [(-9, -5), (-3, -11), (-13, -10)],
+                    "capim": [(-3, -7), (-8, -12), (-12, -5), (-1, -12), (-15, -9)],
+                    "pedra": [(-9, -6), (-3, -12), (-14, -10), (-6, -2)],
+                    "lascas": [(-10, -7), (-4, -13), (-14, -11), (-7, -2)]}[tipo]
+        if fora == 2:                                 # golpe no meio: metade para cada lado
+            trajetos = [((1 if i % 2 else -1) * abs(dx), dy) for i, (dx, dy) in enumerate(trajetos)]
+        else:
+            trajetos = [(fora * abs(dx), dy) for dx, dy in trajetos]
+            x0 += 2 * fora
     andou = {1: 0.35, 2: 1.0, 3: 0.75}[fase]
     cai = {1: 0, 2: 0, 3: 3}[fase]
     for i, (dx, dy) in enumerate(trajetos):
@@ -347,36 +365,38 @@ def desenha_particulas(f, x0, y0, tipo, fase):
         cx = int(round(x0 + dx * andou)); cy = int(round(y0 + dy * andou + cai))
         pts = [(cx + a, cy + b) for a, b in forma]
         anel = {(x + ax, y + ay) for x, y in pts for ax, ay in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(pts)
-        for x, y in anel:
-            if 0 <= x < W and 0 <= y < H and f[y, x, 3] == 0:
+        livre = [(x, y) for x, y in pts if 0 <= x < W and 0 <= y < H and not (so_vazio and f[y, x, 3])]
+        for x, y in anel:              # contorno_total: na frente do heroi (contorno por cima dele tambem)
+            if 0 <= x < W and 0 <= y < H and (f[y, x, 3] == 0 or contorno_total):
                 f[y, x, :3] = FD.CONTORNO_JOGO; f[y, x, 3] = 255
-        for k, (x, y) in enumerate(pts):
-            if 0 <= x < W and 0 <= y < H:
-                f[y, x, :3] = cores[0] if (y == cy) else cores[1]; f[y, x, 3] = 255
+        for x, y in livre:
+            f[y, x, :3] = cores[0] if (y == cy) else cores[1]; f[y, x, 3] = 255
 
 
-def desenha_monte(f, x0, y0):
+def desenha_monte(f, x0, y0, so_vazio=False):
     """Montinho de terra em cima da lamina da pa (5x3 px com contorno)."""
     H, W = f.shape[:2]
     cx, cy = int(round(x0)), int(round(y0)) - 2
     forma = [(-1, 0), (0, 0), (1, 0), (2, 0), (-2, 1), (-1, 1), (0, 1), (1, 1), (2, 1), (3, 1), (0, -1), (1, -1)]
     pts = [(cx + a, cy + b) for a, b in forma]
     anel = {(x + ax, y + ay) for x, y in pts for ax, ay in ((1, 0), (-1, 0), (0, 1), (0, -1))} - set(pts)
+    livre = [(x, y) for x, y in pts if 0 <= x < W and 0 <= y < H and not (so_vazio and f[y, x, 3])]
     for x, y in anel:
         if 0 <= x < W and 0 <= y < H and f[y, x, 3] == 0:
             f[y, x, :3] = FD.CONTORNO_JOGO; f[y, x, 3] = 255
-    for x, y in pts:
-        if 0 <= x < W and 0 <= y < H:
-            f[y, x, :3] = TERRA_CLARA if y <= cy else TERRA; f[y, x, 3] = 255
+    for x, y in livre:
+        f[y, x, :3] = TERRA_CLARA if y <= cy else TERRA; f[y, x, 3] = 255
 
 
-def desenha_agua(f, bx, by, chao_y, fase):
-    """Gotas caindo do chuveirinho ate o chao (duas colunas, alturas alternadas) e respingo no chao."""
+def desenha_agua(f, bx, by, chao_y, fase, dirx=1, so_vazio=False):
+    """Gotas caindo do chuveirinho ate o chao (duas colunas, alturas alternadas) e respingo no chao.
+    dirx = para que lado da imagem a agua cai (+1 direita, -1 esquerda); so_vazio = fica atras do heroi."""
     H, W = f.shape[:2]
 
     def px(x, y, cor):
+        x = bx + (x - bx) * dirx
         x, y = int(round(x)), int(round(y))
-        if 0 <= x < W and 0 <= y < H:
+        if 0 <= x < W and 0 <= y < H and not (so_vazio and f[y, x, 3]):
             f[y, x, :3] = cor; f[y, x, 3] = 255
 
     def gota(x, y):
@@ -416,28 +436,6 @@ def paleta_com_ferramenta(reduzidos, pal_heroi, extra=8):
 ACOES = {"enxada": ("enxada", ENXADA), "regador": ("regador", REGADOR), "machado": ("machado", MACHADO),
          "picareta": ("picareta", PICARETA), "foice": ("foice", FOICE),
          "pa": ("pa", PA), "vara": ("vara", PESCA)}
-
-
-def gera_acao(acao, esquerda=False):
-    """Gera uma acao (lado direito, ou esquerdo com o desenho da esquerda: as contas sao feitas numa
-    copia virada e cada quadro e desvirado no fim, como no andar). Devolve quadros, pivo e info."""
-    ferr_nome, poses = ACOES[acao]
-    if esquerda:
-        import rig_heroi_esq as RE
-        rig = RigAcao(RE)
-    else:
-        rig = RigAcao()
-    finais, pivot, pal, grandes = gera(rig, ferr_nome, poses)
-    pontas = list(rig.pontas_jogo)
-    if esquerda:
-        larg = finais[0].shape[1]
-        finais = [np.ascontiguousarray(f[:, ::-1]) for f in finais]
-        pivot = (larg - 1 - pivot[0], pivot[1])
-        pontas = [(larg - 1 - x, y) for x, y in pontas]
-    info = dict(pivot=[int(v) for v in pivot], tamanho=list(finais[0].shape[1::-1]), cores=len(pal),
-                quadros=[dict(nome=q["nome"], duracao_s=q["dur"], ponta_ferramenta=[round(v, 1) for v in pontas[i]])
-                         for i, q in enumerate(poses)])
-    return finais, pivot, info, grandes
 
 
 def gera_acao(acao, esquerda=False):

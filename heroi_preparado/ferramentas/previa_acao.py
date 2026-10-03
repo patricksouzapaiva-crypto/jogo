@@ -20,7 +20,7 @@ fonte_p = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.t
 bb = None
 for im in quadros + [parado]:
     b = im.getbbox(); bb = b if bb is None else (min(bb[0], b[0]), min(bb[1], b[1]), max(bb[2], b[2]), max(bb[3], b[3]))
-bb = (bb[0] - 2, bb[1] - 2, bb[2] + 2, py + 2)
+bb = (bb[0] - 2, bb[1] - 2, bb[2] + 2, max(bb[3] + 1, py + 2))
 
 # ---- prancha ----
 Z = 5

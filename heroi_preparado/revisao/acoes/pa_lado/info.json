@@ -11,31 +11,59 @@
  "quadros": [
   {
    "nome": "preparar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    85.6,
+    95.2
+   ]
   },
   {
    "nome": "levantar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    93.9,
+    79.8
+   ]
   },
   {
    "nome": "cravar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    84.8,
+    98.2
+   ]
   },
   {
    "nome": "alavanca",
-   "duracao_s": 0.14
+   "duracao_s": 0.14,
+   "ponta_ferramenta": [
+    86.1,
+    94.8
+   ]
   },
   {
    "nome": "erguer",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    95.7,
+    76.6
+   ]
   },
   {
    "nome": "jogar",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    97.0,
+    43.6
+   ]
   },
   {
    "nome": "voltar",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    84.2,
+    96.1
+   ]
   }
  ]
 }

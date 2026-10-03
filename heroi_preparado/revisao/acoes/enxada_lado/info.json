@@ -11,31 +11,59 @@
  "quadros": [
   {
    "nome": "preparar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    83.4,
+    93.4
+   ]
   },
   {
    "nome": "levantar",
-   "duracao_s": 0.09
+   "duracao_s": 0.09,
+   "ponta_ferramenta": [
+    76.1,
+    24.6
+   ]
   },
   {
    "nome": "no_alto",
-   "duracao_s": 0.15
+   "duracao_s": 0.15,
+   "ponta_ferramenta": [
+    28.3,
+    21.0
+   ]
   },
   {
    "nome": "golpe",
-   "duracao_s": 0.05
+   "duracao_s": 0.05,
+   "ponta_ferramenta": [
+    95.0,
+    48.7
+   ]
   },
   {
    "nome": "impacto",
-   "duracao_s": 0.11
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    85.4,
+    93.9
+   ]
   },
   {
    "nome": "terra",
-   "duracao_s": 0.16
+   "duracao_s": 0.16,
+   "ponta_ferramenta": [
+    85.4,
+    93.9
+   ]
   },
   {
    "nome": "voltar",
-   "duracao_s": 0.11
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    86.9,
+    89.0
+   ]
   }
  ]
 }

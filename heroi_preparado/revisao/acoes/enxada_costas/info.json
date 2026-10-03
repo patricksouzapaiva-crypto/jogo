@@ -1,0 +1,61 @@
+{
+ "pivot": [
+  48,
+  98
+ ],
+ "tamanho": [
+  97,
+  110
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "levantar",
+   "duracao_s": 0.15,
+   "ponta_ferramenta": [
+    53.2,
+    66.4
+   ]
+  },
+  {
+   "nome": "golpe_a",
+   "duracao_s": 0.04,
+   "ponta_ferramenta": [
+    43.2,
+    23.0
+   ]
+  },
+  {
+   "nome": "golpe_b",
+   "duracao_s": 0.04,
+   "ponta_ferramenta": [
+    43.2,
+    28.6
+   ]
+  },
+  {
+   "nome": "impacto",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    52.7,
+    96.1
+   ]
+  },
+  {
+   "nome": "terra",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    52.7,
+    96.1
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.075,
+   "ponta_ferramenta": [
+    52.7,
+    95.0
+   ]
+  }
+ ]
+}

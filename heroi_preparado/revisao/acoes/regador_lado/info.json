@@ -11,39 +11,75 @@
  "quadros": [
   {
    "nome": "segurar",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    77.2,
+    69.9
+   ]
   },
   {
    "nome": "levantar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    80.4,
+    71.4
+   ]
   },
   {
    "nome": "inclinar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    80.1,
+    76.4
+   ]
   },
   {
    "nome": "regando_a",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.2,
+    78.3
+   ]
   },
   {
    "nome": "regando_b",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.2,
+    78.3
+   ]
   },
   {
    "nome": "regando_a",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.2,
+    78.3
+   ]
   },
   {
    "nome": "regando_b",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    79.2,
+    78.3
+   ]
   },
   {
    "nome": "voltar",
-   "duracao_s": 0.1
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    80.0,
+    71.3
+   ]
   },
   {
    "nome": "segurar",
-   "duracao_s": 0.12
+   "duracao_s": 0.12,
+   "ponta_ferramenta": [
+    77.2,
+    69.9
+   ]
   }
  ]
 }

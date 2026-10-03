@@ -1,0 +1,69 @@
+{
+ "pivot": [
+  48,
+  98
+ ],
+ "tamanho": [
+  97,
+  110
+ ],
+ "cores": 45,
+ "quadros": [
+  {
+   "nome": "preparar",
+   "duracao_s": 0.1,
+   "ponta_ferramenta": [
+    30.9,
+    83.9
+   ]
+  },
+  {
+   "nome": "levantar",
+   "duracao_s": 0.09,
+   "ponta_ferramenta": [
+    38.2,
+    36.7
+   ]
+  },
+  {
+   "nome": "no_alto",
+   "duracao_s": 0.15,
+   "ponta_ferramenta": [
+    41.1,
+    30.9
+   ]
+  },
+  {
+   "nome": "golpe",
+   "duracao_s": 0.05,
+   "ponta_ferramenta": [
+    26.9,
+    73.3
+   ]
+  },
+  {
+   "nome": "impacto",
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    23.3,
+    75.2
+   ]
+  },
+  {
+   "nome": "lascas",
+   "duracao_s": 0.16,
+   "ponta_ferramenta": [
+    23.3,
+    75.2
+   ]
+  },
+  {
+   "nome": "voltar",
+   "duracao_s": 0.11,
+   "ponta_ferramenta": [
+    29.7,
+    82.2
+   ]
+  }
+ ]
+}
