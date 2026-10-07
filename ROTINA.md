@@ -8,8 +8,12 @@ O formato do dia vem na mensagem que dispara a rotina: `carrossel` ou `imagem`.
 
 ## 1. Preparar
 
+Se o repositório não estiver nesta sessão, adicione-o com a ferramenta `add_repo`
+(owner `patricksouzapaiva-crypto`, repo `jogo`, acesso `push`) e clone com o comando que ela
+indicar.
+
 ```bash
-cd <pasta do repositório patricksouzapaiva-crypto/jogo>   # clone se não existir
+cd <pasta do repositório patricksouzapaiva-crypto/jogo>
 git fetch origin main && git checkout main && git reset --hard origin/main
 pip install -q -r requirements.txt
 python -m assistente contexto --formato <FORMATO>
@@ -64,10 +68,15 @@ andou, faça `git pull --rebase origin main` e envie de novo.
 O push dispara o workflow **Publicar posts** no GitHub, que gera as imagens, monta os slides e
 publica no Instagram (se já estiver configurado).
 
-1. Com as ferramentas do GitHub, acompanhe a execução de `publicar-posts.yml` do seu commit até
-   terminar (costuma levar de 2 a 5 minutos; espere com um `sleep` em segundo plano, sem
-   consultar sem parar).
-2. Baixe o artefato `posts-prontos`, descompacte numa pasta temporária e olhe os slides.
+1. Com as ferramentas do GitHub (`mcp__github__actions_list` / `actions_get`; carregue-as com
+   a busca de ferramentas se precisar), acompanhe a execução de `publicar-posts.yml` do seu
+   commit até terminar (costuma levar de 2 a 5 minutos; espere com um `sleep` em segundo plano,
+   sem consultar sem parar).
+2. Baixe o artefato `posts-prontos` (`download_workflow_run_artifact` dá um link temporário;
+   baixe com `curl`), descompacte numa pasta temporária e olhe os slides.
+   Se esta sessão não tiver as ferramentas do GitHub, pule para o aviso final dizendo que o
+   post foi enviado e que os slides ficam em github.com/patricksouzapaiva-crypto/jogo/actions
+   (execução "Publicar posts" → Artifacts).
 3. Mande ao dono, numa mensagem só (com aviso no celular):
    - as imagens dos slides, em ordem;
    - a legenda pronta para copiar (o arquivo `legenda.txt`);
