@@ -1,8 +1,12 @@
 name: Testar geração de imagens
 
-# Teste rápido da chave do Pollinations (ou de outro provedor): gera uma cena e um slide
-# de exemplo, sem usar Claude nem publicar nada. As imagens ficam em "Artifacts".
+# Teste rápido da chave do Pollinations (ou de outro provedor): gera cenas e slides de
+# exemplo, sem usar Claude nem publicar nada. As imagens ficam em "Artifacts".
+# Roda sozinho a cada atualização do branch de desenvolvimento (testa 3 mundos visuais)
+# e, depois que estiver no main, também pelo botão "Run workflow" (1 mundo à escolha).
 on:
+  push:
+    branches: [claude/instagram-automated-assistant-or6d93]
   workflow_dispatch:
     inputs:
       mundo:
@@ -27,9 +31,16 @@ jobs:
         id: teste
         env:
           POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
-          MUNDO: ${{ inputs.mundo }}
-        run: python -m assistente testar-imagem --mundo "$MUNDO"
+          MUNDOS: ${{ inputs.mundo || 'aquarela risografia xilogravura' }}
+        run: |
+          falhas=0
+          for mundo in $MUNDOS; do
+            python -m assistente testar-imagem --mundo "$mundo" || falhas=$((falhas + 1))
+          done
+          exit $falhas
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: teste-imagem
-          path: ${{ steps.teste.outputs.pasta }}
+          path: posts/_teste/
+          if-no-files-found: warn
