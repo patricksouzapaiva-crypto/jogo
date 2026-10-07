@@ -1,0 +1,99 @@
+name: Post automático no Instagram
+
+on:
+  schedule:
+    # Todo dia às 11:47 UTC = 08:47 no horário de Brasília.
+    # Para mudar o horário, ajuste aqui (formato cron, sempre em UTC).
+    - cron: "47 11 * * *"
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "Tema específico (deixe vazio para a IA escolher)"
+        required: false
+        default: ""
+      publicar:
+        description: "Publicar no Instagram? (desmarque para só gerar e revisar)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  postar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar fontes e dependências
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends fonts-dejavu-core >/dev/null
+          pip install -r requirements.txt
+
+      - name: Pesquisar e criar o post
+        id: gerar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TEMA: ${{ inputs.tema }}
+        run: |
+          args=(gerar)
+          if [ -n "$TEMA" ]; then args+=(--tema "$TEMA"); fi
+          python -m assistente "${args[@]}"
+
+      - name: Guardar as imagens geradas (aba "Artifacts" da execução)
+        uses: actions/upload-artifact@v4
+        with:
+          name: post
+          path: ${{ steps.gerar.outputs.pasta }}
+          retention-days: 30
+
+      - name: Salvar o post no repositório
+        id: salvar
+        env:
+          PASTA: ${{ steps.gerar.outputs.pasta }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          hospedagem=$(python -c "from assistente.config import carregar; print(carregar().publicacao.get('hospedagem', 'imgbb'))")
+          git add data/historico.json "$PASTA"/*.json "$PASTA"/*.txt "$PASTA"/*.md
+          # Só guarda os JPEGs no repositório quando eles são servidos pelo próprio GitHub.
+          if [ "$hospedagem" = "github" ]; then git add "$PASTA"/*.jpg; fi
+          git commit -m "Post gerado: $(basename "$PASTA")"
+          git pull --rebase --quiet
+          git push
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar no Instagram
+        if: github.event_name == 'schedule' || inputs.publicar
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
+          IMAGENS_REF: ${{ steps.salvar.outputs.sha }}
+          PASTA: ${{ steps.gerar.outputs.pasta }}
+        run: python -m assistente publicar "$PASTA"
+
+      - name: Registrar a publicação no histórico
+        if: github.event_name == 'schedule' || inputs.publicar
+        env:
+          PASTA: ${{ steps.gerar.outputs.pasta }}
+        run: |
+          git add data/historico.json "$PASTA"/publicacao.json
+          git commit -m "Post publicado: $(basename "$PASTA")"
+          git pull --rebase --quiet
+          git push

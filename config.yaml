@@ -1,0 +1,79 @@
+# Configuração do assistente de Instagram.
+# Edite à vontade: o assistente lê este arquivo a cada execução.
+
+perfil:
+  nome: "Página de Livros"          # aparece no rodapé dos slides
+  arroba: "@seuperfil"               # troque pelo @ do seu Instagram
+  idioma: "português do Brasil"
+  publico: >
+    Leitores curiosos de 18 a 45 anos que gostam de livros, filosofia e
+    conhecimentos gerais, mas preferem conteúdo leve, direto e bem explicado.
+  tom_de_voz: >
+    Acolhedor, inteligente e curioso. Explica ideias complexas de forma simples,
+    sem ser professoral. Usa no máximo 1 ou 2 emojis por legenda.
+
+# Pilares de conteúdo: o assistente alterna entre eles para variar o feed.
+pilares:
+  - "Curiosidades sobre livros e bastidores de obras famosas"
+  - "Filosofia explicada de forma simples (ideias, filósofos, conceitos)"
+  - "Literatura popular: best-sellers, clássicos e autores que todo mundo conhece"
+  - "Vida e manias de escritores famosos"
+  - "Conhecimentos gerais e fatos históricos ligados à leitura e às ideias"
+  - "Frases e citações marcantes, com o contexto por trás delas"
+
+# Regras extras que o redator sempre segue.
+regras:
+  - "Nunca invente fatos, datas ou citações: use só o que a pesquisa confirmou."
+  - "Citações sempre com autor e obra; se a autoria for duvidosa, diga isso."
+  - "Evite spoilers de finais de livros sem avisar."
+  - "Termine a legenda com uma pergunta para estimular comentários."
+
+post:
+  slides_minimo: 3                   # slides de conteúdo (sem contar capa e final)
+  slides_maximo: 6
+  hashtags_maximo: 12                # o Instagram aceita no máximo 30
+  hashtags_fixas: ["#livros", "#leitura"]
+
+ia:
+  modelo: "claude-opus-5-5"
+  esforco_pesquisa: "medium"         # low | medium | high | xhigh | max
+  esforco_redacao: "medium"
+  buscas_maximas: 8                  # limite de buscas na web por pesquisa
+
+visual:
+  largura: 1080
+  altura: 1350                       # 4:5, o formato que ocupa mais espaço no feed
+  cor_fundo: "#F4EDE1"               # papel envelhecido
+  cor_texto: "#2B2622"
+  cor_destaque: "#8C3B2E"            # vinho/terracota
+  cor_suave: "#7A6E64"
+  # Caminhos opcionais para fontes .ttf/.otf (ex.: fontes/PlayfairDisplay-Bold.ttf).
+  # Se ficarem vazios, o assistente procura fontes serifadas instaladas no sistema.
+  fonte_titulo: ""
+  fonte_texto: ""
+
+# Ilustração da capa gerada por IA (o título é escrito por cima pelo assistente).
+# provedor:
+#   pollinations -> grátis, sem cadastro (padrão)
+#   cloudflare   -> grátis dentro da cota diária; precisa de CLOUDFLARE_ACCOUNT_ID e CLOUDFLARE_API_TOKEN
+#   openai       -> mesma IA de imagens do ChatGPT; pago por imagem; precisa de OPENAI_API_KEY
+#   gemini       -> Google Gemini; precisa de GEMINI_API_KEY
+#   nenhum       -> capa só com tipografia
+# Se a geração falhar, a capa sai sem ilustração e o post é publicado mesmo assim.
+imagens_ia:
+  provedor: "pollinations"
+  estilo: >
+    Warm vintage editorial illustration, oil painting texture, soft natural light,
+    muted earthy palette (cream, sepia, deep burgundy), classic library atmosphere.
+  pollinations_modelo: "flux"
+  cloudflare_modelo: "@cf/black-forest-labs/flux-1-schnell"
+  openai_modelo: "gpt-image-1"
+  openai_qualidade: "medium"         # low | medium | high (quanto maior, mais caro)
+  gemini_modelo: "gemini-2.5-flash-image"
+
+publicacao:
+  # imgbb: hospeda as imagens no ImgBB (funciona com repositório privado; precisa de IMGBB_API_KEY)
+  # github: usa links "raw" do próprio repositório (só funciona se o repositório for PÚBLICO)
+  hospedagem: "imgbb"
+  graph_host: "https://graph.facebook.com"   # use https://graph.instagram.com se o token for do "Instagram Login"
+  graph_versao: "v23.0"
