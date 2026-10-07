@@ -81,14 +81,24 @@ def test_pollinations_usa_api_nova_com_chave(monkeypatch):
     chamadas = []
     monkeypatch.setattr(geracao_imagens.requests, "get",
                         lambda url, params, headers, timeout: chamadas.append((url, params, headers)) or _Resp())
-    monkeypatch.setenv("POLLINATIONS_TOKEN", "pk_teste")
+    monkeypatch.setenv("POLLINATIONS_TOKEN", "sk_teste")
     geracao_imagens._pollinations("a castle", {"pollinations_modelo": "zimage"}, 1080, 1350, 7)
     url, params, headers = chamadas[-1]
     assert url.startswith("https://gen.pollinations.ai/image/a%20castle")
     assert params["model"] == "zimage" and params["seed"] == 7
-    assert headers["Authorization"] == "Bearer pk_teste"
+    assert headers["Authorization"] == "Bearer sk_teste"
 
     monkeypatch.delenv("POLLINATIONS_TOKEN")
     geracao_imagens._pollinations("a castle", {}, 1080, 1350, 7)
     url, params, headers = chamadas[-1]
     assert url.startswith("https://image.pollinations.ai/prompt/") and not headers
+
+
+@pytest.mark.parametrize("chave", ["sk_abc…xyz", "pk_1234567890", "sk_abc...xyz"])
+def test_chave_pollinations_invalida_da_mensagem_clara(chave):
+    with pytest.raises(geracao_imagens.ChaveInvalida):
+        geracao_imagens.validar_chave_pollinations(chave)
+
+
+def test_chave_pollinations_valida():
+    geracao_imagens.validar_chave_pollinations("sk_AbC123xyz")

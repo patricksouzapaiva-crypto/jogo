@@ -23,6 +23,23 @@ log = logging.getLogger(__name__)
 TIMEOUT = 180
 
 
+class ChaveInvalida(RuntimeError):
+    pass
+
+
+def validar_chave_pollinations(token: str) -> None:
+    """Pega erros comuns de cópia antes de chamar a API, com uma mensagem clara."""
+    if "…" in token or "..." in token or not token.isascii():
+        raise ChaveInvalida(
+            "A POLLINATIONS_TOKEN salva parece abreviada (tem '…'): o site mostra a chave cortada. "
+            "Copie a chave inteira (botão de copiar ao criar a chave) e salve de novo o segredo."
+        )
+    if not token.startswith("sk_"):
+        raise ChaveInvalida(
+            "A POLLINATIONS_TOKEN deve ser a chave secreta, que começa com 'sk_' (não a 'pk_')."
+        )
+
+
 def _pollinations(prompt: str, opcoes: dict, largura: int, altura: int, semente: int) -> bytes:
     """Com POLLINATIONS_TOKEN usa a API nova (gen.pollinations.ai) e o modelo escolhido;
     sem chave, cai no acesso anônimo antigo, que só tem um modelo mais fraco."""
@@ -37,6 +54,7 @@ def _pollinations(prompt: str, opcoes: dict, largura: int, altura: int, semente:
     }
     headers = {}
     if token:
+        validar_chave_pollinations(token)
         base = opcoes.get("pollinations_url", "https://gen.pollinations.ai/image/")
         params["model"] = opcoes.get("pollinations_modelo", "zimage")
         headers["Authorization"] = f"Bearer {token}"
@@ -158,6 +176,9 @@ def gerar_ilustracao(cfg: Config, prompt: str, semente: int = 0, tentativas: int
             img = Image.open(io.BytesIO(dados))
             img.load()
             return recortar(img, largura, altura)
+        except ChaveInvalida as erro:
+            log.error("%s", erro)
+            return None
         except Exception as erro:  # o fundo liso é um bom plano B; o post não deve parar
             motivo = str(erro).split(" for url")[0][:200]  # a URL do prompt é enorme; não poluir o log
             log.warning("Falha ao gerar imagem com %s (tentativa %d/%d): %s",
