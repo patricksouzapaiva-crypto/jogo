@@ -139,8 +139,10 @@ def recortar(img: Image.Image, largura: int, altura: int) -> Image.Image:
 
 # Layout fixo da marca: texto na metade superior, cena na metade inferior.
 COMPOSICAO = (
-    "Vertical 4:5 composition. The upper half is calm, uncluttered negative space with low "
-    "detail to hold overlaid text; the main subject and action sit in the lower half"
+    "Full-bleed artwork filling the entire frame edge to edge, no border, no frame, no paper "
+    "margins, not a picture of a print. Vertical 4:5 composition. The upper half is calm, "
+    "uncluttered negative space with low detail to hold overlaid text; the main subject and "
+    "action sit in the lower half"
 )
 
 
