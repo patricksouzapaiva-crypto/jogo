@@ -6,17 +6,32 @@ Instagram** os posts do [@mapadasideias_](https://www.instagram.com/mapadasideia
 
 | Horário (Brasília) | Formato | O que é |
 |---|---|---|
-| 09:53 | **Carrossel de 7 slides** | capa com pergunta concreta → contexto → desenvolvimento → resposta → reflexão → leituras e aplicação → CTA |
-| 18:47 | **Imagem avulsa** | curiosidade, comparação ou reflexão independente do carrossel |
+| ~09:30 | **Carrossel de 7 slides** | capa com pergunta concreta → contexto → desenvolvimento → resposta → reflexão → leituras e aplicação → CTA |
+| ~18:30 | **Imagem avulsa** | curiosidade, comparação ou reflexão independente do carrossel |
 
-Os horários vêm dos melhores horários que o Metricool identificou (10h e 18h–19h).
+## Como funciona (sem chave paga)
 
 ```
- Pesquisa ──▶ Redação ──▶ Revisão ──▶ Imagens ──▶ Slides ──▶ Hospedagem ──▶ Instagram
- Claude +     Claude      Claude      IA (cena)   layout da    ImgBB          Graph API
- busca web    (JSON)      checklist   + capa real  marca
-                                       do livro    (Pillow)
+ Rotina agendada no Claude Code            GitHub Actions ("Publicar posts")
+ (usa o seu plano do Claude)
+ ┌──────────────────────────────┐  push   ┌────────────────────────────────────────────┐
+ │ pesquisa na web → redação →  │ ──────▶ │ imagens (Pollinations) → slides da marca → │
+ │ revisão → validar → post.json│         │ legenda → publica no Instagram (se config.) │
+ └──────────────────────────────┘         └────────────────────────────────────────────┘
+          ▲                                                   │
+          └──── histórico (temas e mundos visuais) ◀──────────┘
 ```
+
+1. Duas **rotinas agendadas no Claude Code** (uma por formato) abrem uma sessão, seguem o
+   [`ROTINA.md`](ROTINA.md): rodam `python -m assistente contexto` para receber as regras do
+   guia, pesquisam na web, escrevem `post.json` + `dossie.md`, conferem com
+   `python -m assistente validar` e enviam para o `main`.
+2. O push dispara o workflow **Publicar posts**, que gera as imagens, monta os slides e a
+   legenda e publica. Enquanto o Instagram não estiver configurado, o post fica pronto em
+   *Artifacts* e a rotina te manda os slides + legenda no app do Claude para postar à mão.
+
+O caminho antigo, com a chave paga da API do Claude no GitHub, continua disponível no workflow
+manual **Gerar e publicar com a API do Claude (opcional)**.
 
 - **Pesquisa**: escolhe a pauta mantendo os pilares em equilíbrio, priorizando livros conhecidos e
   evitando temas já feitos (o histórico já inclui os 18 posts que você produziu). Confirma cada
@@ -60,7 +75,7 @@ A API oficial só publica em contas **Profissionais** (Criador de conteúdo ou E
 
 | Segredo | Para quê | Onde conseguir | Custo |
 |---|---|---|---|
-| `ANTHROPIC_API_KEY` | pesquisa, redação e revisão | <https://console.anthropic.com> | pago por uso |
+| `ANTHROPIC_API_KEY` *(opcional)* | só para o workflow manual com a API | <https://console.anthropic.com> | pago por uso |
 | `IG_USER_ID` e `IG_ACCESS_TOKEN` | publicar | passo 1 | grátis |
 | `IMGBB_API_KEY` | link público das imagens | <https://api.imgbb.com> | grátis |
 | `POLLINATIONS_TOKEN` | **imagens com modelo bom** | <https://enter.pollinations.ai/keys> | créditos grátis; modelos melhores consomem "pollen" |
@@ -79,11 +94,8 @@ A API oficial só publica em contas **Profissionais** (Criador de conteúdo ou E
 
 ### 4. Ligar
 
-Os agendamentos do GitHub só rodam no branch padrão (`main`): faça o merge deste código lá.
-
-**Primeiro teste**: **Actions → Post automático no Instagram → Run workflow**, escolha o formato
-e **desmarque "Publicar"**. As imagens ficam em *Artifacts* na página da execução. Aprovou? Rode de
-novo com "Publicar" marcado.
+O código precisa estar no `main`, e as duas rotinas ficam em **Routines** no Claude Code
+(claude.ai/code). Para testar só as imagens, use o workflow **Testar geração de imagens**.
 
 ---
 
@@ -105,6 +117,12 @@ python -m assistente gerar                                  # carrossel, sem pub
 python -m assistente gerar --formato imagem                 # imagem avulsa
 python -m assistente gerar --tema "Drácula, de Bram Stoker"  # força um tema
 python -m assistente publicar posts/<pasta>                 # publica um post já criado
+
+# fluxo da rotina (sem chave da API)
+python -m assistente contexto --formato carrossel           # briefing com as regras do guia
+python -m assistente nova-pasta --formato carrossel --tema "Drácula"
+python -m assistente validar posts/<pasta>                  # confere o post.json
+python -m assistente montar --pendentes                     # imagens, slides e legenda
 ```
 
 Dá para editar `legenda.txt` antes de publicar: o comando `publicar` usa o que estiver no arquivo.
@@ -120,7 +138,8 @@ python -m pytest
 
 ```
 assistente/
-  ia.py               pesquisa (busca na web), redação e revisão com o Claude
+  ia.py               regras de pesquisa/redação/revisão (e chamadas à API, se houver chave)
+  rotina.py           briefing, validação e fila de posts da rotina agendada
   modelos.py          formato do post, destaques em coral e legenda
   geracao_imagens.py  cenas por IA (pollinations, cloudflare, openai, gemini)
   capas.py            capa real do livro pelo ISBN

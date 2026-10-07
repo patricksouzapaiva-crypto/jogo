@@ -1,12 +1,8 @@
-name: Post automático no Instagram
+name: Gerar e publicar com a API do Claude (opcional)
 
+# Caminho alternativo, só manual, para quem tiver ANTHROPIC_API_KEY. No dia a dia, quem
+# escreve os posts é a rotina agendada no Claude Code e quem publica é "Publicar posts".
 on:
-  schedule:
-    # Horários em UTC (Brasília = UTC-3), baseados nos melhores horários do Metricool
-    # (10h como pico principal, 18h–19h como pico secundário).
-    # Se mudar algum, mude também o FORMATO lá embaixo.
-    - cron: "53 12 * * *"   # 09:53 em Brasília: carrossel de 7 slides
-    - cron: "47 21 * * *"   # 18:47 em Brasília: imagem avulsa
   workflow_dispatch:
     inputs:
       formato:
@@ -35,8 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      # o agendamento das 21:47 UTC publica a imagem avulsa; o outro, o carrossel
-      FORMATO: ${{ inputs.formato || (github.event.schedule == '47 21 * * *' && 'imagem' || 'carrossel') }}
+      FORMATO: ${{ inputs.formato }}
     steps:
       - uses: actions/checkout@v4
 
@@ -90,7 +85,7 @@ jobs:
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Publicar no Instagram
-        if: github.event_name == 'schedule' || inputs.publicar
+        if: inputs.publicar
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -100,7 +95,7 @@ jobs:
         run: python -m assistente publicar "$PASTA"
 
       - name: Registrar a publicação no histórico
-        if: github.event_name == 'schedule' || inputs.publicar
+        if: inputs.publicar
         env:
           PASTA: ${{ steps.gerar.outputs.pasta }}
         run: |

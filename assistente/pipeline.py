@@ -10,10 +10,10 @@ import re
 import unicodedata
 from pathlib import Path
 
-from . import capas, geracao_imagens, hospedagem, historico, ia, imagens
+from . import capas, geracao_imagens, hospedagem, historico, ia, imagens, rotina
 from .config import Config, segredo
 from .instagram import Instagram
-from .modelos import FORMATOS, Post, montar_legenda
+from .modelos import FORMATOS, montar_legenda
 
 log = logging.getLogger(__name__)
 
@@ -45,9 +45,20 @@ def gerar(cfg: Config, formato: str = "carrossel", tema: str | None = None) -> P
         post = ia.revisar(cfg, dossie, post, formato, mundos)
 
     agora = dt.datetime.now()
-    post_id = f"{agora:%Y-%m-%d_%H%M%S}_{formato}_{_slug(post.tema)}"
-    pasta = cfg.pasta_posts / post_id
+    pasta = cfg.pasta_posts / f"{agora:%Y-%m-%d_%H%M%S}_{formato}_{_slug(post.tema)}"
     pasta.mkdir(parents=True, exist_ok=True)
+    (pasta / "dossie.md").write_text(dossie + "\n", encoding="utf-8")
+    dados = {"formato": formato, **post.model_dump()}
+    (pasta / "post.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return montar(cfg, pasta)
+
+
+def montar(cfg: Config, pasta: Path) -> Path:
+    """A partir de post.json (escrito pela API ou pela rotina), gera imagens, slides e legenda."""
+    pasta = Path(pasta)
+    formato, post = rotina.ler(pasta)
+    estrutura_total = 1 if formato == "imagem" else int(cfg.formatos.get("carrossel", {}).get("total_slides", 7))
+    post = ia._normalizar(cfg, post, formato, estrutura_total)
 
     prompts = [geracao_imagens.montar_prompt(cfg, s.prompt_imagem, post.mundo_visual) for s in post.slides]
     semente = random.randint(1, 999_999)  # a mesma semente no post inteiro deixa o visual coeso
@@ -67,7 +78,6 @@ def gerar(cfg: Config, formato: str = "carrossel", tema: str | None = None) -> P
         hashtags_fixas=cfg.post.get("hashtags_fixas") or [],
         maximo=int(cfg.post.get("hashtags_maximo", 12)),
     )
-    (pasta / "dossie.md").write_text(dossie + "\n", encoding="utf-8")
     dados = {"formato": formato, "origem_capa_livro": origem_capa, **post.model_dump()}
     (pasta / "post.json").write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (pasta / "legenda.txt").write_text(legenda + "\n", encoding="utf-8")
@@ -75,9 +85,9 @@ def gerar(cfg: Config, formato: str = "carrossel", tema: str | None = None) -> P
         "".join(f"## Slide {i}\n\n{p}\n\n" for i, p in enumerate(prompts, start=1)), encoding="utf-8"
     )
 
-    historico.registrar(arquivo_hist, {
-        "id": post_id,
-        "data": agora.isoformat(timespec="seconds"),
+    historico.registrar(cfg.arquivo_historico, {
+        "id": pasta.name,
+        "data": dt.datetime.now().isoformat(timespec="seconds"),
         "formato": formato,
         "tema": post.tema,
         "pilar": post.pilar,
@@ -85,15 +95,8 @@ def gerar(cfg: Config, formato: str = "carrossel", tema: str | None = None) -> P
         "status": "gerado",
         "imagens_ia": sum(f is not None for f in fundos),
     })
-    log.info("Post gerado em %s", pasta)
+    log.info("Post montado em %s", pasta)
     return pasta
-
-
-def _ler_post(pasta: Path) -> Post:
-    dados = json.loads((pasta / "post.json").read_text(encoding="utf-8"))
-    dados.pop("formato", None)
-    dados.pop("origem_capa_livro", None)
-    return Post.model_validate(dados)
 
 
 def publicar(cfg: Config, pasta: Path) -> dict[str, str]:
@@ -104,7 +107,7 @@ def publicar(cfg: Config, pasta: Path) -> dict[str, str]:
         log.info("Este post já foi publicado; nada a fazer.")
         return json.loads(registro.read_text(encoding="utf-8"))
 
-    post = _ler_post(pasta)
+    _, post = rotina.ler(pasta)
     legenda = (pasta / "legenda.txt").read_text(encoding="utf-8").strip()
     caminhos = sorted(pasta.glob("slide_*.jpg"))
 

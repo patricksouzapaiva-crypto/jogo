@@ -12,7 +12,11 @@ RAIZ = Path(__file__).resolve().parent.parent
 @pytest.fixture
 def cfg(tmp_path):
     """Config real do projeto (com fontes e logo), mas gravando numa pasta temporária."""
-    shutil.copy(RAIZ / "config.yaml", tmp_path / "config.yaml")
+    texto = (RAIZ / "config.yaml").read_text(encoding="utf-8")
+    # testes nunca chamam serviços de imagem de verdade
+    (tmp_path / "config.yaml").write_text(
+        texto.replace('provedor: "pollinations"', 'provedor: "nenhum"'), encoding="utf-8"
+    )
     shutil.copytree(RAIZ / "fontes", tmp_path / "fontes")
     shutil.copytree(RAIZ / "marca", tmp_path / "marca")
     (tmp_path / "data").mkdir()

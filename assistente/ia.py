@@ -67,9 +67,9 @@ TAREFA_POR_FORMATO = {
 }
 
 
-def pesquisar(cfg: Config, temas_usados: list[str], pilares_usados: list[str],
-              tema: str | None = None, formato: str = "carrossel") -> str:
-    """Escolhe um tema (se não for informado) e monta um dossiê com fatos verificados na web."""
+def instrucoes_pesquisa(cfg: Config, temas_usados: list[str], pilares_usados: list[str],
+                        tema: str | None = None, formato: str = "carrossel") -> str:
+    """Instruções da etapa de pesquisa (usadas pela API e pela rotina agendada)."""
     hoje = dt.date.today().isoformat()
     preferencias = cfg.dados.get("preferencias_de_pauta") or []
 
@@ -83,7 +83,7 @@ def pesquisar(cfg: Config, temas_usados: list[str], pilares_usados: list[str],
             "nunca afirme que algo está viralizando sem evidência."
         )
 
-    prompt = f"""Você é o pesquisador de um perfil de Instagram sobre livros e ideias. Hoje é {hoje}.
+    return f"""Você é o pesquisador de um perfil de Instagram sobre livros e ideias. Hoje é {hoje}.
 
 {_perfil(cfg)}
 
@@ -116,6 +116,11 @@ Responda com um dossiê em texto simples contendo:
    (editora e ano) com a URL onde você o confirmou; deixe vazio se não confirmar
 10. CUIDADOS: mitos comuns ou pontos controversos a evitar"""
 
+
+def pesquisar(cfg: Config, temas_usados: list[str], pilares_usados: list[str],
+              tema: str | None = None, formato: str = "carrossel") -> str:
+    """Escolhe um tema (se não for informado) e monta um dossiê com fatos verificados na web."""
+    prompt = instrucoes_pesquisa(cfg, temas_usados, pilares_usados, tema, formato)
     cliente = _cliente()
     mensagens: list[dict] = [{"role": "user", "content": prompt}]
     ferramentas = [{
@@ -212,6 +217,24 @@ Legenda:
 - fontes: as URLs do dossiê que você usou."""
 
 
+CHECKLIST_REVISAO = """Checklist de revisão:
+1. Cada fato, data, número e citação está no dossiê? Remova ou corrija o que não estiver.
+   Citação sem fonte literal no dossiê sai.
+2. Interpretação nunca aparece como se fosse frase do autor; obra / interpretação / aplicação
+   estão separadas e rotuladas.
+3. Ortografia e gramática do português do Brasil impecáveis; marcação *destaque* correta.
+4. A capa faz uma pergunta concreta e o slide de resposta cumpre essa promessa.
+5. O último slide tem um único CTA, sem "arraste"/"próximo slide".
+6. Spoilers relevantes estão sinalizados.
+7. Os prompt_imagem são completos e coerentes entre si e com o mundo visual."""
+
+
+def instrucoes_post(cfg: Config, formato: str, mundos_recentes: list[str]) -> str:
+    """Estrutura do post + regras de escrita, imagem e legenda (API e rotina agendada)."""
+    estrutura, _ = _estrutura(cfg, formato)
+    return f"{estrutura}\n\n{_orientacoes_comuns(cfg, mundos_recentes)}"
+
+
 def _parse(cfg: Config, prompt: str, esforco: str) -> Post:
     resposta = _cliente().beta.messages.parse(
         model=cfg.ia.get("modelo", "claude-opus-5-5"),
@@ -276,16 +299,7 @@ O post deveria seguir:
 
 {_orientacoes_comuns(cfg, mundos_recentes or [])}
 
-Checklist:
-1. Cada fato, data, número e citação está no dossiê? Remova ou corrija o que não estiver.
-   Citação sem fonte literal no dossiê sai.
-2. Interpretação nunca aparece como se fosse frase do autor; obra / interpretação / aplicação
-   estão separadas e rotuladas.
-3. Ortografia e gramática do português do Brasil impecáveis; marcação *destaque* correta.
-4. A capa faz uma pergunta concreta e o slide de resposta cumpre essa promessa.
-5. O último slide tem um único CTA, sem "arraste"/"próximo slide".
-6. Spoilers relevantes estão sinalizados.
-7. Os prompt_imagem são completos e coerentes entre si e com o mundo visual.
+{CHECKLIST_REVISAO}
 
 Devolva o post inteiro já corrigido (se estiver tudo certo, devolva igual).
 
