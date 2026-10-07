@@ -41,6 +41,10 @@ class Config:
         return self.secao("publicacao")
 
     @property
+    def formatos(self) -> dict[str, Any]:
+        return self.secao("formatos")
+
+    @property
     def pilares(self) -> list[str]:
         return list(self.dados.get("pilares") or [])
 

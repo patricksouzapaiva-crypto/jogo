@@ -44,3 +44,12 @@ def test_pesquisa_recusada_gera_erro(cfg, monkeypatch):
     monkeypatch.setattr(ia, "_cliente", lambda: ClienteFalso([resposta("refusal")]))
     with pytest.raises(ia.ErroIA):
         ia.pesquisar(cfg, [], [])
+
+
+def test_normalizar_corta_excesso_mantendo_slide_final(cfg, carrossel):
+    carrossel.slides = carrossel.slides + carrossel.slides[1:3]  # 9 slides
+    final = carrossel.slides[-1]
+    carrossel.mundo_visual = "inexistente"
+    post = ia._normalizar(cfg, carrossel, "carrossel", 7)
+    assert len(post.slides) == 7 and post.slides[-1] is final
+    assert post.mundo_visual in cfg.secao("mundos_visuais")

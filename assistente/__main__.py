@@ -1,8 +1,9 @@
 """Linha de comando.
 
 Exemplos:
-    python -m assistente rodar                 # pesquisa, cria e publica
-    python -m assistente rodar --sem-publicar  # só cria (para revisar antes)
+    python -m assistente rodar                      # carrossel: pesquisa, cria e publica
+    python -m assistente rodar --formato imagem     # post de imagem única (curiosidade)
+    python -m assistente rodar --sem-publicar       # só cria (para revisar antes)
     python -m assistente gerar --tema "Kafka e A Metamorfose"
     python -m assistente publicar posts/2026-10-07_0900_kafka
 """
@@ -17,6 +18,7 @@ from pathlib import Path
 
 from . import pipeline
 from .config import carregar
+from .modelos import FORMATOS
 
 
 def _saida_github(nome: str, valor: str) -> None:
@@ -33,10 +35,12 @@ def main(argv: list[str] | None = None) -> int:
 
     p_rodar = sub.add_parser("rodar", help="pesquisa, cria e publica um post")
     p_rodar.add_argument("--tema", help="força um tema em vez de deixar a IA escolher")
+    p_rodar.add_argument("--formato", choices=FORMATOS, default="carrossel")
     p_rodar.add_argument("--sem-publicar", action="store_true", help="só gera o post, sem publicar")
 
     p_gerar = sub.add_parser("gerar", help="pesquisa e cria um post, sem publicar")
     p_gerar.add_argument("--tema", help="força um tema em vez de deixar a IA escolher")
+    p_gerar.add_argument("--formato", choices=FORMATOS, default="carrossel")
 
     p_pub = sub.add_parser("publicar", help="publica um post já gerado")
     p_pub.add_argument("pasta", help="pasta do post (ex.: posts/2026-10-07_0900_tema)")
@@ -46,7 +50,7 @@ def main(argv: list[str] | None = None) -> int:
     cfg = carregar(args.config)
 
     if args.comando in ("rodar", "gerar"):
-        pasta = pipeline.gerar(cfg, tema=args.tema)
+        pasta = pipeline.gerar(cfg, formato=args.formato, tema=args.tema)
         _saida_github("pasta", str(pasta.relative_to(cfg.raiz)))
         print(f"Post gerado em: {pasta}")
         if args.comando == "gerar" or args.sem_publicar:

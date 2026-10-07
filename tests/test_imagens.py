@@ -1,32 +1,53 @@
+import pytest
 from PIL import Image
 
 from assistente import geracao_imagens, imagens
-from assistente.modelos import Slide
+
+from .conftest import slide
 
 
-def test_gera_capa_slides_e_final(cfg, post, tmp_path):
-    caminhos = imagens.gerar(cfg, post, tmp_path / "post")
-    assert [c.name for c in caminhos] == [f"slide_{i:02d}.jpg" for i in range(1, 6)]
+def test_carrossel_tem_7_slides_no_formato_4x5(cfg, carrossel, tmp_path):
+    caminhos = imagens.gerar(cfg, "carrossel", carrossel, tmp_path / "post")
+    assert [c.name for c in caminhos] == [f"slide_{i:02d}.jpg" for i in range(1, 8)]
     for caminho in caminhos:
         with Image.open(caminho) as img:
-            assert img.size == (1080, 1350)
-            assert img.format == "JPEG"
+            assert img.size == (1080, 1350) and img.format == "JPEG"
 
 
-def test_capa_com_ilustracao(cfg, post, tmp_path):
-    ilustracao = Image.new("RGB", (1080, 1350), "#336699")
-    caminhos = imagens.gerar(cfg, post, tmp_path / "post", ilustracao)
-    with Image.open(caminhos[0]) as capa:
-        # o topo continua mostrando a ilustração, a parte de baixo é escurecida
-        assert capa.getpixel((540, 20))[2] > 120
-        assert sum(capa.getpixel((10, 1340))) < 120
+def test_imagem_unica(cfg, imagem_unica, tmp_path):
+    caminhos = imagens.gerar(cfg, "imagem", imagem_unica, tmp_path / "post")
+    assert len(caminhos) == 1
 
 
-def test_texto_longo_nao_quebra(cfg, post, tmp_path):
-    post.titulo_capa = "Um título enorme " * 10
-    post.slides = [Slide(titulo="Título " * 8, texto="Texto muito longo. " * 40)]
-    caminhos = imagens.gerar(cfg, post, tmp_path / "post")
-    assert len(caminhos) == 3
+def test_fundo_claro_usa_texto_marinho(cfg, imagem_unica, tmp_path):
+    desenhista = imagens.Desenhista(cfg)
+    _, paleta = desenhista.preparar(Image.new("RGB", (1080, 1350), "#F4EEE0"), "unico")
+    assert paleta.clara and paleta.titulo == cfg.visual["cor_marinho"]
+    _, paleta = desenhista.preparar(Image.new("RGB", (1080, 1350), "#101820"), "unico")
+    assert not paleta.clara and paleta.titulo == cfg.visual["cor_branco"]
+
+
+def test_capa_com_livro_e_texto_longo(cfg, carrossel, tmp_path):
+    carrossel.slides[0] = slide(rotulo="Bram Stoker • Drácula", titulo="Por que " * 20 + "*medo?*",
+                                texto="Texto de apoio bem comprido. " * 10)
+    capa = Image.new("RGB", (400, 600), "#AA2222")
+    caminhos = imagens.gerar(cfg, "carrossel", carrossel, tmp_path / "post", capa_livro=capa)
+    with Image.open(caminhos[0]) as img:
+        r, g, b = img.getpixel((1080 - 72 - 100, 1350 - 200 - 200))  # meio da capa colada
+        assert r > 150 and g < 60
+
+
+def test_logo_original_e_obrigatorio(cfg, carrossel, tmp_path):
+    cfg.dados["visual"]["logo"] = "marca/nao_existe.png"
+    with pytest.raises(FileNotFoundError):
+        imagens.gerar(cfg, "carrossel", carrossel, tmp_path / "post")
+
+
+def test_prompt_usa_mundo_visual(cfg):
+    prompt = geracao_imagens.montar_prompt(cfg, "A castle on a cliff", "xilogravura")
+    assert prompt.startswith("Black and white woodcut")
+    assert "A castle on a cliff" in prompt
+    assert "upper half" in prompt and prompt.endswith("no logos.")
 
 
 def test_recortar_para_4x5():
@@ -41,5 +62,33 @@ def test_ilustracao_desligada_ou_com_falha(cfg, monkeypatch):
         raise RuntimeError("serviço fora do ar")
 
     monkeypatch.setitem(geracao_imagens.PROVEDORES, "pollinations", falha)
+    monkeypatch.setattr(geracao_imagens.time, "sleep", lambda s: None)
     cfg.dados["imagens_ia"]["provedor"] = "pollinations"
     assert geracao_imagens.gerar_ilustracao(cfg, "a desk") is None
+
+
+class _Resp:
+    status_code = 200
+    headers = {"content-type": "image/jpeg"}
+    content = b"img"
+    text = ""
+
+    def raise_for_status(self):
+        pass
+
+
+def test_pollinations_usa_api_nova_com_chave(monkeypatch):
+    chamadas = []
+    monkeypatch.setattr(geracao_imagens.requests, "get",
+                        lambda url, params, headers, timeout: chamadas.append((url, params, headers)) or _Resp())
+    monkeypatch.setenv("POLLINATIONS_TOKEN", "pk_teste")
+    geracao_imagens._pollinations("a castle", {"pollinations_modelo": "zimage"}, 1080, 1350, 7)
+    url, params, headers = chamadas[-1]
+    assert url.startswith("https://gen.pollinations.ai/image/a%20castle")
+    assert params["model"] == "zimage" and params["seed"] == 7
+    assert headers["Authorization"] == "Bearer pk_teste"
+
+    monkeypatch.delenv("POLLINATIONS_TOKEN")
+    geracao_imagens._pollinations("a castle", {}, 1080, 1350, 7)
+    url, params, headers = chamadas[-1]
+    assert url.startswith("https://image.pollinations.ai/prompt/") and not headers

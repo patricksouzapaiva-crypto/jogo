@@ -1,240 +1,307 @@
-"""Gera as imagens do carrossel (capa, slides de conteúdo e slide final) com o Pillow."""
+"""Desenha os slides no layout fixo da marca (Guia de Marca, seção 3).
+
+Etiqueta pequena no topo esquerdo · título + texto de apoio na metade superior, sobre zona
+de contraste · cena na metade inferior · numeração "n/7" no canto inferior direito · logo
+(sempre o arquivo original) no canto inferior esquerdo.
+"""
 
 from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageStat
 
 from .config import Config
-from .modelos import Post
+from .modelos import Post, Slide, sem_marcacao, trechos_destacados
 
-FONTES_TITULO = [
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
-    "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf",
-    "/Library/Fonts/Georgia Bold.ttf",
-    "C:/Windows/Fonts/georgiab.ttf",
-]
-FONTES_TEXTO = [
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
-    "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf",
-    "/Library/Fonts/Georgia.ttf",
-    "C:/Windows/Fonts/georgia.ttf",
-]
+MARGEM = 72
+LOGO = 124
 
-MARGEM = 96
+FONTES_SISTEMA = {
+    "titulo": ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "C:/Windows/Fonts/arialbd.ttf"],
+    "rotulo": ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "C:/Windows/Fonts/arialbd.ttf"],
+    "texto": ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "C:/Windows/Fonts/arial.ttf"],
+}
 
 
 @lru_cache(maxsize=None)
-def _fonte(caminho_preferido: str, candidatos: tuple[str, ...], tamanho: int) -> ImageFont.FreeTypeFont:
-    for caminho in (caminho_preferido, *candidatos):
-        if caminho and Path(caminho).exists():
-            return ImageFont.truetype(caminho, tamanho)
-    return ImageFont.load_default(size=tamanho)
+def _carregar_fonte(caminho: str, tamanho: int):
+    return ImageFont.truetype(caminho, tamanho)
+
+
+def tipos_dos_slides(formato: str, quantidade: int) -> list[str]:
+    if formato == "imagem":
+        return ["unico"] * quantidade
+    if quantidade == 1:
+        return ["capa"]
+    return ["capa"] + ["conteudo"] * (quantidade - 2) + ["final"]
+
+
+class Paleta:
+    def __init__(self, clara: bool, marinho: str, branco: str, cinza: str):
+        self.clara = clara
+        if clara:  # fundos claros (aquarela, vetor, colagem...): texto azul-marinho
+            self.titulo, self.texto, self.suave = marinho, marinho, "#56637A"
+        else:
+            self.titulo, self.texto, self.suave = branco, branco, cinza
 
 
 class Desenhista:
     def __init__(self, cfg: Config):
         v = cfg.visual
-        self.largura = int(v.get("largura", 1080))
-        self.altura = int(v.get("altura", 1350))
-        self.fundo = v.get("cor_fundo", "#F4EDE1")
-        self.tinta = v.get("cor_texto", "#2B2622")
-        self.destaque = v.get("cor_destaque", "#8C3B2E")
-        self.suave = v.get("cor_suave", "#7A6E64")
-        self.fonte_titulo_cfg = self._resolver(cfg, v.get("fonte_titulo", ""))
-        self.fonte_texto_cfg = self._resolver(cfg, v.get("fonte_texto", ""))
+        self.cfg = cfg
+        self.L = int(v.get("largura", 1080))
+        self.A = int(v.get("altura", 1350))
+        self.marinho = v.get("cor_marinho", "#0F2747")
+        self.coral = v.get("cor_coral", "#E63946")
+        self.branco = v.get("cor_branco", "#F7F3EB")
+        self.cinza = v.get("cor_cinza", "#A7B0BE")
+        self.chamada_capa = v.get("chamada_capa", "ARRASTE PARA ENTENDER")
+        self.assinatura = cfg.perfil.get("assinatura", "")
         self.arroba = cfg.perfil.get("arroba", "")
-        self.nome = cfg.perfil.get("nome", "")
+        self.caminhos_fonte = {tipo: self._resolver(v.get(f"fonte_{tipo}", "")) for tipo in FONTES_SISTEMA}
+        self.logo = self._carregar_logo(self._resolver(v.get("logo", "")))
 
-    @staticmethod
-    def _resolver(cfg: Config, caminho: str) -> str:
+    def _resolver(self, caminho: str) -> str:
         if not caminho:
             return ""
         p = Path(caminho)
-        return str(p if p.is_absolute() else cfg.raiz / p)
+        return str(p if p.is_absolute() else self.cfg.raiz / p)
 
-    def titulo(self, tamanho: int):
-        return _fonte(self.fonte_titulo_cfg, tuple(FONTES_TITULO), tamanho)
-
-    def texto(self, tamanho: int):
-        return _fonte(self.fonte_texto_cfg, tuple(FONTES_TEXTO), tamanho)
-
-    # ---- utilidades de texto -------------------------------------------------
+    def fonte(self, tipo: str, tamanho: int):
+        for caminho in (self.caminhos_fonte.get(tipo, ""), *FONTES_SISTEMA[tipo]):
+            if caminho and Path(caminho).exists():
+                return _carregar_fonte(caminho, tamanho)
+        return ImageFont.load_default(size=tamanho)
 
     @staticmethod
-    def quebrar(desenho: ImageDraw.ImageDraw, texto: str, fonte, largura_max: int) -> list[str]:
-        linhas: list[str] = []
-        for paragrafo in texto.split("\n"):
-            atual = ""
-            for palavra in paragrafo.split():
-                teste = f"{atual} {palavra}".strip()
-                if desenho.textlength(teste, font=fonte) <= largura_max or not atual:
-                    atual = teste
-                else:
-                    linhas.append(atual)
-                    atual = palavra
+    def _carregar_logo(caminho: str) -> Image.Image:
+        # Regra da marca: sempre o arquivo original; nunca redesenhar nem substituir.
+        if not caminho or not Path(caminho).exists():
+            raise FileNotFoundError(
+                f"Logo não encontrado em '{caminho}'. Coloque o arquivo original e ajuste 'visual.logo'."
+            )
+        return Image.open(caminho).convert("RGBA")
+
+    # ---- texto ---------------------------------------------------------------------
+
+    @staticmethod
+    def _palavra(palavra) -> str:
+        return "".join(texto for texto, _ in palavra)
+
+    def _quebrar(self, d, palavras, fonte, largura: int):
+        espaco = d.textlength(" ", font=fonte)
+        linhas, atual, larg_atual = [], [], 0.0
+        for palavra in palavras:
+            larg = d.textlength(self._palavra(palavra), font=fonte)
+            extra = larg if not atual else espaco + larg
+            if atual and larg_atual + extra > largura:
+                linhas.append(atual)
+                atual, larg_atual = [palavra], larg
+            else:
+                atual.append(palavra)
+                larg_atual += extra
+        if atual:
             linhas.append(atual)
         return linhas
 
-    def ajustar(self, desenho, texto: str, criar_fonte, tamanho: int, minimo: int,
-                largura_max: int, altura_max: int, entrelinha: float):
-        """Diminui a fonte até o texto caber na área disponível."""
+    def _largura_linha(self, d, linha, fonte) -> float:
+        return d.textlength(" ".join(self._palavra(p) for p in linha), font=fonte)
+
+    def ajustar(self, d, texto: str, tipo: str, tamanho: int, minimo: int, largura: int,
+                altura_max: int, entrelinha: float):
+        """Diminui a fonte até o texto caber; devolve (fonte, linhas, altura_da_linha)."""
+        palavras = trechos_destacados(texto)
         while True:
-            fonte = criar_fonte(tamanho)
-            linhas = self.quebrar(desenho, texto, fonte, largura_max)
-            altura_linha = int(tamanho * entrelinha)
-            if len(linhas) * altura_linha <= altura_max or tamanho <= minimo:
-                return fonte, linhas, altura_linha
+            fonte = self.fonte(tipo, tamanho)
+            linhas = self._quebrar(d, palavras, fonte, largura)
+            alt = int(tamanho * entrelinha)
+            cabe_largura = all(self._largura_linha(d, l, fonte) <= largura * 1.02 for l in linhas)
+            if (len(linhas) * alt <= altura_max and cabe_largura) or tamanho <= minimo:
+                return fonte, linhas, alt
             tamanho -= 2
 
-    def escrever(self, desenho, xy, linhas, fonte, altura_linha, cor) -> int:
-        x, y = xy
+    @staticmethod
+    def altura(bloco) -> int:
+        return len(bloco[1]) * bloco[2]
+
+    def escrever(self, d, x: int, y: int, bloco, cor: str) -> int:
+        fonte, linhas, alt = bloco
+        espaco = d.textlength(" ", font=fonte)
         for linha in linhas:
-            desenho.text((x, y), linha, font=fonte, fill=cor)
-            y += altura_linha
+            cx = x
+            for palavra in linha:
+                for pedaco, destaque in palavra:
+                    d.text((cx, y), pedaco, font=fonte, fill=self.coral if destaque else cor)
+                    cx += d.textlength(pedaco, font=fonte)
+                cx += espaco
+            y += alt
         return y
 
-    # ---- elementos comuns ----------------------------------------------------
+    def espacado(self, d, x: float, y: int, texto: str, fonte, cor: str, espaco: int) -> float:
+        """Texto com letras espaçadas (etiquetas). Devolve a largura."""
+        for c in texto:
+            d.text((x, y), c, font=fonte, fill=cor)
+            x += d.textlength(c, font=fonte) + espaco
+        return x
 
-    def _base(self) -> tuple[Image.Image, ImageDraw.ImageDraw]:
-        img = Image.new("RGB", (self.largura, self.altura), self.fundo)
-        desenho = ImageDraw.Draw(img)
-        # moldura fina, lembrando a página de um livro
-        desenho.rectangle(
-            (40, 40, self.largura - 40, self.altura - 40), outline=self.suave, width=2
-        )
-        return img, desenho
+    def largura_espacado(self, d, texto: str, fonte, espaco: int) -> float:
+        return sum(d.textlength(c, font=fonte) for c in texto) + espaco * (len(texto) - 1)
 
-    def _rodape(self, desenho, pagina: int, total: int, cor: str | None = None) -> None:
-        fonte = self.texto(30)
-        cor = cor or self.suave
-        y = self.altura - MARGEM - 10
-        desenho.text((MARGEM, y), self.arroba, font=fonte, fill=cor)
-        marcador = f"{pagina}/{total}"
-        largura = desenho.textlength(marcador, font=fonte)
-        desenho.text((self.largura - MARGEM - largura, y), marcador, font=fonte, fill=cor)
+    # ---- fundo -----------------------------------------------------------------------
 
-    # ---- slides --------------------------------------------------------------
+    def _fundo_liso(self) -> Image.Image:
+        topo, base = (24, 52, 92), (7, 18, 34)
+        grad = Image.new("RGB", (1, self.A))
+        for y in range(self.A):
+            t = y / (self.A - 1)
+            grad.putpixel((0, y), tuple(int(topo[i] * (1 - t) + base[i] * t) for i in range(3)))
+        return grad.resize((self.L, self.A))
 
-    def capa(self, post: Post, total: int, ilustracao: Image.Image | None = None) -> Image.Image:
-        if ilustracao is not None:
-            return self._capa_ilustrada(post, total, ilustracao)
-        img, d = self._base()
-        largura_util = self.largura - 2 * MARGEM
+    def _sombra_vertical(self, img, cor, alfa: int, fim: float, de_baixo: bool = False):
+        coluna = Image.new("L", (1, self.A))
+        limite = int(self.A * fim)
+        for y in range(self.A):
+            pos = (self.A - 1 - y) if de_baixo else y
+            coluna.putpixel((0, y), int(alfa * max(0.0, 1 - pos / limite)) if pos < limite else 0)
+        return Image.composite(Image.new("RGB", img.size, cor), img, coluna.resize(img.size))
 
-        d.text((MARGEM, MARGEM + 20), self.nome.upper(), font=self.texto(30), fill=self.destaque)
-        d.line((MARGEM, MARGEM + 80, MARGEM + 120, MARGEM + 80), fill=self.destaque, width=4)
+    def preparar(self, fundo: Image.Image | None, tipo: str) -> tuple[Image.Image, Paleta]:
+        img = (fundo or self._fundo_liso()).convert("RGB").resize((self.L, self.A))
+        topo = img.crop((0, 0, self.L, int(self.A * 0.5))).convert("L")
+        clara = fundo is not None and ImageStat.Stat(topo).mean[0] > 150
+        if clara:
+            img = self._sombra_vertical(img, self.branco, 225, 0.6)
+        else:
+            img = self._sombra_vertical(img, "#081527", 235 if tipo == "final" else 215, 0.66)
+            img = self._sombra_vertical(img, "#081527", 170, 0.24, de_baixo=True)
+        return img, Paleta(clara, self.marinho, self.branco, self.cinza)
 
-        fonte_t, linhas_t, alt_t = self.ajustar(
-            d, post.titulo_capa, self.titulo, 104, 56, largura_util, 620, 1.15
-        )
-        fonte_s, linhas_s, alt_s = self.ajustar(
-            d, post.subtitulo_capa, self.texto, 44, 30, largura_util, 260, 1.35
-        )
-        altura_bloco = len(linhas_t) * alt_t + 50 + len(linhas_s) * alt_s
-        y = max(MARGEM + 140, (self.altura - altura_bloco) // 2)
-        y = self.escrever(d, (MARGEM, y), linhas_t, fonte_t, alt_t, self.tinta)
-        y += 50
-        self.escrever(d, (MARGEM, y), linhas_s, fonte_s, alt_s, self.suave)
+    # ---- elementos fixos -----------------------------------------------------------
 
-        self._seta(d, self.destaque)
-        self._rodape(d, 1, total)
-        return img
+    def colar_logo(self, img: Image.Image) -> None:
+        logo = self.logo.resize((LOGO, LOGO), Image.LANCZOS)
+        img.paste(logo, (44, self.A - 44 - LOGO), logo)
 
-    def _capa_ilustrada(self, post: Post, total: int, ilustracao: Image.Image) -> Image.Image:
-        """Ilustração em tela cheia com um degradê escuro embaixo para o texto ficar legível."""
-        img = ilustracao.convert("RGB").resize((self.largura, self.altura))
-        sombra = Image.new("L", (1, self.altura))
-        inicio = int(self.altura * 0.35)
-        for y in range(self.altura):
-            fracao = max(0.0, (y - inicio) / (self.altura - inicio))
-            sombra.putpixel((0, y), int(235 * min(1.0, fracao * 1.3)))
-        preto = Image.new("RGB", img.size, "#120E0B")
-        img = Image.composite(preto, img, sombra.resize(img.size))
+    def contador(self, d, pagina: int, total: int, paleta: Paleta) -> None:
+        texto = f"{pagina}/{total}"
+        fonte = self.fonte("texto", 30)
+        d.text((self.L - MARGEM - d.textlength(texto, font=fonte), self.A - 100), texto,
+               font=fonte, fill=paleta.suave)
 
+    def etiqueta(self, d, y: int, texto: str) -> int:
+        if not texto:
+            return y
+        self.espacado(d, MARGEM, y, texto.upper(), self.fonte("rotulo", 25), self.coral, 6)
+        return y + 52
+
+    def diagrama(self, d, y: int, slide: Slide, paleta: Paleta) -> int:
+        fonte = self.fonte("rotulo", 32)
+        de, para = slide.diagrama_de.upper(), slide.diagrama_para.upper()
+        seta = 170
+        x = MARGEM
+        d.text((x, y), de, font=fonte, fill=paleta.titulo)
+        x += d.textlength(de, font=fonte) + 30
+        meio = y + 20
+        d.line((x, meio, x + seta, meio), fill=self.coral, width=5)
+        d.polygon([(x + seta + 4, meio), (x + seta - 18, meio - 13), (x + seta - 18, meio + 13)], fill=self.coral)
+        d.text((x + seta + 30, y), para, font=fonte, fill=paleta.titulo)
+        y += 54
+        if slide.diagrama_legenda:
+            d.text((MARGEM, y), slide.diagrama_legenda, font=self.fonte("texto", 28), fill=paleta.suave)
+            y += 40
+        return y
+
+    def botao_arraste(self, d, paleta: Paleta) -> None:
+        fonte = self.fonte("rotulo", 18)
+        texto = self.chamada_capa.upper()
+        altura = 60
+        larg = self.largura_espacado(d, texto, fonte, 5) + 60 + altura
+        x1 = (self.L - larg) / 2
+        y1 = self.A - 44 - LOGO / 2 - altura / 2
+        d.rounded_rectangle((x1, y1, x1 + larg, y1 + altura), radius=altura // 2, outline=self.coral, width=2)
+        self.espacado(d, x1 + 30, y1 + 20, texto, fonte, paleta.titulo, 5)
+        cx = x1 + larg - altura
+        d.ellipse((cx, y1, cx + altura, y1 + altura), fill=self.coral)
+        my, mx = y1 + altura / 2, cx + altura / 2
+        for linha in ((mx - 13, my, mx + 11, my), (mx + 2, my - 9, mx + 12, my), (mx + 2, my + 9, mx + 12, my)):
+            d.line(linha, fill=self.branco, width=4)
+
+    def colar_capa_livro(self, img: Image.Image, capa: Image.Image, base: int) -> None:
+        """Capa real do livro no canto direito, com sombra suave (sem alterar o design dela)."""
+        altura = 440
+        largura = round(capa.width * altura / capa.height)
+        capa = capa.resize((largura, altura), Image.LANCZOS)
+        x, y = self.L - MARGEM - largura, base - altura
+        sombra = Image.new("L", img.size, 0)
+        ImageDraw.Draw(sombra).rectangle((x + 14, y + 18, x + largura + 14, y + altura + 18), fill=170)
+        sombra = sombra.filter(ImageFilter.GaussianBlur(16))
+        img.paste(Image.new("RGB", img.size, "#000000"), (0, 0), sombra)
+        img.paste(capa, (x, y))
+
+    # ---- slides ------------------------------------------------------------------------
+
+    def slide(self, tipo: str, slide: Slide, fundo, pagina: int, total: int,
+              capa_livro: Image.Image | None = None) -> Image.Image:
+        img, paleta = self.preparar(fundo, tipo)
         d = ImageDraw.Draw(img)
-        largura_util = self.largura - 2 * MARGEM
-        branco, creme = "#FFFFFF", "#E9DFD1"
+        largura = self.L - 2 * MARGEM - 30
+        y = self.etiqueta(d, 92, slide.rotulo)
 
-        fonte_t, linhas_t, alt_t = self.ajustar(
-            d, post.titulo_capa, self.titulo, 96, 52, largura_util, 440, 1.15
-        )
-        fonte_s, linhas_s, alt_s = self.ajustar(
-            d, post.subtitulo_capa, self.texto, 40, 28, largura_util, 200, 1.35
-        )
-        bloco = len(linhas_t) * alt_t + 36 + len(linhas_s) * alt_s
-        y = self.altura - MARGEM - 150 - bloco
-        d.text((MARGEM, y - 70), self.nome.upper(), font=self.texto(30), fill=creme)
-        y = self.escrever(d, (MARGEM, y), linhas_t, fonte_t, alt_t, branco)
-        y += 36
-        self.escrever(d, (MARGEM, y), linhas_s, fonte_s, alt_s, creme)
+        # limite inferior do bloco de texto: metade superior, ou acima da capa do livro
+        limite = 760 if capa_livro is not None else int(self.A * 0.62)
+        if tipo == "capa" and slide.citacao:
+            citacao = self.ajustar(d, f"“{sem_marcacao(slide.citacao)}”", "texto", 34, 26, largura - 120, 150, 1.3)
+            y = self.escrever(d, MARGEM, y, citacao, paleta.texto)
+            if slide.autor_citacao:
+                self.espacado(d, MARGEM, y + 10, slide.autor_citacao.upper(), self.fonte("texto", 20), paleta.suave, 6)
+                y += 44
+            y += 30
 
-        self._seta(d, creme)
-        self._rodape(d, 1, total, cor=creme)
-        return img
+        apoio = None
+        if slide.texto:
+            apoio = self.ajustar(d, slide.texto, "texto", 38 if tipo == "capa" else 35, 26,
+                                 largura - 90, 200, 1.3)
+        extra = (self.altura(apoio) + 24 if apoio else 0) + (100 if slide.diagrama_de else 0)
+        grande = tipo in ("capa", "final")
+        titulo = self.ajustar(d, slide.titulo, "titulo", 92 if grande else 80, 44, largura,
+                              max(limite - y - extra, 120), 1.08)
+        y = self.escrever(d, MARGEM, y, titulo, paleta.titulo)
+        if apoio:
+            y = self.escrever(d, MARGEM, y + 24, apoio, paleta.texto)
+        if slide.diagrama_de and slide.diagrama_para:
+            y = self.diagrama(d, y + 40, slide, paleta)
 
-    def _seta(self, desenho, cor) -> None:
-        seta = "arraste para o lado  →"
-        fonte = self.texto(32)
-        largura = desenho.textlength(seta, font=fonte)
-        desenho.text((self.largura - MARGEM - largura, self.altura - MARGEM - 80), seta,
-                     font=fonte, fill=cor)
+        if tipo == "final" and self.assinatura:
+            d.line((MARGEM, y + 36, MARGEM + 64, y + 36), fill=self.coral, width=5)
+            d.text((MARGEM, y + 60), self.assinatura, font=self.fonte("texto", 28), fill=paleta.suave)
+        if capa_livro is not None:
+            self.colar_capa_livro(img, capa_livro, self.A - 200)
+        if tipo == "capa":
+            self.botao_arraste(d, paleta)
 
-    def conteudo(self, numero: int, titulo: str, texto: str, pagina: int, total: int) -> Image.Image:
-        img, d = self._base()
-        largura_util = self.largura - 2 * MARGEM
-
-        d.text((MARGEM, MARGEM + 10), f"{numero:02d}", font=self.titulo(120), fill=self.destaque)
-        y = MARGEM + 190
-
-        fonte_t, linhas_t, alt_t = self.ajustar(
-            d, titulo, self.titulo, 64, 40, largura_util, 240, 1.2
-        )
-        y = self.escrever(d, (MARGEM, y), linhas_t, fonte_t, alt_t, self.tinta)
-        y += 20
-        d.line((MARGEM, y, MARGEM + 120, y), fill=self.destaque, width=4)
-        y += 50
-
-        espaco = self.altura - y - MARGEM - 80
-        fonte_c, linhas_c, alt_c = self.ajustar(
-            d, texto, self.texto, 52, 28, largura_util, espaco, 1.45
-        )
-        self.escrever(d, (MARGEM, y), linhas_c, fonte_c, alt_c, self.tinta)
-        self._rodape(d, pagina, total)
-        return img
-
-    def final(self, post: Post, total: int) -> Image.Image:
-        img, d = self._base()
-        largura_util = self.largura - 2 * MARGEM
-        fonte, linhas, alt = self.ajustar(
-            d, post.chamada_final, self.titulo, 72, 40, largura_util, 600, 1.25
-        )
-        bloco = len(linhas) * alt
-        y = (self.altura - bloco) // 2 - 60
-        y = self.escrever(d, (MARGEM, y), linhas, fonte, alt, self.tinta)
-        y += 60
-        d.line((MARGEM, y, MARGEM + 120, y), fill=self.destaque, width=4)
-        d.text((MARGEM, y + 40), f"Siga {self.arroba}", font=self.titulo(48), fill=self.destaque)
-        self._rodape(d, total, total)
+        self.colar_logo(img)
+        if tipo != "unico":
+            self.contador(d, pagina, total, paleta)
         return img
 
 
-def gerar(cfg: Config, post: Post, pasta: Path, ilustracao: Image.Image | None = None) -> list[Path]:
-    """Cria os JPEGs do carrossel na pasta indicada e devolve os caminhos em ordem."""
+def gerar(cfg: Config, formato: str, post: Post, pasta: Path,
+          fundos: list[Image.Image | None] | None = None,
+          capa_livro: Image.Image | None = None) -> list[Path]:
+    """Cria os JPEGs do post na pasta indicada e devolve os caminhos em ordem."""
     pasta.mkdir(parents=True, exist_ok=True)
     desenhista = Desenhista(cfg)
-    total = len(post.slides) + 2
-
-    imagens = [desenhista.capa(post, total, ilustracao)]
-    for i, slide in enumerate(post.slides, start=1):
-        imagens.append(desenhista.conteudo(i, slide.titulo, slide.texto, i + 1, total))
-    imagens.append(desenhista.final(post, total))
+    total = len(post.slides)
+    fundos = list(fundos or []) + [None] * total
+    tipos = tipos_dos_slides(formato, total)
 
     caminhos = []
-    for i, img in enumerate(imagens, start=1):
-        caminho = pasta / f"slide_{i:02d}.jpg"
+    for i, (slide, tipo) in enumerate(zip(post.slides, tipos)):
+        img = desenhista.slide(tipo, slide, fundos[i], i + 1, total,
+                               capa_livro if tipo == "capa" else None)
+        caminho = pasta / f"slide_{i + 1:02d}.jpg"
         img.save(caminho, "JPEG", quality=92, optimize=True)
         caminhos.append(caminho)
     return caminhos

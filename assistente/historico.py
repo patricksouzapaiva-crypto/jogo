@@ -37,3 +37,7 @@ def temas_recentes(caminho: Path, limite: int = 60) -> list[str]:
 
 def pilares_recentes(caminho: Path, limite: int = 5) -> list[str]:
     return [item["pilar"] for item in ler(caminho)[-limite:] if item.get("pilar")]
+
+
+def mundos_recentes(caminho: Path, limite: int = 4) -> list[str]:
+    return [item["mundo_visual"] for item in ler(caminho)[-limite:] if item.get("mundo_visual")]

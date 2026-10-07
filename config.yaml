@@ -1,79 +1,139 @@
-# Configuração do assistente de Instagram.
-# Edite à vontade: o assistente lê este arquivo a cada execução.
+# Configuração do assistente de Instagram do Mapa das Ideias.
+# Baseada no "Guia de Marca e Produção". Edite à vontade: o assistente lê este arquivo a cada execução.
 
 perfil:
-  nome: "Página de Livros"          # aparece no rodapé dos slides
-  arroba: "@seuperfil"               # troque pelo @ do seu Instagram
+  nome: "Mapa das Ideias"
+  arroba: "@mapadasideias_"
+  promessa: "Livros e ideias para enxergar a vida por outros ângulos."
+  assinatura: "Ideias hoje. Conquistas amanhã."
   idioma: "português do Brasil"
   publico: >
-    Leitores curiosos de 18 a 45 anos que gostam de livros, filosofia e
-    conhecimentos gerais, mas preferem conteúdo leve, direto e bem explicado.
+    Leitores habituais e também curiosos que gostam de pensar, mesmo lendo pouco. Uma página
+    para quem gosta de ler, pensar e descobrir perspectivas diferentes sobre a vida.
   tom_de_voz: >
-    Acolhedor, inteligente e curioso. Explica ideias complexas de forma simples,
-    sem ser professoral. Usa no máximo 1 ou 2 emojis por legenda.
+    Claro e envolvente; acessível sem ser superficial; reflexivo sem ser acadêmico; concreto;
+    interessante sem sensacionalismo.
 
-# Pilares de conteúdo: o assistente alterna entre eles para variar o feed.
+# Pilares em equilíbrio deliberado (não concentrar em produtividade/hábitos/disciplina).
 pilares:
-  - "Curiosidades sobre livros e bastidores de obras famosas"
-  - "Filosofia explicada de forma simples (ideias, filósofos, conceitos)"
-  - "Literatura popular: best-sellers, clássicos e autores que todo mundo conhece"
-  - "Vida e manias de escritores famosos"
-  - "Conhecimentos gerais e fatos históricos ligados à leitura e às ideias"
-  - "Frases e citações marcantes, com o contexto por trás delas"
+  - "Autoajuda e desenvolvimento pessoal"
+  - "Filosofia"
+  - "Religião e espiritualidade (respeitando o contexto de cada tradição)"
+  - "Literatura popular, clássicos e ficção"
+  - "Curiosidades literárias"
+  - "Livros x comportamento, história e sociedade"
 
-# Regras extras que o redator sempre segue.
+preferencias_de_pauta:
+  - "Priorizar livros mais conhecidos, que atraem mais cliques e atenção."
+  - "Diversidade de assuntos é decisão editorial: não concentrar em produtividade, hábitos ou disciplina."
+
 regras:
-  - "Nunca invente fatos, datas ou citações: use só o que a pesquisa confirmou."
-  - "Citações sempre com autor e obra; se a autoria for duvidosa, diga isso."
-  - "Evite spoilers de finais de livros sem avisar."
-  - "Termine a legenda com uma pergunta para estimular comentários."
+  - "Nunca inventar histórias pessoais, números, acontecimentos do livro ou citações."
+  - "Separar claramente: o que acontece na obra / uma interpretação / uma aplicação proposta por nós."
+  - "Nunca apresentar nossa interpretação como se fosse frase do autor."
+  - "Citações só literais, verificadas e com autoria correta."
+  - "Sinalizar spoilers relevantes."
+  - "Não prometer viralização nem fazer afirmações sobre algoritmo sem evidência."
+
+formatos:
+  carrossel:
+    total_slides: 7
+  imagem:
+    rotulo: "CURIOSIDADE LITERÁRIA"   # rótulo padrão; a IA pode trocar (ex.: COMPARAÇÃO, REFLEXÃO)
 
 post:
-  slides_minimo: 3                   # slides de conteúdo (sem contar capa e final)
-  slides_maximo: 6
-  hashtags_maximo: 12                # o Instagram aceita no máximo 30
-  hashtags_fixas: ["#livros", "#leitura"]
+  hashtags_maximo: 6                  # poucas hashtags pertinentes
+  hashtags_fixas: ["#mapadasideias"]
 
 ia:
   modelo: "claude-opus-5-5"
-  esforco_pesquisa: "medium"         # low | medium | high | xhigh | max
-  esforco_redacao: "medium"
-  buscas_maximas: 8                  # limite de buscas na web por pesquisa
+  esforco_pesquisa: "medium"          # low | medium | high | xhigh | max
+  esforco_redacao: "high"
+  revisao: true                       # etapa extra de checagem antes de desenhar (seção 10 do guia)
+  buscas_maximas: 8                   # limite de buscas na web por pesquisa
 
+# Identidade visual fixa (nunca muda).
 visual:
   largura: 1080
-  altura: 1350                       # 4:5, o formato que ocupa mais espaço no feed
-  cor_fundo: "#F4EDE1"               # papel envelhecido
-  cor_texto: "#2B2622"
-  cor_destaque: "#8C3B2E"            # vinho/terracota
-  cor_suave: "#7A6E64"
-  # Caminhos opcionais para fontes .ttf/.otf (ex.: fontes/PlayfairDisplay-Bold.ttf).
-  # Se ficarem vazios, o assistente procura fontes serifadas instaladas no sistema.
-  fonte_titulo: ""
-  fonte_texto: ""
+  altura: 1350
+  cor_marinho: "#0F2747"
+  cor_coral: "#E63946"
+  cor_branco: "#F7F3EB"
+  cor_cinza: "#A7B0BE"
+  logo: "marca/logo.png"              # sempre o arquivo original
+  fonte_titulo: "fontes/Montserrat-ExtraBold.ttf"
+  fonte_rotulo: "fontes/Montserrat-Bold.ttf"
+  fonte_texto: "fontes/Montserrat-Medium.ttf"
+  chamada_capa: "ARRASTE PARA ENTENDER"
+  capa_do_livro: true                 # cola a capa real (pelo ISBN) no slide 1, se encontrar
 
-# Ilustração da capa gerada por IA (o título é escrito por cima pelo assistente).
-# provedor:
-#   pollinations -> grátis, sem cadastro (padrão)
-#   cloudflare   -> grátis dentro da cota diária; precisa de CLOUDFLARE_ACCOUNT_ID e CLOUDFLARE_API_TOKEN
-#   openai       -> mesma IA de imagens do ChatGPT; pago por imagem; precisa de OPENAI_API_KEY
-#   gemini       -> Google Gemini; precisa de GEMINI_API_KEY
-#   nenhum       -> capa só com tipografia
-# Se a geração falhar, a capa sai sem ilustração e o post é publicado mesmo assim.
+# Mundos visuais (variáveis): a cada post a IA escolhe um que combine com o livro e que
+# não tenha aparecido recentemente.
+mundos_visuais:
+  fotografia_noturna:
+    combina: "Poder, crime, suspense"
+    descricao: >
+      Cinematic night photography, shot on 35mm full-frame, deep shadows, practical light
+      sources, wet reflective surfaces, rich contrast, subtle film grain
+  oleo_renascentista:
+    combina: "Religião, filosofia clássica, história antiga"
+    descricao: >
+      Renaissance oil painting, visible brushwork, chiaroscuro in the manner of Caravaggio,
+      warm earthy pigments, canvas texture, museum-grade fine art
+  aquarela:
+    combina: "Fantasia suave, infância, delicadeza"
+    descricao: >
+      Delicate watercolor and ink illustration on warm cream paper, soft washes and blooms,
+      fine ink linework, airy negative space
+  colagem_diorama:
+    combina: "Fábulas, contos, humor lúdico"
+    descricao: >
+      Layered paper-craft diorama, handmade cut-paper collage, visible paper textures and
+      soft drop shadows between layers, tabletop miniature photographed with shallow depth of field
+  xilogravura:
+    combina: "Gótico, clássicos sombrios"
+    descricao: >
+      Black and white woodcut / linocut print, bold carved lines, high contrast, rough ink
+      texture on paper, with a single coral red accent color
+  vetor_flat:
+    combina: "Autoajuda contemporânea, negócios, ciência popular"
+    descricao: >
+      Modern flat vector illustration, clean geometric shapes, limited palette of navy blue,
+      coral red and warm off-white, subtle grain, editorial magazine style
+  risografia:
+    combina: "Ficção científica retrô, pop"
+    descricao: >
+      Risograph / screen print, grainy texture, slight color misregistration, limited spot
+      colors of navy and coral on off-white paper, retro poster aesthetic
+  claymation:
+    combina: "Fábulas com animais, infantil"
+    descricao: >
+      3D stop-motion claymation scene, handmade plasticine characters and props, fingerprint
+      textures, miniature set, soft studio lighting
+  noir_pb:
+    combina: "Crime/suspense"
+    descricao: >
+      Film noir black and white photography, hard light, venetian blind shadows, smoke,
+      high contrast, with a single coral red accent
+
 imagens_ia:
+  # pollinations -> grátis (padrão) | cloudflare -> grátis com cota | openai -> pago (ChatGPT)
+  # gemini -> Google | nenhum -> fundo liso azul-marinho
+  # Se uma imagem falhar, aquele slide sai com fundo liso e o post é publicado mesmo assim.
   provedor: "pollinations"
-  estilo: >
-    Warm vintage editorial illustration, oil painting texture, soft natural light,
-    muted earthy palette (cream, sepia, deep burgundy), classic library atmosphere.
-  pollinations_modelo: "flux"
+  pausa_segundos: 6                   # pausa entre imagens para respeitar o limite do serviço grátis
+  # Com a chave gratuita POLLINATIONS_TOKEN (enter.pollinations.ai/keys) usa este modelo.
+  # Outros que não exigem plano pago: flux.1-schnell, flux.2-klein-4b, gpt-image-1-mini.
+  # Sem chave, o acesso anônimo só oferece um modelo mais fraco.
+  pollinations_modelo: "zimage"
   cloudflare_modelo: "@cf/black-forest-labs/flux-1-schnell"
   openai_modelo: "gpt-image-1"
-  openai_qualidade: "medium"         # low | medium | high (quanto maior, mais caro)
+  openai_qualidade: "medium"          # low | medium | high (quanto maior, mais caro)
   gemini_modelo: "gemini-2.5-flash-image"
 
 publicacao:
   # imgbb: hospeda as imagens no ImgBB (funciona com repositório privado; precisa de IMGBB_API_KEY)
   # github: usa links "raw" do próprio repositório (só funciona se o repositório for PÚBLICO)
   hospedagem: "imgbb"
-  graph_host: "https://graph.facebook.com"   # use https://graph.instagram.com se o token for do "Instagram Login"
+  graph_host: "https://graph.instagram.com"  # use https://graph.facebook.com se o token for do Facebook
   graph_versao: "v23.0"

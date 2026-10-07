@@ -1,110 +1,113 @@
-# Assistente automático de Instagram 📚
+# Assistente automático do Mapa das Ideias 📚
 
-Um assistente que, todos os dias, **pesquisa** um tema sobre livros, filosofia, literatura e
-conhecimentos gerais, **escreve** um carrossel com legenda e hashtags, **gera as imagens** (com
-ilustração de capa feita por IA) e **publica no Instagram**, tudo sem intervenção.
+Assistente que todos os dias **pesquisa**, **escreve**, **gera as imagens** e **publica no
+Instagram** os posts do [@mapadasideias_](https://www.instagram.com/mapadasideias_), seguindo o
+*Guia de Marca e Produção*:
+
+| Horário (Brasília) | Formato | O que é |
+|---|---|---|
+| 09:53 | **Carrossel de 7 slides** | capa com pergunta concreta → contexto → desenvolvimento → resposta → reflexão → leituras e aplicação → CTA |
+| 18:47 | **Imagem avulsa** | curiosidade, comparação ou reflexão independente do carrossel |
+
+Os horários vêm dos melhores horários que o Metricool identificou (10h e 18h–19h).
 
 ```
- ┌───────────┐   ┌───────────┐   ┌──────────────────┐   ┌────────────┐   ┌───────────┐
- │ Pesquisa  │──▶│ Redação   │──▶│ Imagens          │──▶│ Hospedagem │──▶│ Instagram │
- │ Claude +  │   │ Claude    │   │ capa com IA +    │   │ ImgBB      │   │ Graph API │
- │ busca web │   │ (JSON)    │   │ slides (Pillow)  │   │            │   │ carrossel │
- └───────────┘   └───────────┘   └──────────────────┘   └────────────┘   └───────────┘
-        ▲                                                                       │
-        └──────────── histórico (data/historico.json) evita repetir temas ◀─────┘
+ Pesquisa ──▶ Redação ──▶ Revisão ──▶ Imagens ──▶ Slides ──▶ Hospedagem ──▶ Instagram
+ Claude +     Claude      Claude      IA (cena)   layout da    ImgBB          Graph API
+ busca web    (JSON)      checklist   + capa real  marca
+                                       do livro    (Pillow)
 ```
 
-- **Pesquisa**: o Claude escolhe um tema (alternando entre os pilares de conteúdo e evitando temas
-  já publicados) e confirma cada fato na web, guardando as fontes.
-- **Redação**: transforma a pesquisa em capa + 3 a 6 slides + chamada final + legenda + hashtags.
-- **Imagens**: a capa ganha uma ilustração gerada por IA (Pollinations grátis, Cloudflare, OpenAI
-  ou Gemini) com o título escrito por cima; os demais slides seguem um visual de "página de livro".
-- **Publicação**: as imagens vão para o ImgBB (link público) e o post é publicado pela API oficial
-  do Instagram.
-- **Agendamento**: o GitHub Actions roda tudo uma vez por dia, sem servidor.
+- **Pesquisa**: escolhe a pauta mantendo os pilares em equilíbrio, priorizando livros conhecidos e
+  evitando temas já feitos (o histórico já inclui os 18 posts que você produziu). Confirma cada
+  fato na web e guarda as fontes; separa o que é da obra, o que é interpretação e o que é aplicação.
+- **Redação**: segue a estrutura de 7 slides do guia, ganchos em forma de pergunta concreta,
+  CTA único no fim (nunca "arraste"), legenda com pergunta e poucas hashtags.
+- **Revisão**: uma segunda passada confere fatos contra o dossiê, citações, ortografia,
+  promessa da capa x resposta e CTA, antes de qualquer imagem ser gerada.
+- **Mundo visual**: cada post escolhe uma técnica do cardápio do guia (óleo renascentista,
+  aquarela, xilogravura, noir, risografia...) que combine com o livro e que não tenha aparecido
+  recentemente. Os prompts seguem o padrão "nível Sherlock Holmes".
+- **Layout fixo da marca**: etiqueta coral no topo, título Montserrat com palavras em coral,
+  texto de apoio, cena na metade de baixo, `n/7` no canto inferior direito e o logo original no
+  canto inferior esquerdo. Em fundos claros (aquarela, vetor), o texto vira azul-marinho sozinho.
+- **Capa real do livro**: no slide 1, pelo ISBN de uma edição verificável (Open Library / Google
+  Books, ou uma foto sua em `marca/capas/<ISBN>.jpg`). Se não achar, sai sem capa, nunca inventada.
 
-Cada post fica salvo em `posts/<data>_<tema>/` com o dossiê da pesquisa (`dossie.md`), o conteúdo
-(`post.json`), a legenda (`legenda.txt`) e, depois de publicado, o link (`publicacao.json`).
+Cada post fica em `posts/<data>_<formato>_<tema>/` com `dossie.md` (pesquisa e fontes),
+`post.json`, `legenda.txt`, `prompts_imagens.md` (os prompts de cada slide, para refazer no
+ChatGPT se quiser) e, depois de publicado, `publicacao.json` com o link.
 
 ---
 
 ## Configuração (uma vez só)
 
-### 1. Conta do Instagram
+### 1. Instagram
 
 A API oficial só publica em contas **Profissionais** (Criador de conteúdo ou Empresa).
 
-1. No app do Instagram: *Configurações → Tipo de conta e ferramentas → Mudar para conta profissional*.
-2. Crie um app em <https://developers.facebook.com/apps> (tipo **Empresa**) e adicione o produto
+1. Crie um app em <https://developers.facebook.com/apps> (tipo **Empresa**) e adicione o produto
    **Instagram** → *API com login do Instagram*.
-3. Em *Gerar tokens de acesso*, conecte sua conta do Instagram e gere o token. Anote:
-   - o **token de acesso** → vai virar o segredo `IG_ACCESS_TOKEN`;
-   - o **ID da conta do Instagram** (número que aparece ao lado da conta) → `IG_USER_ID`.
-4. Como esse token é do "Instagram Login", troque no `config.yaml`:
-   ```yaml
-   publicacao:
-     graph_host: "https://graph.instagram.com"
-   ```
-   (Se você usar o caminho antigo, com conta do Instagram ligada a uma Página do Facebook e token
-   do Facebook, deixe `https://graph.facebook.com`.)
+2. Em *Gerar tokens de acesso*, conecte o @mapadasideias_ e gere o token. Anote o **token**
+   (`IG_ACCESS_TOKEN`) e o **ID da conta** (`IG_USER_ID`).
 
-> ⚠️ **O token expira em 60 dias.** Renove antes disso (no mesmo painel, ou com
+> ⚠️ **O token expira em 60 dias.** Renove antes (no mesmo painel, ou com
 > `GET https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=SEU_TOKEN`)
-> e atualize o segredo `IG_ACCESS_TOKEN`. Com o caminho do Facebook, um token de **Usuário do
-> Sistema** do Gerenciador de Negócios não expira.
+> e atualize o segredo. Se preferir o caminho pelo Facebook (Página + Gerenciador de Negócios),
+> troque `graph_host` para `https://graph.facebook.com` no `config.yaml`.
 
-### 2. Chaves de API
+### 2. Chaves
 
 | Segredo | Para quê | Onde conseguir | Custo |
 |---|---|---|---|
-| `ANTHROPIC_API_KEY` | pesquisa e redação | <https://console.anthropic.com> → API Keys | pago por uso |
-| `IG_USER_ID` | publicar | passo 1 | grátis |
-| `IG_ACCESS_TOKEN` | publicar | passo 1 | grátis |
-| `IMGBB_API_KEY` | hospedar as imagens | <https://api.imgbb.com> | grátis |
-| `POLLINATIONS_TOKEN` *(opcional)* | mais limite e sem marca d'água | site do Pollinations (<https://pollinations.ai>) | grátis |
-| `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` *(opcional)* | imagens com o provedor `cloudflare` | painel da Cloudflare → Workers AI | grátis até a cota diária |
-| `OPENAI_API_KEY` *(opcional)* | imagens com o provedor `openai` | <https://platform.openai.com> | pago por imagem |
-| `GEMINI_API_KEY` *(opcional)* | imagens com o provedor `gemini` | <https://aistudio.google.com> | conforme o plano |
+| `ANTHROPIC_API_KEY` | pesquisa, redação e revisão | <https://console.anthropic.com> | pago por uso |
+| `IG_USER_ID` e `IG_ACCESS_TOKEN` | publicar | passo 1 | grátis |
+| `IMGBB_API_KEY` | link público das imagens | <https://api.imgbb.com> | grátis |
+| `POLLINATIONS_TOKEN` | **imagens com modelo bom** | <https://enter.pollinations.ai/keys> | créditos grátis; modelos melhores consomem "pollen" |
+| `GOOGLE_BOOKS_API_KEY` *(opcional)* | achar a capa real pelo ISBN | Google Cloud → APIs → Books API | grátis |
+| `OPENAI_API_KEY` *(opcional)* | imagens com a IA do ChatGPT (`provedor: openai`) | <https://platform.openai.com> | pago por imagem |
 
-> A assinatura do ChatGPT Plus **não** inclui acesso à API: para usar o provedor `openai` é
-> preciso colocar créditos em platform.openai.com. O Google **Flow** não tem API pública, por isso
-> não dá para automatizá-lo; para imagens do Google use o provedor `gemini`.
+> **Sobre as imagens:** sem `POLLINATIONS_TOKEN`, o Pollinations só oferece um modelo antigo e
+> fraco, que ignora técnicas como aquarela e risografia. Com a chave gratuita, o assistente usa o
+> modelo `zimage` (troque em `imagens_ia.pollinations_modelo`). Para chegar perto da qualidade que
+> você tem hoje no ChatGPT, use `provedor: openai` (pago por imagem; a assinatura do ChatGPT Plus
+> não inclui a API).
 
 ### 3. Cadastrar os segredos no GitHub
 
-No repositório: **Settings → Secrets and variables → Actions → New repository secret**, e crie um
-segredo para cada chave da tabela acima (no mínimo os quatro primeiros + `IMGBB_API_KEY`).
+**Settings → Secrets and variables → Actions → New repository secret**, um para cada chave.
 
-### 4. Ajustar o perfil
+### 4. Ligar
 
-Edite o [`config.yaml`](config.yaml): seu `@`, nome do perfil, tom de voz, pilares de conteúdo,
-cores, quantidade de slides, hashtags fixas e o provedor de imagens.
+Os agendamentos do GitHub só rodam no branch padrão (`main`): faça o merge deste código lá.
 
-### 5. Ligar o agendamento
-
-O workflow [`.github/workflows/instagram.yml`](.github/workflows/instagram.yml) roda todo dia às
-**08:47 (horário de Brasília)**. Agendamentos do GitHub só valem no branch padrão (`main`), então
-faça o merge deste código no `main`. Para mudar o horário, edite a linha `cron` (em UTC).
-
-**Primeiro teste**: vá em **Actions → Post automático no Instagram → Run workflow**, desmarque
-"Publicar no Instagram" e rode. As imagens ficam disponíveis em *Artifacts* na página da execução.
-Gostou? Rode de novo com a opção marcada para publicar de verdade.
+**Primeiro teste**: **Actions → Post automático no Instagram → Run workflow**, escolha o formato
+e **desmarque "Publicar"**. As imagens ficam em *Artifacts* na página da execução. Aprovou? Rode de
+novo com "Publicar" marcado.
 
 ---
 
-## Rodando no seu computador
+## Ajustes no `config.yaml`
+
+- `perfil`, `pilares`, `preferencias_de_pauta`, `regras`: linha editorial do guia.
+- `visual`: cores, fontes e logo (identidade fixa).
+- `mundos_visuais`: o cardápio de técnicas, com quando usar cada uma.
+- `ia.revisao`: liga/desliga a etapa de revisão.
+- Horários: em `.github/workflows/instagram.yml` (linhas `cron`, em UTC).
+
+## Rodando no computador
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=...            # no Windows: set ANTHROPIC_API_KEY=...
+export ANTHROPIC_API_KEY=...  POLLINATIONS_TOKEN=...
 
-python -m assistente gerar                        # pesquisa e cria (sem publicar)
-python -m assistente gerar --tema "Os estoicos"   # força um tema
-python -m assistente publicar posts/<pasta>       # publica um post já criado
-python -m assistente rodar                        # tudo de uma vez
+python -m assistente gerar                                  # carrossel, sem publicar
+python -m assistente gerar --formato imagem                 # imagem avulsa
+python -m assistente gerar --tema "Drácula, de Bram Stoker"  # força um tema
+python -m assistente publicar posts/<pasta>                 # publica um post já criado
 ```
 
-Você pode editar `legenda.txt` antes de publicar: o comando `publicar` usa o que estiver no arquivo.
+Dá para editar `legenda.txt` antes de publicar: o comando `publicar` usa o que estiver no arquivo.
 
 ## Testes
 
@@ -117,25 +120,27 @@ python -m pytest
 
 ```
 assistente/
-  ia.py               pesquisa com busca na web e redação (Claude)
-  modelos.py          formato do post e montagem da legenda
-  geracao_imagens.py  ilustração da capa por IA (pollinations, cloudflare, openai, gemini)
-  imagens.py          desenho dos slides (Pillow)
+  ia.py               pesquisa (busca na web), redação e revisão com o Claude
+  modelos.py          formato do post, destaques em coral e legenda
+  geracao_imagens.py  cenas por IA (pollinations, cloudflare, openai, gemini)
+  capas.py            capa real do livro pelo ISBN
+  imagens.py          layout fixo da marca (Pillow)
   hospedagem.py       upload das imagens (ImgBB ou GitHub)
   instagram.py        publicação pela Instagram Graph API
-  historico.py        registro dos posts para não repetir temas
+  historico.py        histórico de temas e mundos visuais
   pipeline.py         junta tudo
-config.yaml           perfil, pilares, visual e opções
+config.yaml           marca, linha editorial, mundos visuais e opções
+marca/logo.png        logo original (recortado no círculo)
+marca/capas/          fotos de capas de edições reais, nomeadas pelo ISBN (opcional)
+fontes/               Montserrat (licença OFL)
 data/historico.json   histórico de posts
 posts/                posts gerados
 ```
 
-## Bom saber
+## Limites conhecidos
 
-- **Fatos e fontes**: a IA só usa fatos confirmados na busca, e o dossiê com as fontes fica salvo em
-  cada post. Mesmo assim, vale passar o olho de vez em quando.
-- **Custo da IA**: cada post faz uma pesquisa com algumas buscas na web e uma redação. Para gastar
-  menos, reduza `buscas_maximas` ou use `esforco_*: "low"` no `config.yaml`.
-- **Se a ilustração falhar**, a capa sai só com tipografia e o post é publicado do mesmo jeito.
-- **Limites do Instagram**: até 10 imagens por carrossel, 30 hashtags e 2.200 caracteres na legenda,
-  e o assistente já respeita todos eles.
+- As IAs de imagem gratuitas não escrevem texto em português direito; por isso os textos,
+  setas e etiquetas são desenhados pelo assistente por cima da cena.
+- A API do Instagram não adiciona música a posts de imagem/carrossel.
+- O assistente publica sozinho, sem revisão humana. Para revisar antes, rode o workflow com
+  "Publicar" desmarcado e publique depois com `python -m assistente publicar`.
