@@ -1,0 +1,95 @@
+name: Publicar posts
+
+# Disparado quando a rotina agendada no Claude Code envia um post novo (posts/*/post.json).
+# Gera as imagens com o Pollinations, monta os slides e a legenda e, se o Instagram já
+# estiver configurado (IG_USER_ID, IG_ACCESS_TOKEN e IMGBB_API_KEY), publica.
+on:
+  push:
+    branches: [main]
+    paths: ["posts/*/post.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar fontes e dependências
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends fonts-dejavu-core >/dev/null
+          pip install -r requirements.txt
+
+      - name: Montar imagens, slides e legenda
+        id: montar
+        env:
+          POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+          GOOGLE_BOOKS_API_KEY: ${{ secrets.GOOGLE_BOOKS_API_KEY }}
+        run: python -m assistente montar --pendentes
+
+      - name: Separar os posts montados para download
+        if: steps.montar.outputs.pastas != ''
+        env:
+          PASTAS: ${{ steps.montar.outputs.pastas }}
+        run: |
+          mkdir -p _saida
+          for pasta in $PASTAS; do cp -r "$pasta" _saida/; done
+
+      - uses: actions/upload-artifact@v4
+        if: steps.montar.outputs.pastas != ''
+        with:
+          name: posts-prontos
+          path: _saida/
+          retention-days: 30
+
+      - name: Salvar legenda e histórico no repositório
+        if: steps.montar.outputs.pastas != ''
+        env:
+          PASTAS: ${{ steps.montar.outputs.pastas }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          hospedagem=$(python -c "from assistente.config import carregar; print(carregar().publicacao.get('hospedagem', 'imgbb'))")
+          for pasta in $PASTAS; do
+            git add "$pasta"/*.json "$pasta"/*.txt "$pasta"/*.md
+            # Só guarda os JPEGs no repositório quando eles são servidos pelo próprio GitHub.
+            if [ "$hospedagem" = "github" ]; then git add "$pasta"/*.jpg; fi
+          done
+          git add data/historico.json
+          git commit -m "Posts montados: $PASTAS"
+          git pull --rebase --quiet
+          git push
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+        id: salvar
+
+      - name: Publicar no Instagram
+        if: steps.montar.outputs.pastas != ''
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
+          IMAGENS_REF: ${{ steps.salvar.outputs.sha }}
+          PASTAS: ${{ steps.montar.outputs.pastas }}
+        run: |
+          if [ -z "$IG_USER_ID" ] || [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$IMGBB_API_KEY" ]; then
+            echo "::notice::Instagram ainda não configurado: os posts estão prontos em 'posts-prontos' (Artifacts) para publicar à mão."
+            exit 0
+          fi
+          for pasta in $PASTAS; do python -m assistente publicar "$pasta"; done
+          git add data/historico.json posts/*/publicacao.json
+          git commit -m "Posts publicados: $PASTAS"
+          git pull --rebase --quiet
+          git push

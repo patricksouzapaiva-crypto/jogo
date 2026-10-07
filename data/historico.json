@@ -1,0 +1,146 @@
+[
+  {
+    "id": "manual-01",
+    "formato": "carrossel",
+    "tema": "Estoicismo",
+    "pilar": "Filosofia",
+    "mundo_visual": "",
+    "status": "publicado antes do assistente"
+  },
+  {
+    "id": "manual-02",
+    "formato": "carrossel",
+    "tema": "A Sutil Arte de Ligar o F*da-se (Mark Manson)",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "",
+    "status": "publicado antes do assistente"
+  },
+  {
+    "id": "manual-03",
+    "formato": "carrossel",
+    "tema": "Hábitos Atômicos (James Clear)",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-04",
+    "formato": "carrossel",
+    "tema": "O Pequeno Príncipe (Saint-Exupéry)",
+    "pilar": "Literatura popular, clássicos e ficção",
+    "mundo_visual": "aquarela",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-05",
+    "formato": "imagem",
+    "tema": "Frankenstein (Mary Shelley)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-06",
+    "formato": "carrossel",
+    "tema": "Livro de Jó",
+    "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+    "mundo_visual": "oleo_renascentista",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-07",
+    "formato": "imagem",
+    "tema": "Alice no País das Maravilhas (Lewis Carroll era professor de matemática)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "aquarela",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-08",
+    "formato": "carrossel",
+    "tema": "Mito da Caverna (Platão)",
+    "pilar": "Filosofia",
+    "mundo_visual": "oleo_renascentista",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-09",
+    "formato": "imagem",
+    "tema": "Sherlock Holmes (Conan Doyle matou e ressuscitou o personagem)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-10",
+    "formato": "carrossel",
+    "tema": "O Príncipe (Maquiavel)",
+    "pilar": "Livros x comportamento, história e sociedade",
+    "mundo_visual": "oleo_renascentista",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-11",
+    "formato": "imagem",
+    "tema": "O Hobbit (Tolkien e a folha de prova em branco)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "aquarela",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-12",
+    "formato": "carrossel",
+    "tema": "Romeu e Julieta (Shakespeare)",
+    "pilar": "Literatura popular, clássicos e ficção",
+    "mundo_visual": "oleo_renascentista",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-13",
+    "formato": "imagem",
+    "tema": "Harry Potter (Nicolau Flamel)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-14",
+    "formato": "carrossel",
+    "tema": "Como Fazer Amigos e Influenciar Pessoas (Dale Carnegie)",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-15",
+    "formato": "imagem",
+    "tema": "Moby Dick",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-16",
+    "formato": "carrossel",
+    "tema": "Duna (Frank Herbert) — história de publicação",
+    "pilar": "Literatura popular, clássicos e ficção",
+    "mundo_visual": "fotografia_noturna",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-17",
+    "formato": "imagem",
+    "tema": "O Poderoso Chefão (Mario Puzo nunca conheceu um mafioso)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "noir_pb",
+    "status": "produzido manualmente"
+  },
+  {
+    "id": "manual-18",
+    "formato": "carrossel",
+    "tema": "Drácula (Bram Stoker)",
+    "pilar": "Literatura popular, clássicos e ficção",
+    "mundo_visual": "xilogravura",
+    "status": "em andamento manualmente"
+  }
+]
