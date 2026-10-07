@@ -1,0 +1,35 @@
+name: Testar geração de imagens
+
+# Teste rápido da chave do Pollinations (ou de outro provedor): gera uma cena e um slide
+# de exemplo, sem usar Claude nem publicar nada. As imagens ficam em "Artifacts".
+on:
+  workflow_dispatch:
+    inputs:
+      mundo:
+        description: "Mundo visual"
+        type: choice
+        options: [aquarela, xilogravura, oleo_renascentista, fotografia_noturna, noir_pb,
+                  colagem_diorama, vetor_flat, risografia, claymation]
+        default: aquarela
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Gerar imagem de teste
+        id: teste
+        env:
+          POLLINATIONS_TOKEN: ${{ secrets.POLLINATIONS_TOKEN }}
+          MUNDO: ${{ inputs.mundo }}
+        run: python -m assistente testar-imagem --mundo "$MUNDO"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: teste-imagem
+          path: ${{ steps.teste.outputs.pasta }}
