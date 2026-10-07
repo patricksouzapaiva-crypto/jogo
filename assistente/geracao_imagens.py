@@ -41,6 +41,8 @@ def _pollinations(prompt: str, opcoes: dict, largura: int, altura: int, semente:
         params["model"] = opcoes.get("pollinations_modelo", "zimage")
         headers["Authorization"] = f"Bearer {token}"
     else:
+        log.warning("POLLINATIONS_TOKEN não definido: usando o acesso anônimo, com um modelo mais fraco. "
+                    "Crie a chave gratuita em https://enter.pollinations.ai/keys.")
         base = "https://image.pollinations.ai/prompt/"
     r = requests.get(base + urllib.parse.quote(prompt, safe=""), params=params, headers=headers, timeout=TIMEOUT)
     r.raise_for_status()
