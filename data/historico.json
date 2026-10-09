@@ -142,5 +142,15 @@
     "pilar": "Literatura popular, clássicos e ficção",
     "mundo_visual": "xilogravura",
     "status": "em andamento manualmente"
+  },
+  {
+    "id": "2026-10-09_212054_imagem_sartre-recusou-o-nobel",
+    "data": "2026-10-09T21:22:02",
+    "formato": "imagem",
+    "tema": "Jean-Paul Sartre recusou o Prêmio Nobel de Literatura de 1964",
+    "pilar": "Filosofia",
+    "mundo_visual": "risografia",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
