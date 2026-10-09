@@ -1,0 +1,34 @@
+{
+  "formato": "imagem",
+  "tema": "Jean-Paul Sartre recusou o Prêmio Nobel de Literatura de 1964",
+  "pilar": "Filosofia",
+  "mundo_visual": "risografia",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "Sartre ganhou o Nobel de 1964 e disse *não.*",
+      "texto": "Ele já tinha recusado a Legião de Honra em 1945. Para Sartre, o escritor não deveria se deixar transformar em instituição.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Risograph print in two-color overprint (fluorescent coral and deep teal on off-white paper), visible grain, slight misregistration and halftone dots. A 1960s Parisian café corner seen from behind a lone silhouetted man in a dark overcoat, back to the viewer, seated at a small round marble table with an untouched sealed envelope, a fountain pen, a stack of books and a coffee cup. Medium shot, 35mm lens, eye level. Soft flat autumn daylight from a large window, warm-cool contrast. The upper half is calm empty wall and window glare for text; the subject and table sit in the lower half. No text, no letters, no signs, no logos, no readable writing on the envelope, no face visible."
+    }
+  ],
+  "legenda": "Ganhar o Nobel e recusar. Foi o que Jean-Paul Sartre fez em outubro de 1964.\n\nA Academia Sueca anunciou o prêmio em 22 de outubro, por uma obra \"rica em ideias e cheia do espírito de liberdade e da busca pela verdade\" (tradução nossa da justificativa oficial). Dias antes, Sartre já tinha mandado uma carta avisando que não aceitaria, mas a decisão estava tomada.\n\nNa declaração que publicou depois, ele explicou que sempre recusou distinções oficiais: em 1945 já tinha dito não à Legião de Honra. Na leitura dele, um escritor que aceita uma honraria passa a carregar a instituição junto com o próprio nome.\n\nA Academia respondeu que a recusa não mudava a validade do prêmio, mas a entrega não aconteceu. É o único caso conhecido de um laureado de Literatura que recusou o Nobel por vontade própria. Boris Pasternak, em 1958, recusou sob pressão do governo soviético.\n\nE você: acha que um prêmio pode tirar a liberdade de quem escreve?",
+  "hashtags": [
+    "#Sartre",
+    "#Existencialismo",
+    "#Filosofia",
+    "#PremioNobel",
+    "#Literatura",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/1964_Nobel_Prize_in_Literature",
+    "https://www.nybooks.com/articles/1964/12/17/sartre-on-the-nobel-prize/",
+    "https://www.britannica.com/biography/Jean-Paul-Sartre"
+  ]
+}
