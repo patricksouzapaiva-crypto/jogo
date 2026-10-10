@@ -152,5 +152,15 @@
     "mundo_visual": "risografia",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-10_122315_carrossel_1984-e-a-novilingua",
+    "data": "2026-10-10T12:25:34",
+    "formato": "carrossel",
+    "tema": "1984 (George Orwell) e a Novilíngua: por que o Partido queria menos palavras",
+    "pilar": "Livros x comportamento, história e sociedade",
+    "mundo_visual": "vetor_flat",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
