@@ -162,5 +162,15 @@
     "mundo_visual": "vetor_flat",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-10_212058_imagem_sidarta-nao-e-o-buda",
+    "data": "2026-10-10T21:21:34",
+    "formato": "imagem",
+    "tema": "Sidarta (Hermann Hesse): o protagonista não é o Buda, ele encontra o Buda",
+    "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+    "mundo_visual": "aquarela",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
