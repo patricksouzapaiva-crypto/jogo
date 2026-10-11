@@ -1,0 +1,34 @@
+{
+  "formato": "imagem",
+  "tema": "O desaparecimento de Agatha Christie por 11 dias em 1926",
+  "pilar": "Curiosidades literárias",
+  "mundo_visual": "fotografia_noturna",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "Em 1926, Agatha Christie sumiu por *11 dias.*",
+      "texto": "Foi achada num hotel em Harrogate, registrada com o sobrenome da amante do marido. Ela nunca explicou o que aconteceu.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Cinematic night photography, 1920s England, December. A vintage 1920s Morris Cowley car abandoned on a grassy chalk hillside at the edge of dark woods, headlights still faintly glowing into thin fog, driver door ajar, a fur-collared coat on the seat. Wide shot, 35mm lens, low angle. Cold blue moonlight mixed with warm amber headlight glow, deep shadows, light mist. Palette of midnight blue, slate and amber. Upper half calm dark sky and fog for text; car and hillside in the lower half. No people, no text, no letters, no license plate, no signs, no logos."
+    }
+  ],
+  "legenda": "A autora mais famosa de romances policiais protagonizou, ela mesma, um mistério sem solução.\n\nNa noite de 3 de dezembro de 1926, Agatha Christie saiu de casa e não voltou. O carro dela apareceu na manhã seguinte em Newlands Corner, em Surrey. Mais de mil policiais e milhares de voluntários entraram nas buscas, com direito a aviões. Até Arthur Conan Doyle, o criador de Sherlock Holmes, levou uma luva dela a uma médium.\n\nOnze dias depois, ela foi encontrada num hotel em Harrogate, registrada com o sobrenome Neele, o mesmo da mulher por quem o marido tinha se apaixonado.\n\nDois médicos falaram em perda de memória. Biógrafos discordam até hoje: Janet Morgan fala em estado de fuga; Jared Cade, em um plano para constranger o marido; Laura Thompson, em um colapso nervoso. Na autobiografia, Christie não menciona o episódio.\n\nPara você, qual dessas explicações faz mais sentido?",
+  "hashtags": [
+    "#AgathaChristie",
+    "#Misterio",
+    "#CuriosidadesLiterarias",
+    "#Literatura",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Agatha_Christie",
+    "https://www.historyhit.com/the-enduring-mystery-of-agatha-christies-disappearance/",
+    "https://www.countryfile.com/famous-people/agatha-christie-disappearance"
+  ]
+}
