@@ -182,5 +182,15 @@
     "mundo_visual": "noir_pb",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-11_212034_imagem_agatha-christie-sumiu-por-11-dias",
+    "data": "2026-10-11T21:21:09",
+    "formato": "imagem",
+    "tema": "O desaparecimento de Agatha Christie por 11 dias em 1926",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "fotografia_noturna",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
