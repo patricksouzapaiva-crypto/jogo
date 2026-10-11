@@ -172,5 +172,15 @@
     "mundo_visual": "aquarela",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-11_122347_carrossel_em-busca-de-sentido-frankl",
+    "data": "2026-10-11T12:25:42",
+    "formato": "carrossel",
+    "tema": "Em Busca de Sentido (Viktor Frankl): o que o manteve de pé nos campos",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "noir_pb",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
