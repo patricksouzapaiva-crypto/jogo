@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "\"Deus está morto\": a frase de Nietzsche nasce em A Gaia Ciência (1882), não em Zaratustra",
+  "pilar": "Filosofia",
+  "mundo_visual": "xilogravura",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "\"Deus está morto\" não nasceu em Zaratustra, mas na *Gaia Ciência*",
+      "texto": "Em 1882, quem anuncia é um louco numa praça, para descrentes que riem dele. Zaratustra só repete a ideia no ano seguinte.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Woodcut print, bold black carved lines on warm cream paper, visible wood grain texture, a single muted red accent. A 19th-century German market square at morning: a lone figure seen from behind holding up a lit lantern in daylight, small onlookers in top hats and coats gathered around, some leaning back as if laughing, a church spire in the distance. Wide shot, slightly low angle, 35mm feel. Flat even light, high contrast black and cream, red only on the lantern flame. Upper half calm open sky for text; figures in the lower half. No text, no letters, no signs, no logos, no faces visible."
+    }
+  ],
+  "legenda": "Muita gente associa a frase a Assim Falou Zaratustra. Mas ela aparece antes, em A Gaia Ciência, de 1882.\n\nNo trecho mais famoso, Nietzsche descreve um louco que corre até uma praça procurando Deus. As pessoas ali, que já não acreditavam, riem dele. Ele então anuncia que Deus está morto, que fomos nós que o matamos, e percebe que chegou cedo demais. Em Zaratustra, publicado a partir de 1883, a ideia volta logo no prólogo.\n\nA Stanford Encyclopedia of Philosophy lembra que isso não é uma defesa do ateísmo: é um diagnóstico de que a fé cristã deixou de sustentar a moral europeia, algo que, para Nietzsche, pedia luto e não festa.\n\nE a expressão nem era nova: já aparecia em um hino luterano do século XVII e num poema de Gérard de Nerval, de 1854.\n\nVocê já tinha ouvido essa frase fora de contexto?",
+  "hashtags": [
+    "#Nietzsche",
+    "#Filosofia",
+    "#AGaiaCiencia",
+    "#DeusEstaMorto",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/God_is_dead",
+    "https://plato.stanford.edu/entries/nietzsche/"
+  ]
+}
