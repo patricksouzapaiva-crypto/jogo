@@ -202,5 +202,15 @@
     "mundo_visual": "oleo_renascentista",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-12_212051_imagem_deus-esta-morto-gaia-ciencia",
+    "data": "2026-10-12T21:21:26",
+    "formato": "imagem",
+    "tema": "\"Deus está morto\": a frase de Nietzsche nasce em A Gaia Ciência (1882), não em Zaratustra",
+    "pilar": "Filosofia",
+    "mundo_visual": "xilogravura",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
