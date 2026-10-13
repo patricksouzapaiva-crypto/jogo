@@ -222,5 +222,15 @@
     "mundo_visual": "risografia",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-13_212032_imagem_divina-comedia-nao-era-divina",
+    "data": "2026-10-13T21:21:18",
+    "formato": "imagem",
+    "tema": "A Divina Comédia: o \"Divina\" não foi escolhido por Dante",
+    "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+    "mundo_visual": "colagem_diorama",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
