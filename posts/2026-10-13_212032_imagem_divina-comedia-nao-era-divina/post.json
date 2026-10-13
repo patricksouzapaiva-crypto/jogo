@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "A Divina Comédia: o \"Divina\" não foi escolhido por Dante",
+  "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+  "mundo_visual": "colagem_diorama",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "Dante chamou o poema só de \"Comédia\". O *\"Divina\"* veio depois.",
+      "texto": "Boccaccio usou o adjetivo por volta de 1351. O título \"Divina Comedia\" só apareceu numa edição de Veneza, em 1555.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Layered paper-cut diorama inside a shallow box, handmade collage with visible paper edges, soft cast shadows between layers. Three stacked tiers: at the bottom a dark red funnel of concentric paper rings for Inferno, in the middle a terraced green mountain rising from the sea for Purgatory, at the top a pale gold ring of concentric circles of light for Paradise. A tiny robed traveler figure seen from behind climbing the mountain path. Front view, 50mm, shallow depth. Warm studio light from above. Palette of deep red, sage green, cream and soft gold. Upper half calm pale sky layer for text; tiers in the lower half. No text, no letters, no logos, no faces."
+    }
+  ],
+  "legenda": "Um dos títulos mais famosos da literatura tem uma palavra que o autor não escolheu.\n\nDante Alighieri chamou seu poema simplesmente de Comédia. Na classificação antiga, \"comédia\" era a obra com final feliz e linguagem do dia a dia, e o poema termina no Paraíso e foi escrito em italiano, não em latim.\n\nO adjetivo \"divina\" aparece pela primeira vez com Giovanni Boccaccio, num texto em homenagem a Dante escrito por volta de 1351 a 1355. Mas o título \"Divina Comedia\" só foi parar na capa em 1555, numa edição de Veneza organizada por Lodovico Dolce.\n\nO poema, escrito entre cerca de 1308 e 1321, tem 100 cantos divididos em Inferno, Purgatório e Paraíso.\n\nVocê já leu a Divina Comédia, ou só conhece o Inferno?",
+  "hashtags": [
+    "#DivinaComedia",
+    "#Dante",
+    "#Espiritualidade",
+    "#Classicos",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Divine_Comedy",
+    "https://ilab.org/assets/catalogues/catalogs_files_610_listino2_2011.pdf"
+  ]
+}
