@@ -212,5 +212,15 @@
     "mundo_visual": "xilogravura",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-13_122443_carrossel_fahrenheit-451-por-que-451",
+    "data": "2026-10-13T12:26:46",
+    "formato": "carrossel",
+    "tema": "Fahrenheit 451 (Ray Bradbury): por que 451 e do que o livro fala",
+    "pilar": "Livros x comportamento, história e sociedade",
+    "mundo_visual": "risografia",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
