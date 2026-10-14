@@ -242,5 +242,15 @@
     "mundo_visual": "vetor_flat",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-14_212031_imagem_kafka-pediu-para-queimar",
+    "data": "2026-10-14T21:21:09",
+    "formato": "imagem",
+    "tema": "Kafka pediu que seus manuscritos fossem destruídos; Max Brod não obedeceu",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "noir_pb",
+    "status": "gerado",
+    "imagens_ia": 1
   }
 ]
