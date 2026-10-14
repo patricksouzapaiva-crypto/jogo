@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "Kafka pediu que seus manuscritos fossem destruídos; Max Brod não obedeceu",
+  "pilar": "Curiosidades literárias",
+  "mundo_visual": "noir_pb",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "Kafka pediu que seus escritos fossem *destruídos.*",
+      "texto": "O amigo Max Brod não obedeceu. Graças a isso, O Processo saiu em 1925, um ano após a morte do autor.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Black-and-white photograph, 1920s Prague, fine film grain, deep blacks, high-contrast noir lighting. A cluttered writing desk in a dim apartment: stacks of handwritten manuscripts tied with string, an unlit iron stove with its door open beside the desk, a box of matches untouched on the floor, a man in a long coat seen from behind at the window holding a bundle of pages close to his chest. Medium shot, 40mm lens, eye level. Cold window light from the side, smoky atmosphere. Upper half calm dark wall for text; desk, stove and figure in the lower half. No text, no readable writing, no signs, no logos, no faces visible."
+    }
+  ],
+  "legenda": "Alguns dos livros mais importantes do século XX só existem porque um amigo desobedeceu.\n\nFranz Kafka morreu em 1924 e pediu a Max Brod que destruísse seus escritos não publicados. Brod se recusou. Nos anos seguintes, publicou O Processo (1925), O Castelo (1926) e Amerika (1927).\n\nA história não parou aí. Em 1939, com a chegada dos nazistas a Praga, Brod fugiu para a Palestina levando uma mala com papéis de Kafka. Depois da morte dele, os manuscritos viraram motivo de uma longa disputa judicial, encerrada só em 2016, quando a Suprema Corte de Israel decidiu que pertenciam à Biblioteca Nacional de Israel.\n\nVocê teria cumprido o pedido de Kafka ou feito como Brod?",
+  "hashtags": [
+    "#Kafka",
+    "#OProcesso",
+    "#MaxBrod",
+    "#CuriosidadesLiterarias",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Max_Brod",
+    "https://www.timesofisrael.com/kafkas-manuscripts-are-israels-property-court-rules/"
+  ]
+}
