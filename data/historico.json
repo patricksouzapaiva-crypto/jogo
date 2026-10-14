@@ -232,5 +232,15 @@
     "mundo_visual": "colagem_diorama",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-14_122353_carrossel_mindset-elogio-a-inteligencia",
+    "data": "2026-10-14T12:25:52",
+    "formato": "carrossel",
+    "tema": "Mindset (Carol Dweck): elogiar a inteligência pode atrapalhar?",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "vetor_flat",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
