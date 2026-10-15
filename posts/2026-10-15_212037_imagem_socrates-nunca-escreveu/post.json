@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "Sócrates nunca escreveu: só o conhecemos por Platão, Xenofonte e Aristófanes",
+  "pilar": "Filosofia",
+  "mundo_visual": "oleo_renascentista",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE • FILOSOFIA",
+      "titulo": "Sócrates, o filósofo mais famoso de Atenas, *nunca escreveu* nada.",
+      "texto": "Tudo o que sabemos dele vem de outros: Platão, Xenofonte e a comédia As Nuvens, de Aristófanes. E os relatos nem sempre batem.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Oil painting in the manner of old masters, rich glazes, chiaroscuro, warm ochre, terracotta, deep olive and marble white. Ancient Athens agora at late afternoon: an older bearded man in a simple himation seen from behind, gesturing as he talks to a small circle of young listeners; one young man in the foreground seen from behind writing on a wax tablet. Marble columns and a stoa in the background. Medium-wide shot, 50mm feel, eye level, warm low sunlight. Upper half calm sky and columns for text; figures in the lower half. No text, no letters, no inscriptions, no logos, no faces visible."
+    }
+  ],
+  "legenda": "O filósofo mais famoso de Atenas não deixou uma linha escrita.\n\nSócrates viveu entre cerca de 469 e 399 a.C., quando foi condenado à morte e bebeu cicuta. O que sabemos dele vem de três fontes principais: os diálogos de Platão, os textos de Xenofonte e a comédia As Nuvens, de Aristófanes, que zombava dele em 423 a.C.\n\nO problema é que esses retratos nem sempre combinam. Em Platão, por exemplo, Sócrates recusa cobrar para ensinar; em um texto de Xenofonte, aparece cobrando. Estudiosos chamam isso de \"problema socrático\": separar o Sócrates real do personagem que os outros escreveram.\n\nMuitos acreditam que Platão usava Sócrates para expressar as próprias ideias, e até hoje não há consenso sobre onde termina um e começa o outro.\n\nSe alguém fosse escrever sobre você, que versão sairia?",
+  "hashtags": [
+    "#Socrates",
+    "#Filosofia",
+    "#Platao",
+    "#GreciaAntiga",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://plato.stanford.edu/entries/socrates/",
+    "https://en.wikipedia.org/wiki/Socratic_problem"
+  ]
+}
