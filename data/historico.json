@@ -252,5 +252,15 @@
     "mundo_visual": "noir_pb",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-15_122416_carrossel_jane-austen-anonima-orgulho-e-preconceito",
+    "data": "2026-10-15T12:26:17",
+    "formato": "carrossel",
+    "tema": "Orgulho e Preconceito (Jane Austen): por que ela não assinava seus livros",
+    "pilar": "Literatura popular, clássicos e ficção",
+    "mundo_visual": "aquarela",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
