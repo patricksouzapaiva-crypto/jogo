@@ -282,5 +282,15 @@
     "mundo_visual": "xilogravura",
     "status": "gerado",
     "imagens_ia": 7
+  },
+  {
+    "id": "2026-10-16_212022_imagem_tao-te-ching-5-mil-caracteres",
+    "data": "2026-10-16T21:22:05",
+    "formato": "imagem",
+    "tema": "Tao Te Ching: um clássico de cerca de 5 mil caracteres",
+    "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+    "mundo_visual": "colagem_diorama",
+    "status": "gerado",
+    "imagens_ia": 0
   }
 ]
