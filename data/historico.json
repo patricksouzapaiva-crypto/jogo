@@ -272,5 +272,15 @@
     "mundo_visual": "oleo_renascentista",
     "status": "gerado",
     "imagens_ia": 1
+  },
+  {
+    "id": "2026-10-16_122450_carrossel_cabana-do-pai-tomas-lincoln",
+    "data": "2026-10-16T12:26:46",
+    "formato": "carrossel",
+    "tema": "A Cabana do Pai Tomás (Harriet Beecher Stowe): Lincoln disse que ela começou a guerra?",
+    "pilar": "Livros x comportamento, história e sociedade",
+    "mundo_visual": "xilogravura",
+    "status": "gerado",
+    "imagens_ia": 7
   }
 ]
