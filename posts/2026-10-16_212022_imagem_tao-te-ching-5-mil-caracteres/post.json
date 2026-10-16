@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "Tao Te Ching: um clássico de cerca de 5 mil caracteres",
+  "pilar": "Religião e espiritualidade (respeitando o contexto de cada tradição)",
+  "mundo_visual": "colagem_diorama",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "O Tao Te Ching cabe em cerca de *5 mil caracteres.*",
+      "texto": "São 81 capítulos curtos. Pela lenda, Laozi o escreveu a pedido de um guarda de fronteira. Estudiosos acham que foi reunido ao longo de séculos.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "",
+      "diagrama_para": "",
+      "diagrama_legenda": "",
+      "prompt_imagem": "Layered paper-cut diorama inside a shallow box, handmade collage with visible paper edges and soft cast shadows. Misty layered mountains in pale jade and grey paper, a winding river of blue tissue paper, a small stone gate at a mountain pass. A tiny robed traveler seen from behind riding a small ox toward the gate, a guard figure standing beside it. Front view, 50mm, shallow depth. Soft diffused morning light. Palette of jade green, ink grey, cream and a touch of vermilion. Upper half calm pale sky layer for text; landscape in the lower half. No text, no letters, no characters, no logos, no faces."
+    }
+  ],
+  "legenda": "Um dos livros mais traduzidos do mundo é também um dos mais curtos.\n\nO Tao Te Ching, atribuído a Laozi, tem cerca de 5 mil caracteres chineses, divididos em 81 capítulos breves. Costuma ser apontado como uma das obras mais traduzidas da história, atrás apenas da Bíblia.\n\nA tradição conta que Laozi, ao deixar a corte Zhou, foi parado por um guarda de fronteira chamado Yin Xi, que pediu que ele registrasse seus ensinamentos. Laozi escreveu o livro e partiu, sem que ninguém soubesse para onde.\n\nOs estudiosos são mais cautelosos: o texto provavelmente foi reunido ao longo de gerações, e os manuscritos mais antigos conhecidos, achados numa tumba chinesa de cerca de 300 a.C., têm diferenças em relação à versão atual.\n\nVocê prefere livros curtos e densos ou longos e detalhados?",
+  "hashtags": [
+    "#TaoTeChing",
+    "#Laozi",
+    "#Taoismo",
+    "#Espiritualidade",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Tao_Te_Ching",
+    "https://plato.stanford.edu/entries/laozi/"
+  ]
+}
