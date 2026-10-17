@@ -302,5 +302,15 @@
     "mundo_visual": "vetor_flat",
     "status": "gerado",
     "imagens_ia": 0
+  },
+  {
+    "id": "2026-10-17_212016_imagem_dom-quixote-continuacao-falsa",
+    "data": "2026-10-17T21:22:00",
+    "formato": "imagem",
+    "tema": "Dom Quixote: uma continuação falsa saiu antes da verdadeira (Avellaneda, 1614)",
+    "pilar": "Curiosidades literárias",
+    "mundo_visual": "risografia",
+    "status": "gerado",
+    "imagens_ia": 0
   }
 ]
