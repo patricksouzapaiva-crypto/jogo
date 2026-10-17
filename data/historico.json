@@ -292,5 +292,15 @@
     "mundo_visual": "colagem_diorama",
     "status": "gerado",
     "imagens_ia": 0
+  },
+  {
+    "id": "2026-10-17_122300_carrossel_inteligencia-emocional-goleman",
+    "data": "2026-10-17T12:32:49",
+    "formato": "carrossel",
+    "tema": "Inteligência Emocional (Daniel Goleman): emoção importa mais que QI?",
+    "pilar": "Autoajuda e desenvolvimento pessoal",
+    "mundo_visual": "vetor_flat",
+    "status": "gerado",
+    "imagens_ia": 0
   }
 ]
