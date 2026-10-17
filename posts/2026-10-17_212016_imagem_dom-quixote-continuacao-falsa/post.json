@@ -1,0 +1,33 @@
+{
+  "formato": "imagem",
+  "tema": "Dom Quixote: uma continuação falsa saiu antes da verdadeira (Avellaneda, 1614)",
+  "pilar": "Curiosidades literárias",
+  "mundo_visual": "risografia",
+  "isbn_capa": "",
+  "slides": [
+    {
+      "rotulo": "CURIOSIDADE LITERÁRIA",
+      "titulo": "A continuação de Dom Quixote saiu antes, e *não era de Cervantes.*",
+      "texto": "Em 1614, um autor escondido sob o nome Avellaneda publicou uma \"segunda parte\". Cervantes respondeu dentro do próprio livro, em 1615.",
+      "citacao": "",
+      "autor_citacao": "",
+      "diagrama_de": "1614",
+      "diagrama_para": "1615",
+      "diagrama_legenda": "a falsa e a verdadeira segunda parte",
+      "prompt_imagem": "Risograph print, two-color overprint in fluorescent orange and deep blue on off-white paper, visible grain, halftone dots, slight misregistration. A 17th-century Spanish printing workshop: a wooden hand press, stacks of freshly printed pages hanging to dry, and a lanky knight in old armor seen from behind standing in the doorway with a lance, staring at a pile of books. Medium-wide shot, 35mm feel, flat graphic light. Upper half calm empty wall for text; press and knight in the lower half. No text, no letters, no readable words, no signs, no logos, no faces."
+    }
+  ],
+  "legenda": "Imagine terminar a continuação do seu livro e descobrir que outra pessoa já publicou uma.\n\nFoi o que aconteceu com Miguel de Cervantes. A primeira parte de Dom Quixote saiu em 1605. Em 1614, apareceu em Tarragona uma \"segunda parte\" assinada por Alonso Fernández de Avellaneda, um pseudônimo. Até hoje ninguém sabe quem estava por trás dele.\n\nCervantes respondeu do melhor jeito: dentro da ficção. Na segunda parte verdadeira, de 1615, Dom Quixote descobre o livro rival, se irrita com o retrato que fizeram dele e muda os planos de viagem. Mais adiante, em Barcelona, chega a visitar uma gráfica onde o livro falso está sendo impresso.\n\nCervantes morreu um ano depois. Há quem diga que, sem o impostor, talvez a segunda parte nem existisse.\n\nVocê já leu Dom Quixote?",
+  "hashtags": [
+    "#DomQuixote",
+    "#Cervantes",
+    "#CuriosidadesLiterarias",
+    "#Classicos",
+    "#Livros",
+    "#MapaDasIdeias"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Don_Quixote",
+    "https://en.wikipedia.org/wiki/Alonso_Fern%C3%A1ndez_de_Avellaneda"
+  ]
+}
