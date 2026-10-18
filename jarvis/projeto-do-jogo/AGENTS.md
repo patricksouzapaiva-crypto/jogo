@@ -1,6 +1,6 @@
 # Jogo de fazenda (Godot 4): instruções para agentes
 
-> Este arquivo é lido pelo Hermes (Jarvis) e, via `CLAUDE.md`, pelo Claude Code.
+> Este arquivo é lido pelo Hermes (Ryan) e, via `CLAUDE.md`, pelo Claude Code.
 > Preencha os campos marcados com ✏️ e mantenha atualizado: é a "memória do projeto".
 
 ## Visão do jogo ✏️

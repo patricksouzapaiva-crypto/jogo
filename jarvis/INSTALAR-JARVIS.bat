@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 >nul
-title Instalador do Jarvis
+title Instalador do Ryan
 echo.
 echo  ==============================================
-echo   Instalador do Jarvis (Hermes + Claude Code)
+echo   Instalador do Ryan (Hermes + Claude Code)
 echo  ==============================================
 echo.
 echo  Vao abrir duas janelas: escolha a pasta do jogo e depois o Godot (_console.exe).

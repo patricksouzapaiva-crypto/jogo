@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Instala e configura o Jarvis (Hermes Agent + Claude Code) para o jogo, no macOS, Linux ou WSL2.
+# Instala e configura o Ryan (Hermes Agent + Claude Code) para o jogo, no macOS, Linux ou WSL2.
 # Uso:  bash jarvis/instalar-mac-linux.sh "/caminho/para/o/projeto-do-jogo"
 set -euo pipefail
 
@@ -23,11 +23,11 @@ command -v git >/dev/null || { echo "Instale o Git primeiro: https://git-scm.com
 if [ ! -d "$PROJETO/.git" ]; then
   git -C "$PROJETO" init -q
   if [ -z "$(git config --global user.name)" ]; then
-    git -C "$PROJETO" config user.name "Jarvis"
-    git -C "$PROJETO" config user.email "jarvis@localhost"
+    git -C "$PROJETO" config user.name "Ryan"
+    git -C "$PROJETO" config user.email "ryan@localhost"
   fi
   git -C "$PROJETO" add -A
-  git -C "$PROJETO" commit -qm "Estado inicial antes do Jarvis" || true
+  git -C "$PROJETO" commit -qm "Estado inicial antes do Ryan" || true
   echo "Repositório Git criado no projeto (rede de segurança para desfazer mudanças)."
 fi
 
@@ -48,7 +48,7 @@ else
 fi
 command -v hermes >/dev/null || { aviso "Abra um terminal novo e rode este script de novo."; exit 1; }
 
-passo "4/6 Identidade e skills do Jarvis"
+passo "4/6 Identidade e skills do Ryan"
 mkdir -p "$HERMES_HOME/skills"
 if [ -f "$HERMES_HOME/SOUL.md" ] && ! cmp -s "$HERMES_HOME/SOUL.md" "$KIT/hermes/SOUL.md"; then
   cp "$HERMES_HOME/SOUL.md" "$HERMES_HOME/SOUL.md.bak"
@@ -89,5 +89,5 @@ Pronto! Agora faça estes passos (são interativos, por isso não estão no scri
   5. hermes computer-use       # (opcional) controle da tela
   6. Edite $PROJETO/AGENTS.md com a visão do seu jogo.
 
-Teste: hermes  →  "Jarvis, roda o teste do jogo e me diz se tem erro."
+Teste: hermes  →  "Ryan, roda o teste do jogo e me diz se tem erro."
 EOF

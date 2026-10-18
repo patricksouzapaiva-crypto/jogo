@@ -1,6 +1,6 @@
-# Jarvis: assistente autônomo para criar o jogo
+# Ryan: assistente autônomo para criar o jogo
 
-Kit para montar no seu computador um "Jarvis" que recebe ordens por voz, terminal, Telegram ou
+Kit para montar no seu computador um "Ryan" que recebe ordens por voz, terminal, Telegram ou
 WhatsApp, decide os passos sozinho e executa as tarefas do jogo de fazenda em Godot.
 
 ```
@@ -9,7 +9,7 @@ WhatsApp, decide os passos sozinho e executa as tarefas do jogo de fazenda em Go
         ▼
  ┌──────────────────────┐   tarefas de código    ┌──────────────────────┐
  │  Hermes Agent        │ ─────────────────────▶ │  Claude Code         │
- │  "Jarvis"            │   claude -p "..."      │  "engenheiro"        │
+ │  "Ryan"            │   claude -p "..."      │  "engenheiro"        │
  │  memória, voz, cron, │ ◀───────────────────── │  edita cenas e .gd,  │
  │  mensagens, tela     │   resumo + commit      │  testa e commita     │
  └──────────────────────┘                        └──────────────────────┘
@@ -23,8 +23,8 @@ WhatsApp, decide os passos sozinho e executa as tarefas do jogo de fazenda em Go
 | Arquivo | Para que serve |
 |---|---|
 | `instalar-windows.ps1` / `instalar-mac-linux.sh` | Instalam Hermes e Claude Code, copiam identidade e skills, configuram a pasta do jogo |
-| `hermes/SOUL.md` | Personalidade e regras de segurança do Jarvis |
-| `hermes/skills/jogo/claude-code-dev` | Ensina o Jarvis a delegar programação ao Claude Code e conferir o resultado |
+| `hermes/SOUL.md` | Personalidade e regras de segurança do Ryan |
+| `hermes/skills/jogo/claude-code-dev` | Ensina o Ryan a delegar programação ao Claude Code e conferir o resultado |
 | `hermes/skills/jogo/godot-testar` | Testa o jogo sem abrir janela e caça erros de script |
 | `hermes/skills/jogo/relatorio-do-jogo` | Resumo diário do andamento + próximas 3 tarefas |
 | `hermes/config-jarvis.yaml` | Regras de aprovação (o que é bloqueado sempre), MCP do Godot e voz |
@@ -105,16 +105,16 @@ Para economizar os limites grátis, use o Telegram e o terminal para pedidos e d
 
 ## Como usar no dia a dia
 
-- Terminal: `hermes`, e depois *"Jarvis, cria o sistema de regar plantas com o regador"*.
+- Terminal: `hermes`, e depois *"Ryan, cria o sistema de regar plantas com o regador"*.
 - Celular: mande a mesma frase (ou um áudio) para o bot no Telegram.
-- **Voz, estilo Homem de Ferro:** você diz *"Jarvis"*, fala o pedido e ele responde falando.
-  1. Crie uma chave grátis em https://console.picovoice.ai e rode
-     `hermes config set PORCUPINE_ACCESS_KEY <sua-chave>`.
-  2. `hermes config edit` e cole o bloco **VOZ** de `hermes/config-jarvis.yaml`.
-  3. Abra `hermes`, digite `/voice on` e depois `/wake on`. Diga *"Jarvis"* e faça o pedido.
+- **Voz, estilo Homem de Ferro:** você diz *"Olá, Ryan"*, fala o pedido e ele responde falando.
+  Grátis e sem chave.
+  1. `hermes config edit` e cole o bloco **VOZ** de `hermes/config-jarvis.yaml`.
+  2. Abra `hermes`, digite `/voice on` e depois `/wake on`.
+  3. Diga *"Olá, Ryan"* e faça o pedido. `/wake status` mostra se ele está escutando.
 
-  A primeira vez baixa o modelo de transcrição (uns 500 MB). Tenha um microfone ou fone com microfone.
-  Sem a chave da Picovoice, use `provider: auto` e chame com *"hey hermes"*.
+  A primeira vez baixa os modelos de voz (uns 500 MB). Tenha um microfone ou fone com microfone.
+  Se ele não acordar, troque `phrase` para `"hello ryan"` ou `"hey ryan"`, ou ajuste `sensitivity`.
 - Rotina diária às 9h, com o relatório no Telegram:
   ```bash
   hermes cron create "every 1d at 09:00" "Faça o relatório do jogo" --skill relatorio-do-jogo
@@ -122,7 +122,7 @@ Para economizar os limites grátis, use o Telegram e o terminal para pedidos e d
 
 ## Segurança (leia)
 
-- **Git é o botão de desfazer.** O Jarvis faz commit a cada etapa; `git log` mostra tudo e
+- **Git é o botão de desfazer.** O Ryan faz commit a cada etapa; `git log` mostra tudo e
   `git revert <commit>` desfaz.
 - `approvals.mode: smart` deixa passar comandos de rotina e pergunta ou bloqueia os perigosos. A lista
   `approvals.deny` bloqueia sempre (force push, `rm -rf` na raiz, `--dangerously-skip-permissions`...).
@@ -136,7 +136,7 @@ Para economizar os limites grátis, use o Telegram e o terminal para pedidos e d
 | Sintoma | Solução |
 |---|---|
 | `hermes`/`claude` não encontrado | Feche e abra o terminal (o PATH muda após instalar) |
-| Jarvis não acha o Godot | Defina `GODOT_BIN` e rode `hermes gateway stop` e `hermes gateway start` |
+| Ryan não acha o Godot | Defina `GODOT_BIN` e rode `hermes gateway stop` e `hermes gateway start` |
 | Qualquer outro erro do Hermes | `hermes doctor` |
 | Claude Code pedindo permissão demais | Adicione o comando em `.claude/settings.json` do projeto |
 

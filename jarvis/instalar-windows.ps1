@@ -1,4 +1,4 @@
-﻿# Instala e configura o Jarvis (Hermes Agent + Claude Code) para o jogo, no Windows.
+﻿# Instala e configura o Ryan (Hermes Agent + Claude Code) para o jogo, no Windows.
 # Uso (PowerShell):
 #   powershell -ExecutionPolicy Bypass -File jarvis\instalar-windows.ps1 "C:\caminho\do\projeto-do-jogo"
 param([string]$Projeto)
@@ -51,11 +51,11 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 if (-not (Test-Path (Join-Path $Projeto ".git"))) {
   git -C $Projeto init -q
   if (-not (git config --global user.name)) {
-    git -C $Projeto config user.name "Jarvis"
-    git -C $Projeto config user.email "jarvis@localhost"
+    git -C $Projeto config user.name "Ryan"
+    git -C $Projeto config user.email "ryan@localhost"
   }
   git -C $Projeto add -A
-  git -C $Projeto commit -qm "Estado inicial antes do Jarvis"
+  git -C $Projeto commit -qm "Estado inicial antes do Ryan"
   Write-Host "Repositório Git criado no projeto (rede de segurança para desfazer mudanças)."
 }
 
@@ -77,7 +77,7 @@ if (Get-Command hermes -ErrorAction SilentlyContinue) {
 }
 if (-not (Get-Command hermes -ErrorAction SilentlyContinue)) { Aviso "Feche e abra o PowerShell e rode este script de novo."; exit 1 }
 
-Passo "4/6 Identidade e skills do Jarvis"
+Passo "4/6 Identidade e skills do Ryan"
 New-Item -ItemType Directory -Force (Join-Path $HermesHome "skills\jogo") | Out-Null
 $Soul = Join-Path $HermesHome "SOUL.md"
 if (Test-Path $Soul) {
@@ -114,7 +114,7 @@ hermes setup --portal
 
 Write-Host @"
 
-Pronto! O Jarvis está instalado. Próximos passos (quando quiser):
+Pronto! O Ryan está instalado. Próximos passos (quando quiser):
 
   1. hermes fallback add       # reserva grátis: OpenRouter -> um modelo terminado em :free
                                # (chave grátis em https://openrouter.ai/keys)
@@ -126,5 +126,5 @@ Pronto! O Jarvis está instalado. Próximos passos (quando quiser):
   6. Edite $Projeto\AGENTS.md com a visão do seu jogo.
 
 Teste agora: feche esta janela, abra um PowerShell novo, digite  hermes  e escreva:
-  Jarvis, roda o teste do jogo e me diz se tem erro.
+  Ryan, roda o teste do jogo e me diz se tem erro.
 "@ -ForegroundColor Green

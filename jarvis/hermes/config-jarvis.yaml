@@ -1,4 +1,4 @@
-# Trecho de configuração do Jarvis para o Hermes Agent.
+# Trecho de configuração do Ryan para o Hermes Agent.
 #
 # Os scripts de instalação já aplicam os valores simples (approvals.mode, terminal.cwd).
 # As listas abaixo precisam ser coladas à mão: rode `hermes config edit` e junte cada bloco
@@ -47,17 +47,16 @@ fallback:
 #       GODOT_PATH: "C:/Godot/Godot_v4.4-stable_win64_console.exe"   # ajuste para o seu caminho
 
 # ---------------------------------------------------------------------------
-# VOZ: você diz "Jarvis", fala o pedido e ele responde falando, em português.
-# Tudo grátis. Só a palavra "jarvis" precisa de uma chave grátis da Picovoice
-# (https://console.picovoice.ai). Salve com: hermes config set PORCUPINE_ACCESS_KEY <chave>
-# Sem a chave, troque provider para "auto" e chame com "hey hermes".
+# VOZ: você diz "Olá, Ryan", fala o pedido e ele responde falando, em português.
+# Tudo grátis e sem chave: o motor "sherpa" aceita qualquer frase digitada.
+# Ele reconhece pelos sons em inglês, por isso "Olá" está escrito como se pronuncia: "oh la".
+# Se ele não acordar, teste "hello ryan" ou "hey ryan" (frases de 2 palavras funcionam melhor).
 # ---------------------------------------------------------------------------
 wake_word:
   enabled: true
-  provider: porcupine        # o modelo "jarvis" já vem pronto nele
-  porcupine:
-    keyword: jarvis
-  sensitivity: 0.6           # suba para 0.7-0.8 se ele acordar sozinho com barulho
+  provider: sherpa
+  phrase: "oh la ryan"       # "Olá, Ryan"
+  sensitivity: 0.5           # 0.4 se ele não te ouvir; 0.7 se ele acordar sozinho com barulho
   start_new_session: false   # continua a mesma conversa (ele lembra do que vocês falaram)
 
 stt:                         # ouvir: transcrição local, grátis, roda no processador
