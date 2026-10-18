@@ -24,6 +24,17 @@ approvals:
     ESCALE para o usuário qualquer comando que apague arquivos fora do projeto, instale programas,
     mexa em configurações do sistema, acesse banco/pagamentos ou envie dados para serviços desconhecidos.
 
+# Cérebro grátis: o principal é o Nous Portal (configurado com `hermes setup --portal`).
+# Quando ele bater no limite, o Hermes passa sozinho para a reserva do OpenRouter.
+# O jeito mais fácil de criar a reserva é `hermes fallback add` (escolha OpenRouter e um modelo
+# terminado em ":free"; a lista está em https://openrouter.ai/models?max_price=0).
+# Se preferir editar à mão, troque o modelo abaixo por um ":free" da lista e tire os "#":
+# fallback_providers:
+#   - provider: openrouter
+#     model: "<nome-do-modelo>:free"
+fallback:
+  min_switch_reset_seconds: 120   # se o limite libera em menos de 2 min, espera em vez de trocar
+
 # As skills do jogo são copiadas pelo instalador para <HERMES_HOME>/skills/jogo/ e não precisam de config.
 
 # Exemplo de servidor MCP do Godot (opcional, comunidade). Permite ao agente rodar o projeto,

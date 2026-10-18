@@ -14,6 +14,9 @@
 - Linguagem: GDScript, com tipagem estática (`var vida: int = 3`).
 - Arte: pixel art, tiles de 16x16 ✏️, personagem de ✏️ px, filtro de textura "Nearest".
 - Mapas: TileMapLayer por camada (chão, transições, objetos, colisão), com y-sort nos objetos.
+- Renderizador: **Compatibility** (OpenGL). O PC de desenvolvimento tem uma GeForce GT 730 (4 GB),
+  i5-3570 e 16 GB de RAM: não troque para Forward+/Mobile, evite shaders pesados, partículas em
+  GPU e efeitos 3D. Mire em 60 FPS nessa máquina.
 
 ## Estrutura de pastas
 ```

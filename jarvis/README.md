@@ -89,6 +89,14 @@ Dá para começar sem pagar nada além do que você já paga:
 | Programação | Claude Code (já incluso se você tem Claude Pro/Max). Sem assinatura, o próprio Hermes programa | Modelos grátis erram mais em código |
 | Voz, Telegram, cron, tela | Grátis | — |
 
+**Configuração padrão do kit (pensada para PC sem placa de vídeo forte):** Nous Portal como
+cérebro principal e OpenRouter `:free` como reserva automática. Os passos estão no final do instalador
+e o bloco `fallback` está em `hermes/config-jarvis.yaml`. O Ollama fica de fora: sem GPU compatível
+ele demoraria minutos por resposta.
+
+**Godot em PC modesto:** crie ou abra o projeto com o renderizador **Compatibility**
+(Projeto → Configurações → Renderização). Para 2D em pixel art ele é o ideal.
+
 Para economizar os limites grátis, use o Telegram e o terminal para pedidos e deixe a rotina diária
 (`cron`) desligada até ter um modelo pago.
 

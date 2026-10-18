@@ -75,9 +75,11 @@ cat <<EOF
 
 Pronto! Agora faça estes passos (são interativos, por isso não estão no script):
 
-  1. hermes setup              # escolha o modelo (veja "Qual modelo usar" no README)
-  2. hermes config edit        # cole os blocos de $KIT/hermes/config-jarvis.yaml
-  3. claude                    # rode uma vez para fazer login no Claude Code
+  1. hermes setup --portal     # cérebro grátis: Nous Portal (sem chave)
+  2. hermes fallback add       # reserva grátis: OpenRouter -> um modelo terminado em :free
+                               # (chave grátis em https://openrouter.ai/keys)
+     hermes config edit        # cole os blocos de $KIT/hermes/config-jarvis.yaml
+  3. claude                    # (só se tiver Claude Pro/Max) login no Claude Code
   4. hermes gateway setup      # conecte o Telegram ou o WhatsApp
      hermes gateway start
   5. hermes computer-use       # (opcional) controle da tela
