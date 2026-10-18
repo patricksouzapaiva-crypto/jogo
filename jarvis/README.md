@@ -107,7 +107,14 @@ Para economizar os limites grátis, use o Telegram e o terminal para pedidos e d
 
 - Terminal: `hermes`, e depois *"Jarvis, cria o sistema de regar plantas com o regador"*.
 - Celular: mande a mesma frase (ou um áudio) para o bot no Telegram.
-- Voz no computador: ative `wake_word` no config e diga *"hey hermes"*.
+- **Voz, estilo Homem de Ferro:** você diz *"Jarvis"*, fala o pedido e ele responde falando.
+  1. Crie uma chave grátis em https://console.picovoice.ai e rode
+     `hermes config set PORCUPINE_ACCESS_KEY <sua-chave>`.
+  2. `hermes config edit` e cole o bloco **VOZ** de `hermes/config-jarvis.yaml`.
+  3. Abra `hermes`, digite `/voice on` e depois `/wake on`. Diga *"Jarvis"* e faça o pedido.
+
+  A primeira vez baixa o modelo de transcrição (uns 500 MB). Tenha um microfone ou fone com microfone.
+  Sem a chave da Picovoice, use `provider: auto` e chame com *"hey hermes"*.
 - Rotina diária às 9h, com o relatório no Telegram:
   ```bash
   hermes cron create "every 1d at 09:00" "Faça o relatório do jogo" --skill relatorio-do-jogo
