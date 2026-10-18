@@ -1,4 +1,4 @@
-# Instala e configura o Jarvis (Hermes Agent + Claude Code) para o jogo, no Windows.
+﻿# Instala e configura o Jarvis (Hermes Agent + Claude Code) para o jogo, no Windows.
 # Uso (PowerShell):
 #   powershell -ExecutionPolicy Bypass -File jarvis\instalar-windows.ps1 "C:\caminho\do\projeto-do-jogo"
 param([string]$Projeto)
@@ -14,10 +14,34 @@ function Recarregar-Path {
               [Environment]::GetEnvironmentVariable("Path", "Machine")
 }
 
-if (-not $Projeto) { $Projeto = Read-Host "Caminho da pasta do projeto do jogo (onde fica o project.godot)" }
+Add-Type -AssemblyName System.Windows.Forms
+
+if (-not $Projeto) {
+  Write-Host "Escolha na janela a pasta do seu jogo (onde fica o arquivo project.godot)..." -ForegroundColor Cyan
+  $dialogo = New-Object System.Windows.Forms.FolderBrowserDialog
+  $dialogo.Description = "Escolha a pasta do seu jogo (onde fica o arquivo project.godot)"
+  if ($dialogo.ShowDialog() -ne "OK") { throw "Nenhuma pasta escolhida." }
+  $Projeto = $dialogo.SelectedPath
+}
 if (-not (Test-Path $Projeto -PathType Container)) { throw "Pasta não encontrada: $Projeto" }
 $Projeto = (Resolve-Path $Projeto).Path
 if (-not (Test-Path (Join-Path $Projeto "project.godot"))) { Aviso "Não achei project.godot em $Projeto (continuando mesmo assim)." }
+
+$GodotBin = [Environment]::GetEnvironmentVariable("GODOT_BIN", "User")
+if (-not $GodotBin -or -not (Test-Path $GodotBin)) {
+  Write-Host "Agora escolha na janela o executável do Godot que termina em _console.exe..." -ForegroundColor Cyan
+  $arquivo = New-Object System.Windows.Forms.OpenFileDialog
+  $arquivo.Title = "Escolha o Godot (o arquivo que termina em _console.exe)"
+  $arquivo.Filter = "Godot console (*console.exe)|*console.exe|Todos os programas (*.exe)|*.exe"
+  if ($arquivo.ShowDialog() -eq "OK") {
+    $GodotBin = $arquivo.FileName
+    [Environment]::SetEnvironmentVariable("GODOT_BIN", $GodotBin, "User")
+    Write-Host "Godot registrado: $GodotBin"
+  } else {
+    Aviso "Godot não escolhido. Depois rode: setx GODOT_BIN `"C:\caminho\Godot_..._console.exe`""
+  }
+}
+$env:GODOT_BIN = $GodotBin
 
 Passo "1/6 Verificando o Git"
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
@@ -26,6 +50,10 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 }
 if (-not (Test-Path (Join-Path $Projeto ".git"))) {
   git -C $Projeto init -q
+  if (-not (git config --global user.name)) {
+    git -C $Projeto config user.name "Jarvis"
+    git -C $Projeto config user.email "jarvis@localhost"
+  }
   git -C $Projeto add -A
   git -C $Projeto commit -qm "Estado inicial antes do Jarvis"
   Write-Host "Repositório Git criado no projeto (rede de segurança para desfazer mudanças)."
@@ -80,21 +108,23 @@ Passo "6/6 Configuração do Hermes"
 hermes config set approvals.mode smart
 hermes config set terminal.cwd $Projeto
 
+Passo "Ligando o cérebro grátis (Nous Portal)"
+Write-Host "Siga as perguntas abaixo. Se pedir login, uma página vai abrir no navegador."
+hermes setup --portal
+
 Write-Host @"
 
-Pronto! Agora faça estes passos (são interativos, por isso não estão no script):
+Pronto! O Jarvis está instalado. Próximos passos (quando quiser):
 
-  1. hermes setup --portal     # cérebro grátis: Nous Portal (sem chave)
-  2. hermes fallback add       # reserva grátis: OpenRouter -> um modelo terminado em :free
+  1. hermes fallback add       # reserva grátis: OpenRouter -> um modelo terminado em :free
                                # (chave grátis em https://openrouter.ai/keys)
-     hermes config edit        # cole os blocos de $Kit\hermes\config-jarvis.yaml
+  2. hermes config edit        # cole os blocos de $Kit\hermes\config-jarvis.yaml (regras de segurança)
   3. claude                    # (só se tiver Claude Pro/Max) login no Claude Code
   4. hermes gateway setup      # conecte o Telegram ou o WhatsApp
      hermes gateway start
   5. hermes computer-use       # (opcional) controle da tela
   6. Edite $Projeto\AGENTS.md com a visão do seu jogo.
-  7. Defina GODOT_BIN com o caminho do Godot (versão _console), por exemplo:
-     setx GODOT_BIN "C:\Godot\Godot_v4.4-stable_win64_console.exe"
 
-Teste: hermes  ->  "Jarvis, roda o teste do jogo e me diz se tem erro."
+Teste agora: feche esta janela, abra um PowerShell novo, digite  hermes  e escreva:
+  Jarvis, roda o teste do jogo e me diz se tem erro.
 "@ -ForegroundColor Green

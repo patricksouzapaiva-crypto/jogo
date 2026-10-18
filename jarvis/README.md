@@ -39,8 +39,11 @@ WhatsApp, decide os passos sozinho e executa as tarefas do jogo de fazenda em Go
 ## Instalação (passo a passo)
 
 1. Baixe este repositório no seu computador (botão **Code → Download ZIP** no GitHub, ou `git clone`).
-2. Rode o instalador apontando para a pasta do jogo:
-   - **Windows** (PowerShell):
+2. Rode o instalador:
+   - **Windows, jeito fácil:** dê **duplo clique em `jarvis\INSTALAR-JARVIS.bat`**. Janelas vão pedir
+     a pasta do jogo e o Godot (`_console.exe`), e no final ele já liga o cérebro grátis. Se o Windows
+     mostrar "O Windows protegeu o computador", clique em **Mais informações → Executar assim mesmo**.
+   - **Windows** (PowerShell, se preferir digitar):
      ```powershell
      powershell -ExecutionPolicy Bypass -File jarvis\instalar-windows.ps1 "C:\Jogos\MinhaFazenda"
      ```

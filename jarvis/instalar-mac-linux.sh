@@ -22,6 +22,10 @@ passo "1/6 Verificando o Git"
 command -v git >/dev/null || { echo "Instale o Git primeiro: https://git-scm.com/downloads"; exit 1; }
 if [ ! -d "$PROJETO/.git" ]; then
   git -C "$PROJETO" init -q
+  if [ -z "$(git config --global user.name)" ]; then
+    git -C "$PROJETO" config user.name "Jarvis"
+    git -C "$PROJETO" config user.email "jarvis@localhost"
+  fi
   git -C "$PROJETO" add -A
   git -C "$PROJETO" commit -qm "Estado inicial antes do Jarvis" || true
   echo "Repositório Git criado no projeto (rede de segurança para desfazer mudanças)."
