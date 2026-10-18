@@ -1,0 +1,41 @@
+# Trecho de configuração do Jarvis para o Hermes Agent.
+#
+# Os scripts de instalação já aplicam os valores simples (approvals.mode, terminal.cwd).
+# As listas abaixo precisam ser coladas à mão: rode `hermes config edit` e junte cada bloco
+# ao que já existir no seu config.yaml (não duplique as chaves `approvals:`, `skills:` etc.).
+
+approvals:
+  mode: smart                 # um modelo barato avalia comandos arriscados; os perigosos são negados ou perguntados
+  denial_breaker_threshold: 3 # depois de 3 negativas seguidas, o agente para e pede ajuda
+  deny:                       # bloqueados sempre, mesmo no modo --yolo
+    - "git push --force*"
+    - "git push -f*"
+    - "git reset --hard*"
+    - "git clean -*"
+    - "rm -rf /*"
+    - "rm -rf ~*"
+    - "*format c:*"
+    - "*Remove-Item*-Recurse*C:\\*"
+    - "*curl*|*sh*"
+    - "*--dangerously-skip-permissions*"
+  smart_policy: |
+    APROVE comandos de leitura e de build dentro da pasta do projeto do jogo (git status/diff/log/add/commit,
+    godot --headless, claude -p, ls, cat, grep).
+    ESCALE para o usuário qualquer comando que apague arquivos fora do projeto, instale programas,
+    mexa em configurações do sistema, acesse banco/pagamentos ou envie dados para serviços desconhecidos.
+
+# As skills do jogo são copiadas pelo instalador para <HERMES_HOME>/skills/jogo/ e não precisam de config.
+
+# Exemplo de servidor MCP do Godot (opcional, comunidade). Permite ao agente rodar o projeto,
+# ver a árvore de cenas e ler erros do console. Requer Node.js.
+# mcp_servers:
+#   godot:
+#     command: npx
+#     args: ["-y", "@coding-solo/godot-mcp"]
+#     env:
+#       GODOT_PATH: "C:/Godot/Godot_v4.4-stable_win64_console.exe"   # ajuste para o seu caminho
+
+# Voz com palavra de ativação ("hey hermes"); ligue quando quiser.
+# wake_word:
+#   enabled: true
+#   capture: auto

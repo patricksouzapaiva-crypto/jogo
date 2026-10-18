@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(godot *)",
+      "Bash(godot4 *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git switch *)",
+      "Bash(git checkout -b *)",
+      "Bash(ls *)",
+      "Bash(grep *)",
+      "Bash(python *)",
+      "Bash(python3 *)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean *)",
+      "Bash(rm -rf *)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}

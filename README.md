@@ -163,3 +163,8 @@ posts/                posts gerados
 - A API do Instagram não adiciona música a posts de imagem/carrossel.
 - O assistente publica sozinho, sem revisão humana. Para revisar antes, rode o workflow com
   "Publicar" desmarcado e publique depois com `python -m assistente publicar`.
+
+## Jarvis (assistente para criar o jogo)
+
+A pasta [`jarvis/`](jarvis/README.md) tem o kit para montar no seu computador um agente autônomo
+(Hermes Agent + Claude Code) que ajuda a construir o jogo em Godot.
