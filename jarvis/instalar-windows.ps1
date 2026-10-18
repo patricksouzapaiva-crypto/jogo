@@ -9,6 +9,11 @@ $HermesHome = if ($env:HERMES_HOME) { $env:HERMES_HOME } else { Join-Path $env:L
 
 function Passo($t) { Write-Host "`n==> $t" -ForegroundColor Cyan }
 function Aviso($t) { Write-Host "[!] $t" -ForegroundColor Yellow }
+# Cada instalador oficial roda num PowerShell separado: rodados com iex aqui dentro, um deixava
+# configurações (como Set-StrictMode) que quebravam o outro.
+function Instalar-Isolado($comando) {
+  powershell -NoProfile -ExecutionPolicy Bypass -Command $comando
+}
 function Recarregar-Path {
   $env:Path = [Environment]::GetEnvironmentVariable("Path", "User") + ";" +
               [Environment]::GetEnvironmentVariable("Path", "Machine")
@@ -63,7 +68,7 @@ Passo "2/6 Claude Code"
 if (Get-Command claude -ErrorAction SilentlyContinue) {
   Write-Host "Já instalado: $(claude --version)"
 } else {
-  irm https://claude.ai/install.ps1 | iex
+  Instalar-Isolado "irm https://claude.ai/install.ps1 | iex"
   Recarregar-Path
 }
 # O instalador do Claude Code às vezes não registra a pasta dele no PATH do usuário.
@@ -79,7 +84,7 @@ Passo "3/6 Hermes Agent"
 if (Get-Command hermes -ErrorAction SilentlyContinue) {
   Write-Host "Já instalado."
 } else {
-  iex (irm https://hermes-agent.nousresearch.com/install.ps1)
+  Instalar-Isolado "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
   Recarregar-Path
   $env:Path += ";" + (Join-Path $HermesHome "bin")
 }
