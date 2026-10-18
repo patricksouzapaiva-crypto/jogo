@@ -27,6 +27,7 @@ WhatsApp, decide os passos sozinho e executa as tarefas do jogo de fazenda em Go
 | `hermes/skills/jogo/claude-code-dev` | Ensina o Ryan a delegar programação ao Claude Code e conferir o resultado |
 | `hermes/skills/jogo/godot-testar` | Testa o jogo sem abrir janela e caça erros de script |
 | `hermes/skills/jogo/relatorio-do-jogo` | Resumo diário do andamento + próximas 3 tarefas |
+| `hermes/skills/jogo/video-devlog` | Vídeos curtos de divulgação (devlog) com o MoneyPrinterTurbo, em português |
 | `hermes/config-jarvis.yaml` | Regras de aprovação (o que é bloqueado sempre), MCP do Godot e voz |
 | `projeto-do-jogo/` | `AGENTS.md`, `CLAUDE.md` e permissões do Claude Code, copiados para o projeto do jogo |
 
