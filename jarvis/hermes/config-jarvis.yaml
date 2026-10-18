@@ -49,9 +49,7 @@ fallback:
 # ---------------------------------------------------------------------------
 # VOZ: você diz "Jarvis", fala o pedido e ele responde falando, em português.
 # Tudo grátis. Só a palavra "jarvis" precisa de uma chave grátis da Picovoice
-# (https://console.picovoice.ai). Coloque-a no .env do Hermes como
-# PORCUPINE_ACCESS_KEY=... (rode `hermes config env-path` para achar o arquivo, ou use
-# `hermes config set PORCUPINE_ACCESS_KEY <chave>`).
+# (https://console.picovoice.ai). Salve com: hermes config set PORCUPINE_ACCESS_KEY <chave>
 # Sem a chave, troque provider para "auto" e chame com "hey hermes".
 # ---------------------------------------------------------------------------
 wake_word:
