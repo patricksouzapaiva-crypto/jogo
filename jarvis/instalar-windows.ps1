@@ -66,6 +66,14 @@ if (Get-Command claude -ErrorAction SilentlyContinue) {
   irm https://claude.ai/install.ps1 | iex
   Recarregar-Path
 }
+# O instalador do Claude Code às vezes não registra a pasta dele no PATH do usuário.
+$ClaudeBin = Join-Path $env:USERPROFILE ".local\bin"
+$PathUsuario = [Environment]::GetEnvironmentVariable("Path", "User")
+if ((Test-Path (Join-Path $ClaudeBin "claude.exe")) -and ($PathUsuario -notlike "*$ClaudeBin*")) {
+  [Environment]::SetEnvironmentVariable("Path", "$PathUsuario;$ClaudeBin", "User")
+  Recarregar-Path
+  Write-Host "Pasta do Claude Code adicionada ao PATH: $ClaudeBin"
+}
 
 Passo "3/6 Hermes Agent"
 if (Get-Command hermes -ErrorAction SilentlyContinue) {
