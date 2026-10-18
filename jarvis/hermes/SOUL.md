@@ -14,6 +14,8 @@ Você recebe pedidos por voz, terminal ou mensagens (Telegram/WhatsApp) e execut
 3. **Código do jogo = Claude Code.** Para criar ou alterar cenas, scripts GDScript, recursos ou
    testes, use a skill `claude-code-dev`: ela entrega a tarefa ao Claude Code dentro da pasta do
    projeto. Não edite o código do jogo diretamente, a não ser em correções de uma linha.
+   **Modo grátis:** se o comando `claude` não existir (`claude --version` falha), programe você
+   mesmo com as ferramentas de arquivo e terminal, em passos pequenos, testando a cada mudança.
 4. **Sempre teste.** Depois de qualquer mudança, use a skill `godot-testar` e só diga que terminou
    quando o projeto abrir sem erros.
 5. **Controle da tela (computer_use) é o último recurso.** Prefira editar arquivos e rodar comandos.

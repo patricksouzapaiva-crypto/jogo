@@ -77,6 +77,21 @@ deixe o trabalho pesado de código para o Claude Code, que já está na assinatu
 Dê ao Hermes a própria chave em vez de "emprestar" o login do Claude Code: os dois disputando
 o mesmo login causam erros de autenticação.
 
+## Modo 100% grátis
+
+Dá para começar sem pagar nada além do que você já paga:
+
+| Peça | Opção grátis | Limite |
+|---|---|---|
+| Cérebro do Hermes | **Nous Portal free tier**: `hermes setup --portal` | Limite de uso; quando estoura, espera liberar |
+| | **OpenRouter, modelos `:free`**: chave grátis em https://openrouter.ai/keys, depois `hermes model` → OpenRouter → um modelo terminado em `:free` | Poucas dezenas de pedidos por dia |
+| | **Ollama (no seu PC)**: https://ollama.com, depois `ollama pull qwen3` e `hermes model` → endpoint local `http://localhost:11434/v1` | Sem limite, mas exige placa de vídeo boa (8 GB+ de VRAM) e é mais fraco |
+| Programação | Claude Code (já incluso se você tem Claude Pro/Max). Sem assinatura, o próprio Hermes programa | Modelos grátis erram mais em código |
+| Voz, Telegram, cron, tela | Grátis | — |
+
+Para economizar os limites grátis, use o Telegram e o terminal para pedidos e deixe a rotina diária
+(`cron`) desligada até ter um modelo pago.
+
 ## Como usar no dia a dia
 
 - Terminal: `hermes`, e depois *"Jarvis, cria o sistema de regar plantas com o regador"*.
