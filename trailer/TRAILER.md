@@ -70,10 +70,19 @@ Verifique antes de instalar; instale só o que faltar, com `winget` quando poss�
 Escolha nesta ordem:
 1. **Voz do próprio Patrick**, se houver `trailer/narracao/minha-voz.wav`: limpe ruído com o filtro
    `afftdn` + `highpass=f=80` + `loudnorm` do FFmpeg e use essa voz.
-2. **Chatterbox Multilingual (MIT, pt-BR, controle de emoção)** pelo Space oficial da Resemble AI
-   no Hugging Face, usando `gradio_client` (procure o Space oficial "Chatterbox Multilingual").
-   Se precisar de token, peça ao Patrick para criar uma conta grátis em huggingface.co e salvar o token
-   como variável `HF_TOKEN` (nunca no chat). `exaggeration` entre 0.5 e 0.7, `cfg_weight` ~0.4.
+2. **Chatterbox Multilingual (MIT, pt-BR, controle de emoção): o padrão.** O Patrick já tem conta no
+   Hugging Face. Use o Space oficial `ResembleAI/Chatterbox-Multilingual-TTS` com `gradio_client`
+   (`Client("ResembleAI/Chatterbox-Multilingual-TTS", hf_token=os.environ["HF_TOKEN"])`); se a Resemble
+   tiver um Space próprio de **português do Brasil** (finetune pt-BR), prefira ele. Rode
+   `client.view_api()` uma vez para ver os nomes exatos dos parâmetros; idioma `pt`.
+   - Token: se `HF_TOKEN` não existir, peça ao Patrick para criar um token **Read** em
+     https://huggingface.co/settings/tokens e salvar ele mesmo com
+     `setx HF_TOKEN "hf_..."` num PowerShell (nunca colar no chat). Depois abra um terminal novo.
+   - Ajuste de voz: `exaggeration` 0.5 a 0.7 (mais emoção), `cfg_weight` ~0.4 (ritmo mais calmo),
+     `temperature` ~0.8. Gere 2 versões da primeira frase e escolha a mais natural antes de seguir.
+   - A cota grátis de GPU do Space é limitada por dia: gere **uma frase por chamada**, salve cada
+     arquivo assim que chegar (não gere de novo o que já existe) e, se a cota acabar, avise o Patrick
+     e termine as frases restantes no dia seguinte ou com o Kokoro, mantendo a mesma voz no vídeo inteiro.
 3. **Kokoro, local no processador** (padrão se as outras não estiverem disponíveis):
    `KPipeline(lang_code='p')`, vozes `pm_alex` (masculina) ou `pf_dora` (feminina), `speed` 1.05.
    Gere **uma frase por arquivo** e junte com 250 a 400 ms de silêncio entre elas: soa bem mais humano
