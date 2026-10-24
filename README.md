@@ -168,3 +168,8 @@ posts/                posts gerados
 
 A pasta [`jarvis/`](jarvis/README.md) tem o kit para montar no seu computador um agente autônomo
 (Hermes Agent + Claude Code) que ajuda a construir o jogo em Godot.
+
+## Vídeos de atualização do jogo
+
+A pasta [`trailer/`](trailer/TRAILER.md) tem o manual de produção (Movie Maker do Godot, narração,
+legendas animadas e montagem com OpenMontage) que o Claude Code local segue para fazer os vídeos.
