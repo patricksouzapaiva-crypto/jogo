@@ -407,6 +407,25 @@ def blocos_legenda(rel: Relogio, max_chars=26):
     return saida
 
 
+def envelope_voz(wav, inicio, duracao, fps=30):
+    """Intensidade da voz por quadro (0..1), suavizada: anima o Vigia como se estivesse falando."""
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "48000", "-"],
+                         capture_output=True, check=True).stdout
+    a = np.frombuffer(raw, np.float32)
+    n, passo = int(duracao * fps) + 1, 48000 // fps
+    env = np.zeros(n)
+    for k in range(n):
+        i = int((k / fps - inicio) * 48000)
+        if 0 <= i < len(a):
+            env[k] = np.sqrt(np.mean(a[i:i + passo] ** 2) + 1e-12)
+    env = env / (np.percentile(env[env > 0], 95) if (env > 0).any() else 1)
+    out, v = [], 0.0
+    for x in np.clip(env, 0, 1):  # ataque rápido, soltura lenta
+        v = v + (x - v) * (0.55 if x > v else 0.12)
+        out.append(round(float(v), 3))
+    return out
+
+
 def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     tema = json.load(open(AQUI / "temas" / f"{roteiro.get('tema', 'vigia')}.json"))
     av_dir = AQUI / "avatares" / roteiro.get("avatar", "vigia")
@@ -415,7 +434,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     leg = roteiro.get("legendas", {})
     D = {"modo": "cenas", "W": W, "H": H, "fps": fps, "duracao": duracao, "tema": tema,
          "avatar": {"base": str(av_dir) + "/", "mediana": av["largura_cabeca_mediana"], "poses": av["poses"]},
-         "canto": roteiro.get("canto", {"x": 36, "w": 250, "base": H - 350}),
+         "canto": roteiro.get("canto", {"x": 30, "w": 285, "base": H - 340}),
          "legenda_y": leg.get("y", 1190), "legenda_tam": leg.get("tamanho", 56),
          "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16),
          "cenas": [], "poses": [], "legendas": [], "escuros": []}
@@ -557,6 +576,7 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     print(f"    narração: {fim_voz - VOZ0:.1f} s")
     if roteiro.get("modo") == "cenas":
         D, plano = montar_cenas(roteiro, rel, duracao)
+        D["voz_env"] = envelope_voz(voz_cortada, VOZ0, duracao)
     else:
         D, eventos = montar(roteiro, rel, duracao)
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))

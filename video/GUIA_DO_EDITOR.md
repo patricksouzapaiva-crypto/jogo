@@ -302,6 +302,10 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - **Regra de ouro da série:** em sequências de aparição (ex.: retrovisor vazio → silhueta → rosto),
   **cortes secos** com **mudança simultânea de som e de expressão do Vigia** — é isso que faz o
   público sentir a entidade se mover. Nunca suavizar essas transições.
+- **08/11/2026 — Vigia com presença (feedback do ep. 01):** ele estava apagado e trocava pouco.
+  Agora: ~26% da largura, brilho e contraste realçados, luz de contorno fria, halo atrás, leve
+  movimento no ritmo da própria voz (envelope da narração) e **troca de pose a cada ~2 s** em
+  palavras com sentido (não só a cada imagem), com um pequeno impulso de escala na troca.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

@@ -492,30 +492,47 @@ function cenas(t) {
   }
 }
 
-// Vigia no canto (sem moldura): base esfumada, sombra suave, troca de pose com leve escala
+// Vigia no canto: destacado (luz de contorno, brilho), "fala" no ritmo da voz, troca de pose com impulso
+function envVoz(t) {
+  const e = D.voz_env; if (!e || !e.length) return 0;
+  const i = Math.min(e.length - 1, Math.max(0, Math.floor(t * D.fps)));
+  return e[i];
+}
 function vigiaCanto(t) {
   let i = -1; D.poses.forEach((p, k) => { if (p.t <= t) i = k; });
   if (i < 0) return;
-  const C = D.canto, atual = D.poses[i], ant = D.poses[i - 1], f = easeOut(lin(t, atual.t, 0.16));
-  const sombra = ctx.createRadialGradient(C.x + C.w / 2, C.base - C.w * 0.45, 20, C.x + C.w / 2, C.base - C.w * 0.45, C.w * 0.95);
-  sombra.addColorStop(0, "rgba(0,0,0,.55)"); sombra.addColorStop(1, "rgba(0,0,0,0)");
-  ctx.fillStyle = sombra; ctx.fillRect(C.x - C.w * 0.5, C.base - C.w * 1.6, C.w * 2, C.w * 1.8);
-  const desenha = (nome, a, pop) => {
+  const C = D.canto, T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
+  const f = easeOut(lin(t, atual.t, 0.12));
+  const e = envVoz(t);
+  // halo frio atrás do Vigia (separa do fundo)
+  const cx = C.x + C.w / 2, cy = C.base - C.w * 0.55;
+  const halo = ctx.createRadialGradient(cx, cy, 10, cx, cy, C.w * 0.9);
+  halo.addColorStop(0, alpha(T.halo, 0.28 + 0.12 * e)); halo.addColorStop(1, alpha(T.halo, 0));
+  ctx.fillStyle = halo; ctx.fillRect(cx - C.w, cy - C.w, C.w * 2, C.w * 2);
+  const desenha = (nome, a, pop, dx) => {
     const im = IMG["pose:" + nome], m = D.avatar.poses[nome];
     if (!im || !m) return;
-    const s = (C.w * 0.62) / clamp(m.largura_cabeca, D.avatar.mediana * 0.85, D.avatar.mediana * 1.2) * pop * (1 + 0.006 * Math.sin(t * 1.9));
+    const fala = 1 + 0.018 * e;                               // leve "respiração" ao falar
+    const s = (C.w * 0.62) / clamp(m.largura_cabeca, D.avatar.mediana * 0.85, D.avatar.mediana * 1.2) * pop * fala * (1 + 0.005 * Math.sin(t * 1.9));
     const w = im.width * s, h = im.height * s;
-    MASCARA.width = Math.ceil(w); MASCARA.height = Math.ceil(h);
+    MASCARA.width = Math.ceil(w) + 40; MASCARA.height = Math.ceil(h) + 40;
     const g = MASCARA.getContext("2d");
-    g.clearRect(0, 0, w, h); g.drawImage(im, 0, 0, w, h);
+    g.clearRect(0, 0, MASCARA.width, MASCARA.height);
+    g.filter = "brightness(1.28) contrast(1.1) saturate(1.08)";
+    g.shadowColor = alpha(T.contorno || "#a9d6c4", 0.55); g.shadowBlur = 14;  // luz de contorno
+    g.drawImage(im, 20, 20, w, h);
+    g.filter = "none"; g.shadowBlur = 0;
     g.globalCompositeOperation = "destination-in";
-    const gr = g.createLinearGradient(0, h * 0.62, 0, h); gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)");
-    g.fillStyle = gr; g.fillRect(0, 0, w, h); g.globalCompositeOperation = "source-over";
-    const x = C.x + C.w / 2 - m.centro_x * s, y = C.base - h + Math.sin(t * 1.4) * 2;
-    ctx.globalAlpha = a; ctx.drawImage(MASCARA, x, y); ctx.globalAlpha = 1;
+    const gr = g.createLinearGradient(0, 20 + h * 0.66, 0, 20 + h); gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, MASCARA.width, MASCARA.height); g.globalCompositeOperation = "source-over";
+    const x = cx - m.centro_x * s - 20 + dx, y = C.base - h - 20 - 6 * e + Math.sin(t * 1.4) * 2;
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.translate(x + MASCARA.width / 2, y + MASCARA.height); ctx.rotate((Math.sin(t * 2.3) * 0.6 * e) * Math.PI / 180);
+    ctx.drawImage(MASCARA, -MASCARA.width / 2, -MASCARA.height); ctx.restore(); ctx.globalAlpha = 1;
   };
-  if (ant && f < 1) desenha(ant.pose, 1 - f, 1);
-  desenha(atual.pose, f, 1 + 0.03 * (1 - f));
+  if (ant && f < 1) desenha(ant.pose, 1 - f, 1, 0);
+  const imp = 1 - easeOut(lin(t, atual.t, 0.28));               // impulso na troca de pose
+  desenha(atual.pose, f, 1 + 0.07 * imp, -10 * imp);
 }
 
 // Legendas: frases de até 2 linhas, branco quente, sombra discreta, poucas palavras em destaque

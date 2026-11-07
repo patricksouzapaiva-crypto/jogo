@@ -59,10 +59,27 @@
      ]
     ]
    },
-   "pose": "convidando"
+   "pose": "convidando",
+   "poses": [
+    {
+     "em": "sozinho",
+     "pose": "sorriso_discreto"
+    }
+   ]
   },
   {
-   "fala": "Eram duas e dezessete da madrugada. Chovia tanto que mal conseguia enxergar a estrada."
+   "fala": "Eram duas e dezessete da madrugada. Chovia tanto que mal conseguia enxergar a estrada.",
+   "pose": "explica_maos_abertas",
+   "poses": [
+    {
+     "em": "Chovia",
+     "pose": "neutro_frontal"
+    },
+    {
+     "em": "enxergar",
+     "pose": "pensativo"
+    }
+   ]
   },
   {
    "fala": "Foi quando olhou pelo retrovisor.",
@@ -88,10 +105,18 @@
      "em": "retrovisor",
      "pose": "desconfiado"
     }
-   ]
+   ],
+   "pose": "sussurrando"
   },
   {
-   "fala": "O banco de trás estava vazio."
+   "fala": "O banco de trás estava vazio.",
+   "pose": "seriedade",
+   "poses": [
+    {
+     "em": "vazio",
+     "pose": "solene"
+    }
+   ]
   },
   {
    "fala": "Mas, ao olhar novamente... havia uma mulher sentada ali.",
@@ -132,10 +157,18 @@
     "ate": "havia",
     "forca": 0.6,
     "mais": 0.5
-   }
+   },
+   "pose": "conspirador_maos_juntas"
   },
   {
-   "fala": "Ele não ouviu nenhuma porta abrir. Ninguém havia entrado."
+   "fala": "Ele não ouviu nenhuma porta abrir. Ninguém havia entrado.",
+   "pose": "desconfiado",
+   "poses": [
+    {
+     "em": "Ninguém",
+     "pose": "seriedade"
+    }
+   ]
   },
   {
    "fala": "E, a cada vez que olhava, ela parecia estar mais perto.",
@@ -163,6 +196,10 @@
     {
      "em": "ela",
      "pose": "medo_contido"
+    },
+    {
+     "em": "perto",
+     "pose": "cobrindo_o_rosto"
     }
    ],
    "sons": [
@@ -176,7 +213,8 @@
    "abafar": {
     "de": "ela",
     "mais": 0.6
-   }
+   },
+   "pose": "sussurrando"
   },
   {
    "fala": "Desesperado, parou o carro e saiu para verificar.",
@@ -198,7 +236,7 @@
      ]
     ]
    },
-   "pose": "desconfiado",
+   "pose": "explica_maos_abertas",
    "sons": [
     {
      "em": "carro",
@@ -210,7 +248,13 @@
     "em": "saiu",
     "som": "chuva_externa",
     "volume_db": -2
-   }
+   },
+   "poses": [
+    {
+     "em": "saiu",
+     "pose": "desconfiado"
+    }
+   ]
   },
   {
    "fala": "O banco traseiro estava completamente vazio.",
@@ -231,7 +275,13 @@
      ]
     ]
    },
-   "pose": "pensativo"
+   "pose": "pensativo",
+   "poses": [
+    {
+     "em": "completamente",
+     "pose": "olhando_para_tras"
+    }
+   ]
   },
   {
    "fala": "Mas quando voltou para o volante... ela estava do lado de fora, olhando pela janela.",
@@ -288,7 +338,15 @@
    },
    "poses": [
     {
+     "em": "volante",
+     "pose": "conspirador_maos_juntas"
+    },
+    {
      "em": "ela",
+     "pose": "susto_imediato"
+    },
+    {
+     "em": "janela",
      "pose": "assustado"
     }
    ],
@@ -299,7 +357,8 @@
      "volume_db": -10,
      "grave": true
     }
-   ]
+   ],
+   "pose": "sussurrando"
   },
   {
    "fala": "Na manhã seguinte, encontraram o carro abandonado naquela estrada.",
@@ -327,10 +386,23 @@
     "em": "Na",
     "som": "chuva_externa",
     "volume_db": -4
-   }
+   },
+   "poses": [
+    {
+     "em": "abandonado",
+     "pose": "solene"
+    }
+   ]
   },
   {
-   "fala": "A porta estava aberta. O motor, ligado."
+   "fala": "A porta estava aberta. O motor, ligado.",
+   "pose": "explica_maos_abertas",
+   "poses": [
+    {
+     "em": "motor",
+     "pose": "pensativo"
+    }
+   ]
   },
   {
    "fala": "Mas o motorista... nunca mais foi visto.",
@@ -349,7 +421,8 @@
      "volume_db": -20,
      "grave": true
     }
-   ]
+   ],
+   "pose": "sussurrando"
   }
  ]
 }
