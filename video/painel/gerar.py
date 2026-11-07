@@ -571,7 +571,8 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", "-c:v", "copy",
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", "-c:v", "libx264",
+                    "-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M", "-pix_fmt", "yuv420p",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2)) for w, (s, _) in zip(palavras, rel.t)]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
