@@ -1,0 +1,254 @@
+{
+ "nome": "O Vigia",
+ "largura_cabeca_mediana": 184.0,
+ "poses": {
+  "neutro": {
+   "topo": 5,
+   "centro_x": 160.74613858580133,
+   "largura_cabeca": 183,
+   "corta_topo": false,
+   "w": 297,
+   "h": 351
+  },
+  "sorriso_discreto": {
+   "topo": 2,
+   "centro_x": 189.4613047132605,
+   "largura_cabeca": 201,
+   "corta_topo": false,
+   "w": 301,
+   "h": 354
+  },
+  "conspirador_maos_juntas": {
+   "topo": 4,
+   "centro_x": 169.42298759041742,
+   "largura_cabeca": 190,
+   "corta_topo": false,
+   "w": 284,
+   "h": 354
+  },
+  "surpreso_mao_aberta": {
+   "topo": 3,
+   "centro_x": 158.22842318400404,
+   "largura_cabeca": 185,
+   "corta_topo": false,
+   "w": 248,
+   "h": 354
+  },
+  "sorriso_sinistro": {
+   "topo": 4,
+   "centro_x": 169.91195252531767,
+   "largura_cabeca": 195,
+   "corta_topo": false,
+   "w": 287,
+   "h": 354
+  },
+  "desafiador": {
+   "topo": 0,
+   "centro_x": 160.3858289320255,
+   "largura_cabeca": 195,
+   "corta_topo": true,
+   "w": 298,
+   "h": 300
+  },
+  "entediado": {
+   "topo": 5,
+   "centro_x": 145.78983245729304,
+   "largura_cabeca": 189,
+   "corta_topo": false,
+   "w": 284,
+   "h": 309
+  },
+  "apontando_a_camera": {
+   "topo": 0,
+   "centro_x": 140.1872673597741,
+   "largura_cabeca": 196,
+   "corta_topo": true,
+   "w": 268,
+   "h": 318
+  },
+  "desconfiado": {
+   "topo": 0,
+   "centro_x": 213.84637404580153,
+   "largura_cabeca": 188,
+   "corta_topo": true,
+   "w": 307,
+   "h": 318
+  },
+  "olhando_para_tras": {
+   "topo": 6,
+   "centro_x": 156.47542997543,
+   "largura_cabeca": 193,
+   "corta_topo": false,
+   "w": 296,
+   "h": 298
+  },
+  "gargalhada": {
+   "topo": 0,
+   "centro_x": 141.61219925971622,
+   "largura_cabeca": 156,
+   "corta_topo": true,
+   "w": 301,
+   "h": 314
+  },
+  "sussurrando": {
+   "topo": 0,
+   "centro_x": 160.4015762925599,
+   "largura_cabeca": 197,
+   "corta_topo": true,
+   "w": 250,
+   "h": 314
+  },
+  "solene": {
+   "topo": 0,
+   "centro_x": 157.7259965468058,
+   "largura_cabeca": 160,
+   "corta_topo": true,
+   "w": 279,
+   "h": 320
+  },
+  "assustado": {
+   "topo": 0,
+   "centro_x": 166.72511248593926,
+   "largura_cabeca": 176,
+   "corta_topo": true,
+   "w": 291,
+   "h": 317
+  },
+  "oculto_nas_sombras": {
+   "topo": 0,
+   "centro_x": 148.88426120975024,
+   "largura_cabeca": 195,
+   "corta_topo": true,
+   "w": 300,
+   "h": 320
+  },
+  "neutro_frontal": {
+   "topo": 5,
+   "centro_x": 187.79413549039432,
+   "largura_cabeca": 193,
+   "corta_topo": false,
+   "w": 306,
+   "h": 365
+  },
+  "convidando": {
+   "topo": 6,
+   "centro_x": 206.83597421780584,
+   "largura_cabeca": 183,
+   "corta_topo": false,
+   "w": 298,
+   "h": 367
+  },
+  "pensativo": {
+   "topo": 5,
+   "centro_x": 171.15443121693121,
+   "largura_cabeca": 192,
+   "corta_topo": false,
+   "w": 269,
+   "h": 363
+  },
+  "plano_sinistro": {
+   "topo": 5,
+   "centro_x": 198.79381515919977,
+   "largura_cabeca": 195,
+   "corta_topo": false,
+   "w": 297,
+   "h": 360
+  },
+  "seriedade": {
+   "topo": 6,
+   "centro_x": 130.92077287746014,
+   "largura_cabeca": 182,
+   "corta_topo": false,
+   "w": 262,
+   "h": 355
+  },
+  "susto_imediato": {
+   "topo": 0,
+   "centro_x": 156.83356153963183,
+   "largura_cabeca": 173,
+   "corta_topo": true,
+   "w": 303,
+   "h": 300
+  },
+  "medo_contido": {
+   "topo": 0,
+   "centro_x": 138.55208646052236,
+   "largura_cabeca": 176,
+   "corta_topo": true,
+   "w": 285,
+   "h": 299
+  },
+  "explica_maos_abertas": {
+   "topo": 0,
+   "centro_x": 156.60563867508432,
+   "largura_cabeca": 153,
+   "corta_topo": true,
+   "w": 308,
+   "h": 299
+  },
+  "apontando_para_publico": {
+   "topo": 0,
+   "centro_x": 156.11803067220868,
+   "largura_cabeca": 184,
+   "corta_topo": true,
+   "w": 272,
+   "h": 299
+  },
+  "perfil": {
+   "topo": 0,
+   "centro_x": 157.4963913392141,
+   "largura_cabeca": 194,
+   "corta_topo": true,
+   "w": 280,
+   "h": 300
+  },
+  "raiva_contida": {
+   "topo": 0,
+   "centro_x": 176.2904549117281,
+   "largura_cabeca": 172,
+   "corta_topo": true,
+   "w": 254,
+   "h": 307
+  },
+  "cobrindo_o_rosto": {
+   "topo": 0,
+   "centro_x": 160.88120331525633,
+   "largura_cabeca": 128,
+   "corta_topo": true,
+   "w": 217,
+   "h": 306
+  },
+  "cansaco": {
+   "topo": 0,
+   "centro_x": 122.50633968567307,
+   "largura_cabeca": 166,
+   "corta_topo": true,
+   "w": 202,
+   "h": 306
+  },
+  "invocando": {
+   "topo": 0,
+   "centro_x": 112.32322551662175,
+   "largura_cabeca": 174,
+   "corta_topo": true,
+   "w": 190,
+   "h": 304
+  },
+  "de_costas": {
+   "topo": 0,
+   "centro_x": 119.71372869060573,
+   "largura_cabeca": 148,
+   "corta_topo": true,
+   "w": 201,
+   "h": 303
+  },
+  "encarando_a_camera": {
+   "topo": 0,
+   "centro_x": 100.2344839313042,
+   "largura_cabeca": 148,
+   "corta_topo": true,
+   "w": 218,
+   "h": 304
+  }
+ }
+}

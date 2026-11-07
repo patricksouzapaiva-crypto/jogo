@@ -1,0 +1,47 @@
+{
+  "tema": "vigia",
+  "avatar": "vigia",
+  "assinatura": "o vigia / casos",
+  "barra": "MEDO",
+  "voz": {
+    "modelo": "gemini-2.5-flash-preview-tts",
+    "nome": "Charon",
+    "estilo": "Narre em português do Brasil, com voz grave e misteriosa de contador de histórias de terror, ritmo firme, pausas curtas e tensão crescente"
+  },
+  "trilha": {"ambiente": "ambiente_terror", "volume_db": -17},
+  "batidas": [
+    {"fala": "Três homens. Uma ilha. Nenhum corpo.",
+     "titulo": ["TRÊS", "HOMENS"], "pose": "sussurrando",
+     "titulos": [{"em": "Uma", "linhas": ["UMA", "ILHA"]}, {"em": "Nenhum", "linhas": ["NENHUM", "CORPO"]}],
+     "poses": [{"em": "Nenhum", "pose": "encarando_a_camera"}],
+     "painel": {"tipo": "lista", "etiqueta": "O QUE SOBROU?", "itens": [
+        {"texto": "3 FAROLEIROS", "icone": "pessoa", "em": "Três"},
+        {"texto": "1 ILHA", "icone": "farol", "em": "ilha"},
+        {"texto": "0 CORPOS", "icone": "caveira", "em": "Nenhum", "riscar": "corpo"}]}},
+    {"fala": "Em dezembro de 1900, o farol das Ilhas Flannan, na Escócia, apagou.",
+     "titulo": ["ILHAS", "FLANNAN"], "pose": "explica_maos_abertas",
+     "titulos": [{"em": "apagou", "linhas": ["O FAROL", "APAGOU"]}],
+     "painel": {"tipo": "ficha", "etiqueta": "ARQUIVO", "cabecalho": "CASO Nº 1900-12 · ESCÓCIA", "campos": [
+        {"rotulo": "Local", "valor": "Ilhas Flannan", "em": "Ilhas"},
+        {"rotulo": "Data", "valor": "Dezembro de 1900", "em": "dezembro"},
+        {"rotulo": "Ocorrência", "valor": "Farol apagado", "em": "apagou"}]}},
+    {"fala": "Quando o barco chegou, não havia ninguém.",
+     "titulo": ["NÃO HAVIA", "NINGUÉM"], "pose": "assustado",
+     "painel": {"continua": true, "tipo": "ficha", "carimbo": {"texto": "DESAPARECIDOS", "em": "ninguém"}}},
+    {"fala": "Duas capas de chuva tinham sumido. A terceira continuava pendurada.",
+     "titulo": ["AS CAPAS", "DE CHUVA"], "pose": "desconfiado",
+     "poses": [{"em": "terceira", "pose": "pensativo"}],
+     "painel": {"tipo": "checklist", "etiqueta": "NO GANCHO", "cabecalho": "Capas encontradas:", "itens": [
+        {"texto": "Capa 1", "icone": "capa", "em": "Duas", "marca": "x", "marcar": "sumido", "barra": 0.1},
+        {"texto": "Capa 2", "icone": "capa", "em": "capas", "marca": "x", "marcar": "sumido", "barra": 0.1},
+        {"texto": "Capa 3", "icone": "capa", "em": "terceira", "marca": "ok", "marcar": "pendurada", "barra": 1.0}]}},
+    {"fala": "Por que alguém sairia na tempestade sem casaco?",
+     "titulo": ["SEM", "CASACO?"], "pose": "conspirador_maos_juntas",
+     "painel": {"tipo": "impacto", "pequeno": "no meio da tempestade…", "grande": "SEM\nCASACO?", "em_grande": "sem"}},
+    {"fala": "Segue o Vigia. Na parte dois, eu te conto o que o diário dizia.",
+     "titulo": ["SEGUE O", "VIGIA"], "pose": "apontando_para_publico",
+     "titulos": [{"em": "parte", "linhas": ["PARTE", "DOIS"]}],
+     "poses": [{"em": "diário", "pose": "sorriso_sinistro"}],
+     "painel": {"tipo": "contador", "etiqueta": "PRÓXIMO CASO", "rotulo": "PARTE", "de": 1, "ate": 2, "em_contagem": "dois", "duracao_contagem": 0.6, "nota": "o diário do farol", "em_nota": "diário"}}
+  ]
+}

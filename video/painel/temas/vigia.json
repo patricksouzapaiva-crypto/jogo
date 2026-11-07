@@ -1,0 +1,22 @@
+{
+  "nome": "O Vigia (terror)",
+  "fundo": ["#07090a", "#101614"],
+  "brilho": "#3e6b58",
+  "nevoa": "#9fbfae",
+  "halo": "#5f8f78",
+  "painel": "#0d1311",
+  "painel_item": "#18211e",
+  "moldura": "#c9a45c",
+  "acento": "#c9a45c",
+  "acento_texto": "#0b0d0c",
+  "texto": "#ece6d6",
+  "perigo": "#c0392b",
+  "ok": "#6fa287",
+  "particulas": "#cfe3d6",
+  "papel": "#e6dcc3",
+  "papel_texto": "#2a2116",
+  "fonte_titulo": "Anton",
+  "fonte_ui": "Oswald",
+  "fonte_papel": "Special Elite",
+  "fonte_texto": "Inter"
+}

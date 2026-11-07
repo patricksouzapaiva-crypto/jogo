@@ -287,6 +287,13 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   sincronizado palavra por palavra com a narração. Análise completa em
   [`referencias/estilo-avatar-painel.md`](referencias/estilo-avatar-painel.md). O motor de
   imagens paradas continua disponível para vídeos de história, mas não é o padrão.
+- **07/11/2026 — vozes e sons:** narração **sempre pelo Google Gemini TTS** (grátis), nunca pelo
+  ElevenLabs. O ElevenLabs fica só para **trilha de fundo e efeitos sonoros essenciais**, gerados
+  curtos, uma vez, e guardados em `video/painel/sons/` para reaproveitar.
+- **07/11/2026 — personagem:** O Vigia (31 poses em `video/painel/avatares/vigia/`), canal de
+  terror. Motor do estilo em [`painel/`](painel/README.md).
+- **07/11/2026 — próximo passo:** o usuário vai enviar roteiro + pacotes de imagens; montar com
+  cortes e acabamento profissional.
 
 ---
 
