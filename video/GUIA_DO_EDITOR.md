@@ -292,8 +292,23 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   curtos, uma vez, e guardados em `video/painel/sons/` para reaproveitar.
 - **07/11/2026 — personagem:** O Vigia (31 poses em `video/painel/avatares/vigia/`), canal de
   terror. Motor do estilo em [`painel/`](painel/README.md).
-- **07/11/2026 — próximo passo:** o usuário vai enviar roteiro + pacotes de imagens; montar com
-  cortes e acabamento profissional.
+- **07/11/2026 — série O VIGIA (terror), linguagem definitiva em teste no ep. 01 "O Retrovisor":**
+  imagens estáticas cinematográficas em tela cheia (modo `cenas` do motor), 1080×1920, 30 fps,
+  50–55 s; zooms de 2–5%; **cortes secos** nas revelações; nada de transições chamativas.
+  O Vigia fica no canto inferior esquerdo (18–25% da largura), sem animar a boca; atua por troca de
+  pose junto das mudanças de imagem. Legenda: sans-serif, branco quente, sombra discreta, máx. 2
+  linhas, poucas palavras-chave destacadas. Som: chuva/vento/motor abafado contínuos, drone grave
+  minimalista, efeitos pontuais. Última imagem ~1 s após a narração.
+- **Regra de ouro da série:** em sequências de aparição (ex.: retrovisor vazio → silhueta → rosto),
+  **cortes secos** com **mudança simultânea de som e de expressão do Vigia** — é isso que faz o
+  público sentir a entidade se mover. Nunca suavizar essas transições.
+- **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
+  terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
+  simples e reutilizável; nunca substituir o Vigia.
+- **Voz (Gemini, cota grátis = 10 narrações/dia por modelo, compartilhada com os vídeos do Caio):**
+  narrar o episódio inteiro numa chamada só. `gemini-3.8-flash-tts` lê qualquer direção em voz
+  alta → mandar só o texto (`so_texto`), voz Algenib; `gemini-3.1-flash-tts-preview` aceita
+  direção mas bloqueou o texto longo de terror por "SAFETY"; o 2.5 aceita direção simples.
 
 ---
 

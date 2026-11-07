@@ -35,7 +35,8 @@ window.preparar = async function (dados) {
   for (const f of fams) for (const p of ["400", "500", "700", "800"]) { try { await document.fonts.load(`${p} 40px "${f}"`); } catch (e) {} }
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
-  for (const p of D.paineis) if (p.imagem) lista.push(["img:" + p.imagem, p.imagem]);
+  for (const p of D.paineis || []) if (p.imagem) lista.push(["img:" + p.imagem, p.imagem]);
+  for (const c of D.cenas || []) lista.push(["img:" + c.imagem, c.imagem]);
   for (const [k, src] of lista) IMG[k] = await carregarImg(src);
   D._estrelas = (() => { const r = rng(7); return Array.from({ length: 16 }, () => ({ x: r(), y: r(), f: 0.3 + r() * 0.8, fase: r() * 6.28, s: 0.6 + r() * 0.8 })); })();
   D._poeira = (() => { const r = rng(11); return Array.from({ length: 40 }, () => ({ x: r(), y: r(), v: 0.004 + r() * 0.01, s: 1 + r() * 2.5, fase: r() * 6.28 })); })();
@@ -416,9 +417,142 @@ function avatar(t) {
   }
 }
 
+// ================================================================== modo CENAS (imagens em tela cheia)
+let GRAO = null, MASCARA = null;
+function prepararCenas() {
+  // textura de granulação (reaproveitada com deslocamento aleatório a cada quadro)
+  GRAO = document.createElement("canvas"); GRAO.width = 512; GRAO.height = 512;
+  const g = GRAO.getContext("2d"), im = g.createImageData(512, 512), r = rng(5);
+  for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (r() - 0.5) * 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+  g.putImageData(im, 0, 0);
+  MASCARA = document.createElement("canvas");
+  D._chuva = (() => { const r = rng(21); return Array.from({ length: 140 }, () => ({ x: r(), y: r(), v: 0.9 + r() * 0.8, l: 30 + r() * 70, a: 0.05 + r() * 0.12 })); })();
+}
+
+function cenaAtual(t) {
+  let i = -1; D.cenas.forEach((c, k) => { if (c.t0 <= t) i = k; });
+  return i;
+}
+
+function desenharCena(c, t, a = 1) {
+  const im = IMG["img:" + c.imagem];
+  if (!im) return;
+  const dur = Math.max(0.5, c.t1 - c.t0), e = (c.curva === "rapida" ? easeOut : easeInOut)(lin(t, c.t0, c.curva === "rapida" ? Math.min(dur, c.duracao_zoom || 1.2) : dur));
+  const [z0, z1] = c.zoom || [1.0, 1.04];
+  const [f0, f1] = c.foco || [[0.5, 0.5], [0.5, 0.5]];
+  const z = z0 + (z1 - z0) * e, fx = f0[0] + (f1[0] - f0[0]) * e, fy = f0[1] + (f1[1] - f0[1]) * e;
+  // escala para cobrir a tela; o foco (fração da imagem) fica no centro da tela quando possível
+  const s = Math.max(D.W / im.width, D.H / im.height) * z, iw = im.width * s, ih = im.height * s;
+  let ox = D.W / 2 - fx * iw, oy = D.H / 2 - fy * ih;
+  ox = Math.min(0, Math.max(D.W - iw, ox)); oy = Math.min(0, Math.max(D.H - ih, oy));
+  // tremor sutil (impacto)
+  if (c.tremor && t - c.t0 < 0.5) { const k = (1 - (t - c.t0) / 0.5) * c.tremor; ox += Math.sin(t * 90) * k; oy += Math.cos(t * 77) * k; }
+  ctx.globalAlpha = a; ctx.drawImage(im, ox, oy, iw, ih); ctx.globalAlpha = 1;
+}
+
+function cenas(t) {
+  const { W, H } = D, T = D.tema;
+  ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  const i = cenaAtual(t);
+  if (i < 0) return;
+  const c = D.cenas[i], ant = D.cenas[i - 1];
+  const dt = c.duracao_entrada || 0.5;
+  if (c.entrada === "fundir" && ant && t < c.t0 + dt) {
+    desenharCena(ant, t); desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
+  } else if (c.entrada === "preto" && t < c.t0 + dt) {
+    desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
+  } else desenharCena(c, t);
+  // flash curto no corte (opcional)
+  if (c.flash && t < c.t0 + 0.18) { ctx.fillStyle = `rgba(220,235,230,${0.35 * (1 - lin(t, c.t0, 0.18))})`; ctx.fillRect(0, 0, W, H); }
+  // chuva animada por cima (leve)
+  if (D.chuva) {
+    ctx.save(); ctx.strokeStyle = "rgba(200,220,215,1)"; ctx.lineWidth = 1.6;
+    for (const g of D._chuva) {
+      const y = ((g.y + t * g.v) % 1) * (H + 200) - 100, x = g.x * W + (y * 0.18);
+      ctx.globalAlpha = g.a * D.chuva; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + g.l * 0.18, y + g.l); ctx.stroke();
+    }
+    ctx.restore();
+  }
+  // tratamento: tom frio, contraste, vinheta, granulação
+  ctx.save();
+  ctx.globalCompositeOperation = "soft-light"; ctx.fillStyle = alpha(T.tom || "#2f5f57", 0.35); ctx.fillRect(0, 0, W, H);
+  ctx.globalCompositeOperation = "source-over";
+  const v = ctx.createRadialGradient(W / 2, H * 0.45, H * 0.25, W / 2, H * 0.45, H * 0.78);
+  v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.62)"); ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+  // escurece levemente a base para legenda e Vigia
+  const b = ctx.createLinearGradient(0, H * 0.55, 0, H); b.addColorStop(0, "rgba(0,0,0,0)"); b.addColorStop(1, "rgba(0,0,0,.55)");
+  ctx.fillStyle = b; ctx.fillRect(0, H * 0.55, W, H * 0.45);
+  ctx.globalCompositeOperation = "overlay"; ctx.globalAlpha = D.grao ?? 0.16;
+  const r = rng(Math.floor(t * D.fps) + 1), dx = -Math.floor(r() * 512), dy = -Math.floor(r() * 512);
+  for (let x = dx; x < W; x += 512) for (let y = dy; y < H; y += 512) ctx.drawImage(GRAO, x, y);
+  ctx.restore();
+  // escurecimento pontual (pausa / queda)
+  for (const q of D.escuros || []) {
+    if (t >= q.t0 && t <= q.t1) { const a = Math.min(lin(t, q.t0, 0.3), 1 - lin(t, q.t1 - 0.3, 0.3)) * q.forca; ctx.fillStyle = `rgba(0,0,0,${a})`; ctx.fillRect(0, 0, W, H); }
+  }
+}
+
+// Vigia no canto (sem moldura): base esfumada, sombra suave, troca de pose com leve escala
+function vigiaCanto(t) {
+  let i = -1; D.poses.forEach((p, k) => { if (p.t <= t) i = k; });
+  if (i < 0) return;
+  const C = D.canto, atual = D.poses[i], ant = D.poses[i - 1], f = easeOut(lin(t, atual.t, 0.16));
+  const sombra = ctx.createRadialGradient(C.x + C.w / 2, C.base - C.w * 0.45, 20, C.x + C.w / 2, C.base - C.w * 0.45, C.w * 0.95);
+  sombra.addColorStop(0, "rgba(0,0,0,.55)"); sombra.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = sombra; ctx.fillRect(C.x - C.w * 0.5, C.base - C.w * 1.6, C.w * 2, C.w * 1.8);
+  const desenha = (nome, a, pop) => {
+    const im = IMG["pose:" + nome], m = D.avatar.poses[nome];
+    if (!im || !m) return;
+    const s = (C.w * 0.62) / clamp(m.largura_cabeca, D.avatar.mediana * 0.85, D.avatar.mediana * 1.2) * pop * (1 + 0.006 * Math.sin(t * 1.9));
+    const w = im.width * s, h = im.height * s;
+    MASCARA.width = Math.ceil(w); MASCARA.height = Math.ceil(h);
+    const g = MASCARA.getContext("2d");
+    g.clearRect(0, 0, w, h); g.drawImage(im, 0, 0, w, h);
+    g.globalCompositeOperation = "destination-in";
+    const gr = g.createLinearGradient(0, h * 0.62, 0, h); gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, w, h); g.globalCompositeOperation = "source-over";
+    const x = C.x + C.w / 2 - m.centro_x * s, y = C.base - h + Math.sin(t * 1.4) * 2;
+    ctx.globalAlpha = a; ctx.drawImage(MASCARA, x, y); ctx.globalAlpha = 1;
+  };
+  if (ant && f < 1) desenha(ant.pose, 1 - f, 1);
+  desenha(atual.pose, f, 1 + 0.03 * (1 - f));
+}
+
+// Legendas: frases de até 2 linhas, branco quente, sombra discreta, poucas palavras em destaque
+function legendas(t) {
+  const T = D.tema;
+  for (const L of D.legendas || []) {
+    if (t < L.t0 || t > L.t1) continue;
+    const a = Math.min(lin(t, L.t0, 0.12), 1 - lin(t, L.t1 - 0.12, 0.12));
+    const tam = D.legenda_tam || 56, lh = tam * 1.22, y0 = D.legenda_y - (L.linhas.length - 1) * lh;
+    fonte(700, tam, T.fonte_texto); ctx.textBaseline = "alphabetic";
+    L.linhas.forEach((linha, k) => {
+      const pal = linha.split(" ");
+      const larg = ctx.measureText(linha).width;
+      let x = D.W / 2 - larg / 2;
+      for (const p of pal) {
+        const dest = L.destaques.includes(norm(p));
+        ctx.globalAlpha = a; ctx.shadowColor = "rgba(0,0,0,.85)"; ctx.shadowBlur = 14; ctx.shadowOffsetY = 3;
+        ctx.fillStyle = dest ? T.destaque_legenda : T.texto_legenda;
+        ctx.fillText(p, x, y0 + k * lh);
+        x += ctx.measureText(p + " ").width;
+      }
+    });
+    ctx.shadowBlur = 0; ctx.shadowOffsetY = 0; ctx.globalAlpha = 1;
+  }
+}
+function norm(p) { return p.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); }
+
 // ------------------------------------------------------------------ quadro
 window.quadro = function (t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = "left";
+  if (D.modo === "cenas") {
+    if (!GRAO) prepararCenas();
+    cenas(t); legendas(t); vigiaCanto(t);
+    const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
+    if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
+    return;
+  }
   fundo(t); paineis(t); avatar(t); titulo(t);
   // vinheta e fades de início/fim
   const v = ctx.createRadialGradient(D.W / 2, D.H / 2, D.H * 0.3, D.W / 2, D.H / 2, D.H * 0.75);
