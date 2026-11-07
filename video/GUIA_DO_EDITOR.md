@@ -282,7 +282,11 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 
 > Aqui entram as orientações do usuário, com data. Elas valem mais do que tudo acima.
 
-- *(vazio — aguardando as primeiras orientações)*
+- **07/11/2026 — estilo-alvo definido:** "avatar + painel animado" (motion graphics com título
+  cinético, painel de interface que se constrói a cada frase e avatar em pixel art com poses),
+  sincronizado palavra por palavra com a narração. Análise completa em
+  [`referencias/estilo-avatar-painel.md`](referencias/estilo-avatar-painel.md). O motor de
+  imagens paradas continua disponível para vídeos de história, mas não é o padrão.
 
 ---
 
