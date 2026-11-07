@@ -305,22 +305,22 @@
      ]
     },
     {
-     "imagem": "provisorias/08.webp",
+     "imagem": "imagens/08.webp",
      "em": "ela",
      "zoom": [
-      1.04,
+      1.05,
       1.0
      ],
      "tremor": 6,
      "flash": true,
      "foco": [
       [
-       0.6,
+       0.62,
        0.3
       ],
       [
-       0.6,
-       0.3
+       0.62,
+       0.32
       ]
      ]
     }
