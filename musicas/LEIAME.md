@@ -18,7 +18,11 @@ Volume padronizado em -18 LUFS (fundo baixo e uniforme).
 | 9 | 09_por_do_sol.mp3 | Sol maior | pôr do sol |
 | 10 | 10_noite_estrelada.mp3 | Dó maior | noite estrelada, canção de ninar |
 
-`trilha_completa_10min.mp3` = as 10 emendadas com 3 s de transição suave (prévia).
+`trilha_completa_8min35.mp3` = versão 1: as 10 faixas (~55 s cada) emendadas com 3 s de transição.
+
+`versao_10min/` = versão 2: 10 faixas novas com os mesmos nomes/tons/climas, ~62 s cada,
+e `versao_10min/trilha_completa_10min.mp3` (10 min 0 s, transições de 2 s).
+As duas versões têm o mesmo estilo e volume, então dá para alternar entre elas (~18,5 min sem repetir).
 No jogo, toque as faixas em sequência com ~3 s de crossfade e volte à 1 no fim.
 
 Licença: termos Eleven Music de 09/10/2026 — uso comercial permitido em jogo indie
