@@ -71,7 +71,7 @@ para provar que é coisa da cabeça — e não percebe que ela aparece em todas 
 | Ato 1 | A sensação universal; o experimento real (cartão emoldurado). Rafael, o apartamento, o arrepio. **H1–H3** (criatura longe e escondida). |
 | Aparte do Vigia | "Faz um teste: não olha pra trás. Só presta atenção na sua nuca." |
 | Ato 2 | Rafael documenta: fotos e vídeos da casa toda noite. Os arrepios aumentam, os sons param meio segundo depois dos passos dele. **H4–H7** (cada vez mais perto, ainda escondida). |
-| Virada (a descoberta) | Ele espalha as fotos na mesa para provar que não há nada… e vê. Circula de vermelho, uma por uma. Mensagem de voz: \"Ela sabe que eu sei.\" |
+| Virada (a descoberta) | Ele espalha as fotos na mesa para provar que não há nada… e vê. Circula de vermelho, uma por uma. Mensagem de voz: "Ela sabe que eu sei." |
 | Ato 3 | A última gravação: ele no corredor, celular na mão, filmando para trás pela câmera frontal. **H8**: ela a um passo. A imagem treme. **H9**: o celular no chão, filmando o teto. |
 | Final | Polícia: apartamento trancado por dentro, celular gravando, ninguém. |
 | **Revelação** | Vigia: "Ela sempre esteve nas imagens. Desde o começo." — **as mesmas imagens H1→H8 voltam, em sequência, com a criatura revelada** (sombras clareadas + círculo vermelho). Cada uma mais perto. |
