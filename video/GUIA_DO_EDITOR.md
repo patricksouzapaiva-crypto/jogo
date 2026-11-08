@@ -336,6 +336,10 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   verdade, baixa e tensa** (`trilha_tensa_1` contida, `trilha_tensa_2` crescente, geradas no
   ElevenLabs Music) e **SILÊNCIO** nos momentos-chave: antes/sob as frases de revelação e no clímax.
   Estática só dentro da gravação da câmera de segurança (aprovado). Efeitos pontuais e limpos.
+- **08/11/2026 — cenário do Vigia (a partir do Ep. 03):** o topo da torre de vigia, "o Último
+  Abrigo" (`painel/cenarios/abrigo_16x9.png` e `abrigo_vertical.png` para Shorts): mesa com casos,
+  mural com fotos e linha vermelha, luneta, lampião e velas, lua crescente na janela gótica.
+  Vigia em destaque à esquerda (sobre a poltrona); legenda e chamada final à direita/embaixo.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.
