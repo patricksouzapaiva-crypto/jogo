@@ -39,11 +39,21 @@
  },
  "abertura": {
   "imagem": "imagens/A1.png",
-  "duracao": 2.8,
+  "duracao": 3.0,
   "antes_da_batida": 8,
   "zoom": [
-   1.04,
-   1.0
+   1.0,
+   1.05
+  ],
+  "foco": [
+   [
+    0.5,
+    0.5
+   ],
+   [
+    0.45,
+    0.45
+   ]
   ]
  },
  "cta": {
@@ -1111,7 +1121,7 @@
     "cctv": {
      "inicio": "23:00:00",
      "velocidade": 40,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1141,7 +1151,7 @@
     "cctv": {
      "inicio": "01:00:00",
      "velocidade": 40,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1167,7 +1177,7 @@
     "cctv": {
      "inicio": "02:50:00",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1193,7 +1203,7 @@
     "cctv": {
      "inicio": "03:12:00",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1219,7 +1229,7 @@
     "cctv": {
      "inicio": "03:12:04",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1256,7 +1266,7 @@
     "cctv": {
      "inicio": "03:12:09",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1301,7 +1311,7 @@
     "cctv": {
      "inicio": "03:12:15",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1327,7 +1337,7 @@
     "cctv": {
      "inicio": "03:13:02",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1353,7 +1363,7 @@
     "cctv": {
      "inicio": "03:15:11",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1399,7 +1409,7 @@
     "cctv": {
      "inicio": "03:15:20",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1425,7 +1435,7 @@
     "cctv": {
      "inicio": "03:15:41",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    }
@@ -1451,7 +1461,7 @@
     "cctv": {
      "inicio": "03:16:30",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1481,7 +1491,7 @@
     "cctv": {
      "inicio": "03:17:05",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },
@@ -1765,7 +1775,7 @@
     "cctv": {
      "inicio": "03:15:20",
      "velocidade": 1,
-     "data": "14/03",
+     "data": "14/10",
      "cam": "CAM 01"
     }
    },

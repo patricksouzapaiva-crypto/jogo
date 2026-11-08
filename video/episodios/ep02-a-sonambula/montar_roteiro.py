@@ -35,7 +35,7 @@ FECHA = (1.0, 1.35)           # aproxima bastante (aberto -> detalhe)
 CLOSE = (1.25, 1.32)
 VIGIA = {"imagem": img("V1"), "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.52, 0.5]], "vigia": True}
 CCTV = lambda n, hora, z=(1.0, 1.04), f0=(0.5, 0.5), f1=None, vel=1, em=None: cena(
-    n, z, f0, f1, em=em, cctv={"inicio": hora, "velocidade": vel, "data": "14/03", "cam": "CAM 01"})
+    n, z, f0, f1, em=em, cctv={"inicio": hora, "velocidade": vel, "data": "14/10", "cam": "CAM 01"})
 
 # decupagem por fala (índice = ordem das falas no ROTEIRO.md)
 d = {
@@ -141,7 +141,7 @@ roteiro = {
     "legendas": {"destaques": ["sonâmbula", "faca", "facas", "vigia", "câmera"]},
     "ambiente_inicial": [{"som": "casa_noite", "volume_db": -3}],
     "musica": {"som": "drone_terror", "volume_db": -15},
-    "abertura": {"imagem": "imagens/A1.png", "duracao": 2.8, "antes_da_batida": 8, "zoom": [1.04, 1.0]},
+    "abertura": {"imagem": "imagens/A1.png", "duracao": 3.0, "antes_da_batida": 8, "zoom": [1.0, 1.05], "foco": [[0.5, 0.5], [0.45, 0.45]]},
     "cta": {"titulo": "Gostou dessa história?", "canal": "Último Abrigo", "fundo": "imagens/V1.png",
             "subtitulo": "Inscreva-se para mais casos do Vigia", "pose": "e_apontando", "duracao": 3.6},
     "batidas": batidas,
