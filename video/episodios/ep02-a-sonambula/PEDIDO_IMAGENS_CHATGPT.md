@@ -245,3 +245,10 @@ Vertical-poster style horror title art in the same style as the previous episode
 | I25 | C53–C55 | aberto → close dela |
 | V1 | V01–V09 (Vigia) | cenário com o Vigia em destaque |
 | A1 | abertura | — |
+
+---
+
+## I26 — Helena na poltrona (cena extra, adicionada depois)
+```
+Night, the same bedroom (same wooden bed, same lamp and curtains as before), the bedside lamp has JUST been switched on and casts a warm, harsh light that leaves the corners dark. HELENA sits upright in an old armchair in the corner of the room, facing the bed and the camera, in her white nightgown: eyes wide open, exhausted, deep dark circles, both hands gripping the armrests tightly as if holding herself back. She is not menacing — she looks terrified and sleepless, but at first glance her stare is unsettling. MARCOS's shoulder and the edge of the bed blurred in the foreground. Landscape 1536x1024, same style as the previous images, no text.
+```

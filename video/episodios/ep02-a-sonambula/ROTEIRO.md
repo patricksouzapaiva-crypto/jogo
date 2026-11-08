@@ -75,6 +75,11 @@ Legenda: **[C00]** = número da cena/imagem · *(Vigia)* = momento do narrador e
 **[C28]** Em algumas noites, ela sussurrava o nome dele. Marcos. Marcos. Marcos. Não como quem chama… como quem confere se ele ainda está ali.
 **[C29]** Marcos fingia que dormia. Com o coração disparado. Sentindo o olhar dela no rosto.
 **[C29]** Uma noite, ele contou. Três horas e quarenta minutos sem ela sair do lugar. E, quando o despertador tocou, ela já estava deitada, de costas pra ele, como se nunca tivesse levantado.
+**[C29b]** Teve uma madrugada em que ele não aguentou. Acendeu o abajur de repente, pra pegar a esposa no flagra.
+**[C29b]** Mas Helena não estava ao lado da cama. Estava sentada na poltrona do canto, de frente pra ele.
+**[C29b]** Os olhos abertos. As mãos apertando os braços da poltrona, como quem se segura pra não sair correndo.
+**[C29b]** Quando a luz acendeu, ela não se assustou. Só soltou o ar devagar… e disse, baixinho:
+**[C29b]** — Ainda bem. Hoje você não levantou.
 **[C30]** Um dia, ele abriu a gaveta de talheres. As facas tinham sumido. Todas.
 **[C31]** Ele encontrou uma embaixo do colchão dela. Outra dentro de uma bota no armário. Outra enrolada numa toalha, no fundo do guarda-roupa.
 **[C31]** Ele colocou todas de volta na gaveta. Na manhã seguinte… tinham sumido de novo.
@@ -173,6 +178,7 @@ black-and-white with slight green tint, wide-angle lens distortion, timestamp ar
 | C27 | **Helena de pé ao lado da cama olhando Marcos dormir, plano aberto do quarto** |
 | C28 | O mesmo plano, mas o relógio marca 04:40 — ela continua ali |
 | C29 | Close de Marcos fingindo dormir, olhos apertados, suor na testa |
+| C29b | **Helena sentada numa poltrona no canto do quarto, de frente para a cama, olhos abertos, mãos apertando os braços da poltrona, abajur recém-aceso** (imagem I26) |
 | C30 | Gaveta de talheres aberta, sem facas |
 | C31 | Faca escondida dentro de uma bota no fundo do armário |
 | C32 | Fogão com as quatro bocas abertas, cozinha escura, Helena sentada à mesa olhando |

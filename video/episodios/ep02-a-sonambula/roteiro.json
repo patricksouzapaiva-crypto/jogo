@@ -822,6 +822,115 @@
    }
   },
   {
+   "fala": "Teve uma madrugada em que ele não aguentou. Acendeu o abajur de repente, pra pegar a esposa no flagra.",
+   "cena": {
+    "imagem": "imagens/I14.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.4,
+      0.5
+     ]
+    ],
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "Acendeu",
+     "som": "tecla",
+     "volume_db": -6
+    }
+   ]
+  },
+  {
+   "fala": "Mas Helena não estava ao lado da cama. Estava sentada na poltrona do canto, de frente pra ele.",
+   "cena": {
+    "imagem": "imagens/I26.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "em": "Estava"
+   }
+  },
+  {
+   "fala": "Os olhos abertos. As mãos apertando os braços da poltrona, como quem se segura pra não sair correndo.",
+   "cena": {
+    "imagem": "imagens/I26.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "apertando",
+     "pose": "e_medo_gola"
+    }
+   ]
+  },
+  {
+   "fala": "Quando a luz acendeu, ela não se assustou. Só soltou o ar devagar… e disse, baixinho:",
+   "cena": {
+    "imagem": "imagens/I26.png",
+    "zoom": [
+     1.35,
+     1.45
+    ],
+    "foco": [
+     [
+      0.5,
+      0.3
+     ],
+     [
+      0.5,
+      0.28
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "— Ainda bem. Hoje você não levantou.",
+   "queda": {
+    "forca": 0.6,
+    "mais": 0.6
+   },
+   "enfase": [
+    {
+     "em": "Hoje",
+     "pose": "s_pensativo_queixo",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
    "fala": "Um dia, ele abriu a gaveta de talheres. As facas tinham sumido. Todas.",
    "cena": {
     "imagem": "imagens/I15.png",
