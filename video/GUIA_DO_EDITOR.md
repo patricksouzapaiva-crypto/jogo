@@ -315,6 +315,9 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   prancha A = conversa automática (prefixo `c_`), B = ênfase exagerada (`e_`), C = tom sombrio
   (`s_`, conversa nas batidas com `"tom": "sombrio"` e ênfases frias). Rosto 2,5–3× maior que o
   de corpo inteiro → bem mais nítido no celular. Cabeça sempre na mesma posição; base dissolvida.
+- **08/11/2026 — APROVADO pelo usuário (padrão da série):** narrador de meio corpo
+  (`vigia_meio`), conversa automática nas pausas + ênfases marcadas, abertura com relâmpago, modo
+  `cenas`. Referência: `episodios/ep01-o-retrovisor/roteiro.json`.
 - **08/11/2026 — REGRA de troca de pose:** nunca trocar no meio de uma palavra. A troca cai no
   silêncio entre palavras, logo antes do trecho que a pose vai "falar". Conversa troca em fim de
   frase (sempre), em vírgula/reticências com pausa real, ou em pausa longa no meio da frase; a pose

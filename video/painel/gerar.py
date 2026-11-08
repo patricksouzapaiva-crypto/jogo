@@ -579,7 +579,13 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                 c.pop("em", None); c["t0"] = D["abertura_fim"]
             else:
                 c["t0"] = fronteira(rel, rel.indice(k, c.pop("em", None)))
-            c["imagem"] = str((base / c["imagem"]).resolve())
+            arq = base / c["imagem"]
+            if not arq.exists():  # imagem ainda não entregue: usa a provisória com o mesmo nome, se houver
+                prov = base / "provisorias" / arq.name
+                if prov.exists():
+                    print(f"  aviso: {c['imagem']} não existe; usando provisória {prov.name}", file=sys.stderr)
+                    arq = prov
+            c["imagem"] = str(arq.resolve())
             D["cenas"].append(c)
         if b.get("pose"):
             D["poses"].append({"t": max(0.0, t0 - 0.08) if D["poses"] else 0.0, "pose": b["pose"]})
