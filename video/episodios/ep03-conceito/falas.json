@@ -1,0 +1,870 @@
+[
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "\"Lucas… sou eu. Desculpa a hora.\"",
+  "voz": "rafael",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "\"Eu achei ela. Ela tá em todas as fotos.\"",
+  "voz": "rafael",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "\"E ela sabe… que eu sei.\"",
+  "voz": "rafael",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
+  "voz": "vigia",
+  "pausa_antes": true
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "E o Rafael não estava lá.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "Boa noite. Bem-vindo de volta ao Último Abrigo.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Me responde uma coisa, com sinceridade.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Você já sentiu… alguém andando atrás de você? Dentro da sua própria casa?",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Aquele arrepio no corredor. A certeza de que, se você virar agora, vai ter alguém ali.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "E você vira. E não tem ninguém.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Todo mundo já sentiu isso. E hoje eu vou te contar a história de um homem que resolveu descobrir o porquê.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "Em dois mil e catorze, na Suíça, um grupo de cientistas fez um experimento curioso.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "Os voluntários ficavam de olhos vendados, mexendo um braço robótico na frente do corpo. E um segundo robô, atrás deles, tocava as costas de cada um. Com meio segundo de atraso.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "Muitos começaram a sentir alguém atrás de si. Alguns contaram duas, três, quatro presenças. Houve quem pedisse para parar.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "A conclusão dos cientistas foi simples: é o cérebro. Um atraso entre o que o corpo faz e o que ele sente. Nada além disso.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Nada além disso.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H1",
+  "vigia": false,
+  "fala": "O Rafael tinha trinta e quatro anos. Técnico de som. Morava sozinho num apartamento antigo, no terceiro andar, no fim de uma rua tranquila.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H1",
+  "vigia": false,
+  "fala": "E desde criança ele sentia aquilo.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R5",
+  "vigia": false,
+  "fala": "A primeira vez foi na casa da avó, no interior. Um corredor comprido, de assoalho que rangia, que ligava a cozinha aos quartos.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R5",
+  "vigia": false,
+  "fala": "Ele tinha uns sete anos. Atravessava aquele corredor correndo, toda noite, com a certeza de que alguém vinha atrás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R5",
+  "vigia": false,
+  "fala": "Uma vez, ele contou pra avó. Ela não riu. Só segurou o rosto dele com as duas mãos e disse, muito séria:",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R5",
+  "vigia": false,
+  "fala": "\"Não procura, meu filho. Quem não procura… não acha.\"",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R5",
+  "vigia": false,
+  "fala": "Ele nunca entendeu o que ela quis dizer. Até muitos anos depois.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H2",
+  "vigia": false,
+  "fala": "No começo, era raro. Uma noite ou outra, assistindo televisão, ele sentia o olhar de alguém na nuca.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3",
+  "vigia": false,
+  "fala": "Mas foi no corredor que tudo começou de verdade.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3",
+  "vigia": false,
+  "fala": "O apartamento tinha um corredor comprido, da sala até o quarto. E toda vez que ele passava por ali à noite, sentia alguém vindo atrás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3",
+  "vigia": false,
+  "fala": "Ele parava. O silêncio parava junto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3",
+  "vigia": false,
+  "fala": "E sempre que ele virava… o corredor estava vazio.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "Faz um teste agora. Não olha pra trás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Só presta atenção na sua nuca.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Sentiu?",
+  "voz": "vigia",
+  "pausa_antes": true
+ },
+ {
+  "tag": "H4",
+  "vigia": false,
+  "fala": "Com o tempo, a sensação deixou de ser rara.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H4",
+  "vigia": false,
+  "fala": "Toda noite. Na cozinha, abrindo a geladeira. No banho. Deitado.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H4",
+  "vigia": false,
+  "fala": "E o pior não era sentir alguém atrás. O pior era sentir que, a cada noite, estava um pouco mais perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "mais perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H5",
+  "vigia": false,
+  "fala": "Ele começou a ouvir coisas. Passos no corredor que paravam meio segundo depois dos dele. Uma respiração lenta, logo depois que ele apagava a luz.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R6",
+  "vigia": false,
+  "fala": "Como técnico de som, ele fez o que sabia fazer. Deixou um microfone profissional ligado no corredor a noite inteira.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R6",
+  "vigia": false,
+  "fala": "De manhã, colocou os fones e ouviu. Horas de silêncio. Os passos dele indo ao banheiro, às duas da manhã.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R6",
+  "vigia": false,
+  "fala": "E, logo depois de cada passo dele… outro passo. Mais leve. Meio segundo atrasado.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R6",
+  "vigia": false,
+  "fala": "Ele ouviu aquele trecho umas vinte vezes. Quando ele parava no corredor, os outros passos paravam também.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R6",
+  "vigia": false,
+  "fala": "Só que, na última vez, quando ele já tinha voltado pra cama… os passos continuaram. Devagar. Até a porta do quarto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H5",
+  "vigia": false,
+  "fala": "Ele foi ao médico. Fez exames. Estava tudo normal.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H5",
+  "vigia": false,
+  "fala": "O médico receitou um remédio pra dormir e disse que era estresse. Cansaço.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H5",
+  "vigia": false,
+  "fala": "O remédio fazia ele dormir. Mas não fazia a sensação ir embora.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "Foi numa dessas madrugadas que ele achou o estudo da Suíça.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "E, pela primeira vez em meses, ele sentiu alívio. Era o cérebro. Só isso. Um atraso de meio segundo.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R1",
+  "vigia": false,
+  "fala": "Por uns dias, funcionou. Ele dormiu melhor. Passou pelo corredor sem olhar pra trás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H6",
+  "vigia": false,
+  "fala": "Até a noite em que, escovando os dentes, ele sentiu a nuca gelar.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H6",
+  "vigia": false,
+  "fala": "Não era um arrepio. Era frio. Como se alguém estivesse respirando ali, a um palmo dele.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H6",
+  "vigia": false,
+  "fala": "Ele não virou. Pela primeira vez, ele teve medo de virar.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H7",
+  "vigia": false,
+  "fala": "Depois daquela noite, o Rafael mudou a casa inteira.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H7",
+  "vigia": false,
+  "fala": "Encostou todos os móveis nas paredes. Deixou as luzes acesas. Colocou espelhos nos cantos, pra ver o que vinha atrás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H7",
+  "vigia": false,
+  "fala": "E passou a dormir sentado, de costas pra parede.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H7",
+  "vigia": false,
+  "fala": "Mas a sensação não ia embora. Só chegava mais perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R7",
+  "vigia": false,
+  "fala": "Num domingo, o irmão dele, o Lucas, apareceu sem avisar. Achou o apartamento estranho. Os móveis colados nas paredes, os espelhos, as luzes acesas em pleno dia.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R7",
+  "vigia": false,
+  "fala": "O Rafael tentou explicar. O Lucas riu, meio sem graça. Disse que ele precisava dormir, sair um pouco, ver gente.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R7",
+  "vigia": false,
+  "fala": "Na hora de ir embora, no meio do corredor, o Lucas parou. Passou a mão na nuca.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R7",
+  "vigia": false,
+  "fala": "\"Nossa… que corrente de ar é essa aqui?\"",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R7",
+  "vigia": false,
+  "fala": "O Rafael não respondeu. Só abriu a porta. E esperou o irmão sair.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "Numa madrugada sem dormir, ele escreveu num fórum na internet. Perguntou se mais alguém sentia aquilo. Alguém andando atrás, cada noite mais perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "Em poucas horas, vieram dezenas de respostas. Gente do Brasil inteiro. De outros países. Todo mundo descrevendo a mesma coisa.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "Uma resposta chamou a atenção dele. Um usuário que assinava só com as iniciais. Ele dizia que tinha encontrado um jeito de provar. Que ia tirar fotos da casa toda noite e comparar.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "O Rafael respondeu, pedindo pra ele contar o que encontrasse.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "Três dias depois, chegou uma última mensagem. Só uma frase.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R4",
+  "vigia": false,
+  "fala": "\"Não procura ela.\"",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Depois disso, a conta nunca mais respondeu.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "Quando a gente tem medo de uma coisa que não consegue ver… o que a gente faz?",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "A gente tenta provar que ela não existe.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H2",
+  "vigia": false,
+  "fala": "Foi isso que o Rafael decidiu fazer.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H2",
+  "vigia": false,
+  "fala": "Toda noite, ele passou a fotografar a casa. Cada cômodo. O mesmo ângulo, na mesma hora.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3",
+  "vigia": false,
+  "fala": "A ideia era simples. Se as fotos não mostrassem nada, a sensação era só da cabeça dele. E ele ia conseguir esquecer.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H4",
+  "vigia": false,
+  "fala": "Foram semanas. Centenas de fotos.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Numa madrugada, ele imprimiu todas e espalhou em cima da mesa. Pra olhar com calma. Pra provar, de uma vez por todas, que não tinha nada ali.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "E por muito tempo… não tinha.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Até que ele parou numa foto da rua. Lá no fundo, depois do último poste, entre duas árvores.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Uma forma. Alta. Magra demais. Parada.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Ele pegou a foto seguinte. A da sala. E procurou.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Estava lá. No reflexo da janela.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "No corredor. Na porta da cozinha. No canto do quarto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Em todas.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "E a cada foto… um pouco mais perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "em todas.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "O Rafael pegou uma caneta vermelha. E, com a mão tremendo, circulou cada uma.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Quando terminou, entendeu a coisa mais assustadora de todas.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Aquilo nunca tinha sido uma sensação.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Era alguém. Sempre foi.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "E só então ele lembrou da avó. \"Quem não procura, não acha.\"",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "Ele tinha procurado.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Três e quarenta da manhã.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "Foi aí que ele gravou a mensagem pro irmão.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "P",
+  "vigia": false,
+  "fala": "\"Eu achei ela. Ela tá em todas as fotos. E ela sabe que eu sei.\"",
+  "voz": "rafael_repete",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8",
+  "vigia": false,
+  "fala": "Depois disso, o Rafael fez a única coisa que ainda faltava.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8",
+  "vigia": false,
+  "fala": "Abriu a câmera frontal do celular. E, sem virar o corpo, olhou o corredor atrás dele pela tela.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8",
+  "vigia": false,
+  "fala": "Ela estava ali.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8",
+  "vigia": false,
+  "fala": "Um passo atrás. Na altura do rosto dele.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8",
+  "vigia": false,
+  "fala": "E, pela primeira vez, ela não estava parada.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H9",
+  "vigia": false,
+  "fala": "O celular caiu no chão do corredor. E continuou gravando.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H9",
+  "vigia": false,
+  "fala": "O teto. A lâmpada balançando. Os chinelos dele no chão.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H9",
+  "vigia": false,
+  "fala": "Nenhum som. Nenhum grito.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H9",
+  "vigia": false,
+  "fala": "Só o corredor vazio.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R3",
+  "vigia": false,
+  "fala": "O Lucas chegou de manhã. A porta estava trancada por dentro. As janelas, fechadas.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R3",
+  "vigia": false,
+  "fala": "O celular, no chão do corredor. A bateria, no fim.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R2",
+  "vigia": false,
+  "fala": "E sobre a mesa da sala, dezenas de fotos. Cada uma com um círculo vermelho.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R3",
+  "vigia": false,
+  "fala": "O caso do Rafael entrou pra estatística. Só no Brasil, em dois mil e vinte e cinco, foram mais de oitenta e quatro mil pessoas desaparecidas.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R3",
+  "vigia": false,
+  "fala": "A maioria é encontrada.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "R3",
+  "vigia": false,
+  "fala": "Algumas… nunca.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "Os cientistas estavam certos sobre uma coisa.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Existe mesmo um atraso.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Só que ele não está no seu cérebro.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Ela sempre esteve nas imagens. Desde o começo.",
+  "voz": "vigia",
+  "pausa_antes": true
+ },
+ {
+  "tag": "H1r",
+  "vigia": false,
+  "fala": "Na rua.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H2r",
+  "vigia": false,
+  "fala": "Na janela.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H3r",
+  "vigia": false,
+  "fala": "No fim do corredor.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H4r",
+  "vigia": false,
+  "fala": "Na porta da cozinha.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H5r",
+  "vigia": false,
+  "fala": "No canto do quarto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H6r",
+  "vigia": false,
+  "fala": "Atrás da cortina.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H7r",
+  "vigia": false,
+  "fala": "No meio do corredor.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "H8r",
+  "vigia": false,
+  "fala": "Atrás dele.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "O Rafael não desapareceu porque ela chegou perto.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Ele desapareceu porque descobriu.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "E você… acabou de ver as mesmas fotos que ele.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Boa noite.",
+  "voz": "vigia",
+  "pausa_antes": true
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "E quando esse vídeo acabar… não olha pra trás.",
+  "voz": "vigia",
+  "pausa_antes": false
+ }
+]
