@@ -772,6 +772,8 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
     for i, a in enumerate(amb):  # ambientes em sequência, com fusão de 0,8 s
         ini = max(0.0, a["t"] - 0.4)
         fim = amb[i + 1]["t"] + 0.4 if i + 1 < len(amb) else duracao
+        if a["som"] in (None, "nenhum", "silencio"):  # trecho sem ambiente
+            continue
         ent += ["-stream_loop", "-1", "-i", str(sons / f"{a['som']}.mp3")]
         fi = 0.8 if i else 0.6
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{fim - ini:.3f},asetpts=PTS-STARTPTS,"
@@ -786,7 +788,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
     for i, m in enumerate(trilhas):
         ini = max(0.0, m["t"] - 1.0)
         fim = min(fim_m, trilhas[i + 1]["t"] + 1.0) if i + 1 < len(trilhas) else fim_m
-        if fim <= ini:
+        if fim <= ini or m["som"] in (None, "nenhum", "silencio"):  # silêncio: nenhuma trilha nesse trecho
             continue
         ent += ["-stream_loop", "-1", "-i", str(sons / f"{m['som']}.mp3")]
         fi = 2.5 if i == 0 else 2.0
@@ -796,6 +798,9 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
                  f"adelay={int(ini * 1000)}:all=1[mus{n}]")
         camas.append(f"[mus{n}]")
         n += 1
+    if not camas:
+        f.append(f"anullsrc=r=48000:cl=stereo,atrim=0:{duracao:.3f}[vazio]")
+        camas.append("[vazio]")
     cama = "[cama0]"
     f.append(f"{''.join(camas)}amix=inputs={len(camas)}:normalize=0:duration=longest,apad,atrim=0:{duracao:.3f}{cama}")
     # automações: som abafado (passa-baixa) e quedas de volume

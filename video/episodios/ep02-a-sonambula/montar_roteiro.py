@@ -88,7 +88,7 @@ d = {
  44: {"cena": cena("I15", FECHA, (0.5, 0.45), (0.5, 0.4), em="bota"), "enfase": [{"em": "bota", "pose": "e_bracos_cruzados_cetico"}]},
  45: {},
  46: {"cena": VIGIA, "enfase": [{"em": "Agora", "pose": "e_sussurro_malicioso", "segurar": 2.4}]},
- 47: {"cena": cena("I16", (1.35, 1.4), (0.45, 0.85), (0.6, 0.85)), "sons": [{"em": "gás", "som": "gas_vazando", "volume_db": -6}],
+ 47: {"cena": cena("I16", (1.35, 1.4), (0.45, 0.85), (0.6, 0.85)), "sons": [{"em": "gás", "som": "gas_vazando", "volume_db": -14}],
       "enfase": [{"em": "cheiro", "pose": "e_recuo_maos"}]},
  48: {"cena": cena("I16", ABERTO, (0.5, 0.6), (0.52, 0.45))},
  49: {"cena": cena("I16", (1.5, 1.55), (0.52, 0.24), (0.52, 0.22))},
@@ -137,6 +137,32 @@ for i, f in enumerate(falas):
     b.update(d.get(i, {}))
     batidas.append(b)
 
+# ---------------------------------------------------------------- som (revisão 08/11: sem chiado)
+# Trilha instrumental baixa e tensa + SILÊNCIO nos momentos-chave. Nenhum ambiente de "ruído"
+# (casa, geladeira, chuva) — só a estática da câmera durante a gravação e o batimento pontual.
+for b in batidas:
+    b.pop("ambiente", None); b.pop("musica", None)
+T1, T2 = "trilha_tensa_1", "trilha_tensa_2"
+def mus(i, som, em=None, db=-22):
+    batidas[i]["musica"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
+def amb(i, som, em=None, db=-4):
+    batidas[i]["ambiente"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
+mus(2, T1, "silencioso", -24)          # cold open: começa em silêncio, a trilha entra baixinha
+mus(7, "silencio", "Você")             # sussurro e abertura no silêncio (só o trovão)
+mus(8, T1, None, -22)                  # o Vigia recebe o público
+mus(23, T2, None, -21)                 # a noite que mudou tudo: tensão crescente
+mus(41, "silencio", "disse")           # "Ainda bem. Hoje você não levantou." no silêncio
+mus(43, T2, None, -21)
+mus(55, "silencio", "Sentou")          # a gravação: sem trilha, só a câmera
+mus(70, T1, "corredor", -23)           # ela de guarda no corredor: a trilha volta, triste
+mus(74, "silencio", "Agora")           # a frase final dela no silêncio
+mus(75, T1, None, -20)                 # epílogo do Vigia
+amb(36, "batimento", "coração", -9)
+amb(37, "nenhum", "despertador")
+amb(56, "estatica_cctv", None, -4)     # o som da gravação (aprovado pelo usuário)
+amb(70, "nenhum", "sentar")
+batidas[65].setdefault("sons", []).append({"em": "faca", "som": "batimento", "volume_db": -7})
+
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_meio",
     "voz": {"modelo": "gemini-3.8-flash-tts", "nome": "Algenib", "so_texto": True},
@@ -144,8 +170,8 @@ roteiro = {
     "pausas": {"ponto": 0.75, "reticencias": 1.0, "virgula": 0.32, "comum": 0.14},
     "cauda": 1.4, "chuva": 0, "grao": 0.14,
     "legendas": {"destaques": ["sonâmbula", "faca", "facas", "vigia", "câmera"]},
-    "ambiente_inicial": [{"som": "casa_noite", "volume_db": -3}],
-    "musica": {"som": "drone_terror", "volume_db": -15},
+    "ambiente_inicial": [],
+    "musica": {"som": "silencio", "volume_db": -40},
     "abertura": {"imagem": "imagens/A1.png", "duracao": 3.0, "antes_da_batida": 8, "zoom": [1.0, 1.05], "foco": [[0.5, 0.5], [0.45, 0.45]]},
     "cta": {"titulo": "Gostou dessa história?", "canal": "Último Abrigo", "fundo": "imagens/V1.png",
             "subtitulo": "Inscreva-se para mais casos do Vigia", "pose": "e_apontando", "duracao": 3.6},

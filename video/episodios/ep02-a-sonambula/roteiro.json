@@ -27,15 +27,10 @@
    "câmera"
   ]
  },
- "ambiente_inicial": [
-  {
-   "som": "casa_noite",
-   "volume_db": -3
-  }
- ],
+ "ambiente_inicial": [],
  "musica": {
-  "som": "drone_terror",
-  "volume_db": -15
+  "som": "silencio",
+  "volume_db": -40
  },
  "abertura": {
   "imagem": "imagens/A1.png",
@@ -101,7 +96,12 @@
    }
   },
   {
-   "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você."
+   "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você.",
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -24,
+    "em": "silencioso"
+   }
   },
   {
    "fala": "Virou a cabeça devagar.",
@@ -198,6 +198,11 @@
    "queda": {
     "forca": 0.7,
     "mais": 0.4
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22,
+    "em": "Você"
    }
   },
   {
@@ -227,7 +232,11 @@
      "pose": "s_convidando",
      "segurar": 2.2
     }
-   ]
+   ],
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   }
   },
   {
    "fala": "Hoje eu vou te contar a história de um homem que tinha medo de dormir ao lado da própria esposa."
@@ -260,14 +269,6 @@
       0.5
      ]
     ]
-   },
-   "musica": {
-    "som": "drone_terror",
-    "volume_db": -14
-   },
-   "ambiente": {
-    "som": "casa_noite",
-    "volume_db": -3
    }
   },
   {
@@ -349,11 +350,6 @@
       0.45
      ]
     ]
-   },
-   "ambiente": {
-    "em": "jardim",
-    "som": "chuva_externa",
-    "volume_db": -6
    }
   },
   {
@@ -374,10 +370,6 @@
       0.45
      ]
     ]
-   },
-   "ambiente": {
-    "som": "casa_noite",
-    "volume_db": -3
    }
   },
   {
@@ -515,8 +507,8 @@
     "hora": "02:47"
    },
    "musica": {
-    "som": "drone_tensao",
-    "volume_db": -15
+    "som": "trilha_tensa_2",
+    "volume_db": -21
    }
   },
   {
@@ -540,11 +532,6 @@
       0.48
      ]
     ]
-   },
-   "ambiente": {
-    "em": "corredor",
-    "som": "geladeira",
-    "volume_db": -6
    }
   },
   {
@@ -645,10 +632,6 @@
      ]
     ],
     "lado": "dir"
-   },
-   "ambiente": {
-    "som": "casa_noite",
-    "volume_db": -3
    }
   },
   {
@@ -791,9 +774,9 @@
     "lado": "dir"
    },
    "ambiente": {
-    "em": "coração",
     "som": "batimento",
-    "volume_db": -6
+    "volume_db": -9,
+    "em": "coração"
    }
   },
   {
@@ -816,9 +799,9 @@
     ]
    },
    "ambiente": {
-    "em": "despertador",
-    "som": "casa_noite",
-    "volume_db": -3
+    "som": "nenhum",
+    "volume_db": -4,
+    "em": "despertador"
    }
   },
   {
@@ -914,6 +897,11 @@
       0.16
      ]
     ]
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22,
+    "em": "disse"
    }
   },
   {
@@ -948,6 +936,10 @@
       0.45
      ]
     ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -21
    }
   },
   {
@@ -1031,7 +1023,7 @@
     {
      "em": "gás",
      "som": "gas_vazando",
-     "volume_db": -6
+     "volume_db": -14
     }
    ],
    "enfase": [
@@ -1207,7 +1199,12 @@
      ]
     ]
    },
-   "tom": "sombrio"
+   "tom": "sombrio",
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22,
+    "em": "Sentou"
+   }
   },
   {
    "fala": "Onze da noite. Os dois deitados. Nada.",
@@ -1482,6 +1479,11 @@
      "som": "impacto",
      "volume_db": -10,
      "grave": true
+    },
+    {
+     "em": "faca",
+     "som": "batimento",
+     "volume_db": -7
     }
    ],
    "enfase": [
@@ -1490,12 +1492,7 @@
      "pose": "e_maos_na_boca",
      "segurar": 2.2
     }
-   ],
-   "ambiente": {
-    "em": "faca",
-    "som": "batimento",
-    "volume_db": -5
-   }
+   ]
   },
   {
    "fala": "Ele para do lado dela. E fica ali. Parado. Olhando pra esposa.",
@@ -1573,10 +1570,6 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   },
-   "ambiente": {
-    "som": "estatica_cctv",
-    "volume_db": -4
    }
   },
   {
@@ -1631,9 +1624,15 @@
      ]
     ]
    },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -23,
+    "em": "corredor"
+   },
    "ambiente": {
-    "som": "casa_noite",
-    "volume_db": -5
+    "som": "nenhum",
+    "volume_db": -4,
+    "em": "sentar"
    }
   },
   {
@@ -1720,6 +1719,11 @@
    "queda": {
     "forca": 0.6,
     "mais": 0.8
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22,
+    "em": "Agora"
    }
   },
   {
@@ -1803,7 +1807,11 @@
      "desaturar": true
     }
    ],
-   "tom": "sombrio"
+   "tom": "sombrio",
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -20
+   }
   },
   {
    "fala": "Todas aquelas noites… ela não estava observando o marido.",
