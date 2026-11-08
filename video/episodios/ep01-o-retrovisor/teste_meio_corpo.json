@@ -379,11 +379,6 @@
    ],
    "enfase": [
     {
-     "em": "motorista",
-     "pose": "e_apontando",
-     "segurar": 1.0
-    },
-    {
      "em": "nunca",
      "pose": "s_encarando",
      "segurar": 1.3

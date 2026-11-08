@@ -31,7 +31,8 @@
    "topo": 7,
    "centro_x": 146.5,
    "largura_cabeca": 102.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_mao_no_peito": {
    "w": 249,
@@ -71,7 +72,8 @@
    "topo": 7,
    "centro_x": 134.5,
    "largura_cabeca": 108.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_sorriso_olhos_fechados": {
    "w": 234,
@@ -79,7 +81,8 @@
    "topo": 7,
    "centro_x": 112.0,
    "largura_cabeca": 111.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 1
   },
   "c_desconfiado_lado": {
    "w": 232,
@@ -271,7 +274,7 @@
    "topo": 8,
    "centro_x": 146.0,
    "largura_cabeca": 124.0,
-   "grupo": "sombrio"
+   "grupo": "enfase"
   },
   "s_pensativo_queixo": {
    "w": 271,
@@ -295,7 +298,7 @@
    "topo": 7,
    "centro_x": 137.0,
    "largura_cabeca": 123.0,
-   "grupo": "sombrio"
+   "grupo": "enfase"
   },
   "s_sussurro": {
    "w": 264,
@@ -311,7 +314,7 @@
    "topo": 7,
    "centro_x": 158.5,
    "largura_cabeca": 116.0,
-   "grupo": "sombrio"
+   "grupo": "enfase"
   },
   "s_convidando": {
    "w": 286,
@@ -327,7 +330,7 @@
    "topo": 7,
    "centro_x": 152.5,
    "largura_cabeca": 129.0,
-   "grupo": "sombrio"
+   "grupo": "enfase"
   },
   "s_serio": {
    "w": 291,
@@ -343,7 +346,8 @@
    "topo": 7,
    "centro_x": 161.5,
    "largura_cabeca": 128.0,
-   "grupo": "sombrio"
+   "grupo": "sombrio",
+   "peso": 2
   },
   "s_olhar_cima": {
    "w": 282,
@@ -383,7 +387,8 @@
    "topo": 8,
    "centro_x": 138.5,
    "largura_cabeca": 122.0,
-   "grupo": "sombrio"
+   "grupo": "sombrio",
+   "peso": 1
   }
  },
  "largura_cabeca_mediana": 120.0

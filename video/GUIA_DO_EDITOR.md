@@ -315,6 +315,12 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   prancha A = conversa automática (prefixo `c_`), B = ênfase exagerada (`e_`), C = tom sombrio
   (`s_`, conversa nas batidas com `"tom": "sombrio"` e ênfases frias). Rosto 2,5–3× maior que o
   de corpo inteiro → bem mais nítido no celular. Cabeça sempre na mesma posição; base dissolvida.
+- **08/11/2026 — REGRA de troca de pose:** nunca trocar no meio de uma palavra. A troca cai no
+  silêncio entre palavras, logo antes do trecho que a pose vai "falar". Conversa troca em fim de
+  frase (sempre), em vírgula/reticências com pausa real, ou em pausa longa no meio da frase; a pose
+  é escolhida pelo conteúdo do trecho quando possível. Ênfase entra logo antes da palavra-chave; a
+  conversa não troca se uma ênfase vai entrar em até ~1 s; uma frase nova encerra a ênfase anterior.
+  Evitar duas ênfases a menos de ~1 s uma da outra. Conferir no `.tempos.json` (lista de poses).
 - **08/11/2026 — abertura:** cartão de abertura com a arte do episódio (série + "EP. NN" + título),
   ~2,4 s, relâmpago e trovão grave, aproximação lenta, corte seco para a 1ª cena junto com a 1ª
   frase da narração (campo `abertura`). O Vigia e as legendas só entram depois dela.

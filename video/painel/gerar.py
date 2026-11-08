@@ -232,6 +232,16 @@ class Relogio:
     def fim(self, k):
         return self.t[self.faixas[k][1] - 1][1]
 
+    def indice(self, k, palavra):
+        """Índice da palavra (primeira que começa com 'palavra') dentro da batida k."""
+        a, b = self.faixas[k]
+        if palavra:
+            alvo = norm(tokens(palavra)[0])
+            for i in range(a, b):
+                if norm(self.palavras[i]).startswith(alvo):
+                    return i
+        return a
+
     def em(self, k, palavra, padrao=None, fim=False):
         if not palavra:
             return self.inicio(k) if padrao is None else padrao
@@ -426,55 +436,110 @@ def envelope_voz(wav, inicio, duracao, fps=30):
     return out
 
 
+# palavras que pedem uma pose de conversa específica (se existir no avatar); o resto é sorteado
+DICAS_CONVERSA = [
+    (r"\?", ["c_dar_de_ombros", "c_mao_aberta_lado"]),
+    (r"\b(nao|nunca|nenhum|nenhuma|ninguem|nada|vazio|vazia)\b", ["c_serio_frontal", "c_desconfiado_lado", "c_preocupado"]),
+    (r"\b(madrugada|noite|chovia|chuva|estrada|ceu)\b", ["c_olhar_cima", "c_falando_olhar_lado"]),
+    (r"\b(certeza|sozinho|sabia|achava)\b", ["c_mao_no_peito", "c_falando_inclinado"]),
+    (r"\b(duas|tres|uma|primeira|segunda|cada)\b", ["c_dedo_explicando"]),
+    (r"\b(olhou|olhar|olhando|viu|ver)\b", ["c_falando_olhar_lado", "c_desconfiado_lado"]),
+    (r"\b(seguinte|depois|entao|quando)\b", ["c_falando", "c_oferecendo"]),
+]
+
+
+def fronteira(rel: "Relogio", i: int) -> float:
+    """Instante para trocar de pose ANTES da palavra i: no silêncio entre a palavra anterior e ela
+    (pouco antes dela começar); se não houver silêncio, exatamente na junção das duas."""
+    ini = rel.t[i][0]
+    if i == 0:
+        return max(0.0, ini - 0.1)
+    fim_ant = rel.t[i - 1][1]
+    if ini <= fim_ant:
+        return ini
+    return max(fim_ant + 0.02, ini - 0.1)
+
+
 def poses_de_conversa(fixas, rel: Relogio, poses, roteiro, duracao, semente=7):
-    """Preenche a narração com poses de CONVERSA (pequenas variações que dão vida), trocando no início
-    de palavras a cada ~1,5–2 s (mais cedo em começo de frase). Poses de ÊNFASE (e as fixadas no
-    roteiro) seguram o tempo pedido e depois a conversa volta."""
+    """Poses de CONVERSA trocadas só nas pausas da narração: fim de frase (sempre), vírgula/reticências
+    com pausa real, ou pausa longa no meio da frase. A troca cai no silêncio antes da nova frase, e a
+    pose é escolhida pelo conteúdo do trecho quando possível. ÊNFASES seguram e depois a conversa volta."""
     import random
     rnd = random.Random(semente)
     pools = {}
     for k, v in poses.items():
         pools.setdefault(v.get("grupo", "conversa"), []).append(k)
     pesos = {k: v.get("peso", 3) for k, v in poses.items()}
-    batida_de = {}
-    for kb, (a0, a1) in enumerate(rel.faixas):
-        for ii in range(a0, a1):
-            batida_de[ii] = kb
-    cfg = roteiro.get("conversa", {})
-    passo, minimo = cfg.get("intervalo", 1.7), cfg.get("minimo", 1.15)
-    # janelas ocupadas por poses fixas/ênfase
+    batida_de = {ii: kb for kb, (a0, a1) in enumerate(rel.faixas) for ii in range(a0, a1)}
     ocupado = []
     for i, p in enumerate(fixas):
-        fim = p["t"] + p.get("segurar", 1.6 if p.get("tipo") != "enfase" else 1.8)
+        fim = p["t"] + p.get("segurar", 1.6)
         if i + 1 < len(fixas):
             fim = min(fim, fixas[i + 1]["t"])
         ocupado.append((p["t"], fim))
-    livre = lambda t: all(not (a - 0.25 <= t < b) for a, b in ocupado)
-    novas, ultimo_t, recentes = [], -9.0, []
-    for i, w in enumerate(rel.palavras):
-        t = rel.t[i][0] - 0.06
-        if t > rel.t[-1][1] or not livre(t):
-            if not livre(t):
-                ultimo_t = t
+    livre = lambda t: all(not (a - 0.3 <= t < b) for a, b in ocupado)
+    # começo de frase nova pode encerrar uma ênfase que já cumpriu boa parte do tempo
+    livre_frase = lambda t: all(not (a - 0.1 <= t < a + 0.6) for a, b in ocupado)
+    W = rel.palavras
+    novas, ultimo, recentes = [], -9.0, []
+    for i in range(len(W)):
+        t = fronteira(rel, i)
+        ant = W[i - 1] if i else ""
+        pausa = rel.t[i][0] - rel.t[i - 1][1] if i else 9
+        fim_frase = i == 0 or ant.endswith(("...", "…")) or ant[-1:] in ".!?"
+        virgula = ant[-1:] in ",;:—"
+        desde = t - ultimo
+        if fim_frase:
+            ok = desde >= 1.0
+        elif virgula:
+            ok = pausa >= 0.12 and desde >= 1.8
+        else:
+            ok = pausa >= 0.35 and desde >= 3.0
+        disponivel = livre_frase(t) if fim_frase else livre(t)
+        # conta o tempo desde a última troca, inclusive ênfases já passadas
+        for a0, _ in ocupado:
+            if a0 <= t:
+                ultimo = max(ultimo, a0)
+        desde = t - ultimo
+        if fim_frase:
+            ok = desde >= 1.0
+        elif virgula:
+            ok = pausa >= 0.12 and desde >= 1.8
+        else:
+            ok = pausa >= 0.35 and desde >= 3.0
+        # não troca se uma ênfase vai entrar logo em seguida (evita duas trocas seguidas)
+        if any(t < a0 <= t + 1.1 for a0, _ in ocupado):
             continue
-        inicio_frase = i == 0 or rel.palavras[i - 1][-1] in ".!?,;:…" or rel.palavras[i - 1].endswith("...")
-        dt = t - ultimo_t
-        if dt >= passo or (inicio_frase and dt >= minimo):
-            tom = roteiro["batidas"][batida_de.get(i, 0)].get("tom", "conversa")
-            pool = pools.get(tom) or pools["conversa"]
+        if not ok or not disponivel:
+            continue
+        # trecho que será dito com esta pose (até a próxima pausa de frase)
+        j = i
+        while j < len(W) - 1 and W[j][-1:] not in ".!?,;:" and not W[j].endswith("..."):
+            j += 1
+        trecho = norm_frase(" ".join(W[i:j + 1]))
+        tom = roteiro["batidas"][batida_de.get(i, 0)].get("tom", "conversa")
+        pool = pools.get(tom) or pools["conversa"]
+        escolha = None
+        if tom == "conversa":
+            for padrao, opcoes in DICAS_CONVERSA:
+                if re.search(padrao, trecho):
+                    opc = [o for o in opcoes if o in pool and o not in recentes[-2:]]
+                    if opc:
+                        escolha = rnd.choice(opc)
+                        break
+        if not escolha:
             cand = [k for k in pool if k not in recentes[-3:]] or pool
             escolha = rnd.choices(cand, weights=[pesos[k] for k in cand])[0]
-            novas.append({"t": t, "pose": escolha, "tipo": "conversa"})
-            recentes.append(escolha)
-            ultimo_t = t
-    todas = sorted(fixas + novas, key=lambda p: p["t"])
-    # remove trocas de conversa coladas demais numa fixa (evita piscar)
-    limpas = []
-    for p in todas:
-        if limpas and p.get("tipo") == "conversa" and p["t"] - limpas[-1]["t"] < 0.6:
-            continue
-        limpas.append(p)
-    return limpas
+        novas.append({"t": t, "pose": escolha, "tipo": "conversa"})
+        recentes.append(escolha)
+        ultimo = t
+    return sorted(fixas + novas, key=lambda p: p["t"])
+
+
+def norm_frase(txt):
+    txt = unicodedata.normalize("NFD", txt.lower())
+    txt = "".join(c for c in txt if unicodedata.category(c) != "Mn")
+    return re.sub(r"[^a-z0-9?\s]", " ", txt)
 
 
 def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
@@ -513,7 +578,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             elif D["cenas"][-1].get("abertura") and len(D["cenas"]) == 1:
                 c.pop("em", None); c["t0"] = D["abertura_fim"]
             else:
-                c["t0"] = rel.em(k, c.pop("em", None)) - 0.06
+                c["t0"] = fronteira(rel, rel.indice(k, c.pop("em", None)))
             c["imagem"] = str((base / c["imagem"]).resolve())
             D["cenas"].append(c)
         if b.get("pose"):
@@ -540,7 +605,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
     for k, b in enumerate(roteiro["batidas"]):
         for en in b.get("enfase", []):
-            D["poses"].append({"t": rel.em(k, en["em"]) - 0.06, "pose": en["pose"], "tipo": "enfase",
+            D["poses"].append({"t": fronteira(rel, rel.indice(k, en["em"])), "pose": en["pose"], "tipo": "enfase",
                                "segurar": en.get("segurar", 1.8)})
     D["poses"].sort(key=lambda p: p["t"])
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
@@ -669,7 +734,8 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", "-c:v", "libx264",
                     "-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M", "-pix_fmt", "yuv420p",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", saida], check=True)
-    json.dump({"palavras": [(w, round(s, 2)) for w, (s, _) in zip(palavras, rel.t)]},
+    json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
+               "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
     print(f"pronto: {saida}")
 
