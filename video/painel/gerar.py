@@ -460,7 +460,7 @@ def mixar(voz_wav, inicio_voz, duracao, eventos, trilha, saida):
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
                     f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
                     f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:"
-                    "linear=true,aresample=48000", "-ac", "2", saida], check=True)
+                    "linear=true,aresample=48000,alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
     os.remove(bruto)
 
 
@@ -833,7 +833,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
                     f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={mm['input_i']}:measured_TP={mm['input_tp']}:"
                     f"measured_LRA={mm['input_lra']}:measured_thresh={mm['input_thresh']}:offset={mm['target_offset']}:"
-                    "linear=true,aresample=48000", "-ac", "2", saida], check=True)
+                    "linear=true,aresample=48000,alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
     os.remove(bruto)
 
 
@@ -910,7 +910,7 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     print("5/5 finalizando…")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", "-c:v", "libx264",
                     "-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M", "-pix_fmt", "yuv420p",
-                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", saida], check=True)
+                    "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
                "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
