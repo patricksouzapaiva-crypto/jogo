@@ -58,7 +58,29 @@ Quer mais casos do Vigia? Me diz qual história ele deve contar.
 - Horário: à noite, entre 19h e 22h.
 - Depois de publicar: fixe o comentário e responda os primeiros comentários na primeira hora.
 
-## Shorts para divulgar (posso montar quando quiser)
-1. Abertura até "Você não devia estar acordado." → "história completa no canal".
-2. "Ele instalou uma câmera…" até "É ele." (sem revelar o resto).
-3. A cena da poltrona: "Ainda bem. Hoje você não levantou."
+## Arquivos
+| Arquivo | Para quê |
+|---|---|
+| `O_Vigia_Ep02_final.mp4` | o episódio (versão definitiva, áudio corrigido) |
+| `thumbnail_1280x720.jpg` + `thumbnail_B_olhos.jpg` + `thumbnail_C_vermelho.jpg` | thumbnails (teste A/B) |
+| `legendas_pt-BR.srt` | legenda |
+| `Short1_…`, `Short2_…`, `Short3_…` | Shorts de divulgação |
+
+## Shorts de divulgação (postar 1 por dia, depois do episódio)
+Em cada Short: **Vídeo relacionado → o episódio completo** (gera o link clicável).
+
+**Short 1 — `Short1_Voce_nao_devia_estar_acordado.mp4`**
+- Título: `Ela estava de pé ao lado da cama… às 3h12 #shorts`
+- Descrição: `A esposa dele era sonâmbula. Pelo menos era o que ele pensava. História completa no canal Último Abrigo. #terror #historiasdeterror #shorts`
+
+**Short 2 — `Short2_A_gravacao.mp4`**
+- Título: `Ele instalou uma câmera pra ver o que a esposa fazia dormindo #shorts`
+- Descrição: `O que a câmera mostrou às 3h12 mudou tudo. História completa no canal Último Abrigo. #terror #cameradeseguranca #shorts`
+
+**Short 3 — `Short3_A_poltrona.mp4`**
+- Título: `"Ainda bem. Hoje você não levantou." #shorts`
+- Descrição: `Por que ela passava a noite acordada olhando pra ele? História completa no canal Último Abrigo. #terror #historiasdeterror #shorts`
+
+## Ordem sugerida
+1. Dia 1, 19h–22h: episódio completo (fixe o comentário).
+2. Dias 2, 3 e 4: um Short por dia, no mesmo horário.
