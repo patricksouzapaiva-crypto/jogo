@@ -433,7 +433,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     base = Path(roteiro["_pasta"])
     leg = roteiro.get("legendas", {})
     D = {"modo": "cenas", "W": W, "H": H, "fps": fps, "duracao": duracao, "tema": tema,
-         "avatar": {"base": str(av_dir) + "/", "mediana": av["largura_cabeca_mediana"], "poses": av["poses"]},
+         "avatar": {"base": str(av_dir) + "/", "tipo": av.get("tipo", "busto"),
+                    "mediana": av.get("largura_cabeca_mediana"), "poses": av["poses"]},
          "canto": roteiro.get("canto", {"x": 30, "w": 285, "base": H - 340}),
          "legenda_y": leg.get("y", 1190), "legenda_tam": leg.get("tamanho", 56),
          "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16),

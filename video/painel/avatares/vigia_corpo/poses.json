@@ -1,0 +1,230 @@
+{
+ "poses": {
+  "neutro_maos_atras": {
+   "w": 144,
+   "h": 347,
+   "topo": 7,
+   "pe_y": 339,
+   "centro_x": 74.0,
+   "altura_ref": 332.0
+  },
+  "explicando": {
+   "w": 149,
+   "h": 347,
+   "topo": 7,
+   "pe_y": 339,
+   "centro_x": 81.0,
+   "altura_ref": 332.0
+  },
+  "neutro_mao_bolso": {
+   "w": 144,
+   "h": 347,
+   "topo": 7,
+   "pe_y": 339,
+   "centro_x": 73.0,
+   "altura_ref": 332.0
+  },
+  "inclinado_convidando": {
+   "w": 166,
+   "h": 338,
+   "topo": 7,
+   "pe_y": 330,
+   "centro_x": 87.0,
+   "altura_ref": 332.0
+  },
+  "bracos_abertos_ceu": {
+   "w": 233,
+   "h": 346,
+   "topo": 7,
+   "pe_y": 338,
+   "centro_x": 120.0,
+   "altura_ref": 332.0
+  },
+  "explica_mao_aberta": {
+   "w": 171,
+   "h": 348,
+   "topo": 7,
+   "pe_y": 340,
+   "centro_x": 107.0,
+   "altura_ref": 332.0
+  },
+  "gesticulando": {
+   "w": 165,
+   "h": 350,
+   "topo": 7,
+   "pe_y": 342,
+   "centro_x": 74.0,
+   "altura_ref": 332.0
+  },
+  "explica_duas_maos": {
+   "w": 177,
+   "h": 348,
+   "topo": 7,
+   "pe_y": 340,
+   "centro_x": 84.0,
+   "altura_ref": 332.0
+  },
+  "mao_na_cintura": {
+   "w": 152,
+   "h": 348,
+   "topo": 7,
+   "pe_y": 340,
+   "centro_x": 78.0,
+   "altura_ref": 332.0
+  },
+  "bracos_cruzados_lado": {
+   "w": 147,
+   "h": 349,
+   "topo": 7,
+   "pe_y": 341,
+   "centro_x": 74.0,
+   "altura_ref": 332.0
+  },
+  "maos_juntas_sorriso": {
+   "w": 146,
+   "h": 350,
+   "topo": 7,
+   "pe_y": 342,
+   "centro_x": 73.0,
+   "altura_ref": 332.0
+  },
+  "sussurrando": {
+   "w": 160,
+   "h": 336,
+   "topo": 7,
+   "pe_y": 328,
+   "centro_x": 76.0,
+   "altura_ref": 332.0
+  },
+  "dedo_levantado": {
+   "w": 148,
+   "h": 347,
+   "topo": 7,
+   "pe_y": 339,
+   "centro_x": 74.0,
+   "altura_ref": 332.0
+  },
+  "pensativo": {
+   "w": 140,
+   "h": 348,
+   "topo": 7,
+   "pe_y": 339,
+   "centro_x": 73.0,
+   "altura_ref": 332.0
+  },
+  "dar_de_ombros": {
+   "w": 230,
+   "h": 346,
+   "topo": 8,
+   "pe_y": 338,
+   "centro_x": 112.0,
+   "altura_ref": 332.0
+  },
+  "neutro_frontal": {
+   "w": 148,
+   "h": 348,
+   "topo": 7,
+   "pe_y": 340,
+   "centro_x": 74.0,
+   "altura_ref": 332.0
+  },
+  "susto_recuando": {
+   "w": 251,
+   "h": 438,
+   "topo": 8,
+   "pe_y": 430,
+   "centro_x": 137.0,
+   "altura_ref": 442.0
+  },
+  "medo_mao_no_peito": {
+   "w": 194,
+   "h": 455,
+   "topo": 7,
+   "pe_y": 447,
+   "centro_x": 98.0,
+   "altura_ref": 442.0
+  },
+  "desconfiado": {
+   "w": 184,
+   "h": 456,
+   "topo": 7,
+   "pe_y": 448,
+   "centro_x": 85.0,
+   "altura_ref": 442.0
+  },
+  "pare_assustado": {
+   "w": 224,
+   "h": 458,
+   "topo": 7,
+   "pe_y": 450,
+   "centro_x": 115.0,
+   "altura_ref": 442.0
+  },
+  "apontando_publico": {
+   "w": 218,
+   "h": 459,
+   "topo": 7,
+   "pe_y": 451,
+   "centro_x": 125.0,
+   "altura_ref": 442.0
+  },
+  "bracos_abertos_sorriso": {
+   "w": 343,
+   "h": 460,
+   "topo": 8,
+   "pe_y": 452,
+   "centro_x": 179.0,
+   "altura_ref": 442.0
+  },
+  "silencio": {
+   "w": 181,
+   "h": 457,
+   "topo": 7,
+   "pe_y": 449,
+   "centro_x": 96.0,
+   "altura_ref": 442.0
+  },
+  "aterrorizado": {
+   "w": 224,
+   "h": 459,
+   "topo": 8,
+   "pe_y": 451,
+   "centro_x": 111.0,
+   "altura_ref": 442.0
+  },
+  "bracos_cruzados_cetico": {
+   "w": 193,
+   "h": 458,
+   "topo": 7,
+   "pe_y": 450,
+   "centro_x": 101.0,
+   "altura_ref": 442.0
+  },
+  "invocando": {
+   "w": 264,
+   "h": 456,
+   "topo": 8,
+   "pe_y": 448,
+   "centro_x": 145.0,
+   "altura_ref": 442.0
+  },
+  "plano_sinistro": {
+   "w": 188,
+   "h": 456,
+   "topo": 7,
+   "pe_y": 448,
+   "centro_x": 92.0,
+   "altura_ref": 442.0
+  },
+  "serio_frontal": {
+   "w": 188,
+   "h": 458,
+   "topo": 8,
+   "pe_y": 450,
+   "centro_x": 95.0,
+   "altura_ref": 442.0
+  }
+ },
+ "tipo": "corpo",
+ "altura_mediana": 334.5
+}

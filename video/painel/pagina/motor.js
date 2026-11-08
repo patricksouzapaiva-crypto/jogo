@@ -535,6 +535,55 @@ function vigiaCanto(t) {
   desenha(atual.pose, f, 1 + 0.07 * imp, -10 * imp);
 }
 
+// Vigia de corpo inteiro (ou do joelho para cima): pés/joelho apoiados na base do canto
+function vigiaCorpo(t) {
+  let i = -1; D.poses.forEach((p, k) => { if (p.t <= t) i = k; });
+  if (i < 0) return;
+  const C = D.canto, T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
+  const joelho = C.enquadramento === "joelho";
+  const f = easeOut(lin(t, atual.t, 0.12)), e = envVoz(t);
+  const cx = C.x + C.largura / 2;
+  const halo = ctx.createRadialGradient(cx, C.base - C.altura * 0.6, 20, cx, C.base - C.altura * 0.6, C.altura * 0.6);
+  halo.addColorStop(0, alpha(T.halo, 0.26 + 0.1 * e)); halo.addColorStop(1, alpha(T.halo, 0));
+  ctx.fillStyle = halo; ctx.fillRect(cx - C.altura, C.base - C.altura * 1.3, C.altura * 2, C.altura * 1.4);
+  if (!joelho) { // sombra no chão
+    const sg = ctx.createRadialGradient(cx, C.base, 5, cx, C.base, C.largura * 0.7);
+    sg.addColorStop(0, "rgba(0,0,0,.6)"); sg.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.save(); ctx.translate(cx, C.base); ctx.scale(1, 0.18); ctx.translate(-cx, -C.base);
+    ctx.fillStyle = sg; ctx.fillRect(cx - C.largura, C.base - C.largura, C.largura * 2, C.largura * 2); ctx.restore();
+  }
+  const desenha = (nome, a, pop, dx) => {
+    const im = IMG["pose:" + nome], m = D.avatar.poses[nome];
+    if (!im || !m) return;
+    const corpo = joelho ? C.altura / 0.74 : C.altura;          // no joelho, o corpo "inteiro" seria maior
+    const s = corpo / m.altura_ref * pop * (1 + 0.012 * e) * (1 + 0.004 * Math.sin(t * 1.9));
+    const w = im.width * s, h = im.height * s;
+    MASCARA.width = Math.ceil(w) + 40; MASCARA.height = Math.ceil(h) + 40;
+    const g = MASCARA.getContext("2d");
+    g.clearRect(0, 0, MASCARA.width, MASCARA.height);
+    g.imageSmoothingQuality = "high";
+    g.filter = "brightness(1.3) contrast(1.1) saturate(1.08)";
+    g.shadowColor = alpha(T.contorno || "#a9d6c4", 0.55); g.shadowBlur = 12;
+    g.drawImage(im, 20, 20, w, h); g.filter = "none"; g.shadowBlur = 0;
+    let ancoraY = m.pe_y * s + 20;                                // pés
+    if (joelho) {
+      ancoraY = (m.topo + 0.74 * (m.pe_y - m.topo)) * s + 20;    // joelho
+      g.globalCompositeOperation = "destination-in";
+      const gr = g.createLinearGradient(0, ancoraY - 120, 0, ancoraY); gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = gr; g.fillRect(0, 0, MASCARA.width, MASCARA.height); g.globalCompositeOperation = "source-over";
+    }
+    const x = cx - (m.centro_x * s + 20) + dx, y = C.base - ancoraY;
+    ctx.save(); ctx.globalAlpha = a;
+    // balanço sutil em torno dos pés + inclinação ao falar
+    const ang = (Math.sin(t * 0.9) * 0.4 + Math.sin(t * 2.3) * 0.7 * e) * Math.PI / 180;
+    ctx.translate(x + m.centro_x * s + 20, C.base); ctx.rotate(ang); ctx.translate(-(x + m.centro_x * s + 20), -C.base);
+    ctx.drawImage(MASCARA, x, y); ctx.restore(); ctx.globalAlpha = 1;
+  };
+  if (ant && f < 1) desenha(ant.pose, 1 - f, 1, 0);
+  const imp = 1 - easeOut(lin(t, atual.t, 0.28));
+  desenha(atual.pose, f, 1 + 0.05 * imp, -8 * imp);
+}
+
 // Legendas: frases de até 2 linhas, branco quente, sombra discreta, poucas palavras em destaque
 function legendas(t) {
   const T = D.tema;
@@ -565,7 +614,7 @@ window.quadro = function (t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = "left";
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
-    cenas(t); legendas(t); vigiaCanto(t);
+    cenas(t); legendas(t); (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
     return;
