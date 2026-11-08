@@ -69,6 +69,18 @@ Daytime, cold grey light, the apartment hallway seen from the entrance door, a p
 ```
 Night, close-up of a laptop screen glowing in a dark room, an old-style internet forum page with many replies (all text blurred and unreadable), Rafael's tired face partially lit by the screen at the edge of the frame. No readable text.
 ```
+**R5 — A casa da avó (memória, tons quentes e desbotados)**
+```
+Memory scene, faded warm sepia tones: an old countryside Brazilian house at night, a long wooden-floor hallway lit by a single bulb, a 7-year-old boy (young Rafael) running down the hallway looking scared over his shoulder; at the end, an old grandmother in a simple dress stands in a doorway. Nostalgic and eerie. No text.
+```
+**R6 — O microfone no corredor**
+```
+Night, the dark apartment hallway, a professional studio microphone on a stand placed in the middle of the floor, a red recording light on a small audio recorder; in the foreground, Rafael's hands and headphones next to a laptop showing an audio waveform. No readable text.
+```
+**R7 — O irmão no corredor**
+```
+Daytime, the apartment hallway with all furniture pushed against the walls and small mirrors in the corners, lights on. LUCAS (Rafael's younger brother, 30, short hair, casual jacket) stands in the middle of the hallway rubbing the back of his neck with a puzzled, uneasy face; Rafael at the far door, tired and tense, watching him. No text.
+```
 **V — Cenário do Vigia:** reaproveitar a cabana do Ep. 02.
 
 ## Conferência (eu faço quando chegar)

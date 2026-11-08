@@ -1,7 +1,7 @@
 # O Vigia — Ep. 03 (vídeo longo): "Mais perto."
 
-**Duração estimada:** 10–11 min · **Narração:** ~1.500 palavras · **Formato:** 16:9
-**Imagens:** H1–H9 (criatura escondida, cada vez mais perto), R1–R4 (apoio), V (cenário do Vigia),
+**Duração estimada:** ~10 min · **Narração:** ~1.400 palavras · **Formato:** 16:9
+**Imagens:** H1–H9 (criatura escondida, cada vez mais perto), R1–R7 (apoio), V (cenário do Vigia),
 P = tela preta com texto (desenhada pelo motor).
 
 Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨silêncio⟩ = pausa longa.
@@ -36,6 +36,11 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[P]** Nada além disso.
 **[H1]** O Rafael tinha trinta e quatro anos. Técnico de som. Morava sozinho num apartamento antigo, no terceiro andar, no fim de uma rua tranquila.
 **[H1]** E desde criança ele sentia aquilo.
+**[R5]** A primeira vez foi na casa da avó, no interior. Um corredor comprido, de assoalho que rangia, que ligava a cozinha aos quartos.
+**[R5]** Ele tinha uns sete anos. Atravessava aquele corredor correndo, toda noite, com a certeza de que alguém vinha atrás.
+**[R5]** Uma vez, ele contou pra avó. Ela não riu. Só segurou o rosto dele com as duas mãos e disse, muito séria:
+**[R5]** "Não procura, meu filho. Quem não procura… não acha."
+**[R5]** Ele nunca entendeu o que ela quis dizer. Até muitos anos depois.
 **[H2]** No começo, era raro. Uma noite ou outra, assistindo televisão, ele sentia o olhar de alguém na nuca.
 **[H3]** Mas foi no corredor que tudo começou de verdade.
 **[H3]** O apartamento tinha um corredor comprido, da sala até o quarto. E toda vez que ele passava por ali à noite, sentia alguém vindo atrás.
@@ -52,6 +57,11 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[H4]** E o pior não era sentir alguém atrás. O pior era sentir que, a cada noite, estava um pouco mais perto.
 **[P]** mais perto.
 **[H5]** Ele começou a ouvir coisas. Passos no corredor que paravam meio segundo depois dos dele. Uma respiração lenta, logo depois que ele apagava a luz.
+**[R6]** Como técnico de som, ele fez o que sabia fazer. Deixou um microfone profissional ligado no corredor a noite inteira.
+**[R6]** De manhã, colocou os fones e ouviu. Horas de silêncio. Os passos dele indo ao banheiro, às duas da manhã.
+**[R6]** E, logo depois de cada passo dele… outro passo. Mais leve. Meio segundo atrasado.
+**[R6]** Ele ouviu aquele trecho umas vinte vezes. Quando ele parava no corredor, os outros passos paravam também.
+**[R6]** Só que, na última vez, quando ele já tinha voltado pra cama… os passos continuaram. Devagar. Até a porta do quarto.
 **[H5]** Ele foi ao médico. Fez exames. Estava tudo normal.
 **[H5]** O médico receitou um remédio pra dormir e disse que era estresse. Cansaço.
 **[H5]** O remédio fazia ele dormir. Mas não fazia a sensação ir embora.
@@ -65,6 +75,11 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[H7]** Encostou todos os móveis nas paredes. Deixou as luzes acesas. Colocou espelhos nos cantos, pra ver o que vinha atrás.
 **[H7]** E passou a dormir sentado, de costas pra parede.
 **[H7]** Mas a sensação não ia embora. Só chegava mais perto.
+**[R7]** Num domingo, o irmão dele, o Lucas, apareceu sem avisar. Achou o apartamento estranho. Os móveis colados nas paredes, os espelhos, as luzes acesas em pleno dia.
+**[R7]** O Rafael tentou explicar. O Lucas riu, meio sem graça. Disse que ele precisava dormir, sair um pouco, ver gente.
+**[R7]** Na hora de ir embora, no meio do corredor, o Lucas parou. Passou a mão na nuca.
+**[R7]** "Nossa… que corrente de ar é essa aqui?"
+**[R7]** O Rafael não respondeu. Só abriu a porta. E esperou o irmão sair.
 **[R4]** Numa madrugada sem dormir, ele escreveu num fórum na internet. Perguntou se mais alguém sentia aquilo. Alguém andando atrás, cada noite mais perto.
 **[R4]** Em poucas horas, vieram dezenas de respostas. Gente do Brasil inteiro. De outros países. Todo mundo descrevendo a mesma coisa.
 **[R4]** Uma resposta chamou a atenção dele. Um usuário que assinava só com as iniciais. Ele dizia que tinha encontrado um jeito de provar. Que ia tirar fotos da casa toda noite e comparar.
@@ -95,6 +110,8 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[R2]** Quando terminou, entendeu a coisa mais assustadora de todas.
 **[R2]** Aquilo nunca tinha sido uma sensação.
 **[R2]** Era alguém. Sempre foi.
+**[R2]** E só então ele lembrou da avó. "Quem não procura, não acha."
+**[R2]** Ele tinha procurado.
 
 ### ATO 3 — Ela sabe
 **[P]** Três e quarenta da manhã.
