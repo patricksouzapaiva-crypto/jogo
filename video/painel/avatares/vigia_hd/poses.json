@@ -1,0 +1,14 @@
+{
+ "tipo": "busto",
+ "poses": {
+  "e_pare": {
+   "w": 880,
+   "h": 1532,
+   "topo": 12,
+   "centro_x": 452.5,
+   "largura_cabeca": 426.0,
+   "grupo": "enfase"
+  }
+ },
+ "largura_cabeca_mediana": 426.0
+}
