@@ -434,9 +434,76 @@ function cenaAtual(t) {
   return i;
 }
 
+// relógio digital desenhado (7 segmentos), ex.: "03:12"
+function relogioDigital(c, t, a) {
+  const { W, H } = D, txt = c.hora || "03:12";
+  const z = 1 + 0.06 * easeInOut(lin(t, c.t0, Math.max(1, c.t1 - c.t0)));
+  ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#020303"; ctx.fillRect(0, 0, W, H);
+  ctx.translate(W / 2, H / 2); ctx.scale(z, z);
+  const dh = Math.min(W, H) * 0.26, dw = dh * 0.52, esp = dw * 0.32, lw = dh * 0.11;
+  const cor = c.cor || "#ff2a1f", pisca = (Math.floor((t - c.t0) * 1) % 2 === 0) ? 1 : 0.25;
+  const SEG = { "0": "abcdef", "1": "bc", "2": "abged", "3": "abgcd", "4": "fgbc", "5": "afgcd", "6": "afgedc", "7": "abc", "8": "abcdefg", "9": "abfgcd" };
+  let total = 0; for (const ch of txt) total += ch === ":" ? esp * 1.2 : dw + esp; total -= esp;
+  let x = -total / 2;
+  const seg = (x0, y0, x1, y1) => { ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); };
+  ctx.lineCap = "round"; ctx.lineWidth = lw; ctx.shadowColor = cor; ctx.shadowBlur = lw * 2.2;
+  for (const ch of txt) {
+    if (ch === ":") {
+      ctx.fillStyle = alpha(cor, pisca); ctx.beginPath(); ctx.arc(x + esp * 0.6, -dh * 0.2, lw * 0.55, 0, 6.29); ctx.arc(x + esp * 0.6, dh * 0.2, lw * 0.55, 0, 6.29); ctx.fill();
+      x += esp * 1.2; continue;
+    }
+    const on = SEG[ch] || "";
+    const L = x, R = x + dw, T0 = -dh / 2, M = 0, B = dh / 2, g = lw * 0.6;
+    const P = { a: [L + g, T0, R - g, T0], b: [R, T0 + g, R, M - g], c: [R, M + g, R, B - g], d: [L + g, B, R - g, B], e: [L, M + g, L, B - g], f: [L, T0 + g, L, M - g], g: [L + g, M, R - g, M] };
+    for (const k of "abcdefg") { ctx.strokeStyle = on.includes(k) ? cor : "rgba(255,40,30,0.06)"; seg(...P[k]); }
+    x += dw + esp;
+  }
+  ctx.restore();
+  // reflexo na mesa
+  const r = ctx.createLinearGradient(0, H * 0.72, 0, H); r.addColorStop(0, alpha(c.cor || "#ff2a1f", 0.06 * a)); r.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = r; ctx.fillRect(0, H * 0.72, W, H * 0.28);
+}
+
+// interface de câmera de segurança (REC, CAM, horário correndo, linhas)
+function interfaceCCTV(c, t) {
+  const { W, H } = D, k = c.cctv, u = Math.min(W, H) / 1080;
+  ctx.save();
+  ctx.globalAlpha = 0.10; ctx.fillStyle = "#000";
+  for (let y = (t * 40) % 4; y < H; y += 4) ctx.fillRect(0, y, W, 1.5);
+  ctx.globalAlpha = 1;
+  const seg0 = (k.inicio || "02:48:00").split(":").map(Number), base = seg0[0] * 3600 + seg0[1] * 60 + (seg0[2] || 0);
+  const s = Math.floor(base + (t - c.t0) * (k.velocidade || 1)), hh = String(Math.floor(s / 3600) % 24).padStart(2, "0"),
+    mm = String(Math.floor(s / 60) % 60).padStart(2, "0"), ss = String(s % 60).padStart(2, "0");
+  ctx.font = `700 ${Math.round(40 * u)}px "DejaVu Sans Mono", monospace`; ctx.fillStyle = "rgba(235,245,235,.9)";
+  ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 6;
+  ctx.textAlign = "right"; ctx.fillText(`${k.data || "14/03"}  ${hh}:${mm}:${ss}`, W - 60 * u, H - 60 * u);
+  ctx.textAlign = "left"; ctx.fillText(k.cam || "CAM 01", 60 * u, H - 60 * u);
+  if (Math.floor(t * 1.4) % 2 === 0) { ctx.fillStyle = "#ff2b2b"; ctx.beginPath(); ctx.arc(78 * u, 78 * u, 14 * u, 0, 6.29); ctx.fill(); }
+  ctx.fillStyle = "rgba(235,245,235,.9)"; ctx.fillText("REC", 104 * u, 92 * u);
+  if (k.velocidade && k.velocidade > 1.5) { ctx.textAlign = "right"; ctx.fillText(`▶▶ x${k.velocidade}`, W - 60 * u, 92 * u); }
+  // cantos de visor
+  ctx.strokeStyle = "rgba(235,245,235,.55)"; ctx.lineWidth = 3 * u; const m = 40 * u, L = 70 * u;
+  for (const [x, y, sx, sy] of [[m, m, 1, 1], [W - m, m, -1, 1], [m, H - m, 1, -1], [W - m, H - m, -1, -1]]) { ctx.beginPath(); ctx.moveTo(x, y + sy * L); ctx.lineTo(x, y); ctx.lineTo(x + sx * L, y); ctx.stroke(); }
+  ctx.restore();
+}
+
 function desenharCena(c, t, a = 1) {
+  if (c.tipo === "relogio") return relogioDigital(c, t, a);
   const im = IMG["img:" + c.imagem];
   if (!im) return;
+  const ra = im.width / im.height, rt = D.W / D.H;
+  if (c.encaixe === "conter" || (c.encaixe !== "cobrir" && (ra / rt < 0.7 || ra / rt > 1.45))) {
+    // formato muito diferente do vídeo: fundo desfocado + imagem inteira no centro
+    ctx.save(); ctx.globalAlpha = a; ctx.filter = "blur(28px) brightness(0.45)";
+    const sb = Math.max(D.W / im.width, D.H / im.height) * 1.1;
+    ctx.drawImage(im, (D.W - im.width * sb) / 2, (D.H - im.height * sb) / 2, im.width * sb, im.height * sb);
+    ctx.filter = "none";
+    const z = (c.zoom ? c.zoom[0] + (c.zoom[1] - c.zoom[0]) * easeInOut(lin(t, c.t0, Math.max(0.5, c.t1 - c.t0))) : 1);
+    const sc = Math.min(D.W / im.width, D.H / im.height) * z, w = im.width * sc, h = im.height * sc;
+    ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 50;
+    ctx.drawImage(im, (D.W - w) / 2, (D.H - h) / 2, w, h); ctx.restore();
+    return;
+  }
   const dur = Math.max(0.5, c.t1 - c.t0), e = (c.curva === "rapida" ? easeOut : easeInOut)(lin(t, c.t0, c.curva === "rapida" ? Math.min(dur, c.duracao_zoom || 1.2) : dur));
   const [z0, z1] = c.zoom || [1.0, 1.04];
   const [f0, f1] = c.foco || [[0.5, 0.5], [0.5, 0.5]];
@@ -447,7 +514,9 @@ function desenharCena(c, t, a = 1) {
   ox = Math.min(0, Math.max(D.W - iw, ox)); oy = Math.min(0, Math.max(D.H - ih, oy));
   // tremor sutil (impacto)
   if (c.tremor && t - c.t0 < 0.5) { const k = (1 - (t - c.t0) / 0.5) * c.tremor; ox += Math.sin(t * 90) * k; oy += Math.cos(t * 77) * k; }
-  ctx.globalAlpha = a; ctx.drawImage(im, ox, oy, iw, ih); ctx.globalAlpha = 1;
+  ctx.globalAlpha = a;
+  if (c.desaturar) ctx.filter = "saturate(0.25) sepia(0.25) brightness(1.06)";   // lembrança / reinterpretação
+  ctx.drawImage(im, ox, oy, iw, ih); ctx.filter = "none"; ctx.globalAlpha = 1;
 }
 
 function cenas(t) {
@@ -491,6 +560,7 @@ function cenas(t) {
   const r = rng(Math.floor(t * D.fps) + 1), dx = -Math.floor(r() * 512), dy = -Math.floor(r() * 512);
   for (let x = dx; x < W; x += 512) for (let y = dy; y < H; y += 512) ctx.drawImage(GRAO, x, y);
   ctx.restore();
+  if (c.cctv) interfaceCCTV(c, t);
   // escurecimento pontual (pausa / queda)
   for (const q of D.escuros || []) {
     if (t >= q.t0 && t <= q.t1) { const a = Math.min(lin(t, q.t0, 0.3), 1 - lin(t, q.t1 - 0.3, 0.3)) * q.forca; ctx.fillStyle = `rgba(0,0,0,${a})`; ctx.fillRect(0, 0, W, H); }
@@ -506,7 +576,8 @@ function envVoz(t) {
 function vigiaCanto(t) {
   let i = -1; D.poses.forEach((p, k) => { if (p.t <= t) i = k; });
   if (i < 0) return;
-  const C = D.canto, T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
+  const ci = cenaAtual(t), destaque = ci >= 0 && D.cenas[ci].vigia;
+  const C = destaque ? D.canto_destaque : D.canto, T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
   const f = easeOut(lin(t, atual.t, 0.12)), e = envVoz(t);
   const alvo = C.w * 0.55;                       // largura da cabeça na tela
   const cx = C.x + C.w / 2, topoCabeca = C.base - 2.45 * alvo;
@@ -604,7 +675,8 @@ function legendas(t) {
     L.linhas.forEach((linha, k) => {
       const pal = linha.split(" ");
       const larg = ctx.measureText(linha).width;
-      let x = D.W / 2 - larg / 2;
+      const ciL = cenaAtual(t), cxL = (ciL >= 0 && D.cenas[ciL].vigia && D.W > D.H) ? D.W * 0.64 : D.W / 2;
+      let x = cxL - larg / 2;
       for (const p of pal) {
         const dest = L.destaques.includes(norm(p));
         ctx.globalAlpha = a; ctx.shadowColor = "rgba(0,0,0,.85)"; ctx.shadowBlur = 14; ctx.shadowOffsetY = 3;
@@ -684,7 +756,8 @@ window.quadro = function (t) {
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
     cenas(t);
-    if (!(D.abertura_fim && t < D.abertura_fim)) {
+    const J = D.abertura_janela || (D.abertura_fim ? [0, D.abertura_fim] : null);
+    if (!(J && t >= J[0] && t < J[1])) {
       if (!(D.cta && t >= D.cta.t0)) legendas(t);
       chamadaYouTube(t);
       (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);

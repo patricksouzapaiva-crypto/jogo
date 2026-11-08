@@ -1,0 +1,1794 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_meio",
+ "voz": {
+  "modelo": "gemini-3.8-flash-tts",
+  "nome": "Algenib",
+  "so_texto": true
+ },
+ "voz_max_chars": 1400,
+ "pausas": {
+  "ponto": 0.75,
+  "reticencias": 1.0,
+  "virgula": 0.32,
+  "comum": 0.14
+ },
+ "cauda": 1.4,
+ "chuva": 0,
+ "grao": 0.14,
+ "legendas": {
+  "destaques": [
+   "sonâmbula",
+   "faca",
+   "facas",
+   "vigia",
+   "câmera"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "casa_noite",
+   "volume_db": -3
+  }
+ ],
+ "musica": {
+  "som": "drone_terror",
+  "volume_db": -15
+ },
+ "abertura": {
+  "imagem": "imagens/A1.png",
+  "duracao": 2.8,
+  "antes_da_batida": 8,
+  "zoom": [
+   1.04,
+   1.0
+  ]
+ },
+ "cta": {
+  "titulo": "Gostou dessa história?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "pose": "e_apontando",
+  "duracao": 3.6
+ },
+ "batidas": [
+  {
+   "fala": "Três e doze da manhã.",
+   "cena": {
+    "tipo": "relogio",
+    "hora": "03:12"
+   },
+   "sons": [
+    {
+     "em": "Três",
+     "som": "impacto",
+     "volume_db": -20,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "Marcos abriu os olhos sem saber por quê.",
+   "cena": {
+    "imagem": "imagens/I01.png",
+    "zoom": [
+     1.45,
+     1.5
+    ],
+    "foco": [
+     [
+      0.2,
+      0.75
+     ],
+     [
+      0.22,
+      0.72
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você."
+  },
+  {
+   "fala": "Virou a cabeça devagar.",
+   "cena": {
+    "imagem": "imagens/I01.png",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Helena estava de pé, ao lado da cama. Parada. Os olhos abertos, fixos nele.",
+   "cena": {
+    "imagem": "imagens/I01.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ],
+    "em": "Helena"
+   },
+   "sons": [
+    {
+     "em": "Helena",
+     "som": "impacto",
+     "volume_db": -14,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "Ela não piscava.",
+   "cena": {
+    "imagem": "imagens/I02.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E então, num sussurro que ele nunca tinha ouvido sair da boca da esposa, ela disse:",
+   "cena": {
+    "imagem": "imagens/I02.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.62
+     ],
+     [
+      0.5,
+      0.64
+     ]
+    ],
+    "em": "sussurro"
+   }
+  },
+  {
+   "fala": "— Você não devia estar acordado.",
+   "queda": {
+    "forca": 0.7,
+    "mais": 0.4
+   }
+  },
+  {
+   "fala": "Boa noite. Seja bem-vindo de volta ao Último Abrigo.",
+   "pausa_antes_s": 3.2,
+   "cena": {
+    "imagem": "imagens/V1.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ],
+    "vigia": true
+   },
+   "enfase": [
+    {
+     "em": "Boa",
+     "pose": "s_convidando",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Hoje eu vou te contar a história de um homem que tinha medo de dormir ao lado da própria esposa."
+  },
+  {
+   "fala": "Apaga a luz… e fica comigo.",
+   "enfase": [
+    {
+     "em": "Apaga",
+     "pose": "s_silencio",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "Marcos e Helena estavam casados havia seis anos. Uma casa pequena, no fim de uma rua sem saída. Uma vida tranquila.",
+   "cena": {
+    "imagem": "imagens/I03.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.55,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -14
+   },
+   "ambiente": {
+    "som": "casa_noite",
+    "volume_db": -3
+   }
+  },
+  {
+   "fala": "Desde o começo, ele sabia: Helena era sonâmbula.",
+   "cena": {
+    "imagem": "imagens/I04.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Nada grave. Às vezes ele acordava e encontrava a esposa dobrando roupas que já estavam dobradas.",
+   "cena": {
+    "imagem": "imagens/I04.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.45,
+      0.35
+     ]
+    ],
+    "em": "dobrando"
+   }
+  },
+  {
+   "fala": "Outras vezes ela estava na cozinha, abrindo e fechando a geladeira, como se procurasse alguma coisa que nunca encontrava.",
+   "cena": {
+    "imagem": "imagens/I06.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma vez, ele a achou no jardim, regando as plantas às duas da manhã… debaixo de chuva.",
+   "cena": {
+    "imagem": "imagens/I05.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.48,
+      0.45
+     ]
+    ]
+   },
+   "ambiente": {
+    "em": "jardim",
+    "som": "chuva_externa",
+    "volume_db": -6
+   }
+  },
+  {
+   "fala": "Ele sempre fazia a mesma coisa. Segurava a mão dela com cuidado, sem acordá-la, e levava de volta pra cama.",
+   "cena": {
+    "imagem": "imagens/I08.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   },
+   "ambiente": {
+    "som": "casa_noite",
+    "volume_db": -3
+   }
+  },
+  {
+   "fala": "De manhã, ela não lembrava de nada. Os dois riam. Virou piada de família.",
+   "cena": {
+    "imagem": "imagens/I09.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas, nos últimos meses, Marcos andava estranho. Acordava cansado, como se não tivesse dormido. Os pés sujos de terra. E um corte pequeno na mão… que ele não fazia ideia de onde tinha vindo.",
+   "cena": {
+    "imagem": "imagens/I10.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.35,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Helena também parecia diferente. Olheiras fundas. Os olhos vermelhos.",
+   "cena": {
+    "imagem": "imagens/I11.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O que era curioso… pra alguém que, segundo ele, dormia a noite inteira.",
+   "cena": {
+    "imagem": "imagens/I11.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.38
+     ],
+     [
+      0.5,
+      0.36
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma vez, ele sugeriu que ela procurasse um médico. Helena largou o café na mesa e respondeu, sem olhar pra ele: — Quem precisa de médico aqui não sou eu.",
+   "cena": {
+    "imagem": "imagens/I09.png",
+    "zoom": [
+     1.25,
+     1.35
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.62,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Guarde esse detalhe. Ele vai importar.",
+   "cena": {
+    "imagem": "imagens/V1.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ],
+    "vigia": true
+   },
+   "enfase": [
+    {
+     "em": "Guarde",
+     "pose": "c_dedo_explicando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Foi numa quinta-feira. Marcos acordou com um barulho baixo. Um rangido.",
+   "cena": {
+    "tipo": "relogio",
+    "hora": "02:47"
+   },
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -15
+   }
+  },
+  {
+   "fala": "A cama do lado dele estava vazia."
+  },
+  {
+   "fala": "Ele se levantou e foi até o corredor. A luz da cozinha estava apagada, mas a porta da geladeira estava aberta, e a luzinha dela desenhava uma silhueta no chão.",
+   "cena": {
+    "imagem": "imagens/I06.png",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ]
+   },
+   "ambiente": {
+    "em": "corredor",
+    "som": "geladeira",
+    "volume_db": -6
+   }
+  },
+  {
+   "fala": "Helena estava ali. De costas. Imóvel.",
+   "cena": {
+    "imagem": "imagens/I06.png",
+    "zoom": [
+     1.2,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ele chamou baixinho: — Lena?"
+  },
+  {
+   "fala": "Ela não se mexeu. Mas a cabeça dela… a cabeça girou devagar na direção dele.",
+   "cena": {
+    "imagem": "imagens/I07.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "em": "cabeça"
+   }
+  },
+  {
+   "fala": "Os olhos estavam abertos. E ela sorria. Um sorriso que não chegava aos olhos.",
+   "cena": {
+    "imagem": "imagens/I07.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.42
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "em": "sorria"
+   },
+   "sons": [
+    {
+     "em": "sorria",
+     "som": "impacto",
+     "volume_db": -15,
+     "grave": true
+    }
+   ],
+   "enfase": [
+    {
+     "em": "sorria",
+     "pose": "e_medo_gola"
+    }
+   ]
+  },
+  {
+   "fala": "Ele a levou de volta pra cama, como sempre. Mas, naquela noite, Marcos não conseguiu dormir de novo.",
+   "cena": {
+    "imagem": "imagens/I14.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.48
+     ]
+    ]
+   },
+   "ambiente": {
+    "som": "casa_noite",
+    "volume_db": -3
+   }
+  },
+  {
+   "fala": "E, quando o dia clareou, ele percebeu uma coisa: a porta do quarto… estava trancada. Por fora.",
+   "cena": {
+    "imagem": "imagens/I12.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "trancada",
+     "som": "porta_tranca",
+     "volume_db": -4
+    }
+   ],
+   "enfase": [
+    {
+     "em": "trancada",
+     "pose": "e_maos_na_boca"
+    }
+   ]
+  },
+  {
+   "fala": "Depois daquela quinta-feira, as noites mudaram.",
+   "cena": {
+    "imagem": "imagens/I03.png",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.58,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Helena já não dobrava roupas, nem regava plantas. Ela só ficava ali. De pé, ao lado da cama. Olhando pra ele.",
+   "cena": {
+    "imagem": "imagens/I13.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Às vezes por minutos. Às vezes por horas.",
+   "cena": {
+    "imagem": "imagens/I13.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.55,
+      0.48
+     ],
+     [
+      0.62,
+      0.38
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Em algumas noites, ela sussurrava o nome dele. Marcos. Marcos. Marcos. Não como quem chama… como quem confere se ele ainda está ali.",
+   "cena": {
+    "imagem": "imagens/I02.png",
+    "zoom": [
+     1.05,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "sussurrava",
+     "pose": "s_sussurro"
+    }
+   ]
+  },
+  {
+   "fala": "Marcos fingia que dormia. Com o coração disparado. Sentindo o olhar dela no rosto.",
+   "cena": {
+    "imagem": "imagens/I14.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.48
+     ]
+    ]
+   },
+   "ambiente": {
+    "em": "coração",
+    "som": "batimento",
+    "volume_db": -6
+   }
+  },
+  {
+   "fala": "Uma noite, ele contou. Três horas e quarenta minutos sem ela sair do lugar. E, quando o despertador tocou, ela já estava deitada, de costas pra ele, como se nunca tivesse levantado.",
+   "cena": {
+    "imagem": "imagens/I13.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "ambiente": {
+    "em": "despertador",
+    "som": "casa_noite",
+    "volume_db": -3
+   }
+  },
+  {
+   "fala": "Um dia, ele abriu a gaveta de talheres. As facas tinham sumido. Todas.",
+   "cena": {
+    "imagem": "imagens/I15.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ele encontrou uma embaixo do colchão dela. Outra dentro de uma bota no armário. Outra enrolada numa toalha, no fundo do guarda-roupa.",
+   "cena": {
+    "imagem": "imagens/I15.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "em": "bota"
+   },
+   "enfase": [
+    {
+     "em": "bota",
+     "pose": "e_bracos_cruzados_cetico"
+    }
+   ]
+  },
+  {
+   "fala": "Ele colocou todas de volta na gaveta. Na manhã seguinte… tinham sumido de novo."
+  },
+  {
+   "fala": "Agora me diz… se você encontrasse facas escondidas pela sua casa… dormiria tranquilo?",
+   "cena": {
+    "imagem": "imagens/V1.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ],
+    "vigia": true
+   },
+   "enfase": [
+    {
+     "em": "Agora",
+     "pose": "e_sussurro_malicioso",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "Na semana seguinte, ele acordou com um cheiro forte. Correu até a cozinha. As quatro bocas do fogão estavam abertas. O gás vazando. E Helena… sentada à mesa, olhando pra ele.",
+   "cena": {
+    "imagem": "imagens/I16.png",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.32,
+      0.62
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "gás",
+     "som": "gas_vazando",
+     "volume_db": -6
+    }
+   ],
+   "enfase": [
+    {
+     "em": "cheiro",
+     "pose": "e_recuo_maos"
+    }
+   ]
+  },
+  {
+   "fala": "Quando ele perguntou o que tinha acontecido, ela só respondeu, com a voz trêmula:",
+   "cena": {
+    "imagem": "imagens/I16.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "— Eu não sei, Marcos. Eu juro que não sei.",
+   "cena": {
+    "imagem": "imagens/I16.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.65,
+      0.4
+     ],
+     [
+      0.66,
+      0.38
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas ela tremia. E, quando ele tentou abraçá-la, ela recuou. Como se tivesse medo dele."
+  },
+  {
+   "fala": "Naquela tarde, Marcos ligou pra mãe da Helena. Perguntou, meio sem jeito, se ela sempre tinha sido sonâmbula.",
+   "cena": {
+    "imagem": "imagens/I17.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Houve um silêncio do outro lado da linha. E a sogra respondeu: — Sonâmbula? A Helena nunca foi sonâmbula, Marcos. Ela sempre dormiu feito pedra.",
+   "cena": {
+    "imagem": "imagens/I17.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.38
+     ],
+     [
+      0.5,
+      0.36
+     ]
+    ],
+    "em": "Sonâmbula"
+   },
+   "enfase": [
+    {
+     "em": "nunca",
+     "pose": "e_indignado"
+    }
+   ]
+  },
+  {
+   "fala": "Naquela noite, ele tomou uma decisão. Comprou uma câmera pequena, com visão noturna, e escondeu na estante, apontada pra cama.",
+   "cena": {
+    "imagem": "imagens/I18.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Se a esposa fazia alguma coisa enquanto dormia… ele ia ver com os próprios olhos.",
+   "cena": {
+    "imagem": "imagens/I18.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.4,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Na manhã seguinte, Marcos esperou Helena sair pro trabalho. Sentou no sofá, abriu o notebook e colocou a gravação pra rodar.",
+   "cena": {
+    "imagem": "imagens/I18.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "tom": "sombrio"
+  },
+  {
+   "fala": "Onze da noite. Os dois deitados. Nada.",
+   "cena": {
+    "imagem": "imagens/I19.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "23:00:00",
+     "velocidade": 40,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "ambiente": {
+    "som": "estatica_cctv",
+    "volume_db": -4
+   }
+  },
+  {
+   "fala": "Uma da manhã. Nada.",
+   "cena": {
+    "imagem": "imagens/I19.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "01:00:00",
+     "velocidade": 40,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Duas e cinquenta. Helena abre os olhos. Mas ela não se levanta. Fica olhando pro teto. Acordada. Esperando alguma coisa.",
+   "cena": {
+    "imagem": "imagens/I19.png",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.45,
+      0.45
+     ]
+    ],
+    "cctv": {
+     "inicio": "02:50:00",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Três e doze.",
+   "cena": {
+    "imagem": "imagens/I19.png",
+    "zoom": [
+     1.25,
+     1.3
+    ],
+    "foco": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.45,
+      0.45
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:12:00",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Alguém se senta na cama.",
+   "cena": {
+    "imagem": "imagens/I20.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:12:04",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "sons": [
+    {
+     "em": "Alguém",
+     "som": "impacto",
+     "volume_db": -18,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "Mas não é Helena."
+  },
+  {
+   "fala": "É ele.",
+   "cena": {
+    "imagem": "imagens/I20.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.38
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:12:09",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "queda": {
+    "forca": 0.8,
+    "mais": 0.6
+   },
+   "sons": [
+    {
+     "em": "ele",
+     "som": "impacto",
+     "volume_db": -8,
+     "grave": true
+    }
+   ],
+   "enfase": [
+    {
+     "em": "ele",
+     "pose": "e_aterrorizado_maos",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Marcos assistiu a si mesmo se levantar. Os olhos abertos. Vazios. Andando devagar até a porta do quarto.",
+   "cena": {
+    "imagem": "imagens/I20.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:12:15",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Ele sai. A câmera fica olhando pro quarto vazio. E pra Helena… que agora está sentada na cama, abraçando os joelhos, olhando pra porta.",
+   "cena": {
+    "imagem": "imagens/I21.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:13:02",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Dois minutos depois, ele volta. Segurando uma faca de cozinha.",
+   "cena": {
+    "imagem": "imagens/I22.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.45,
+      0.55
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:15:11",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "sons": [
+    {
+     "em": "faca",
+     "som": "impacto",
+     "volume_db": -10,
+     "grave": true
+    }
+   ],
+   "enfase": [
+    {
+     "em": "faca",
+     "pose": "e_maos_na_boca",
+     "segurar": 2.2
+    }
+   ],
+   "ambiente": {
+    "em": "faca",
+    "som": "batimento",
+    "volume_db": -5
+   }
+  },
+  {
+   "fala": "Ele para do lado dela. E fica ali. Parado. Olhando pra esposa.",
+   "cena": {
+    "imagem": "imagens/I22.png",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.42,
+      0.48
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:15:20",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Helena não se mexe. Fecha os olhos. Finge que dorme. Do mesmo jeito que ele fingia.",
+   "cena": {
+    "imagem": "imagens/I22.png",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.6,
+      0.55
+     ],
+     [
+      0.62,
+      0.55
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:15:41",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   }
+  },
+  {
+   "fala": "Um minuto inteiro. Depois ele larga a faca no chão… e volta a deitar, como se nada tivesse acontecido.",
+   "cena": {
+    "imagem": "imagens/I23.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:16:30",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "ambiente": {
+    "som": "estatica_cctv",
+    "volume_db": -4
+   }
+  },
+  {
+   "fala": "E então Marcos viu a esposa se levantar em silêncio. Pegar a faca. Esconder dentro de uma bota no armário. Trancar a porta do quarto… por fora, com ele lá dentro.",
+   "cena": {
+    "imagem": "imagens/I23.png",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.65,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:17:05",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "sons": [
+    {
+     "em": "Trancar",
+     "som": "porta_tranca",
+     "volume_db": -6
+    }
+   ]
+  },
+  {
+   "fala": "E sentar no corredor, do lado de fora, encostada na porta, até o sol nascer.",
+   "cena": {
+    "imagem": "imagens/I24.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   },
+   "ambiente": {
+    "som": "casa_noite",
+    "volume_db": -5
+   }
+  },
+  {
+   "fala": "Marcos fechou o notebook com as mãos tremendo.",
+   "cena": {
+    "imagem": "imagens/I25.png",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.25,
+      0.7
+     ],
+     [
+      0.25,
+      0.72
+     ]
+    ]
+   },
+   "tom": "sombrio"
+  },
+  {
+   "fala": "Foi quando ouviu a porta da sala. Helena estava ali. Não tinha ido trabalhar.",
+   "cena": {
+    "imagem": "imagens/I25.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ],
+    "em": "Helena"
+   }
+  },
+  {
+   "fala": "Ela olhou pro notebook. Depois pra ele. E disse, baixinho:",
+   "cena": {
+    "imagem": "imagens/I25.png",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.65,
+      0.35
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "— Agora você sabe por que eu não durmo.",
+   "cena": {
+    "imagem": "imagens/I25.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.66,
+      0.33
+     ],
+     [
+      0.66,
+      0.32
+     ]
+    ]
+   },
+   "queda": {
+    "forca": 0.6,
+    "mais": 0.8
+   }
+  },
+  {
+   "fala": "Helena nunca foi sonâmbula. Todas as noites em que Marcos a encontrou andando pela casa… ela estava acordada. Escondendo as facas. Fechando o gás. Esperando o marido voltar pra cama.",
+   "pausa_antes_s": 0.8,
+   "cena": {
+    "imagem": "imagens/I06.png",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "em": "Helena",
+    "desaturar": true
+   },
+   "cenas": [
+    {
+     "imagem": "imagens/I15.png",
+     "zoom": [
+      1.1,
+      1.15
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "Escondendo",
+     "desaturar": true
+    },
+    {
+     "imagem": "imagens/I16.png",
+     "zoom": [
+      1.1,
+      1.15
+     ],
+     "foco": [
+      [
+       0.35,
+       0.6
+      ],
+      [
+       0.35,
+       0.6
+      ]
+     ],
+     "em": "Fechando",
+     "desaturar": true
+    },
+    {
+     "imagem": "imagens/I24.png",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ],
+     "em": "Esperando",
+     "desaturar": true
+    }
+   ],
+   "tom": "sombrio"
+  },
+  {
+   "fala": "Todas aquelas noites… ela não estava observando o marido.",
+   "cena": {
+    "imagem": "imagens/I01.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ],
+    "desaturar": true
+   },
+   "tom": "sombrio"
+  },
+  {
+   "fala": "Ela estava de vigia.",
+   "cena": {
+    "imagem": "imagens/I02.png",
+    "zoom": [
+     1.1,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "desaturar": true
+   },
+   "enfase": [
+    {
+     "em": "vigia",
+     "pose": "s_encarando",
+     "segurar": 2.5
+    }
+   ],
+   "sons": [
+    {
+     "em": "vigia",
+     "som": "impacto",
+     "volume_db": -12,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "E o homem que tinha medo de dormir ao lado da esposa… nunca imaginou que o perigo daquela casa… era ele.",
+   "cena": {
+    "imagem": "imagens/I22.png",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "cctv": {
+     "inicio": "03:15:20",
+     "velocidade": 1,
+     "data": "14/03",
+     "cam": "CAM 01"
+    }
+   },
+   "tom": "sombrio"
+  },
+  {
+   "fala": "Agora me responde nos comentários: você tem certeza… do que faz enquanto dorme?",
+   "cena": {
+    "imagem": "imagens/V1.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ],
+    "vigia": true
+   },
+   "tom": "sombrio",
+   "enfase": [
+    {
+     "em": "Agora",
+     "pose": "e_apontando",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "Boa noite. E durma bem… se conseguir.",
+   "enfase": [
+    {
+     "em": "Boa",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 9
+    }
+   ]
+  }
+ ]
+}
