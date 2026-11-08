@@ -1,6 +1,6 @@
 # O Vigia — Ep. 02 (vídeo longo): "A Sonâmbula"
 
-**Duração estimada:** 11–12 min · **Narração:** ~1.650 palavras · **Formato:** 16:9 para YouTube
+**Duração estimada:** 9–10 min · **Narração:** ~1.150 palavras · **Formato:** 16:9 para YouTube
 (ou 9:16 se você preferir manter o padrão dos Shorts — decidir antes de gerar as imagens).
 
 **Ideia central:** Marcos acredita que a esposa, Helena, é sonâmbula. As "crises" dela começam a
@@ -54,6 +54,7 @@ Legenda: **[C00]** = número da cena/imagem · *(Vigia)* = momento do narrador e
 **[C15]** Mas, nos últimos meses, Marcos andava estranho. Acordava cansado, como se não tivesse dormido. Os pés sujos de terra. E um corte pequeno na mão… que ele não fazia ideia de onde tinha vindo.
 **[C16]** Helena também parecia diferente. Olheiras fundas. Os olhos vermelhos.
 **[C16]** O que era curioso… pra alguém que, segundo ele, dormia a noite inteira.
+**[C16]** Uma vez, ele sugeriu que ela procurasse um médico. Helena largou o café na mesa e respondeu, sem olhar pra ele: — Quem precisa de médico aqui não sou eu.
 *(Vigia)* **[V03]** Guarde esse detalhe. Ele vai importar.
 
 ### A NOITE QUE MUDOU TUDO (3:40–5:00)
@@ -67,22 +68,27 @@ Legenda: **[C00]** = número da cena/imagem · *(Vigia)* = momento do narrador e
 **[C24]** Ele a levou de volta pra cama, como sempre. Mas, naquela noite, Marcos não conseguiu dormir de novo.
 **[C25]** E, quando o dia clareou, ele percebeu uma coisa: a porta do quarto… estava trancada. Por fora.
 
-### ATO 2 — A escalada (5:00–8:30)
+### ATO 2 — A escalada (5:00–7:30)
 **[C26]** Depois daquela quinta-feira, as noites mudaram.
 **[C27]** Helena já não dobrava roupas, nem regava plantas. Ela só ficava ali. De pé, ao lado da cama. Olhando pra ele.
 **[C28]** Às vezes por minutos. Às vezes por horas.
+**[C28]** Em algumas noites, ela sussurrava o nome dele. Marcos. Marcos. Marcos. Não como quem chama… como quem confere se ele ainda está ali.
 **[C29]** Marcos fingia que dormia. Com o coração disparado. Sentindo o olhar dela no rosto.
+**[C29]** Uma noite, ele contou. Três horas e quarenta minutos sem ela sair do lugar. E, quando o despertador tocou, ela já estava deitada, de costas pra ele, como se nunca tivesse levantado.
 **[C30]** Um dia, ele abriu a gaveta de talheres. As facas tinham sumido. Todas.
 **[C31]** Ele encontrou uma embaixo do colchão dela. Outra dentro de uma bota no armário. Outra enrolada numa toalha, no fundo do guarda-roupa.
+**[C31]** Ele colocou todas de volta na gaveta. Na manhã seguinte… tinham sumido de novo.
 *(Vigia)* **[V04]** Agora me diz… se você encontrasse facas escondidas pela sua casa… dormiria tranquilo?
 **[C32]** Na semana seguinte, ele acordou com um cheiro forte. Correu até a cozinha. As quatro bocas do fogão estavam abertas. O gás vazando. E Helena… sentada à mesa, olhando pra ele.
 **[C33]** Quando ele perguntou o que tinha acontecido, ela só respondeu, com a voz trêmula:
 **[C33]** — Eu não sei, Marcos. Eu juro que não sei.
 **[C34]** Mas ela tremia. E, quando ele tentou abraçá-la, ela recuou. Como se tivesse medo dele.
+**[C34]** Naquela tarde, Marcos ligou pra mãe da Helena. Perguntou, meio sem jeito, se ela sempre tinha sido sonâmbula.
+**[C34]** Houve um silêncio do outro lado da linha. E a sogra respondeu: — Sonâmbula? A Helena nunca foi sonâmbula, Marcos. Ela sempre dormiu feito pedra.
 **[C35]** Naquela noite, ele tomou uma decisão. Comprou uma câmera pequena, com visão noturna, e escondeu na estante, apontada pra cama.
 **[C36]** Se a esposa fazia alguma coisa enquanto dormia… ele ia ver com os próprios olhos.
 
-### ATO 3 — A gravação (8:30–11:00)
+### ATO 3 — A gravação (7:30–9:00)
 **[C37]** Na manhã seguinte, Marcos esperou Helena sair pro trabalho. Sentou no sofá, abriu o notebook e colocou a gravação pra rodar.
 **[C38]** Onze da noite. Os dois deitados. Nada.
 **[C39]** Uma da manhã. Nada.
@@ -100,14 +106,15 @@ Legenda: **[C00]** = número da cena/imagem · *(Vigia)* = momento do narrador e
 **[C51]** E então Marcos viu a esposa se levantar em silêncio. Pegar a faca. Esconder dentro de uma bota no armário. Trancar a porta do quarto… por fora, com ele lá dentro.
 **[C52]** E sentar no corredor, do lado de fora, encostada na porta, até o sol nascer.
 
-### FINAL (11:00–11:40)
+### FINAL (9:00–9:20)
 **[C53]** Marcos fechou o notebook com as mãos tremendo.
 **[C54]** Foi quando ouviu a porta da sala. Helena estava ali. Não tinha ido trabalhar.
 **[C55]** Ela olhou pro notebook. Depois pra ele. E disse, baixinho:
 **[C55]** — Agora você sabe por que eu não durmo.
 
-### EPÍLOGO DO VIGIA (11:40–12:20)
-*(Vigia)* **[V05]** Todas aquelas noites… ela não estava observando o marido.
+### EPÍLOGO DO VIGIA (9:20–10:10)
+*(Vigia)* **[V05]** Helena nunca foi sonâmbula. Todas as noites em que Marcos a encontrou andando pela casa… ela estava acordada. Escondendo as facas. Fechando o gás. Esperando o marido voltar pra cama.
+**[V05]** Todas aquelas noites… ela não estava observando o marido.
 **[V06]** Ela estava de vigia.
 **[V07]** E o homem que tinha medo de dormir ao lado da esposa… nunca imaginou que o perigo daquela casa… era ele.
 **[V08]** Agora me responde nos comentários: você tem certeza… do que faz enquanto dorme?
