@@ -1,4 +1,4 @@
-# O Vigia — Ep. 03 (vídeo longo) — conceito (revisão 2)
+# O Vigia — Ep. 03 (vídeo longo) — conceito (revisão 3)
 
 **Ideia do usuário:** a sensação universal de que alguém está andando atrás de você dentro de casa,
 **chegando cada vez mais perto**. Não é só sensação: existe algo que segue cada pessoa. Um homem
@@ -20,14 +20,38 @@ descobriu, gravou… e desapareceu.
   mais de 230 por dia. A maioria é encontrada. Algumas pessoas, nunca. (Só a estatística geral,
   sem casos ou nomes reais.)
 
-## As regras da criatura
-1. Cada pessoa tem uma. Ela começa **longe** — no fim da rua, no fundo de um quarto escuro.
-2. **Ela só se move quando você não está olhando.** Cada vez que você sente o arrepio na nuca e se
-   vira, ela já parou — escondida na sombra, atrás de uma porta, num reflexo.
-3. A cada noite ela está **um pouco mais perto**. O arrepio é a distância diminuindo.
-4. A ciência chama de "sensação de presença". Rafael chama de **"a distância"**.
-5. **Quando ela chega**, a pessoa desaparece — de dentro de casa, porta trancada.
-6. Ela nunca é vista de frente. Até o fim.
+## As regras da criatura (revisão 3: o gatilho é a DESCOBERTA)
+1. Cada pessoa tem uma. Ela só se move quando ninguém está olhando, e chega um pouco mais perto a
+   cada noite — o arrepio na nuca é a distância diminuindo.
+2. Enquanto você **não sabe** que ela existe, ela só acompanha. Pode passar a vida inteira assim.
+3. **No momento em que você descobre o que ela é — e ela percebe que você descobriu — ela leva
+   você.** Não importa se está longe ou perto.
+4. Por isso os desaparecimentos "de dentro de casa" nunca têm explicação: as pessoas descobriram.
+5. Ela nunca é vista de frente. Até o fim.
+
+## O arco do Rafael (a obsessão e as tentativas de resolver)
+1. **A sensação piora:** arrepio no corredor, passos que param meio segundo depois dos dele, a
+   respiração na nuca quando apaga a luz.
+2. **Tentativa 1 — é cansaço:** médico, exames normais, remédio para dormir. Não adianta.
+3. **Tentativa 2 — é o cérebro:** lê o estudo suíço de 2014 e sente alívio: "é só o meu cérebro".
+   Por uns dias, melhora.
+4. **Tentativa 3 — vigiar a casa:** a sensação volta mais forte. Espelhos nos cantos, luzes acesas,
+   móveis encostados nas paredes, dorme de costas para a parede.
+5. **Tentativa 4 — provar que é coisa da cabeça:** passa a fotografar e filmar a casa toda noite
+   (as imagens H1–H7, com a criatura escondida, que o público vê sem perceber).
+6. **A descoberta:** ele imprime as fotos e espalha na mesa para provar que não há nada… e vê.
+   Uma forma em cada foto. **Ele circula de vermelho, uma por uma.** Ela está em todas, cada vez
+   mais perto.
+7. **"Ela sabe que eu sei":** manda uma mensagem de voz para o irmão. Abre a câmera frontal para
+   olhar o corredor atrás dele (H8): ela está lá, atrás do ombro. A gravação para.
+8. **O apartamento:** trancado por dentro. Celular no chão, chinelos no corredor, e sobre a mesa
+   as fotos com os círculos vermelhos.
+
+## A revelação final amarrada à descoberta
+Os círculos vermelhos da revelação **são os círculos que o Rafael fez nas fotos**. O Vigia mostra
+as mesmas imagens que o público viu durante o vídeo, agora com os círculos dele — e o público
+descobre junto. Fechamento: *"Ele só desapareceu quando descobriu. …E você acabou de ver as mesmas
+fotos que ele."* + *"Quando o vídeo acabar… não olha pra trás."*
 
 ## Título
 - **"Ela está mais perto."** / **"Mais perto."** ← favoritos (são a própria sensação)
@@ -47,7 +71,7 @@ para provar que é coisa da cabeça — e não percebe que ela aparece em todas 
 | Ato 1 | A sensação universal; o experimento real (cartão emoldurado). Rafael, o apartamento, o arrepio. **H1–H3** (criatura longe e escondida). |
 | Aparte do Vigia | "Faz um teste: não olha pra trás. Só presta atenção na sua nuca." |
 | Ato 2 | Rafael documenta: fotos e vídeos da casa toda noite. Os arrepios aumentam, os sons param meio segundo depois dos passos dele. **H4–H7** (cada vez mais perto, ainda escondida). |
-| Virada | Ele compara as fotos de várias noites lado a lado e vê: uma forma em cada uma, **cada vez mais perto**. Mensagem de voz para o irmão. |
+| Virada (a descoberta) | Ele espalha as fotos na mesa para provar que não há nada… e vê. Circula de vermelho, uma por uma. Mensagem de voz: \"Ela sabe que eu sei.\" |
 | Ato 3 | A última gravação: ele no corredor, celular na mão, filmando para trás pela câmera frontal. **H8**: ela a um passo. A imagem treme. **H9**: o celular no chão, filmando o teto. |
 | Final | Polícia: apartamento trancado por dentro, celular gravando, ninguém. |
 | **Revelação** | Vigia: "Ela sempre esteve nas imagens. Desde o começo." — **as mesmas imagens H1→H8 voltam, em sequência, com a criatura revelada** (sombras clareadas + círculo vermelho). Cada uma mais perto. |
