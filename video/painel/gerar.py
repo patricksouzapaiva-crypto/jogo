@@ -763,7 +763,11 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     return D, plano
 
 
-def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
+MIX_PADRAO = {"musica_ganho_db": 0.0, "ducking": "threshold=0.08:ratio=1.7:attack=80:release=900", "efeitos_ganho_db": 0.0}
+
+
+def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
+    mix = {**MIX_PADRAO, **(mix or {})}
     sons = AQUI / "sons"
     ent = ["-i", str(voz_wav)]
     f = [f"[0:a]aresample=48000,highpass=f=70,acompressor=threshold=-20dB:ratio=2.2:attack=8:release=180,"
@@ -811,7 +815,8 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
     for q0, q1, forca in plano["quedas"]:
         cadeia.append(f"volume={1 - forca:.2f}:enable='between(t,{q0:.2f},{q1:.2f})'")
     f.append(f"{cama}{','.join(cadeia) if cadeia else 'anull'}[cama1]")
-    f.append("[cama1][chave]sidechaincompress=threshold=0.05:ratio=2.5:attack=60:release=700[camad]")
+    f.append(f"[cama1]volume={mix['musica_ganho_db']}dB[cama2]")
+    f.append(f"[cama2][chave]sidechaincompress={mix['ducking']}[camad]")
     rot = ["[voz]", "[camad]"]
     for e in plano["efeitos"]:
         arq = sons / f"{e['som']}.mp3"
@@ -819,8 +824,8 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
             print(f"  aviso: efeito '{e['som']}' ignorado", file=sys.stderr)
             continue
         ent += ["-i", str(arq)]
-        extra = "lowpass=f=220,bass=g=4," if e.get("grave") else ""
-        f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,{extra}volume={e['volume_db']}dB,"
+        extra = "lowpass=f=900,bass=g=6:f=70," if e.get("grave") else ""
+        f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,{extra}volume={e['volume_db'] + mix['efeitos_ganho_db']}dB,"
                  f"adelay={max(0, int(e['t'] * 1000))}:all=1[e{n}]")
         rot.append(f"[e{n}]")
         n += 1
@@ -838,7 +843,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida):
 
 
 # ---------------------------------------------------------------- principal
-def gerar(caminho_roteiro, saida, rascunho=False):
+def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
     roteiro = json.load(open(caminho_roteiro, encoding="utf-8"))
     roteiro["_pasta"] = str(Path(caminho_roteiro).resolve().parent)
     batidas = roteiro["batidas"]
@@ -897,19 +902,24 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     else:
         D, eventos = montar(roteiro, rel, duracao)
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))
-    print(f"3/5 quadros ({duracao:.1f} s)…")
-    cmd = ["node", str(AQUI / "render.js"), str(tmp / "linha.json"), str(tmp / "video.mp4")]
-    if rascunho:
-        cmd.append("--rascunho")
-    subprocess.run(cmd, check=True)
+    if so_audio:  # reaproveita a imagem de um vídeo já pronto e refaz só a mixagem
+        print("3/5 quadros: reaproveitando", so_audio)
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", so_audio, "-an", "-c:v", "copy", tmp / "video.mp4"], check=True)
+    else:
+        print(f"3/5 quadros ({duracao:.1f} s)…")
+        cmd = ["node", str(AQUI / "render.js"), str(tmp / "linha.json"), str(tmp / "video.mp4")]
+        if rascunho:
+            cmd.append("--rascunho")
+        subprocess.run(cmd, check=True)
     print("4/5 mixagem…")
     if roteiro.get("modo") == "cenas":
-        mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"))
+        mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"), roteiro.get("mix"))
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", "-c:v", "libx264",
-                    "-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M", "-pix_fmt", "yuv420p",
+    venc = ["-c:v", "copy"] if so_audio else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
+                                              "-bufsize", "20M", "-pix_fmt", "yuv420p"]
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", *venc,
                     "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
                "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
@@ -919,4 +929,5 @@ def gerar(caminho_roteiro, saida, rascunho=False):
 
 if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
-    gerar(a[0], a[1], rascunho="--rascunho" in sys.argv)
+    so = next((x.split("=", 1)[1] for x in sys.argv if x.startswith("--so-audio=")), None)
+    gerar(a[0], a[1], rascunho="--rascunho" in sys.argv, so_audio=so)

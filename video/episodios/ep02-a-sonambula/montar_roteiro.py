@@ -163,12 +163,37 @@ amb(56, "estatica_cctv", None, -4)     # o som da gravação (aprovado pelo usu�
 amb(70, "nenhum", "sentar")
 batidas[65].setdefault("sons", []).append({"em": "faca", "som": "batimento", "volume_db": -7})
 
+# ---------------------------------------------------------------- efeitos de tensão (revisão 2)
+def achar(trecho):
+    for i, b in enumerate(batidas):
+        if trecho in b["fala"]:
+            return i
+    raise SystemExit(f"não achei: {trecho}")
+def efeito(trecho, em, som, db, depois=False, atraso=0.0):
+    batidas[achar(trecho)].setdefault("sons", []).append(
+        {"em": em, "som": som, "volume_db": db, "depois": depois, "atraso": atraso})
+for b in batidas:  # tira os graves antigos (fracos) e usa os efeitos novos
+    b["sons"] = [x for x in b.get("sons", []) if x.get("som") != "impacto"]
+efeito("Helena estava de pé", "Helena", "braam_horror", -4)
+efeito("num sussurro", "sussurro", "riser_tensao", -8)
+efeito("Os olhos estavam abertos. E ela sorria", "sorria", "stinger_cordas", -6)
+efeito("a porta do quarto", "trancada", "sub_drop", -4)
+efeito("Às vezes por minutos", "horas", "respiracao_nuca", -2, depois=True)
+efeito("Na semana seguinte, ele acordou", "cheiro", "riser_tensao", -9)
+efeito("Houve um silêncio do outro lado", "Sonâmbula", "braam_horror", -6)
+efeito("Três e doze.", "Três", "riser_tensao", -6)
+efeito("É ele.", "ele", "braam_horror", -2)
+efeito("Dois minutos depois", "faca", "stinger_cordas", -5)
+efeito("— Agora você sabe por que eu não durmo.", "durmo", "sub_drop", -6, depois=True, atraso=0.2)
+efeito("Ela estava de vigia.", "vigia", "braam_horror", -4)
+
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_meio",
     "voz": {"modelo": "gemini-3.8-flash-tts", "nome": "Algenib", "so_texto": True},
     "voz_max_chars": 1400,
     "pausas": {"ponto": 0.75, "reticencias": 1.0, "virgula": 0.32, "comum": 0.14},
     "cauda": 1.4, "chuva": 0, "grao": 0.14,
+    "mix": {"musica_ganho_db": 12, "efeitos_ganho_db": 0},
     "legendas": {"destaques": ["sonâmbula", "faca", "facas", "vigia", "câmera"]},
     "ambiente_inicial": [],
     "musica": {"som": "silencio", "volume_db": -40},

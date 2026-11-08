@@ -18,6 +18,10 @@
  "cauda": 1.4,
  "chuva": 0,
  "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "efeitos_ganho_db": 0
+ },
  "legendas": {
   "destaques": [
    "sonâmbula",
@@ -66,14 +70,7 @@
     "tipo": "relogio",
     "hora": "03:12"
    },
-   "sons": [
-    {
-     "em": "Três",
-     "som": "impacto",
-     "volume_db": -20,
-     "grave": true
-    }
-   ]
+   "sons": []
   },
   {
    "fala": "Marcos abriu os olhos sem saber por quê.",
@@ -93,7 +90,8 @@
       0.72
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você.",
@@ -101,7 +99,8 @@
     "som": "trilha_tensa_1",
     "volume_db": -24,
     "em": "silencioso"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Virou a cabeça devagar.",
@@ -121,7 +120,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena estava de pé, ao lado da cama. Parada. Os olhos abertos, fixos nele.",
@@ -146,9 +146,10 @@
    "sons": [
     {
      "em": "Helena",
-     "som": "impacto",
-     "volume_db": -14,
-     "grave": true
+     "som": "braam_horror",
+     "volume_db": -4,
+     "depois": false,
+     "atraso": 0.0
     }
    ]
   },
@@ -170,7 +171,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "E então, num sussurro que ele nunca tinha ouvido sair da boca da esposa, ela disse:",
@@ -191,7 +193,16 @@
      ]
     ],
     "em": "sussurro"
-   }
+   },
+   "sons": [
+    {
+     "em": "sussurro",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "— Você não devia estar acordado.",
@@ -203,7 +214,8 @@
     "som": "silencio",
     "volume_db": -22,
     "em": "Você"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Boa noite. Seja bem-vindo de volta ao Último Abrigo.",
@@ -236,10 +248,12 @@
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -22
-   }
+   },
+   "sons": []
   },
   {
-   "fala": "Hoje eu vou te contar a história de um homem que tinha medo de dormir ao lado da própria esposa."
+   "fala": "Hoje eu vou te contar a história de um homem que tinha medo de dormir ao lado da própria esposa.",
+   "sons": []
   },
   {
    "fala": "Apaga a luz… e fica comigo.",
@@ -249,7 +263,8 @@
      "pose": "s_silencio",
      "segurar": 1.8
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Marcos e Helena estavam casados havia seis anos. Uma casa pequena, no fim de uma rua sem saída. Uma vida tranquila.",
@@ -269,7 +284,8 @@
       0.5
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Desde o começo, ele sabia: Helena era sonâmbula.",
@@ -289,7 +305,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Nada grave. Às vezes ele acordava e encontrava a esposa dobrando roupas que já estavam dobradas.",
@@ -310,7 +327,8 @@
      ]
     ],
     "em": "dobrando"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Outras vezes ela estava na cozinha, abrindo e fechando a geladeira, como se procurasse alguma coisa que nunca encontrava.",
@@ -330,7 +348,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Uma vez, ele a achou no jardim, regando as plantas às duas da manhã… debaixo de chuva.",
@@ -350,7 +369,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Ele sempre fazia a mesma coisa. Segurava a mão dela com cuidado, sem acordá-la, e levava de volta pra cama.",
@@ -370,7 +390,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "De manhã, ela não lembrava de nada. Os dois riam. Virou piada de família.",
@@ -390,7 +411,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Mas, nos últimos meses, Marcos andava estranho. Acordava cansado, como se não tivesse dormido. Os pés sujos de terra. E um corte pequeno na mão… que ele não fazia ideia de onde tinha vindo.",
@@ -410,7 +432,8 @@
       0.78
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena também parecia diferente. Olheiras fundas. Os olhos vermelhos.",
@@ -430,7 +453,8 @@
       0.4
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "O que era curioso… pra alguém que, segundo ele, dormia a noite inteira.",
@@ -450,7 +474,8 @@
       0.34
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Uma vez, ele sugeriu que ela procurasse um médico. Helena largou o café na mesa e respondeu, sem olhar pra ele: — Quem precisa de médico aqui não sou eu.",
@@ -470,7 +495,8 @@
       0.28
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Guarde esse detalhe. Ele vai importar.",
@@ -498,7 +524,8 @@
      "pose": "c_dedo_explicando",
      "segurar": 2.0
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Foi numa quinta-feira. Marcos acordou com um barulho baixo. Um rangido.",
@@ -509,10 +536,12 @@
    "musica": {
     "som": "trilha_tensa_2",
     "volume_db": -21
-   }
+   },
+   "sons": []
   },
   {
-   "fala": "A cama do lado dele estava vazia."
+   "fala": "A cama do lado dele estava vazia.",
+   "sons": []
   },
   {
    "fala": "Ele se levantou e foi até o corredor. A luz da cozinha estava apagada, mas a porta da geladeira estava aberta, e a luzinha dela desenhava uma silhueta no chão.",
@@ -532,7 +561,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena estava ali. De costas. Imóvel.",
@@ -552,10 +582,12 @@
       0.42
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
-   "fala": "Ele chamou baixinho: — Lena?"
+   "fala": "Ele chamou baixinho: — Lena?",
+   "sons": []
   },
   {
    "fala": "Ela não se mexeu. Mas a cabeça dela… a cabeça girou devagar na direção dele.",
@@ -576,7 +608,8 @@
      ]
     ],
     "em": "cabeça"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Os olhos estavam abertos. E ela sorria. Um sorriso que não chegava aos olhos.",
@@ -601,9 +634,10 @@
    "sons": [
     {
      "em": "sorria",
-     "som": "impacto",
-     "volume_db": -15,
-     "grave": true
+     "som": "stinger_cordas",
+     "volume_db": -6,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
    "enfase": [
@@ -632,7 +666,8 @@
      ]
     ],
     "lado": "dir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "E, quando o dia clareou, ele percebeu uma coisa: a porta do quarto… estava trancada. Por fora.",
@@ -658,6 +693,13 @@
      "em": "trancada",
      "som": "porta_tranca",
      "volume_db": -4
+    },
+    {
+     "em": "trancada",
+     "som": "sub_drop",
+     "volume_db": -4,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
    "enfase": [
@@ -685,7 +727,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena já não dobrava roupas, nem regava plantas. Ela só ficava ali. De pé, ao lado da cama. Olhando pra ele.",
@@ -705,7 +748,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Às vezes por minutos. Às vezes por horas.",
@@ -725,7 +769,16 @@
       0.3
      ]
     ]
-   }
+   },
+   "sons": [
+    {
+     "em": "horas",
+     "som": "respiracao_nuca",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Em algumas noites, ela sussurrava o nome dele. Marcos. Marcos. Marcos. Não como quem chama… como quem confere se ele ainda está ali.",
@@ -751,7 +804,8 @@
      "em": "sussurrava",
      "pose": "s_sussurro"
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Marcos fingia que dormia. Com o coração disparado. Sentindo o olhar dela no rosto.",
@@ -777,7 +831,8 @@
     "som": "batimento",
     "volume_db": -9,
     "em": "coração"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Uma noite, ele contou. Três horas e quarenta minutos sem ela sair do lugar. E, quando o despertador tocou, ela já estava deitada, de costas pra ele, como se nunca tivesse levantado.",
@@ -802,7 +857,8 @@
     "som": "nenhum",
     "volume_db": -4,
     "em": "despertador"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Teve uma madrugada em que ele não aguentou. Acendeu o abajur de repente, pra pegar a esposa no flagra.",
@@ -851,7 +907,8 @@
      ]
     ],
     "em": "Estava"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Os olhos abertos. As mãos apertando os braços da poltrona, como quem se segura pra não sair correndo.",
@@ -877,7 +934,8 @@
      "em": "apertando",
      "pose": "e_medo_gola"
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Quando a luz acendeu, ela não se assustou. Só soltou o ar devagar… e disse, baixinho:",
@@ -902,7 +960,8 @@
     "som": "silencio",
     "volume_db": -22,
     "em": "disse"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "— Ainda bem. Hoje você não levantou.",
@@ -916,7 +975,8 @@
      "pose": "s_pensativo_queixo",
      "segurar": 2.0
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Um dia, ele abriu a gaveta de talheres. As facas tinham sumido. Todas.",
@@ -940,7 +1000,8 @@
    "musica": {
     "som": "trilha_tensa_2",
     "volume_db": -21
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Ele encontrou uma embaixo do colchão dela. Outra dentro de uma bota no armário. Outra enrolada numa toalha, no fundo do guarda-roupa.",
@@ -967,10 +1028,12 @@
      "em": "bota",
      "pose": "e_bracos_cruzados_cetico"
     }
-   ]
+   ],
+   "sons": []
   },
   {
-   "fala": "Ele colocou todas de volta na gaveta. Na manhã seguinte… tinham sumido de novo."
+   "fala": "Ele colocou todas de volta na gaveta. Na manhã seguinte… tinham sumido de novo.",
+   "sons": []
   },
   {
    "fala": "Agora me diz… se você encontrasse facas escondidas pela sua casa… dormiria tranquilo?",
@@ -998,7 +1061,8 @@
      "pose": "e_sussurro_malicioso",
      "segurar": 2.4
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Na semana seguinte, ele acordou com um cheiro forte. Correu até a cozinha. As quatro bocas do fogão estavam abertas. O gás vazando. E Helena… sentada à mesa, olhando pra ele.",
@@ -1024,6 +1088,13 @@
      "em": "gás",
      "som": "gas_vazando",
      "volume_db": -14
+    },
+    {
+     "em": "cheiro",
+     "som": "riser_tensao",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
    "enfase": [
@@ -1051,7 +1122,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "— Eu não sei, Marcos. Eu juro que não sei.",
@@ -1071,7 +1143,8 @@
       0.22
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Mas ela tremia. E, quando ele tentou abraçá-la, ela recuou. Como se tivesse medo dele.",
@@ -1091,7 +1164,8 @@
       0.3
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Naquela tarde, Marcos ligou pra mãe da Helena. Perguntou, meio sem jeito, se ela sempre tinha sido sonâmbula.",
@@ -1111,7 +1185,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Houve um silêncio do outro lado da linha. E a sogra respondeu: — Sonâmbula? A Helena nunca foi sonâmbula, Marcos. Ela sempre dormiu feito pedra.",
@@ -1138,6 +1213,15 @@
      "em": "nunca",
      "pose": "e_indignado"
     }
+   ],
+   "sons": [
+    {
+     "em": "Sonâmbula",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": false,
+     "atraso": 0.0
+    }
    ]
   },
   {
@@ -1158,7 +1242,8 @@
       0.5
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Se a esposa fazia alguma coisa enquanto dormia… ele ia ver com os próprios olhos.",
@@ -1178,7 +1263,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Na manhã seguinte, Marcos esperou Helena sair pro trabalho. Sentou no sofá, abriu o notebook e colocou a gravação pra rodar.",
@@ -1204,7 +1290,8 @@
     "som": "silencio",
     "volume_db": -22,
     "em": "Sentou"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Onze da noite. Os dois deitados. Nada.",
@@ -1234,7 +1321,8 @@
    "ambiente": {
     "som": "estatica_cctv",
     "volume_db": -4
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Uma da manhã. Nada.",
@@ -1260,7 +1348,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Duas e cinquenta. Helena abre os olhos. Mas ela não se levanta. Fica olhando pro teto. Acordada. Esperando alguma coisa.",
@@ -1286,7 +1375,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Três e doze.",
@@ -1312,7 +1402,16 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": [
+    {
+     "em": "Três",
+     "som": "riser_tensao",
+     "volume_db": -6,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Alguém se senta na cama.",
@@ -1339,17 +1438,11 @@
      "cam": "CAM 01"
     }
    },
-   "sons": [
-    {
-     "em": "Alguém",
-     "som": "impacto",
-     "volume_db": -18,
-     "grave": true
-    }
-   ]
+   "sons": []
   },
   {
-   "fala": "Mas não é Helena."
+   "fala": "Mas não é Helena.",
+   "sons": []
   },
   {
    "fala": "É ele.",
@@ -1383,9 +1476,10 @@
    "sons": [
     {
      "em": "ele",
-     "som": "impacto",
-     "volume_db": -8,
-     "grave": true
+     "som": "braam_horror",
+     "volume_db": -2,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
    "enfase": [
@@ -1420,7 +1514,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Ele sai. A câmera fica olhando pro quarto vazio. E pra Helena… que agora está sentada na cama, abraçando os joelhos, olhando pra porta.",
@@ -1446,7 +1541,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Dois minutos depois, ele volta. Segurando uma faca de cozinha.",
@@ -1476,14 +1572,15 @@
    "sons": [
     {
      "em": "faca",
-     "som": "impacto",
-     "volume_db": -10,
-     "grave": true
+     "som": "batimento",
+     "volume_db": -7
     },
     {
      "em": "faca",
-     "som": "batimento",
-     "volume_db": -7
+     "som": "stinger_cordas",
+     "volume_db": -5,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
    "enfase": [
@@ -1518,7 +1615,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena não se mexe. Fecha os olhos. Finge que dorme. Do mesmo jeito que ele fingia.",
@@ -1544,7 +1642,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Um minuto inteiro. Depois ele larga a faca no chão… e volta a deitar, como se nada tivesse acontecido.",
@@ -1570,7 +1669,8 @@
      "data": "14/10",
      "cam": "CAM 01"
     }
-   }
+   },
+   "sons": []
   },
   {
    "fala": "E então Marcos viu a esposa se levantar em silêncio. Pegar a faca. Esconder dentro de uma bota no armário. Trancar a porta do quarto… por fora, com ele lá dentro.",
@@ -1633,7 +1733,8 @@
     "som": "nenhum",
     "volume_db": -4,
     "em": "sentar"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Marcos fechou o notebook com as mãos tremendo.",
@@ -1654,7 +1755,8 @@
      ]
     ]
    },
-   "tom": "sombrio"
+   "tom": "sombrio",
+   "sons": []
   },
   {
    "fala": "Foi quando ouviu a porta da sala. Helena estava ali. Não tinha ido trabalhar.",
@@ -1675,7 +1777,8 @@
      ]
     ],
     "em": "Helena"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Ela olhou pro notebook. Depois pra ele. E disse, baixinho:",
@@ -1695,7 +1798,8 @@
       0.22
      ]
     ]
-   }
+   },
+   "sons": []
   },
   {
    "fala": "— Agora você sabe por que eu não durmo.",
@@ -1724,7 +1828,16 @@
     "som": "silencio",
     "volume_db": -22,
     "em": "Agora"
-   }
+   },
+   "sons": [
+    {
+     "em": "durmo",
+     "som": "sub_drop",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.2
+    }
+   ]
   },
   {
    "fala": "Helena nunca foi sonâmbula. Todas as noites em que Marcos a encontrou andando pela casa… ela estava acordada. Escondendo as facas. Fechando o gás. Esperando o marido voltar pra cama.",
@@ -1811,7 +1924,8 @@
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -20
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Todas aquelas noites… ela não estava observando o marido.",
@@ -1833,7 +1947,8 @@
     ],
     "desaturar": true
    },
-   "tom": "sombrio"
+   "tom": "sombrio",
+   "sons": []
   },
   {
    "fala": "Ela estava de vigia.",
@@ -1865,9 +1980,10 @@
    "sons": [
     {
      "em": "vigia",
-     "som": "impacto",
-     "volume_db": -12,
-     "grave": true
+     "som": "braam_horror",
+     "volume_db": -4,
+     "depois": false,
+     "atraso": 0.0
     }
    ]
   },
@@ -1896,7 +2012,8 @@
      "cam": "CAM 01"
     }
    },
-   "tom": "sombrio"
+   "tom": "sombrio",
+   "sons": []
   },
   {
    "fala": "Agora me responde nos comentários: você tem certeza… do que faz enquanto dorme?",
@@ -1925,7 +2042,8 @@
      "pose": "e_apontando",
      "segurar": 1.8
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Boa noite. E durma bem… se conseguir.",
@@ -1935,7 +2053,8 @@
      "pose": "s_sorriso_sombrio",
      "segurar": 9
     }
-   ]
+   ],
+   "sons": []
   }
  ]
 }
