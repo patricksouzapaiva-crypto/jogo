@@ -533,6 +533,29 @@ function cenas(t) {
   } else if (c.entrada === "preto" && t < c.t0 + dt) {
     desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
   } else desenharCena(c, t);
+  // revelação: clareia as sombras só na região onde a criatura sempre esteve e desenha um círculo vermelho
+  if (c.revelar) {
+    const R = c.revelar, im2 = IMG["img:" + c.imagem], k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));
+    if (im2 && k > 0) {
+      const cx = R.x * W, cy = R.y * H, rr_ = R.r * Math.min(W, H);
+      ctx.save();
+      const g = ctx.createRadialGradient(cx, cy, rr_ * 0.2, cx, cy, rr_ * 1.6);
+      g.addColorStop(0, `rgba(0,0,0,${0.55 * k})`); g.addColorStop(1, "rgba(0,0,0,0)");
+      // escurece o resto da imagem para o olho ir direto ao lugar
+      ctx.fillStyle = `rgba(0,0,0,${0.45 * k})`; ctx.fillRect(0, 0, W, H);
+      ctx.globalCompositeOperation = "screen";
+      ctx.beginPath(); ctx.arc(cx, cy, rr_ * 1.25, 0, 6.29); ctx.clip();
+      ctx.filter = `brightness(${1 + 1.6 * k}) contrast(${1 + 0.4 * k})`;
+      desenharCena(Object.assign({}, c, { revelar: null, relampagos: null }), t, 0.85 * k);
+      ctx.filter = "none"; ctx.restore();
+      if (R.circulo !== false) {
+        const p = easeOut(lin(t, c.t0 + (R.atraso ?? 0.6) + 0.4, 0.7));
+        ctx.save(); ctx.strokeStyle = "rgba(230,40,35,.95)"; ctx.lineWidth = Math.max(4, W / 380);
+        ctx.shadowColor = "rgba(230,40,35,.8)"; ctx.shadowBlur = 18;
+        ctx.beginPath(); ctx.arc(cx, cy, rr_ * 1.3, -Math.PI / 2, -Math.PI / 2 + 6.29 * p); ctx.stroke(); ctx.restore();
+      }
+    }
+  }
   // relâmpagos (abertura)
   for (const r of c.relampagos || []) {
     const dtr = t - c.t0 - r;

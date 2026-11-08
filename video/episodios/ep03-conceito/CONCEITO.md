@@ -1,67 +1,65 @@
-# O Vigia — Ep. 03 (vídeo longo) — conceito
+# O Vigia — Ep. 03 (vídeo longo) — conceito (revisão 2)
 
-**Ideia do usuário:** a sensação universal de que tem alguém andando atrás de você dentro de casa.
-Não é só sensação: existe algo que segue todo mundo, o tempo todo. Um homem descobriu o que é,
-conseguiu gravar… e desapareceu.
+**Ideia do usuário:** a sensação universal de que alguém está andando atrás de você dentro de casa,
+**chegando cada vez mais perto**. Não é só sensação: existe algo que segue cada pessoa. Um homem
+descobriu, gravou… e desapareceu.
 
-## Âncoras reais (dão credibilidade sem inventar fatos)
-- **2014, Suíça (EPFL, revista *Current Biology*):** cientistas criaram em laboratório a "sensação
-  de presença". Um robô tocava as costas dos voluntários **com meio segundo de atraso** em relação
-  ao movimento deles — e muitos passaram a sentir alguém atrás de si; houve quem contasse até quatro
-  "presenças" e quem pedisse para parar o experimento. Explicação oficial: conflito entre o movimento
-  e o que o corpo sente.
-- **Brasil, 2025 (Anuário Brasileiro de Segurança Pública):** cerca de **84 mil desaparecimentos**
-  registrados — mais de 230 por dia. A maioria é encontrada. Algumas pessoas, nunca.
-  (Usar como estatística geral, **sem citar casos ou nomes reais** de desaparecidos.)
+**Revisão pedida pelo usuário (08/11/2026):**
+1. A criatura **não fica grudada** no personagem: ela **se aproxima aos poucos** ao longo do vídeo
+   (é isso que dá a sensação de "cada vez mais perto").
+2. Ela aparece **escondida nas imagens desde o começo** — quase ninguém percebe na primeira vez,
+   mas quem presta muita atenção encontra.
+3. **No final, as mesmas imagens voltam** mostrando onde ela sempre esteve (sombras clareadas +
+   círculo vermelho). O público percebe que ela foi chegando mais perto a cada cena.
 
-## A mitologia (as regras da criatura)
-1. Todo mundo tem um. Ele fica **exatamente atrás de você**, no seu ponto cego, a um palmo da nuca.
-2. Ele se move **junto com você, com meio segundo de atraso** — por isso, quando você vira, ele
-   vira também e você nunca o vê. O "arrepio" é ele chegando perto demais.
-3. Só dá para vê-lo **por um caminho atrasado**: um reflexo, uma câmera com atraso, uma foto tirada
-   de trás. Nunca de frente.
-4. Enquanto você não sabe que ele existe, ele só acompanha.
-5. **Quando você o vê — e ele percebe que você viu — ele para de seguir.** E a pessoa some.
-   (É a explicação dos desaparecimentos "de dentro de casa": porta trancada, celular na mesa, chinelo
-   no corredor.)
+## Âncoras reais
+- **2014, Suíça (EPFL, *Current Biology*):** cientistas criaram em laboratório a "sensação de
+  presença" com um toque nas costas **meio segundo atrasado**; houve quem sentisse até quatro
+  presenças e quem pedisse para parar. Explicação oficial: conflito entre movimento e sensação.
+- **Brasil, 2025 (Anuário Brasileiro de Segurança Pública):** cerca de **84 mil desaparecimentos** —
+  mais de 230 por dia. A maioria é encontrada. Algumas pessoas, nunca. (Só a estatística geral,
+  sem casos ou nomes reais.)
 
-## Título (sugestões, estilo curto)
-- **"Meio segundo."** ← favorito (amarra a ciência real ao monstro)
+## As regras da criatura
+1. Cada pessoa tem uma. Ela começa **longe** — no fim da rua, no fundo de um quarto escuro.
+2. **Ela só se move quando você não está olhando.** Cada vez que você sente o arrepio na nuca e se
+   vira, ela já parou — escondida na sombra, atrás de uma porta, num reflexo.
+3. A cada noite ela está **um pouco mais perto**. O arrepio é a distância diminuindo.
+4. A ciência chama de "sensação de presença". Rafael chama de **"a distância"**.
+5. **Quando ela chega**, a pessoa desaparece — de dentro de casa, porta trancada.
+6. Ela nunca é vista de frente. Até o fim.
+
+## Título
+- **"Ela está mais perto."** / **"Mais perto."** ← favoritos (são a própria sensação)
 - "Não olhe para trás."
-- "Ponto cego."
-- "Tem alguém atrás de você."
+- "A distância."
 
 ## Personagem
 **Rafael**, 34 anos, técnico de som, mora sozinho num apartamento antigo com um corredor comprido.
-Sempre sentiu "alguém atrás". Lê sobre o experimento suíço do meio segundo e tem uma ideia:
-e se o atraso não for um erro do cérebro… e sim a velocidade de alguma coisa?
+Sempre sentiu "alguém atrás". Lê sobre o experimento suíço. Começa a fotografar e filmar a casa
+para provar que é coisa da cabeça — e não percebe que ela aparece em todas as fotos.
 
-## Estrutura (~11–12 min)
+## Estrutura (~11 min)
 | Bloco | Conteúdo |
 |---|---|
-| Cold open | Gravação do celular: corredor escuro, Rafael sussurra "ele tá aqui". A imagem atrasa meio segundo… uma sombra a mais. Corte seco para preto. |
-| Abertura | Vinheta + Vigia: "Você já sentiu alguém andando atrás de você dentro de casa? …Todo mundo já." |
-| Ato 1 | A sensação universal. O experimento real da Suíça (2014). Rafael, o apartamento, o arrepio no corredor. |
-| Aparte do Vigia | "Faz um teste agora: não vira. Só presta atenção na sua nuca." |
-| Ato 2 | Rafael monta o "espelho atrasado": câmera + monitor no fim do corredor com meio segundo de atraso. Noite 1: nada. Noite 2: um vulto que some. Noite 3: uma mão no ombro dele, só na tela. Ele para de dormir; cobre os espelhos; anda de costas para a parede. |
-| Virada | Ele descobre o padrão dos desaparecimentos (porta trancada, pessoa sumida de dentro de casa) e entende a regra 5 tarde demais: "ele sabe que eu sei". |
-| Ato 3 | A última gravação (encontrada pela polícia). Ele anda pelo corredor. No monitor atrasado, a criatura inteira, colada nas costas dele, a cabeça encostada na orelha. Ela **vira o rosto para a câmera**. A imagem trava. Quando volta: o corredor vazio. Os chinelos dele no chão. |
-| Final | Polícia: apartamento trancado por dentro, celular gravando, ninguém. Registro: "desaparecimento sem indícios". |
-| Epílogo do Vigia | "Agora você sabe que ele existe. E saber… é exatamente o que ele estava esperando." + "Quando o vídeo acabar… não olha pra trás." + chamada do Último Abrigo. |
+| Cold open | Áudio de uma mensagem de voz do Rafael, sussurrando: "Ela tá no corredor. Ela nunca tinha chegado tão perto." Tela preta. Corte. |
+| Abertura | Vinheta + Vigia: "Você já sentiu alguém andando atrás de você dentro de casa?…" |
+| Ato 1 | A sensação universal; o experimento real (cartão emoldurado). Rafael, o apartamento, o arrepio. **H1–H3** (criatura longe e escondida). |
+| Aparte do Vigia | "Faz um teste: não olha pra trás. Só presta atenção na sua nuca." |
+| Ato 2 | Rafael documenta: fotos e vídeos da casa toda noite. Os arrepios aumentam, os sons param meio segundo depois dos passos dele. **H4–H7** (cada vez mais perto, ainda escondida). |
+| Virada | Ele compara as fotos de várias noites lado a lado e vê: uma forma em cada uma, **cada vez mais perto**. Mensagem de voz para o irmão. |
+| Ato 3 | A última gravação: ele no corredor, celular na mão, filmando para trás pela câmera frontal. **H8**: ela a um passo. A imagem treme. **H9**: o celular no chão, filmando o teto. |
+| Final | Polícia: apartamento trancado por dentro, celular gravando, ninguém. |
+| **Revelação** | Vigia: "Ela sempre esteve nas imagens. Desde o começo." — **as mesmas imagens H1→H8 voltam, em sequência, com a criatura revelada** (sombras clareadas + círculo vermelho). Cada uma mais perto. |
+| Epílogo | "Agora que você sabe onde procurar… volta no começo do vídeo." + "Quando o vídeo acabar… não olha pra trás." + chamada do Último Abrigo. |
 
-## A criatura (proposta visual)
-- Humanoide alto e magro demais, pele cinza-pálida e úmida, **curvado** para caber exatamente atrás
-  de uma pessoa; braços longos pendurados; dedos finos quase tocando os ombros da vítima.
-- Rosto liso como cera, olhos pretos e grandes, boca entreaberta encostada na nuca/orelha — como se
-  respirasse no seu pescoço.
-- Nunca aparece inteiro em plano limpo: sempre através de tela, reflexo, câmera com ruído digital.
-  Só no fim, um único plano frontal (quando ele vira o rosto para a câmera).
+## A criatura
+Humanoide alto e magro demais, pele cinza-pálida, cabeça levemente inclinada, braços longos colados
+ao corpo, rosto liso e sem expressão com olhos escuros. **Sempre parada** (ela só anda quando
+ninguém olha). Nas imagens, aparece **quase do mesmo tom da sombra** — só se revela clareando.
 
-## Linguagem visual (aplicando o estudo Fyori)
-- **Found footage:** interface de celular gravando (REC, hora), **câmera de corredor com atraso**
-  (tela dividida: "AO VIVO" × "ATRASO 0,5 s").
-- **Cartões emoldurados:** recorte do estudo suíço, anotações do Rafael, boletim de ocorrência
-  (tudo fictício, menos o estudo).
-- **Telas pretas com uma palavra vermelha** nos silêncios: "atrás.", "meio segundo.", "ele sabe."
-- **Som:** trilha baixa e tensa, silêncio pesado no corredor, respiração muito perto (só no fone),
-  passos que param meio segundo depois dos dele.
+## Linguagem visual e som
+- Fotos e vídeos do Rafael (interface de celular, hora, flash), **cartões emoldurados** (estudo
+  suíço, anotações), **telas pretas com uma palavra vermelha** ("mais perto.", "atrás.").
+- Trilha baixa e tensa; silêncio pesado no corredor; passos que param meio segundo depois.
+- Na revelação final: silêncio quase total, só um grave a cada círculo vermelho.
