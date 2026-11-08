@@ -96,3 +96,17 @@ do Vigia) com "Vídeo relacionado" apontando para o longo.
 - Política de conteúdo inautêntico: https://digiday.com/media/youtubes-ai-slop-crackdown-has-creators-concerned-marketers-cheering · https://theprint.in/world/youtube-cracks-down-on-inauthentic-content-with-monetisation-policy-update-what-new-guidelines-say/2691562
 - Direitos autorais (r/nosleep): https://www.tubefilter.com/2020/02/26/horror-subreddit-r-nosleep-goes-dark-to-protest-youtubers-stealing-their-stories/ · https://en.wikipedia.org/wiki/R/nosleep
 - Shorts → longo: https://subscribr.ai/p/youtube-shorts-vs-long-form-growth · https://www.unilink.us/blog/youtube-shorts-guide-2026
+
+## 5. Referência do usuário: Fyori (youtube.com/@fyori)
+Analisado em 08/11/2026 pelo que é público (o YouTube bloqueou o download dos vídeos neste ambiente).
+- "Contador de histórias e caçador de coisa ruim"; ensaios visuais e narrativas documentais sobre o
+  bizarro, o perigoso e o desconhecido (criaturas, lugares, casos e histórias de terror).
+- Vídeos de **9 a 25 min**, a maioria entre **12 e 17 min**; os mais vistos passam de 600 mil views.
+- **Títulos curtos, de ordem ou proibição:** "Não abra os olhos", "Não abra a porta", "Só não.",
+  "Ele está na minha casa.", "O Leviatã existe".
+- **Thumbnails minimalistas:** uma única imagem forte, muito preto, monocromático (vermelho ou P&B
+  pontilhado/granulado), texto curto de 2–4 palavras em vermelho com brilho. Nada de poluição.
+- Produção: Premiere + Photoshop; música da Epidemic Sound, trilhas de jogos e White Bat Audio /
+  CO.AG; **footage real com movimento** (Artlist/Envato) em vez de só imagens paradas.
+- Aplicado ao Vigia: títulos curtos e diretos, thumbnails minimalistas no padrão vermelho/pontilhado
+  (versões B e C do Ep. 02 para teste A/B), duração alvo 10–15 min nos longos.
