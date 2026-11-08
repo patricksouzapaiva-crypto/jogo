@@ -110,3 +110,26 @@ Analisado em 08/11/2026 pelo que é público (o YouTube bloqueou o download dos 
   CO.AG; **footage real com movimento** (Artlist/Envato) em vez de só imagens paradas.
 - Aplicado ao Vigia: títulos curtos e diretos, thumbnails minimalistas no padrão vermelho/pontilhado
   (versões B e C do Ep. 02 para teste A/B), duração alvo 10–15 min nos longos.
+
+## 6. Gravações de tela enviadas pelo usuário (08/11/2026)
+Dois trechos (46 s e 51 s): Fyori ("Iceberg do Folclore Brasileiro", apresentador na câmera) e um
+vídeo de história narrado com **avatar desenhado** (personagem roxo de óculos, "Tinder da Dark Web").
+Medido aqui:
+- **Ritmo da fala:** 2,6 e 3,4 palavras/s (o Vigia no Ep. 02: ~2,4) — narração conversada, viva.
+- **Troca visual:** a cada 1,5–9 s, mas variando o TIPO de imagem, não só a imagem.
+- **Trilha:** ~18 dB abaixo da voz (voz −20 dB, fundo −38 dB) — bem baixinha, como o usuário pediu.
+- **Silêncio dramático:** pausas de 3–6 s em momentos-chave (só som/imagem).
+- **Vocabulário visual (o que dá a "cara profissional"):**
+  1. imagem como **cartão emoldurado** sobre fundo escuro (borda fina, sombra, leve inclinação 3D),
+     com **legenda de nome** embaixo ("Jurupari", "Alamoa");
+  2. **tela preta com texto pequeno** digitado e **uma palavra em vermelho** ("…um pouco *sinistra*");
+  3. aviso de abertura ("Esse vídeo pode conter cenas fortes…") em vermelho sobre preto;
+  4. **títulos neon** ("AGORA QUE VOCÊ JÁ SABE…");
+  5. **elementos de interface** recriados (bolhas de chat, perfil de Discord, player do YouTube);
+  6. cortes de reação/meme para quebrar a tensão (mais no estilo cômico);
+  7. o avatar falando **no centro, grande**, em fundo escuro, alternando com as imagens.
+- **Persona:** fala em 1ª pessoa, provoca o público, quebra a tensão com humor leve, avisa no começo.
+
+Para o Vigia (próximos episódios): misturar tela cheia com **cartões emoldurados** (pistas/objetos),
+**telas pretas com uma palavra vermelha** nos silêncios, aviso de abertura, Vigia grande no centro
+nos apartes (exige o **narrador em alta resolução** — ver `painel/avatares/PEDIDO_NARRADOR_HD.md`).
