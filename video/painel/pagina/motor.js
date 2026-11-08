@@ -714,7 +714,7 @@ function chamadaYouTube(t) {
   const c = D.cta; if (!c || t < c.t0) return;
   const { W, H } = D, T = D.tema, dt = t - c.t0;
   ctx.fillStyle = `rgba(0,0,0,${0.62 * easeOut(lin(dt, 0, 0.4))})`; ctx.fillRect(0, 0, W, H);
-  const cy = H * 0.42;
+  const cy = H > W ? H * 0.27 : H * 0.42;   // no vertical, o texto sobe e o Vigia fica embaixo
   ctx.save();
   const ciC = cenaAtual(t);
   if (ciC >= 0 && D.cenas[ciC].vigia && W > H) ctx.translate(W * 0.16, 0);   // abre espaço para o Vigia em destaque

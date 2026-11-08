@@ -45,7 +45,8 @@
    "fala": "Três e doze da manhã.",
    "cena": {
     "tipo": "relogio",
-    "hora": "03:12"
+    "hora": "03:12",
+    "encaixe": "cobrir"
    },
    "sons": [
     {
@@ -73,7 +74,8 @@
       0.22,
       0.72
      ]
-    ]
+    ],
+    "encaixe": "cobrir"
    }
   },
   {
@@ -101,7 +103,8 @@
       0.55,
       0.45
      ]
-    ]
+    ],
+    "encaixe": "cobrir"
    }
   },
   {
@@ -122,7 +125,8 @@
       0.45
      ]
     ],
-    "em": "Helena"
+    "em": "Helena",
+    "encaixe": "cobrir"
    },
    "sons": [
     {
@@ -150,7 +154,8 @@
       0.5,
       0.45
      ]
-    ]
+    ],
+    "encaixe": "cobrir"
    }
   },
   {
@@ -171,7 +176,8 @@
       0.55
      ]
     ],
-    "em": "sussurro"
+    "em": "sussurro",
+    "encaixe": "cobrir"
    }
   },
   {

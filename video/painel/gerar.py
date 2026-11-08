@@ -744,7 +744,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo")}
         if cta.get("fundo"):  # chamada final no cenário do Vigia, com ele em destaque
             D["cenas"].append({"t0": t_cta, "t1": duracao, "imagem": str((base / cta["fundo"]).resolve()),
-                               "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.5, 0.5]], "vigia": True, "lado": "esq"})
+                               "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.5, 0.5]], "vigia": True, "lado": "esq",
+                               "encaixe": "cobrir"})
             D["cenas"].sort(key=lambda c: c["t0"])
             for i, c in enumerate(D["cenas"][:-1]):
                 c["t1"] = D["cenas"][i + 1]["t0"]

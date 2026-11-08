@@ -25,6 +25,8 @@ SHORTS = [
      "musica": [(36, "trilha_tensa_2", None, -21), (41, "silencio", "disse", -40)], "ambiente": [(36, "batimento", "coração", -9), (37, "nenhum", "despertador", -40)]},
 ]
 
+FOCO_SHORT = {"I20": (0.28, 0.35), "I13": (0.66, 0.4), "I19": (0.45, 0.4)}
+
 (AQUI / "shorts").mkdir(exist_ok=True)
 for S in SHORTS:
     a, b = S["de"], S["ate"]
@@ -41,6 +43,11 @@ for S in SHORTS:
             if c.get("imagem"):
                 c["imagem"] = "../" + c["imagem"]
             c.pop("lado", None)
+            c["encaixe"] = "cobrir"   # Short: imagem ocupa a tela toda, recortada no foco
+            nome = Path(c.get("imagem", "")).stem
+            if nome in FOCO_SHORT:     # no vertical, o recorte precisa achar o personagem
+                fx, fy = FOCO_SHORT[nome]
+                c["foco"] = [[fx, c["foco"][0][1]], [fx, fy]]
     if not bat[0].get("cena"):
         raise SystemExit(f"{S['nome']}: a 1ª batida precisa de imagem")
     bat[0]["cena"].pop("em", None)
