@@ -59,11 +59,15 @@ Black and white archival-style photo of a 2014 neuroscience lab: a blindfolded v
 ```
 **R2 — As fotos lado a lado**
 ```
-Top-down view of a wooden desk at night under a desk lamp: many printed photos of the same apartment hallway and rooms spread out, a red marker, handwritten notes, a laptop. Rafael's hands holding one photo. Obsessive investigation mood. No readable text.
+Top-down view of a wooden desk at night under a desk lamp: many printed photos of the same apartment hallway and rooms spread out, a red marker, handwritten notes, a laptop. Rafael's hands holding one photo. Several photos are circled with a red marker. Obsessive investigation mood. No readable text.
 ```
 **R3 — O apartamento vazio (polícia)**
 ```
 Daytime, cold grey light, the apartment hallway seen from the entrance door, a police officer's silhouette at the door, the hallway empty, a phone and slippers on the floor in the distance, the bedroom door open.
+```
+**R4 — O fórum de madrugada**
+```
+Night, close-up of a laptop screen glowing in a dark room, an old-style internet forum page with many replies (all text blurred and unreadable), Rafael's tired face partially lit by the screen at the edge of the frame. No readable text.
 ```
 **V — Cenário do Vigia:** reaproveitar a cabana do Ep. 02.
 

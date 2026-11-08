@@ -1,7 +1,7 @@
 # O Vigia — Ep. 03 (vídeo longo): "Mais perto."
 
 **Duração estimada:** 10–11 min · **Narração:** ~1.500 palavras · **Formato:** 16:9
-**Imagens:** H1–H9 (criatura escondida, cada vez mais perto), R1–R3 (apoio), V (cenário do Vigia),
+**Imagens:** H1–H9 (criatura escondida, cada vez mais perto), R1–R4 (apoio), V (cenário do Vigia),
 P = tela preta com texto (desenhada pelo motor).
 
 Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨silêncio⟩ = pausa longa.
@@ -65,6 +65,13 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[H7]** Encostou todos os móveis nas paredes. Deixou as luzes acesas. Colocou espelhos nos cantos, pra ver o que vinha atrás.
 **[H7]** E passou a dormir sentado, de costas pra parede.
 **[H7]** Mas a sensação não ia embora. Só chegava mais perto.
+**[R4]** Numa madrugada sem dormir, ele escreveu num fórum na internet. Perguntou se mais alguém sentia aquilo. Alguém andando atrás, cada noite mais perto.
+**[R4]** Em poucas horas, vieram dezenas de respostas. Gente do Brasil inteiro. De outros países. Todo mundo descrevendo a mesma coisa.
+**[R4]** Uma resposta chamou a atenção dele. Um usuário que assinava só com as iniciais. Ele dizia que tinha encontrado um jeito de provar. Que ia tirar fotos da casa toda noite e comparar.
+**[R4]** O Rafael respondeu, pedindo pra ele contar o que encontrasse.
+**[R4]** Três dias depois, chegou uma última mensagem. Só uma frase.
+**[R4]** "Não procura ela."
+**[P]** Depois disso, a conta nunca mais respondeu.
 
 *(Vigia)* **[V]** Quando a gente tem medo de uma coisa que não consegue ver… o que a gente faz?
 **[V]** A gente tenta provar que ela não existe.
