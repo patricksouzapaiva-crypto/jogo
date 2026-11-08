@@ -130,8 +130,8 @@ def narrar_batidas(batidas, voz: dict, destino: Path, paralelo=4) -> Path:
     sr, partes = 48000, []
     for k, (b, w) in enumerate(zip(batidas, wavs)):
         raw = subprocess.run(["ffmpeg", "-v", "error", "-i", w, "-af",
-                              "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-                              "silenceremove=start_periods=1:start_threshold=-45dB,areverse",
+                              "silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.12,areverse,"
+                              "silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.25,areverse",
                               "-f", "f32le", "-ac", "1", "-ar", str(sr), "-"], capture_output=True, check=True).stdout
         a = np.frombuffer(raw, np.float32)
         if k:
@@ -193,8 +193,12 @@ def inserir_silencios(wav, tempos, insercoes, destino):
     sr, pedacos, cursor = 48000, [], 0
     tempos = list(tempos)
     desloc = 0.0
+    runs = _silencios(a, sr)
     for i, seg in sorted(insercoes):
         t = (tempos[i - 1][1] + tempos[i][0]) / 2 - desloc  # instante no áudio original
+        sil = _silencio_entre(runs, tempos[i - 1][1] - desloc - 0.2, tempos[i][0] - desloc + 0.2)
+        if sil:
+            t = (sil[0] + sil[1]) / 2
         corte = int(t * sr)
         pedacos += [a[cursor:corte], np.zeros(int(seg * sr), np.float32)]
         cursor = corte
@@ -207,15 +211,52 @@ def inserir_silencios(wav, tempos, insercoes, destino):
     return destino, tempos
 
 
+def _silencios(a, sr=48000):
+    """Trechos de silêncio REAL (medidos no áudio, quadros de 10 ms), como lista de (inicio, fim) em segundos."""
+    q = sr // 100
+    n = len(a) // q
+    rms = np.sqrt(np.mean(a[: n * q].reshape(n, q) ** 2, axis=1) + 1e-12)
+    db = 20 * np.log10(rms)
+    fala = np.percentile(db, 90)
+    limiar = min(-38.0, max(-58.0, fala - 32.0))
+    mudo = db < limiar
+    runs, i = [], 0
+    while i < n:
+        if mudo[i]:
+            j = i
+            while j < n and mudo[j]:
+                j += 1
+            if j - i >= 4:  # >= 40 ms
+                runs.append((i / 100, j / 100))
+            i = j
+        else:
+            i += 1
+    return runs
+
+
+def _silencio_entre(runs, t0, t1):
+    """Maior silêncio real dentro da janela [t0, t1] (recortado à janela), ou None."""
+    melhor = None
+    for s0, s1 in runs:
+        a, b = max(s0, t0), min(s1, t1)
+        if b - a > 0 and (melhor is None or b - a > melhor[1] - melhor[0]):
+            melhor = (a, b)
+    return melhor
+
+
 def apertar_pausas(wav: Path, palavras, tempos, destino: Path, limites=None):
     """Encurta silêncios longos entre palavras (só encurta, nunca alonga).
+    O corte acontece APENAS dentro de silêncio real medido no áudio, com margem de 70 ms de cada lado,
+    para nunca comer o fim ou o começo de uma palavra (o Whisper erra as bordas em até ~0,2 s).
     limites = pausa máxima (s) depois de ponto final, reticências, vírgula e entre palavras comuns."""
     L = {"ponto": 0.42, "reticencias": 0.6, "virgula": 0.24, "comum": 0.12}
     L.update(limites or {})
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "48000", "-"],
                          capture_output=True, check=True).stdout
     a = np.frombuffer(raw, np.float32)
-    sr, pedacos, novos, cursor, desloc = 48000, [], [], 0.0, 0.0
+    sr, pedacos, cursor = 48000, [], 0.0
+    runs = _silencios(a, sr)
+    margem = 0.07
     cortes = []  # (inicio, fim) de trechos a remover
     for i in range(len(tempos) - 1):
         fim_i, ini_j = tempos[i][1], tempos[i + 1][0]
@@ -228,15 +269,22 @@ def apertar_pausas(wav: Path, palavras, tempos, destino: Path, limites=None):
             lim = L["virgula"]
         else:
             lim = L["comum"]
-        if ini_j - fim_i > lim + 0.05:
-            meio = lim / 2
-            cortes.append((fim_i + meio, ini_j - meio))
+        sil = _silencio_entre(runs, fim_i - 0.2, ini_j + 0.2)
+        if not sil:
+            continue
+        s0, s1 = sil
+        real = s1 - s0
+        if real <= lim + 0.08:
+            continue
+        guarda = max(lim / 2, margem)
+        c0, c1 = s0 + guarda, s1 - guarda
+        if c1 - c0 >= 0.04:
+            cortes.append((c0, c1))
     for c0, c1 in cortes:
         pedacos.append(a[int(cursor * sr):int(c0 * sr)])
         cursor = c1
     pedacos.append(a[int(cursor * sr):])
-    # pequenas rampas nas emendas para não estalar
-    f = int(0.008 * sr)
+    f = int(0.012 * sr)  # rampas curtas nas emendas (estão em silêncio, então não se ouvem)
     for k, pd in enumerate(pedacos):
         pd = pd.copy()
         if k > 0 and len(pd) > f:
@@ -673,6 +721,19 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     D["cenas"].sort(key=lambda c: c["t0"])
     for i, c in enumerate(D["cenas"]):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
+    # lado do Vigia: muda só num corte de imagem, para o lado oposto ao assunto da cena,
+    # e no máximo a cada ~15 s (ou quando o roteiro pede "lado": "esq"/"dir")
+    lado, ultima = roteiro.get("lado_inicial", "esq"), -99.0
+    for c in D["cenas"]:
+        if c.get("lado"):
+            if c["lado"] != lado:
+                lado, ultima = c["lado"], c["t0"]
+        elif not (c.get("vigia") or c.get("abertura") or c.get("tipo") == "relogio") and c.get("foco"):
+            fx = c["foco"][1][0]
+            quer = "dir" if fx < 0.42 else "esq" if fx > 0.58 else None
+            if quer and quer != lado and c["t0"] - ultima >= roteiro.get("lado_intervalo", 15):
+                lado, ultima = quer, c["t0"]
+        c["lado"] = lado
     for k, b in enumerate(roteiro["batidas"]):
         for en in b.get("enfase", []):
             D["poses"].append({"t": fronteira(rel, rel.indice(k, en["em"])), "pose": en["pose"], "tipo": "enfase",
@@ -786,7 +847,7 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     if casadas < 0.7:
         print("    aviso: narração muito diferente do roteiro (a voz pode ter lido instruções ou pulado trechos)")
     # corta o que vier antes da primeira palavra do roteiro (ex.: instrução de estilo lida em voz alta)
-    corte = max(0.0, tempos[0][0] - 0.12)  # tempos[0] é medido quando a 1ª palavra foi reconhecida
+    corte = max(0.0, tempos[0][0] - 0.3)  # folga: o Whisper pode marcar o início da 1ª palavra tarde
     tmp = Path(tempfile.mkdtemp(prefix="painel_"))
     voz_cortada = tmp / "voz_inicio.wav"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{corte:.3f}", "-i", wav, voz_cortada], check=True)

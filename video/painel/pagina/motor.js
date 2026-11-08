@@ -476,11 +476,13 @@ function interfaceCCTV(c, t) {
     mm = String(Math.floor(s / 60) % 60).padStart(2, "0"), ss = String(s % 60).padStart(2, "0");
   ctx.font = `700 ${Math.round(40 * u)}px "DejaVu Sans Mono", monospace`; ctx.fillStyle = "rgba(235,245,235,.9)";
   ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 6;
-  ctx.textAlign = "right"; ctx.fillText(`${k.data || "14/03"}  ${hh}:${mm}:${ss}`, W - 60 * u, H - 60 * u);
-  ctx.textAlign = "left"; ctx.fillText(k.cam || "CAM 01", 60 * u, H - 60 * u);
-  if (Math.floor(t * 1.4) % 2 === 0) { ctx.fillStyle = "#ff2b2b"; ctx.beginPath(); ctx.arc(78 * u, 78 * u, 14 * u, 0, 6.29); ctx.fill(); }
-  ctx.fillStyle = "rgba(235,245,235,.9)"; ctx.fillText("REC", 104 * u, 92 * u);
-  if (k.velocidade && k.velocidade > 1.5) { ctx.textAlign = "right"; ctx.fillText(`▶▶ x${k.velocidade}`, W - 60 * u, 92 * u); }
+  // tudo no topo: a base da tela fica livre para o Vigia e a legenda
+  ctx.textAlign = "right"; ctx.fillText(`${k.data || "14/03"}  ${hh}:${mm}:${ss}`, W - 70 * u, 92 * u);
+  if (k.velocidade && k.velocidade > 1.5) ctx.fillText(`▶▶ x${k.velocidade}`, W - 70 * u, 142 * u);
+  ctx.textAlign = "left";
+  if (Math.floor(t * 1.4) % 2 === 0) { ctx.fillStyle = "#ff2b2b"; ctx.beginPath(); ctx.arc(84 * u, 78 * u, 14 * u, 0, 6.29); ctx.fill(); }
+  ctx.fillStyle = "rgba(235,245,235,.9)"; ctx.fillText("REC", 110 * u, 92 * u);
+  ctx.fillText(k.cam || "CAM 01", 70 * u, 142 * u);
   // cantos de visor
   ctx.strokeStyle = "rgba(235,245,235,.55)"; ctx.lineWidth = 3 * u; const m = 40 * u, L = 70 * u;
   for (const [x, y, sx, sy] of [[m, m, 1, 1], [W - m, m, -1, 1], [m, H - m, 1, -1], [W - m, H - m, -1, -1]]) { ctx.beginPath(); ctx.moveTo(x, y + sy * L); ctx.lineTo(x, y); ctx.lineTo(x + sx * L, y); ctx.stroke(); }
@@ -577,7 +579,10 @@ function vigiaCanto(t) {
   let i = -1; D.poses.forEach((p, k) => { if (p.t <= t) i = k; });
   if (i < 0) return;
   const ci = cenaAtual(t), destaque = ci >= 0 && D.cenas[ci].vigia;
-  const C = destaque ? D.canto_destaque : D.canto, T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
+  let C = destaque ? D.canto_destaque : D.canto;
+  // lado direito: mesma pose (sem espelhar, para não inverter o broche), posição refletida na tela
+  if (!destaque && ci >= 0 && D.cenas[ci].lado === "dir") C = Object.assign({}, C, { x: D.W - C.x - C.w });
+  const T = D.tema, atual = D.poses[i], ant = D.poses[i - 1];
   const f = easeOut(lin(t, atual.t, 0.12)), e = envVoz(t);
   const alvo = C.w * 0.55;                       // largura da cabeça na tela
   const cx = C.x + C.w / 2, topoCabeca = C.base - 2.45 * alvo;
