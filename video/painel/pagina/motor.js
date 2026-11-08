@@ -618,13 +618,77 @@ function legendas(t) {
 }
 function norm(p) { return p.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); }
 
+
+// Chamada para ação do YouTube (tela final): escurece a cena, botão Inscrever-se, clique e sino
+function sino(x, y, r, ang, cor) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.fillStyle = cor;
+  ctx.beginPath(); ctx.moveTo(-r * 0.75, r * 0.45); ctx.quadraticCurveTo(-r * 0.7, -r * 0.75, 0, -r * 0.8);
+  ctx.quadraticCurveTo(r * 0.7, -r * 0.75, r * 0.75, r * 0.45); ctx.lineTo(r * 0.95, r * 0.65); ctx.lineTo(-r * 0.95, r * 0.65); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.arc(0, r * 0.82, r * 0.2, 0, 6.29); ctx.fill();
+  ctx.beginPath(); ctx.arc(0, -r * 0.88, r * 0.12, 0, 6.29); ctx.fill(); ctx.restore();
+}
+function cursorMao(x, y, s) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.fillStyle = "#ffffff"; ctx.strokeStyle = "#111"; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 46); ctx.lineTo(11, 36); ctx.lineTo(19, 54); ctx.lineTo(27, 50); ctx.lineTo(19, 33); ctx.lineTo(34, 33); ctx.closePath();
+  ctx.fill(); ctx.stroke(); ctx.restore();
+}
+function chamadaYouTube(t) {
+  const c = D.cta; if (!c || t < c.t0) return;
+  const { W, H } = D, T = D.tema, dt = t - c.t0;
+  ctx.fillStyle = `rgba(0,0,0,${0.62 * easeOut(lin(dt, 0, 0.4))})`; ctx.fillRect(0, 0, W, H);
+  const cy = H * 0.42;
+  ctx.textAlign = "center";
+  // pergunta
+  const a1 = easeOut(lin(dt, 0.1, 0.35));
+  ctx.globalAlpha = a1; fonte(800, 58, T.fonte_texto); ctx.fillStyle = T.texto_legenda;
+  ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 16;
+  ctx.fillText(c.titulo || "Gostou dessa história?", W / 2, cy - 150 + (1 - a1) * 20);
+  ctx.shadowBlur = 0;
+  // botão
+  const clique = 1.35, inscrito = dt >= clique;
+  const pop = back(lin(dt, 0.35, 0.35)) * (dt > clique && dt < clique + 0.15 ? 0.94 : 1);
+  ctx.globalAlpha = Math.min(1, lin(dt, 0.35, 0.15));
+  const bw = 600, bh = 130, bx = W / 2, by = cy;
+  ctx.save(); ctx.translate(bx, by); ctx.scale(pop, pop);
+  ctx.fillStyle = inscrito ? "#3a3a3a" : "#e62117";
+  ctx.shadowColor = inscrito ? "rgba(0,0,0,.5)" : "rgba(230,33,23,.55)"; ctx.shadowBlur = 40;
+  rr(-bw / 2, -bh / 2, bw, bh, bh / 2); ctx.fill(); ctx.shadowBlur = 0;
+  fonte(800, 56, T.fonte_texto); ctx.fillStyle = "#fff"; ctx.textBaseline = "middle";
+  ctx.fillText(inscrito ? "INSCRITO" : "INSCREVER-SE", -30, 4);
+  const balanco = inscrito ? Math.sin((dt - clique) * 22) * 0.45 * Math.max(0, 1 - (dt - clique) / 0.9) : 0;
+  sino(bw / 2 - 75, -4, 34, balanco, "#fff");
+  ctx.restore(); ctx.textBaseline = "alphabetic";
+  // brilho do clique
+  if (inscrito && dt < clique + 0.5) {
+    const k = lin(dt, clique, 0.5); ctx.strokeStyle = `rgba(255,255,255,${0.6 * (1 - k)})`; ctx.lineWidth = 5;
+    rr(bx - bw / 2 - 20 * k, by - bh / 2 - 20 * k, bw + 40 * k, bh + 40 * k, bh); ctx.stroke();
+  }
+  // cursor chega e clica
+  if (dt > 0.7 && dt < clique + 0.9) {
+    const m = easeInOut(lin(dt, 0.7, clique - 0.7));
+    const x = W * 0.86 + (bx + 120 - W * 0.86) * m, y = H * 0.62 + (by + 10 - H * 0.62) * m;
+    cursorMao(x, y, dt > clique && dt < clique + 0.12 ? 1.25 : 1.4);
+  }
+  // canal
+  const a3 = easeOut(lin(dt, 0.6, 0.4));
+  ctx.globalAlpha = a3; fonte(700, 44, T.fonte_texto); ctx.fillStyle = T.destaque_legenda;
+  ctx.fillText(c.canal || "@ovigia", W / 2, cy + 150);
+  if (c.subtitulo) { fonte(500, 36, T.fonte_texto); ctx.fillStyle = T.texto_legenda; ctx.fillText(c.subtitulo, W / 2, cy + 205); }
+  ctx.globalAlpha = 1; ctx.textAlign = "left";
+}
+
 // ------------------------------------------------------------------ quadro
 window.quadro = function (t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = "left";
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
     cenas(t);
-    if (!(D.abertura_fim && t < D.abertura_fim)) { legendas(t); (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t); }
+    if (!(D.abertura_fim && t < D.abertura_fim)) {
+      if (!(D.cta && t >= D.cta.t0)) legendas(t);
+      chamadaYouTube(t);
+      (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+    }
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
     return;

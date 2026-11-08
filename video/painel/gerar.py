@@ -613,6 +613,14 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         for en in b.get("enfase", []):
             D["poses"].append({"t": fronteira(rel, rel.indice(k, en["em"])), "pose": en["pose"], "tipo": "enfase",
                                "segurar": en.get("segurar", 1.8)})
+    cta = roteiro.get("cta")
+    if cta:  # tela final de chamada para o YouTube
+        t_cta = rel.t[-1][1] + roteiro.get("cauda", 1.6)
+        D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo")}
+        plano["efeitos"] += [{"t": t_cta, "som": "whoosh", "volume_db": -10},
+                             {"t": t_cta + 1.35, "som": "tecla", "volume_db": -2}]
+        if cta.get("pose"):
+            D["poses"].append({"t": t_cta + 0.2, "pose": cta["pose"], "tipo": "enfase", "segurar": 9})
     D["poses"].sort(key=lambda p: p["t"])
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
         D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
@@ -718,7 +726,7 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     roteiro["_inicio_voz"] = inicio_voz
     rel = Relogio(batidas, tempos, inicio_voz)
     fim_voz = rel.t[-1][1]
-    duracao = round(fim_voz + roteiro.get("cauda", 1.6), 2)
+    duracao = round(fim_voz + roteiro.get("cauda", 1.6) + (roteiro["cta"].get("duracao", 3.6) if roteiro.get("cta") else 0), 2)
     print(f"    narração: {fim_voz - VOZ0:.1f} s")
     if roteiro.get("modo") == "cenas":
         D, plano = montar_cenas(roteiro, rel, duracao)

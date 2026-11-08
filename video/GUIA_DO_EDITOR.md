@@ -318,6 +318,10 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - **08/11/2026 — APROVADO pelo usuário (padrão da série):** narrador de meio corpo
   (`vigia_meio`), conversa automática nas pausas + ênfases marcadas, abertura com relâmpago, modo
   `cenas`. Referência: `episodios/ep01-o-retrovisor/roteiro.json`.
+- **08/11/2026 — chamada para ação (fim de todo episódio):** canal do YouTube **Último Abrigo**.
+  Após a última imagem (~1,3 s), tela final de 3,6 s: cena escurece, "Gostou dessa história?",
+  botão vermelho INSCREVER-SE com sino, cursor clica (vira INSCRITO, sino balança, clique), nome do
+  canal em dourado, Vigia apontando para o espectador. Campo `cta` do roteiro.
 - **08/11/2026 — REGRA de troca de pose:** nunca trocar no meio de uma palavra. A troca cai no
   silêncio entre palavras, logo antes do trecho que a pose vai "falar". Conversa troca em fim de
   frase (sempre), em vírgula/reticências com pausa real, ou em pausa longa no meio da frase; a pose
