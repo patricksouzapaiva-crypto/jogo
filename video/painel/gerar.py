@@ -432,8 +432,14 @@ def poses_de_conversa(fixas, rel: Relogio, poses, roteiro, duracao, semente=7):
     roteiro) seguram o tempo pedido e depois a conversa volta."""
     import random
     rnd = random.Random(semente)
-    pool = [k for k, v in poses.items() if v.get("grupo") == "conversa"]
-    pesos = {k: poses[k].get("peso", 3) for k in pool}
+    pools = {}
+    for k, v in poses.items():
+        pools.setdefault(v.get("grupo", "conversa"), []).append(k)
+    pesos = {k: v.get("peso", 3) for k, v in poses.items()}
+    batida_de = {}
+    for kb, (a0, a1) in enumerate(rel.faixas):
+        for ii in range(a0, a1):
+            batida_de[ii] = kb
     cfg = roteiro.get("conversa", {})
     passo, minimo = cfg.get("intervalo", 1.7), cfg.get("minimo", 1.15)
     # janelas ocupadas por poses fixas/ênfase
@@ -454,7 +460,9 @@ def poses_de_conversa(fixas, rel: Relogio, poses, roteiro, duracao, semente=7):
         inicio_frase = i == 0 or rel.palavras[i - 1][-1] in ".!?,;:…" or rel.palavras[i - 1].endswith("...")
         dt = t - ultimo_t
         if dt >= passo or (inicio_frase and dt >= minimo):
-            cand = [k for k in pool if k not in recentes[-3:]]
+            tom = roteiro["batidas"][batida_de.get(i, 0)].get("tom", "conversa")
+            pool = pools.get(tom) or pools["conversa"]
+            cand = [k for k in pool if k not in recentes[-3:]] or pool
             escolha = rnd.choices(cand, weights=[pesos[k] for k in cand])[0]
             novas.append({"t": t, "pose": escolha, "tipo": "conversa"})
             recentes.append(escolha)

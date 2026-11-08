@@ -311,6 +311,10 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   sem repetir as últimas — pequenas diferenças que dão vida. A **prancha 2 (12 poses) é a ÊNFASE**:
   só nas palavras-chave (campo `enfase` da batida), segura ~1,5–2 s com impulso maior e a conversa
   volta. No roteiro marca-se apenas a ênfase.
+- **08/11/2026 — narrador definitivo em teste: meio corpo (`avatares/vigia_meio/`, 48 poses):**
+  prancha A = conversa automática (prefixo `c_`), B = ênfase exagerada (`e_`), C = tom sombrio
+  (`s_`, conversa nas batidas com `"tom": "sombrio"` e ênfases frias). Rosto 2,5–3× maior que o
+  de corpo inteiro → bem mais nítido no celular. Cabeça sempre na mesma posição; base dissolvida.
 - **08/11/2026 — abertura:** cartão de abertura com a arte do episódio (série + "EP. NN" + título),
   ~2,4 s, relâmpago e trovão grave, aproximação lenta, corte seco para a 1ª cena junto com a 1ª
   frase da narração (campo `abertura`). O Vigia e as legendas só entram depois dela.
