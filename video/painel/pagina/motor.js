@@ -715,6 +715,9 @@ function chamadaYouTube(t) {
   const { W, H } = D, T = D.tema, dt = t - c.t0;
   ctx.fillStyle = `rgba(0,0,0,${0.62 * easeOut(lin(dt, 0, 0.4))})`; ctx.fillRect(0, 0, W, H);
   const cy = H * 0.42;
+  ctx.save();
+  const ciC = cenaAtual(t);
+  if (ciC >= 0 && D.cenas[ciC].vigia && W > H) ctx.translate(W * 0.16, 0);   // abre espaço para o Vigia em destaque
   ctx.textAlign = "center";
   // pergunta
   const a1 = easeOut(lin(dt, 0.1, 0.35));
@@ -752,7 +755,7 @@ function chamadaYouTube(t) {
   ctx.globalAlpha = a3; fonte(700, 44, T.fonte_texto); ctx.fillStyle = T.destaque_legenda;
   ctx.fillText(c.canal || "@ovigia", W / 2, cy + 150);
   if (c.subtitulo) { fonte(500, 36, T.fonte_texto); ctx.fillStyle = T.texto_legenda; ctx.fillText(c.subtitulo, W / 2, cy + 205); }
-  ctx.globalAlpha = 1; ctx.textAlign = "left";
+  ctx.globalAlpha = 1; ctx.textAlign = "left"; ctx.restore();
 }
 
 // ------------------------------------------------------------------ quadro

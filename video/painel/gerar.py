@@ -742,6 +742,12 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     if cta:  # tela final de chamada para o YouTube
         t_cta = rel.t[-1][1] + roteiro.get("cauda", 1.6)
         D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo")}
+        if cta.get("fundo"):  # chamada final no cenário do Vigia, com ele em destaque
+            D["cenas"].append({"t0": t_cta, "t1": duracao, "imagem": str((base / cta["fundo"]).resolve()),
+                               "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.5, 0.5]], "vigia": True, "lado": "esq"})
+            D["cenas"].sort(key=lambda c: c["t0"])
+            for i, c in enumerate(D["cenas"][:-1]):
+                c["t1"] = D["cenas"][i + 1]["t0"]
         plano["efeitos"] += [{"t": t_cta, "som": "whoosh", "volume_db": -10},
                              {"t": t_cta + 1.35, "som": "tecla", "volume_db": -2}]
         if cta.get("pose"):
