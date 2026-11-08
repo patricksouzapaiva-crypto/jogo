@@ -843,7 +843,10 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     batidas = roteiro["batidas"]
     texto = "\n".join(b["fala"] for b in batidas)
     print("1/5 narração (Gemini)…")
-    if len(texto) > roteiro.get("voz_max_chars", 1600):
+    if roteiro.get("voz_arquivo"):  # narração já existente (ex.: trecho do episódio longo para um Short)
+        wav = (Path(roteiro["_pasta"]) / roteiro["voz_arquivo"]).resolve()
+        print(f"    usando narração existente: {wav.name}")
+    elif len(texto) > roteiro.get("voz_max_chars", 1600):
         wav = narrar_blocos(batidas, roteiro.get("voz", {}), CACHE / f"blocos_{os.getpid()}.wav",
                             roteiro.get("voz_max_chars", 1400))
     elif roteiro.get("voz_por_frase", False):

@@ -1,0 +1,190 @@
+{
+ "modo": "cenas",
+ "tema": "vigia",
+ "avatar": "vigia_meio",
+ "voz": {
+  "modelo": "gemini-3.8-flash-tts",
+  "nome": "Algenib",
+  "so_texto": true
+ },
+ "pausas": {
+  "ponto": 0.75,
+  "reticencias": 1.0,
+  "virgula": 0.32,
+  "comum": 0.14
+ },
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "legendas": {
+  "destaques": [
+   "sonâmbula",
+   "faca",
+   "facas",
+   "vigia",
+   "câmera"
+  ]
+ },
+ "ambiente_inicial": [],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "cta": {
+  "titulo": "Quer saber o que ela fazia?",
+  "canal": "Último Abrigo",
+  "subtitulo": "História completa no canal",
+  "fundo": "../imagens/V1.png",
+  "pose": "e_apontando",
+  "duracao": 3.4
+ },
+ "formato": "9:16",
+ "voz_arquivo": "s1_voce_nao_devia_voz.wav",
+ "batidas": [
+  {
+   "fala": "Três e doze da manhã.",
+   "cena": {
+    "tipo": "relogio",
+    "hora": "03:12"
+   },
+   "sons": [
+    {
+     "em": "Três",
+     "som": "impacto",
+     "volume_db": -20,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "Marcos abriu os olhos sem saber por quê.",
+   "cena": {
+    "imagem": "../imagens/I01.png",
+    "zoom": [
+     1.45,
+     1.5
+    ],
+    "foco": [
+     [
+      0.2,
+      0.75
+     ],
+     [
+      0.22,
+      0.72
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você.",
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22,
+    "em": "silencioso"
+   }
+  },
+  {
+   "fala": "Virou a cabeça devagar.",
+   "cena": {
+    "imagem": "../imagens/I01.png",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Helena estava de pé, ao lado da cama. Parada. Os olhos abertos, fixos nele.",
+   "cena": {
+    "imagem": "../imagens/I01.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ],
+    "em": "Helena"
+   },
+   "sons": [
+    {
+     "em": "Helena",
+     "som": "impacto",
+     "volume_db": -14,
+     "grave": true
+    }
+   ]
+  },
+  {
+   "fala": "Ela não piscava.",
+   "cena": {
+    "imagem": "../imagens/I02.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E então, num sussurro que ele nunca tinha ouvido sair da boca da esposa, ela disse:",
+   "cena": {
+    "imagem": "../imagens/I02c.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.55,
+      0.55
+     ]
+    ],
+    "em": "sussurro"
+   }
+  },
+  {
+   "fala": "— Você não devia estar acordado.",
+   "queda": {
+    "forca": 0.7,
+    "mais": 0.4
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40,
+    "em": "Você"
+   }
+  }
+ ]
+}

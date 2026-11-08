@@ -1,0 +1,212 @@
+{
+ "modo": "cenas",
+ "tema": "vigia",
+ "avatar": "vigia_meio",
+ "voz": {
+  "modelo": "gemini-3.8-flash-tts",
+  "nome": "Algenib",
+  "so_texto": true
+ },
+ "pausas": {
+  "ponto": 0.75,
+  "reticencias": 1.0,
+  "virgula": 0.32,
+  "comum": 0.14
+ },
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "legendas": {
+  "destaques": [
+   "sonâmbula",
+   "faca",
+   "facas",
+   "vigia",
+   "câmera"
+  ]
+ },
+ "ambiente_inicial": [],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "cta": {
+  "titulo": "Quer saber por que ela disse isso?",
+  "canal": "Último Abrigo",
+  "subtitulo": "História completa no canal",
+  "fundo": "../imagens/V1.png",
+  "pose": "e_apontando",
+  "duracao": 3.4
+ },
+ "formato": "9:16",
+ "voz_arquivo": "s3_a_poltrona_voz.wav",
+ "batidas": [
+  {
+   "fala": "Marcos fingia que dormia. Com o coração disparado. Sentindo o olhar dela no rosto.",
+   "cena": {
+    "imagem": "../imagens/I14.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -21
+   },
+   "ambiente": {
+    "som": "batimento",
+    "volume_db": -9,
+    "em": "coração"
+   }
+  },
+  {
+   "fala": "Uma noite, ele contou. Três horas e quarenta minutos sem ela sair do lugar. E, quando o despertador tocou, ela já estava deitada, de costas pra ele, como se nunca tivesse levantado.",
+   "cena": {
+    "imagem": "../imagens/I13.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -40,
+    "em": "despertador"
+   }
+  },
+  {
+   "fala": "Teve uma madrugada em que ele não aguentou. Acendeu o abajur de repente, pra pegar a esposa no flagra.",
+   "cena": {
+    "imagem": "../imagens/I14.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.4,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "Acendeu",
+     "som": "tecla",
+     "volume_db": -6
+    }
+   ]
+  },
+  {
+   "fala": "Mas Helena não estava ao lado da cama. Estava sentada na poltrona do canto, de frente pra ele.",
+   "cena": {
+    "imagem": "../imagens/I26.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.62,
+      0.45
+     ]
+    ],
+    "em": "Estava"
+   }
+  },
+  {
+   "fala": "Os olhos abertos. As mãos apertando os braços da poltrona, como quem se segura pra não sair correndo.",
+   "cena": {
+    "imagem": "../imagens/I26.png",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.65,
+      0.55
+     ],
+     [
+      0.66,
+      0.4
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "apertando",
+     "pose": "e_medo_gola"
+    }
+   ]
+  },
+  {
+   "fala": "Quando a luz acendeu, ela não se assustou. Só soltou o ar devagar… e disse, baixinho:",
+   "cena": {
+    "imagem": "../imagens/I26.png",
+    "zoom": [
+     1.5,
+     1.6
+    ],
+    "foco": [
+     [
+      0.66,
+      0.18
+     ],
+     [
+      0.66,
+      0.16
+     ]
+    ]
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40,
+    "em": "disse"
+   }
+  },
+  {
+   "fala": "— Ainda bem. Hoje você não levantou.",
+   "queda": {
+    "forca": 0.6,
+    "mais": 0.6
+   },
+   "enfase": [
+    {
+     "em": "Hoje",
+     "pose": "s_pensativo_queixo",
+     "segurar": 2.0
+    }
+   ]
+  }
+ ]
+}
