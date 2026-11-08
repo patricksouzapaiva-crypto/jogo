@@ -426,6 +426,49 @@ def envelope_voz(wav, inicio, duracao, fps=30):
     return out
 
 
+def poses_de_conversa(fixas, rel: Relogio, poses, roteiro, duracao, semente=7):
+    """Preenche a narração com poses de CONVERSA (pequenas variações que dão vida), trocando no início
+    de palavras a cada ~1,5–2 s (mais cedo em começo de frase). Poses de ÊNFASE (e as fixadas no
+    roteiro) seguram o tempo pedido e depois a conversa volta."""
+    import random
+    rnd = random.Random(semente)
+    pool = [k for k, v in poses.items() if v.get("grupo") == "conversa"]
+    pesos = {k: poses[k].get("peso", 3) for k in pool}
+    cfg = roteiro.get("conversa", {})
+    passo, minimo = cfg.get("intervalo", 1.7), cfg.get("minimo", 1.15)
+    # janelas ocupadas por poses fixas/ênfase
+    ocupado = []
+    for i, p in enumerate(fixas):
+        fim = p["t"] + p.get("segurar", 1.6 if p.get("tipo") != "enfase" else 1.8)
+        if i + 1 < len(fixas):
+            fim = min(fim, fixas[i + 1]["t"])
+        ocupado.append((p["t"], fim))
+    livre = lambda t: all(not (a - 0.25 <= t < b) for a, b in ocupado)
+    novas, ultimo_t, recentes = [], -9.0, []
+    for i, w in enumerate(rel.palavras):
+        t = rel.t[i][0] - 0.06
+        if t > rel.t[-1][1] or not livre(t):
+            if not livre(t):
+                ultimo_t = t
+            continue
+        inicio_frase = i == 0 or rel.palavras[i - 1][-1] in ".!?,;:…" or rel.palavras[i - 1].endswith("...")
+        dt = t - ultimo_t
+        if dt >= passo or (inicio_frase and dt >= minimo):
+            cand = [k for k in pool if k not in recentes[-3:]]
+            escolha = rnd.choices(cand, weights=[pesos[k] for k in cand])[0]
+            novas.append({"t": t, "pose": escolha, "tipo": "conversa"})
+            recentes.append(escolha)
+            ultimo_t = t
+    todas = sorted(fixas + novas, key=lambda p: p["t"])
+    # remove trocas de conversa coladas demais numa fixa (evita piscar)
+    limpas = []
+    for p in todas:
+        if limpas and p.get("tipo") == "conversa" and p["t"] - limpas[-1]["t"] < 0.6:
+            continue
+        limpas.append(p)
+    return limpas
+
+
 def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     tema = json.load(open(AQUI / "temas" / f"{roteiro.get('tema', 'vigia')}.json"))
     av_dir = AQUI / "avatares" / roteiro.get("avatar", "vigia")
@@ -443,12 +486,26 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
              "fim_musica": rel.t[-1][1]}
     for amb in roteiro.get("ambiente_inicial", []):
         plano["ambientes"].append({"t": 0.0, **amb})
+    ab = roteiro.get("abertura")
+    if ab:  # cartão de abertura: relâmpago + trovão, aproximação lenta, corte seco para a 1ª cena
+        D["cenas"].append({"t0": 0.0, "imagem": str((base / ab["imagem"]).resolve()), "zoom": ab.get("zoom", [1.06, 1.0]),
+                           "foco": ab.get("foco", [[0.5, 0.4], [0.5, 0.4]]), "relampagos": ab.get("relampagos", [0.12, 0.42]),
+                           "abertura": True})
+        D["abertura_fim"] = ab["duracao"]
+        for so in ab.get("sons", [{"som": "impacto", "t": 0.1, "volume_db": -6, "grave": True}]):
+            plano["efeitos"].append({"t": so["t"], "som": so["som"], "volume_db": so.get("volume_db", -8),
+                                     "grave": so.get("grave", False)})
     for k, b in enumerate(roteiro["batidas"]):
         t0 = rel.inicio(k)
         cenas = ([b["cena"]] if b.get("cena") else []) + b.get("cenas", [])
         for c in cenas:
             c = dict(c)
-            c["t0"] = 0.0 if not D["cenas"] else rel.em(k, c.pop("em", None)) - 0.06
+            if not D["cenas"]:
+                c["t0"] = 0.0
+            elif D["cenas"][-1].get("abertura") and len(D["cenas"]) == 1:
+                c.pop("em", None); c["t0"] = D["abertura_fim"]
+            else:
+                c["t0"] = rel.em(k, c.pop("em", None)) - 0.06
             c["imagem"] = str((base / c["imagem"]).resolve())
             D["cenas"].append(c)
         if b.get("pose"):
@@ -473,7 +530,13 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     D["cenas"].sort(key=lambda c: c["t0"])
     for i, c in enumerate(D["cenas"]):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
+    for k, b in enumerate(roteiro["batidas"]):
+        for en in b.get("enfase", []):
+            D["poses"].append({"t": rel.em(k, en["em"]) - 0.06, "pose": en["pose"], "tipo": "enfase",
+                               "segurar": en.get("segurar", 1.8)})
     D["poses"].sort(key=lambda p: p["t"])
+    if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
+        D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
     dest = [norm(w) for w in leg.get("destaques", [])]
     for bl in blocos_legenda(rel, leg.get("max_caracteres", 26)):
         bl["destaques"] = dest
@@ -571,13 +634,16 @@ def gerar(caminho_roteiro, saida, rascunho=False):
         tempos = apertar_pausas(voz_cortada, palavras, tempos, voz_final, roteiro.get("pausas"))
         voz_cortada = voz_final
         print(f"    pausas encurtadas: {antes:.1f} s -> {tempos[-1][1]:.1f} s")
-    rel = Relogio(batidas, tempos, VOZ0)
+    ab = roteiro.get("abertura")
+    inicio_voz = (ab["duracao"] + ab.get("respiro", 0.15)) if ab else VOZ0
+    roteiro["_inicio_voz"] = inicio_voz
+    rel = Relogio(batidas, tempos, inicio_voz)
     fim_voz = rel.t[-1][1]
     duracao = round(fim_voz + roteiro.get("cauda", 1.6), 2)
     print(f"    narração: {fim_voz - VOZ0:.1f} s")
     if roteiro.get("modo") == "cenas":
         D, plano = montar_cenas(roteiro, rel, duracao)
-        D["voz_env"] = envelope_voz(voz_cortada, VOZ0, duracao)
+        D["voz_env"] = envelope_voz(voz_cortada, roteiro["_inicio_voz"], duracao)
     else:
         D, eventos = montar(roteiro, rel, duracao)
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))
@@ -588,7 +654,7 @@ def gerar(caminho_roteiro, saida, rascunho=False):
     subprocess.run(cmd, check=True)
     print("4/5 mixagem…")
     if roteiro.get("modo") == "cenas":
-        mixar_cenas(voz_cortada, VOZ0, duracao, plano, str(tmp / "audio.wav"))
+        mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"))
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")

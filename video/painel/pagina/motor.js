@@ -462,6 +462,11 @@ function cenas(t) {
   } else if (c.entrada === "preto" && t < c.t0 + dt) {
     desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
   } else desenharCena(c, t);
+  // relâmpagos (abertura)
+  for (const r of c.relampagos || []) {
+    const dtr = t - c.t0 - r;
+    if (dtr >= 0 && dtr < 0.35) { ctx.fillStyle = `rgba(225,235,255,${0.55 * Math.pow(1 - dtr / 0.35, 2) * (dtr < 0.05 ? 1 : 0.8)})`; ctx.fillRect(0, 0, W, H); }
+  }
   // flash curto no corte (opcional)
   if (c.flash && t < c.t0 + 0.18) { ctx.fillStyle = `rgba(220,235,230,${0.35 * (1 - lin(t, c.t0, 0.18))})`; ctx.fillRect(0, 0, W, H); }
   // chuva animada por cima (leve)
@@ -580,8 +585,10 @@ function vigiaCorpo(t) {
     ctx.drawImage(MASCARA, x, y); ctx.restore(); ctx.globalAlpha = 1;
   };
   if (ant && f < 1) desenha(ant.pose, 1 - f, 1, 0);
-  const imp = 1 - easeOut(lin(t, atual.t, 0.28));
-  desenha(atual.pose, f, 1 + 0.05 * imp, -8 * imp);
+  // conversa: troca discreta; ênfase: impulso maior para o olho perceber
+  const forte = atual.tipo === "enfase" ? 1 : atual.tipo === "conversa" ? 0.25 : 0.7;
+  const imp = 1 - easeOut(lin(t, atual.t, atual.tipo === "enfase" ? 0.32 : 0.2));
+  desenha(atual.pose, f, 1 + 0.07 * forte * imp, -10 * forte * imp);
 }
 
 // Legendas: frases de até 2 linhas, branco quente, sombra discreta, poucas palavras em destaque
@@ -614,7 +621,8 @@ window.quadro = function (t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = "left";
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
-    cenas(t); legendas(t); (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+    cenas(t);
+    if (!(D.abertura_fim && t < D.abertura_fim)) { legendas(t); (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t); }
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
     return;

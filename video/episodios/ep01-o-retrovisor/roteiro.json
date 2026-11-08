@@ -424,5 +424,23 @@
    ],
    "pose": "sussurrando"
   }
- ]
+ ],
+ "abertura": {
+  "imagem": "imagens/00_abertura.png",
+  "duracao": 2.4,
+  "zoom": [
+   1.07,
+   1.0
+  ],
+  "foco": [
+   [
+    0.5,
+    0.35
+   ],
+   [
+    0.5,
+    0.38
+   ]
+  ]
+ }
 }
