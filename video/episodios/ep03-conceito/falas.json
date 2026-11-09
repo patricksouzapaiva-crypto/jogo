@@ -10,7 +10,7 @@
   "tag": "P",
   "vigia": false,
   "fala": "\"Eu achei ela. Ela tá em todas as fotos.\"",
-  "voz": "rafael",
+  "voz": "rafael_repete",
   "pausa_antes": false
  },
  {
@@ -465,6 +465,41 @@
   "tag": "P",
   "vigia": false,
   "fala": "Depois disso, a conta nunca mais respondeu.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "fala": "Uma curiosidade, já que estamos aqui.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Cada um dos seus olhos tem um ponto cego. Um lugar onde o nervo óptico sai do olho, e onde você, literalmente, não enxerga nada.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Você nunca percebe. Porque o seu cérebro pinta aquele buraco com o que ele acha que deveria estar ali.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Ou seja… ele esconde de você o que você não consegue ver.",
+  "voz": "vigia",
+  "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "fala": "Guarde isso.",
   "voz": "vigia",
   "pausa_antes": false
  },

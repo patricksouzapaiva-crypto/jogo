@@ -88,6 +88,11 @@ Legenda: **[código]** = imagem/cena · *(Vigia)* = Vigia em destaque · ⟨sil�
 **[R4]** "Não procura ela."
 **[P]** Depois disso, a conta nunca mais respondeu.
 
+*(Vigia)* **[V]** Uma curiosidade, já que estamos aqui.
+**[V]** Cada um dos seus olhos tem um ponto cego. Um lugar onde o nervo óptico sai do olho, e onde você, literalmente, não enxerga nada.
+**[V]** Você nunca percebe. Porque o seu cérebro pinta aquele buraco com o que ele acha que deveria estar ali.
+**[V]** Ou seja… ele esconde de você o que você não consegue ver.
+**[V]** Guarde isso.
 *(Vigia)* **[V]** Quando a gente tem medo de uma coisa que não consegue ver… o que a gente faz?
 **[V]** A gente tenta provar que ela não existe.
 
