@@ -24,7 +24,12 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 
 - **Ep. 04 "Não acenda a luz." (tema + história, ~14 min): roteiro APROVADO** (`episodios/ep04-medo-do-escuro/ROTEIRO.md`).
   Prontos: 25 fotos reais tratadas (`imagens_reais/`) e 15 vídeos curtos (`videos/`), com créditos.
-  Aguardando o usuário gerar as 12 imagens de IA (`PEDIDO_IMAGENS_IA.md`).
+  13 imagens-chave do usuário em `imagens/` (aprovadas, sem tratamento extra). `montar_roteiro.py` → `roteiro.json`
+  pronto (138 falas, 156 cenas, Vigia só nas inserções, trilha/efeitos/ênfases definidos).
+  **Falta só a narração:** a cota do `gemini-3.8-flash-tts` acabou em 09/11 (~22h UTC). A chamada normal com o
+  texto inteiro dá 502 depois de ~30 s → usar `painel/ferramentas/narrar_fluxo.py narracao_texto.txt
+  audio/voz_completa.wav` (streaming, ainda não testado até o fim). Se der erro, dividir em 4 blocos (seções).
+  O usuário escolheu ESPERAR a cota para manter a mesma voz (Algenib) — não trocar de modelo.
 - Motor (09/11): Vigia fora por padrão (`vigia_padrao`), halo corrigido, som `sem_sustos`, aviso de salto de volume.
 
 ## Pendências

@@ -1,0 +1,2792 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_completa.wav",
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "preencher_pausas": {
+  "min": 1.3
+ },
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4
+ },
+ "legendas": {
+  "destaques": [
+   "luz",
+   "canto",
+   "perto",
+   "vinte",
+   "olhos",
+   "escuro"
+  ]
+ },
+ "ambiente_inicial": [],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "abertura": {
+  "texto": "O VIGIA\nEP. 04 · NÃO ACENDA A LUZ.",
+  "vermelho": "LUZ.",
+  "duracao": 3.2,
+  "antes_da_batida": 4,
+  "sons": [
+   {
+    "som": "sub_drop",
+    "t": 0.2,
+    "volume_db": -12
+   }
+  ]
+ },
+ "cta": {
+  "titulo": "Você dorme de luz acesa?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.8
+ },
+ "batidas": [
+  {
+   "fala": "Ela ficou parada no escuro, contando. Dez minutos. Quinze.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.45,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Aos vinte, os olhos dela finalmente se acostumaram.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  },
+  {
+   "fala": "E foi aí que ela viu…",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.12,
+     1.22
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.68,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "que o canto do quarto não estava vazio. Nunca esteve.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.7,
+     1.8
+    ],
+    "foco": [
+     [
+      0.71,
+      0.42
+     ],
+     [
+      0.71,
+      0.4
+     ]
+    ]
+   },
+   "pausa_antes_s": 0.9,
+   "sons": [
+    {
+     "em": "esteve",
+     "som": "sub_drop",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Toda criança já pediu pra deixar a luz do corredor acesa.",
+   "cena": {
+    "imagem": "imagens_reais/crianca_corredor_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.56,
+      0.48
+     ]
+    ],
+    "com_vigia": true
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "E quase todo adulto… ainda sente alguma coisa quando apaga a última luz da casa.",
+   "cena": {
+    "video": "videos/vela_apagando_1.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Por quê?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Por",
+     "pose": "c_pensativo_queixo",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Numa caverna da África do Sul, acharam o crânio de um parente nosso, de mais de um milhão de anos.",
+   "cena": {
+    "imagem": "imagens_reais/swartkrans_9.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "tipo": "cartao",
+    "legenda_cartao": "Paranthropus robustus · Swartkrans, África do Sul",
+    "giro": -1.5,
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Ele tem dois furos. Do tamanho exato dos dentes de um leopardo.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/swartkrans_10.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "dois furos",
+     "giro": 1.2,
+     "com_vigia": true
+    },
+    {
+     "video": "videos/leopardo_v_1.mp4",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "em": "leopardo",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Por milhões de anos, a noite foi a hora em que a gente virava comida.",
+   "cena": {
+    "video": "videos/leopardo_v_4.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Quem tinha medo do escuro… sobrevivia. E passou esse medo pra frente. Pra você.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/leopardo_3.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.45,
+       0.55
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "em": "Pra",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "O corpo ainda lembra. Em laboratório, o mesmo barulho assusta mais quando a sala está escura.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "O corpo ainda lembra.\nNo escuro, o mesmo barulho assusta mais.",
+    "estilo": "maquina",
+    "vermelho": "lembra."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Mas o escuro, em si, não tem nada. Não morde. Não pesa.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Mas",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "O problema é o que a sua cabeça coloca nele.",
+   "cena": {
+    "imagem": "imagens_reais/canto_quarto_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Lovecraft escreveu que o medo mais antigo e mais forte da humanidade é o medo do desconhecido.",
+   "cena": {
+    "imagem": "imagens_reais/lovecraft_4.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "tipo": "cartao",
+    "legenda_cartao": "H. P. Lovecraft · 1934",
+    "giro": -1.2,
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "E o escuro é o desconhecido mais perto de você. Ele fica a um interruptor de distância.",
+   "cena": {
+    "imagem": "imagens_reais/porta_apto_0.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "E tem um detalhe que quase ninguém sabe.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "detalhe",
+     "pose": "c_sussurrando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Quando a luz apaga, o seu olho leva vinte, trinta minutos pra enxergar no escuro de verdade.",
+   "cena": {
+    "video": "videos/pupila_2.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Até lá, você só vê uma parte do que está ali.",
+   "cena": {
+    "imagem": "imagens_reais/olho_escuro_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.68,
+      0.48
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Guarde esse número.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "20 MINUTOS",
+    "estilo": "impacto",
+    "vermelho": "20",
+    "cps": 10,
+    "tamanho": 160
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Agora que você entende por que o escuro mexe tanto com a gente…",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.06,
+     1.14
+    ],
+    "foco": [
+     [
+      0.35,
+      0.45
+     ],
+     [
+      0.33,
+      0.42
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Agora",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "vamos para a história de hoje."
+  },
+  {
+   "fala": "A Júlia tinha vinte e nove anos e era enfermeira do turno da noite num hospital público do centro.",
+   "cena": {
+    "imagem": "imagens/A12_julia_hospital.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.58,
+      0.5
+     ]
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 1.2
+   },
+   "pausa_antes_s": 1.2,
+   "sons": [
+    {
+     "em": "Júlia",
+     "som": "tecla",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -1.0
+    }
+   ],
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Quando achou um apartamento no sétimo andar de um prédio antigo, ali perto, pelo preço de um quarto e sala na periferia, não perguntou muito.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/predio_antigo_4.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    {
+     "imagem": "imagens_reais/predio_antigo_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.6
+      ],
+      [
+       0.5,
+       0.4
+      ]
+     ],
+     "em": "pelo"
+    }
+   ]
+  },
+  {
+   "fala": "Devia ter perguntado.",
+   "cena": {
+    "imagem": "imagens_reais/predio_antigo_0.jpg",
+    "zoom": [
+     1.15,
+     1.22
+    ],
+    "foco": [
+     [
+      0.5,
+      0.35
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O prédio tinha um problema que todo morador conhecia: toda vez que chovia forte, caía a luz. Às vezes por minutos. Às vezes, horas.",
+   "cenas": [
+    {
+     "video": "videos/chuva_janela_v_0.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    {
+     "video": "videos/relampago_1.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "em": "caía"
+    }
+   ]
+  },
+  {
+   "fala": "Os vizinhos tinham lanterna, vela, lâmpada de emergência em todo cômodo. A Júlia achou exagero.",
+   "cena": {
+    "imagem": "imagens_reais/lampada_emergencia_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "Na primeira semana, ela foi trocar um disjuntor e achou, colado por dentro da tampa da caixa de luz, um papel amarelado. Letra de gente velha, apertada, quase rasgando o papel:",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/quadro_luz_0.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    {
+     "imagem": "imagens_reais/bilhete_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "em": "papel"
+    }
+   ]
+  },
+  {
+   "fala": "\"Quando cair a energia, não acenda a luz. Nenhuma. Espere.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Quando cair a energia,\nnão acenda a luz. Nenhuma. Espere.",
+    "estilo": "maquina",
+    "vermelho": "luz."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela riu. Tirou uma foto pra mandar pra uma amiga, com a legenda \"meu prédio é assombrado\". E esqueceu.",
+   "cena": {
+    "imagem": "imagens_reais/quadro_luz_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ]
+   }
+  },
+  {
+   "fala": "Duas semanas depois, numa madrugada de folga, choveu. A luz caiu.",
+   "cena": {
+    "video": "videos/chuva_janela_v_2.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "A Júlia ia pegar o celular… e lembrou do papel. Por curiosidade, ou por teimosia, resolveu esperar.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  },
+  {
+   "fala": "Sentou na cama e ficou olhando pro quarto.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.12,
+     1.18
+    ],
+    "foco": [
+     [
+      0.62,
+      0.45
+     ],
+     [
+      0.66,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Primeiro, preto total. Depois, aos poucos, o retângulo da janela. O guarda-roupa. A porta.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 2.5
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Uns vinte minutos depois, o quarto inteiro tinha voltado, em tons de cinza.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.58,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E, no canto, entre o guarda-roupa e a parede… tinha uma forma mais escura que o resto.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.15,
+     1.35
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.7,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Alta. Fina demais. Parada.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.75,
+     1.82
+    ],
+    "foco": [
+     [
+      0.71,
+      0.42
+     ],
+     [
+      0.71,
+      0.4
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "Parada",
+     "som": "riser_tensao",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "A Júlia não respirou. Ficou olhando. A forma também não se mexia."
+  },
+  {
+   "fala": "Ela acendeu a lanterna. O canto estava vazio.",
+   "cenas": [
+    {
+     "imagem": "imagens/A01_quarto_escuro.png",
+     "zoom": [
+      1.75,
+      1.8
+     ],
+     "foco": [
+      [
+       0.71,
+       0.42
+      ],
+      [
+       0.71,
+       0.4
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/A02_canto_lanterna.png",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "em": "O"
+    }
+   ],
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   },
+   "sons": [
+    {
+     "em": "lanterna",
+     "som": "tecla",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Só a parede. E, no rodapé, uma marca que ela nunca tinha reparado: a tinta gasta, como se alguém tivesse ficado em pé ali… por muito tempo.",
+   "cena": {
+    "imagem": "imagens/A02_canto_lanterna.png",
+    "zoom": [
+     1.1,
+     1.3
+    ],
+    "foco": [
+     [
+      0.52,
+      0.6
+     ],
+     [
+      0.53,
+      0.68
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Em dois mil e dez, um psicólogo italiano, Giovanni Caputo, pediu que dezenas de voluntários olhassem para o próprio rosto num espelho, numa sala quase escura, por dez minutos.",
+   "cena": {
+    "imagem": "imagens_reais/olho_escuro_0.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "tipo": "cartao",
+    "legenda_cartao": "Giovanni Caputo · 2010 · a ilusão do rosto estranho",
+    "giro": -1.5,
+    "com_vigia": true
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Em menos de um minuto, a maioria já via o rosto se deformar. Alguns viram parentes mortos. Outros… um desconhecido.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "um desconhecido.",
+     "estilo": "impacto",
+     "vermelho": "desconhecido.",
+     "cps": 12,
+     "em": "Outros"
+    }
+   ]
+  },
+  {
+   "fala": "No escuro, o cérebro para de esperar e começa a inventar.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "No escuro, o cérebro para de esperar\ne começa a inventar.",
+    "estilo": "maquina",
+    "vermelho": "inventar."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Foi exatamente isso que a Júlia disse pra si mesma naquela noite. E na seguinte.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "exatamente",
+     "pose": "c_desconfiado_lado",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "Só que a forma não ficava no mesmo lugar.",
+   "cena": {
+    "imagem": "imagens/A03_janela.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "No apagão seguinte, ela não estava no canto. Estava no meio da parede, perto da janela.",
+   "cenas": [
+    {
+     "imagem": "imagens/A03_janela.png",
+     "zoom": [
+      1.06,
+      1.1
+     ]
+    },
+    {
+     "imagem": "imagens/A03b_janela.png",
+     "zoom": [
+      1.1,
+      1.3
+     ],
+     "foco": [
+      [
+       0.4,
+       0.4
+      ],
+      [
+       0.24,
+       0.38
+      ]
+     ],
+     "em": "Estava"
+    }
+   ]
+  },
+  {
+   "fala": "No outro, ao lado da porta do quarto.",
+   "cena": {
+    "imagem": "imagens/A04_porta.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "sons": [
+    {
+     "em": "quarto",
+     "som": "sub_drop",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E sempre do mesmo jeito: quando a Júlia olhava direto, ela sumia no escuro. Mas era só desviar um pouco o olhar… e ela estava lá. Com o canto do olho.",
+   "cenas": [
+    {
+     "imagem": "imagens/A04_porta.png",
+     "zoom": [
+      1.06,
+      1.12
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.45,
+       0.48
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/A04_porta.png",
+     "zoom": [
+      1.4,
+      1.5
+     ],
+     "foco": [
+      [
+       0.74,
+       0.42
+      ],
+      [
+       0.74,
+       0.4
+      ]
+     ],
+     "em": "Mas"
+    }
+   ]
+  },
+  {
+   "fala": "Isso tem explicação. As células que enxergam no escuro ficam nas bordas do olho, não no centro.",
+   "cena": {
+    "imagem": "imagens_reais/estrelas_5.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "com_vigia": true
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Astrônomos aprendem cedo: pra ver uma estrela fraca, não se olha direto pra ela. Olha-se um pouco ao lado.",
+   "cena": {
+    "video": "videos/estrelas_v_5.mp4",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "No escuro, o que está bem na sua frente é o que você vê pior.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "No escuro, o que está bem na sua frente\né o que você vê pior.",
+    "estilo": "maquina",
+    "vermelho": "pior."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A Júlia começou a anotar. Data, hora, quanto tempo a luz ficou fora. E onde a forma estava.",
+   "cena": {
+    "imagem": "imagens_reais/caderno_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   },
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Na quarta anotação, ela fez uma conta que não devia ter feito.",
+   "cena": {
+    "imagem": "imagens_reais/caderno_1.jpg",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A forma nunca aparecia longe da cama. Cada vez… estava um pouco mais perto dela.",
+   "cena": {
+    "imagem": "imagens/A03b_janela.png",
+    "zoom": [
+     1.2,
+     1.4
+    ],
+    "foco": [
+     [
+      0.3,
+      0.4
+     ],
+     [
+      0.22,
+      0.38
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Numa tarde, mexendo na caixa de luz de novo, ela reparou que a tampa tinha fundo falso. Atrás, enrolado num saco plástico, tinha um caderno escolar. Daqueles de capa dura.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/quadro_luz_1.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "imagem": "imagens_reais/caderno_3.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "caderno"
+    }
+   ]
+  },
+  {
+   "fala": "Era do antigo morador. Na primeira página, o nome: Aurélio.",
+   "cena": {
+    "imagem": "imagens_reais/caderno_3.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.4,
+      0.4
+     ],
+     [
+      0.38,
+      0.35
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E dentro, o mesmo que ela vinha fazendo. Datas. Horas. Distâncias.",
+   "cena": {
+    "imagem": "imagens_reais/caderno_3.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "tipo": "cartao",
+    "legenda_cartao": "caderno de Aurélio",
+    "giro": 1.0
+   }
+  },
+  {
+   "fala": "\"Quatro metros.\" \"Três metros.\" \"Dois metros e meio.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "4 metros.\n3 metros.\n2,5 metros.",
+    "estilo": "maquina",
+    "vermelho": "2,5 metros."
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -28
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "As anotações iam por quase dois anos. A letra ficava cada vez mais tremida.",
+   "cena": {
+    "imagem": "imagens_reais/caderno_3.jpg",
+    "zoom": [
+     1.25,
+     1.4
+    ],
+    "foco": [
+     [
+      0.55,
+      0.55
+     ],
+     [
+      0.6,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Um metro.\" \"Setenta centímetros.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "1 metro.\n70 centímetros.",
+    "estilo": "maquina",
+    "vermelho": "70 centímetros."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A última linha estava escrita em letras enormes, tortas, como se ele tivesse escrito sem olhar pro papel:",
+   "cena": {
+    "imagem": "imagens_reais/caderno_3.jpg",
+    "zoom": [
+     1.4,
+     1.55
+    ],
+    "foco": [
+     [
+      0.6,
+      0.7
+     ],
+     [
+      0.62,
+      0.74
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Quarenta centímetros. Ela sorriu.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "40 centímetros.\nEla sorriu.",
+    "estilo": "impacto",
+    "vermelho": "sorriu.",
+    "cps": 12
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   },
+   "sons": [
+    {
+     "em": "sorriu",
+     "som": "sub_drop",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "A página seguinte tinha uma frase só, sublinhada três vezes:",
+   "pausa_antes_s": 1.5,
+   "cena": {
+    "imagem": "imagens_reais/caderno_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "\"Enquanto eu olho, ela não anda.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Enquanto eu olho, ela não anda.",
+    "estilo": "maquina",
+    "vermelho": "anda."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A Júlia desceu e foi falar com a vizinha do setecentos e dois, a dona Cida, que morava no prédio fazia trinta anos.",
+   "cena": {
+    "imagem": "imagens_reais/corredor_predio_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Mostrou o caderno.",
+   "cena": {
+    "imagem": "imagens/A06_dona_cida.png",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "A dona Cida ficou um tempo olhando pra capa sem abrir. Depois devolveu, como quem devolve uma coisa quente.",
+   "cena": {
+    "imagem": "imagens/A06_dona_cida.png",
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"O seu Aurélio vivia de luz acesa, minha filha. Dia e noite. Dizia que, no claro, ele não sabia onde ela estava. E que isso era pior.\"",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/lampada_emergencia_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    {
+     "imagem": "imagens/A06_dona_cida.png",
+     "zoom": [
+      1.15,
+      1.2
+     ],
+     "foco": [
+      [
+       0.56,
+       0.42
+      ],
+      [
+       0.56,
+       0.4
+      ]
+     ],
+     "em": "Dizia"
+    }
+   ]
+  },
+  {
+   "fala": "\"Ela quem?\"",
+   "cena": {
+    "imagem": "imagens/A06_dona_cida.png",
+    "zoom": [
+     1.2,
+     1.24
+    ],
+    "foco": [
+     [
+      0.56,
+      0.42
+     ],
+     [
+      0.56,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A dona Cida não respondeu. Contou só que, numa noite de chuva, faltou luz por quase quatro horas.",
+   "cena": {
+    "video": "videos/relampago_1.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "De manhã, o zelador achou o seu Aurélio sentado na cama, de olhos arregalados, olhando pro canto. Vivo.",
+   "cenas": [
+    {
+     "imagem": "imagens/A01_quarto_escuro.png",
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "Vivo.",
+     "estilo": "impacto",
+     "vermelho": "Vivo.",
+     "cps": 10,
+     "em": "Vivo"
+    }
+   ],
+   "sons": [
+    {
+     "em": "Vivo",
+     "som": "sub_drop",
+     "volume_db": -16,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Levaram ele pro hospital. E ele nunca mais falou.",
+   "cena": {
+    "imagem": "imagens_reais/hospital_quarto_6.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "\"Pra qual hospital?\"",
+   "cena": {
+    "imagem": "imagens/A06_dona_cida.png",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "A dona Cida disse o nome. A Júlia sentiu o estômago gelar.",
+   "cena": {
+    "imagem": "imagens/A06_dona_cida.png",
+    "zoom": [
+     1.25,
+     1.32
+    ],
+    "foco": [
+     [
+      0.56,
+      0.42
+     ],
+     [
+      0.56,
+      0.38
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Era o hospital onde ela trabalhava.",
+   "cena": {
+    "imagem": "imagens/A12_julia_hospital.png",
+    "zoom": [
+     1.1,
+     1.18
+    ],
+    "foco": [
+     [
+      0.62,
+      0.5
+     ],
+     [
+      0.66,
+      0.48
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "trabalhava",
+     "som": "riser_tensao",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Guarda essa frase do caderno: \"enquanto eu olho, ela não anda.\"",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 0.6
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   },
+   "enfase": [
+    {
+     "em": "Guarda",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "Agora pensa no bilhete da caixa de luz. Ele não dizia \"acenda a luz\". Dizia o contrário.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Não acenda a luz.",
+    "estilo": "maquina",
+    "vermelho": "luz."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Porque a luz não faz ela ir embora. A luz só faz você parar de ver onde ela está.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "parar",
+     "pose": "s_encarando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "E aí… ela anda.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "E aí… ela anda.",
+    "estilo": "impacto",
+    "vermelho": "anda.",
+    "cps": 12
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não olha pro canto do seu quarto agora. Ou melhor… olha. E não para de olhar.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.1,
+     1.18
+    ],
+    "foco": [
+     [
+      0.35,
+      0.42
+     ],
+     [
+      0.33,
+      0.4
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Não",
+     "pose": "s_silencio",
+     "segurar": 2.2
+    },
+    {
+     "em": "olha.",
+     "pose": "s_encarando",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "Na noite seguinte, no plantão, a Júlia procurou o nome no sistema.",
+   "pausa_antes_s": 2.0,
+   "cena": {
+    "video": "videos/monitor_v_5.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 0.8
+   },
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Aurélio. Setenta e um anos. Ala de longa permanência, quarto quatro, leito catorze. Internado havia oito meses.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "AURÉLIO · 71 anos\nAla de longa permanência\nQuarto 4 · Leito 14",
+    "estilo": "maquina",
+    "vermelho": "14"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Diagnóstico: estado catatônico. E uma observação que algum médico tinha escrito com ponto de exclamação: \"paciente não dorme\".",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Diagnóstico: estado catatônico.\nObs.: paciente não dorme!",
+    "estilo": "maquina",
+    "vermelho": "dorme!"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "As outras enfermeiras evitavam o quarto quatro. Diziam que ele não tirava os olhos do canto nem na hora do banho.",
+   "cena": {
+    "imagem": "imagens_reais/hospital_quarto_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "Às duas da manhã, quando a ala inteira apaga as luzes, a Júlia foi até lá.",
+   "cena": {
+    "video": "videos/luz_piscando_2.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "O quarto estava na penumbra. Só a luz verde do monitor.",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "O seu Aurélio estava sentado, as costas retas, os olhos muito abertos e vermelhos. Fixos no canto do quarto, entre o armário e a parede.",
+   "cenas": [
+    {
+     "imagem": "imagens/A07_aurelio.png",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.58,
+       0.48
+      ],
+      [
+       0.6,
+       0.45
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/A08_canto_hospital.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "Fixos"
+    }
+   ]
+  },
+  {
+   "fala": "Ela chegou perto e sussurrou: \"Seu Aurélio… eu moro no seu apartamento.\"",
+   "cena": {
+    "imagem": "imagens/A07b_aurelio_mao.png",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "Ele não se mexeu. Não piscou.",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.6,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas, depois de um tempo, a boca dele se abriu. A voz saiu rouca, de quem não fala há meses:",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.45,
+     1.52
+    ],
+    "foco": [
+     [
+      0.6,
+      0.42
+     ],
+     [
+      0.6,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Você apagou a luz.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Você apagou a luz.",
+    "estilo": "maquina",
+    "vermelho": "luz."
+   },
+   "sons": [
+    {
+     "em": "luz",
+     "som": "sub_drop",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não era uma pergunta.",
+   "cena": {
+    "imagem": "imagens/A07b_aurelio_mao.png",
+    "zoom": [
+     1.1,
+     1.18
+    ],
+    "foco": [
+     [
+      0.62,
+      0.5
+     ],
+     [
+      0.65,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Ela não mora no apartamento, menina. Ela é de quem vê. A minha veio comigo.\"",
+   "cena": {
+    "imagem": "imagens/A08_canto_hospital.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Os olhos dele não saíram do canto.",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.2,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.58,
+      0.44
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Faz oito meses que eu não durmo. Se eu fechar o olho… ela chega.\"",
+   "cenas": [
+    {
+     "imagem": "imagens/A07b_aurelio_mao.png",
+     "zoom": [
+      1.2,
+      1.3
+     ],
+     "foco": [
+      [
+       0.66,
+       0.5
+      ],
+      [
+       0.68,
+       0.5
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/A08_canto_hospital.png",
+     "zoom": [
+      1.2,
+      1.3
+     ],
+     "foco": [
+      [
+       0.62,
+       0.45
+      ],
+      [
+       0.64,
+       0.44
+      ]
+     ],
+     "em": "ela"
+    }
+   ]
+  },
+  {
+   "fala": "A Júlia olhou pro canto do quarto. Não tinha nada. Era só a luz do monitor que não alcançava.",
+   "cena": {
+    "imagem": "imagens/A08_canto_hospital.png",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.62,
+      0.45
+     ],
+     [
+      0.64,
+      0.44
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"E a minha?\", ela perguntou.",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.5,
+     1.55
+    ],
+    "foco": [
+     [
+      0.6,
+      0.42
+     ],
+     [
+      0.6,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Pela primeira vez, ele quase sorriu.",
+   "cena": {
+    "imagem": "imagens/A07_aurelio.png",
+    "zoom": [
+     1.55,
+     1.6
+    ],
+    "foco": [
+     [
+      0.6,
+      0.4
+     ],
+     [
+      0.6,
+      0.39
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"A sua ficou em casa. Esperando você.\"",
+   "cenas": [
+    {
+     "imagem": "imagens/A07_aurelio.png",
+     "zoom": [
+      1.6,
+      1.62
+     ],
+     "foco": [
+      [
+       0.6,
+       0.4
+      ],
+      [
+       0.6,
+       0.39
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/A01_quarto_escuro.png",
+     "zoom": [
+      1.7,
+      1.78
+     ],
+     "foco": [
+      [
+       0.71,
+       0.42
+      ],
+      [
+       0.71,
+       0.4
+      ]
+     ],
+     "em": "Esperando"
+    }
+   ],
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26,
+    "em": "Esperando"
+   },
+   "sons": [
+    {
+     "em": "você",
+     "som": "sub_drop",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "A gente pisca de quinze a vinte vezes por minuto, sem perceber.",
+   "cena": {
+    "video": "videos/piscar_0.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "com_vigia": true
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Tente ficar sem piscar. Em menos de um minuto o olho arde. Em dois, dói. A visão embaça, as lágrimas escorrem.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "dói.",
+     "estilo": "impacto",
+     "vermelho": "dói.",
+     "cps": 10,
+     "em": "dói"
+    }
+   ]
+  },
+  {
+   "fala": "O corpo não foi feito pra ficar olhando uma coisa só, sem parar.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "corpo",
+     "pose": "c_serio_frontal",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "A Júlia não voltou pra casa naquela semana. Dormiu no hospital, na casa de uma amiga, em qualquer lugar com luz.",
+   "cena": {
+    "video": "videos/luz_piscando_1.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "No terceiro dia, a dona Cida ligou. A voz baixa, como se alguém pudesse ouvir.",
+   "cena": {
+    "imagem": "imagens_reais/idosa_telefone_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Júlia, você tá em casa?\"",
+   "cena": {
+    "imagem": "imagens_reais/idosa_telefone_0.jpg",
+    "zoom": [
+     1.2,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.4
+     ],
+     [
+      0.56,
+      0.38
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Não. Por quê?\"",
+   "cena": {
+    "imagem": "imagens/A12_julia_hospital.png",
+    "zoom": [
+     1.2,
+     1.25
+    ],
+    "foco": [
+     [
+      0.66,
+      0.5
+     ],
+     [
+      0.67,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Um silêncio comprido do outro lado.",
+   "cena": {
+    "imagem": "imagens_reais/idosa_telefone_0.jpg",
+    "zoom": [
+     1.3,
+     1.34
+    ],
+    "foco": [
+     [
+      0.56,
+      0.38
+     ],
+     [
+      0.56,
+      0.37
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Porque toda noite eu escuto, pela parede, alguém andando no seu apartamento. Devagar. Do quarto até a porta… e de volta. Como quem espera.\"",
+   "cena": {
+    "imagem": "imagens/A04_porta.png",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.57,
+      0.45
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "porta",
+     "som": "passos_atrasados",
+     "volume_db": -10,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Mas ela tinha que voltar uma hora. As coisas dela estavam lá. A vida dela estava lá.",
+   "cena": {
+    "imagem": "imagens_reais/predio_antigo_4.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  },
+  {
+   "fala": "Voltou numa sexta à noite. E às onze, começou a chover.",
+   "cena": {
+    "video": "videos/chuva_janela_v_0.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "Às onze e vinte, a luz caiu. No bairro inteiro.",
+   "cenas": [
+    {
+     "video": "videos/relampago_1.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "No bairro inteiro.",
+     "estilo": "maquina",
+     "vermelho": "inteiro.",
+     "em": "No"
+    }
+   ],
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26,
+    "em": "No"
+   }
+  },
+  {
+   "fala": "Dessa vez, ela não acendeu nada. Sentou na cama, de frente pro quarto, e esperou os olhos acostumarem.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  },
+  {
+   "fala": "Contou os minutos.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.15,
+     1.2
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.42,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Aos vinte, ela viu.",
+   "cena": {
+    "imagem": "imagens/A01_quarto_escuro.png",
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "musica": {
+    "som": "drone_terror",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Não estava no canto. Estava no meio do quarto. A dois passos da cama.",
+   "cenas": [
+    {
+     "imagem": "imagens/A01_quarto_escuro.png",
+     "zoom": [
+      1.04,
+      1.06
+     ]
+    },
+    {
+     "imagem": "imagens/A10_dois_passos.png",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "em": "Estava"
+    }
+   ],
+   "sons": [
+    {
+     "em": "cama",
+     "som": "sub_drop",
+     "volume_db": -10,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Alta. Fina demais. O rosto… inclinado, como quem olha uma coisa muito de perto pra entender o que é.",
+   "cena": {
+    "imagem": "imagens/A10_dois_passos.png",
+    "zoom": [
+     1.1,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.48,
+      0.3
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A Júlia não piscou.",
+   "cena": {
+    "imagem": "imagens/A10_dois_passos.png",
+    "zoom": [
+     1.0,
+     1.02
+    ]
+   }
+  },
+  {
+   "fala": "Ficaram assim. Uma hora. Duas.",
+   "cena": {
+    "imagem": "imagens/A10_dois_passos.png",
+    "zoom": [
+     1.02,
+     1.04
+    ]
+   }
+  },
+  {
+   "fala": "Os olhos dela ardiam. As lágrimas escorriam sem parar. A forma ia ficando borrada, se desfazendo e voltando.",
+   "cena": {
+    "video": "videos/piscar_0.mp4",
+    "zoom": [
+     1.1,
+     1.14
+    ]
+   }
+  },
+  {
+   "fala": "Ela piscou uma vez, rápido, sem querer. Quando abriu… estava mais perto. Um passo.",
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": " ",
+     "estilo": "maquina"
+    },
+    {
+     "imagem": "imagens/A10_dois_passos.png",
+     "zoom": [
+      1.35,
+      1.4
+     ],
+     "foco": [
+      [
+       0.48,
+       0.38
+      ],
+      [
+       0.48,
+       0.36
+      ]
+     ],
+     "em": "Quando"
+    }
+   ],
+   "sons": [
+    {
+     "em": "passo",
+     "som": "stinger_cordas",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela mordeu a boca até sangrar, pra não piscar de novo.",
+   "cena": {
+    "imagem": "imagens/A10_dois_passos.png",
+    "zoom": [
+     1.4,
+     1.48
+    ],
+    "foco": [
+     [
+      0.48,
+      0.36
+     ],
+     [
+      0.48,
+      0.34
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Às quatro e pouco da manhã, o corpo dela venceu.",
+   "cena": {
+    "imagem": "imagens/A05_julia_cama.png",
+    "zoom": [
+     1.2,
+     1.25
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.42,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Os olhos fecharam sozinhos. Um segundo. Talvez dois.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Um segundo.\nTalvez dois.",
+    "estilo": "maquina",
+    "vermelho": "dois."
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E, no escuro atrás das pálpebras, ela sentiu, no rosto, um ar frio. Lento. Como alguém respirando muito perto.",
+   "cena": {
+    "tipo": "texto",
+    "texto": " ",
+    "estilo": "maquina"
+   },
+   "sons": [
+    {
+     "em": "perto",
+     "som": "respiracao_nuca",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela abriu os olhos.",
+   "cena": {
+    "tipo": "texto",
+    "texto": " ",
+    "estilo": "maquina"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Dessa vez, não precisou esperar vinte minutos.",
+   "cena": {
+    "imagem": "imagens/A10_dois_passos.png",
+    "zoom": [
+     2.1,
+     2.2
+    ],
+    "foco": [
+     [
+      0.48,
+      0.3
+     ],
+     [
+      0.48,
+      0.29
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.5,
+   "sons": [
+    {
+     "em": "minutos",
+     "som": "sub_drop",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Na segunda-feira, a ala de longa permanência recebeu uma paciente nova.",
+   "pausa_antes_s": 1.5,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 1.0
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -28
+   },
+   "enfase": [
+    {
+     "em": "segunda-feira",
+     "pose": "c_cafe_explica",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Vinte e nove anos. Enfermeira do próprio hospital. Catatônica. Olhos abertos.",
+   "cena": {
+    "imagem": "imagens/A11_leitos.png",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   }
+  },
+  {
+   "fala": "Puseram ela no quarto quatro, leito quinze. Do lado do seu Aurélio.",
+   "cena": {
+    "imagem": "imagens/A11_leitos.png",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.6,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "As enfermeiras do turno da noite dizem que é o quarto mais quieto da ala. Que os dois passam a noite inteira acordados. Sem piscar.",
+   "cena": {
+    "imagem": "imagens/A11_leitos.png",
+    "zoom": [
+     1.2,
+     1.28
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Cada um olhando pra um canto diferente.",
+   "cena": {
+    "imagem": "imagens/A11_leitos.png",
+    "zoom": [
+     1.35,
+     1.4
+    ],
+    "foco": [
+     [
+      0.52,
+      0.5
+     ],
+     [
+      0.52,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E o apartamento do sétimo andar está pra alugar de novo. Bem baratinho.",
+   "pausa_antes_s": 1.0,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "baratinho",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Dizem que a dona Cida colou um papel novo na caixa de luz.",
+   "cena": {
+    "imagem": "imagens_reais/quadro_luz_0.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "\"Quando cair a energia, não acenda a luz. Espere. E nunca feche os olhos.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Quando cair a energia, não acenda a luz.\nEspere. E nunca feche os olhos.",
+    "estilo": "maquina",
+    "vermelho": "olhos."
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -26
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Hoje, quando você apagar a luz, conta.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -30
+   },
+   "enfase": [
+    {
+     "em": "conta",
+     "pose": "c_cafe_indicador",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "E se antes dos vinte minutos você já estiver vendo alguma coisa no canto… não pisca.",
+   "cenas": [
+    {
+     "imagem": "imagens/A01_quarto_escuro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.15,
+      1.2
+     ],
+     "foco": [
+      [
+       0.35,
+       0.42
+      ],
+      [
+       0.34,
+       0.4
+      ]
+     ],
+     "em": "não"
+    }
+   ]
+  },
+  {
+   "fala": "Você piscou agora, né?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.2,
+     1.24
+    ],
+    "foco": [
+     [
+      0.34,
+      0.42
+     ],
+     [
+      0.34,
+      0.4
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "piscou",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "Me conta nos comentários: você dorme de luz acesa?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Me",
+     "pose": "c_cafe_convite",
+     "segurar": 2.2
+    }
+   ]
+  }
+ ]
+}
