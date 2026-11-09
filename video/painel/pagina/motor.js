@@ -489,8 +489,62 @@ function interfaceCCTV(c, t) {
   ctx.restore();
 }
 
+// tela preta com texto digitado; a última palavra (ou "vermelho") em vermelho
+function telaTexto(c, t, a) {
+  const { W, H } = D, T = D.tema;
+  ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#030303"; ctx.fillRect(0, 0, W, H);
+  const linhas = (c.texto || "").split("\n"), tam = c.tamanho || Math.round(Math.min(W, H) * 0.055);
+  const cps = c.cps || 22, dt = Math.max(0, t - c.t0 - 0.25);
+  let mostrados = Math.floor(dt * cps);
+  ctx.textAlign = "left"; ctx.textBaseline = "middle";
+  const fam = c.fonte || T.fonte_texto;
+  linhas.forEach((ln, k) => {
+    const y = H / 2 + (k - (linhas.length - 1) / 2) * tam * 1.5;
+    const palavras = ln.split(" ");
+    const verm = c.vermelho ? c.vermelho.split(" ") : [palavras[palavras.length - 1]];
+    ctx.font = `${c.peso || 500} ${tam}px "${fam}"`;
+    const larg = ctx.measureText(ln).width; let x = W / 2 - larg / 2;
+    for (const p of palavras) {
+      const n = Math.max(0, Math.min(p.length, mostrados));
+      mostrados -= p.length + 1;
+      if (n <= 0) break;
+      const ehV = k === linhas.length - 1 && verm.includes(p);
+      ctx.fillStyle = ehV ? "#d9302a" : "rgba(236,230,214,.92)";
+      if (ehV) { ctx.shadowColor = "rgba(217,48,42,.7)"; ctx.shadowBlur = 18; } else ctx.shadowBlur = 0;
+      ctx.fillText(p.slice(0, n), x, y);
+      x += ctx.measureText(p + " ").width;
+    }
+  });
+  ctx.restore();
+}
+
+// cartão emoldurado (documento/foto) sobre o fundo desfocado
+function cartao(c, t, a) {
+  const im = IMG["img:" + c.imagem]; if (!im) return;
+  const { W, H } = D;
+  ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#050505"; ctx.fillRect(0, 0, W, H);
+  ctx.filter = "blur(30px) brightness(0.35)";
+  const sb = Math.max(W / im.width, H / im.height) * 1.1; ctx.drawImage(im, (W - im.width * sb) / 2, (H - im.height * sb) / 2, im.width * sb, im.height * sb);
+  ctx.filter = "none";
+  const e = easeInOut(lin(t, c.t0, Math.max(1, c.t1 - c.t0)));
+  const z = (c.zoom ? c.zoom[0] + (c.zoom[1] - c.zoom[0]) * e : 1);
+  const sc = Math.min(W * 0.72 / im.width, H * 0.72 / im.height) * z, w = im.width * sc, h = im.height * sc;
+  const ent = easeOut(lin(t, c.t0, 0.5));
+  ctx.translate(W / 2, H / 2 + (1 - ent) * 40); ctx.rotate(((c.giro ?? -1.5) * Math.PI) / 180);
+  ctx.shadowColor = "rgba(0,0,0,.85)"; ctx.shadowBlur = 60; ctx.fillStyle = "#e9e3d3";
+  const b = Math.round(Math.min(W, H) * 0.012); ctx.fillRect(-w / 2 - b, -h / 2 - b, w + 2 * b, h + 2 * b + (c.legenda_cartao ? b * 5 : 0));
+  ctx.shadowBlur = 0; ctx.drawImage(im, -w / 2, -h / 2, w, h);
+  if (c.legenda_cartao) {
+    ctx.fillStyle = "#2a2116"; ctx.font = `600 ${Math.round(b * 2.6)}px "${D.tema.fonte_papel || D.tema.fonte_texto}"`;
+    ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(c.legenda_cartao, 0, h / 2 + b * 3.2);
+  }
+  ctx.restore();
+}
+
 function desenharCena(c, t, a = 1) {
   if (c.tipo === "relogio") return relogioDigital(c, t, a);
+  if (c.tipo === "texto") return telaTexto(c, t, a);
+  if (c.tipo === "cartao") return cartao(c, t, a);
   const im = IMG["img:" + c.imagem];
   if (!im) return;
   const ra = im.width / im.height, rt = D.W / D.H;
