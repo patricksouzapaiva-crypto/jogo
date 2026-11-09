@@ -1,0 +1,2131 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_completa.wav",
+ "apertar_pausas": false,
+ "preencher_pausas": {
+  "min": 1.3
+ },
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
+ "legendas": {
+  "destaques": [
+   "atrás",
+   "perto",
+   "todas",
+   "procura",
+   "ela"
+  ]
+ },
+ "ambiente_inicial": [],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "abertura": {
+  "texto": "O VIGIA\nEP. 03 · MAIS PERTO.",
+  "duracao": 3.2,
+  "antes_da_batida": 6,
+  "sons": [
+   {
+    "som": "braam_horror",
+    "t": 0.2,
+    "volume_db": -6
+   }
+  ]
+ },
+ "cta": {
+  "titulo": "Gostou dessa história?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.8
+ },
+ "batidas": [
+  {
+   "fala": "\"Lucas… sou eu. Desculpa a hora.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
+    "vermelho": "fotos.",
+    "tamanho": 44
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Eu achei ela. Ela tá em todas as fotos.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
+    "vermelho": "fotos.",
+    "tamanho": 44
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"E ela sabe… que eu sei.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
+    "vermelho": "sei.",
+    "tamanho": 44
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
+    "tamanho": 40
+   },
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -26
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
+    "tamanho": 40
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E o Rafael não estava lá.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "E o Rafael não estava lá.",
+    "tamanho": 52
+   },
+   "sons": [
+    {
+     "em": "lá",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Boa noite. Bem-vindo de volta ao Último Abrigo.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   },
+   "enfase": [
+    {
+     "em": "Boa",
+     "pose": "c_cafe_convite",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Me responde uma coisa, com sinceridade."
+  },
+  {
+   "fala": "Você já sentiu… alguém andando atrás de você? Dentro da sua própria casa?"
+  },
+  {
+   "fala": "Aquele arrepio no corredor. A certeza de que, se você virar agora, vai ter alguém ali."
+  },
+  {
+   "fala": "E você vira. E não tem ninguém."
+  },
+  {
+   "fala": "Todo mundo já sentiu isso. E hoje eu vou te contar a história de um homem que resolveu descobrir o porquê."
+  },
+  {
+   "fala": "Em dois mil e catorze, na Suíça, um grupo de cientistas fez um experimento curioso.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Suíça · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "Os voluntários ficavam de olhos vendados, mexendo um braço robótico na frente do corpo. E um segundo robô, atrás deles, tocava as costas de cada um. Com meio segundo de atraso.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Suíça · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": 1.2
+   }
+  },
+  {
+   "fala": "Muitos começaram a sentir alguém atrás de si. Alguns contaram duas, três, quatro presenças. Houve quem pedisse para parar."
+  },
+  {
+   "fala": "A conclusão dos cientistas foi simples: é o cérebro. Um atraso entre o que o corpo faz e o que ele sente. Nada além disso.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Suíça · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "Nada além disso.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Nada além disso.",
+    "tamanho": 52
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "O Rafael tinha trinta e quatro anos. Técnico de som. Morava sozinho num apartamento antigo, no terceiro andar, no fim de uma rua tranquila.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.536,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "E desde criança ele sentia aquilo.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.62,
+      0.55
+     ],
+     [
+      0.62,
+      0.52
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "A primeira vez foi na casa da avó, no interior. Um corredor comprido, de assoalho que rangia, que ligava a cozinha aos quartos.",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.485,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ele tinha uns sete anos. Atravessava aquele corredor correndo, toda noite, com a certeza de que alguém vinha atrás.",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma vez, ele contou pra avó. Ela não riu. Só segurou o rosto dele com as duas mãos e disse, muito séria:"
+  },
+  {
+   "fala": "\"Não procura, meu filho. Quem não procura… não acha.\"",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.475,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ele nunca entendeu o que ela quis dizer. Até muitos anos depois."
+  },
+  {
+   "fala": "No começo, era raro. Uma noite ou outra, assistindo televisão, ele sentia o olhar de alguém na nuca.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.47000000000000003,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Mas foi no corredor que tudo começou de verdade.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.476,
+      0.47000000000000003
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "O apartamento tinha um corredor comprido, da sala até o quarto. E toda vez que ele passava por ali à noite, sentia alguém vindo atrás.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.42,
+      0.4
+     ],
+     [
+      0.42,
+      0.37
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Ele parava. O silêncio parava junto.",
+   "sons": [
+    {
+     "em": "junto",
+     "som": "passos_atrasados",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E sempre que ele virava… o corredor estava vazio.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.45999999999999996,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Faz um teste agora. Não olha pra trás.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Faz",
+     "pose": "s_silencio",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "Só presta atenção na sua nuca."
+  },
+  {
+   "fala": "Sentiu?",
+   "enfase": [
+    {
+     "em": "Sentiu",
+     "pose": "s_encarando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Com o tempo, a sensação deixou de ser rara.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.416,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Toda noite. Na cozinha, abrindo a geladeira. No banho. Deitado.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.22,
+      0.42
+     ],
+     [
+      0.22,
+      0.39
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "E o pior não era sentir alguém atrás. O pior era sentir que, a cada noite, estava um pouco mais perto."
+  },
+  {
+   "fala": "mais perto.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "mais perto.",
+    "tamanho": 52
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ele começou a ouvir coisas. Passos no corredor que paravam meio segundo depois dos dele. Uma respiração lenta, logo depois que ele apagava a luz.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.566,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Como técnico de som, ele fez o que sabia fazer. Deixou um microfone profissional ligado no corredor a noite inteira.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.485,
+      0.53
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "De manhã, colocou os fones e ouviu. Horas de silêncio. Os passos dele indo ao banheiro, às duas da manhã.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.45,
+      0.6
+     ],
+     [
+      0.45,
+      0.57
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E, logo depois de cada passo dele… outro passo. Mais leve. Meio segundo atrasado.",
+   "sons": [
+    {
+     "em": "passo",
+     "som": "passos_atrasados",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele ouviu aquele trecho umas vinte vezes. Quando ele parava no corredor, os outros passos paravam também.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.475,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Só que, na última vez, quando ele já tinha voltado pra cama… os passos continuaram. Devagar. Até a porta do quarto.",
+   "sons": [
+    {
+     "em": "quarto",
+     "som": "stinger_cordas",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele foi ao médico. Fez exames. Estava tudo normal.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.566,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "O médico receitou um remédio pra dormir e disse que era estresse. Cansaço.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.72,
+      0.55
+     ],
+     [
+      0.72,
+      0.52
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "O remédio fazia ele dormir. Mas não fazia a sensação ir embora."
+  },
+  {
+   "fala": "Foi numa dessas madrugadas que ele achou o estudo da Suíça.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Suíça · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "E, pela primeira vez em meses, ele sentiu alívio. Era o cérebro. Só isso. Um atraso de meio segundo.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Suíça · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": 1.2
+   }
+  },
+  {
+   "fala": "Por uns dias, funcionou. Ele dormiu melhor. Passou pelo corredor sem olhar pra trás."
+  },
+  {
+   "fala": "Até a noite em que, escovando os dentes, ele sentiu a nuca gelar.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.458,
+      0.485
+     ]
+    ],
+    "lado": "dir"
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Não era um arrepio. Era frio. Como se alguém estivesse respirando ali, a um palmo dele.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.36,
+      0.45
+     ],
+     [
+      0.36,
+      0.42000000000000004
+     ]
+    ],
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "respirando",
+     "som": "respiracao_nuca",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele não virou. Pela primeira vez, ele teve medo de virar."
+  },
+  {
+   "fala": "Depois daquela noite, o Rafael mudou a casa inteira.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.572,
+      0.506
+     ]
+    ],
+    "lado": "esq"
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Encostou todos os móveis nas paredes. Deixou as luzes acesas. Colocou espelhos nos cantos, pra ver o que vinha atrás.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.74,
+      0.52
+     ],
+     [
+      0.74,
+      0.49
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "E passou a dormir sentado, de costas pra parede."
+  },
+  {
+   "fala": "Mas a sensação não ia embora. Só chegava mais perto.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.62,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Num domingo, o irmão dele, o Lucas, apareceu sem avisar. Achou o apartamento estranho. Os móveis colados nas paredes, os espelhos, as luzes acesas em pleno dia.",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.485
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O Rafael tentou explicar. O Lucas riu, meio sem graça. Disse que ele precisava dormir, sair um pouco, ver gente.",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42000000000000004
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Na hora de ir embora, no meio do corredor, o Lucas parou. Passou a mão na nuca."
+  },
+  {
+   "fala": "\"Nossa… que corrente de ar é essa aqui?\"",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "aqui",
+     "som": "respiracao_nuca",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "O Rafael não respondeu. Só abriu a porta. E esperou o irmão sair."
+  },
+  {
+   "fala": "Numa madrugada sem dormir, ele escreveu num fórum na internet. Perguntou se mais alguém sentia aquilo. Alguém andando atrás, cada noite mais perto.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.515,
+      0.485
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Em poucas horas, vieram dezenas de respostas. Gente do Brasil inteiro. De outros países. Todo mundo descrevendo a mesma coisa.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.55,
+      0.42000000000000004
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma resposta chamou a atenção dele. Um usuário que assinava só com as iniciais. Ele dizia que tinha encontrado um jeito de provar. Que ia tirar fotos da casa toda noite e comparar."
+  },
+  {
+   "fala": "O Rafael respondeu, pedindo pra ele contar o que encontrasse.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.525,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Três dias depois, chegou uma última mensagem. Só uma frase."
+  },
+  {
+   "fala": "\"Não procura ela.\"",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.55,
+      0.4
+     ],
+     [
+      0.56,
+      0.38
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "ela",
+     "som": "sub_drop",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Depois disso, a conta nunca mais respondeu.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Depois disso, a conta nunca mais respondeu.",
+    "tamanho": 40
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Uma curiosidade, já que estamos aqui.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -24
+   },
+   "enfase": [
+    {
+     "em": "Uma",
+     "pose": "c_cafe_indicador",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Cada um dos seus olhos tem um ponto cego. Um lugar onde o nervo óptico sai do olho, e onde você, literalmente, não enxerga nada."
+  },
+  {
+   "fala": "Você nunca percebe. Porque o seu cérebro pinta aquele buraco com o que ele acha que deveria estar ali."
+  },
+  {
+   "fala": "Ou seja… ele esconde de você o que você não consegue ver."
+  },
+  {
+   "fala": "Guarde isso.",
+   "enfase": [
+    {
+     "em": "Guarde",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.6
+    }
+   ]
+  },
+  {
+   "fala": "Quando a gente tem medo de uma coisa que não consegue ver… o que a gente faz?"
+  },
+  {
+   "fala": "A gente tenta provar que ela não existe.",
+   "enfase": [
+    {
+     "em": "provar",
+     "pose": "c_pensativo_queixo",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "Foi isso que o Rafael decidiu fazer.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.47000000000000003,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Toda noite, ele passou a fotografar a casa. Cada cômodo. O mesmo ângulo, na mesma hora.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.4,
+      0.42
+     ],
+     [
+      0.4,
+      0.39
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "A ideia era simples. Se as fotos não mostrassem nada, a sensação era só da cabeça dele. E ele ia conseguir esquecer.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.476,
+      0.47000000000000003
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Foram semanas. Centenas de fotos.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.416,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Numa madrugada, ele imprimiu todas e espalhou em cima da mesa. Pra olhar com calma. Pra provar, de uma vez por todas, que não tinha nada ali.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "E por muito tempo… não tinha.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Até que ele parou numa foto da rua. Lá no fundo, depois do último poste, entre duas árvores."
+  },
+  {
+   "fala": "Uma forma. Alta. Magra demais. Parada.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "Parada",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele pegou a foto seguinte. A da sala. E procurou."
+  },
+  {
+   "fala": "Estava lá. No reflexo da janela.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.51,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "No corredor. Na porta da cozinha. No canto do quarto."
+  },
+  {
+   "fala": "Em todas.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "todas",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "todas",
+     "pose": "e_maos_na_boca",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "E a cada foto… um pouco mais perto."
+  },
+  {
+   "fala": "em todas.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "em todas.",
+    "tamanho": 52
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "O Rafael pegou uma caneta vermelha. E, com a mão tremendo, circulou cada uma.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Quando terminou, entendeu a coisa mais assustadora de todas.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Aquilo nunca tinha sido uma sensação."
+  },
+  {
+   "fala": "Era alguém. Sempre foi.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "foi",
+     "som": "sub_drop",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E só então ele lembrou da avó. \"Quem não procura, não acha.\""
+  },
+  {
+   "fala": "Ele tinha procurado.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.51,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Três e quarenta da manhã.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Três e quarenta da manhã.",
+    "tamanho": 52
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Foi aí que ele gravou a mensagem pro irmão.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Foi aí que ele gravou a mensagem pro irmão.",
+    "tamanho": 40
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Eu achei ela. Ela tá em todas as fotos. E ela sabe que eu sei.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos. E ela sabe que eu sei.",
+    "vermelho": "sei.",
+    "tamanho": 44
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Depois disso, o Rafael fez a única coisa que ainda faltava.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.515,
+      0.476
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Abriu a câmera frontal do celular. E, sem virar o corpo, olhou o corredor atrás dele pela tela.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.42
+     ],
+     [
+      0.55,
+      0.39
+     ]
+    ],
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "trás",
+     "som": "riser_tensao",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ela estava ali.",
+   "sons": [
+    {
+     "em": "ali",
+     "som": "braam_horror",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "ali",
+     "pose": "e_aterrorizado_maos",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Um passo atrás. Na altura do rosto dele.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.525,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "E, pela primeira vez, ela não estava parada.",
+   "sons": [
+    {
+     "em": "parada",
+     "som": "stinger_cordas",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "parada",
+     "pose": "e_medo_gola",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "O celular caiu no chão do corredor. E continuou gravando.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "tremor": 0,
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "O teto. A lâmpada balançando. Os chinelos dele no chão.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ],
+    "tremor": 0,
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Nenhum som. Nenhum grito."
+  },
+  {
+   "fala": "Só o corredor vazio.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "tremor": 0,
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "O Lucas chegou de manhã. A porta estava trancada por dentro. As janelas, fechadas.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "O celular, no chão do corredor. A bateria, no fim.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E sobre a mesa da sala, dezenas de fotos. Cada uma com um círculo vermelho.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O caso do Rafael entrou pra estatística. Só no Brasil, em dois mil e vinte e cinco, foram mais de oitenta e quatro mil pessoas desaparecidas.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A maioria é encontrada.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Algumas… nunca.",
+   "sons": [
+    {
+     "em": "nunca",
+     "som": "sub_drop",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Os cientistas estavam certos sobre uma coisa.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Existe mesmo um atraso.",
+   "enfase": [
+    {
+     "em": "atraso",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.6
+    }
+   ]
+  },
+  {
+   "fala": "Só que ele não está no seu cérebro."
+  },
+  {
+   "fala": "Ela sempre esteve nas imagens. Desde o começo.",
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   },
+   "enfase": [
+    {
+     "em": "Ela",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Na rua.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.14,
+      0.41
+     ]
+    ],
+    "revelar": {
+     "x": 0.14,
+     "y": 0.41,
+     "r": 0.05,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "Na",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "Na janela.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.72,
+      0.24
+     ]
+    ],
+    "revelar": {
+     "x": 0.72,
+     "y": 0.24,
+     "r": 0.08,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "Na",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "No fim do corredor.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.59,
+      0.3
+     ]
+    ],
+    "revelar": {
+     "x": 0.59,
+     "y": 0.3,
+     "r": 0.09,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "No",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "Na porta da cozinha.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.69,
+      0.38
+     ]
+    ],
+    "revelar": {
+     "x": 0.69,
+     "y": 0.38,
+     "r": 0.12,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "Na",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "No canto do quarto.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.27,
+      0.36
+     ]
+    ],
+    "revelar": {
+     "x": 0.27,
+     "y": 0.36,
+     "r": 0.17,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "No",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "Atrás da cortina.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.54,
+      0.15
+     ]
+    ],
+    "revelar": {
+     "x": 0.54,
+     "y": 0.15,
+     "r": 0.07,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "Atrás",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "No meio do corredor.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.51,
+      0.35
+     ]
+    ],
+    "revelar": {
+     "x": 0.51,
+     "y": 0.35,
+     "r": 0.17,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "No",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "Atrás dele.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.4,
+      0.28
+     ]
+    ],
+    "revelar": {
+     "x": 0.4,
+     "y": 0.28,
+     "r": 0.12,
+     "atraso": 0.25,
+     "duracao": 1.0
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "Atrás",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ]
+  },
+  {
+   "fala": "O Rafael não desapareceu porque ela chegou perto.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Ele desapareceu porque descobriu.",
+   "enfase": [
+    {
+     "em": "descobriu",
+     "pose": "s_encarando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "E você… acabou de ver as mesmas fotos que ele.",
+   "enfase": [
+    {
+     "em": "você",
+     "pose": "e_apontando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Boa noite."
+  },
+  {
+   "fala": "E quando esse vídeo acabar… não olha pra trás.",
+   "sons": [
+    {
+     "em": "trás",
+     "som": "respiracao_nuca",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.6
+    }
+   ],
+   "enfase": [
+    {
+     "em": "olha",
+     "pose": "s_silencio",
+     "segurar": 9
+    }
+   ]
+  }
+ ]
+}

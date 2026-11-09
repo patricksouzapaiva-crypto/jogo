@@ -649,14 +649,19 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     for amb in roteiro.get("ambiente_inicial", []):
         plano["ambientes"].append({"t": 0.0, **amb})
     ab = roteiro.get("abertura")
-    if ab and not (base / ab["imagem"]).exists() and (base / "provisorias" / Path(ab["imagem"]).name).exists():
+    if ab and ab.get("imagem") and not (base / ab["imagem"]).exists() and (base / "provisorias" / Path(ab["imagem"]).name).exists():
         ab = dict(ab, imagem="provisorias/" + Path(ab["imagem"]).name)
     if ab and ab.get("antes_da_batida"):
         kb = ab["antes_da_batida"]
         t_a0, t_a1 = rel.fim(kb - 1) + 0.3, rel.inicio(kb) - 0.3
-        D["_abertura_meio"] = {"t0": t_a0, "imagem": str((base / ab["imagem"]).resolve()), "zoom": ab.get("zoom", [1.06, 1.0]),
-                               "foco": ab.get("foco", [[0.5, 0.4], [0.5, 0.4]]), "relampagos": ab.get("relampagos", [0.12, 0.42]),
-                               "abertura": True}
+        if ab.get("texto"):  # cartão de título desenhado (sem imagem)
+            D["_abertura_meio"] = {"t0": t_a0, "tipo": "texto", "texto": ab["texto"], "vermelho": ab.get("vermelho", "PERTO."),
+                                   "tamanho": ab.get("tamanho", 84), "peso": 800, "fonte": "Anton", "cps": 40,
+                                   "relampagos": ab.get("relampagos", [0.15]), "abertura": True}
+        else:
+            D["_abertura_meio"] = {"t0": t_a0, "imagem": str((base / ab["imagem"]).resolve()), "zoom": ab.get("zoom", [1.06, 1.0]),
+                                   "foco": ab.get("foco", [[0.5, 0.4], [0.5, 0.4]]), "relampagos": ab.get("relampagos", [0.12, 0.42]),
+                                   "abertura": True}
         D["abertura_janela"] = [t_a0, t_a1]
         for so in ab.get("sons", [{"som": "impacto", "t": 0.1, "volume_db": -6, "grave": True}]):
             plano["efeitos"].append({"t": t_a0 + so["t"], "som": so["som"], "volume_db": so.get("volume_db", -8),
@@ -718,6 +723,34 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                     D["escuros"].append({"t0": ini, "t1": fim, "forca": x["escurecer"]})
     if D.get("_abertura_meio"):
         D["cenas"].append(D.pop("_abertura_meio"))
+    pp = roteiro.get("preencher_pausas")
+    if pp:
+        D["cenas"].sort(key=lambda c: c["t0"])
+        inis = [c["t0"] for c in D["cenas"]]
+        novas = []
+        for i in range(len(rel.t) - 1):
+            g0, g1 = rel.t[i][1], rel.t[i + 1][0]
+            if g1 - g0 < pp.get("min", 1.3):
+                continue
+            # cena em vigor no meio da pausa
+            k = max(j for j, t in enumerate(inis) if t <= g0 + 0.05) if any(t <= g0 + 0.05 for t in inis) else None
+            if k is None:
+                continue
+            c = D["cenas"][k]
+            prox = inis[k + 1] if k + 1 < len(inis) else 1e9
+            if not c.get("imagem") or c.get("vigia") or c.get("tipo") or c.get("revelar") or c.get("abertura"):
+                continue
+            if g0 - c["t0"] < 1.0 or prox - g1 < 0.4:  # perto de um corte: não corta de novo
+                continue
+            n = dict(c)
+            z0 = c.get("zoom", [1.0, 1.05])[1]
+            f1 = c.get("foco", [[0.5, 0.5], [0.5, 0.5]])[1]
+            n["zoom"] = [z0 * 1.14, z0 * 1.19] if z0 < 1.25 else [max(1.0, z0 * 0.86), max(1.0, z0 * 0.84)]
+            n["foco"] = [list(f1), [f1[0], f1[1] - 0.02]]
+            n["t0"] = g0 + min(0.35, (g1 - g0) / 3)
+            novas.append(n)
+        D["cenas"] += novas
+        print(f"    pausas preenchidas com novo enquadramento: {len(novas)}")
     D["cenas"].sort(key=lambda c: c["t0"])
     for i, c in enumerate(D["cenas"]):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
@@ -757,7 +790,14 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
         D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
     dest = [norm(w) for w in leg.get("destaques", [])]
+    sem = set()
+    for kb, b in enumerate(roteiro["batidas"]):
+        if b.get("sem_legenda"):
+            a0, a1 = rel.faixas[kb]
+            sem.update(range(a0, a1))
     for bl in blocos_legenda(rel, leg.get("max_caracteres", 26 if H > W else 42)):
+        if any(abs(bl["t0"] - (rel.t[i][0] - 0.05)) < 0.02 for i in sem):
+            continue
         bl["destaques"] = dest
         D["legendas"].append(bl)
     return D, plano
@@ -980,6 +1020,9 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
         voz_cortada = voz_final
         print(f"    pausas encurtadas: {antes:.1f} s -> {tempos[-1][1]:.1f} s")
     # silêncios dramáticos pedidos no roteiro ("pausa_antes_s" na batida) — inseridos depois do aperto
+    ab0 = roteiro.get("abertura")
+    if ab0 and ab0.get("antes_da_batida") and not batidas[ab0["antes_da_batida"]].get("pausa_antes_s"):
+        batidas[ab0["antes_da_batida"]]["pausa_antes_s"] = ab0["duracao"] + 0.8
     insercoes, i0 = [], 0
     for b in batidas:
         n_pal = len(tokens(b["fala"]))
