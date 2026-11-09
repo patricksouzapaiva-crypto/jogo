@@ -81,6 +81,15 @@ def T(trecho, entrada, dur=0.8):  # transição de entrada na 1ª cena da fala
     (b.get("cena") or b["cenas"][0]).update({"entrada": entrada, "duracao_entrada": dur})
 
 
+def saida_lenta(trecho_seguinte, segurar, transicao="fundir", dur=1.6):
+    """REGRA (usuário, 10/11): cena de tensão NÃO termina rápido nem com corte seco. A imagem tensa fica na tela
+    `segurar` s em silêncio depois da última palavra e só então passa devagar (fundir/preto de `dur` s) para a
+    próxima, terminando a transição quando a voz volta. Entrar na tensão pode ser corte seco; sair, nunca."""
+    b = batidas[achar(trecho_seguinte)]
+    b["pausa_antes_s"] = segurar + dur
+    (b.get("cena") or b["cenas"][0]).update({"entrada": transicao, "duracao_entrada": dur, "antecipar": dur})
+
+
 def pausa(trecho, s):
     batidas[achar(trecho)]["pausa_antes_s"] = s
 
@@ -103,7 +112,6 @@ C("Ela ficou parada no escuro", img("A05_julia_cama", (1.0, 1.08), ((0.4, 0.5), 
 C("Aos vinte, os olhos dela", img("A01_quarto_escuro", (1.0, 1.06)))
 C("E foi aí que ela viu", img("A01_quarto_escuro", (1.12, 1.22), ((0.6, 0.45), (0.68, 0.42))))
 C("que o canto do quarto", img("A01_quarto_escuro", (1.7, 1.8), ((0.71, 0.42), (0.71, 0.4))))   # corte seco no canto
-pausa("que o canto do quarto", 0.9)
 
 # ================================================================ TEMA (Vigia apresenta; tipos de imagem alternando)
 V = dict(com_vigia=True)
@@ -178,7 +186,6 @@ C("As anotações iam por quase", img("caderno_3", (1.25, 1.4), ((0.55, 0.55), (
 C('"Um metro."', texto("1 metro.\n70 centímetros.", "70 centímetros."))
 C("A última linha estava escrita", img("caderno_3", (1.4, 1.55), ((0.6, 0.7), (0.62, 0.74))))
 C('"Quarenta centímetros.', texto("40 centímetros.\nEla sorriu.", "sorriu.", "impacto", cps=12))
-pausa("A página seguinte tinha", 1.5)
 C("A página seguinte tinha", img("caderno_1", (1.0, 1.08)))
 C('"Enquanto eu olho', texto("Enquanto eu olho, ela não anda.", "anda."))
 
@@ -196,16 +203,13 @@ C("Era o hospital onde ela trabalhava", img("A12_julia_hospital", (1.1, 1.18), (
 
 # ---------------------------------------------------------------- aparte do Vigia (em destaque, trilha some)
 C("Guarda essa frase do caderno", vigia((1.0, 1.05)))
-T("Guarda essa frase do caderno", "preto", 0.6)
 C("Agora pensa no bilhete", texto("Não acenda a luz.", "luz."))
 C("Porque a luz não faz ela ir embora", vigia((1.04, 1.1), ((0.4, 0.45), (0.38, 0.42))))
 C("E aí… ela anda.", texto("E aí… ela anda.", "anda.", "impacto", cps=12))
 C("Não olha pro canto do seu quarto", vigia((1.1, 1.18), ((0.35, 0.42), (0.33, 0.4))))
 
 # ---------------------------------------------------------------- Ato 3 — leito catorze (sem Vigia)
-pausa("Na noite seguinte, no plantão", 2.0)
 C("Na noite seguinte, no plantão", vid("monitor_v_5", (1.0, 1.03)))
-T("Na noite seguinte, no plantão", "preto", 0.8)
 C("Aurélio. Setenta e um anos", texto("AURÉLIO · 71 anos\nAla de longa permanência\nQuarto 4 · Leito 14", "14"))
 C("Diagnóstico: estado catatônico", texto("Diagnóstico: estado catatônico.\nObs.: paciente não dorme!", "dorme!"))
 C("As outras enfermeiras evitavam", img("hospital_quarto_2", (1.0, 1.08)))
@@ -223,7 +227,7 @@ C('"Faz oito meses que eu não durmo', img("A07b_aurelio_mao", (1.2, 1.3), ((0.6
 C("A Júlia olhou pro canto do quarto", img("A08_canto_hospital", (1.3, 1.5), ((0.62, 0.45), (0.64, 0.44))))
 C('"E a minha?"', img("A07_aurelio", (1.5, 1.55), ((0.6, 0.42), (0.6, 0.4))))
 C("Pela primeira vez, ele quase", img("A07_aurelio", (1.55, 1.6), ((0.6, 0.4), (0.6, 0.39))))
-C('"A sua ficou em casa', img("A07_aurelio", (1.6, 1.62), ((0.6, 0.4), (0.6, 0.39))), (img("A01_quarto_escuro", (1.7, 1.78), ((0.71, 0.42), (0.71, 0.4))), "Esperando"))
+C('"A sua ficou em casa', img("A07_aurelio", (1.6, 1.62), ((0.6, 0.4), (0.6, 0.39))), (img("A01_quarto_escuro", (1.45, 1.75), ((0.66, 0.43), (0.71, 0.4))), "Esperando"))
 
 # ---------------------------------------------------------------- inserção Fyori 3 (Vigia)
 C("A gente pisca de quinze", vid("piscar_0", (1.0, 1.03)), **V)
@@ -247,7 +251,7 @@ C("Não estava no canto.", img("A01_quarto_escuro", (1.04, 1.06)), (img("A10_doi
 C("Alta. Fina demais. O rosto", img("A10_dois_passos", (1.1, 1.3), ((0.5, 0.45), (0.48, 0.3))))
 C("A Júlia não piscou.", img("A10_dois_passos", (1.0, 1.02)))
 C("Ficaram assim.", img("A10_dois_passos", (1.02, 1.04)))
-C("Os olhos dela ardiam", vid("piscar_0", (1.1, 1.14)))
+C("Os olhos dela ardiam", img("A10_dois_passos", (1.04, 1.12), ((0.48, 0.45), (0.48, 0.4))))   # fica NA criatura (sem cortar pro olho)
 C("Ela piscou uma vez", texto(" ", estilo="maquina"), (img("A10_dois_passos", (1.35, 1.4), ((0.48, 0.38), (0.48, 0.36))), "Quando"))
 C("Ela mordeu a boca", img("A10_dois_passos", (1.4, 1.48), ((0.48, 0.36), (0.48, 0.34))))
 C("Às quatro e pouco da manhã", img("A05_julia_cama", (1.2, 1.25), ((0.4, 0.45), (0.42, 0.43))))
@@ -255,17 +259,13 @@ C("Os olhos fecharam sozinhos", texto("Um segundo.\nTalvez dois.", "dois."))
 C("E, no escuro atrás das pálpebras", texto(" ", estilo="maquina"))
 C("Ela abriu os olhos.", texto(" ", estilo="maquina"))
 C("Dessa vez, não precisou esperar", img("A10_dois_passos", (2.1, 2.2), ((0.48, 0.3), (0.48, 0.29))))   # o rosto, perto demais
-pausa("Dessa vez, não precisou esperar", 1.5)
 
 # ================================================================ EPÍLOGO (Vigia volta: é o respiro)
-pausa("Na segunda-feira, a ala", 1.5)
 C("Na segunda-feira, a ala", vigia((1.0, 1.04)))
-T("Na segunda-feira, a ala", "preto", 1.0)
 C("Vinte e nove anos. Enfermeira", img("A11_leitos", (1.0, 1.06)))
 C("Puseram ela no quarto quatro", img("A11_leitos", (1.1, 1.2), ((0.55, 0.5), (0.6, 0.48))))
 C("As enfermeiras do turno da noite", img("A11_leitos", (1.2, 1.28), ((0.5, 0.5), (0.52, 0.5))))
 C("Cada um olhando pra um canto", img("A11_leitos", (1.35, 1.4), ((0.52, 0.5), (0.52, 0.5))))
-pausa("E o apartamento do sétimo andar", 1.0)
 C("E o apartamento do sétimo andar", vigia((1.0, 1.05)))
 C("Dizem que a dona Cida colou", img("quadro_luz_0", (1.0, 1.1)), **V)
 C('"Quando cair a energia, não acenda a luz. Espere. E nunca', texto("Quando cair a energia, não acenda a luz.\nEspere. E nunca feche os olhos.", "olhos."))
@@ -273,6 +273,23 @@ C("Hoje, quando você apagar a luz", vigia((1.05, 1.1), ((0.4, 0.45), (0.38, 0.4
 C("E se antes dos vinte minutos", img("A01_quarto_escuro", (1.0, 1.06)), (vigia((1.15, 1.2), ((0.35, 0.42), (0.34, 0.4))), "não"))
 C("Você piscou agora", vigia((1.2, 1.24), ((0.34, 0.42), (0.34, 0.4))))
 C("Me conta nos comentários", vigia((1.0, 1.04)))
+
+# ================================================================ SAÍDAS LENTAS das cenas de tensão
+pausa("Ela acendeu a lanterna.", 1.2)                       # segura o quarto escuro antes da lanterna
+saida_lenta("Em dois mil e dez", 1.2, "fundir", 1.4)       # marca no rodapé -> inserção 1
+saida_lenta("Isso tem explicação.", 1.2, "fundir", 1.4)    # forma ao lado da porta -> inserção 2
+saida_lenta("Numa tarde, mexendo na caixa", 1.0, "fundir", 1.2)   # "cada vez mais perto"
+saida_lenta("A página seguinte tinha", 1.8, "fundir", 1.4)        # "Ela sorriu."
+saida_lenta("A Júlia desceu e foi falar", 1.2, "fundir", 1.4)     # "enquanto eu olho, ela não anda"
+saida_lenta("Levaram ele pro hospital", 0.8, "fundir", 1.2)       # "Vivo."
+saida_lenta("Guarda essa frase do caderno", 1.5, "preto", 1.6)    # "era o hospital onde ela trabalhava"
+saida_lenta("Na noite seguinte, no plantão", 1.5, "preto", 1.6)   # fim do aparte
+saida_lenta("A gente pisca de quinze", 3.2, "fundir", 2.2)        # "A sua ficou em casa. Esperando você." (pedido do usuário)
+saida_lenta("Dessa vez, ela não acendeu nada", 1.0, "fundir", 1.4)  # "No bairro inteiro."
+saida_lenta("Às quatro e pouco da manhã", 0.8, "fundir", 1.6)    # sai da criatura devagar
+saida_lenta("Os olhos fecharam sozinhos", 0.3, "fundir", 1.8)    # os olhos fechando = a tela escurece devagar
+saida_lenta("Na segunda-feira, a ala", 3.0, "preto", 2.0)        # o rosto da forma fica; depois, o respiro
+saida_lenta("E o apartamento do sétimo andar", 1.8, "fundir", 1.6)  # "cada um olhando pra um canto"
 
 # ================================================================ trilha (baixa; silêncio nos momentos-chave)
 mus("Ela ficou parada no escuro", "drone_terror", -30)
@@ -344,6 +361,7 @@ roteiro = {
     "legendas": {"destaques": ["luz", "canto", "perto", "vinte", "olhos", "escuro"]},
     "ambiente_inicial": [], "musica": {"som": "silencio", "volume_db": -40},
     "abertura": {"texto": "O VIGIA\nEP. 04 · NÃO ACENDA A LUZ.", "vermelho": "LUZ.", "duracao": 3.2,
+                 "segurar": 1.8,   # o canto do quarto fica na tela em silêncio antes do cartão
                  "antes_da_batida": achar("Toda criança já pediu"),
                  "sons": [{"som": "sub_drop", "t": 0.2, "volume_db": -12}]},
     "cta": {"titulo": "Você dorme de luz acesa?", "canal": "Último Abrigo",

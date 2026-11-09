@@ -694,7 +694,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         ab = dict(ab, imagem="provisorias/" + Path(ab["imagem"]).name)
     if ab and ab.get("antes_da_batida"):
         kb = ab["antes_da_batida"]
-        t_a0, t_a1 = rel.fim(kb - 1) + 0.3, rel.inicio(kb) - 0.3
+        t_a0, t_a1 = rel.fim(kb - 1) + 0.3 + ab.get("segurar", 0), rel.inicio(kb) - 0.3  # "segurar": a cena anterior fica
         if ab.get("texto"):  # cartão de título desenhado (sem imagem)
             D["_abertura_meio"] = {"t0": t_a0, "tipo": "texto", "texto": ab["texto"], "vermelho": ab.get("vermelho", "PERTO."),
                                    "tamanho": ab.get("tamanho", 84), "peso": 800, "fonte": "Anton", "cps": 40,
@@ -727,6 +727,9 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                 c.pop("em", None); c["t0"] = D["abertura_fim"]
             else:
                 c["t0"] = fronteira(rel, rel.indice(k, c.pop("em", None)))
+                # saída lenta de cena tensa: a transição começa ANTES, dentro do silêncio, e termina quando a voz volta
+                if c.get("antecipar") and D["cenas"]:
+                    c["t0"] = max(D["cenas"][-1]["t0"] + 0.5, c["t0"] - float(c["antecipar"]))
             if c.get("video"):  # cena com vídeo curto: os quadros são extraídos depois que a duração da cena é conhecida
                 c["video"] = str((base / c["video"]).resolve())
                 if not Path(c["video"]).exists():
@@ -1191,7 +1194,7 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     # silêncios dramáticos pedidos no roteiro ("pausa_antes_s" na batida) — inseridos depois do aperto
     ab0 = roteiro.get("abertura")
     if ab0 and ab0.get("antes_da_batida") and not batidas[ab0["antes_da_batida"]].get("pausa_antes_s"):
-        batidas[ab0["antes_da_batida"]]["pausa_antes_s"] = ab0["duracao"] + 0.8
+        batidas[ab0["antes_da_batida"]]["pausa_antes_s"] = ab0["duracao"] + ab0.get("segurar", 0) + 0.8
     insercoes, i0 = [], 0
     for b in batidas:
         n_pal = len(tokens(b["fala"]))

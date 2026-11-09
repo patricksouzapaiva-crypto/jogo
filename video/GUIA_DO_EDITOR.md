@@ -400,6 +400,12 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   mão, vidro) entra como está — testado no Ep. 04: o "arquivo" estourava as imagens escuras do usuário. Testado: só escurecer NÃO resolve; o
   enquadramento é o que mais pesa. Para close de olho/rosto, preferir vídeo real (Pixabay). Modelo de prompts:
   `episodios/ep04-medo-do-escuro/PEDIDO_IMAGENS_IA.md`.
+- **10/11/2026 — SAÍDA DE CENA TENSA É LENTA (feedback do Ep. 04):** entrar na tensão pode ser corte seco;
+  SAIR nunca. Depois de um momento pesado, a imagem fica na tela em silêncio (1–3 s) e só então passa devagar
+  (fundir/preto de 1,2–2,2 s) para a próxima, com a transição acontecendo DENTRO do silêncio
+  (`saida_lenta()` no montar_roteiro: `pausa_antes_s` + `entrada` + `antecipar`). No clímax, não cortar para
+  outra imagem (ex.: close de olho) — fica na criatura. Sempre analisar cada corte: se a cena é de tensão,
+  a troca não pode tirar a tensão que o espectador está sentindo. Abertura logo após o cold open: `"segurar"`.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

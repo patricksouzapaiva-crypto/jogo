@@ -36,6 +36,7 @@
   "texto": "O VIGIA\nEP. 04 · NÃO ACENDA A LUZ.",
   "vermelho": "LUZ.",
   "duracao": 3.2,
+  "segurar": 1.8,
   "antes_da_batida": 4,
   "sons": [
    {
@@ -127,7 +128,6 @@
      ]
     ]
    },
-   "pausa_antes_s": 0.9,
    "sons": [
     {
      "em": "esteve",
@@ -809,6 +809,7 @@
      "em": "O"
     }
    ],
+   "pausa_antes_s": 1.2,
    "musica": {
     "som": "silencio",
     "volume_db": -26
@@ -854,8 +855,12 @@
     "tipo": "cartao",
     "legenda_cartao": "Giovanni Caputo · 2010 · a ilusão do rosto estranho",
     "giro": -1.5,
-    "com_vigia": true
+    "com_vigia": true,
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4
    },
+   "pausa_antes_s": 2.5999999999999996,
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -30
@@ -1041,8 +1046,12 @@
      1.0,
      1.06
     ],
-    "com_vigia": true
+    "com_vigia": true,
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4
    },
+   "pausa_antes_s": 2.5999999999999996,
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -30
@@ -1131,7 +1140,10 @@
      "zoom": [
       1.0,
       1.1
-     ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 1.2,
+     "antecipar": 1.2
     },
     {
      "imagem": "imagens_reais/caderno_3.jpg",
@@ -1141,7 +1153,8 @@
      ],
      "em": "caderno"
     }
-   ]
+   ],
+   "pausa_antes_s": 2.2
   },
   {
    "fala": "Era do antigo morador. Na primeira página, o nome: Aurélio.",
@@ -1266,14 +1279,17 @@
   },
   {
    "fala": "A página seguinte tinha uma frase só, sublinhada três vezes:",
-   "pausa_antes_s": 1.5,
    "cena": {
     "imagem": "imagens_reais/caderno_1.jpg",
     "zoom": [
      1.0,
      1.08
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4
+   },
+   "pausa_antes_s": 3.2
   },
   {
    "fala": "\"Enquanto eu olho, ela não anda.\"",
@@ -1302,8 +1318,12 @@
       0.5,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4
    },
+   "pausa_antes_s": 2.5999999999999996,
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -28
@@ -1435,8 +1455,12 @@
     "zoom": [
      1.0,
      1.08
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.2,
+    "antecipar": 1.2
+   },
+   "pausa_antes_s": 2.0
   },
   {
    "fala": "\"Pra qual hospital?\"",
@@ -1517,8 +1541,10 @@
      ]
     ],
     "entrada": "preto",
-    "duracao_entrada": 0.6
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
    },
+   "pausa_antes_s": 3.1,
    "musica": {
     "som": "silencio",
     "volume_db": -26
@@ -1615,7 +1641,6 @@
   },
   {
    "fala": "Na noite seguinte, no plantão, a Júlia procurou o nome no sistema.",
-   "pausa_antes_s": 2.0,
    "cena": {
     "video": "videos/monitor_v_5.mp4",
     "zoom": [
@@ -1623,8 +1648,10 @@
      1.03
     ],
     "entrada": "preto",
-    "duracao_entrada": 0.8
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
    },
+   "pausa_antes_s": 3.1,
    "musica": {
     "som": "drone_tensao",
     "volume_db": -28
@@ -1966,13 +1993,13 @@
     {
      "imagem": "imagens/A01_quarto_escuro.png",
      "zoom": [
-      1.7,
-      1.78
+      1.45,
+      1.75
      ],
      "foco": [
       [
-       0.71,
-       0.42
+       0.66,
+       0.43
       ],
       [
        0.71,
@@ -2005,8 +2032,12 @@
      1.0,
      1.03
     ],
-    "com_vigia": true
+    "com_vigia": true,
+    "entrada": "fundir",
+    "duracao_entrada": 2.2,
+    "antecipar": 2.2
    },
+   "pausa_antes_s": 5.4,
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -30
@@ -2245,8 +2276,12 @@
     "zoom": [
      1.0,
      1.06
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4
+   },
+   "pausa_antes_s": 2.4
   },
   {
    "fala": "Contou os minutos.",
@@ -2354,10 +2389,20 @@
   {
    "fala": "Os olhos dela ardiam. As lágrimas escorriam sem parar. A forma ia ficando borrada, se desfazendo e voltando.",
    "cena": {
-    "video": "videos/piscar_0.mp4",
+    "imagem": "imagens/A10_dois_passos.png",
     "zoom": [
-     1.1,
-     1.14
+     1.04,
+     1.12
+    ],
+    "foco": [
+     [
+      0.48,
+      0.45
+     ],
+     [
+      0.48,
+      0.4
+     ]
     ]
    }
   },
@@ -2436,8 +2481,12 @@
       0.42,
       0.43
      ]
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
+   },
+   "pausa_antes_s": 2.4000000000000004
   },
   {
    "fala": "Os olhos fecharam sozinhos. Um segundo. Talvez dois.",
@@ -2445,8 +2494,12 @@
     "tipo": "texto",
     "texto": "Um segundo.\nTalvez dois.",
     "estilo": "maquina",
-    "vermelho": "dois."
+    "vermelho": "dois.",
+    "entrada": "fundir",
+    "duracao_entrada": 1.8,
+    "antecipar": 1.8
    },
+   "pausa_antes_s": 2.1,
    "musica": {
     "som": "silencio",
     "volume_db": -26
@@ -2499,7 +2552,6 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.5,
    "sons": [
     {
      "em": "minutos",
@@ -2512,7 +2564,6 @@
   },
   {
    "fala": "Na segunda-feira, a ala de longa permanência recebeu uma paciente nova.",
-   "pausa_antes_s": 1.5,
    "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
@@ -2531,8 +2582,10 @@
      ]
     ],
     "entrada": "preto",
-    "duracao_entrada": 1.0
+    "duracao_entrada": 2.0,
+    "antecipar": 2.0
    },
+   "pausa_antes_s": 5.0,
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -28
@@ -2617,7 +2670,6 @@
   },
   {
    "fala": "E o apartamento do sétimo andar está pra alugar de novo. Bem baratinho.",
-   "pausa_antes_s": 1.0,
    "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
@@ -2634,8 +2686,12 @@
       0.57,
       0.48
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
    },
+   "pausa_antes_s": 3.4000000000000004,
    "enfase": [
     {
      "em": "baratinho",
