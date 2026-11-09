@@ -1,7 +1,7 @@
 {
  "modo": "cenas",
  "tema": "vigia",
- "avatar": "vigia_meio",
+ "avatar": "vigia_hd",
  "voz": {
   "modelo": "gemini-3.8-flash-tts",
   "nome": "Algenib",
@@ -16,6 +16,11 @@
  "cauda": 1.0,
  "chuva": 0,
  "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
  "legendas": {
   "destaques": [
    "sonâmbula",
@@ -34,8 +39,8 @@
   "titulo": "Quer ver o resto da gravação?",
   "canal": "Último Abrigo",
   "subtitulo": "História completa no canal",
-  "fundo": "../imagens/V1.png",
-  "pose": "e_apontando",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
   "duracao": 3.4
  },
  "formato": "9:16",
@@ -61,6 +66,7 @@
     ],
     "encaixe": "cobrir"
    },
+   "sons": [],
    "musica": {
     "som": "trilha_tensa_2",
     "volume_db": -21
@@ -85,7 +91,8 @@
      ]
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Na manhã seguinte, Marcos esperou Helena sair pro trabalho. Sentou no sofá, abriu o notebook e colocou a gravação pra rodar.",
@@ -107,7 +114,7 @@
     ],
     "encaixe": "cobrir"
    },
-   "tom": "sombrio",
+   "sons": [],
    "musica": {
     "som": "silencio",
     "volume_db": -40,
@@ -140,6 +147,7 @@
     },
     "encaixe": "cobrir"
    },
+   "sons": [],
    "ambiente": {
     "som": "estatica_cctv",
     "volume_db": -4
@@ -170,7 +178,8 @@
      "cam": "CAM 01"
     },
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Duas e cinquenta. Helena abre os olhos. Mas ela não se levanta. Fica olhando pro teto. Acordada. Esperando alguma coisa.",
@@ -197,7 +206,8 @@
      "cam": "CAM 01"
     },
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Três e doze.",
@@ -224,7 +234,16 @@
      "cam": "CAM 01"
     },
     "encaixe": "cobrir"
-   }
+   },
+   "sons": [
+    {
+     "em": "Três",
+     "som": "riser_tensao",
+     "volume_db": -6,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Alguém se senta na cama.",
@@ -252,17 +271,11 @@
     },
     "encaixe": "cobrir"
    },
-   "sons": [
-    {
-     "em": "Alguém",
-     "som": "impacto",
-     "volume_db": -18,
-     "grave": true
-    }
-   ]
+   "sons": []
   },
   {
-   "fala": "Mas não é Helena."
+   "fala": "Mas não é Helena.",
+   "sons": []
   },
   {
    "fala": "É ele.",
@@ -297,9 +310,10 @@
    "sons": [
     {
      "em": "ele",
-     "som": "impacto",
-     "volume_db": -8,
-     "grave": true
+     "som": "braam_horror",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
     }
    ],
    "enfase": [

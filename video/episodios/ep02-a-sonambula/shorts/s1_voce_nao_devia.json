@@ -1,7 +1,7 @@
 {
  "modo": "cenas",
  "tema": "vigia",
- "avatar": "vigia_meio",
+ "avatar": "vigia_hd",
  "voz": {
   "modelo": "gemini-3.8-flash-tts",
   "nome": "Algenib",
@@ -16,6 +16,11 @@
  "cauda": 1.0,
  "chuva": 0,
  "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
  "legendas": {
   "destaques": [
    "sonâmbula",
@@ -34,8 +39,8 @@
   "titulo": "Quer saber o que ela fazia?",
   "canal": "Último Abrigo",
   "subtitulo": "História completa no canal",
-  "fundo": "../imagens/V1.png",
-  "pose": "e_apontando",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
   "duracao": 3.4
  },
  "formato": "9:16",
@@ -48,14 +53,7 @@
     "hora": "03:12",
     "encaixe": "cobrir"
    },
-   "sons": [
-    {
-     "em": "Três",
-     "som": "impacto",
-     "volume_db": -20,
-     "grave": true
-    }
-   ]
+   "sons": []
   },
   {
    "fala": "Marcos abriu os olhos sem saber por quê.",
@@ -76,10 +74,12 @@
      ]
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "O quarto estava escuro, silencioso… e ele sentiu. Aquela sensação de que alguém está olhando pra você.",
+   "sons": [],
    "musica": {
     "som": "trilha_tensa_1",
     "volume_db": -22,
@@ -105,7 +105,8 @@
      ]
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Helena estava de pé, ao lado da cama. Parada. Os olhos abertos, fixos nele.",
@@ -130,10 +131,11 @@
    },
    "sons": [
     {
-     "em": "Helena",
-     "som": "impacto",
-     "volume_db": -14,
-     "grave": true
+     "em": "lado",
+     "som": "braam_horror",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
     }
    ]
   },
@@ -156,7 +158,8 @@
      ]
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "E então, num sussurro que ele nunca tinha ouvido sair da boca da esposa, ela disse:",
@@ -178,7 +181,16 @@
     ],
     "em": "sussurro",
     "encaixe": "cobrir"
-   }
+   },
+   "sons": [
+    {
+     "em": "sussurro",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "— Você não devia estar acordado.",
@@ -186,6 +198,7 @@
     "forca": 0.7,
     "mais": 0.4
    },
+   "sons": [],
    "musica": {
     "som": "silencio",
     "volume_db": -40,

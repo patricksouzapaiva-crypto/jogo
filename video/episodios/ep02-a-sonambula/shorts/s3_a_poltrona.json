@@ -1,7 +1,7 @@
 {
  "modo": "cenas",
  "tema": "vigia",
- "avatar": "vigia_meio",
+ "avatar": "vigia_hd",
  "voz": {
   "modelo": "gemini-3.8-flash-tts",
   "nome": "Algenib",
@@ -16,6 +16,11 @@
  "cauda": 1.0,
  "chuva": 0,
  "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
  "legendas": {
   "destaques": [
    "sonâmbula",
@@ -34,8 +39,8 @@
   "titulo": "Quer saber por que ela disse isso?",
   "canal": "Último Abrigo",
   "subtitulo": "História completa no canal",
-  "fundo": "../imagens/V1.png",
-  "pose": "e_apontando",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
   "duracao": 3.4
  },
  "formato": "9:16",
@@ -61,6 +66,7 @@
     ],
     "encaixe": "cobrir"
    },
+   "sons": [],
    "musica": {
     "som": "trilha_tensa_2",
     "volume_db": -21
@@ -91,6 +97,7 @@
     ],
     "encaixe": "cobrir"
    },
+   "sons": [],
    "ambiente": {
     "som": "nenhum",
     "volume_db": -40,
@@ -145,7 +152,8 @@
     ],
     "em": "Estava",
     "encaixe": "cobrir"
-   }
+   },
+   "sons": []
   },
   {
    "fala": "Os olhos abertos. As mãos apertando os braços da poltrona, como quem se segura pra não sair correndo.",
@@ -172,7 +180,8 @@
      "em": "apertando",
      "pose": "e_medo_gola"
     }
-   ]
+   ],
+   "sons": []
   },
   {
    "fala": "Quando a luz acendeu, ela não se assustou. Só soltou o ar devagar… e disse, baixinho:",
@@ -194,6 +203,7 @@
     ],
     "encaixe": "cobrir"
    },
+   "sons": [],
    "musica": {
     "som": "silencio",
     "volume_db": -40,
@@ -209,10 +219,11 @@
    "enfase": [
     {
      "em": "Hoje",
-     "pose": "s_pensativo_queixo",
+     "pose": "c_pensativo_queixo",
      "segurar": 2.0
     }
-   ]
+   ],
+   "sons": []
   }
  ]
 }

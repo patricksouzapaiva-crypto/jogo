@@ -34,7 +34,8 @@ for S in SHORTS:
     t0 = max(0.0, tempos[p0][1] - VOZ0 - 0.25)
     t1 = tempos[p1][2] - VOZ0 + 0.6
     arq = AQUI / "shorts" / f"{S['nome']}_voz.wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}", "-i", voz, str(arq)], check=True)
+    if not arq.exists():  # reaproveita o recorte de voz já feito
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}", "-i", voz, str(arq)], check=True)
     bat = copy.deepcopy(longo["batidas"][a:b + 1])
     for x in bat:
         for ch in ("musica", "ambiente", "pausa_antes_s"):
@@ -56,10 +57,27 @@ for S in SHORTS:
     for (i, som, em, db) in S["ambiente"]:
         bat[i - a]["ambiente"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "formato", "voz_max_chars", "canto", "canto_destaque")}
+    # Vigia em alta resolução (poses equivalentes) e cenário da torre
+    MAPA = {"e_recuo_maos": "e_pare", "e_indignado": "e_bracos_cruzados_cetico", "e_susto_recuando": "e_aterrorizado_maos",
+            "e_sussurro_malicioso": "c_sussurrando", "e_desespero_cabeca": "e_aterrorizado_maos", "e_serio_ameaçador": "s_encarando",
+            "e_plano_sinistro": "s_sorriso_sombrio", "e_sorriso_insano": "s_sorriso_sombrio", "e_encarando": "s_encarando",
+            "s_olhar_lado": "c_desconfiado_lado", "s_pensativo_queixo": "c_pensativo_queixo", "s_sussurro": "c_sussurrando",
+            "s_pare": "e_pare", "s_serio": "c_serio_frontal", "s_desconfiado_ombro": "c_desconfiado_lado"}
+    for x in bat:
+        for en in x.get("enfase", []):
+            en["pose"] = MAPA.get(en["pose"], en["pose"])
+        if x.get("tom") == "sombrio":
+            x.pop("tom")
+    for x in bat:
+        for c in ([x["cena"]] if x.get("cena") else []) + x.get("cenas", []):
+            if c.get("vigia"):
+                c["imagem"] = "../../../painel/cenarios/abrigo_vertical.png"
+    r.update({"avatar": "vigia_hd",
+              "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -8, "efeitos_sob_voz": -3}})
     r.update({"formato": "9:16", "voz_arquivo": arq.name, "batidas": bat, "cauda": 1.0,
               "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [],
               "legendas": dict(longo["legendas"]),
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": "História completa no canal",
-                      "fundo": "../imagens/V1.png", "pose": "e_apontando", "duracao": 3.4}})
+                      "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})
     (AQUI / "shorts" / f"{S['nome']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
     print(S["nome"], f"{t1 - t0:.1f}s de narração")
