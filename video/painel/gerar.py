@@ -763,7 +763,93 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     return D, plano
 
 
-MIX_PADRAO = {"musica_ganho_db": 0.0, "ducking": "threshold=0.08:ratio=1.7:attack=80:release=900", "efeitos_ganho_db": 0.0}
+# Hierarquia (estudo 09/11): VOZ > efeitos-chave > trilha > ambiente. A trilha fica presente nos respiros e
+# abaixa ~6–8 dB quando a voz fala; efeitos que caem em cima da fala também abaixam; ambiente nunca é amplificado.
+MIX_PADRAO = {"musica_ganho_db": 0.0, "ambiente_ganho_db": 0.0, "efeitos_ganho_db": 0.0,
+              "ducking": "threshold=0.025:ratio=3.5:attack=40:release=650:knee=4",
+              "ducking_efeitos": "threshold=0.03:ratio=3:attack=15:release=400:knee=4"}
+
+
+def _ler(f):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", f, "-f", "f32le", "-ac", "2", "-ar", "48000", "-"],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
+
+
+def _env_db(a, sr=48000, janela=0.05):
+    q = int(sr * janela)
+    k = len(a) // q
+    m = (a[:k * q] ** 2).reshape(k, q).mean(axis=1)
+    return 10 * np.log10(m + 1e-12)
+
+
+def _suavizar(g, ataque, soltura):
+    out, v = np.empty_like(g), g[0]
+    for i, x in enumerate(g):
+        v = v + (x - v) * (ataque if x < v else soltura)  # desce rápido, sobe devagar
+        out[i] = v
+    return out
+
+
+def automixar(stem, saida, mix):
+    """Mixagem por regras (estudo 09/11): a voz manda. Enquanto o narrador fala, a trilha fica
+    `fundo_sob_voz` dB abaixo da voz e os efeitos no máximo `efeitos_sob_voz` dB abaixo; nos respiros
+    (sem voz) trilha e efeitos voltam ao volume cheio — é ali que a tensão aparece."""
+    alvo_b = mix.get("fundo_sob_voz", -12.0)
+    alvo_e = mix.get("efeitos_sob_voz", -4.0)
+    v, b, e = _ler(stem["voz"]), _ler(stem["fundo"]), _ler(stem["efeitos"])
+    n = min(len(v), len(b), len(e))
+    v, b, e = v[:n], b[:n], e[:n]
+    jan = 0.05
+    ev = _env_db(v.mean(1), janela=jan)
+    # voz "ativa": nível suavizado com segurança de 0,35 s antes e 0,5 s depois
+    fala = ev > -42
+    pre, pos = int(0.35 / jan), int(0.5 / jan)
+    ativa = fala.copy()
+    for i in np.nonzero(fala)[0]:
+        ativa[max(0, i - pre):i + pos] = True
+    nivel_voz = np.convolve(np.where(fala, ev, -90), np.ones(20) / 20, mode="same")  # ~1 s
+    nivel_voz = np.maximum(nivel_voz, np.median(ev[fala]) - 6) if fala.any() else nivel_voz
+    def ganho(stem_a, alvo):
+        eb = _env_db(stem_a.mean(1), janela=jan)
+        eb_s = np.convolve(eb, np.ones(6) / 6, mode="same")  # 0,3 s
+        g = np.where(ativa, np.minimum(0.0, (nivel_voz + alvo) - eb_s), 0.0)
+        g = _suavizar(g, 0.5, 0.06)
+        g = np.repeat(10 ** (g / 20), int(48000 * jan))
+        return np.pad(g, (0, max(0, n - len(g))), constant_values=1.0)[:n, None]
+    gb, ge = ganho(b, alvo_b), ganho(e, alvo_e)
+    # teto nos silêncios: nenhum susto/trilha passa de (voz típica + margem) — evita estouro tipo trovão
+    voz_tipica = float(np.median(ev[fala])) if fala.any() else -20.0
+    def teto(stem_a, g_atual, margem):
+        eb = _env_db((stem_a * g_atual).mean(1), janela=jan)
+        eb_s = np.maximum(eb, np.convolve(eb, np.ones(3) / 3, mode="same"))
+        g = np.minimum(0.0, (voz_tipica + margem) - eb_s)
+        g = _suavizar(g, 0.7, 0.08)
+        g = np.repeat(10 ** (g / 20), int(48000 * jan))
+        return np.pad(g, (0, max(0, n - len(g))), constant_values=1.0)[:n, None]
+    gb = gb * teto(b, gb, mix.get("fundo_pico_max", -3.0))
+    ge = ge * teto(e, ge, mix.get("efeitos_pico_max", 2.0))
+    b, e = b * gb, e * ge
+    for k, a in (("fundo", b), ("efeitos", e)):
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", "48000", "-ac", "2", "-i", "-", stem[k]],
+                       input=a.astype(np.float32).tobytes(), check=True)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", "48000", "-ac", "2", "-i", "-", saida],
+                   input=(v + b + e).astype(np.float32).tobytes(), check=True)
+
+
+def relatorio_mix(stem, duracao):
+    """Mede, a cada 2 s, o fundo e os efeitos em relação à voz e avisa onde eles encobrem o narrador."""
+    jan = 0.5
+    v, b, e = (_env_db(_ler(stem[k]).mean(1), janela=jan) for k in ("voz", "fundo", "efeitos"))
+    k = min(len(v), len(b), len(e))
+    v, b, e = v[:k], b[:k], e[:k]
+    fala = v > -36
+    rel_b, rel_e = (b - v)[fala], (e - v)[fala]
+    print(f"    mix (com voz): fundo {np.median(rel_b):+.1f} dB da voz (pior {rel_b.max():+.1f}); "
+          f"efeitos pior {rel_e.max():+.1f} dB")
+    for i in np.nonzero(fala)[0]:
+        if b[i] - v[i] > -7 or e[i] - v[i] > -1:
+            print(f"    aviso mix: {i * jan:.1f}s fundo {b[i] - v[i]:+.1f} dB / efeitos {e[i] - v[i]:+.1f} dB da voz")
 
 
 def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
@@ -771,7 +857,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
     sons = AQUI / "sons"
     ent = ["-i", str(voz_wav)]
     f = [f"[0:a]aresample=48000,highpass=f=70,acompressor=threshold=-20dB:ratio=2.2:attack=8:release=180,"
-         f"adelay={int(inicio_voz * 1000)}:all=1,apad,atrim=0:{duracao:.3f},asplit=2[voz][chave]"]
+         f"adelay={int(inicio_voz * 1000)}:all=1,apad,atrim=0:{duracao:.3f},asplit=4[voz][chave][chave2][vozstem]"]
     n, camas = 1, []
     amb = sorted(plano["ambientes"], key=lambda a: a["t"])
     for i, a in enumerate(amb):  # ambientes em sequência, com fusão de 0,8 s
@@ -782,7 +868,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
         ent += ["-stream_loop", "-1", "-i", str(sons / f"{a['som']}.mp3")]
         fi = 0.8 if i else 0.6
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{fim - ini:.3f},asetpts=PTS-STARTPTS,"
-                 f"volume={a.get('volume_db', -6)}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - 0.8):.3f}:d=0.8,"
+                 f"volume={a.get('volume_db', -6) + mix['ambiente_ganho_db']}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - 0.8):.3f}:d=0.8,"
                  f"adelay={int(ini * 1000)}:all=1[amb{n}]")
         camas.append(f"[amb{n}]")
         n += 1
@@ -799,7 +885,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
         fi = 2.5 if i == 0 else 2.0
         fo = 2.0
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{fim - ini:.3f},asetpts=PTS-STARTPTS,"
-                 f"volume={m.get('volume_db', -12)}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - fo):.3f}:d={fo},"
+                 f"volume={m.get('volume_db', -12) + mix['musica_ganho_db']}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - fo):.3f}:d={fo},"
                  f"adelay={int(ini * 1000)}:all=1[mus{n}]")
         camas.append(f"[mus{n}]")
         n += 1
@@ -815,23 +901,38 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
     for q0, q1, forca in plano["quedas"]:
         cadeia.append(f"volume={1 - forca:.2f}:enable='between(t,{q0:.2f},{q1:.2f})'")
     f.append(f"{cama}{','.join(cadeia) if cadeia else 'anull'}[cama1]")
-    f.append(f"[cama1]volume={mix['musica_ganho_db']}dB[cama2]")
-    f.append(f"[cama2][chave]sidechaincompress={mix['ducking']}[camad]")
-    rot = ["[voz]", "[camad]"]
+    f.append("[cama1]anull[camad]")
+    f.append("[chave]anullsink")
+    efs = []
     for e in plano["efeitos"]:
         arq = sons / f"{e['som']}.mp3"
         if not arq.exists() or e["t"] >= duracao:
             print(f"  aviso: efeito '{e['som']}' ignorado", file=sys.stderr)
             continue
         ent += ["-i", str(arq)]
-        extra = "lowpass=f=900,bass=g=6:f=70," if e.get("grave") else ""
+        extra = "lowpass=f=900,bass=g=4:f=70," if e.get("grave") else ""
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,{extra}volume={e['volume_db'] + mix['efeitos_ganho_db']}dB,"
                  f"adelay={max(0, int(e['t'] * 1000))}:all=1[e{n}]")
-        rot.append(f"[e{n}]")
+        efs.append(f"[e{n}]")
         n += 1
-    f.append(f"{''.join(rot)}amix=inputs={len(rot)}:normalize=0:duration=first,atrim=0:{duracao:.3f}[mix]")
+    if efs:
+        f.append(f"{''.join(efs)}amix=inputs={len(efs)}:normalize=0:duration=longest,apad,atrim=0:{duracao:.3f}[fx0]")
+        f.append("[fx0]anull[fx]")
+        f.append("[chave2]anullsink")
+    else:
+        f.append(f"anullsrc=r=48000:cl=stereo,atrim=0:{duracao:.3f}[fx]")
+        f.append("[chave2]anullsink")
+    f.append("[camad]asplit=2[camaA][camaB]")
+    f.append("[fx]asplit=2[fxA][fxB]")
+    f.append(f"[voz][camaA][fxA]amix=inputs=3:normalize=0:duration=first,atrim=0:{duracao:.3f}[mix]")
     bruto = str(saida) + ".bruto.wav"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", *ent, "-filter_complex", ";".join(f), "-map", "[mix]", bruto], check=True)
+    stem = {kk: str(saida) + f".{kk}.wav" for kk in ("voz", "fundo", "efeitos")}
+    subprocess.run(["ffmpeg", "-y", "-v", "error", *ent, "-filter_complex", ";".join(f),
+                    "-map", "[mix]", "-f", "null", "-",
+                    "-map", "[vozstem]", stem["voz"], "-map", "[camaB]", stem["fundo"], "-map", "[fxB]", stem["efeitos"]],
+                   check=True)
+    automixar(stem, bruto, mix)
+    relatorio_mix(stem, duracao)
     med = subprocess.run(["ffmpeg", "-i", bruto, "-af", "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json",
                           "-f", "null", "-"], capture_output=True, text=True).stderr
     mm = json.loads(med[med.rfind("{"):med.rfind("}") + 1])

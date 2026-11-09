@@ -20,7 +20,8 @@
  "grao": 0.14,
  "mix": {
   "musica_ganho_db": 12,
-  "efeitos_ganho_db": 0
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
  },
  "legendas": {
   "destaques": [
@@ -145,10 +146,10 @@
    },
    "sons": [
     {
-     "em": "Helena",
+     "em": "lado",
      "som": "braam_horror",
      "volume_db": -4,
-     "depois": false,
+     "depois": true,
      "atraso": 0.0
     }
    ]
@@ -636,7 +637,7 @@
      "em": "sorria",
      "som": "stinger_cordas",
      "volume_db": -6,
-     "depois": false,
+     "depois": true,
      "atraso": 0.0
     }
    ],
@@ -1478,7 +1479,7 @@
      "em": "ele",
      "som": "braam_horror",
      "volume_db": -2,
-     "depois": false,
+     "depois": true,
      "atraso": 0.0
     }
    ],
@@ -1579,7 +1580,7 @@
      "em": "faca",
      "som": "stinger_cordas",
      "volume_db": -5,
-     "depois": false,
+     "depois": true,
      "atraso": 0.0
     }
    ],
@@ -1982,7 +1983,7 @@
      "em": "vigia",
      "som": "braam_horror",
      "volume_db": -4,
-     "depois": false,
+     "depois": true,
      "atraso": 0.0
     }
    ]

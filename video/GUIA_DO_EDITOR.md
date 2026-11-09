@@ -340,6 +340,27 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   Abrigo" (`painel/cenarios/abrigo_16x9.png` e `abrigo_vertical.png` para Shorts): mesa com casos,
   mural com fotos e linha vermelha, luneta, lampião e velas, lua crescente na janela gótica.
   Vigia em destaque à esquerda (sobre a poltrona); legenda e chamada final à direita/embaixo.
+- **09/11/2026 — LINGUAGEM DE SOM E EDIÇÃO (estudo + feedback do Ep. 02):**
+  - **Hierarquia fixa:** voz > efeito-chave > trilha > ambiente. Nada pode encobrir o narrador.
+  - **Mixagem automática (`automixar` no motor):** enquanto o narrador fala, a trilha fica ~8 dB abaixo
+    da voz e os efeitos ~3 dB abaixo; nos respiros (sem voz) trilha e efeitos sobem — é ali que a tensão
+    aparece. Teto: nenhum efeito passa de +2 dB sobre a voz típica (corrige "trovão estourado"), trilha
+    nunca passa de −3 dB. O motor imprime um relatório e avisa onde algo encobriu a voz.
+  - **Sustos depois da palavra, não em cima:** o impacto (braam/stinger) cai no fim da palavra-chave
+    (`"depois": true`), de preferência depois de 0,3–1 s de silêncio. Silêncio antes do susto, nunca
+    música crescendo até ele sem pausa.
+  - **Vocabulário de efeitos:** riser (subida de cordas) para preparar uma revelação; braam/sub-drop
+    para a revelação; stinger de cordas para o susto rápido; respiração/passos baixinhos para presença;
+    batimento para pânico contínuo. No máximo 1 efeito-chave a cada ~30 s — repetição mata o susto.
+  - **Ambientes (chiado de casa, chuva, estática):** só dentro da cena que pede (ex.: gravação da câmera)
+    e baixos; nunca amplificados junto com a trilha.
+  - **Edição — onde cortar:** na mudança de ideia ou na pausa da voz; corte seco nas revelações; manter
+    a imagem quando a frase é longa (movimento lento), trocar mais rápido na escalada.
+  - **Vigia sozinho (aparte):** a cada ~2–3 min, o Vigia no cenário dele quebra a história com algo que
+    enriquece: uma **curiosidade real** ligada ao tema, uma **pergunta direta** ao espectador ("você
+    teria aberto?"), uma **pista** que o público deve guardar ("guarde esse detalhe") ou um **teste**
+    ("não olha pra trás agora"). Curto (10–20 s), em silêncio ou com a trilha baixa, e volta para a
+    história num corte seco. É também a quebra de padrão que segura a audiência.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.
