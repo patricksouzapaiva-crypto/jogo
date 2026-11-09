@@ -52,6 +52,7 @@ Volta no começo e me conta em qual imagem você viu primeiro.
 - Público: não é conteúdo para crianças · Conteúdo alterado ou sintético: **Sim**.
 - Idioma: Português (Brasil) · Categoria: Entretenimento · Playlist: **O Vigia — Casos**.
 - Legenda: enviar `legendas_pt-BR.srt` (gero com o vídeo final).
+- Thumbnail: `thumbnail_A_em_todas.jpg` e `thumbnail_B_achou.jpg` — envie as duas em "Testar e comparar" (teste A/B).
 - Tela final: Inscrever-se + vídeo do Ep. 02.
 - Horário: noite (19h–22h).
 
