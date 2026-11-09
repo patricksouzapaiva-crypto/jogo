@@ -629,6 +629,40 @@ def norm_frase(txt):
     return re.sub(r"[^a-z0-9?\s]", " ", txt)
 
 
+def trilha_digitacao(c, dur_max):
+    """Gera (e guarda em cache) o áudio de digitação de uma tela de texto: uma tecla por letra, com variação."""
+    import random
+    txt = c.get("texto", "").replace("\n", "")
+    cps = c.get("cps", 22)
+    chave = hashlib.sha1(f"{txt}|{cps}|{dur_max:.2f}".encode()).hexdigest()[:14]
+    arq = CACHE / f"digitacao_{chave}.wav"
+    if arq.exists():
+        return arq
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(AQUI / "sons" / "tecla.mp3"), "-f", "f32le", "-ac", "1",
+                          "-ar", "48000", "-"], capture_output=True, check=True).stdout
+    tecla = np.frombuffer(raw, np.float32)[: int(0.14 * 48000)].copy()
+    tecla *= np.linspace(1, 0, len(tecla)) ** 2
+    sr, rnd = 48000, random.Random(chave)
+    out = np.zeros(int((dur_max + 0.3) * sr), np.float32)
+    k = 0
+    for ch in txt:
+        t = 0.25 + k / cps
+        k += 1
+        if ch == " " or t > dur_max:
+            continue
+        taxa = rnd.uniform(0.9, 1.12)
+        idx = np.arange(0, len(tecla) - 1, taxa)
+        x = np.interp(idx, np.arange(len(tecla)), tecla) * rnd.uniform(0.55, 1.0)
+        i0 = int((t + rnd.uniform(-0.012, 0.012)) * sr)
+        out[i0:i0 + len(x)] += x[: max(0, len(out) - i0)]
+    if not out.any():
+        return None
+    CACHE.mkdir(exist_ok=True)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", str(arq)],
+                   input=out.tobytes(), check=True)
+    return arq
+
+
 def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     tema = json.load(open(AQUI / "temas" / f"{roteiro.get('tema', 'vigia')}.json"))
     av_dir = AQUI / "avatares" / roteiro.get("avatar", "vigia")
@@ -788,6 +822,13 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                              {"t": t_cta + 1.35, "som": "tecla", "volume_db": -2}]
         if cta.get("pose"):
             D["poses"].append({"t": t_cta + 0.2, "pose": cta["pose"], "tipo": "enfase", "segurar": 9})
+    # som de digitação nas telas de texto (uma tecla por letra, no mesmo ritmo do texto na tela)
+    for c in D["cenas"]:
+        if c.get("tipo") == "texto" and roteiro.get("som_digitacao", True):
+            arq = trilha_digitacao(c, c.get("t1", c["t0"] + 5) - c["t0"])
+            if arq:
+                plano["efeitos"].append({"t": c["t0"], "arquivo": str(arq), "som": "digitacao",
+                                         "volume_db": -6 if c.get("estilo") == "impacto" else -9})
     D["poses"].sort(key=lambda p: p["t"])
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
         D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
@@ -947,7 +988,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
     f.append("[chave]anullsink")
     efs = []
     for e in plano["efeitos"]:
-        arq = sons / f"{e['som']}.mp3"
+        arq = Path(e["arquivo"]) if e.get("arquivo") else sons / f"{e['som']}.mp3"
         if not arq.exists() or e["t"] >= duracao:
             print(f"  aviso: efeito '{e['som']}' ignorado", file=sys.stderr)
             continue

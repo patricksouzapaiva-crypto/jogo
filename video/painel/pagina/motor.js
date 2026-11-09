@@ -31,7 +31,7 @@ function carregarImg(src) {
 window.preparar = async function (dados) {
   D = dados;
   cv.width = D.W; cv.height = D.H;
-  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto];
+  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton"];
   for (const f of fams) for (const p of ["400", "500", "700", "800"]) { try { await document.fonts.load(`${p} 40px "${f}"`); } catch (e) {} }
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
@@ -493,9 +493,12 @@ function interfaceCCTV(c, t) {
 function telaTexto(c, t, a) {
   const { W, H } = D, T = D.tema;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#030303"; ctx.fillRect(0, 0, W, H);
-  const tam = c.tamanho || Math.round(Math.min(W, H) * 0.055);
-  const fam0 = c.fonte || T.fonte_texto;
-  ctx.font = `${c.peso || 500} ${tam}px "${fam0}"`;
+  // estilos: "maquina" (máquina de escrever) e "impacto" (serifada grande, com brilho)
+  const est = c.estilo === "impacto" ? { fonte: "Cinzel", peso: 700, tam: 118 } : c.estilo === "maquina" ? { fonte: "Special Elite", peso: 400, tam: 56 } : {};
+  const tam = c.tamanho || est.tam || Math.round(Math.min(W, H) * 0.055);
+  const fam0 = c.fonte || est.fonte || T.fonte_texto;
+  const peso0 = c.peso || est.peso || 500;
+  ctx.font = `${peso0} ${tam}px "${fam0}"`;
   const linhas = [];
   for (const par of (c.texto || "").split("\n")) {   // quebra para caber em 78% da largura
     let atual = "";
@@ -508,12 +511,15 @@ function telaTexto(c, t, a) {
   const cps = c.cps || 22, dt = Math.max(0, t - c.t0 - 0.25);
   let mostrados = Math.floor(dt * cps);
   ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  const fam = c.fonte || T.fonte_texto;
+  const fam = fam0;
+  if (c.estilo === "impacto") {   // leve aproximação + tremor sutil para dar peso
+    const k = easeOut(lin(t, c.t0, 0.9)); ctx.translate(W / 2, H / 2); ctx.scale(1.06 - 0.06 * k, 1.06 - 0.06 * k); ctx.translate(-W / 2, -H / 2);
+  }
   linhas.forEach((ln, k) => {
     const y = H / 2 + (k - (linhas.length - 1) / 2) * tam * 1.5;
     const palavras = ln.split(" ");
     const verm = c.vermelho ? c.vermelho.split(" ") : [palavras[palavras.length - 1]];
-    ctx.font = `${c.peso || 500} ${tam}px "${fam}"`;
+    ctx.font = `${peso0} ${tam}px "${fam}"`;
     const larg = ctx.measureText(ln).width; let x = W / 2 - larg / 2;
     for (const p of palavras) {
       const n = Math.max(0, Math.min(p.length, mostrados));
@@ -521,7 +527,8 @@ function telaTexto(c, t, a) {
       if (n <= 0) break;
       const ehV = k === linhas.length - 1 && verm.includes(p);
       ctx.fillStyle = ehV ? "#d9302a" : "rgba(236,230,214,.92)";
-      if (ehV) { ctx.shadowColor = "rgba(217,48,42,.7)"; ctx.shadowBlur = 18; } else ctx.shadowBlur = 0;
+      if (ehV) { ctx.shadowColor = "rgba(217,48,42,.75)"; ctx.shadowBlur = c.estilo === "impacto" ? 40 : 18; }
+      else if (c.estilo === "impacto") { ctx.shadowColor = "rgba(255,240,220,.25)"; ctx.shadowBlur = 24; } else ctx.shadowBlur = 0;
       ctx.fillText(p.slice(0, n), x, y);
       x += ctx.measureText(p + " ").width;
     }

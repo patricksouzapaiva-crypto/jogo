@@ -43,9 +43,11 @@ for i, f in enumerate(falas):
         txt = f["fala"]
         if f["voz"].startswith("rafael"):
             b["cena"] = {"tipo": "texto", "texto": "MENSAGEM DE VOZ · 03:40\n" + txt.strip('"'),
-                         "vermelho": "sei." if "sei" in txt else "fotos.", "tamanho": 62}
+                         "vermelho": "sei." if "sei" in txt else "fotos.", "estilo": "maquina", "tamanho": 60}
         else:
-            b["cena"] = {"tipo": "texto", "texto": txt, "tamanho": 72 if len(txt) < 40 else 54}
+            curto = len(txt) < 30
+            b["cena"] = {"tipo": "texto", "texto": txt, "estilo": "impacto" if curto else "maquina",
+                         **({"cps": 12} if curto else {})}
         ultima, rep = "P", 0
     elif tag.endswith("r"):  # revelação: a mesma imagem, foco na criatura, círculo vermelho
         h = tag[:-1]
@@ -142,11 +144,11 @@ enf("não olha pra trás.", "olha", "s_silencio", 9)
 
 # apartes longos: intercalar ilustrações para não ficar 30 s no mesmo plano
 batidas[achar("Aquele arrepio no corredor")]["cena"] = {"imagem": "imagens/H3.png", "zoom": [1.1, 1.22], "foco": [[0.55, 0.45], [0.6, 0.35]]}
-batidas[achar("E você vira. E não tem ninguém.")]["cena"] = {"tipo": "texto", "texto": "E não tem ninguém.", "vermelho": "ninguém.", "tamanho": 72}
+batidas[achar("E você vira. E não tem ninguém.")]["cena"] = {"tipo": "texto", "texto": "E não tem ninguém.", "vermelho": "ninguém.", "estilo": "impacto", "cps": 12}
 batidas[achar("Todo mundo já sentiu isso.")]["cena"] = dict(VIGIA, zoom=[1.04, 1.0], foco=[[0.6, 0.45], [0.55, 0.5]])
-batidas[achar("Cada um dos seus olhos tem um ponto cego")]["cena"] = {"tipo": "texto", "texto": "ponto cego.", "vermelho": "cego.", "tamanho": 96}
+batidas[achar("Cada um dos seus olhos tem um ponto cego")]["cena"] = {"tipo": "texto", "texto": "ponto cego.", "vermelho": "cego.", "estilo": "impacto", "tamanho": 140, "cps": 10}
 batidas[achar("Você nunca percebe. Porque o seu cérebro")]["cena"] = dict(VIGIA, zoom=[1.0, 1.05], foco=[[0.5, 0.5], [0.55, 0.45]])
-batidas[achar("Só presta atenção na sua nuca.")]["cena"] = {"tipo": "texto", "texto": "Não olha pra trás.", "vermelho": "trás.", "tamanho": 80}
+batidas[achar("Só presta atenção na sua nuca.")]["cena"] = {"tipo": "texto", "texto": "Não olha pra trás.", "vermelho": "trás.", "estilo": "impacto", "cps": 12}
 batidas[achar("Sentiu?")]["cena"] = dict(VIGIA, zoom=[1.08, 1.12], foco=[[0.3, 0.6], [0.3, 0.6]])
 for t in ("E você vira. E não tem ninguém.", "Cada um dos seus olhos tem um ponto cego", "Só presta atenção na sua nuca."):
     batidas[achar(t)]["sem_legenda"] = False

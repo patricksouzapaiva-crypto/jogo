@@ -57,7 +57,8 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
     "vermelho": "fotos.",
-    "tamanho": 62
+    "estilo": "maquina",
+    "tamanho": 60
    },
    "sem_legenda": true
   },
@@ -67,7 +68,8 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
     "vermelho": "fotos.",
-    "tamanho": 62
+    "estilo": "maquina",
+    "tamanho": 60
    },
    "sem_legenda": true
   },
@@ -77,7 +79,8 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
     "vermelho": "sei.",
-    "tamanho": 62
+    "estilo": "maquina",
+    "tamanho": 60
    },
    "sem_legenda": true
   },
@@ -86,7 +89,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
-    "tamanho": 54
+    "estilo": "maquina"
    },
    "musica": {
     "som": "drone_tensao",
@@ -99,7 +102,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
-    "tamanho": 54
+    "estilo": "maquina"
    },
    "sem_legenda": true
   },
@@ -108,7 +111,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "E o Rafael não estava lá.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "sons": [
     {
@@ -186,7 +190,8 @@
     "tipo": "texto",
     "texto": "E não tem ninguém.",
     "vermelho": "ninguém.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "sem_legenda": false
   },
@@ -258,7 +263,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "Nada além disso.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "sem_legenda": true
   },
@@ -500,7 +506,8 @@
     "tipo": "texto",
     "texto": "Não olha pra trás.",
     "vermelho": "trás.",
-    "tamanho": 80
+    "estilo": "impacto",
+    "cps": 12
    },
    "sem_legenda": false
   },
@@ -586,7 +593,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "mais perto.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "sem_legenda": true
   },
@@ -1072,7 +1080,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Depois disso, a conta nunca mais respondeu.",
-    "tamanho": 54
+    "estilo": "maquina"
    },
    "sem_legenda": true
   },
@@ -1114,7 +1122,9 @@
     "tipo": "texto",
     "texto": "ponto cego.",
     "vermelho": "cego.",
-    "tamanho": 96
+    "estilo": "impacto",
+    "tamanho": 140,
+    "cps": 10
    },
    "sem_legenda": false
   },
@@ -1395,7 +1405,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "em todas.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "sem_legenda": true
   },
@@ -1503,7 +1514,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "Três e quarenta da manhã.",
-    "tamanho": 72
+    "estilo": "impacto",
+    "cps": 12
    },
    "musica": {
     "som": "silencio",
@@ -1516,7 +1528,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Foi aí que ele gravou a mensagem pro irmão.",
-    "tamanho": 54
+    "estilo": "maquina"
    },
    "sem_legenda": true
   },
@@ -1526,7 +1538,8 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos. E ela sabe que eu sei.",
     "vermelho": "sei.",
-    "tamanho": 62
+    "estilo": "maquina",
+    "tamanho": 60
    },
    "sem_legenda": true
   },
