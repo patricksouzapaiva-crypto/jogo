@@ -384,3 +384,23 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - Consistência de personagem com Gemini ([Google Codelab](https://codelabs.developers.google.com/gemini-consistent-imagery-notebook), [Runway](https://help.runwayml.com/hc/en-us/articles/50317213804435-Creating-images-with-Nano-Banana)).
 - Loudness em redes e normalização em duas passadas ([DEV — loudnorm](https://dev.to/masonwritescode/two-pass-loudness-normalization-with-ffmpeg-loudnorm-the-right-way-1nm3), [OpenClip](https://openclip.app/learn/loudness-standard)).
 - Ganchos e ritmo em vídeos curtos ([CapCut](https://www.capcut.com/create/short-form-video-hooks-first-3-second-patterns), [Metricool](https://metricool.com/viral-video-hooks/)) — números de "retenção" desses sites são de marketing, usados só como direção.
+
+## 12. Decisões de 09/11/2026
+- **Digitação:** som de teclado **mecânico (clicky)** — `painel/sons/teclado_mecanico_clicks.npy`, um clique
+  sorteado por letra, ritmo humano; volume −26 dB (impacto −23) para nunca cobrir sussurros. Escolhido pelo
+  usuário entre 5 opções.
+- **Imagens: modelo híbrido aprovado.** Fotos reais de uso livre em ~60–70% das cenas (ambientes, objetos,
+  clima, arquivo histórico) + IA só nos momentos-chave (criatura, susto, personagem).
+  Ferramenta: `painel/ferramentas/buscar_imagens.py` (Pixabay com `PIXABAY_API_KEY` nas variáveis de ambiente,
+  Openverse e Wikimedia sem chave). Gera folha de contato para escolher, baixa em alta, aplica o tratamento
+  "documento" (dessatura, escurece, tom frio, vinheta) e grava `CREDITOS.txt` → copiar créditos CC BY/BY-SA
+  na descrição do vídeo. Pexels: emissão de chaves pausada pelo próprio site (não usar).
+- **Histórias:** fotos reais funcionam melhor quando **recontamos** casos/lendas/fatos; nas histórias originais
+  do usuário, a IA continua, mas no **estilo foto documental** (abaixo).
+- **Estilo das imagens de IA (novo padrão):** parecer foto real tirada por alguém e anexada a um dossiê/
+  documentário — nada de "arte digital". Base de prompt:
+  `amateur documentary photograph, shot on an old digital camera / 35mm film, natural available light, slight
+  motion blur, flash falloff, film grain, muted cold colors, imperfect framing, everyday ordinary place,
+  realistic textures, no cinematic lighting, no fantasy art, no CGI look` — referência: a foto do braço
+  robótico de laboratório usada na amostra (luz fria, cores lavadas, enquadramento de registro).
+- Amostra aprovada: 3min37 do Ep. 03 com fotos reais (roteiro gerado a partir de `ep03-conceito/roteiro.json`).
