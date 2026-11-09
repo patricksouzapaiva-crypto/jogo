@@ -1,5 +1,7 @@
 # O Vigia — Ep. 04 "Não acenda a luz." (RASCUNHO para aprovação)
 
+Título no YouTube: **Não acenda a luz. | Creepypasta**
+
 Formato novo: **tema + história**. Um assunto real abre o vídeo (psicologia, corpo, filosofia), entrega
 uma informação que o público vai **guardar** e que a história usa no final. Alvo: ~11 min, ~1.650 palavras.
 
