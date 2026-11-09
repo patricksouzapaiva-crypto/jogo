@@ -39,7 +39,10 @@ def modelos():
 
 
 def gerar(nome, estilo=ESTILO_PADRAO, modelo=None, titulo="Ultimo Abrigo - trilha"):
-    modelo = modelo or (modelos() or ["V5"])[0]
+    if not modelo:  # como o MySuno: versão mais nova, preferindo o modelo completo (sem _MINI/_WILD)
+        ids = modelos()
+        completos = [i for i in ids if "_" not in i or i.count("_") == 1 and i.split("_")[1].isdigit()]
+        modelo = (completos or ids or ["V5"])[0]
     corpo = {"model": "ai-music-api/generate",
              "input": {"model": modelo, "instrumental": True, "custom_mode": True,
                        "title": titulo[:80], "style": estilo[:1000]}}
