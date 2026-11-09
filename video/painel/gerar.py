@@ -973,7 +973,7 @@ def saltos(arquivos, limite_db=9.0):
     return achou
 
 
-def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
+def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=False):
     mix = {**MIX_PADRAO, **(mix or {})}
     sons = AQUI / "sons"
     ent = ["-i", str(voz_wav)]
@@ -1061,6 +1061,13 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
     med = subprocess.run(["ffmpeg", "-i", bruto, "-af", "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json",
                           "-f", "null", "-"], capture_output=True, text=True).stderr
     mm = json.loads(med[med.rfind("{"):med.rfind("}") + 1])
+    if sem_voz:  # prévia: mesmo ganho que o vídeo final teria, mas só trilha + efeitos (sem a voz-fantasma)
+        ganho = -14.0 - float(mm["input_i"])
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", stem["fundo"], "-i", stem["efeitos"], "-filter_complex",
+                        f"amix=inputs=2:normalize=0,volume={ganho:.2f}dB,aresample=48000,"
+                        "alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
+        os.remove(bruto)
+        return
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
                     f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={mm['input_i']}:measured_TP={mm['input_tp']}:"
                     f"measured_LRA={mm['input_lra']}:measured_thresh={mm['input_thresh']}:offset={mm['target_offset']}:"
@@ -1101,13 +1108,52 @@ def extrair_quadros(c, fps):
         print(f"    vídeo {Path(c['video']).name}: desacelerado para {vel:.2f}× para cobrir a cena")
 
 
-def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
+def voz_simulada(batidas, destino, ppm=128):
+    """Prévia SEM narração (--sem-voz): estima o tempo de cada palavra pelo ritmo do Vigia (Ep. 03: ~128
+    palavras/min contando pausas) e grava uma "voz-fantasma" (ruído na faixa da fala, só onde haveria palavra).
+    A fantasma serve para a mixagem abaixar/subir a trilha e acertar o volume como no vídeo final; no arquivo
+    final ela é retirada (mixar_cenas com sem_voz=True)."""
+    sr = 48000
+    durs, pausas = [], []
+    for b in batidas:
+        ws = tokens(b["fala"])
+        for j, w in enumerate(ws):
+            durs.append(0.08 + 0.068 * len(norm(w)))
+            fimb = j == len(ws) - 1
+            pz = 0.8 if w.endswith(("…", "...")) else 0.55 if w.endswith((".", "?", "!", '."', '?"')) else \
+                0.35 if w.endswith((":", ";")) else 0.22 if w.endswith(",") else 0.04
+            pausas.append(pz + (0.2 if fimb else 0))
+    total = sum(durs) + sum(pausas)
+    k = (len(durs) / ppm * 60) / total
+    tempos, t = [], 0.4
+    for d, pz in zip(durs, pausas):
+        tempos.append((t, t + d * k)); t += (d + pz) * k
+    n = int((t + 1) * sr)
+    env = np.zeros(n, np.float32)
+    for a, e in tempos:
+        i0, i1 = int(a * sr), int(e * sr)
+        f = min(int(0.03 * sr), (i1 - i0) // 3)
+        seg = np.ones(i1 - i0, np.float32)
+        if f > 0:
+            seg[:f] = np.linspace(0, 1, f); seg[-f:] = np.linspace(1, 0, f)
+        env[i0:i1] = seg
+    ruido = np.random.default_rng(1).normal(0, 0.14, n).astype(np.float32) * env
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-",
+                    "-af", "highpass=f=250,lowpass=f=3500", str(destino)], input=ruido.tobytes(), check=True)
+    print(f"    voz simulada: {len(durs)} palavras em {t / 60:.1f} min (ritmo {ppm} palavras/min)")
+    return tempos
+
+
+def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     roteiro = json.load(open(caminho_roteiro, encoding="utf-8"))
     roteiro["_pasta"] = str(Path(caminho_roteiro).resolve().parent)
     batidas = roteiro["batidas"]
     texto = "\n".join(b["fala"] for b in batidas)
     print("1/5 narração (Gemini)…")
-    if roteiro.get("voz_arquivo"):  # narração já existente (ex.: trecho do episódio longo para um Short)
+    if sem_voz:
+        print("    PRÉVIA SEM NARRAÇÃO: tempos estimados, só trilha e efeitos no áudio final")
+        wav = None
+    elif roteiro.get("voz_arquivo"):  # narração já existente (ex.: trecho do episódio longo para um Short)
         wav = (Path(roteiro["_pasta"]) / roteiro["voz_arquivo"]).resolve()
         print(f"    usando narração existente: {wav.name}")
     elif len(texto) > roteiro.get("voz_max_chars", 1600):
@@ -1119,8 +1165,14 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
         wav = narrar(texto, roteiro.get("voz", {}), CACHE)
     print("2/5 tempo das palavras (Whisper)…")
     palavras = [w for b in batidas for w in tokens(b["fala"])]
-    ouvidas = transcrever(wav, texto)
-    tempos, casadas = alinhar(palavras, ouvidas)
+    if sem_voz:
+        wav = CACHE / f"voz_fantasma_{os.getpid()}.wav"
+        CACHE.mkdir(exist_ok=True)
+        tempos, casadas = voz_simulada(batidas, wav), 1.0
+        roteiro["apertar_pausas"] = False
+    else:
+        ouvidas = transcrever(wav, texto)
+        tempos, casadas = alinhar(palavras, ouvidas)
     print(f"    {casadas:.0%} das palavras reconhecidas")
     if casadas < 0.7:
         print("    aviso: narração muito diferente do roteiro (a voz pode ter lido instruções ou pulado trechos)")
@@ -1174,7 +1226,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
         subprocess.run(cmd, check=True)
     print("4/5 mixagem…")
     if roteiro.get("modo") == "cenas":
-        mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"), roteiro.get("mix"))
+        mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"), roteiro.get("mix"),
+                    sem_voz=sem_voz)
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")
@@ -1191,4 +1244,4 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
 if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
     so = next((x.split("=", 1)[1] for x in sys.argv if x.startswith("--so-audio=")), None)
-    gerar(a[0], a[1], rascunho="--rascunho" in sys.argv, so_audio=so)
+    gerar(a[0], a[1], rascunho="--rascunho" in sys.argv, so_audio=so, sem_voz="--sem-voz" in sys.argv)
