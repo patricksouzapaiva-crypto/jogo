@@ -57,7 +57,7 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
     "vermelho": "fotos.",
-    "tamanho": 44
+    "tamanho": 62
    },
    "sem_legenda": true
   },
@@ -67,7 +67,7 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
     "vermelho": "fotos.",
-    "tamanho": 44
+    "tamanho": 62
    },
    "sem_legenda": true
   },
@@ -77,7 +77,7 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
     "vermelho": "sei.",
-    "tamanho": 44
+    "tamanho": 62
    },
    "sem_legenda": true
   },
@@ -86,7 +86,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
-    "tamanho": 40
+    "tamanho": 54
    },
    "musica": {
     "som": "drone_tensao",
@@ -99,7 +99,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
-    "tamanho": 40
+    "tamanho": 54
    },
    "sem_legenda": true
   },
@@ -108,7 +108,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "E o Rafael não estava lá.",
-    "tamanho": 52
+    "tamanho": 72
    },
    "sons": [
     {
@@ -160,13 +160,56 @@
    "fala": "Você já sentiu… alguém andando atrás de você? Dentro da sua própria casa?"
   },
   {
-   "fala": "Aquele arrepio no corredor. A certeza de que, se você virar agora, vai ter alguém ali."
+   "fala": "Aquele arrepio no corredor. A certeza de que, se você virar agora, vai ter alguém ali.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.1,
+     1.22
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.6,
+      0.35
+     ]
+    ],
+    "lado": "dir"
+   }
   },
   {
-   "fala": "E você vira. E não tem ninguém."
+   "fala": "E você vira. E não tem ninguém.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "E não tem ninguém.",
+    "vermelho": "ninguém.",
+    "tamanho": 72
+   },
+   "sem_legenda": false
   },
   {
-   "fala": "Todo mundo já sentiu isso. E hoje eu vou te contar a história de um homem que resolveu descobrir o porquê."
+   "fala": "Todo mundo já sentiu isso. E hoje eu vou te contar a história de um homem que resolveu descobrir o porquê.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.0
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.55,
+      0.5
+     ]
+    ]
+   }
   },
   {
    "fala": "Em dois mil e catorze, na Suíça, um grupo de cientistas fez um experimento curioso.",
@@ -215,7 +258,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Nada além disso.",
-    "tamanho": 52
+    "tamanho": 72
    },
    "sem_legenda": true
   },
@@ -452,7 +495,14 @@
    ]
   },
   {
-   "fala": "Só presta atenção na sua nuca."
+   "fala": "Só presta atenção na sua nuca.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Não olha pra trás.",
+    "vermelho": "trás.",
+    "tamanho": 80
+   },
+   "sem_legenda": false
   },
   {
    "fala": "Sentiu?",
@@ -462,7 +512,25 @@
      "pose": "s_encarando",
      "segurar": 2.0
     }
-   ]
+   ],
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.08,
+     1.12
+    ],
+    "foco": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.3,
+      0.6
+     ]
+    ]
+   }
   },
   {
    "fala": "Com o tempo, a sensação deixou de ser rara.",
@@ -518,7 +586,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "mais perto.",
-    "tamanho": 52
+    "tamanho": 72
    },
    "sem_legenda": true
   },
@@ -1004,7 +1072,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Depois disso, a conta nunca mais respondeu.",
-    "tamanho": 40
+    "tamanho": 54
    },
    "sem_legenda": true
   },
@@ -1041,10 +1109,35 @@
    ]
   },
   {
-   "fala": "Cada um dos seus olhos tem um ponto cego. Um lugar onde o nervo óptico sai do olho, e onde você, literalmente, não enxerga nada."
+   "fala": "Cada um dos seus olhos tem um ponto cego. Um lugar onde o nervo óptico sai do olho, e onde você, literalmente, não enxerga nada.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ponto cego.",
+    "vermelho": "cego.",
+    "tamanho": 96
+   },
+   "sem_legenda": false
   },
   {
-   "fala": "Você nunca percebe. Porque o seu cérebro pinta aquele buraco com o que ele acha que deveria estar ali."
+   "fala": "Você nunca percebe. Porque o seu cérebro pinta aquele buraco com o que ele acha que deveria estar ali.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
   },
   {
    "fala": "Ou seja… ele esconde de você o que você não consegue ver."
@@ -1302,7 +1395,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "em todas.",
-    "tamanho": 52
+    "tamanho": 72
    },
    "sem_legenda": true
   },
@@ -1410,7 +1503,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Três e quarenta da manhã.",
-    "tamanho": 52
+    "tamanho": 72
    },
    "musica": {
     "som": "silencio",
@@ -1423,7 +1516,7 @@
    "cena": {
     "tipo": "texto",
     "texto": "Foi aí que ele gravou a mensagem pro irmão.",
-    "tamanho": 40
+    "tamanho": 54
    },
    "sem_legenda": true
   },
@@ -1433,7 +1526,7 @@
     "tipo": "texto",
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos. E ela sabe que eu sei.",
     "vermelho": "sei.",
-    "tamanho": 44
+    "tamanho": 62
    },
    "sem_legenda": true
   },
@@ -1455,6 +1548,7 @@
       0.476
      ]
     ],
+    "encaixe": "cobrir",
     "lado": "esq"
    }
   },
@@ -1476,11 +1570,12 @@
       0.39
      ]
     ],
+    "encaixe": "cobrir",
     "lado": "esq"
    },
    "sons": [
     {
-     "em": "trás",
+     "em": "atrás",
      "som": "riser_tensao",
      "volume_db": -6,
      "depois": true,
@@ -1525,6 +1620,7 @@
       0.5
      ]
     ],
+    "encaixe": "cobrir",
     "lado": "esq"
    }
   },
@@ -1565,7 +1661,6 @@
       0.5
      ]
     ],
-    "tremor": 0,
     "lado": "esq"
    }
   },
@@ -1587,7 +1682,6 @@
       0.47
      ]
     ],
-    "tremor": 0,
     "lado": "esq"
    }
   },
@@ -1612,7 +1706,6 @@
       0.5
      ]
     ],
-    "tremor": 0,
     "lado": "esq"
    }
   },
@@ -2043,6 +2136,7 @@
       0.28
      ]
     ],
+    "encaixe": "cobrir",
     "revelar": {
      "x": 0.4,
      "y": 0.28,

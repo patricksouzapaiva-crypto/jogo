@@ -30,8 +30,8 @@ def cena(tag, k):
               ([1.3, 1.36], [[fx, fy - 0.05], [fx + 0.01, fy - 0.07]])]
     z, f = planos[k % len(planos)]
     c = {"imagem": f"imagens/{tag}.png", "zoom": z, "foco": f}
-    if tag == "H9":
-        c["tremor"] = 0
+    if tag == "H8":
+        c["encaixe"] = "cobrir"
     return c
 
 
@@ -43,14 +43,15 @@ for i, f in enumerate(falas):
         txt = f["fala"]
         if f["voz"].startswith("rafael"):
             b["cena"] = {"tipo": "texto", "texto": "MENSAGEM DE VOZ · 03:40\n" + txt.strip('"'),
-                         "vermelho": "sei." if "sei" in txt else "fotos.", "tamanho": 44}
+                         "vermelho": "sei." if "sei" in txt else "fotos.", "tamanho": 62}
         else:
-            b["cena"] = {"tipo": "texto", "texto": txt, "tamanho": 52 if len(txt) < 40 else 40}
+            b["cena"] = {"tipo": "texto", "texto": txt, "tamanho": 72 if len(txt) < 40 else 54}
         ultima, rep = "P", 0
     elif tag.endswith("r"):  # revelação: a mesma imagem, foco na criatura, círculo vermelho
         h = tag[:-1]
         p = crit[h]
         b["cena"] = {"imagem": f"imagens/{h}.png", "zoom": [1.0, 1.12], "foco": [[0.5, 0.5], [p["x"], p["y"]]],
+                     **({"encaixe": "cobrir"} if h == "H8" else {}),
                      "revelar": {"x": p["x"], "y": p["y"], "r": p["r"], "atraso": 0.25, "duracao": 1.0}}
         b["sons"] = [{"em": f["fala"].split()[0], "som": "sub_drop", "volume_db": -12}]
         ultima, rep = tag, 0
@@ -110,7 +111,7 @@ efeito('"Não procura ela."', "ela", "sub_drop", -6, depois=True)
 efeito("Uma forma. Alta. Magra demais.", "Parada", "riser_tensao", -8, depois=True)
 efeito("Em todas.", "todas", "braam_horror", -6, depois=True)
 efeito("Era alguém. Sempre foi.", "foi", "sub_drop", -6, depois=True)
-efeito("Abriu a câmera frontal", "trás", "riser_tensao", -6, depois=True)
+efeito("Abriu a câmera frontal", "atrás", "riser_tensao", -6, depois=True)
 efeito("Ela estava ali.", "ali", "braam_horror", -2, depois=True)
 efeito("E, pela primeira vez, ela não estava parada.", "parada", "stinger_cordas", -4, depois=True)
 efeito("Algumas… nunca.", "nunca", "sub_drop", -8, depois=True)
@@ -131,6 +132,17 @@ enf("Ela sempre esteve nas imagens", "Ela", "s_sorriso_sombrio", 2.2)
 enf("Ele desapareceu porque descobriu.", "descobriu", "s_encarando", 2.0)
 enf("E você… acabou de ver", "você", "e_apontando", 2.0)
 enf("não olha pra trás.", "olha", "s_silencio", 9)
+
+# apartes longos: intercalar ilustrações para não ficar 30 s no mesmo plano
+batidas[achar("Aquele arrepio no corredor")]["cena"] = {"imagem": "imagens/H3.png", "zoom": [1.1, 1.22], "foco": [[0.55, 0.45], [0.6, 0.35]]}
+batidas[achar("E você vira. E não tem ninguém.")]["cena"] = {"tipo": "texto", "texto": "E não tem ninguém.", "vermelho": "ninguém.", "tamanho": 72}
+batidas[achar("Todo mundo já sentiu isso.")]["cena"] = dict(VIGIA, zoom=[1.04, 1.0], foco=[[0.6, 0.45], [0.55, 0.5]])
+batidas[achar("Cada um dos seus olhos tem um ponto cego")]["cena"] = {"tipo": "texto", "texto": "ponto cego.", "vermelho": "cego.", "tamanho": 96}
+batidas[achar("Você nunca percebe. Porque o seu cérebro")]["cena"] = dict(VIGIA, zoom=[1.0, 1.05], foco=[[0.5, 0.5], [0.55, 0.45]])
+batidas[achar("Só presta atenção na sua nuca.")]["cena"] = {"tipo": "texto", "texto": "Não olha pra trás.", "vermelho": "trás.", "tamanho": 80}
+batidas[achar("Sentiu?")]["cena"] = dict(VIGIA, zoom=[1.08, 1.12], foco=[[0.3, 0.6], [0.3, 0.6]])
+for t in ("E você vira. E não tem ninguém.", "Cada um dos seus olhos tem um ponto cego", "Só presta atenção na sua nuca."):
+    batidas[achar(t)]["sem_legenda"] = False
 
 # lado do Vigia: oposto ao Rafael quando ele está à esquerda
 for b in batidas:
@@ -153,8 +165,8 @@ roteiro = {
             "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite", "duracao": 3.8},
     "batidas": batidas,
 }
-for b in batidas:  # tela de texto não leva legenda embaixo (o texto já está na tela)
-    if b.get("cena", {}).get("tipo") == "texto":
+for b in batidas:  # tela de texto não leva legenda embaixo (o texto já está na tela), salvo os apartes
+    if b.get("cena", {}).get("tipo") == "texto" and b.get("sem_legenda") is not False:
         b["sem_legenda"] = True
 (AQUI / "roteiro.json").write_text(json.dumps(roteiro, ensure_ascii=False, indent=1), encoding="utf-8")
 print(len(batidas), "batidas,", sum(1 for b in batidas if b.get("cena")), "cortes")

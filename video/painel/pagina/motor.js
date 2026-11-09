@@ -493,7 +493,18 @@ function interfaceCCTV(c, t) {
 function telaTexto(c, t, a) {
   const { W, H } = D, T = D.tema;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#030303"; ctx.fillRect(0, 0, W, H);
-  const linhas = (c.texto || "").split("\n"), tam = c.tamanho || Math.round(Math.min(W, H) * 0.055);
+  const tam = c.tamanho || Math.round(Math.min(W, H) * 0.055);
+  const fam0 = c.fonte || T.fonte_texto;
+  ctx.font = `${c.peso || 500} ${tam}px "${fam0}"`;
+  const linhas = [];
+  for (const par of (c.texto || "").split("\n")) {   // quebra para caber em 78% da largura
+    let atual = "";
+    for (const p of par.split(" ")) {
+      const tent = atual ? atual + " " + p : p;
+      if (ctx.measureText(tent).width > W * 0.78 && atual) { linhas.push(atual); atual = p; } else atual = tent;
+    }
+    linhas.push(atual);
+  }
   const cps = c.cps || 22, dt = Math.max(0, t - c.t0 - 0.25);
   let mostrados = Math.floor(dt * cps);
   ctx.textAlign = "left"; ctx.textBaseline = "middle";
@@ -573,6 +584,7 @@ function desenharCena(c, t, a = 1) {
   ctx.globalAlpha = a;
   if (c.desaturar) ctx.filter = "saturate(0.25) sepia(0.25) brightness(1.06)";   // lembrança / reinterpretação
   ctx.drawImage(im, ox, oy, iw, ih); ctx.filter = "none"; ctx.globalAlpha = 1;
+  c._tf = [ox, oy, iw, ih];   // posição da imagem na tela (para a revelação achar a criatura)
 }
 
 function cenas(t) {
@@ -591,7 +603,8 @@ function cenas(t) {
   if (c.revelar) {
     const R = c.revelar, im2 = IMG["img:" + c.imagem], k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));
     if (im2 && k > 0) {
-      const cx = R.x * W, cy = R.y * H, rr_ = R.r * Math.min(W, H);
+      const tf = c._tf || [0, 0, W, H];
+      const cx = tf[0] + R.x * tf[2], cy = tf[1] + R.y * tf[3], rr_ = R.r * Math.min(tf[2], tf[3]);
       ctx.save();
       const g = ctx.createRadialGradient(cx, cy, rr_ * 0.2, cx, cy, rr_ * 1.6);
       g.addColorStop(0, `rgba(0,0,0,${0.55 * k})`); g.addColorStop(1, "rgba(0,0,0,0)");
@@ -845,7 +858,8 @@ window.quadro = function (t) {
     if (!(J && t >= J[0] && t < J[1])) {
       if (!(D.cta && t >= D.cta.t0)) legendas(t);
       chamadaYouTube(t);
-      (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+      const ciT = cenaAtual(t);
+      if (!(ciT >= 0 && D.cenas[ciT].tipo === "texto")) (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
     }
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
