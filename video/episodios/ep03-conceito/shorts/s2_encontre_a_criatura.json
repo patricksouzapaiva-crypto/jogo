@@ -288,9 +288,9 @@
   }
  ],
  "cta": {
-  "titulo": "Achou ela? A resposta está no vídeo completo",
+  "titulo": "Achou ela?",
   "canal": "Último Abrigo",
-  "subtitulo": "História completa no canal",
+  "subtitulo": "A resposta está no vídeo completo",
   "fundo": "../../../painel/cenarios/abrigo_vertical.png",
   "pose": "c_cafe_convite",
   "duracao": 3.4

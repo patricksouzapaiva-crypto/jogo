@@ -35,7 +35,7 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
     "vermelho": "fotos.",
     "estilo": "maquina",
-    "tamanho": 66
+    "tamanho": 87
    },
    "sem_legenda": true
   },
@@ -46,7 +46,7 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
     "vermelho": "fotos.",
     "estilo": "maquina",
-    "tamanho": 66
+    "tamanho": 87
    },
    "sem_legenda": true
   },
@@ -57,7 +57,7 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
     "vermelho": "sei.",
     "estilo": "maquina",
-    "tamanho": 66
+    "tamanho": 87
    },
    "sem_legenda": true
   },
@@ -66,7 +66,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
-    "estilo": "maquina"
+    "estilo": "maquina",
+    "tamanho": 84
    },
    "sem_legenda": true,
    "musica": {
@@ -79,7 +80,8 @@
    "cena": {
     "tipo": "texto",
     "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
-    "estilo": "maquina"
+    "estilo": "maquina",
+    "tamanho": 84
    },
    "sem_legenda": true
   },

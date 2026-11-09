@@ -37,8 +37,9 @@ def foco_vertical(nome):
 
 SHORTS = [
     {"nome": "s1_a_mensagem", "de": 0, "ate": 5, "titulo": "O que aconteceu com o Rafael?",
+     "inicio": 1.1,  # a mensagem do telefone não é reconhecida pelo Whisper: começo medido pelo silêncio
      "musica": [(3, "trilha_tensa_1", None, -22)]},
-    {"nome": "s2_encontre_a_criatura", "de": 78, "ate": 86, "titulo": "Achou ela? A resposta está no vídeo completo",
+    {"nome": "s2_encontre_a_criatura", "de": 78, "ate": 86, "titulo": "Achou ela?", "subtitulo": "A resposta está no vídeo completo",
      "musica": [(78, "trilha_tensa_2", None, -22)],
      # aqui as fotos da mesa viram as próprias fotos com ela escondida (sem revelar)
      "imagens": {78: "H4", 79: "H3", 80: "H1", 81: "H1", 82: "H2", 83: "H2", 85: "H6", 86: "H7"},
@@ -58,7 +59,7 @@ for S in SHORTS:
     t1 = tempos[p1][1] + 0.6
     if p1 + 1 < len(tempos):
         t1 = min(t1, tempos[p1 + 1][0] - 0.05)
-    t0 = max(0.0, t0)
+    t0 = max(0.0, S.get("inicio", t0))
     arq = AQUI / "shorts" / f"{S['nome']}_voz.wav"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}", "-i", str(VOZ),
                     "-af", "afade=t=in:d=0.04", str(arq)], check=True)
@@ -84,8 +85,10 @@ for S in SHORTS:
                     c["foco"] = [[fx, 0.5], [fx, 0.46]]
                 elif c.get("foco"):
                     c["foco"] = [[0.5, f[1]] for f in c["foco"]]
-            if c.get("tipo") == "texto" and c.get("tamanho"):
-                c["tamanho"] = int(c["tamanho"] * 1.1)
+            if c.get("tipo") == "texto" and not c.get("tamanho") and c.get("estilo") == "maquina":
+                c["tamanho"] = 84  # no vertical o texto precisa ser maior
+            elif c.get("tipo") == "texto" and c.get("tamanho"):
+                c["tamanho"] = int(c["tamanho"] * 1.45)
     if not (bat[0].get("cena") or bat[0].get("cenas")):
         raise SystemExit(f"{S['nome']}: a 1ª batida precisa de cena")
     for (i, som, em, db) in S["musica"]:
@@ -93,7 +96,7 @@ for S in SHORTS:
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "cta", "voz_arquivo", "preencher_pausas")}
     r.update({"formato": "9:16", "voz_arquivo": arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
               "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [],
-              "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": "História completa no canal",
+              "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": S.get("subtitulo", "História completa no canal"),
                       "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})
     (AQUI / "shorts" / f"{S['nome']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
     print(S["nome"], f"{t1 - t0:.1f}s de narração")
