@@ -816,7 +816,14 @@ function chamadaYouTube(t) {
   const a1 = easeOut(lin(dt, 0.1, 0.35));
   ctx.globalAlpha = a1; fonte(800, 58, T.fonte_texto); ctx.fillStyle = T.texto_legenda;
   ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 16;
-  ctx.fillText(c.titulo || "Gostou dessa história?", W / 2, cy - 150 + (1 - a1) * 20);
+  // quebra o título em linhas que caibam em 88% da largura (o de baixo fica no lugar de sempre)
+  const linhasT = [];
+  for (const p of (c.titulo || "Gostou dessa história?").split(" ")) {
+    const ult = linhasT.length ? linhasT[linhasT.length - 1] + " " + p : p;
+    if (linhasT.length && ctx.measureText(ult).width <= W * 0.88) linhasT[linhasT.length - 1] = ult;
+    else linhasT.push(p);
+  }
+  linhasT.forEach((l, i) => ctx.fillText(l, W / 2, cy - 150 - (linhasT.length - 1 - i) * 70 + (1 - a1) * 20));
   ctx.shadowBlur = 0;
   // botão
   const clique = 1.35, inscrito = dt >= clique;

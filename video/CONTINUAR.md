@@ -13,10 +13,17 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   variáveis de ambiente pelo usuário — testar logo no começo:
   `python3 video/painel/ferramentas/buscar_imagens.py buscar /tmp/t consultas.json`.
 
+- **Shorts do Ep. 03 (09/11):** os 3 renderizados e enviados ao usuário (s1 26 s, s2 51 s, s3 61 s, −14 LUFS).
+  Re-renderizar: `cd video/episodios/ep03-conceito && python3 montar_shorts.py` e depois
+  `cd shorts && python3 ../../../painel/gerar.py s3_o_microfone.json saida.mp4`. Sem a narração completa,
+  o `montar_shorts.py` reaproveita os recortes `shorts/*_voz.wav`.
+- **Pixabay testado (09/11): funciona.** Mas a chave foi posta no *script de configuração* do ambiente
+  (sem `export`), então NÃO chega à sessão: passar no comando ou pedir ao usuário que a mova para as
+  variáveis de ambiente.
+- Contêiner novo precisa de: `pip install faster-whisper opencv-python-headless numpy requests`.
+
 ## Pendências
-1. Testar Pixabay (variável `PIXABAY_API_KEY`).
-2. **3 Shorts do Ep. 03** ("A mensagem", "Encontre a criatura", "O microfone") — ver `publicacao/YOUTUBE.md`;
-   Vigia HD, CTA com `cenarios/abrigo_vertical.png` e pose `c_cafe_convite` (modelo: `ep02-a-sonambula/montar_shorts.py`).
+1. Aguardando o usuário aprovar os 3 Shorts do Ep. 03.
 3. Estudo de **edição de som** no estilo Fyori: o YouTube bloqueia download aqui ("confirme que não é um robô");
    usar as gravações que o usuário enviar. Ideia: separar voz/fundo (demucs) e medir onde entram efeitos,
    silêncios e trilha em relação às palavras.

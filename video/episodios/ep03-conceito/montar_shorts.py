@@ -40,12 +40,17 @@ SHORTS = [
      "inicio": 1.1,  # a mensagem do telefone não é reconhecida pelo Whisper: começo medido pelo silêncio
      "musica": [(3, "trilha_tensa_1", None, -22)]},
     {"nome": "s2_encontre_a_criatura", "de": 78, "ate": 86, "titulo": "Achou ela?", "subtitulo": "A resposta está no vídeo completo",
-     "musica": [(78, "trilha_tensa_2", None, -22)],
+     "musica": [(78, "trilha_tensa_2", None, -27)],
      # aqui as fotos da mesa viram as próprias fotos com ela escondida (sem revelar)
      "imagens": {78: "H4", 79: "H3", 80: "H1", 81: "H1", 82: "H2", 83: "H2", 85: "H6", 86: "H7"},
      "extras": {84: [("H3", None), ("H4", "Na"), ("H5", "No")]}},
     {"nome": "s3_o_microfone", "de": 36, "ate": 41, "titulo": "Até onde os passos foram?",
-     "musica": [(36, "trilha_tensa_2", None, -22), (39, "silencio", "outro", -40)]},
+     "musica": [(36, "trilha_tensa_2", None, -27), (39, "silencio", "outro", -40)],
+     # sem isso a R6 ficava ~35 s na tela: close na forma de onda, rosto dele e o corredor vazio no fim
+     "imagens": {40: "H8"},
+     "extras": {38: [("R6", None), ("R6", "fones", {"zoom": [1.22, 1.3], "foco": [[0.8, 0.66], [0.78, 0.64]]})],
+                39: [("R6", None, {"zoom": [1.3, 1.36], "foco": [[0.8, 0.64], [0.8, 0.62]]})],
+                41: [("R6", None), ("H9", "porta", {"zoom": [1.0, 1.12]})]}},
 ]
 
 MAPA_POSES = {}  # o Ep. 03 já usa as poses do vigia_hd
@@ -61,7 +66,10 @@ for S in SHORTS:
         t1 = min(t1, tempos[p1 + 1][0] - 0.05)
     t0 = max(0.0, S.get("inicio", t0))
     arq = AQUI / "shorts" / f"{S['nome']}_voz.wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}", "-i", str(VOZ),
+    if not VOZ.exists() and arq.exists():
+        print(f"    {VOZ.name} ausente: reaproveitando {arq.name}")
+    else:
+      subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}", "-i", str(VOZ),
                     "-af", "afade=t=in:d=0.04", str(arq)], check=True)
     bat = copy.deepcopy(longo["batidas"][a:b + 1])
     for i, x in enumerate(bat, start=a):
@@ -71,8 +79,8 @@ for S in SHORTS:
             x["cena"] = {"imagem": f"imagens/{S['imagens'][i]}.png", "zoom": [1.0, 1.07]}
         if i in S.get("extras", {}):
             x.pop("cena", None)
-            x["cenas"] = [{"imagem": f"imagens/{n}.png", "zoom": [1.0, 1.07], **({"em": em} if em else {})}
-                          for n, em in S["extras"][i]]
+            x["cenas"] = [{"imagem": f"imagens/{n}.png", "zoom": [1.0, 1.07], **({"em": em} if em else {}),
+                           **(e[0] if e else {})} for n, em, *e in S["extras"][i]]
         for c in ([x["cena"]] if x.get("cena") else []) + x.get("cenas", []):
             c.pop("lado", None); c.pop("revelar", None)
             if c.get("vigia"):
@@ -84,7 +92,9 @@ for S in SHORTS:
                 if (AQUI / "shorts" / "img" / f"{nome}.jpg").exists():
                     c["imagem"] = f"img/{nome}.jpg"  # versão clareada: no celular a original fica quase preta
                 fx = foco_vertical(nome)
-                if fx is not None:
+                if c.get("foco") and c.get("zoom", [1])[0] > 1.1:
+                    pass  # foco escolhido à mão (close)
+                elif fx is not None:
                     c["foco"] = [[fx, 0.5], [fx, 0.46]]
                 elif c.get("foco"):
                     c["foco"] = [[0.5, f[1]] for f in c["foco"]]
