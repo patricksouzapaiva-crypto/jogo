@@ -101,7 +101,7 @@ Relato de espectador: o Vigia na tela tirava a concentração e a tensão. Entã
 **Inserção Fyori 1 — o espelho**
 `[VIGIA ↓ no canto, junto do cartão / tela]`
 `[cartão: "Giovanni Caputo, 2010 — a ilusão do rosto estranho"]`
-> Em 2010, um psicólogo italiano, Giovanni Caputo, pediu que dezenas de voluntários olhassem para o próprio rosto num espelho, numa sala quase escura, por dez minutos.
+> Em dois mil e dez, um psicólogo italiano, Giovanni Caputo, pediu que dezenas de voluntários olhassem para o próprio rosto num espelho, numa sala quase escura, por dez minutos.
 > Em menos de um minuto, a maioria já via o rosto se deformar. Alguns viram parentes mortos. Outros… um desconhecido.
 > No escuro, o cérebro para de esperar e começa a inventar.
 > Foi exatamente isso que a Júlia disse pra si mesma naquela noite. E na seguinte.
@@ -141,7 +141,7 @@ Relato de espectador: o Vigia na tela tirava a concentração e a tensão. Entã
 > "Enquanto eu olho, ela não anda."
 
 **Ato 2 — a vizinha**
-> A Júlia desceu e foi falar com a vizinha do 702, a dona Cida, que morava no prédio fazia trinta anos.
+> A Júlia desceu e foi falar com a vizinha do setecentos e dois, a dona Cida, que morava no prédio fazia trinta anos.
 > Mostrou o caderno.
 > A dona Cida ficou um tempo olhando pra capa sem abrir. Depois devolveu, como quem devolve uma coisa quente.
 > "O seu Aurélio vivia de luz acesa, minha filha. Dia e noite. Dizia que, no claro, ele não sabia onde ela estava. E que isso era pior."
