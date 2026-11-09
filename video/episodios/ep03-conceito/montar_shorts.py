@@ -92,7 +92,7 @@ for S in SHORTS:
         bat[i - a]["musica"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "cta", "voz_arquivo", "preencher_pausas")}
     r.update({"formato": "9:16", "voz_arquivo": arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
-              "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": 0,
+              "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [],
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": "História completa no canal",
                       "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})
     (AQUI / "shorts" / f"{S['nome']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")

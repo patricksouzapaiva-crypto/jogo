@@ -21,7 +21,7 @@
    "ela"
   ]
  },
- "ambiente_inicial": 0,
+ "ambiente_inicial": [],
  "musica": {
   "som": "silencio",
   "volume_db": -40
