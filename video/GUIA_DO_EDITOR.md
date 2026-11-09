@@ -386,6 +386,14 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - **09/11/2026 — vídeos curtos reais:** `buscar_imagens.py videos` / `baixar_videos` (Pixabay, sem crédito
   obrigatório) — já tratados com a cor "documento" da série. O motor ainda NÃO toca vídeo dentro da cena
   (próximo passo).
+- **09/11/2026 — NADA DE "CARA DE IA" EM PERSONAGEM (uma das ideias centrais do usuário):** o vídeo tem que
+  parecer produção elaborada, não IA. Personagem pode aparecer, mas nunca com rosto inteiro e nítido: de costas,
+  silhueta, sombra, cortado pelo quadro, desfocado, pelo vão da porta / olho mágico / vidro, ou só as mãos. A foto
+  tem cara de "tirada por alguém" (celular à noite, flash, tremida, foco errado), nunca luz de cinema ou pose.
+  Na edição, imagem de IA com pessoa recebe o tratamento **"arquivo"** (`buscar_imagens.py arquivo`: cópia de
+  cópia, alto contraste, ruído, riscos) = "prova anexada ao caso". Testado: só escurecer NÃO resolve; o
+  enquadramento é o que mais pesa. Para close de olho/rosto, preferir vídeo real (Pixabay). Modelo de prompts:
+  `episodios/ep04-medo-do-escuro/PEDIDO_IMAGENS_IA.md`.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

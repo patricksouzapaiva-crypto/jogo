@@ -6,6 +6,7 @@ Uso:
   python3 buscar_imagens.py videos <pasta> consultas.json         # vídeos curtos do Pixabay: prévias + folha + resultados
   python3 buscar_imagens.py baixar_videos <pasta> <id[:ini[:dur]],...> [saida]
       # baixa em 1920x1080, sem áudio, corta (padrão: 0 s, 8 s) e aplica o mesmo tratamento "documento" das fotos
+  python3 buscar_imagens.py arquivo <entrada> <saida.jpg>          # tratamento "arquivo" p/ imagem com pessoa (tira a cara de IA)
 
 consultas.json: {"corredor": "dark hallway night", "avo": "elderly woman hands", ...}
 Cada candidato recebe um id "<chave>_<n>" (ex.: corredor_3), que aparece na folha de contato.
@@ -237,6 +238,31 @@ def baixar_videos(pasta, ids, saida=None):
     cred.write_text("\n".join(creditos) + "\n", encoding="utf-8")
 
 
+def tratar_arquivo(im, W=1920, H=1080, semente=3):
+    """Tratamento "arquivo" (regra 09/11): toda imagem de IA com PESSOA vira cópia de cópia de um registro —
+    alto contraste, pretos estourados, ruído e riscos verticais. Some a pele lisa/luz de cinema da IA e a
+    imagem passa a ser "prova anexada ao caso"."""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    rng = np.random.default_rng(semente)
+    r = max(W / im.width, H / im.height)
+    im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
+    l, t = (im.width - W) // 2, (im.height - H) // 2
+    im = im.crop((l, t, l + W, t + H))
+    a = np.asarray(im).astype(np.float32) / 255
+    lo, hi = np.percentile(a.mean(-1), [1, 99.5])
+    a = np.clip((a - lo) / (hi - lo + 1e-6), 0, 1) ** 0.75
+    g = np.asarray(Image.fromarray((a.mean(-1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2.0))).astype(np.float32) / 255
+    g = np.clip((g - 0.30) * 2.2, 0, 1)
+    g = g + rng.normal(0, 0.10, g.shape)
+    g = np.where(g > 0.5, 1 - (1 - g) * 0.25, g * 0.35)
+    for _ in range(4):
+        x = rng.integers(0, W); g[:, x:x + rng.integers(2, 5)] *= 0.55
+    g = np.clip(g, 0, 1) * 0.92 + 0.04
+    rgb = np.stack([g * 0.98, g * 0.96, g * 0.92], -1)
+    return Image.fromarray((rgb * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     if len(a) >= 3 and a[0] == "buscar":
@@ -247,5 +273,8 @@ if __name__ == "__main__":
         buscar_videos(a[1], json.load(open(a[2], encoding="utf-8")))
     elif len(a) >= 3 and a[0] == "baixar_videos":
         baixar_videos(a[1], a[2].split(","), a[3] if len(a) > 3 else None)
+    elif len(a) >= 3 and a[0] == "arquivo":
+        from PIL import Image
+        tratar_arquivo(Image.open(a[1]).convert("RGB")).save(a[2], quality=93)
     else:
         print(__doc__)
