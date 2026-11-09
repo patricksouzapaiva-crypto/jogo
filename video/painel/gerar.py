@@ -727,6 +727,12 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                 c.pop("em", None); c["t0"] = D["abertura_fim"]
             else:
                 c["t0"] = fronteira(rel, rel.indice(k, c.pop("em", None)))
+            if c.get("video"):  # cena com vídeo curto: os quadros são extraídos depois que a duração da cena é conhecida
+                c["video"] = str((base / c["video"]).resolve())
+                if not Path(c["video"]).exists():
+                    raise SystemExit(f"vídeo não encontrado: {c['video']}")
+                D["cenas"].append(c)
+                continue
             if not c.get("imagem"):  # cena desenhada no motor (ex.: relógio)
                 D["cenas"].append(c)
                 continue
@@ -781,7 +787,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                 continue
             c = D["cenas"][k]
             prox = inis[k + 1] if k + 1 < len(inis) else 1e9
-            if not c.get("imagem") or c.get("vigia") or c.get("tipo") or c.get("revelar") or c.get("abertura"):
+            if not c.get("imagem") or c.get("video") or c.get("vigia") or c.get("tipo") or c.get("revelar") or c.get("abertura"):
                 continue
             if g0 - c["t0"] < 1.0 or prox - g1 < 0.4:  # perto de um corte: não corta de novo
                 continue
@@ -797,6 +803,9 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     D["cenas"].sort(key=lambda c: c["t0"])
     for i, c in enumerate(D["cenas"]):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
+    for c in D["cenas"]:
+        if c.get("video"):
+            extrair_quadros(c, fps)
     # lado do Vigia: muda só num corte de imagem, para o lado oposto ao assunto da cena,
     # e no máximo a cada ~15 s (ou quando o roteiro pede "lado": "esq"/"dir")
     lado, ultima = roteiro.get("lado_inicial", "esq"), -99.0
@@ -1060,6 +1069,38 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
 
 
 # ---------------------------------------------------------------- principal
+def _duracao_midia(arq):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(arq)],
+                       capture_output=True, text=True)
+    return float(r.stdout.strip() or 0)
+
+
+def extrair_quadros(c, fps):
+    """Cena com vídeo: extrai em JPG só os quadros que a cena usa (o navegador carrega um por vez, sem estourar
+    a memória). Campos: "video", "video_inicio" (s dentro do clipe), "velocidade" (1 = normal). Se o clipe for
+    mais curto que a cena, ele é desacelerado até 0,6× e, se ainda faltar, congela no último quadro (nunca repete:
+    loop de vídeo denuncia edição barata). Cache em painel/.cache_quadros."""
+    import hashlib
+    ini = float(c.get("video_inicio", 0))
+    precisa = (c["t1"] - c["t0"]) + 1.2  # margem para a transição de saída
+    disp = max(0.1, _duracao_midia(c["video"]) - ini)
+    vel = float(c.get("velocidade", 1.0))
+    if disp / vel < precisa:
+        vel = max(0.6, min(vel, disp / precisa))
+    n = int(round(precisa * fps)) + 1
+    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}".encode()).hexdigest()[:16]
+    pasta = AQUI / ".cache_quadros" / chave
+    if not (pasta / f"{n:05d}.jpg").exists():
+        pasta.mkdir(parents=True, exist_ok=True)
+        filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini:.3f}", "-i", c["video"], "-an", "-vf", filtro,
+                        "-frames:v", str(n), "-q:v", "3", str(pasta / "%05d.jpg")], check=True)
+    c["quadros"] = {"dir": str(pasta), "n": n, "fps": fps}
+    c["imagem"] = str(pasta / "00001.jpg")
+    if vel < 0.999:
+        print(f"    vídeo {Path(c['video']).name}: desacelerado para {vel:.2f}× para cobrir a cena")
+
+
 def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None):
     roteiro = json.load(open(caminho_roteiro, encoding="utf-8"))
     roteiro["_pasta"] = str(Path(caminho_roteiro).resolve().parent)

@@ -34,7 +34,7 @@ async function trabalhador(browser, porta, i0, i1, arq) {
     ...(RASCUNHO ? ["-vf", `scale=${D.W / 2}:${D.H / 2}`] : []),
     "-c:v", "libx264", "-preset", RASCUNHO ? "veryfast" : "medium", "-crf", "17", "-pix_fmt", "yuv420p", arq], { stdio: ["pipe", "inherit", "inherit"] });
   for (let i = i0; i < i1; i++) {
-    const b64 = await page.evaluate((t) => { window.quadro(t); return document.getElementById("tela").toDataURL("image/jpeg", 0.95).split(",")[1]; }, i / D.fps);
+    const b64 = await page.evaluate(async (t) => { await window.quadro(t); return document.getElementById("tela").toDataURL("image/jpeg", 0.95).split(",")[1]; }, i / D.fps);
     const buf = Buffer.from(b64, "base64");
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once("drain", r));
   }

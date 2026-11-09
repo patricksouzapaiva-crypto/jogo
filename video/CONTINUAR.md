@@ -28,7 +28,7 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 - Motor (09/11): Vigia fora por padrão (`vigia_padrao`), halo corrigido, som `sem_sustos`, aviso de salto de volume.
 
 ## Pendências
-0. Ep. 04: (a) suporte a vídeo dentro da cena no motor; (b) narração Gemini (uma chamada); (c) montar roteiro.json
+0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.
 1. Aguardando o usuário aprovar os 3 Shorts do Ep. 03.
 3. Estudo de **edição de som** no estilo Fyori: o YouTube bloqueia download aqui ("confirme que não é um robô");

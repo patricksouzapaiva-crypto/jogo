@@ -384,8 +384,13 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   mais de 9 dB de repente. Tensão = drone crescente, riser, respiração, silêncio, passos — não braam alto.
 - **09/11/2026 — duração dos episódios longos: 13 a 15 minutos.**
 - **09/11/2026 — vídeos curtos reais:** `buscar_imagens.py videos` / `baixar_videos` (Pixabay, sem crédito
-  obrigatório) — já tratados com a cor "documento" da série. O motor ainda NÃO toca vídeo dentro da cena
-  (próximo passo).
+  obrigatório) — já tratados com a cor "documento" da série. **O motor toca vídeo na cena:**
+  `"cena": {"video": "videos/x.mp4", "video_inicio": 2.0, "velocidade": 0.8, "zoom": [1.0, 1.04]}` (zoom, foco,
+  transições e `sem_vigia` funcionam igual às imagens). Clipe mais curto que a cena é desacelerado até 0,6× e
+  depois congela no último quadro — nunca repete (loop denuncia edição barata). Quadros ficam em cache em
+  `painel/.cache_quadros/` (pode apagar; ~4 MB por segundo de vídeo). Custo medido: ~6% a mais de renderização.
+  Uso: 1 vídeo a cada 3–5 imagens, de preferência em clima/ambiente (chuva, vela, corredor, olho), não em
+  revelações (a revelação é corte seco para imagem parada).
 - **09/11/2026 — NADA DE "CARA DE IA" EM PERSONAGEM (uma das ideias centrais do usuário):** o vídeo tem que
   parecer produção elaborada, não IA. Personagem pode aparecer, mas nunca com rosto inteiro e nítido: de costas,
   silhueta, sombra, cortado pelo quadro, desfocado, pelo vão da porta / olho mágico / vidro, ou só as mãos. A foto

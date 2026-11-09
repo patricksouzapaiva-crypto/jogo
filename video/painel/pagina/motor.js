@@ -862,8 +862,25 @@ function chamadaYouTube(t) {
   ctx.globalAlpha = 1; ctx.textAlign = "left"; ctx.restore();
 }
 
+// ------------------------------------------------------------------ vídeo nas cenas
+// cada cena com vídeo tem os quadros em JPG; antes de desenhar, troca a imagem da cena pelo quadro do instante t
+async function atualizarVideos(t) {
+  for (const c of D.cenas || []) {
+    const q = c.quadros;
+    if (!q || t < c.t0 - 1.5 || t > c.t1 + 1.5) continue;
+    const i = Math.max(0, Math.min(q.n - 1, Math.floor((t - c.t0) * q.fps + 1e-6)));
+    if (c._qi === i) continue;
+    const im = await carregarImg(q.dir + "/" + String(i + 1).padStart(5, "0") + ".jpg");
+    if (im) { IMG["img:" + c.imagem] = im; c._qi = i; }
+  }
+}
+
 // ------------------------------------------------------------------ quadro
-window.quadro = function (t) {
+window.quadro = async function (t) {
+  await atualizarVideos(t);
+  quadroSinc(t);
+};
+function quadroSinc(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.textAlign = "left";
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
