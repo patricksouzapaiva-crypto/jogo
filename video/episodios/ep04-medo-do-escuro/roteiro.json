@@ -2119,39 +2119,29 @@
   {
    "fala": "No terceiro dia, a dona Cida ligou. A voz baixa, como se alguém pudesse ouvir.",
    "cena": {
-    "imagem": "imagens_reais/idosa_telefone_0.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.55,
-      0.42
-     ]
-    ]
-   }
+    "tipo": "texto",
+    "texto": "CHAMADA RECEBIDA · 23:48\nDona Cida · 702",
+    "estilo": "maquina",
+    "vermelho": "702"
+   },
+   "sem_legenda": true
   },
   {
    "fala": "\"Júlia, você tá em casa?\"",
    "cena": {
-    "imagem": "imagens_reais/idosa_telefone_0.jpg",
+    "imagem": "imagens_reais/corredor_predio_0.jpg",
     "zoom": [
-     1.2,
-     1.26
+     1.1,
+     1.18
     ],
     "foco": [
      [
-      0.55,
-      0.4
+      0.5,
+      0.55
      ],
      [
-      0.56,
-      0.38
+      0.5,
+      0.45
      ]
     ]
    }
@@ -2179,19 +2169,19 @@
   {
    "fala": "Um silêncio comprido do outro lado.",
    "cena": {
-    "imagem": "imagens_reais/idosa_telefone_0.jpg",
+    "imagem": "imagens_reais/corredor_predio_0.jpg",
     "zoom": [
-     1.3,
-     1.34
+     1.25,
+     1.3
     ],
     "foco": [
      [
-      0.56,
-      0.38
+      0.5,
+      0.42
      ],
      [
-      0.56,
-      0.37
+      0.5,
+      0.4
      ]
     ]
    }

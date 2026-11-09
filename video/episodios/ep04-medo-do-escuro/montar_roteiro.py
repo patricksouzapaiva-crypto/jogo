@@ -236,10 +236,10 @@ C("O corpo não foi feito", vigia((1.05, 1.1), ((0.4, 0.45), (0.38, 0.42))))
 
 # ---------------------------------------------------------------- Ato 3 — a última noite (sem Vigia)
 C("A Júlia não voltou pra casa", vid("luz_piscando_1", (1.0, 1.04)))
-C("No terceiro dia, a dona Cida ligou", img("idosa_telefone_0", (1.0, 1.08), ((0.5, 0.5), (0.55, 0.42))))
-C('"Júlia, você tá em casa?"', img("idosa_telefone_0", (1.2, 1.26), ((0.55, 0.4), (0.56, 0.38))))
+C("No terceiro dia, a dona Cida ligou", texto("CHAMADA RECEBIDA · 23:48\nDona Cida · 702", "702"))   # sem rosto: a dona Cida nunca aparece de frente
+C('"Júlia, você tá em casa?"', img("corredor_predio_0", (1.1, 1.18), ((0.5, 0.55), (0.5, 0.45))))
 C('"Não. Por quê?"', img("A12_julia_hospital", (1.2, 1.25), ((0.66, 0.5), (0.67, 0.48))))
-C("Um silêncio comprido", img("idosa_telefone_0", (1.3, 1.34), ((0.56, 0.38), (0.56, 0.37))))
+C("Um silêncio comprido", img("corredor_predio_0", (1.25, 1.3), ((0.5, 0.42), (0.5, 0.4))))
 C('"Porque toda noite eu escuto', img("A04_porta", (1.0, 1.15), ((0.5, 0.5), (0.57, 0.45))))
 C("Mas ela tinha que voltar", img("predio_antigo_4", (1.0, 1.06)))
 C("Voltou numa sexta à noite", vid("chuva_janela_v_0", (1.0, 1.04)))
