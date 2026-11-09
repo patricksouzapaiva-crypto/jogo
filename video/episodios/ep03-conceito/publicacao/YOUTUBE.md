@@ -3,9 +3,9 @@
 Vídeo longo, 16:9, ~11–12 min (permite anúncios no meio). Duração final: 11min52.
 
 ## Título (escolha um)
-1. **Tem alguém atrás de você.**  ← recomendado (curto, estilo Fyori, é a sensação do vídeo)
-2. Mais perto.
-3. Nunca procure o que anda atrás de você | O Vigia #03
+1. **Tem alguém atrás de você. | Creepypasta**  ← recomendado (curto, estilo Fyori, é a sensação do vídeo)
+2. Mais perto. | Creepypasta
+3. Nunca procure o que anda atrás de você | Creepypasta
 
 ## Descrição
 ```
@@ -58,9 +58,9 @@ Volta no começo e me conta em qual imagem você viu primeiro.
 
 ## Shorts (gerados a partir do episódio)
 1. **"A mensagem"** — o áudio do Rafael na tela preta → "a porta estava trancada por dentro".
-   Título: `A última mensagem que ele mandou pro irmão às 3h40 #shorts`
+   Título: `A última mensagem que ele mandou pro irmão às 3h40 | Creepypasta #shorts`
 2. **"Encontre a criatura"** — 3 imagens com ela escondida, sem revelar; termina com "Achou? A resposta está no vídeo completo."
-   Título: `Ela está em todas essas fotos. Você consegue achar? #shorts`
+   Título: `Ela está em todas essas fotos. Você consegue achar? | Creepypasta #shorts`
 3. **"O microfone"** — os passos atrasados meio segundo.
-   Título: `Ele gravou o corredor a noite toda. Ouviu passos depois dos dele #shorts`
+   Título: `Ele gravou o corredor a noite toda. Ouviu passos depois dos dele | Creepypasta #shorts`
 Em cada Short: **Vídeo relacionado → Ep. 03**.

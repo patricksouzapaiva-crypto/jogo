@@ -404,3 +404,5 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   realistic textures, no cinematic lighting, no fantasy art, no CGI look` — referência: a foto do braço
   robótico de laboratório usada na amostra (luz fria, cores lavadas, enquadramento de registro).
 - Amostra aprovada: 3min37 do Ep. 03 com fotos reais (roteiro gerado a partir de `ep03-conceito/roteiro.json`).
+- **Títulos (regra do usuário):** todo título termina com **" | Creepypasta"** — no longo e nos Shorts
+  (nos Shorts: `<título> | Creepypasta #shorts`). Palavra de busca forte do nicho; aumenta o alcance.

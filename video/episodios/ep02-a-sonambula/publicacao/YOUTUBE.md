@@ -70,15 +70,15 @@ Quer mais casos do Vigia? Me diz qual história ele deve contar.
 Em cada Short: **Vídeo relacionado → o episódio completo** (gera o link clicável).
 
 **Short 1 — `Short1_Voce_nao_devia_estar_acordado.mp4`**
-- Título: `Ela estava de pé ao lado da cama… às 3h12 #shorts`
+- Título: `Ela estava de pé ao lado da cama… às 3h12 | Creepypasta #shorts`
 - Descrição: `A esposa dele era sonâmbula. Pelo menos era o que ele pensava. História completa no canal Último Abrigo. #terror #historiasdeterror #shorts`
 
 **Short 2 — `Short2_A_gravacao.mp4`**
-- Título: `Ele instalou uma câmera pra ver o que a esposa fazia dormindo #shorts`
+- Título: `Ele instalou uma câmera pra ver o que a esposa fazia dormindo | Creepypasta #shorts`
 - Descrição: `O que a câmera mostrou às 3h12 mudou tudo. História completa no canal Último Abrigo. #terror #cameradeseguranca #shorts`
 
 **Short 3 — `Short3_A_poltrona.mp4`**
-- Título: `"Ainda bem. Hoje você não levantou." #shorts`
+- Título: `"Ainda bem. Hoje você não levantou." | Creepypasta #shorts`
 - Descrição: `Por que ela passava a noite acordada olhando pra ele? História completa no canal Último Abrigo. #terror #historiasdeterror #shorts`
 
 ## Ordem sugerida
