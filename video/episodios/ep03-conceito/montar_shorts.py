@@ -80,7 +80,10 @@ for S in SHORTS:
             if c.get("imagem"):
                 c["imagem"] = "../" + c["imagem"]
                 c["encaixe"] = "cobrir"
-                fx = foco_vertical(Path(c["imagem"]).stem)
+                nome = Path(c["imagem"]).stem
+                if (AQUI / "shorts" / "img" / f"{nome}.jpg").exists():
+                    c["imagem"] = f"img/{nome}.jpg"  # versão clareada: no celular a original fica quase preta
+                fx = foco_vertical(nome)
                 if fx is not None:
                     c["foco"] = [[fx, 0.5], [fx, 0.46]]
                 elif c.get("foco"):

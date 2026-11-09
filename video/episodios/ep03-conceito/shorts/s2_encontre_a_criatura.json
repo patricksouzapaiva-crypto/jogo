@@ -31,7 +31,7 @@
   {
    "fala": "Numa madrugada, ele imprimiu todas e espalhou em cima da mesa. Pra olhar com calma. Pra provar, de uma vez por todas, que não tinha nada ali.",
    "cena": {
-    "imagem": "../imagens/H4.png",
+    "imagem": "img/H4.jpg",
     "zoom": [
      1.0,
      1.07
@@ -56,7 +56,7 @@
   {
    "fala": "E por muito tempo… não tinha.",
    "cena": {
-    "imagem": "../imagens/H3.png",
+    "imagem": "img/H3.jpg",
     "zoom": [
      1.0,
      1.07
@@ -77,7 +77,7 @@
   {
    "fala": "Até que ele parou numa foto da rua. Lá no fundo, depois do último poste, entre duas árvores.",
    "cena": {
-    "imagem": "../imagens/H1.png",
+    "imagem": "img/H1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -98,7 +98,7 @@
   {
    "fala": "Uma forma. Alta. Magra demais. Parada.",
    "cena": {
-    "imagem": "../imagens/H1.png",
+    "imagem": "img/H1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -128,7 +128,7 @@
   {
    "fala": "Ele pegou a foto seguinte. A da sala. E procurou.",
    "cena": {
-    "imagem": "../imagens/H2.png",
+    "imagem": "img/H2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -149,7 +149,7 @@
   {
    "fala": "Estava lá. No reflexo da janela.",
    "cena": {
-    "imagem": "../imagens/H2.png",
+    "imagem": "img/H2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -171,7 +171,7 @@
    "fala": "No corredor. Na porta da cozinha. No canto do quarto.",
    "cenas": [
     {
-     "imagem": "../imagens/H3.png",
+     "imagem": "img/H3.jpg",
      "zoom": [
       1.0,
       1.07
@@ -189,7 +189,7 @@
      ]
     },
     {
-     "imagem": "../imagens/H4.png",
+     "imagem": "img/H4.jpg",
      "zoom": [
       1.0,
       1.07
@@ -208,7 +208,7 @@
      ]
     },
     {
-     "imagem": "../imagens/H5.png",
+     "imagem": "img/H5.jpg",
      "zoom": [
       1.0,
       1.07
@@ -231,7 +231,7 @@
   {
    "fala": "Em todas.",
    "cena": {
-    "imagem": "../imagens/H6.png",
+    "imagem": "img/H6.jpg",
     "zoom": [
      1.0,
      1.07
@@ -268,7 +268,7 @@
   {
    "fala": "E a cada foto… um pouco mais perto.",
    "cena": {
-    "imagem": "../imagens/H7.png",
+    "imagem": "img/H7.jpg",
     "zoom": [
      1.0,
      1.07
