@@ -1,15 +1,15 @@
 {
  "_nota": "Posição da criatura escondida em cada imagem (fração da imagem: x, y do centro; r = raio). Usado na revelação final. Medido clareando as sombras.",
  "H1": {
-  "x": 0.14,
-  "y": 0.41,
-  "r": 0.05,
+  "x": 0.17,
+  "y": 0.46,
+  "r": 0.06,
   "onde": "fim da rua, sob o último poste"
  },
  "H2": {
-  "x": 0.72,
-  "y": 0.24,
-  "r": 0.08,
+  "x": 0.77,
+  "y": 0.33,
+  "r": 0.09,
   "onde": "reflexo da janela, fundo da sala"
  },
  "H3": {
@@ -19,9 +19,9 @@
   "onde": "vão escuro da porta no fim do corredor (cabeça e ombro)"
  },
  "H4": {
-  "x": 0.69,
+  "x": 0.73,
   "y": 0.38,
-  "r": 0.12,
+  "r": 0.11,
   "onde": "escuro da porta atrás dele"
  },
  "H5": {
@@ -31,10 +31,10 @@
   "onde": "canto escuro entre o guarda-roupa e a parede, de corpo inteiro"
  },
  "H6": {
-  "x": 0.54,
-  "y": 0.15,
-  "r": 0.07,
-  "onde": "rosto atrás da cortina do box"
+  "x": 0.61,
+  "y": 0.27,
+  "r": 0.1,
+  "onde": "rosto atrás da cortina do box (centro-direita)"
  },
  "H7": {
   "x": 0.51,

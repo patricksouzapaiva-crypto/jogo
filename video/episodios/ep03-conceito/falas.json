@@ -812,6 +812,20 @@
   "pausa_antes": true
  },
  {
+  "tag": "V",
+  "vigia": true,
+  "voz": "vigia",
+  "pausa_antes": false,
+  "fala": "Durante todo esse vídeo… ela esteve em cada uma das cenas. Bem na sua frente."
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "voz": "vigia",
+  "pausa_antes": false,
+  "fala": "E nem você… nem o Rafael… perceberam."
+ },
+ {
   "tag": "H1r",
   "vigia": false,
   "fala": "Na rua.",
@@ -866,6 +880,20 @@
   "fala": "Atrás dele.",
   "voz": "vigia",
   "pausa_antes": false
+ },
+ {
+  "tag": "V",
+  "vigia": true,
+  "voz": "vigia",
+  "pausa_antes": false,
+  "fala": "Se você não acredita… volta no começo. E procura."
+ },
+ {
+  "tag": "V",
+  "vigia": false,
+  "voz": "vigia",
+  "pausa_antes": false,
+  "fala": "Agora você sabe onde olhar."
  },
  {
   "tag": "V",

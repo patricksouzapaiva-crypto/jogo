@@ -52,9 +52,10 @@ for i, f in enumerate(falas):
         p = crit[h]
         b["cena"] = {"imagem": f"imagens/{h}.png", "zoom": [1.0, 1.12], "foco": [[0.5, 0.5], [p["x"], p["y"]]],
                      **({"encaixe": "cobrir"} if h == "H8" else {}),
-                     "revelar": {"x": p["x"], "y": p["y"], "r": p["r"], "atraso": 0.25, "duracao": 1.0,
+                     "revelar": {"x": p["x"], "y": p["y"], "r": p["r"], "atraso": 0.5, "duracao": 1.6,
                                  "clara": f"imagens/{h}_clara.png"}}
         b["sons"] = [{"em": f["fala"].split()[0], "som": "sub_drop", "volume_db": -12}]
+        b["pausa_antes_s"] = 1.6   # mais tempo em cada imagem: dá tempo de achar (e de querer voltar)
         ultima, rep = tag, 0
     else:
         if tag != ultima:
@@ -130,6 +131,11 @@ enf("Ela estava ali.", "ali", "e_aterrorizado_maos", 2.0)
 enf("E, pela primeira vez, ela não estava parada.", "parada", "e_medo_gola", 2.2)
 enf("Existe mesmo um atraso.", "atraso", "c_dedo_explicando", 1.6)
 enf("Ela sempre esteve nas imagens", "Ela", "s_sorriso_sombrio", 2.2)
+enf("Durante todo esse vídeo", "Durante", "c_sussurrando", 2.4)
+enf("E nem você… nem o Rafael", "perceberam", "s_encarando", 1.8)
+enf("Se você não acredita", "volta", "e_apontando", 2.0)
+enf("Agora você sabe onde olhar.", "olhar", "s_sorriso_sombrio", 2.2)
+efeito("E nem você… nem o Rafael", "perceberam", "riser_tensao", -8, depois=True)
 enf("Ele desapareceu porque descobriu.", "descobriu", "s_encarando", 2.0)
 enf("E você… acabou de ver", "você", "e_apontando", 2.0)
 enf("não olha pra trás.", "olha", "s_silencio", 9)
@@ -154,7 +160,7 @@ for b in batidas:
 
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
-    "voz_arquivo": "audio/voz_completa.wav", "apertar_pausas": False,
+    "voz_arquivo": "audio/voz_completa_v2.wav", "apertar_pausas": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -8, "efeitos_sob_voz": -3},
