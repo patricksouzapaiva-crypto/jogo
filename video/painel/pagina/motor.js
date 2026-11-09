@@ -36,7 +36,7 @@ window.preparar = async function (dados) {
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
   for (const p of D.paineis || []) if (p.imagem) lista.push(["img:" + p.imagem, p.imagem]);
-  for (const c of D.cenas || []) lista.push(["img:" + c.imagem, c.imagem]);
+  for (const c of D.cenas || []) { lista.push(["img:" + c.imagem, c.imagem]); if (c.revelar && c.revelar.clara) lista.push(["img:" + c.revelar.clara, c.revelar.clara]); }
   for (const [k, src] of lista) IMG[k] = await carregarImg(src);
   D._estrelas = (() => { const r = rng(7); return Array.from({ length: 16 }, () => ({ x: r(), y: r(), f: 0.3 + r() * 0.8, fase: r() * 6.28, s: 0.6 + r() * 0.8 })); })();
   D._poeira = (() => { const r = rng(11); return Array.from({ length: 40 }, () => ({ x: r(), y: r(), v: 0.004 + r() * 0.01, s: 1 + r() * 2.5, fase: r() * 6.28 })); })();
@@ -601,22 +601,18 @@ function cenas(t) {
   } else desenharCena(c, t);
   // revelação: clareia as sombras só na região onde a criatura sempre esteve e desenha um círculo vermelho
   if (c.revelar) {
-    const R = c.revelar, im2 = IMG["img:" + c.imagem], k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));
-    if (im2 && k > 0) {
-      const tf = c._tf || [0, 0, W, H];
+    const R = c.revelar, k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));
+    const clara = R.clara ? IMG["img:" + R.clara] : null, tf = c._tf || [0, 0, W, H];
+    if (k > 0) {
       const cx = tf[0] + R.x * tf[2], cy = tf[1] + R.y * tf[3], rr_ = R.r * Math.min(tf[2], tf[3]);
       ctx.save();
-      const g = ctx.createRadialGradient(cx, cy, rr_ * 0.2, cx, cy, rr_ * 1.6);
-      g.addColorStop(0, `rgba(0,0,0,${0.55 * k})`); g.addColorStop(1, "rgba(0,0,0,0)");
-      // escurece o resto da imagem para o olho ir direto ao lugar
-      ctx.fillStyle = `rgba(0,0,0,${0.45 * k})`; ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "screen";
+      ctx.fillStyle = `rgba(0,0,0,${0.5 * k})`; ctx.fillRect(0, 0, W, H);   // o resto escurece
       ctx.beginPath(); ctx.arc(cx, cy, rr_ * 1.25, 0, 6.29); ctx.clip();
-      ctx.filter = `brightness(${1 + 1.6 * k}) contrast(${1 + 0.4 * k})`;
-      desenharCena(Object.assign({}, c, { revelar: null, relampagos: null }), t, 0.85 * k);
-      ctx.filter = "none"; ctx.restore();
+      ctx.globalAlpha = k;
+      if (clara) ctx.drawImage(clara, tf[0], tf[1], tf[2], tf[3]);       // versão clareada: a criatura aparece
+      ctx.restore();
       if (R.circulo !== false) {
-        const p = easeOut(lin(t, c.t0 + (R.atraso ?? 0.6) + 0.4, 0.7));
+        const p = easeOut(lin(t, c.t0 + (R.atraso ?? 0.6) + 0.3, 0.7));
         ctx.save(); ctx.strokeStyle = "rgba(230,40,35,.95)"; ctx.lineWidth = Math.max(4, W / 380);
         ctx.shadowColor = "rgba(230,40,35,.8)"; ctx.shadowBlur = 18;
         ctx.beginPath(); ctx.arc(cx, cy, rr_ * 1.3, -Math.PI / 2, -Math.PI / 2 + 6.29 * p); ctx.stroke(); ctx.restore();

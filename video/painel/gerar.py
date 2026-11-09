@@ -696,6 +696,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                     print(f"  aviso: {c['imagem']} não existe; usando provisória {prov.name}", file=sys.stderr)
                     arq = prov
             c["imagem"] = str(arq.resolve())
+            if c.get("revelar") and c["revelar"].get("clara"):
+                c["revelar"]["clara"] = str((base / c["revelar"]["clara"]).resolve())
             D["cenas"].append(c)
         if b.get("pose"):
             D["poses"].append({"t": max(0.0, t0 - 0.08) if D["poses"] else 0.0, "pose": b["pose"]})

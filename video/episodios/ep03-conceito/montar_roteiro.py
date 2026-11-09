@@ -52,7 +52,8 @@ for i, f in enumerate(falas):
         p = crit[h]
         b["cena"] = {"imagem": f"imagens/{h}.png", "zoom": [1.0, 1.12], "foco": [[0.5, 0.5], [p["x"], p["y"]]],
                      **({"encaixe": "cobrir"} if h == "H8" else {}),
-                     "revelar": {"x": p["x"], "y": p["y"], "r": p["r"], "atraso": 0.25, "duracao": 1.0}}
+                     "revelar": {"x": p["x"], "y": p["y"], "r": p["r"], "atraso": 0.25, "duracao": 1.0,
+                                 "clara": f"imagens/{h}_clara.png"}}
         b["sons"] = [{"em": f["fala"].split()[0], "som": "sub_drop", "volume_db": -12}]
         ultima, rep = tag, 0
     else:

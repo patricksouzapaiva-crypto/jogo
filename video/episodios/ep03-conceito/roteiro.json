@@ -1896,7 +1896,8 @@
      "y": 0.41,
      "r": 0.05,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H1_clara.png"
     },
     "lado": "esq"
    },
@@ -1931,7 +1932,8 @@
      "y": 0.24,
      "r": 0.08,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H2_clara.png"
     },
     "lado": "dir"
    },
@@ -1966,7 +1968,8 @@
      "y": 0.3,
      "r": 0.09,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H3_clara.png"
     },
     "lado": "dir"
    },
@@ -2001,7 +2004,8 @@
      "y": 0.38,
      "r": 0.12,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H4_clara.png"
     },
     "lado": "dir"
    },
@@ -2036,7 +2040,8 @@
      "y": 0.36,
      "r": 0.17,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H5_clara.png"
     },
     "lado": "esq"
    },
@@ -2071,7 +2076,8 @@
      "y": 0.15,
      "r": 0.07,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H6_clara.png"
     },
     "lado": "dir"
    },
@@ -2106,7 +2112,8 @@
      "y": 0.35,
      "r": 0.17,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H7_clara.png"
     },
     "lado": "esq"
    },
@@ -2142,7 +2149,8 @@
      "y": 0.28,
      "r": 0.12,
      "atraso": 0.25,
-     "duracao": 1.0
+     "duracao": 1.0,
+     "clara": "imagens/H8_clara.png"
     },
     "lado": "esq"
    },
