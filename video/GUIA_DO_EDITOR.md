@@ -361,6 +361,9 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
     teria aberto?"), uma **pista** que o público deve guardar ("guarde esse detalhe") ou um **teste**
     ("não olha pra trás agora"). Curto (10–20 s), em silêncio ou com a trilha baixa, e volta para a
     história num corte seco. É também a quebra de padrão que segura a audiência.
+- **09/11/2026 — Vigia em ALTA RESOLUÇÃO (`avatares/vigia_hd/`, 29 poses, rosto ~450 px):** padrão a
+  partir do Ep. 03. Inclui 5 poses de **café** (caneca com a lua — ideia do usuário) para os apartes e
+  a chamada final. Poses com fundo escuro/brilho são recortadas com `rembg` (modelo isnet-anime).
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

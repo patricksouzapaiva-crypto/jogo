@@ -15,7 +15,8 @@
    "topo": 13,
    "centro_x": 477.25,
    "largura_cabeca": 469.5,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_cafe_explica": {
    "w": 1024,
@@ -23,7 +24,8 @@
    "topo": 12,
    "centro_x": 462.5,
    "largura_cabeca": 454.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_cafe_gesto_proximo": {
    "w": 1023,
@@ -31,7 +33,8 @@
    "topo": 12,
    "centro_x": 496.25,
    "largura_cabeca": 497.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_cafe_indicador": {
    "w": 1024,
@@ -39,7 +42,8 @@
    "topo": 13,
    "centro_x": 498.0,
    "largura_cabeca": 465.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_cafe_palma_aberta": {
    "w": 1024,
@@ -47,7 +51,8 @@
    "topo": 12,
    "centro_x": 511.0,
    "largura_cabeca": 456.0,
-   "grupo": "conversa"
+   "grupo": "conversa",
+   "peso": 2
   },
   "c_dar_de_ombros": {
    "w": 998,
@@ -199,8 +204,40 @@
    "topo": 9,
    "centro_x": 499.25,
    "largura_cabeca": 520.0,
-   "grupo": "sombrio"
+   "grupo": "enfase"
+  },
+  "c_sussurrando": {
+   "w": 994,
+   "h": 1477,
+   "topo": 16,
+   "centro_x": 459.0,
+   "largura_cabeca": 506.0,
+   "grupo": "conversa"
+  },
+  "e_apontando": {
+   "w": 969,
+   "h": 1466,
+   "topo": 13,
+   "centro_x": 475.75,
+   "largura_cabeca": 474.0,
+   "grupo": "enfase"
+  },
+  "e_aterrorizado_maos": {
+   "w": 982,
+   "h": 1469,
+   "topo": 15,
+   "centro_x": 479.5,
+   "largura_cabeca": 511.0,
+   "grupo": "enfase"
+  },
+  "s_silencio": {
+   "w": 968,
+   "h": 1464,
+   "topo": 12,
+   "centro_x": 478.0,
+   "largura_cabeca": 458.0,
+   "grupo": "enfase"
   }
  },
- "largura_cabeca_mediana": 458.0
+ "largura_cabeca_mediana": 461.5
 }
