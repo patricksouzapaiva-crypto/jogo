@@ -1,7 +1,6 @@
 # Publicação no YouTube — O Vigia, Ep. 03 "Mais perto." (canal Último Abrigo)
 
-Vídeo longo, 16:9, ~11–12 min (permite anúncios no meio). Capítulos: preencho os tempos exatos
-quando o vídeo final ficar pronto.
+Vídeo longo, 16:9, ~11–12 min (permite anúncios no meio). Duração final: 11min20.
 
 ## Título (escolha um)
 1. **Tem alguém atrás de você.**  ← recomendado (curto, estilo Fyori, é a sensação do vídeo)
@@ -20,7 +19,14 @@ Histórias de terror psicológico, contadas pelo Vigia, aqui no Último Abrigo.
 💬 Você já sentiu essa presença? Onde? Conta aqui nos comentários.
 
 CAPÍTULOS
-(preenchidos no vídeo final)
+0:00 A última mensagem
+0:59 O experimento
+1:37 Rafael
+3:12 Mais perto
+6:22 O fórum
+7:42 As fotos
+9:16 Ela sabe
+10:36 Onde ela sempre esteve
 
 Fatos reais citados: o experimento da "sensação de presença" (EPFL, Suíça, 2014, revista Current Biology) e os dados de desaparecimentos do Anuário Brasileiro de Segurança Pública 2025. O restante da história é ficção.
 Imagens e narração produzidas com auxílio de inteligência artificial.
