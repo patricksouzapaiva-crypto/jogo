@@ -364,6 +364,13 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - **09/11/2026 — Vigia em ALTA RESOLUÇÃO (`avatares/vigia_hd/`, 29 poses, rosto ~450 px):** padrão a
   partir do Ep. 03. Inclui 5 poses de **café** (caneca com a lua — ideia do usuário) para os apartes e
   a chamada final. Poses com fundo escuro/brilho são recortadas com `rembg` (modelo isnet-anime).
+- **09/11/2026 — FORMATO "TEMA + HISTÓRIA" (pedido do usuário):** cada episódio longo une um tema real a
+  uma história sinistra. Ordem: cold open (pico da história, ~15 s) → abertura → **tema** (psicologia, corpo,
+  filosofia; no MÁXIMO ~90 s, só curiosidades que dá vontade de contar, terminando com algo para o público
+  "guardar") → "Agora que você entende isso… vamos para a história de hoje." → história com 2–3
+  **inserções no estilo Fyori** (fato real em cartão emoldurado ou tela preta, ligado ao que acabou de
+  acontecer) → epílogo que **fecha o que o tema deixou guardado**. Edição mista: no tema os TIPOS de imagem
+  se alternam a cada 3–6 s; na história, tela cheia e mais lenta. Modelo: `episodios/ep04-medo-do-escuro/ROTEIRO.md`.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.
