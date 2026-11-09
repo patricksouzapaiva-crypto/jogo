@@ -24,5 +24,7 @@
   "fonte_texto": "Inter",
   "texto_legenda": "#f3ead8",
   "destaque_legenda": "#d9b46a",
-  "tom": "#2f5f57"
+  "tom": "#2f5f57",
+  "halo_suave": "#7a7268",
+  "contorno": "#c4c8cc"
 }

@@ -3,20 +3,29 @@
 Título no YouTube: **Não acenda a luz. | Creepypasta**
 
 Formato novo: **tema + história**. Um assunto real abre o vídeo (psicologia, corpo, filosofia), entrega
-uma informação que o público vai **guardar** e que a história usa no final. Alvo: ~13 min, ~1.750 palavras (ritmo medido no Ep. 03: ~128 palavras/min contando pausas).
+uma informação que o público vai **guardar** e que a história usa no final. Alvo: **13–15 min** (regra da casa), ~1.800 palavras (ritmo medido no Ep. 03: ~128 palavras/min contando pausas).
 
-| Tempo | Bloco | Edição |
-|---|---|---|
-| 0:00–0:15 | **Cold open** (o pico da história, sem contexto) | IA documental, cortes secos, silêncio antes da última frase |
-| 0:15–0:18 | Cartão de abertura (relâmpago) | igual aos outros episódios |
-| 0:18–1:45 | **O tema** (curto! no máximo 90 s) | Vigia no abrigo ↔ fotos reais ↔ cartão com fato real ↔ tela preta com palavra vermelha |
-| 1:45 | "Vamos para a história de hoje." | mergulho no preto + som de interruptor |
-| 1:45–11:50 | **A história** (5 partes), com 3 inserções no estilo Fyori e 1 aparte do Vigia | tela cheia (60–70% fotos reais, IA nos momentos-chave) |
-| 11:50–13:00 | **Epílogo do Vigia** + pergunta + chamada final | Vigia grande no centro, CTA |
+| Tempo | Bloco | Edição | Vigia |
+|---|---|---|---|
+| 0:00–0:15 | **Cold open** (o pico da história, sem contexto) | IA documental, cortes secos, silêncio antes da última frase | não aparece |
+| 0:15–0:18 | Cartão de abertura (relâmpago) | igual aos outros episódios | não aparece |
+| 0:18–1:45 | **O tema** (curto! no máximo 90 s) | Vigia no abrigo ↔ fotos reais ↔ cartão com fato real ↔ tela preta com palavra vermelha | apresentador (canto e abrigo) |
+| 1:45 | "Vamos para a história de hoje." | mergulho no preto + som de interruptor | sai junto com o preto |
+| 2:00–12:50 | **A história** (5 partes), com 3 inserções no estilo Fyori e 1 aparte do Vigia | tela cheia (60–70% fotos reais, IA nos momentos-chave) | **só nas inserções e no aparte**; nunca dentro da história |
+| 12:50–14:00 | **Epílogo do Vigia** + pergunta + chamada final | Vigia grande no centro, CTA | volta grande, é o alívio |
 
 Por que a introdução não pode passar de 90 s: a maior queda de público é no 1º minuto. Por isso o vídeo
 **abre com a história** (cold open), e o tema vem logo depois como "a explicação do que você acabou de ver".
 Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra alguém**, não uma aula.
+
+### Quando o Vigia aparece (regra do usuário, 09/11)
+Relato de espectador: o Vigia na tela tirava a concentração e a tensão. Então:
+- **Na história, o Vigia NÃO aparece.** Nenhuma vez — nem nas partes calmas. A pessoa fica sozinha com a imagem.
+- Ele aparece **só nas inserções**: o tema da abertura, as inserções Fyori, o aparte e o epílogo/chamada final.
+  É coerente: quando ele surge, o público sabe que "saiu da história" para ouvir o narrador.
+- Ele entra e sai **no corte da imagem**, nunca no meio de uma cena (no roteiro: `"sem_vigia": true`).
+- A volta dele depois de um trecho pesado é o respiro; por isso nunca entra no meio de uma escalada.
+- Marcadores abaixo: `[SEM VIGIA ↓]` (começa a história) e `[VIGIA ↓]` (inserção).
 
 ---
 
@@ -63,6 +72,7 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 `[mergulho no preto · clique de interruptor]`
 
 ## 1:45 — A história
+`[SEM VIGIA ↓ — a história inteira sem ele, só imagem, voz e som]`
 
 **Ato 1 — o apartamento**
 > A Júlia tinha vinte e nove anos e era enfermeira do turno da noite num hospital público do centro.
@@ -89,6 +99,7 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > Só a parede. E, no rodapé, uma marca que ela nunca tinha reparado: a tinta gasta, como se alguém tivesse ficado em pé ali… por muito tempo.
 
 **Inserção Fyori 1 — o espelho**
+`[VIGIA ↓ no canto, junto do cartão / tela]`
 `[cartão: "Giovanni Caputo, 2010 — a ilusão do rosto estranho"]`
 > Em 2010, um psicólogo italiano, Giovanni Caputo, pediu que dezenas de voluntários olhassem para o próprio rosto num espelho, numa sala quase escura, por dez minutos.
 > Em menos de um minuto, a maioria já via o rosto se deformar. Alguns viram parentes mortos. Outros… um desconhecido.
@@ -96,17 +107,20 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > Foi exatamente isso que a Júlia disse pra si mesma naquela noite. E na seguinte.
 
 **Ato 2 — ela se mexe**
+`[SEM VIGIA ↓]`
 > Só que a forma não ficava no mesmo lugar.
 > No apagão seguinte, ela não estava no canto. Estava no meio da parede, perto da janela.
 > No outro, ao lado da porta do quarto.
 > E sempre do mesmo jeito: quando a Júlia olhava direto, ela sumia no escuro. Mas era só desviar um pouco o olhar… e ela estava lá. Com o canto do olho.
 
 **Inserção Fyori 2 — o canto do olho**
+`[VIGIA ↓ no canto, junto do cartão / tela]`
 `[foto real: céu estrelado; depois tela preta, vermelho: **direto**]`
 > Isso tem explicação. As células que enxergam no escuro ficam nas bordas do olho, não no centro.
 > Astrônomos aprendem cedo: pra ver uma estrela fraca, não se olha **direto** pra ela. Olha-se um pouco ao lado.
 > No escuro, o que está bem na sua frente é o que você vê pior.
 
+`[SEM VIGIA ↓]`
 > A Júlia começou a anotar. Data, hora, quanto tempo a luz ficou fora. E onde a forma estava.
 > Na quarta anotação, ela fez uma conta que não devia ter feito.
 > A forma nunca aparecia longe da cama. Cada vez… estava um pouco mais perto dela.
@@ -139,7 +153,7 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > A dona Cida disse o nome. A Júlia sentiu o estômago gelar.
 > Era o hospital onde ela trabalhava.
 
-**Aparte do Vigia** `[corte seco para o abrigo; trilha some]`
+**Aparte do Vigia** `[corte seco para o abrigo; trilha some — Vigia em destaque]`
 > Guarda essa frase do caderno: "enquanto eu olho, ela não anda."
 > Agora pensa no bilhete da caixa de luz. Ele não dizia "acenda a luz". Dizia o contrário.
 > Porque a luz não faz ela ir embora. A luz só faz você parar de ver onde ela está.
@@ -147,10 +161,12 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > Não olha pro canto do seu quarto agora. Ou melhor… olha. E não para de olhar.
 `[2 s de silêncio · corte seco de volta]`
 
+`[SEM VIGIA ↓]`
 **Ato 3 — leito catorze**
 > Na noite seguinte, no plantão, a Júlia procurou o nome no sistema.
 > Aurélio. Setenta e um anos. Ala de longa permanência, quarto quatro, leito catorze. Internado havia oito meses.
 > Diagnóstico: estado catatônico. E uma observação que algum médico tinha escrito com ponto de exclamação: "paciente não dorme".
+> As outras enfermeiras evitavam o quarto quatro. Diziam que ele não tirava os olhos do canto nem na hora do banho.
 > Às duas da manhã, quando a ala inteira apaga as luzes, a Júlia foi até lá.
 > O quarto estava na penumbra. Só a luz verde do monitor.
 > O seu Aurélio estava sentado, as costas retas, os olhos muito abertos e vermelhos. Fixos no canto do quarto, entre o armário e a parede.
@@ -169,13 +185,20 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > "A sua ficou em casa. Esperando você."
 
 **Inserção Fyori 3 — piscar**
+`[VIGIA ↓ no canto, junto do cartão / tela]`
 `[foto real: olho em close; tela preta, vermelho: **dói**]`
 > A gente pisca de quinze a vinte vezes por minuto, sem perceber.
 > Tente ficar sem piscar. Em menos de um minuto o olho arde. Em dois, **dói**. A visão embaça, as lágrimas escorrem.
 > O corpo não foi feito pra ficar olhando uma coisa só, sem parar.
 
+`[SEM VIGIA ↓]`
 **Ato 3 — a última noite**
 > A Júlia não voltou pra casa naquela semana. Dormiu no hospital, na casa de uma amiga, em qualquer lugar com luz.
+> No terceiro dia, a dona Cida ligou. A voz baixa, como se alguém pudesse ouvir.
+> "Júlia, você tá em casa?"
+> "Não. Por quê?"
+> Um silêncio comprido do outro lado.
+> "Porque toda noite eu escuto, pela parede, alguém andando no seu apartamento. Devagar. Do quarto até a porta… e de volta. Como quem espera."
 > Mas ela tinha que voltar uma hora. As coisas dela estavam lá. A vida dela estava lá.
 > Voltou numa sexta à noite. E às onze, começou a chover.
 > Às onze e vinte, a luz caiu. No bairro inteiro.
@@ -197,7 +220,7 @@ Cada frase do tema precisa ser **uma curiosidade que dá vontade de contar pra a
 > Dessa vez, não precisou esperar vinte minutos.
 
 ## Epílogo do Vigia
-`[Vigia grande no centro, caneca de café]`
+`[VIGIA VOLTA — grande no centro, caneca de café; é o primeiro respiro depois do clímax]`
 > Na segunda-feira, a ala de longa permanência recebeu uma paciente nova.
 > Vinte e nove anos. Enfermeira do próprio hospital. Catatônica. Olhos abertos.
 > Puseram ela no quarto quatro, leito quinze. Do lado do seu Aurélio.

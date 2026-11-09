@@ -371,6 +371,21 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   **inserções no estilo Fyori** (fato real em cartão emoldurado ou tela preta, ligado ao que acabou de
   acontecer) → epílogo que **fecha o que o tema deixou guardado**. Edição mista: no tema os TIPOS de imagem
   se alternam a cada 3–6 s; na história, tela cheia e mais lenta. Modelo: `episodios/ep04-medo-do-escuro/ROTEIRO.md`.
+- **09/11/2026 — VIGIA SÓ NAS INSERÇÕES (relato de espectador: ele tirava a concentração e a tensão):** na
+  história o Vigia NÃO aparece. Ele aparece só no tema da abertura, nas inserções Fyori, nos apartes e no
+  epílogo/CTA. No roteiro: `"vigia_padrao": false` e `"com_vigia": true` nas cenas das inserções (ou
+  `"sem_vigia": true` cena a cena). Ele entra e sai sempre no corte da imagem.
+- **09/11/2026 — luz em volta do Vigia:** o halo antigo era cortado num retângulo (aparecia "quadrado") e o
+  contorno verde forte o deixava com cara de adesivo. Agora: elipse suave sem bordas, fraca, cor neutra
+  (`halo_suave` no tema), recorte de luz bem sutil, sem brilho extra. Ele tem que se misturar com a cena.
+- **09/11/2026 — SOM SEM SUSTOS BARULHENTOS:** o objetivo é tensão e medo, não pulo de volume. Padrão
+  `sem_sustos` na mixagem: trilha nunca passa de 6 dB abaixo da voz típica e efeitos de 3 dB abaixo, mesmo
+  nos silêncios; todo efeito entra com subida de 0,25 s. O motor avisa "salto" se trilha+efeitos subirem
+  mais de 9 dB de repente. Tensão = drone crescente, riser, respiração, silêncio, passos — não braam alto.
+- **09/11/2026 — duração dos episódios longos: 13 a 15 minutos.**
+- **09/11/2026 — vídeos curtos reais:** `buscar_imagens.py videos` / `baixar_videos` (Pixabay, sem crédito
+  obrigatório) — já tratados com a cor "documento" da série. O motor ainda NÃO toca vídeo dentro da cena
+  (próximo passo).
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

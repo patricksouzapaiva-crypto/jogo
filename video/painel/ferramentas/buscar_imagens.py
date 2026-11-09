@@ -3,6 +3,9 @@
 Uso:
   python3 buscar_imagens.py buscar <pasta> consultas.json        # baixa prévias + folha de contato + resultados.json
   python3 buscar_imagens.py baixar <pasta> <id1,id2,...> [saida]  # baixa em alta, trata (1920x1080) e grava CREDITOS.txt
+  python3 buscar_imagens.py videos <pasta> consultas.json         # vídeos curtos do Pixabay: prévias + folha + resultados
+  python3 buscar_imagens.py baixar_videos <pasta> <id[:ini[:dur]],...> [saida]
+      # baixa em 1920x1080, sem áudio, corta (padrão: 0 s, 8 s) e aplica o mesmo tratamento "documento" das fotos
 
 consultas.json: {"corredor": "dark hallway night", "avo": "elderly woman hands", ...}
 Cada candidato recebe um id "<chave>_<n>" (ex.: corredor_3), que aparece na folha de contato.
@@ -159,11 +162,90 @@ def baixar(pasta, ids, saida=None):
     (saida / "CREDITOS.txt").write_text("\n".join(creditos) + "\n", encoding="utf-8")
 
 
+# ---------- vídeos curtos (Pixabay; licença livre, sem crédito obrigatório) ----------
+def pixabay_videos(q, n=8, max_dur=40):
+    chave = os.environ.get("PIXABAY_API_KEY")
+    if not chave:
+        raise SystemExit("PIXABAY_API_KEY não definida")
+    d = json.loads(abrir("https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
+        {"key": chave, "q": q, "per_page": 20, "safesearch": "false"})))
+    out = []
+    for h in d.get("hits", []):
+        v = h["videos"]
+        alta = next((v[k] for k in ("large", "medium") if v.get(k, {}).get("url") and v[k]["width"] >= 1280), None)
+        if not alta or h.get("duration", 99) > max_dur or h.get("isAiGenerated"):
+            continue
+        out.append({"fonte": "pixabay-video", "titulo": h.get("tags", ""), "prev": v["medium"].get("thumbnail") or v["tiny"].get("thumbnail"),
+                    "alta": alta["url"], "w": alta["width"], "h": alta["height"], "duracao": h.get("duration"),
+                    "licenca": "Pixabay Content License", "autor": h.get("user", "?"), "pagina": h["pageURL"]})
+        if len(out) >= n:
+            break
+    return out
+
+
+def buscar_videos(pasta, consultas, n=6):
+    pasta = Path(pasta)
+    pasta.mkdir(parents=True, exist_ok=True)
+    res, arquivos = {}, []
+    for chave, q in consultas.items():
+        try:
+            cands = pixabay_videos(q, n)
+        except Exception as e:
+            print(f"  {chave}: {e}"); cands = []
+        for i, c in enumerate(cands):
+            f = pasta / f"{chave}_{i}.jpg"
+            try:
+                f.write_bytes(abrir(c["prev"])); arquivos.append(f)
+            except Exception as e:
+                print("  falha na prévia", f.name, e)
+        res[chave] = cands
+        print(chave, len(cands), "vídeos")
+    json.dump(res, open(pasta / "resultados.json", "w"), ensure_ascii=False, indent=1)
+    if arquivos:
+        folha(arquivos, pasta / "folha.jpg")
+        print("folha de contato:", pasta / "folha.jpg")
+
+
+# mesmo espírito do tratar(): menos cor, mais escuro, frio, contraste, vinheta
+FILTRO_DOC = ("scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30,"
+              "eq=saturation=0.35:contrast=1.18:gamma=0.78:brightness=-0.03,"
+              "colorbalance=rs=-0.04:bs=0.05:rm=-0.03:bm=0.04,vignette=PI/4.2,format=yuv420p")
+
+
+def baixar_videos(pasta, ids, saida=None):
+    import subprocess, tempfile
+    pasta = Path(pasta)
+    saida = Path(saida or pasta / "escolhidos")
+    saida.mkdir(parents=True, exist_ok=True)
+    res = json.load(open(pasta / "resultados.json"))
+    cred = saida / "CREDITOS.txt"
+    creditos = cred.read_text(encoding="utf-8").splitlines() if cred.exists() else []
+    for item in ids:
+        k, *tempo = item.split(":")
+        ini = float(tempo[0]) if tempo else 0.0
+        dur = float(tempo[1]) if len(tempo) > 1 else 8.0
+        chave, i = k.rsplit("_", 1)
+        c = res[chave][int(i)]
+        with tempfile.NamedTemporaryFile(suffix=".mp4") as tmp:
+            tmp.write(abrir(c["alta"])); tmp.flush()
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini}", "-t", f"{dur}", "-i", tmp.name, "-an",
+                            "-vf", FILTRO_DOC, "-c:v", "libx264", "-crf", "17", "-preset", "slow",
+                            str(saida / f"{k}.mp4")], check=True)
+        linha = f"{k}.mp4: \"{c['titulo']}\" — {c['autor']} — {c['licenca']} — {c['pagina']}"
+        creditos = [x for x in creditos if not x.startswith(f"{k}.mp4:")] + [linha]
+        print(linha[:150])
+    cred.write_text("\n".join(creditos) + "\n", encoding="utf-8")
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     if len(a) >= 3 and a[0] == "buscar":
         buscar(a[1], json.load(open(a[2], encoding="utf-8")))
     elif len(a) >= 3 and a[0] == "baixar":
         baixar(a[1], a[2].split(","), a[3] if len(a) > 3 else None)
+    elif len(a) >= 3 and a[0] == "videos":
+        buscar_videos(a[1], json.load(open(a[2], encoding="utf-8")))
+    elif len(a) >= 3 and a[0] == "baixar_videos":
+        baixar_videos(a[1], a[2].split(","), a[3] if len(a) > 3 else None)
     else:
         print(__doc__)

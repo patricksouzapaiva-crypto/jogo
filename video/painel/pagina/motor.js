@@ -679,22 +679,26 @@ function vigiaCanto(t) {
   const f = easeOut(lin(t, atual.t, 0.12)), e = envVoz(t);
   const alvo = C.w * 0.55;                       // largura da cabeça na tela
   const cx = C.x + C.w / 2, topoCabeca = C.base - 2.45 * alvo;
-  const halo = ctx.createRadialGradient(cx, topoCabeca + alvo * 0.8, 10, cx, topoCabeca + alvo * 0.8, C.w * 0.95);
-  halo.addColorStop(0, alpha(T.halo, 0.28 + 0.12 * e)); halo.addColorStop(1, alpha(T.halo, 0));
-  ctx.fillStyle = halo; ctx.fillRect(cx - C.w, topoCabeca - C.w * 0.3, C.w * 2, C.w * 2);
+  // luz ambiente atrás dele: elipse suave SEM bordas (o retângulo antigo cortava o círculo e aparecia "quadrado"),
+  // fraca e com a cor da própria cena, para ele parecer estar no lugar e não colado por cima
+  const hy = topoCabeca + alvo * 1.1, hr = C.w * 0.85;
+  const halo = ctx.createRadialGradient(cx, hy, 0, cx, hy, hr);
+  const corH = T.halo_suave || T.halo;
+  halo.addColorStop(0, alpha(corH, 0.10 + 0.04 * e)); halo.addColorStop(0.6, alpha(corH, 0.04)); halo.addColorStop(1, alpha(corH, 0));
+  ctx.save(); ctx.fillStyle = halo; ctx.beginPath(); ctx.ellipse(cx, hy, hr, hr * 1.25, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
   const desenha = (nome, a, pop, dx) => {
     const im = IMG["pose:" + nome], m = D.avatar.poses[nome];
     if (!im || !m) return;
     const s = alvo / m.largura_cabeca * pop * (1 + 0.016 * e) * (1 + 0.005 * Math.sin(t * 1.9));
     const w = im.width * s, h = im.height * s;
-    MASCARA.width = Math.ceil(w) + 40; MASCARA.height = Math.ceil(h) + 40;
+    MASCARA.width = Math.ceil(w) + 80; MASCARA.height = Math.ceil(h) + 80;
     const g = MASCARA.getContext("2d");
     g.clearRect(0, 0, MASCARA.width, MASCARA.height); g.imageSmoothingQuality = "high";
-    g.filter = "brightness(1.22) contrast(1.08) saturate(1.06)";
-    g.shadowColor = alpha(T.contorno || "#a9d6c4", 0.5); g.shadowBlur = 12;
-    g.drawImage(im, 20, 20, w, h); g.filter = "none"; g.shadowBlur = 0;
-    const y = topoCabeca - m.topo * s - 20 - 5 * e + Math.sin(t * 1.4) * 2;
-    const x = cx - m.centro_x * s - 20 + dx;
+    g.filter = "brightness(1.06) contrast(1.04) saturate(0.95)";   // sem "brilho de adesivo"
+    g.shadowColor = alpha(T.contorno || "#a9d6c4", 0.16); g.shadowBlur = 22;   // luz de recorte bem sutil
+    g.drawImage(im, 40, 40, w, h); g.filter = "none"; g.shadowBlur = 0;
+    const y = topoCabeca - m.topo * s - 40 - 5 * e + Math.sin(t * 1.4) * 2;
+    const x = cx - m.centro_x * s - 40 + dx;
     // base dissolvida numa linha fixa da tela (todas as poses terminam igual)
     g.globalCompositeOperation = "destination-in";
     const yb = C.base - y, gr = g.createLinearGradient(0, yb - alvo * 0.75, 0, yb);
@@ -869,7 +873,10 @@ window.quadro = function (t) {
       if (!(D.cta && t >= D.cta.t0)) legendas(t);
       chamadaYouTube(t);
       const ciT = cenaAtual(t);
-      if (!(ciT >= 0 && D.cenas[ciT].tipo === "texto")) (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+      // sem Vigia nas telas de texto e nas cenas marcadas "sem_vigia" (tensão/imersão): sai e volta junto com o corte
+      const cT = ciT >= 0 ? D.cenas[ciT] : {};
+      const semV = cT.tipo === "texto" || cT.sem_vigia || (D.vigia_padrao === false && !cT.com_vigia && !cT.vigia);
+      if (!semV || (D.cta && t >= D.cta.t0)) (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
     }
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }

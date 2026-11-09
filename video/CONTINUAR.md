@@ -22,7 +22,14 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   variáveis de ambiente.
 - Contêiner novo precisa de: `pip install faster-whisper opencv-python-headless numpy requests`.
 
+- **Ep. 04 "Não acenda a luz." (tema + história, ~14 min): roteiro APROVADO** (`episodios/ep04-medo-do-escuro/ROTEIRO.md`).
+  Prontos: 25 fotos reais tratadas (`imagens_reais/`) e 15 vídeos curtos (`videos/`), com créditos.
+  Aguardando o usuário gerar as 12 imagens de IA (`PEDIDO_IMAGENS_IA.md`).
+- Motor (09/11): Vigia fora por padrão (`vigia_padrao`), halo corrigido, som `sem_sustos`, aviso de salto de volume.
+
 ## Pendências
+0. Ep. 04: (a) suporte a vídeo dentro da cena no motor; (b) narração Gemini (uma chamada); (c) montar roteiro.json
+   com o Vigia só nas inserções; (d) renderizar e revisar.
 1. Aguardando o usuário aprovar os 3 Shorts do Ep. 03.
 3. Estudo de **edição de som** no estilo Fyori: o YouTube bloqueia download aqui ("confirme que não é um robô");
    usar as gravações que o usuário enviar. Ideia: separar voz/fundo (demucs) e medir onde entram efeitos,

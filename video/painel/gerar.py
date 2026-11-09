@@ -683,6 +683,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
          "canto_destaque": roteiro.get("canto_destaque", {"x": 60, "w": 560, "base": H + 40} if W > H else {"x": 140, "w": 520, "base": H - 300}),
          "legenda_y": leg.get("y", 1190 if H > W else H - 92), "legenda_tam": leg.get("tamanho", 56 if H > W else 50),
          "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16),
+         "vigia_padrao": roteiro.get("vigia_padrao", True),  # False: Vigia só nas cenas com "com_vigia"/"vigia"
          "cenas": [], "poses": [], "legendas": [], "escuros": []}
     plano = {"ambientes": [], "musica": roteiro.get("musica"), "trilhas": [], "efeitos": [], "abafar": [], "quedas": [],
              "fim_musica": rel.t[-1][1]}
@@ -856,7 +857,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
 # abaixa ~6–8 dB quando a voz fala; efeitos que caem em cima da fala também abaixam; ambiente nunca é amplificado.
 MIX_PADRAO = {"musica_ganho_db": 0.0, "ambiente_ganho_db": 0.0, "efeitos_ganho_db": 0.0,
               "ducking": "threshold=0.025:ratio=3.5:attack=40:release=650:knee=4",
-              "ducking_efeitos": "threshold=0.03:ratio=3:attack=15:release=400:knee=4"}
+              "ducking_efeitos": "threshold=0.03:ratio=3:attack=15:release=400:knee=4",
+              "sem_sustos": True, "entrada_efeitos": 0.25}  # padrão da série: tensão sem sons altos do nada
 
 
 def _ler(f):
@@ -916,8 +918,10 @@ def automixar(stem, saida, mix):
         g = _suavizar(g, 0.7, 0.08)
         g = np.repeat(10 ** (g / 20), int(48000 * jan))
         return np.pad(g, (0, max(0, n - len(g))), constant_values=1.0)[:n, None]
-    gb = gb * teto(b, gb, mix.get("fundo_pico_max", -3.0))
-    ge = ge * teto(e, ge, mix.get("efeitos_pico_max", 2.0))
+    # "sem_sustos" (padrão da série desde 09/11): nada passa da voz, nem nos silêncios — tensão, não susto barulhento
+    suave = mix.get("sem_sustos", False)
+    gb = gb * teto(b, gb, mix.get("fundo_pico_max", -6.0 if suave else -3.0))
+    ge = ge * teto(e, ge, mix.get("efeitos_pico_max", -3.0 if suave else 2.0))
     b, e = b * gb, e * ge
     for k, a in (("fundo", b), ("efeitos", e)):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", "48000", "-ac", "2", "-i", "-", stem[k]],
@@ -939,6 +943,25 @@ def relatorio_mix(stem, duracao):
     for i in np.nonzero(fala)[0]:
         if b[i] - v[i] > -7 or e[i] - v[i] > -1:
             print(f"    aviso mix: {i * jan:.1f}s fundo {b[i] - v[i]:+.1f} dB / efeitos {e[i] - v[i]:+.1f} dB da voz")
+
+
+def saltos(arquivos, limite_db=9.0):
+    """Procura sons altos "do nada": momentos em que o som (janela de 0,4 s) sobe mais de `limite_db`
+    acima do nível dos 3 s anteriores. Mede só trilha + efeitos (a voz voltando depois de um silêncio é fala, não susto)."""
+    lidos = [_ler(x).mean(1) for x in arquivos]
+    k = min(len(x) for x in lidos)
+    a = sum(x[:k] for x in lidos)
+    jan = 0.1
+    ev = _env_db(a, janela=jan)
+    m = np.convolve(ev, np.ones(4) / 4, mode="same")  # 0,4 s
+    achou = []
+    for i in range(30, len(m)):
+        base = np.median(m[i - 30:i])
+        if m[i] > -30 and m[i] - max(base, -45) > limite_db and (not achou or i * jan - achou[-1] > 2):
+            achou.append(i * jan)
+    for t in achou:
+        print(f"    aviso salto: {t:.1f}s sobe mais de {limite_db:.0f} dB de repente")
+    return achou
 
 
 def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
@@ -1000,6 +1023,9 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
             continue
         ent += ["-i", str(arq)]
         extra = "lowpass=f=900,bass=g=4:f=70," if e.get("grave") else ""
+        ent_s = e.get("entrada", mix.get("entrada_efeitos", 0))  # subida suave do efeito (s): sem estalo de susto
+        if ent_s:
+            extra += f"afade=t=in:d={ent_s},"
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,{extra}volume={e['volume_db'] + mix['efeitos_ganho_db']}dB,"
                  f"adelay={max(0, int(e['t'] * 1000))}:all=1[e{n}]")
         efs.append(f"[e{n}]")
@@ -1022,6 +1048,7 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None):
                    check=True)
     automixar(stem, bruto, mix)
     relatorio_mix(stem, duracao)
+    saltos([stem["fundo"], stem["efeitos"]])
     med = subprocess.run(["ffmpeg", "-i", bruto, "-af", "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json",
                           "-f", "null", "-"], capture_output=True, text=True).stderr
     mm = json.loads(med[med.rfind("{"):med.rfind("}") + 1])
