@@ -630,16 +630,16 @@ def norm_frase(txt):
 
 
 def trilha_digitacao(c, dur_max):
-    """Gera (e guarda em cache) o áudio de digitação de uma tela de texto: teclado de computador real,
+    """Gera (e guarda em cache) o áudio de digitação de uma tela de texto: teclado mecânico (clicky),
     um clique gravado por letra (sorteado entre 13), ritmo humano irregular e barra de espaço mais grave."""
     import random
     txt = c.get("texto", "").replace("\n", "")
     cps = c.get("cps", 22)
-    chave = hashlib.sha1(f"pc2|{txt}|{cps}|{dur_max:.2f}".encode()).hexdigest()[:14]
+    chave = hashlib.sha1(f"mec1|{txt}|{cps}|{dur_max:.2f}".encode()).hexdigest()[:14]
     arq = CACHE / f"digitacao_{chave}.wav"
     if arq.exists():
         return arq
-    cliques = np.load(AQUI / "sons" / "teclado_pc_clicks.npy").astype(np.float32)
+    cliques = np.load(AQUI / "sons" / "teclado_mecanico_clicks.npy").astype(np.float32)
     cliques = cliques / (np.abs(cliques).max(axis=1, keepdims=True) + 1e-9)
     sr, rnd = 48000, random.Random(chave)
     out = np.zeros(int((dur_max + 0.3) * sr), np.float32)
@@ -834,7 +834,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             arq = trilha_digitacao(c, c.get("t1", c["t0"] + 5) - c["t0"])
             if arq:
                 plano["efeitos"].append({"t": c["t0"], "arquivo": str(arq), "som": "digitacao",
-                                         "volume_db": -21 if c.get("estilo") == "impacto" else -24})
+                                         "volume_db": -23 if c.get("estilo") == "impacto" else -26})
     D["poses"].sort(key=lambda p: p["t"])
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
         D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
