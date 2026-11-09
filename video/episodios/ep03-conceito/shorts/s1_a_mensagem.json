@@ -1,0 +1,114 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "apertar_pausas": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
+ "legendas": {
+  "destaques": [
+   "atrás",
+   "perto",
+   "todas",
+   "procura",
+   "ela"
+  ]
+ },
+ "ambiente_inicial": 0,
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "voz_arquivo": "s1_a_mensagem_voz.wav",
+ "batidas": [
+  {
+   "fala": "\"Lucas… sou eu. Desculpa a hora.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
+    "vermelho": "fotos.",
+    "estilo": "maquina",
+    "tamanho": 66
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Eu achei ela. Ela tá em todas as fotos.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
+    "vermelho": "fotos.",
+    "estilo": "maquina",
+    "tamanho": 66
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"E ela sabe… que eu sei.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
+    "vermelho": "sei.",
+    "estilo": "maquina",
+    "tamanho": 66
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
+    "estilo": "maquina"
+   },
+   "sem_legenda": true,
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
+    "estilo": "maquina"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E o Rafael não estava lá.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "E o Rafael não estava lá.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sons": [
+    {
+     "em": "lá",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  }
+ ],
+ "cta": {
+  "titulo": "O que aconteceu com o Rafael?",
+  "canal": "Último Abrigo",
+  "subtitulo": "História completa no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

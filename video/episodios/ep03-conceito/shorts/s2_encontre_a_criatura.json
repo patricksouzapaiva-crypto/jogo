@@ -1,0 +1,298 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "apertar_pausas": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
+ "legendas": {
+  "destaques": [
+   "atrás",
+   "perto",
+   "todas",
+   "procura",
+   "ela"
+  ]
+ },
+ "ambiente_inicial": 0,
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "voz_arquivo": "s2_encontre_a_criatura_voz.wav",
+ "batidas": [
+  {
+   "fala": "Numa madrugada, ele imprimiu todas e espalhou em cima da mesa. Pra olhar com calma. Pra provar, de uma vez por todas, que não tinha nada ali.",
+   "cena": {
+    "imagem": "../imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.6599999999999999,
+      0.5
+     ],
+     [
+      0.6599999999999999,
+      0.46
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "E por muito tempo… não tinha.",
+   "cena": {
+    "imagem": "../imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.52,
+      0.5
+     ],
+     [
+      0.52,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Até que ele parou numa foto da rua. Lá no fundo, depois do último poste, entre duas árvores.",
+   "cena": {
+    "imagem": "../imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.24000000000000002,
+      0.5
+     ],
+     [
+      0.24000000000000002,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma forma. Alta. Magra demais. Parada.",
+   "cena": {
+    "imagem": "../imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.24000000000000002,
+      0.5
+     ],
+     [
+      0.24000000000000002,
+      0.46
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "Parada",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele pegou a foto seguinte. A da sala. E procurou.",
+   "cena": {
+    "imagem": "../imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.7,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Estava lá. No reflexo da janela.",
+   "cena": {
+    "imagem": "../imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.7,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "No corredor. Na porta da cozinha. No canto do quarto.",
+   "cenas": [
+    {
+     "imagem": "../imagens/H3.png",
+     "zoom": [
+      1.0,
+      1.07
+     ],
+     "encaixe": "cobrir",
+     "foco": [
+      [
+       0.52,
+       0.5
+      ],
+      [
+       0.52,
+       0.46
+      ]
+     ]
+    },
+    {
+     "imagem": "../imagens/H4.png",
+     "zoom": [
+      1.0,
+      1.07
+     ],
+     "em": "Na",
+     "encaixe": "cobrir",
+     "foco": [
+      [
+       0.6599999999999999,
+       0.5
+      ],
+      [
+       0.6599999999999999,
+       0.46
+      ]
+     ]
+    },
+    {
+     "imagem": "../imagens/H5.png",
+     "zoom": [
+      1.0,
+      1.07
+     ],
+     "em": "No",
+     "encaixe": "cobrir",
+     "foco": [
+      [
+       0.34,
+       0.5
+      ],
+      [
+       0.34,
+       0.46
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Em todas.",
+   "cena": {
+    "imagem": "../imagens/H6.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.54,
+      0.5
+     ],
+     [
+      0.54,
+      0.46
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "todas",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "todas",
+     "pose": "e_maos_na_boca",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "E a cada foto… um pouco mais perto.",
+   "cena": {
+    "imagem": "../imagens/H7.png",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.44,
+      0.5
+     ],
+     [
+      0.44,
+      0.46
+     ]
+    ]
+   }
+  }
+ ],
+ "cta": {
+  "titulo": "Achou ela? A resposta está no vídeo completo",
+  "canal": "Último Abrigo",
+  "subtitulo": "História completa no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}
