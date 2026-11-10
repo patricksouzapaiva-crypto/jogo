@@ -102,13 +102,17 @@ for S in SHORTS:
                 c["tamanho"] = 84  # no vertical o texto precisa ser maior
             elif c.get("tipo") == "texto" and c.get("tamanho"):
                 c["tamanho"] = int(c["tamanho"] * 1.45)
+            if c.get("tipo") == "texto" and c.get("estilo") == "maquina" and len(c.get("texto", "")) > 40 and not c.get("cps"):
+                c["cps"] = 45  # 10/11: texto longo narrado termina de aparecer junto com a fala (aviso de leitura)
     if not (bat[0].get("cena") or bat[0].get("cenas")):
         raise SystemExit(f"{S['nome']}: a 1ª batida precisa de cena")
-    for (i, som, em, db) in S["musica"]:
+    # 10/11 (regra do usuário): a música de fundo sinistra toca o Short INTEIRO; as trilhas antigas (que paravam
+    # e voltavam, com silêncio total) não entram mais
+    for (i, som, em, db) in []:
         bat[i - a]["musica"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "cta", "voz_arquivo", "preencher_pausas")}
-    r.update({"formato": "9:16", "voz_arquivo": arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
-              "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [],
+    r.update({"formato": "9:16", "voz_arquivo": (arq.stem + "_limpa.wav") if (arq.parent / (arq.stem + "_limpa.wav")).exists() else arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
+              "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [{"som": "suspense_sinistro_longa", "volume_db": -9}],
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": S.get("subtitulo", "História completa no canal"),
                       "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})
     (AQUI / "shorts" / f"{S['nome']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")

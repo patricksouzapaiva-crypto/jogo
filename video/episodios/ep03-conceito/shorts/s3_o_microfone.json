@@ -21,12 +21,17 @@
    "ela"
   ]
  },
- "ambiente_inicial": [],
+ "ambiente_inicial": [
+  {
+   "som": "suspense_sinistro_longa",
+   "volume_db": -9
+  }
+ ],
  "musica": {
   "som": "silencio",
   "volume_db": -40
  },
- "voz_arquivo": "s3_o_microfone_voz.wav",
+ "voz_arquivo": "s3_o_microfone_voz_limpa.wav",
  "batidas": [
   {
    "fala": "Ele começou a ouvir coisas. Passos no corredor que paravam meio segundo depois dos dele. Uma respiração lenta, logo depois que ele apagava a luz.",
@@ -47,10 +52,6 @@
      ]
     ],
     "encaixe": "cobrir"
-   },
-   "musica": {
-    "som": "trilha_tensa_2",
-    "volume_db": -27
    }
   },
   {
@@ -136,12 +137,7 @@
      ],
      "encaixe": "cobrir"
     }
-   ],
-   "musica": {
-    "som": "silencio",
-    "volume_db": -40,
-    "em": "outro"
-   }
+   ]
   },
   {
    "fala": "Ele ouviu aquele trecho umas vinte vezes. Quando ele parava no corredor, os outros passos paravam também.",

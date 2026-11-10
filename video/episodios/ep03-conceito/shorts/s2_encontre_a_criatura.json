@@ -21,12 +21,17 @@
    "ela"
   ]
  },
- "ambiente_inicial": [],
+ "ambiente_inicial": [
+  {
+   "som": "suspense_sinistro_longa",
+   "volume_db": -9
+  }
+ ],
  "musica": {
   "som": "silencio",
   "volume_db": -40
  },
- "voz_arquivo": "s2_encontre_a_criatura_voz.wav",
+ "voz_arquivo": "s2_encontre_a_criatura_voz_limpa.wav",
  "batidas": [
   {
    "fala": "Numa madrugada, ele imprimiu todas e espalhou em cima da mesa. Pra olhar com calma. Pra provar, de uma vez por todas, que não tinha nada ali.",
@@ -47,10 +52,6 @@
       0.46
      ]
     ]
-   },
-   "musica": {
-    "som": "trilha_tensa_2",
-    "volume_db": -27
    }
   },
   {

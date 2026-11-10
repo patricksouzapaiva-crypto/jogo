@@ -21,12 +21,17 @@
    "ela"
   ]
  },
- "ambiente_inicial": [],
+ "ambiente_inicial": [
+  {
+   "som": "suspense_sinistro_longa",
+   "volume_db": -9
+  }
+ ],
  "musica": {
   "som": "silencio",
   "volume_db": -40
  },
- "voz_arquivo": "s1_a_mensagem_voz.wav",
+ "voz_arquivo": "s1_a_mensagem_voz_limpa.wav",
  "batidas": [
   {
    "fala": "\"Lucas… sou eu. Desculpa a hora.\"",
@@ -69,11 +74,7 @@
     "estilo": "maquina",
     "tamanho": 84
    },
-   "sem_legenda": true,
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -22
-   }
+   "sem_legenda": true
   },
   {
    "fala": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
