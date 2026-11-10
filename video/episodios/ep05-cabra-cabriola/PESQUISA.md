@@ -1,5 +1,8 @@
 # Cabra Cabriola — dossiê de pesquisa (10/11/2026)
 
+> **Decisão do usuário (10/11):** NÃO entram no episódio a hipótese do bacurau (Freyre) nem os golpes de voz
+> clonada por IA / palavra-chave de família. A história é sobrenatural, sem explicação tecnológica.
+
 ## 1. A lenda
 - Bicho-papão de origem **portuguesa** (menção mais antiga achada: *Gazeta de Lisboa*, 20/08/1824; conto do Algarve
   registrado em 1905). No Brasil: Pernambuco, Alagoas, Sergipe, Bahia (Cascudo), também Piauí e Paraíba.
