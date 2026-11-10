@@ -686,7 +686,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
          "vigia_padrao": roteiro.get("vigia_padrao", True),  # False: Vigia só nas cenas com "com_vigia"/"vigia"
          "cenas": [], "poses": [], "legendas": [], "escuros": []}
     plano = {"ambientes": [], "musica": roteiro.get("musica"), "trilhas": [], "efeitos": [], "abafar": [], "quedas": [],
-             "fim_musica": rel.t[-1][1]}
+             # com vinheta final, a música-assinatura toca até o último quadro (some junto com a imagem)
+             "fim_musica": (duracao - 0.3) if any(b.get("cta_inicio") for b in roteiro["batidas"]) else rel.t[-1][1]}
     for amb in roteiro.get("ambiente_inicial", []):
         plano["ambientes"].append({"t": 0.0, **amb})
     ab = roteiro.get("abertura")
