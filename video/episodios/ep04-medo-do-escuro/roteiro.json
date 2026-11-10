@@ -658,8 +658,8 @@
     ]
    },
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    }
   },
   {
@@ -811,8 +811,8 @@
    ],
    "pausa_antes_s": 1.2,
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    },
    "sons": [
     {
@@ -1072,7 +1072,7 @@
    "fala": "No escuro, o que está bem na sua frente é o que você vê pior.",
    "cena": {
     "tipo": "texto",
-    "texto": "No escuro, o que está bem na sua frente\né o que você vê pior.",
+    "texto": "No escuro, o que está\nbem na sua frente\né o que você vê pior.",
     "estilo": "maquina",
     "vermelho": "pior."
    },
@@ -1263,8 +1263,8 @@
     "cps": 12
    },
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    },
    "sons": [
     {
@@ -1546,8 +1546,8 @@
    },
    "pausa_antes_s": 3.1,
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    },
    "enfase": [
     {
@@ -2010,8 +2010,8 @@
     }
    ],
    "musica": {
-    "som": "silencio",
-    "volume_db": -26,
+    "som": "suspense_atencao",
+    "volume_db": -29,
     "em": "Esperando"
    },
    "sons": [
@@ -2254,8 +2254,8 @@
     }
    ],
    "musica": {
-    "som": "silencio",
-    "volume_db": -26,
+    "som": "suspense_atencao",
+    "volume_db": -29,
     "em": "No"
    }
   },
@@ -2318,7 +2318,7 @@
      ]
     },
     {
-     "imagem": "imagens/A10_dois_passos.png",
+     "imagem": "imagens/A10_dois_passos_clara.png",
      "zoom": [
       1.0,
       1.05
@@ -2339,19 +2339,19 @@
   {
    "fala": "Alta. Fina demais. O rosto… inclinado, como quem olha uma coisa muito de perto pra entender o que é.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      1.1,
      1.3
     ],
     "foco": [
      [
-      0.5,
-      0.45
+      0.47,
+      0.42
      ],
      [
-      0.48,
-      0.3
+      0.46,
+      0.26
      ]
     ]
    }
@@ -2359,7 +2359,7 @@
   {
    "fala": "A Júlia não piscou.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      1.0,
      1.02
@@ -2369,7 +2369,7 @@
   {
    "fala": "Ficaram assim. Uma hora. Duas.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      1.02,
      1.04
@@ -2379,7 +2379,7 @@
   {
    "fala": "Os olhos dela ardiam. As lágrimas escorriam sem parar. A forma ia ficando borrada, se desfazendo e voltando.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      1.04,
      1.12
@@ -2405,19 +2405,19 @@
      "estilo": "maquina"
     },
     {
-     "imagem": "imagens/A10_dois_passos.png",
+     "imagem": "imagens/A10_dois_passos_clara.png",
      "zoom": [
       1.35,
       1.4
      ],
      "foco": [
       [
-       0.48,
-       0.38
+       0.46,
+       0.32
       ],
       [
-       0.48,
-       0.36
+       0.46,
+       0.3
       ]
      ],
      "em": "Quando"
@@ -2437,19 +2437,19 @@
   {
    "fala": "Ela mordeu a boca até sangrar, pra não piscar de novo.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      1.4,
      1.48
     ],
     "foco": [
      [
-      0.48,
-      0.36
+      0.46,
+      0.3
      ],
      [
-      0.48,
-      0.34
+      0.46,
+      0.28
      ]
     ]
    }
@@ -2491,8 +2491,8 @@
    },
    "pausa_antes_s": 2.1,
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    },
    "sem_legenda": true
   },
@@ -2526,19 +2526,19 @@
   {
    "fala": "Dessa vez, não precisou esperar vinte minutos.",
    "cena": {
-    "imagem": "imagens/A10_dois_passos.png",
+    "imagem": "imagens/A10_dois_passos_clara.png",
     "zoom": [
      2.1,
      2.2
     ],
     "foco": [
      [
-      0.48,
-      0.3
+      0.46,
+      0.23
      ],
      [
-      0.48,
-      0.29
+      0.46,
+      0.22
      ]
     ]
    },
@@ -2705,13 +2705,13 @@
    "fala": "\"Quando cair a energia, não acenda a luz. Espere. E nunca feche os olhos.\"",
    "cena": {
     "tipo": "texto",
-    "texto": "Quando cair a energia, não acenda a luz.\nEspere. E nunca feche os olhos.",
+    "texto": "Quando cair a energia,\nnão acenda a luz.\nEspere. E nunca feche os olhos.",
     "estilo": "maquina",
     "vermelho": "olhos."
    },
    "musica": {
-    "som": "silencio",
-    "volume_db": -26
+    "som": "suspense_atencao",
+    "volume_db": -29
    },
    "sem_legenda": true
   },
