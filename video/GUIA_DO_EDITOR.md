@@ -421,6 +421,12 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   mais suave e minimalista (`suspense_atencao`), foi recusada pelo usuário: fraca demais.
 - **10/11/2026 — imagem-chave escura demais:** se a criatura não aparece no celular, criar versão `_clara`
   (sombras levantadas + luz suave tipo luar sobre a figura, cantos escuros) e mirar os closes na cabeça real.
+- **10/11/2026 — VINHETA FINAL (fim de todo episódio longo):** a tela de inscrição não pode ficar muda.
+  Fala fixa do Vigia (`painel/sons/vinheta_cta_voz.wav`, Gemini/Algenib): "Se você ficou até aqui… então já é
+  um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar
+  aqui. Esperando." + música-assinatura `vinheta_ultimo_abrigo` (caixinha de música, cello, sino distante).
+  Como usar: emendar a fala no fim da narração (1,8 s de pausa), última batida com `"cta_inicio": true` e o
+  texto da vinheta, `cta.clique_em: "Inscreva-se"` (o botão é clicado nessa palavra) — ver Ep. 04.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

@@ -829,7 +829,12 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     cta = roteiro.get("cta")
     if cta:  # tela final de chamada para o YouTube
         t_cta = rel.t[-1][1] + roteiro.get("cauda", 1.6)
+        k_cta = next((k for k, b in enumerate(roteiro["batidas"]) if b.get("cta_inicio")), None)
+        if k_cta is not None:  # vinheta falada: a tela final começa junto da fala de inscrição
+            t_cta = max(0.0, rel.inicio(k_cta) - cta.get("antes", 0.8))
         D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo")}
+        if k_cta is not None and cta.get("clique_em"):  # o botão é clicado quando o Vigia diz a palavra
+            D["cta"]["clique"] = round(rel.em(k_cta, cta["clique_em"]) - t_cta, 2)
         if cta.get("fundo"):  # chamada final no cenário do Vigia, com ele em destaque
             D["cenas"].append({"t0": t_cta, "t1": duracao, "imagem": str((base / cta["fundo"]).resolve()),
                                "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.5, 0.5]], "vigia": True, "lado": "esq",
@@ -838,7 +843,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             for i, c in enumerate(D["cenas"][:-1]):
                 c["t1"] = D["cenas"][i + 1]["t0"]
         plano["efeitos"] += [{"t": t_cta, "som": "whoosh", "volume_db": -10},
-                             {"t": t_cta + 1.35, "som": "tecla", "volume_db": -2}]
+                             {"t": t_cta + D["cta"].get("clique", 1.35), "som": "tecla", "volume_db": -2}]
         if cta.get("pose"):
             D["poses"].append({"t": t_cta + 0.2, "pose": cta["pose"], "tipo": "enfase", "segurar": 9})
     # som de digitação nas telas de texto (uma tecla por letra, no mesmo ritmo do texto na tela)

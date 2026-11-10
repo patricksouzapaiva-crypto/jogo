@@ -353,9 +353,18 @@ enf("Hoje, quando você apagar a luz", "conta", "c_cafe_indicador", 1.8)
 enf("Você piscou agora", "piscou", "s_sorriso_sombrio", 2.4)
 enf("Me conta nos comentários", "Me", "c_cafe_convite", 2.2)
 
+# ================================================================ VINHETA FINAL (padrão da série desde 10/11)
+# fala fixa do Vigia (painel/sons/vinheta_cta_voz.wav, emendada no fim da narração) + música-assinatura
+VINHETA = ("Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, "
+           "pra não perder o próximo caso. Eu vou estar aqui. Esperando.")
+batidas.append({"fala": VINHETA, "cta_inicio": True, "sem_legenda": True,
+                "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
+enf(VINHETA[:20], "Inscreva-se", "e_apontando", 2.2)
+enf(VINHETA[:20], "Esperando", "s_sorriso_sombrio", 3.0)
+
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
-    "voz_arquivo": "audio/voz_completa.wav", "apertar_pausas": False,
+    "voz_arquivo": "audio/voz_com_vinheta.wav",   # narração + 1,8 s + fala da vinheta "apertar_pausas": False,
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
@@ -368,7 +377,8 @@ roteiro = {
                  "sons": [{"som": "sub_drop", "t": 0.2, "volume_db": -12}]},
     "cta": {"titulo": "Você dorme de luz acesa?", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
-            "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite", "duracao": 3.8},
+            "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite",
+            "antes": 0.6, "clique_em": "Inscreva-se", "duracao": 2.5},   # tela final dura a fala inteira + 2,5 s
     "batidas": batidas,
 }
 for b in batidas:  # tela de texto não leva legenda (o texto já está na tela)

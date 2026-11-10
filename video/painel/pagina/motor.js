@@ -830,7 +830,7 @@ function chamadaYouTube(t) {
   linhasT.forEach((l, i) => ctx.fillText(l, W / 2, cy - 150 - (linhasT.length - 1 - i) * 70 + (1 - a1) * 20));
   ctx.shadowBlur = 0;
   // botão
-  const clique = 1.35, inscrito = dt >= clique;
+  const clique = c.clique ?? 1.35, inscrito = dt >= clique;
   const pop = back(lin(dt, 0.35, 0.35)) * (dt > clique && dt < clique + 0.15 ? 0.94 : 1);
   ctx.globalAlpha = Math.min(1, lin(dt, 0.35, 0.15));
   const bw = 600, bh = 130, bx = W / 2, by = cy;
@@ -849,8 +849,9 @@ function chamadaYouTube(t) {
     rr(bx - bw / 2 - 20 * k, by - bh / 2 - 20 * k, bw + 40 * k, bh + 40 * k, bh); ctx.stroke();
   }
   // cursor chega e clica
-  if (dt > 0.7 && dt < clique + 0.9) {
-    const m = easeInOut(lin(dt, 0.7, clique - 0.7));
+  const c0 = Math.max(0.7, clique - 0.9);   // o cursor só aparece pouco antes do clique
+  if (dt > c0 && dt < clique + 0.9) {
+    const m = easeInOut(lin(dt, c0, clique - c0));
     const x = W * 0.86 + (bx + 120 - W * 0.86) * m, y = H * 0.62 + (by + 10 - H * 0.62) * m;
     cursorMao(x, y, dt > clique && dt < clique + 0.12 ? 1.25 : 1.4);
   }
