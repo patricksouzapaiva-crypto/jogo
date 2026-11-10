@@ -846,8 +846,10 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         if c.get("tipo") == "texto" and roteiro.get("som_digitacao", True):
             arq = trilha_digitacao(c, c.get("t1", c["t0"] + 5) - c["t0"])
             if arq:
-                plano["efeitos"].append({"t": c["t0"], "arquivo": str(arq), "som": "digitacao",
-                                         "volume_db": -23 if c.get("estilo") == "impacto" else -26})
+                # 10/11: digitação com entrada suave (o volume -26 foi o escolhido pelo usuário no Ep. 03)
+                base_db = roteiro.get("digitacao_db", -26)
+                plano["efeitos"].append({"t": c["t0"], "arquivo": str(arq), "som": "digitacao", "entrada": 0.4,
+                                         "volume_db": base_db + 3 if c.get("estilo") == "impacto" else base_db})
     D["poses"].sort(key=lambda p: p["t"])
     if any(p.get("grupo") == "conversa" for p in av["poses"].values()):
         D["poses"] = poses_de_conversa(D["poses"], rel, av["poses"], roteiro, duracao)
@@ -933,7 +935,9 @@ def automixar(stem, saida, mix):
     # "sem_sustos" (padrão da série desde 09/11): nada passa da voz, nem nos silêncios — tensão, não susto barulhento
     suave = mix.get("sem_sustos", False)
     gb = gb * teto(b, gb, mix.get("fundo_pico_max", -6.0 if suave else -3.0))
-    ge = ge * teto(e, ge, mix.get("efeitos_pico_max", -3.0 if suave else 2.0))
+    # 10/11: efeitos nos silêncios no máximo 8 dB abaixo da voz típica (com -3 os sub_drops do Ep. 04 ainda
+    # "socavam" depois de um silêncio). O grave fica como vibração, não como pancada.
+    ge = ge * teto(e, ge, mix.get("efeitos_pico_max", -8.0 if suave else 2.0))
     b, e = b * gb, e * ge
     for k, a in (("fundo", b), ("efeitos", e)):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", "48000", "-ac", "2", "-i", "-", stem[k]],

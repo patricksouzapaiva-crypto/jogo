@@ -410,6 +410,9 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   a troca não pode tirar a tensão que o espectador está sentindo. Abertura logo após o cold open: `"segurar"`.
 - **10/11/2026 — texto digitado maior:** telas "máquina" (frases longas) agora têm letra de 7% da altura do
   vídeo (76 px em 1080p; antes 56 px). Telas curtas de impacto continuam no estilo próprio.
+- **10/11/2026 — efeitos no silêncio:** no máximo 8 dB abaixo da voz típica (`efeitos_pico_max` −8). Com −3,
+  os sub_drops depois de "Ela sorriu." etc. ainda soavam como pancada. Narração longa: `narrar_fluxo.py`
+  (streaming) funcionou — 11min46 de áudio em 110 s, uma chamada só.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.
