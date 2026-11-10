@@ -1211,6 +1211,9 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     voz_cortada = tmp / "voz_inicio.wav"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{corte:.3f}", "-i", wav, voz_cortada], check=True)
     tempos = [(s - corte, e - corte) for s, e in tempos]
+    if "apertar_pausas" not in roteiro and roteiro.get("formato") == "16:9":
+        print("    ATENÇÃO: roteiro sem \"apertar_pausas\" — as pausas da narração serão ENCURTADAS (regra da casa: não "
+              "encurtar). Ponha \"apertar_pausas\": false se não for isso que você quer.")
     if roteiro.get("apertar_pausas", True):
         antes = tempos[-1][1]
         voz_final = tmp / "voz.wav"

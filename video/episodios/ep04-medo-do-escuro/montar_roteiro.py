@@ -364,7 +364,8 @@ enf(VINHETA[:20], "Esperando", "s_sorriso_sombrio", 3.0)
 
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
-    "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",   # narração + 1,8 s + vinheta, com redução de chiado (afftdn) "apertar_pausas": False,
+    "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",   # narração + 1,8 s + vinheta, com redução de chiado (afftdn)
+    "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.14,

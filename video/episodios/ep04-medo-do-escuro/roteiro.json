@@ -4,6 +4,7 @@
  "tema": "vigia",
  "avatar": "vigia_hd",
  "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "apertar_pausas": false,
  "vigia_padrao": false,
  "preencher_pausas": {
   "min": 1.3
