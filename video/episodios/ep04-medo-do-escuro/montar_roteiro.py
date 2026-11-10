@@ -122,7 +122,7 @@ C("Numa caverna da África do Sul", cartao("swartkrans_9", "Paranthropus robustu
 C("Ele tem dois furos", cartao("swartkrans_10", "dois furos", giro=1.2), (vid("leopardo_v_1", (1.0, 1.05)), "leopardo"), **V)
 C("Por milhões de anos", vid("leopardo_v_4", (1.0, 1.03)), **V)
 C("Quem tinha medo do escuro", img("leopardo_3", (1.0, 1.08), ((0.5, 0.5), (0.45, 0.55))), (vigia((1.0, 1.04)), "Pra"), **V)
-C("O corpo ainda lembra", texto("O corpo ainda lembra.\nNo escuro, o mesmo barulho assusta mais.", "lembra."))
+C("O corpo ainda lembra", texto("O corpo ainda lembra.\nNo escuro, o mesmo barulho\nassusta mais.", "lembra."))
 C("Mas o escuro, em si", vigia((1.0, 1.05)))
 C("O problema é o que a sua cabeça", img("canto_quarto_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45))), **V)
 C("Lovecraft escreveu", cartao("lovecraft_4", "H. P. Lovecraft · 1934", giro=-1.2), **V)

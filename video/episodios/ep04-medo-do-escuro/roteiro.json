@@ -299,7 +299,7 @@
    "fala": "O corpo ainda lembra. Em laboratório, o mesmo barulho assusta mais quando a sala está escura.",
    "cena": {
     "tipo": "texto",
-    "texto": "O corpo ainda lembra.\nNo escuro, o mesmo barulho assusta mais.",
+    "texto": "O corpo ainda lembra.\nNo escuro, o mesmo barulho\nassusta mais.",
     "estilo": "maquina",
     "vermelho": "lembra."
    },
