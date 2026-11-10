@@ -1,0 +1,140 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4
+ },
+ "legendas": {
+  "destaques": [
+   "luz",
+   "canto",
+   "perto",
+   "vinte",
+   "olhos",
+   "escuro"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "suspense_sinistro_longa",
+   "volume_db": -9
+  }
+ ],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "voz_arquivo": "s1_o_caderno_voz.wav",
+ "batidas": [
+  {
+   "fala": "\"Quatro metros.\" \"Três metros.\" \"Dois metros e meio.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "4 metros.\n3 metros.\n2,5 metros.",
+    "estilo": "maquina",
+    "vermelho": "2,5 metros.",
+    "tamanho": 84,
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Um metro.\" \"Setenta centímetros.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "1 metro.\n70 centímetros.",
+    "estilo": "maquina",
+    "vermelho": "70 centímetros.",
+    "tamanho": 84,
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A última linha estava escrita em letras enormes, tortas, como se ele tivesse escrito sem olhar pro papel:",
+   "cena": {
+    "imagem": "../imagens_reais/caderno_3.jpg",
+    "zoom": [
+     1.4,
+     1.55
+    ],
+    "foco": [
+     [
+      0.6,
+      0.7
+     ],
+     [
+      0.62,
+      0.74
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "\"Quarenta centímetros. Ela sorriu.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "40 centímetros.\nEla sorriu.",
+    "estilo": "impacto",
+    "vermelho": "sorriu.",
+    "cps": 20
+   },
+   "sons": [
+    {
+     "em": "sorriu",
+     "som": "sub_drop",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "A página seguinte tinha uma frase só, sublinhada três vezes:",
+   "cena": {
+    "imagem": "../imagens_reais/caderno_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.4,
+    "antecipar": 1.4,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "\"Enquanto eu olho, ela não anda.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Enquanto eu olho, ela não anda.",
+    "estilo": "maquina",
+    "vermelho": "anda.",
+    "tamanho": 84,
+    "cps": 30
+   },
+   "sem_legenda": true
+  }
+ ],
+ "cta": {
+  "titulo": "Quanto falta pra ela chegar?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}
