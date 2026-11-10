@@ -140,12 +140,107 @@ def tensao(dur=480.0):
     return M.sair(mistura=0.48)
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# v2 "sinistro" (10/11, o usuário achou a v1 "muito normal, não serve pra terror"). Técnicas tiradas das referências
+# (Penderecki em O Iluminado/O Exorcista, Bishara em Sobrenatural, trilhas de creepypasta): piano velho desafinado,
+# notas de piano AO CONTRÁRIO que incham até o tempo forte, nuvens de violinos em semitons vizinhos (cluster),
+# glissandos que escorregam para baixo, trítono (lá bemol contra ré) no lugar das terças, compassos que somem.
+def piano_velho(f, dur=6.0, vel=0.3):
+    d = 2 ** ((rng.random() - 0.5) * 16 / 1200)                 # cada nota até ±8 cents fora
+    return piano(f * d, dur, vel * 0.6) + piano(f * d * 2 ** (13 / 1200), dur, vel * 0.45)   # duas cordas que batem
+
+
+def ao_contrario(s):
+    return s[::-1].copy()
+
+
+def gliss(f0, f1, dur, vel=0.12, tremolo=True):
+    """Violino que escorrega de f0 para f1 (o "lamento" das trilhas de terror)."""
+    n = int(dur * SR); t = np.arange(n) / SR
+    f = f0 * (f1 / f0) ** (np.clip((t - dur * 0.25) / (dur * 0.7), 0, 1) ** 1.5)
+    fase = 2 * np.pi * np.cumsum(f) / SR
+    s = np.zeros(n)
+    for k in range(1, 12):
+        peso = (0.5 + 0.8 * np.exp(-((f0 * k - 2400) / 900) ** 2)) / k ** 0.8       # perto do cavalete: mais agudos
+        s += np.sin(k * fase + rng.random() * 6) * peso * (f0 * k < 4200)
+    env = np.sin(np.pi * t / dur) ** 1.3
+    if tremolo:
+        env = env * (0.6 + 0.4 * np.sin(2 * np.pi * 11 * t + rng.random() * 6) ** 2)
+    return s * env * vel
+
+
+def nuvem(centro, dur, vel=0.05, n_vozes=6):
+    """Cluster: várias cordas em semitons e quartos de tom vizinhos, inchando devagar (sem altura definida)."""
+    out = np.zeros(int(dur * SR))
+    for i in range(n_vozes):
+        f = hz(centro) * 2 ** ((i - n_vozes / 2 + rng.random() * 0.6) / 12)
+        v = violino(f, dur, vel=vel, tremolo=bool(i % 2))
+        out[: len(v)] += v * np.sin(np.pi * np.arange(len(v)) / len(v)) ** 2
+    return out
+
+
+def fundo_sinistro(dur=960.0, tempo=1.35):
+    M = Mesa(dur); comp = 3 * tempo; t = 0.6; k = 0
+    # baixo, "acorde" (com trítono/2ª menor), nota do violino
+    prog = [("D2", ("A3", "Eb4"), "A4"), ("D2", ("Ab3", "D4"), "Ab4"), ("D2", ("A3", "F4"), "D5"), ("D2", ("Bb3", "E4"), "C#5"),
+            ("Bb1", ("F3", "B3"), "F5"), ("A1", ("G3", "C#4"), "E5"), ("Eb2", ("Bb3", "E4"), "Eb5"), ("D2", ("A3", "Eb4"), "D5")]
+    while t < dur:
+        secao = (k // 8) % 4; baixo, ac, mel = prog[k % 8]
+        some = rng.random() < 0.18 and k % 8 not in (0, 7)        # compasso em que o piano simplesmente não vem
+        if not some:
+            M.por(piano_velho(hz(baixo) * 2, dur=comp * 1.8, vel=0.34), t)
+            M.por(piano_velho(hz(baixo), dur=comp * 1.8, vel=0.12), t)
+            if secao != 3:
+                M.por(piano_velho(hz(ac[0]), dur=5, vel=0.24), t + tempo + (rng.random() - 0.5) * 0.12)
+                if rng.random() < 0.7:
+                    M.por(piano_velho(hz(ac[1]), dur=5, vel=0.26), t + 2 * tempo + (rng.random() - 0.5) * 0.12)
+        if k % 4 == 3:                                             # nota aguda ao contrário, inchando até o próximo compasso
+            r = ao_contrario(piano_velho(hz(ac[1]) * 2, dur=comp * 0.95, vel=0.30))
+            M.por(r, t + comp - len(r) / SR)
+        M.por(cordas([hz(baixo) * 4, hz(baixo) * 4 * 2 ** (1 / 12)], comp + 2.5, vel=0.07, ataque=1.6), t - 0.5)   # cello em 2ª menor
+        if secao in (1, 2):                                        # violino: nota longa que termina escorregando
+            d = comp * 0.72
+            M.por(violino(hz(mel), d, vel=0.26 if secao == 1 else 0.16), t)
+            M.por(gliss(hz(mel), hz(mel) * 2 ** (-1.5 / 12), comp * 0.5, vel=0.10, tremolo=False), t + d - 0.35)
+        if secao == 2 and k % 2 == 0:
+            M.por(violino(hz(mel) * 2 * 2 ** (1 / 12), comp, vel=0.05, tremolo=True), t)   # harmônico agudo, meio-tom acima
+        if secao == 3 or k % 8 == 6:                               # nuvem de cordas
+            M.por(nuvem(mel, comp * 2.2, vel=0.045 if secao != 3 else 0.06), t)
+        if k % 16 == 11:                                           # lamento: glissando longo para baixo
+            M.por(gliss(hz("A5"), hz("D5"), comp * 1.8, vel=0.07), t)
+        t += comp; k += 1
+    return M.sair(mistura=0.5)
+
+
+def tensao_sinistra(dur=480.0):
+    M = Mesa(dur); t = 0.0; k = 0
+    centros = ["D5", "A4", "Eb5", "C#5", "Ab4", "F5"]
+    while t < dur:
+        M.por(cordas([hz("D3"), hz("Eb3"), hz("A3")], 15.0, vel=0.17, ataque=4.0), t)
+        M.por(nuvem(centros[k % 6], 12.0, vel=0.085, n_vozes=7), t + 1.0)
+        if k % 2 == 1:
+            M.por(gliss(hz(centros[k % 6]) * 2, hz(centros[k % 6]) * 2 ** (7 / 12), 9.0, vel=0.075), t + 4.0)
+        t += 12.0; k += 1
+    graves = ["D3", "Eb3", "D3", "Ab2", "D3", "A2", "Eb3"]
+    for i, t0 in enumerate(np.arange(2.0, dur - 6, 5.5)):
+        M.por(piano_velho(hz(graves[i % 7]), vel=0.36), t0 + rng.random() * 0.6)
+        if i % 3 == 1:
+            r = ao_contrario(piano_velho(hz("Eb5"), dur=3.5, vel=0.22)); M.por(r, t0 + 5.3 - len(r) / SR)
+    # batimento lento (coração) feito com o piano grave abafado — bem baixo
+    for t0 in np.arange(0.0, dur, 1.5):
+        M.por(piano(hz("D2") * 2, dur=0.8, vel=0.07), t0); M.por(piano(hz("D2") * 2, dur=0.8, vel=0.05), t0 + 0.32)
+    return M.sair(mistura=0.5)
+
+
 if __name__ == "__main__":
     qual, saida = sys.argv[1], sys.argv[2]
     dur = float(sys.argv[3]) if len(sys.argv) > 3 else None
-    m = (fundo(dur or 960.0) if qual == "fundo" else tensao(dur or 480.0)).astype(np.float32)
+    F = {"fundo": (fundo, 960.0), "tensao": (tensao, 480.0), "fundo2": (fundo_sinistro, 960.0), "tensao2": (tensao_sinistra, 480.0)}
+    f, padrao = F[qual]
+    m = f(dur or padrao).astype(np.float32)
     est = np.stack([m, np.roll(m, int(0.013 * SR))], 1)
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
                     "-af", "highpass=f=70,loudnorm=I=-20:TP=-3:LRA=8", "-ar", "44100", "-b:a", "192k", saida],
                    input=est.tobytes(), check=True)
     print("ok:", saida)
+
