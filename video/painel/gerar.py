@@ -1301,7 +1301,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     venc = ["-c:v", "copy"] if so_audio else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
                                               "-bufsize", "20M", "-pix_fmt", "yuv420p"]
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", *venc,
-                    "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart", saida], check=True)
+                    "-c:a", "aac", "-b:a", "256k", "-aac_is", "0", "-aac_ms", "0", "-aac_pns", "0",  # 10/11: o estéreo de intensidade do AAC distorcia o canal direito (+6 dB)
+ "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
                "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)

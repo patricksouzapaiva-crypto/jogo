@@ -141,24 +141,26 @@
   },
   {
    "fala": "Ele ouviu aquele trecho umas vinte vezes. Quando ele parava no corredor, os outros passos paravam também.",
-   "cena": {
-    "imagem": "../imagens/H8.png",
-    "zoom": [
-     1.0,
-     1.07
-    ],
-    "encaixe": "cobrir",
-    "foco": [
-     [
-      0.47000000000000003,
-      0.5
+   "cenas": [
+    {
+     "imagem": "../imagens/R6.png",
+     "zoom": [
+      1.38,
+      1.46
      ],
-     [
-      0.47000000000000003,
-      0.46
-     ]
-    ]
-   }
+     "foco": [
+      [
+       0.79,
+       0.63
+      ],
+      [
+       0.78,
+       0.6
+      ]
+     ],
+     "encaixe": "cobrir"
+    }
+   ]
   },
   {
    "fala": "Só que, na última vez, quando ele já tinha voltado pra cama… os passos continuaram. Devagar. Até a porta do quarto.",
@@ -192,6 +194,7 @@
    ]
   }
  ],
+ "vigia_padrao": false,
  "cta": {
   "titulo": "Até onde os passos foram?",
   "canal": "Último Abrigo",

@@ -47,9 +47,11 @@ SHORTS = [
     {"nome": "s3_o_microfone", "de": 36, "ate": 41, "titulo": "Até onde os passos foram?",
      "musica": [(36, "trilha_tensa_2", None, -27), (39, "silencio", "outro", -40)],
      # sem isso a R6 ficava ~35 s na tela: close na forma de onda, rosto dele e o corredor vazio no fim
-     "imagens": {40: "H8"},
+     # 10/11: sem o close do rosto (H8, cara de IA) — ele ouvindo = close na forma de onda
+     "imagens": {},
      "extras": {38: [("R6", None), ("R6", "fones", {"zoom": [1.22, 1.3], "foco": [[0.8, 0.66], [0.78, 0.64]]})],
                 39: [("R6", None, {"zoom": [1.3, 1.36], "foco": [[0.8, 0.64], [0.8, 0.62]]})],
+                40: [("R6", None, {"zoom": [1.38, 1.46], "foco": [[0.79, 0.63], [0.78, 0.6]]})],
                 41: [("R6", None), ("H9", "porta", {"zoom": [1.0, 1.12]})]}},
 ]
 
@@ -111,7 +113,7 @@ for S in SHORTS:
     for (i, som, em, db) in []:
         bat[i - a]["musica"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "cta", "voz_arquivo", "preencher_pausas")}
-    r.update({"formato": "9:16", "voz_arquivo": (arq.stem + "_limpa.wav") if (arq.parent / (arq.stem + "_limpa.wav")).exists() else arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
+    r.update({"formato": "9:16", "voz_arquivo": (arq.stem + "_limpa.wav") if (arq.parent / (arq.stem + "_limpa.wav")).exists() else arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False, "vigia_padrao": False,   # 10/11: Vigia só na chamada final, não durante a história
               "musica": {"som": "silencio", "volume_db": -40}, "ambiente_inicial": [{"som": "suspense_sinistro_longa", "volume_db": -9}],
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": S.get("subtitulo", "História completa no canal"),
                       "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})

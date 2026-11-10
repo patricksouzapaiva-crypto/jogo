@@ -40,7 +40,8 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nLucas… sou eu. Desculpa a hora.",
     "vermelho": "fotos.",
     "estilo": "maquina",
-    "tamanho": 87
+    "tamanho": 87,
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -51,7 +52,8 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nEu achei ela. Ela tá em todas as fotos.",
     "vermelho": "fotos.",
     "estilo": "maquina",
-    "tamanho": 87
+    "tamanho": 87,
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -62,7 +64,8 @@
     "texto": "MENSAGEM DE VOZ · 03:40\nE ela sabe… que eu sei.",
     "vermelho": "sei.",
     "estilo": "maquina",
-    "tamanho": 87
+    "tamanho": 87,
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -72,7 +75,8 @@
     "tipo": "texto",
     "texto": "Essa foi a última mensagem que o Rafael deixou no celular do irmão. Às três e quarenta da manhã.",
     "estilo": "maquina",
-    "tamanho": 84
+    "tamanho": 84,
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -82,7 +86,8 @@
     "tipo": "texto",
     "texto": "Quando o Lucas chegou, de manhã, a porta do apartamento estava trancada por dentro.",
     "estilo": "maquina",
-    "tamanho": 84
+    "tamanho": 84,
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -106,6 +111,7 @@
    "sem_legenda": true
   }
  ],
+ "vigia_padrao": false,
  "cta": {
   "titulo": "O que aconteceu com o Rafael?",
   "canal": "Último Abrigo",

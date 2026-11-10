@@ -7,6 +7,20 @@ do Short para o vídeo longo.
 
 Ordem sugerida: **1 → 2 → 3** (o 2 é o que mais gera comentário; postar no meio da semana).
 
+## Arquivos (versão de 10/11)
+| Short | Vídeo | Legenda | Capa |
+|---|---|---|---|
+| 1 — A mensagem | `shorts_final/s1_a_mensagem.mp4` (33 s) | `shorts_final/s1_a_mensagem.srt` | `capa_short1_a_mensagem.jpg` |
+| 2 — Encontre a criatura | `shorts_final/s2_encontre_a_criatura.mp4` (51 s) | `shorts_final/s2_encontre_a_criatura.srt` | `capa_short2_encontre.jpg` |
+| 3 — O microfone | `shorts_final/s3_o_microfone.mp4` (61 s) | `shorts_final/s3_o_microfone.srt` | `capa_short3_microfone.jpg` |
+
+Nesta versão: música de fundo sinistra do começo ao fim (sem silêncio total), voz sem chiado, Vigia só na
+chamada final, sem rosto com cara de IA, áudio −14 a −15 LUFS com pico abaixo de −1,9 dBFS.
+
+**Legenda (.srt):** a legenda já vai gravada na imagem, mas envie o .srt também (YouTube Studio → Legendas →
+Português → Enviar arquivo → "Com sincronização"). Ajuda na busca e em quem assiste sem som. Se o Short passar
+dos 60 s (o 3 tem 61 s), o YouTube ainda aceita como Short (o limite hoje é 3 min).
+
 ---
 
 ## Short 1 — "A mensagem" (`s1_a_mensagem.mp4`)
