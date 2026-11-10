@@ -240,7 +240,7 @@ if __name__ == "__main__":
     m = f(dur or padrao).astype(np.float32)
     est = np.stack([m, np.roll(m, int(0.013 * SR))], 1)
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
-                    "-af", "highpass=f=70,loudnorm=I=-20:TP=-3:LRA=8", "-ar", "44100", "-b:a", "192k", saida],
+                    "-af", "highpass=f=70,acompressor=threshold=-32dB:ratio=3:attack=400:release=2500:makeup=2,loudnorm=I=-20:TP=-3:LRA=6", "-ar", "44100", "-b:a", "192k", saida],
                    input=est.tobytes(), check=True)
     print("ok:", saida)
 

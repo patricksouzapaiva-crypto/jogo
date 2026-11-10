@@ -54,10 +54,10 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   `PEDIDO_IMAGENS_IA.md` (14 prompts B01–B14, enviados no chat; aguardando as imagens), `imagens_reais/` (~40 fotos
   tratadas) e `videos/` (25 clipes) com CREDITOS.txt. Fora do episódio por decisão do usuário: bacurau (Freyre) e
   voz clonada por IA.
-  **Música:** o usuário gerou 6 faixas no Suno (`musica/suno_*.mp3`) e não consegue gerar mais. As de fundo/tensão
-  vieram quase só com grave (<250 Hz): `musica/consertar.sh` soma oitavas acima e `musica/montar_trilhas.sh` gera
-  `painel/sons/ep05_fundo_longa.mp3` (16 min), `ep05_tensao_longa.mp3` (8 min) e `ep05_cantiga.mp3`. Exemplos
-  enviados (`musica/exemplos/`) — aguardando o usuário dizer se o fundo dá pra ouvir no celular.
+  **Música (decidida):** trilha composta em código, aprovada pelo usuário (`sintetizar_piano_violino.py fundo2/tensao2`
+  → `painel/sons/ep05_fundo_longa.mp3`, `ep05_tensao_longa.mp3`); cantiga do Suno entra sozinha (`ep05_cantiga.mp3`).
+  Não usar músicas prontas "livres" (risco de Content ID) — ver fim do `PEDIDO_MUSICA_SUNO.md`.
+  **Imagens:** as 14 imagens-chave do usuário estão em `imagens/` (B01–B14); +45 fotos sinistras em `imagens_reais/`.
   Próximos passos: aprovação do roteiro → narração (Gemini em fluxo, Algenib) → `montar_roteiro.py` → render.
 
 ## Pendências

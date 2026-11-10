@@ -57,3 +57,15 @@ dark ambient horror underscore, slow 50 bpm, D minor, mid-register cello and vio
 tense horror underscore, 45 bpm, D minor with minor second clusters, sustained mid and high strings slowly swelling and fading, bowed metal and distant anvil resonance far in the background, glassy violin harmonics, quiet tremolo violas, clear midrange audible on phone speakers, very little sub bass, claustrophobic, something waiting behind a door, no drums, no percussion hits, no vocals, no sudden loud sounds, no jump scares, gradual and continuous, strictly instrumental
 ```
 Usar **Extend** até passar de 4 minutos em cada.
+
+---
+## Decisão final da música (10/11/2026)
+- O usuário rejeitou as faixas do Suno consertadas ("muito metálico") e a 1ª composição em código ("muito normal").
+  **Aprovou o `musica/exemplos/exemplo3_sinistro.mp3`** = `painel/ferramentas/sintetizar_piano_violino.py`
+  (`fundo2` e `tensao2`): piano velho desafinado, notas ao contrário, nuvens de violinos, glissandos, trítono.
+  Arquivos do episódio: `painel/sons/ep05_fundo_longa.mp3` (16 min), `ep05_tensao_longa.mp3` (8 min).
+- **Cantiga (`painel/sons/ep05_cantiga.mp3`, do Suno C2, levemente distorcida): entra SOZINHA** — o fundo sai antes.
+- **Músicas prontas "livres" NÃO entram.** Verificado em 10/11: as de Kevin MacLeod são de fato CC BY 4.0, mas o
+  próprio site dele avisa que terceiros registram as faixas no Content ID e geram reivindicações falsas
+  (https://incompetech.com/music/royalty-free/youtube-contentid.html). A nossa trilha é composta em código por nós:
+  não existe em nenhum banco de Content ID. As referências baixadas para estudo foram apagadas do repositório.
