@@ -49,9 +49,16 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   montar_shorts.py` (aceita `pular` para cortar batidas e manter ≤ 35 s; pausas de leitura limitadas) e
   `publicacao/SHORTS.md` (títulos, descrições, ordem 3 → 1 → 2). Próximo passo: decidir o Ep. 05 com o usuário.
 
-- **Ep. 05 "Abre, filha." — Cabra Cabriola (10/11):** pasta `episodios/ep05-cabra-cabriola/` (o Papa-Figo ficou em `ideias/`).
-  ROTEIRO.md escrito (aguarda aprovação antes de narrar), PEDIDO_IMAGENS_IA.md (14 prompts), PEDIDO_MUSICA_SUNO.md,
-  busca de fotos/vídeos em `busca/`. Fora do episódio por decisão do usuário: bacurau (Freyre) e voz clonada por IA.
+- **Ep. 05 "Abre, filha." — Cabra Cabriola (10/11):** pasta `episodios/ep05-cabra-cabriola/` (Papa-Figo e outras
+  lendas ficaram em `ideias/`). Prontos: `ROTEIRO.md` (**aguarda aprovação do usuário antes de narrar**),
+  `PEDIDO_IMAGENS_IA.md` (14 prompts B01–B14, enviados no chat; aguardando as imagens), `imagens_reais/` (~40 fotos
+  tratadas) e `videos/` (25 clipes) com CREDITOS.txt. Fora do episódio por decisão do usuário: bacurau (Freyre) e
+  voz clonada por IA.
+  **Música:** o usuário gerou 6 faixas no Suno (`musica/suno_*.mp3`) e não consegue gerar mais. As de fundo/tensão
+  vieram quase só com grave (<250 Hz): `musica/consertar.sh` soma oitavas acima e `musica/montar_trilhas.sh` gera
+  `painel/sons/ep05_fundo_longa.mp3` (16 min), `ep05_tensao_longa.mp3` (8 min) e `ep05_cantiga.mp3`. Exemplos
+  enviados (`musica/exemplos/`) — aguardando o usuário dizer se o fundo dá pra ouvir no celular.
+  Próximos passos: aprovação do roteiro → narração (Gemini em fluxo, Algenib) → `montar_roteiro.py` → render.
 
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
