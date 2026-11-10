@@ -35,6 +35,13 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 - **Métricas do Ep. 03 (10/11):** CTR 1,06% e retenção média 1min54/11min53 → regras novas no guia
   (capa/título/gancho de 30–45 s). Valem do **Ep. 05** em diante; o Ep. 04 segue como está.
 
+- **Ep. 04 PRONTO PARA POSTAR (10/11):** vídeo 1080p enviado ao usuário; `episodios/ep04-medo-do-escuro/publicacao/`
+  tem 3 capas, YOUTUBE.md (3 títulos, descrição PT/ES/EN com capítulos e créditos, tags, comentário, config.) e
+  legendas pt-BR/es/en (.srt; `painel/ferramentas/gerar_srt.py` + `traduzir_srt.py`, Gemini de texto com vários
+  modelos de reserva — a cota grátis de cada um acaba rápido).
+- **Música por IA do Google:** a conta tem `lyria-3.5` (gerador de música) na mesma API do Gemini — testar como
+  alternativa ao ElevenLabs (sem créditos) para as trilhas de fundo dos próximos episódios.
+
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.

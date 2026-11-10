@@ -5,7 +5,7 @@ import json, re, sys, time
 import requests
 
 IDIOMAS = {"es": "Spanish (Latin America)", "en": "English (US)"}
-MODELO = "gemini-3.8-flash"
+MODELOS = ["gemini-3.5-flash", "gemini-3.1-flash-lite", "gemma-4-31b-it", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-flash-latest", "gemini-3.5-flash-lite"]  # se um estiver sobrecarregado (503), passa ao próximo
 
 
 def ler(arq):
@@ -26,14 +26,15 @@ def traduz(textos, idioma, contexto):
               f"Return ONLY a JSON array of exactly {len(textos)} strings, in the same order.\n\n"
               f"Previous lines for context (do not translate): {json.dumps(contexto, ensure_ascii=False)}\n\n"
               f"Lines to translate: {json.dumps(textos, ensure_ascii=False)}")
-    for tentativa in range(4):
-        r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{MODELO}:generateContent",
+    for tentativa in range(16):
+        modelo = MODELOS[tentativa % len(MODELOS)]
+        r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent",
                           headers={"x-goog-api-key": "proxy"},
                           json={"contents": [{"parts": [{"text": prompt}]}],
                                 "generationConfig": {"responseMimeType": "application/json", "temperature": 0.3}},
                           timeout=300)
         if r.status_code != 200:
-            print("  erro", r.status_code, r.text[:200]); time.sleep(10); continue
+            print(f"  {modelo}: erro {r.status_code}"); time.sleep(3 if r.status_code == 503 else 15); continue
         try:
             txt = r.json()["candidates"][0]["content"]["parts"][0]["text"]
             lista = json.loads(txt)
