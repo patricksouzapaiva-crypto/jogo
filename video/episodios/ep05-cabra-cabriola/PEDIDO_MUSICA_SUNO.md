@@ -39,3 +39,21 @@ Cole só isto (são marcações de estrutura, não letra):
 - Se vier com bateria, batida forte ou voz cantando palavras: gere de novo acrescentando no fim do estilo
   `strictly no drums, strictly instrumental`.
 - Baixe em **WAV** se o plano permitir (senão MP3).
+
+---
+## Resultado da 1ª leva (10/11) e pedido de nova versão
+Recebidas 6 faixas (`musica/suno_*.mp3`). Medição:
+- A1/A2 (fundo, ~60 s) e B1/B2 (tensão, 40–50 s): **87–96% da energia abaixo de 250 Hz** → no alto-falante do
+  celular quase não se ouve (mesmo problema do Ep. 04) e são curtas demais para 15 min sem repetir.
+- C1/C2 (cantiga, 2min33 e 2min58): na faixa média, dá pra ouvir bem; C2 é a mais regular (C1 tem um salto de
+  +18 dB aos 33 s). Boas para o tema e o epílogo; baixas, porque ficam na mesma faixa da voz.
+
+**Trilha A v2 (fundo que se ouve no celular):**
+```
+dark ambient horror underscore, slow 50 bpm, D minor, mid-register cello and viola sustained notes, sparse felt piano single notes in the middle register with long silence between them, distant detuned music box lullaby, soft high string harmonics, audible on small phone speakers, clear midrange, very little sub bass, deep room reverb, old house at night, no drums, no percussion, no sudden hits, no jump scares, no risers, steady quiet dynamics, unsettling, patient, minimal, strictly instrumental
+```
+**Trilha B v2 (tensão):**
+```
+tense horror underscore, 45 bpm, D minor with minor second clusters, sustained mid and high strings slowly swelling and fading, bowed metal and distant anvil resonance far in the background, glassy violin harmonics, quiet tremolo violas, clear midrange audible on phone speakers, very little sub bass, claustrophobic, something waiting behind a door, no drums, no percussion hits, no vocals, no sudden loud sounds, no jump scares, gradual and continuous, strictly instrumental
+```
+Usar **Extend** até passar de 4 minutos em cada.
