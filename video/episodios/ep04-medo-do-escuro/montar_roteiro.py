@@ -315,6 +315,7 @@ mus("A Júlia não voltou pra casa", "trilha_tensa_2", -28)
 mus("Às onze e vinte, a luz caiu", "suspense_forte", -25, em="No")
 mus("Aos vinte, ela viu.", "drone_terror", -26)
 mus("Os olhos fecharam sozinhos", "silencio")   # o ÚNICO silêncio total do episódio (escolha do usuário)
+mus("Dessa vez, não precisou esperar", "suspense_forte", -25)   # o silêncio acaba NO corte para o rosto: o pavor entra devagar
 mus("Na segunda-feira, a ala", "trilha_tensa_1", -28)
 mus('"Quando cair a energia, não acenda a luz. Espere. E nunca', "suspense_forte", -25)
 mus("Hoje, quando você apagar a luz", "trilha_tensa_1", -30)

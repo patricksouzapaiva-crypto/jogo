@@ -2542,6 +2542,10 @@
      ]
     ]
    },
+   "musica": {
+    "som": "suspense_forte",
+    "volume_db": -25
+   },
    "sons": [
     {
      "em": "minutos",
