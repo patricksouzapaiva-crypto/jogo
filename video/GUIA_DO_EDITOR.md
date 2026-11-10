@@ -500,3 +500,29 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - Amostra aprovada: 3min37 do Ep. 03 com fotos reais (roteiro gerado a partir de `ep03-conceito/roteiro.json`).
 - **Títulos (regra do usuário):** todo título termina com **" | Creepypasta"** — no longo e nos Shorts
   (nos Shorts: `<título> | Creepypasta #shorts`). Palavra de busca forte do nicho; aumenta o alcance.
+
+## 13. Auditoria do canal (vidIQ + Analytics, 10/11/2026) — o que adotamos
+O usuário decidiu **manter o estilo** (O Vigia, tema + história, edição dinâmica); a auditoria entra como ajuste,
+não como troca de formato. Números de partida: 165 inscritos, conversão 0,4% (Shorts dão views, não inscritos);
+longos com 47–130 views e retenção 14–26%; tráfego 62% feed de Shorts, 33% busca, quase nada de "sugeridos".
+Sinal positivo: o Short animado "O Vigia #01" fez 363 views em 2 dias (melhor início desde abril) → a série
+numerada do Vigia é o diferencial do canal.
+- **Constância acima de tudo:** meta de **1 longo por semana + 3–4 Shorts**, por 90 dias, antes de avaliar.
+  A pausa de 7 meses (e perder o Halloween) custou mais que qualquer capa.
+- **Shorts ≤ 35 s** (os de 1 min ou mais e os de 6–12 s foram mal). Frase-gancho e imagem forte no **primeiro
+  0,5 s**, lugar concreto (corredor de hospital, casa na quaresma). Os nossos s2 (51 s) e s3 (61 s) do Ep. 03
+  estavam longos demais — a partir de agora, cortar.
+- **Todo Short é teaser de um longo:** termina em aberto e usa o recurso **"Vídeo relacionado"** do YouTube
+  apontando para o episódio. Cada longo gera 3 Shorts de ≤ 35 s.
+- **Títulos:** manter "| Creepypasta"; nos Shorts, frase limpa + no máximo 2 hashtags (nunca repetidas).
+  Acrescentar uma promessa quando couber (um número, "o que a ciência explica", "nunca contei") — **sem
+  chamar de REAL uma história que é ficção** (os fatos reais das inserções podem ser a promessa).
+- **Tags:** só do nicho (terror, creepypasta, o tema do episódio). Limpar as tags erradas dos Shorts de março
+  (Danganronpa, lareira, Baba Yaga, espanhol) e os títulos com "#terror #terror"/erros de digitação.
+- **Formatos que estão fora da curva no terror BR** (testar sem largar o Vigia):
+  1. **Compilação longa** (40 min+): "Os casos do Vigia — N histórias para ouvir no escuro", juntando episódios
+     já prontos com pontes curtas do Vigia (custo baixo, nenhuma narração nova além das pontes).
+  2. **Versão para dormir:** a mesma compilação com chuva contínua por baixo e sem efeitos de susto.
+  3. **Folclore brasileiro como tema** do formato tema + história (lobisomem, Quaresma, Cruzeiro das Almas,
+     causos do interior) — entra nos próximos episódios.
+- **CTR:** meta acima de 5% nos longos (ver no Studio → Alcance). Retenção e CTR anotados aqui por episódio.

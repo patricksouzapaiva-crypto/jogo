@@ -42,6 +42,9 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 - **Música por IA do Google:** a conta tem `lyria-3.5` (gerador de música) na mesma API do Gemini — testar como
   alternativa ao ElevenLabs (sem créditos) para as trilhas de fundo dos próximos episódios.
 
+- **Auditoria do canal (10/11):** resumo e decisões na seção 13 do guia. Estilo mantido; mudanças: constância
+  (1 longo + 3–4 Shorts/semana), Shorts ≤ 35 s ligados ao longo, testar compilação de 40 min+ e folclore BR.
+
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.
