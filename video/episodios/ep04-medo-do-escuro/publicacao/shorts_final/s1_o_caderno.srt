@@ -1,0 +1,55 @@
+1
+00:00:00,400 --> 00:00:01,740
+Quatro metros.
+
+2
+00:00:01,940 --> 00:00:02,900
+Três metros.
+
+3
+00:00:02,980 --> 00:00:04,180
+Dois metros e meio.
+
+4
+00:00:05,100 --> 00:00:05,940
+Um metro.
+
+5
+00:00:06,260 --> 00:00:07,960
+Setenta centímetros.
+
+6
+00:00:09,440 --> 00:00:10,910
+A última linha estava escrita em letras
+
+7
+00:00:10,960 --> 00:00:13,370
+enormes, tortas, como se ele tivesse escrito
+
+8
+00:00:13,420 --> 00:00:14,860
+sem olhar pro papel:
+
+9
+00:00:15,440 --> 00:00:16,940
+Quarenta centímetros.
+
+10
+00:00:17,410 --> 00:00:18,520
+Ela sorriu.
+
+11
+00:00:21,120 --> 00:00:23,100
+A página seguinte tinha uma frase só,
+
+12
+00:00:23,160 --> 00:00:24,900
+sublinhada três vezes:
+
+13
+00:00:25,460 --> 00:00:26,780
+Enquanto eu olho,
+
+14
+00:00:26,980 --> 00:00:28,680
+ela não anda.

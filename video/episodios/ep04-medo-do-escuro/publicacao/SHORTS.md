@@ -12,9 +12,9 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 ## Arquivos
 | Short | Vídeo | Legenda |
 |---|---|---|
-| 1 — O caderno | `shorts_final/s1_o_caderno.mp4` | `shorts_final/s1_o_caderno.srt` |
-| 2 — Você apagou a luz | `shorts_final/s2_voce_apagou_a_luz.mp4` | `shorts_final/s2_voce_apagou_a_luz.srt` |
-| 3 — Não pisca | `shorts_final/s3_nao_pisca.mp4` | `shorts_final/s3_nao_pisca.srt` |
+| 1 — O caderno | `shorts_final/s1_o_caderno.mp4` (33 s) | `shorts_final/s1_o_caderno.srt` |
+| 2 — Você apagou a luz | `shorts_final/s2_voce_apagou_a_luz.mp4` (33 s) | `shorts_final/s2_voce_apagou_a_luz.srt` |
+| 3 — Não pisca | `shorts_final/s3_nao_pisca.mp4` (33 s) | `shorts_final/s3_nao_pisca.srt` |
 
 A legenda já vai gravada na imagem; envie o .srt também (Legendas → Português → Enviar arquivo →
 "Com sincronização") — ajuda na busca.

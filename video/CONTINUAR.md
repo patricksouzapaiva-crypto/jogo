@@ -45,6 +45,10 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 - **Auditoria do canal (10/11):** resumo e decisões na seção 13 do guia. Estilo mantido; mudanças: constância
   (1 longo + 3–4 Shorts/semana), Shorts ≤ 35 s ligados ao longo, testar compilação de 40 min+ e folclore BR.
 
+- **Shorts do Ep. 04 (10/11):** 3 prontos e enviados (33 s cada, −14,5 a −15,5 LUFS): `episodios/ep04-medo-do-escuro/
+  montar_shorts.py` (aceita `pular` para cortar batidas e manter ≤ 35 s; pausas de leitura limitadas) e
+  `publicacao/SHORTS.md` (títulos, descrições, ordem 3 → 1 → 2). Próximo passo: decidir o Ep. 05 com o usuário.
+
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.
