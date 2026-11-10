@@ -49,6 +49,10 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   montar_shorts.py` (aceita `pular` para cortar batidas e manter ≤ 35 s; pausas de leitura limitadas) e
   `publicacao/SHORTS.md` (títulos, descrições, ordem 3 → 1 → 2). Próximo passo: decidir o Ep. 05 com o usuário.
 
+- **Ep. 05 Papa-Figo (10/11):** pesquisa pronta em `episodios/ep05-papa-figo/PESQUISA.md` (lenda, história real,
+  psicologia/cinema, regras do YouTube, proposta de história "O nome da rua"). Aguardando o usuário aprovar a
+  proposta para escrever o ROTEIRO.md.
+
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.
