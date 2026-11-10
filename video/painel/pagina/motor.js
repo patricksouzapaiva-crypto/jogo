@@ -494,7 +494,7 @@ function telaTexto(c, t, a) {
   const { W, H } = D, T = D.tema;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = "#030303"; ctx.fillRect(0, 0, W, H);
   // estilos: "maquina" (máquina de escrever) e "impacto" (serifada grande, com brilho)
-  const est = c.estilo === "impacto" ? { fonte: "Cinzel", peso: 700, tam: 118 } : c.estilo === "maquina" ? { fonte: "Special Elite", peso: 400, tam: 56 } : {};
+  const est = c.estilo === "impacto" ? { fonte: "Cinzel", peso: 700, tam: 118 } : c.estilo === "maquina" ? { fonte: "Special Elite", peso: 400, tam: Math.round(Math.min(D.W, D.H) * 0.07) } : {};
   const tam = c.tamanho || est.tam || Math.round(Math.min(W, H) * 0.055);
   const fam0 = c.fonte || est.fonte || T.fonte_texto;
   const peso0 = c.peso || est.peso || 500;

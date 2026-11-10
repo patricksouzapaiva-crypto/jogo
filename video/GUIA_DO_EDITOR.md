@@ -406,6 +406,8 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   (`saida_lenta()` no montar_roteiro: `pausa_antes_s` + `entrada` + `antecipar`). No clímax, não cortar para
   outra imagem (ex.: close de olho) — fica na criatura. Sempre analisar cada corte: se a cena é de tensão,
   a troca não pode tirar a tensão que o espectador está sentindo. Abertura logo após o cold open: `"segurar"`.
+- **10/11/2026 — texto digitado maior:** telas "máquina" (frases longas) agora têm letra de 7% da altura do
+  vídeo (76 px em 1080p; antes 56 px). Telas curtas de impacto continuam no estilo próprio.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.
