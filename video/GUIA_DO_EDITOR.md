@@ -442,6 +442,22 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   aqui. Esperando." + música-assinatura `vinheta_ultimo_abrigo` (caixinha de música, cello, sino distante).
   Como usar: emendar a fala no fim da narração (1,8 s de pausa), última batida com `"cta_inicio": true` e o
   texto da vinheta, `cta.clique_em: "Inscreva-se"` (o botão é clicado nessa palavra) — ver Ep. 04.
+- **10/11/2026 — MÉTRICAS DO EP. 03 (primeiras 24 h) e o que muda a partir do Ep. 05:**
+  ~1.600 impressões (o tema/título é entregue), mas **CTR de 1,06%** (baixo) e **duração média de 1min54 em
+  11min53** (~16%: o público sai logo no começo).
+  - **Capa:** alto contraste, UMA figura ou detalhe escondido que incomode na hora (a forma no canto, um olho
+    no escuro, a silhueta na porta), sem poluição: no máximo 2–3 palavras grandes, ou nenhuma. Sempre gerar
+    2–3 versões para o "Testar e comparar" do YouTube Studio.
+  - **Título:** curto e direto, gancho misterioso ou ordem/ameaça (≤ 5 palavras antes do "| Creepypasta");
+    deve criar uma pergunta que só o vídeo responde. Capa e título contam coisas DIFERENTES (não repetir).
+  - **Gancho (0–45 s):** começar DENTRO da cena mais tensa da história — imagem forte nos primeiros 2 s, a
+    pergunta/ameaça dita nos primeiros 5–8 s — e só depois a abertura e o contexto. Nada de contextualização
+    lenta antes de prender. O cold open passa de ~15 s para **30–45 s**, com um "laço aberto" ("até o fim
+    você vai entender por que…").
+  - **Tema (formato tema + história):** depois do gancho, no máximo ~60 s e entremeado de imagens fortes; ou
+    dividido em pílulas ao longo da história em vez de um bloco no começo.
+  - Conferir no YouTube Studio → Retenção do público onde está a queda (0:30? 1:00? na abertura?) e anotar aqui
+    a cada episódio, para saber se a mudança funcionou.
 - **Regras permanentes da série:** terror psicológico; gancho forte nos primeiros segundos;
   terminar com revelação ou imagem inquietante; não explicar demais o sobrenatural; estrutura
   simples e reutilizável; nunca substituir o Vigia.

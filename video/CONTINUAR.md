@@ -32,6 +32,9 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
   O usuário escolheu ESPERAR a cota para manter a mesma voz (Algenib) — não trocar de modelo.
 - Motor (09/11): Vigia fora por padrão (`vigia_padrao`), halo corrigido, som `sem_sustos`, aviso de salto de volume.
 
+- **Métricas do Ep. 03 (10/11):** CTR 1,06% e retenção média 1min54/11min53 → regras novas no guia
+  (capa/título/gancho de 30–45 s). Valem do **Ep. 05** em diante; o Ep. 04 segue como está.
+
 ## Pendências
 0. Ep. 04: (a) ~~vídeo dentro da cena~~ FEITO; (b) narração Gemini (uma chamada); (c) montar roteiro.json
    com o Vigia só nas inserções; (d) renderizar e revisar.
