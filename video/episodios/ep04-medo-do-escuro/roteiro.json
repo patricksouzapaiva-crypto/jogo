@@ -3,7 +3,7 @@
  "formato": "16:9",
  "tema": "vigia",
  "avatar": "vigia_hd",
- "voz_arquivo": "audio/voz_com_vinheta.wav",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
  "vigia_padrao": false,
  "preencher_pausas": {
   "min": 1.3
@@ -659,8 +659,8 @@
     ]
    },
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    }
   },
   {
@@ -812,8 +812,8 @@
    ],
    "pausa_antes_s": 1.2,
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    },
    "sons": [
     {
@@ -1264,8 +1264,8 @@
     "cps": 12
    },
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    },
    "sons": [
     {
@@ -1547,8 +1547,8 @@
    },
    "pausa_antes_s": 3.1,
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    },
    "enfase": [
     {
@@ -2011,8 +2011,8 @@
     }
    ],
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25,
+    "som": "suspense_sinistro",
+    "volume_db": -24,
     "em": "Esperando"
    },
    "sons": [
@@ -2255,8 +2255,8 @@
     }
    ],
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25,
+    "som": "suspense_sinistro",
+    "volume_db": -24,
     "em": "No"
    }
   },
@@ -2544,8 +2544,8 @@
     ]
    },
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    },
    "sons": [
     {
@@ -2715,8 +2715,8 @@
     "vermelho": "olhos."
    },
    "musica": {
-    "som": "suspense_forte",
-    "volume_db": -25
+    "som": "suspense_sinistro",
+    "volume_db": -24
    },
    "sem_legenda": true
   },

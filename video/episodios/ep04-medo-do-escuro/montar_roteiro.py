@@ -291,33 +291,33 @@ saida_lenta("Os olhos fecharam sozinhos", 0.3, "fundir", 1.8)    # os olhos fech
 saida_lenta("Na segunda-feira, a ala", 3.0, "preto", 2.0)        # o rosto da forma fica; depois, o respiro
 saida_lenta("E o apartamento do sétimo andar", 1.8, "fundir", 1.6)  # "cada um olhando pra um canto"
 
-# ================================================================ trilha (baixa). Momentos-chave: "suspense_forte" (10/11:
+# ================================================================ trilha (baixa). Momentos-chave: "suspense_sinistro" (10/11:
 # o usuário não quer silêncio total — uma música própria, diferente das trilhas, que segura a atenção)
 mus("Ela ficou parada no escuro", "drone_terror", -30)
 mus("Toda criança já pediu", "trilha_tensa_1", -28)
 mus("A Júlia tinha vinte e nove anos", "drone_tensao", -28)
-mus("Duas semanas depois", "suspense_forte", -25)
+mus("Duas semanas depois", "suspense_sinistro", -24)
 mus("Primeiro, preto total.", "drone_terror", -28)
-mus("Ela acendeu a lanterna.", "suspense_forte", -25)
+mus("Ela acendeu a lanterna.", "suspense_sinistro", -24)
 mus("Em dois mil e dez", "trilha_tensa_1", -30)
 mus("Só que a forma não ficava", "trilha_tensa_2", -28)
 mus("Isso tem explicação.", "trilha_tensa_1", -30)
 mus("A Júlia começou a anotar", "drone_tensao", -28)
 mus('"Quatro metros."', "drone_terror", -28)
-mus('"Quarenta centímetros.', "suspense_forte", -25)
+mus('"Quarenta centímetros.', "suspense_sinistro", -24)
 mus("A Júlia desceu e foi falar", "trilha_tensa_1", -28)
-mus("Guarda essa frase do caderno", "suspense_forte", -25)
+mus("Guarda essa frase do caderno", "suspense_sinistro", -24)
 mus("Na noite seguinte, no plantão", "drone_tensao", -28)
 mus("O quarto estava na penumbra", "drone_terror", -28)
-mus('"A sua ficou em casa', "suspense_forte", -25, em="Esperando")
+mus('"A sua ficou em casa', "suspense_sinistro", -24, em="Esperando")
 mus("A gente pisca de quinze", "trilha_tensa_1", -30)
 mus("A Júlia não voltou pra casa", "trilha_tensa_2", -28)
-mus("Às onze e vinte, a luz caiu", "suspense_forte", -25, em="No")
+mus("Às onze e vinte, a luz caiu", "suspense_sinistro", -24, em="No")
 mus("Aos vinte, ela viu.", "drone_terror", -26)
 mus("Os olhos fecharam sozinhos", "silencio")   # o ÚNICO silêncio total do episódio (escolha do usuário)
-mus("Dessa vez, não precisou esperar", "suspense_forte", -25)   # o silêncio acaba NO corte para o rosto: o pavor entra devagar
+mus("Dessa vez, não precisou esperar", "suspense_sinistro", -24)   # o silêncio acaba NO corte para o rosto: o pavor entra devagar
 mus("Na segunda-feira, a ala", "trilha_tensa_1", -28)
-mus('"Quando cair a energia, não acenda a luz. Espere. E nunca', "suspense_forte", -25)
+mus('"Quando cair a energia, não acenda a luz. Espere. E nunca', "suspense_sinistro", -24)
 mus("Hoje, quando você apagar a luz", "trilha_tensa_1", -30)
 
 # ================================================================ efeitos (baixos, depois da palavra, ~1 a cada 30 s)
@@ -364,7 +364,7 @@ enf(VINHETA[:20], "Esperando", "s_sorriso_sombrio", 3.0)
 
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
-    "voz_arquivo": "audio/voz_com_vinheta.wav",   # narração + 1,8 s + fala da vinheta "apertar_pausas": False,
+    "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",   # narração + 1,8 s + vinheta, com redução de chiado (afftdn) "apertar_pausas": False,
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.14,

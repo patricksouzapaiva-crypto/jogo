@@ -195,10 +195,23 @@ def inserir_silencios(wav, tempos, insercoes, destino):
     desloc = 0.0
     runs = _silencios(a, sr)
     for i, seg in sorted(insercoes):
-        t = (tempos[i - 1][1] + tempos[i][0]) / 2 - desloc  # instante no áudio original
-        sil = _silencio_entre(runs, tempos[i - 1][1] - desloc - 0.2, tempos[i][0] - desloc + 0.2)
-        if sil:
-            t = (sil[0] + sil[1]) / 2
+        t_ant, t_prox = tempos[i - 1][1] - desloc, tempos[i][0] - desloc
+        t = (t_ant + t_prox) / 2  # instante no áudio original
+        # 10/11: a pausa vai no silêncio real que fica IMEDIATAMENTE antes da próxima palavra (o mais próximo
+        # do início dela), e nunca antes do fim da palavra anterior. O Whisper erra os limites às vezes: no
+        # Ep. 04 o fim de "olhar." veio cedo e a pausa cortou a palavra ao meio ("glitch").
+        cand = [(s0, s1) for s0, s1 in runs if s1 - s0 >= 0.06 and s1 > t_ant - 0.1 and s0 < t_prox + 0.6]
+        if cand:
+            s0, s1 = min(cand, key=lambda r: abs(min(r[1], t_prox + 0.6) - t_prox))
+            t = (max(s0, t_ant - 0.1) + min(s1, t_prox + 0.6)) / 2
+        else:  # sem silêncio: o trecho de 30 ms mais quieto entre as duas palavras
+            j0, j1 = int((t_ant - 0.1) * sr), int((t_prox + 0.3) * sr)
+            q = int(0.03 * sr)
+            seg_ = a[max(0, j0):j1]
+            if len(seg_) > q:
+                e_ = np.convolve(seg_ ** 2, np.ones(q) / q, mode="valid")
+                t = (max(0, j0) + int(np.argmin(e_)) + q // 2) / sr
+            print(f"    aviso: pausa sem silêncio real por perto (palavra {i}); corte no ponto mais quieto")
         corte = int(t * sr)
         pedacos += [a[cursor:corte], np.zeros(int(seg * sr), np.float32)]
         cursor = corte
@@ -218,7 +231,9 @@ def _silencios(a, sr=48000):
     rms = np.sqrt(np.mean(a[: n * q].reshape(n, q) ** 2, axis=1) + 1e-12)
     db = 20 * np.log10(rms)
     fala = np.percentile(db, 90)
-    limiar = min(-38.0, max(-58.0, fala - 32.0))
+    # 10/11: o limiar acompanha o ruído de fundo da própria narração (6 dB acima dele); antes ficava abaixo do
+    # "chão" de ruído do Gemini (~-49 dB) e quase nenhuma pausa real era reconhecida
+    limiar = min(-38.0, max(-58.0, fala - 32.0, float(np.percentile(db, 10)) + 6.0))
     mudo = db < limiar
     runs, i = [], 0
     while i < n:

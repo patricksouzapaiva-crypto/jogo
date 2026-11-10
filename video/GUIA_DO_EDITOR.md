@@ -414,11 +414,18 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   os sub_drops depois de "Ela sorriu." etc. ainda soavam como pancada. Narração longa: `narrar_fluxo.py`
   (streaming) funcionou — 11min46 de áudio em 110 s, uma chamada só.
 - **10/11/2026 — NADA DE SILÊNCIO TOTAL a cada momento-chave (corrige a regra de 08/11):** silêncio sem nada
-  vira "falta alguma coisa". Nos momentos-chave entra `suspense_forte` (sons/, ElevenLabs Music: clusters
-  dissonantes de metais e cellos graves, sub-grave distorcido, metal arranhado, coro grave sussurrado, pulso
-  lento de "algo se aproximando"; sem melodia e sem golpes), a −25. O silêncio TOTAL fica guardado para um
-  único momento por episódio, o mais forte (Ep. 04: os olhos fechando antes do rosto da criatura). A 1ª versão,
-  mais suave e minimalista (`suspense_atencao`), foi recusada pelo usuário: fraca demais.
+  vira "falta alguma coisa". Nos momentos-chave entra `suspense_sinistro` (sons/, composta em código por
+  `ferramentas/sintetizar_trilha.py`: piano grave em ré menor com 2ª menor e trítono, cordas graves, coro "uuu",
+  motivo de celesta, reverberação de sala), a −24. **Fundo tem que ser MÚSICA, nunca ruído:** a `suspense_forte`
+  (metal arranhado, grave distorcido) soou como chiado/defeito do celular para o usuário e foi apagada. Medir a
+  "ruidez" (planura espectral) de toda trilha nova: as boas ficam abaixo de ~0,04. O silêncio TOTAL fica para um
+  único momento por episódio, o mais forte (Ep. 04: os olhos fechando antes do rosto da criatura).
+- **10/11/2026 — chiado da narração:** o Gemini entrega a voz com ruído de fundo em ~−49 dB, que aparece nas
+  pausas. Sempre limpar antes de montar: `ffmpeg -i voz.wav -af "afftdn=nr=18:nf=-50:tn=1,highpass=f=70" voz_limpa.wav`
+  (−8 dB de chiado, voz intacta).
+- **10/11/2026 — pausas inseridas nunca no meio da palavra:** o motor põe a pausa no silêncio real logo antes
+  da próxima palavra (o Whisper às vezes erra o fim da palavra: "olhar." foi cortado ao meio no Ep. 04 = glitch).
+  Conferir depois de renderizar: nenhuma pausa com som acima de −40 dB colado nela.
 - **10/11/2026 — imagem-chave escura demais:** se a criatura não aparece no celular, criar versão `_clara`
   (sombras levantadas + luz suave tipo luar sobre a figura, cantos escuros) e mirar os closes na cabeça real.
 - **10/11/2026 — VINHETA FINAL (fim de todo episódio longo):** a tela de inscrição não pode ficar muda.
