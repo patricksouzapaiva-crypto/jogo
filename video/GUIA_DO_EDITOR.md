@@ -413,13 +413,21 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
 - **10/11/2026 — efeitos no silêncio:** no máximo 8 dB abaixo da voz típica (`efeitos_pico_max` −8). Com −3,
   os sub_drops depois de "Ela sorriu." etc. ainda soavam como pancada. Narração longa: `narrar_fluxo.py`
   (streaming) funcionou — 11min46 de áudio em 110 s, uma chamada só.
-- **10/11/2026 — NADA DE SILÊNCIO TOTAL a cada momento-chave (corrige a regra de 08/11):** silêncio sem nada
-  vira "falta alguma coisa". Nos momentos-chave entra `suspense_sinistro` (sons/, composta em código por
-  `ferramentas/sintetizar_trilha.py`: piano grave em ré menor com 2ª menor e trítono, cordas graves, coro "uuu",
-  motivo de celesta, reverberação de sala), a −24. **Fundo tem que ser MÚSICA, nunca ruído:** a `suspense_forte`
-  (metal arranhado, grave distorcido) soou como chiado/defeito do celular para o usuário e foi apagada. Medir a
-  "ruidez" (planura espectral) de toda trilha nova: as boas ficam abaixo de ~0,04. O silêncio TOTAL fica para um
-  único momento por episódio, o mais forte (Ep. 04: os olhos fechando antes do rosto da criatura).
+- **10/11/2026 — MÚSICA DE FUNDO CONTÍNUA (regra central do usuário):** uma música sinistra toca o episódio
+  INTEIRO, baixa mas audível — é ela que dá o clima; narração e efeitos são o complemento. No roteiro:
+  `"ambiente_inicial": [{"som": "<trilha longa>", "volume_db": -9}]` (passa pela mixagem automática: abaixa sob
+  a voz, sobe nas pausas) e `"ambiente": {"som": "nenhum"}` na batida da vinheta final. A trilha é composta em
+  código no comprimento do episódio (`ferramentas/sintetizar_trilha.py saida.mp3 800`), sem loop. Por cima, só
+  reforços ATONAIS (drones) nos trechos de tensão — nunca uma 2ª música tonal (embola).
+  **"Silêncio" = silêncio de NARRAÇÃO. Nunca silêncio total** (parece que o áudio cortou). Se a música parar,
+  tem que ser um momento pensado para criar tensão, que não pareça erro.
+  Trilhas recusadas: `suspense_forte` (soava como ruído), `suspense_atencao` (fraca). Toda trilha nova: medir a
+  "ruidez" (planura espectral); as boas ficam abaixo de ~0,04.
+- **10/11/2026 — tempo de leitura:** toda tela de texto fica INTEIRA na tela pelo menos 1,5 s + 0,3 s por palavra
+  (o motor imprime "aviso leitura"; corrigir com pausa de narração antes da fala seguinte). "20 MINUTOS" sumia.
+- **10/11/2026 — sincronismo:** o Whisper marca o início de frases depois de pausa cedo demais (até 1 s); o motor
+  agora encosta esses inícios no fim do silêncio real (`ajustar_inicios`). Antes de enviar qualquer versão:
+  conferir fala x legenda em vários trechos (alvo 0,0–0,3 s).
 - **10/11/2026 — chiado da narração:** o Gemini entrega a voz com ruído de fundo em ~−49 dB, que aparece nas
   pausas. Sempre limpar antes de montar: `ffmpeg -i voz.wav -af "afftdn=nr=18:nf=-50:tn=1,highpass=f=70" voz_limpa.wav`
   (−8 dB de chiado, voz intacta).

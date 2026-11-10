@@ -27,7 +27,12 @@
    "escuro"
   ]
  },
- "ambiente_inicial": [],
+ "ambiente_inicial": [
+  {
+   "som": "suspense_sinistro_longa",
+   "volume_db": -9
+  }
+ ],
  "musica": {
   "som": "silencio",
   "volume_db": -40
@@ -78,7 +83,7 @@
    },
    "musica": {
     "som": "drone_terror",
-    "volume_db": -30
+    "volume_db": -32
    }
   },
   {
@@ -159,10 +164,6 @@
      ]
     ],
     "com_vigia": true
-   },
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -28
    }
   },
   {
@@ -303,7 +304,8 @@
     "tipo": "texto",
     "texto": "O corpo ainda lembra.\nNo escuro, o mesmo barulho\nassusta mais.",
     "estilo": "maquina",
-    "vermelho": "lembra."
+    "vermelho": "lembra.",
+    "cps": 30
    },
    "sem_legenda": true
   },
@@ -327,6 +329,7 @@
      ]
     ]
    },
+   "pausa_antes_s": 2.3,
    "enfase": [
     {
      "em": "Mas",
@@ -458,13 +461,14 @@
     "texto": "20 MINUTOS",
     "estilo": "impacto",
     "vermelho": "20",
-    "cps": 10,
+    "cps": 16,
     "tamanho": 160
    },
    "sem_legenda": true
   },
   {
    "fala": "Agora que você entende por que o escuro mexe tanto com a gente…",
+   "pausa_antes_s": 2.2,
    "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
@@ -526,8 +530,8 @@
     }
    ],
    "musica": {
-    "som": "drone_tensao",
-    "volume_db": -28
+    "som": "silencio",
+    "volume_db": -26
    }
   },
   {
@@ -648,7 +652,8 @@
      1.0,
      1.1
     ]
-   }
+   },
+   "pausa_antes_s": 2.0
   },
   {
    "fala": "Duas semanas depois, numa madrugada de folga, choveu. A luz caiu.",
@@ -658,10 +663,6 @@
      1.0,
      1.04
     ]
-   },
-   "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
    }
   },
   {
@@ -707,7 +708,7 @@
    },
    "musica": {
     "som": "drone_terror",
-    "volume_db": -28
+    "volume_db": -30
    }
   },
   {
@@ -813,8 +814,8 @@
    ],
    "pausa_antes_s": 1.2,
    "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
+    "som": "silencio",
+    "volume_db": -26
    },
    "sons": [
     {
@@ -862,11 +863,7 @@
     "duracao_entrada": 1.4,
     "antecipar": 1.4
    },
-   "pausa_antes_s": 2.5999999999999996,
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -30
-   }
+   "pausa_antes_s": 2.5999999999999996
   },
   {
    "fala": "Em menos de um minuto, a maioria já via o rosto se deformar. Alguns viram parentes mortos. Outros… um desconhecido.",
@@ -905,8 +902,10 @@
     "tipo": "texto",
     "texto": "No escuro, o cérebro para de esperar\ne começa a inventar.",
     "estilo": "maquina",
-    "vermelho": "inventar."
+    "vermelho": "inventar.",
+    "cps": 30
    },
+   "pausa_antes_s": 1.9,
    "sem_legenda": true
   },
   {
@@ -929,6 +928,7 @@
      ]
     ]
    },
+   "pausa_antes_s": 2.9,
    "enfase": [
     {
      "em": "exatamente",
@@ -945,10 +945,6 @@
      1.0,
      1.06
     ]
-   },
-   "musica": {
-    "som": "trilha_tensa_2",
-    "volume_db": -28
    }
   },
   {
@@ -1053,11 +1049,7 @@
     "duracao_entrada": 1.4,
     "antecipar": 1.4
    },
-   "pausa_antes_s": 2.5999999999999996,
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -30
-   }
+   "pausa_antes_s": 2.5999999999999996
   },
   {
    "fala": "Astrônomos aprendem cedo: pra ver uma estrela fraca, não se olha direto pra ela. Olha-se um pouco ao lado.",
@@ -1076,7 +1068,8 @@
     "tipo": "texto",
     "texto": "No escuro, o que está\nbem na sua frente\né o que você vê pior.",
     "estilo": "maquina",
-    "vermelho": "pior."
+    "vermelho": "pior.",
+    "cps": 30
    },
    "sem_legenda": true
   },
@@ -1089,10 +1082,7 @@
      1.08
     ]
    },
-   "musica": {
-    "som": "drone_tensao",
-    "volume_db": -28
-   }
+   "pausa_antes_s": 4.2
   },
   {
    "fala": "Na quarta anotação, ela fez uma conta que não devia ter feito.",
@@ -1201,7 +1191,7 @@
    },
    "musica": {
     "som": "drone_terror",
-    "volume_db": -28
+    "volume_db": -30
    },
    "sem_legenda": true
   },
@@ -1223,7 +1213,8 @@
       0.6
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "\"Um metro.\" \"Setenta centímetros.\"",
@@ -1253,7 +1244,8 @@
       0.74
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.2
   },
   {
    "fala": "\"Quarenta centímetros. Ela sorriu.\"",
@@ -1263,10 +1255,6 @@
     "estilo": "impacto",
     "vermelho": "sorriu.",
     "cps": 12
-   },
-   "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
    },
    "sons": [
     {
@@ -1291,7 +1279,7 @@
     "duracao_entrada": 1.4,
     "antecipar": 1.4
    },
-   "pausa_antes_s": 3.2
+   "pausa_antes_s": 3.7
   },
   {
    "fala": "\"Enquanto eu olho, ela não anda.\"",
@@ -1325,10 +1313,10 @@
     "duracao_entrada": 1.4,
     "antecipar": 1.4
    },
-   "pausa_antes_s": 2.5999999999999996,
+   "pausa_antes_s": 3.6999999999999997,
    "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -28
+    "som": "silencio",
+    "volume_db": -26
    }
   },
   {
@@ -1462,7 +1450,7 @@
     "duracao_entrada": 1.2,
     "antecipar": 1.2
    },
-   "pausa_antes_s": 2.0
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "\"Pra qual hospital?\"",
@@ -1547,10 +1535,6 @@
     "antecipar": 1.6
    },
    "pausa_antes_s": 3.1,
-   "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
-   },
    "enfase": [
     {
      "em": "Guarda",
@@ -1628,6 +1612,7 @@
      ]
     ]
    },
+   "pausa_antes_s": 2.2,
    "enfase": [
     {
      "em": "Não",
@@ -1653,11 +1638,7 @@
     "duracao_entrada": 1.6,
     "antecipar": 1.6
    },
-   "pausa_antes_s": 3.1,
-   "musica": {
-    "som": "drone_tensao",
-    "volume_db": -28
-   }
+   "pausa_antes_s": 3.1
   },
   {
    "fala": "Aurélio. Setenta e um anos. Ala de longa permanência, quarto quatro, leito catorze. Internado havia oito meses.",
@@ -1710,7 +1691,7 @@
    },
    "musica": {
     "som": "drone_terror",
-    "volume_db": -28
+    "volume_db": -30
    }
   },
   {
@@ -1830,7 +1811,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "\"Ela não mora no apartamento, menina. Ela é de quem vê. A minha veio comigo.\"",
@@ -2012,8 +1994,8 @@
     }
    ],
    "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24,
+    "som": "silencio",
+    "volume_db": -26,
     "em": "Esperando"
    },
    "sons": [
@@ -2039,11 +2021,7 @@
     "duracao_entrada": 2.2,
     "antecipar": 2.2
    },
-   "pausa_antes_s": 5.4,
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -30
-   }
+   "pausa_antes_s": 5.4
   },
   {
    "fala": "Tente ficar sem piscar. Em menos de um minuto o olho arde. Em dois, dói. A visão embaça, as lágrimas escorrem.",
@@ -2112,10 +2090,6 @@
      1.0,
      1.04
     ]
-   },
-   "musica": {
-    "som": "trilha_tensa_2",
-    "volume_db": -28
    }
   },
   {
@@ -2146,7 +2120,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 0.6
   },
   {
    "fala": "\"Não. Por quê?\"",
@@ -2254,12 +2229,7 @@
      "vermelho": "inteiro.",
      "em": "No"
     }
-   ],
-   "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24,
-    "em": "No"
-   }
+   ]
   },
   {
    "fala": "Dessa vez, ela não acendeu nada. Sentou na cama, de frente pro quarto, e esperou os olhos acostumarem.",
@@ -2273,7 +2243,7 @@
     "duracao_entrada": 1.4,
     "antecipar": 1.4
    },
-   "pausa_antes_s": 2.4
+   "pausa_antes_s": 3.0
   },
   {
    "fala": "Contou os minutos.",
@@ -2306,7 +2276,7 @@
    },
    "musica": {
     "som": "drone_terror",
-    "volume_db": -26
+    "volume_db": -28
    }
   },
   {
@@ -2545,8 +2515,8 @@
     ]
    },
    "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
+    "som": "drone_terror",
+    "volume_db": -28
    },
    "sons": [
     {
@@ -2583,8 +2553,8 @@
    },
    "pausa_antes_s": 5.0,
    "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -28
+    "som": "silencio",
+    "volume_db": -26
    },
    "enfase": [
     {
@@ -2715,10 +2685,6 @@
     "estilo": "maquina",
     "vermelho": "olhos."
    },
-   "musica": {
-    "som": "suspense_sinistro",
-    "volume_db": -24
-   },
    "sem_legenda": true
   },
   {
@@ -2741,10 +2707,7 @@
      ]
     ]
    },
-   "musica": {
-    "som": "trilha_tensa_1",
-    "volume_db": -30
-   },
+   "pausa_antes_s": 1.6,
    "enfase": [
     {
      "em": "conta",
@@ -2844,6 +2807,9 @@
    "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
    "cta_inicio": true,
    "sem_legenda": true,
+   "ambiente": {
+    "som": "nenhum"
+   },
    "musica": {
     "som": "vinheta_ultimo_abrigo",
     "volume_db": -20

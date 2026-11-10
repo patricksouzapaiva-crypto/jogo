@@ -158,6 +158,31 @@ def transcrever(wav: Path, roteiro_txt: str):
     return [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words]
 
 
+def ajustar_inicios(wav, tempos, janela=(0.8, 1.2)):
+    """10/11: o Whisper marca o início de frases depois de pausa CEDO demais (até 1 s no diálogo do Aurélio,
+    Ep. 04) — e os cortes/legendas seguem esse tempo, deixando o som "atrasado da imagem". Aqui cada palavra
+    que vem depois de uma pausa tem o início encostado no fim do silêncio REAL mais próximo (medido no áudio)."""
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(wav), "-f", "f32le", "-ac", "1", "-ar", "48000", "-"],
+                         capture_output=True, check=True).stdout
+    runs = [r for r in _silencios(np.frombuffer(raw, np.float32)) if r[1] - r[0] >= 0.12]
+    novos, mudou = list(tempos), 0
+    for i in range(1, len(novos)):
+        s0, e0 = novos[i]
+        perto = [r for r in runs if s0 - janela[0] <= r[1] <= s0 + janela[1] and r[1] > novos[i - 1][0] + 0.05]
+        if not perto:
+            continue
+        r = min(perto, key=lambda r: abs(r[1] - s0))
+        ini = r[1] + 0.02
+        if abs(ini - s0) < 0.08 or ini >= e0 + 0.6 or (i + 1 < len(novos) and ini >= novos[i + 1][0] - 0.05):
+            continue
+        novos[i] = (ini, max(e0, ini + 0.08))
+        if novos[i - 1][1] > r[0]:  # a palavra anterior termina onde o silêncio começa
+            novos[i - 1] = (novos[i - 1][0], max(novos[i - 1][0] + 0.05, r[0]))
+        mudou += 1
+    print(f"    inícios de frase ajustados ao áudio real: {mudou}")
+    return novos
+
+
 def alinhar(palavras_roteiro: list[str], ouvidas):
     """Casa as palavras do roteiro com as ouvidas; as que não casam recebem tempo interpolado."""
     a = [norm(w) for w in palavras_roteiro]
@@ -826,6 +851,15 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     for c in D["cenas"]:
         if c.get("video"):
             extrair_quadros(c, fps)
+    # 10/11: tela de texto precisa ficar INTEIRA na tela tempo suficiente para ler ("20 MINUTOS" sumia antes)
+    for c in D["cenas"]:
+        txt = (c.get("texto") or "").strip()
+        if c.get("tipo") == "texto" and txt and not c.get("abertura"):
+            pronto = 0.25 + len(txt) / (c.get("cps") or 22)
+            visivel = (c["t1"] - c["t0"]) - pronto
+            precisa = 1.5 + 0.3 * len(txt.split())
+            if visivel < precisa:
+                print(f"    aviso leitura: \"{txt[:40]}\" fica inteiro só {visivel:.1f} s (precisa {precisa:.1f} s)")
     # lado do Vigia: muda só num corte de imagem, para o lado oposto ao assunto da cena,
     # e no máximo a cada ~15 s (ou quando o roteiro pede "lado": "esq"/"dir")
     lado, ultima = roteiro.get("lado_inicial", "esq"), -99.0
@@ -1202,6 +1236,7 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     else:
         ouvidas = transcrever(wav, texto)
         tempos, casadas = alinhar(palavras, ouvidas)
+        tempos = ajustar_inicios(wav, tempos)
     print(f"    {casadas:.0%} das palavras reconhecidas")
     if casadas < 0.7:
         print("    aviso: narração muito diferente do roteiro (a voz pode ter lido instruções ou pulado trechos)")

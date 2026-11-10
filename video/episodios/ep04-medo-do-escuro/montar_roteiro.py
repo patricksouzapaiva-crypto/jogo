@@ -122,7 +122,7 @@ C("Numa caverna da África do Sul", cartao("swartkrans_9", "Paranthropus robustu
 C("Ele tem dois furos", cartao("swartkrans_10", "dois furos", giro=1.2), (vid("leopardo_v_1", (1.0, 1.05)), "leopardo"), **V)
 C("Por milhões de anos", vid("leopardo_v_4", (1.0, 1.03)), **V)
 C("Quem tinha medo do escuro", img("leopardo_3", (1.0, 1.08), ((0.5, 0.5), (0.45, 0.55))), (vigia((1.0, 1.04)), "Pra"), **V)
-C("O corpo ainda lembra", texto("O corpo ainda lembra.\nNo escuro, o mesmo barulho\nassusta mais.", "lembra."))
+C("O corpo ainda lembra", texto("O corpo ainda lembra.\nNo escuro, o mesmo barulho\nassusta mais.", "lembra.", cps=30))
 C("Mas o escuro, em si", vigia((1.0, 1.05)))
 C("O problema é o que a sua cabeça", img("canto_quarto_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45))), **V)
 C("Lovecraft escreveu", cartao("lovecraft_4", "H. P. Lovecraft · 1934", giro=-1.2), **V)
@@ -130,7 +130,8 @@ C("E o escuro é o desconhecido", img("porta_apto_0", (1.0, 1.1), ((0.5, 0.5), (
 C("E tem um detalhe que quase", vigia((1.05, 1.1), ((0.4, 0.45), (0.38, 0.42))))
 C("Quando a luz apaga, o seu olho", vid("pupila_2", (1.0, 1.04)), **V)
 C("Até lá, você só vê uma parte", img("olho_escuro_2", (1.0, 1.1), ((0.6, 0.5), (0.68, 0.48))), **V)
-C("Guarde esse número.", texto("20 MINUTOS", "20", "impacto", cps=10, tamanho=160))
+C("Guarde esse número.", texto("20 MINUTOS", "20", "impacto", cps=16, tamanho=160))
+pausa("Agora que você entende", 2.2)   # "20 MINUTOS" fica inteiro na tela antes de seguir
 C("Agora que você entende", vigia((1.06, 1.14), ((0.35, 0.45), (0.33, 0.42))))
 
 # ================================================================ HISTÓRIA (o Vigia NÃO aparece daqui até a inserção)
@@ -160,7 +161,7 @@ C("Só a parede.", img("A02_canto_lanterna", (1.1, 1.3), ((0.52, 0.6), (0.53, 0.
 # ---------------------------------------------------------------- inserção Fyori 1 (Vigia)
 C("Em dois mil e dez", cartao("olho_escuro_0", "Giovanni Caputo · 2010 · a ilusão do rosto estranho"), **V)
 C("Em menos de um minuto", vigia((1.0, 1.05)), (texto("um desconhecido.", "desconhecido.", "impacto", cps=12), "Outros"))
-C("No escuro, o cérebro para", texto("No escuro, o cérebro para de esperar\ne começa a inventar.", "inventar."))
+C("No escuro, o cérebro para", texto("No escuro, o cérebro para de esperar\ne começa a inventar.", "inventar.", cps=30))
 C("Foi exatamente isso", vigia((1.05, 1.1), ((0.4, 0.45), (0.38, 0.42))))
 
 # ---------------------------------------------------------------- Ato 2 (sem Vigia)
@@ -172,7 +173,7 @@ C("E sempre do mesmo jeito", img("A04_porta", (1.06, 1.12), ((0.5, 0.5), (0.45, 
 # ---------------------------------------------------------------- inserção Fyori 2 (Vigia)
 C("Isso tem explicação.", img("estrelas_5", (1.0, 1.06)), **V)
 C("Astrônomos aprendem cedo", vid("estrelas_v_5", (1.0, 1.05)), **V)
-C("No escuro, o que está bem", texto("No escuro, o que está\nbem na sua frente\né o que você vê pior.", "pior."))
+C("No escuro, o que está bem", texto("No escuro, o que está\nbem na sua frente\né o que você vê pior.", "pior.", cps=30))
 
 # ---------------------------------------------------------------- Ato 2 (sem Vigia)
 C("A Júlia começou a anotar", img("caderno_1", (1.0, 1.08)))
@@ -291,34 +292,46 @@ saida_lenta("Os olhos fecharam sozinhos", 0.3, "fundir", 1.8)    # os olhos fech
 saida_lenta("Na segunda-feira, a ala", 3.0, "preto", 2.0)        # o rosto da forma fica; depois, o respiro
 saida_lenta("E o apartamento do sétimo andar", 1.8, "fundir", 1.6)  # "cada um olhando pra um canto"
 
+# ================================================================ TEMPO DE LEITURA das telas de texto
+# (10/11: o motor avisa "aviso leitura"; regra: texto inteiro na tela >= 1,5 s + 0,3 s por palavra).
+# A pausa é de NARRAÇÃO — a música de fundo continua.
+def leitura(trecho_seguinte, s):
+    b = batidas[achar(trecho_seguinte)]
+    b["pausa_antes_s"] = b.get("pausa_antes_s", 0) + s
+leitura("Mas o escuro, em si", 2.3)               # "O corpo ainda lembra…"
+leitura("Ela riu.", 2.0)                          # bilhete da caixa de luz
+leitura("No escuro, o cérebro para", 1.9)         # "um desconhecido."
+leitura("Foi exatamente isso", 2.9)               # "No escuro, o cérebro para de esperar…"
+leitura("A Júlia começou a anotar", 4.2)          # "No escuro, o que está bem na sua frente…"
+leitura("As anotações iam por quase", 1.6)        # "4 metros / 3 metros / 2,5 metros"
+leitura("A última linha estava escrita", 1.2)     # "1 metro / 70 centímetros"
+leitura("A página seguinte tinha", 0.5)           # "40 centímetros. Ela sorriu."
+leitura("A Júlia desceu e foi falar", 1.1)        # "Enquanto eu olho, ela não anda."
+leitura("Levaram ele pro hospital", 0.5)          # "Vivo."
+leitura("Não olha pro canto do seu quarto", 2.2)  # "E aí… ela anda."
+leitura("Não era uma pergunta.", 1.6)             # "Você apagou a luz."
+leitura('"Júlia, você tá em casa?"', 0.6)         # "CHAMADA RECEBIDA…"
+leitura("Dessa vez, ela não acendeu nada", 0.6)   # "No bairro inteiro."
+leitura("Hoje, quando você apagar a luz", 1.6)    # bilhete novo do epílogo
+
 # ================================================================ trilha (baixa). Momentos-chave: "suspense_sinistro" (10/11:
 # o usuário não quer silêncio total — uma música própria, diferente das trilhas, que segura a atenção)
-mus("Ela ficou parada no escuro", "drone_terror", -30)
-mus("Toda criança já pediu", "trilha_tensa_1", -28)
-mus("A Júlia tinha vinte e nove anos", "drone_tensao", -28)
-mus("Duas semanas depois", "suspense_sinistro", -24)
-mus("Primeiro, preto total.", "drone_terror", -28)
-mus("Ela acendeu a lanterna.", "suspense_sinistro", -24)
-mus("Em dois mil e dez", "trilha_tensa_1", -30)
-mus("Só que a forma não ficava", "trilha_tensa_2", -28)
-mus("Isso tem explicação.", "trilha_tensa_1", -30)
-mus("A Júlia começou a anotar", "drone_tensao", -28)
-mus('"Quatro metros."', "drone_terror", -28)
-mus('"Quarenta centímetros.', "suspense_sinistro", -24)
-mus("A Júlia desceu e foi falar", "trilha_tensa_1", -28)
-mus("Guarda essa frase do caderno", "suspense_sinistro", -24)
-mus("Na noite seguinte, no plantão", "drone_tensao", -28)
-mus("O quarto estava na penumbra", "drone_terror", -28)
-mus('"A sua ficou em casa', "suspense_sinistro", -24, em="Esperando")
-mus("A gente pisca de quinze", "trilha_tensa_1", -30)
-mus("A Júlia não voltou pra casa", "trilha_tensa_2", -28)
-mus("Às onze e vinte, a luz caiu", "suspense_sinistro", -24, em="No")
-mus("Aos vinte, ela viu.", "drone_terror", -26)
-mus("Os olhos fecharam sozinhos", "silencio")   # o ÚNICO silêncio total do episódio (escolha do usuário)
-mus("Dessa vez, não precisou esperar", "suspense_sinistro", -24)   # o silêncio acaba NO corte para o rosto: o pavor entra devagar
-mus("Na segunda-feira, a ala", "trilha_tensa_1", -28)
-mus('"Quando cair a energia, não acenda a luz. Espere. E nunca', "suspense_sinistro", -24)
-mus("Hoje, quando você apagar a luz", "trilha_tensa_1", -30)
+# 10/11 (usuário): a MÚSICA DE FUNDO toca o episódio inteiro (camada "ambiente_inicial" = suspense_sinistro_longa,
+# composta em código) e é ela que dá o clima; narração e efeitos complementam. Silêncio = silêncio DE NARRAÇÃO,
+# nunca silêncio total. Aqui só entram REFORÇOS atonais (drones graves) nos trechos de tensão — nada de uma
+# segunda música tonal por cima (embola).
+mus("Ela ficou parada no escuro", "drone_terror", -32)
+mus("A Júlia tinha vinte e nove anos", "silencio")
+mus("Primeiro, preto total.", "drone_terror", -30)
+mus("Ela acendeu a lanterna.", "silencio")
+mus('"Quatro metros."', "drone_terror", -30)
+mus("A Júlia desceu e foi falar", "silencio")
+mus("O quarto estava na penumbra", "drone_terror", -30)
+mus('"A sua ficou em casa', "silencio", em="Esperando")
+mus("Aos vinte, ela viu.", "drone_terror", -28)
+mus("Os olhos fecharam sozinhos", "silencio")        # o reforço some; a música de fundo continua (narração em silêncio)
+mus("Dessa vez, não precisou esperar", "drone_terror", -28)
+mus("Na segunda-feira, a ala", "silencio")
 
 # ================================================================ efeitos (baixos, depois da palavra, ~1 a cada 30 s)
 fx("que o canto do quarto", "esteve", "sub_drop", -12)
@@ -357,7 +370,7 @@ enf("Me conta nos comentários", "Me", "c_cafe_convite", 2.2)
 # fala fixa do Vigia (painel/sons/vinheta_cta_voz.wav, emendada no fim da narração) + música-assinatura
 VINHETA = ("Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, "
            "pra não perder o próximo caso. Eu vou estar aqui. Esperando.")
-batidas.append({"fala": VINHETA, "cta_inicio": True, "sem_legenda": True,
+batidas.append({"fala": VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
                 "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
 enf(VINHETA[:20], "Inscreva-se", "e_apontando", 2.2)
 enf(VINHETA[:20], "Esperando", "s_sorriso_sombrio", 3.0)
@@ -371,7 +384,8 @@ roteiro = {
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4},
     "legendas": {"destaques": ["luz", "canto", "perto", "vinte", "olhos", "escuro"]},
-    "ambiente_inicial": [], "musica": {"som": "silencio", "volume_db": -40},
+    "ambiente_inicial": [{"som": "suspense_sinistro_longa", "volume_db": -9}],   # A BASE: toca o episódio todo
+    "musica": {"som": "silencio", "volume_db": -40},
     "abertura": {"texto": "O VIGIA\nEP. 04 · NÃO ACENDA A LUZ.", "vermelho": "LUZ.", "duracao": 3.2,
                  "segurar": 1.8,   # o canto do quarto fica na tela em silêncio antes do cartão
                  "antes_da_batida": achar("Toda criança já pediu"),
