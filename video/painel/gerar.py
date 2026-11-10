@@ -13,6 +13,7 @@ import base64
 import difflib
 import hashlib
 import json
+import shutil
 import os
 import re
 import subprocess
@@ -475,7 +476,7 @@ def mixar(voz_wav, inicio_voz, duracao, eventos, trilha, saida):
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
                     f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
                     f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:"
-                    "linear=true,aresample=48000,alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
+                    "linear=true,aresample=48000,alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
     os.remove(bruto)
 
 
@@ -1093,13 +1094,13 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
         ganho = -14.0 - float(mm["input_i"])
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", stem["fundo"], "-i", stem["efeitos"], "-filter_complex",
                         f"amix=inputs=2:normalize=0,volume={ganho:.2f}dB,aresample=48000,"
-                        "alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
+                        "alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
         os.remove(bruto)
         return
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
                     f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={mm['input_i']}:measured_TP={mm['input_tp']}:"
                     f"measured_LRA={mm['input_lra']}:measured_thresh={mm['input_thresh']}:offset={mm['target_offset']}:"
-                    "linear=true,aresample=48000,alimiter=limit=0.79:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
+                    "linear=true,aresample=48000,alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
     os.remove(bruto)
 
 
@@ -1266,6 +1267,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
                "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
+    if not os.environ.get("MANTER_TEMP"):  # 10/11: cada render deixava 1,5–2,5 GB em /tmp e o disco encheu
+        shutil.rmtree(tmp, ignore_errors=True)
     print(f"pronto: {saida}")
 
 
