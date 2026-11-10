@@ -382,7 +382,9 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   `sem_sustos` na mixagem: trilha nunca passa de 6 dB abaixo da voz típica e efeitos de 3 dB abaixo, mesmo
   nos silêncios; todo efeito entra com subida de 0,25 s. O motor avisa "salto" se trilha+efeitos subirem
   mais de 9 dB de repente. Tensão = drone crescente, riser, respiração, silêncio, passos — não braam alto.
-- **09/11/2026 — duração dos episódios longos: 13 a 15 minutos.**
+- **09/11/2026 — duração dos episódios longos: 13 a 15 minutos** como referência. **10/11: passar de 15 min
+  não é problema** — nunca cortar pausas, silêncios ou saídas lentas para caber no tempo. O que manda é o
+  episódio ser bem produzido.
 - **09/11/2026 — vídeos curtos reais:** `buscar_imagens.py videos` / `baixar_videos` (Pixabay, sem crédito
   obrigatório) — já tratados com a cor "documento" da série. **O motor toca vídeo na cena:**
   `"cena": {"video": "videos/x.mp4", "video_inicio": 2.0, "velocidade": 0.8, "zoom": [1.0, 1.04]}` (zoom, foco,
