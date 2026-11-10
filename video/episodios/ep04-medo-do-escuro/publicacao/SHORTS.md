@@ -10,11 +10,14 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 (o 3 abre com a criatura, é o gancho mais forte).
 
 ## Arquivos
-| Short | Vídeo | Legenda |
-|---|---|---|
-| 1 — O caderno | `shorts_final/s1_o_caderno.mp4` (33 s) | `shorts_final/s1_o_caderno.srt` |
-| 2 — Você apagou a luz | `shorts_final/s2_voce_apagou_a_luz.mp4` (33 s) | `shorts_final/s2_voce_apagou_a_luz.srt` |
-| 3 — Não pisca | `shorts_final/s3_nao_pisca.mp4` (33 s) | `shorts_final/s3_nao_pisca.srt` |
+| Short | Vídeo | Legenda | Capa |
+|---|---|---|---|
+| 1 — O caderno | `shorts_final/s1_o_caderno.mp4` (33 s) | `shorts_final/s1_o_caderno.srt` | `capa_short1_o_caderno.jpg` |
+| 2 — Você apagou a luz | `shorts_final/s2_voce_apagou_a_luz.mp4` (33 s) | `shorts_final/s2_voce_apagou_a_luz.srt` | `capa_short2_voce_apagou_a_luz.jpg` |
+| 3 — Não pisca | `shorts_final/s3_nao_pisca.mp4` (33 s) | `shorts_final/s3_nao_pisca.srt` | `capa_short3_nao_pisca.jpg` |
+
+**Capa:** no app do YouTube (celular), ao enviar o Short, toque no lápis da miniatura → escolher imagem
+da galeria. Gerar de novo: `python3 fazer_capas_shorts.py`.
 
 A legenda já vai gravada na imagem; envie o .srt também (Legendas → Português → Enviar arquivo →
 "Com sincronização") — ajuda na busca.
