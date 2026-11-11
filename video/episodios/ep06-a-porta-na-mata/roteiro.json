@@ -332,7 +332,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/floresta_eua_2.jpg",
+     "imagem": "grade/px_ranger_4.jpg",
      "zoom": [
       1.0,
       1.08
@@ -354,7 +354,7 @@
    "fala": "Gente que sumia em trilha fácil. Gente achada onde não tinha como chegar.",
    "cenas": [
     {
-     "imagem": "grade/floresta_escura_11.jpg",
+     "imagem": "grade/px_trilheiro_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -362,7 +362,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/floresta_escura_3.jpg",
+     "imagem": "grade/px_trilheiro_4.jpg",
      "zoom": [
       1.0,
       1.1
@@ -375,7 +375,7 @@
   {
    "fala": "E escadas.",
    "cena": {
-    "imagem": "grade/escada_wald_1.jpg",
+    "imagem": "grade/px_escada_3.jpg",
     "zoom": [
      1.0,
      1.15
@@ -398,19 +398,19 @@
    "fala": "Escadas de casa, limpas, inteiras, no meio da floresta. Sem casa nenhuma em volta.",
    "cenas": [
     {
-     "imagem": "grade/escada_wald_1.jpg",
+     "imagem": "grade/px_escada_1.jpg",
      "zoom": [
-      1.15,
-      1.35
+      1.0,
+      1.15
      ],
      "foco": [
       [
        0.5,
-       0.45
+       0.5
       ],
       [
        0.5,
-       0.42
+       0.45
       ]
      ],
      "com_vigia": true
@@ -461,10 +461,10 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/mata_atlantica_1.jpg",
+     "video": "videos/pxv_neblina_2.mp4",
      "zoom": [
       1.0,
-      1.1
+      1.05
      ],
      "em": "mata",
      "com_vigia": true
@@ -594,10 +594,20 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/south_georgia_3.jpg",
+     "imagem": "grade/px_geleira_7.jpg",
      "zoom": [
       1.0,
       1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.6
+      ],
+      [
+       0.5,
+       0.7
+      ]
      ],
      "em": "atravessou",
      "com_vigia": true
@@ -1467,10 +1477,10 @@
   {
    "fala": "Na terceira tentativa, a Íris parou no riacho pra encher o cantil.",
    "cena": {
-    "imagem": "grade/P10_B.jpg",
+    "video": "videos/pxv_riacho_2.mp4",
     "zoom": [
      1.0,
-     1.1
+     1.05
     ]
    },
    "ambiente": {
@@ -1673,7 +1683,7 @@
    "fala": "Nos Estados Unidos, centenas de pessoas presas por crimes que não cometeram foram soltas depois, por exame de DNA.",
    "cenas": [
     {
-     "imagem": "grade/prisao_3.jpg",
+     "imagem": "grade/px_prisao_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1695,7 +1705,7 @@
    "fala": "Na maioria desses casos, tinha uma testemunha. Honesta. Que olhou pro rosto errado e disse: foi ele. Tenho certeza.",
    "cenas": [
     {
-     "imagem": "grade/testemunha_5.jpg",
+     "imagem": "grade/px_tribunal_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1703,7 +1713,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/olho_1.jpg",
+     "imagem": "grade/px_olho_6.jpg",
      "zoom": [
       1.0,
       1.2
@@ -1926,42 +1936,42 @@
   },
   {
    "fala": "Uma hora depois, o Dênis saiu dez passos do fogo.",
-   "cena": {
-    "imagem": "grade/P09_A.jpg",
-    "zoom": [
-     1.0,
-     1.15
-    ],
-    "foco": [
-     [
-      0.5,
-      0.5
+   "cenas": [
+    {
+     "imagem": "grade/P09_A.jpg",
+     "zoom": [
+      1.0,
+      1.15
      ],
-     [
-      0.25,
-      0.4
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.25,
+       0.4
+      ]
      ]
-    ]
-   },
+    },
+    {
+     "video": "videos/pxv_lanterna_1.mp4",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "em": "saiu"
+    }
+   ],
    "pausa_antes_s": 2.84
   },
   {
    "fala": "Ouviram o estalo de lá.",
    "cena": {
-    "imagem": "grade/P08_A.jpg",
+    "video": "videos/pxv_mata_noite_3.mp4",
     "zoom": [
-     1.9,
-     2.0
-    ],
-    "foco": [
-     [
-      0.2,
-      0.25
-     ],
-     [
-      0.18,
-      0.25
-     ]
+     1.0,
+     1.05
     ]
    },
    "pausa_antes_s": 1.6,
@@ -2590,12 +2600,11 @@
   {
    "fala": "Ela tinha uma filha de seis anos.",
    "cena": {
-    "video": "grade/V04_fogueira.mp4",
+    "video": "videos/pxv_fogueira_0.mp4",
     "zoom": [
-     1.1,
-     1.16
-    ],
-    "video_inicio": 0.5
+     1.0,
+     1.06
+    ]
    },
    "pausa_antes_s": 3.41
   },
@@ -2857,10 +2866,10 @@
   {
    "fala": "Eles acharam que o quarto estava ali pra ajudar.",
    "cena": {
-    "imagem": "grade/south_georgia_1.jpg",
+    "video": "videos/pxv_geleira_2.mp4",
     "zoom": [
      1.0,
-     1.12
+     1.05
     ],
     "com_vigia": true
    }
@@ -3179,7 +3188,7 @@
      ]
     },
     {
-     "imagem": "grade/olho_1.jpg",
+     "imagem": "grade/px_olho_6.jpg",
      "zoom": [
       1.0,
       1.25
@@ -3331,13 +3340,23 @@
   },
   {
    "fala": "E contou que, na véspera, aquilo tinha descido até o estacionamento, com a cara dele, só pra olhar os carros.",
-   "cena": {
-    "imagem": "grade/estac_trilha_5.jpg",
-    "zoom": [
-     1.0,
-     1.12
-    ]
-   },
+   "cenas": [
+    {
+     "imagem": "grade/estac_trilha_5.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "imagem": "grade/px_estacionamento_6.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "em": "estacionamento"
+    }
+   ],
    "pausa_antes_s": 0.8
   },
   {
@@ -3363,7 +3382,7 @@
   {
    "fala": "Só deixava aquilo solto lá embaixo… sem ninguém que soubesse.",
    "cena": {
-    "imagem": "grade/rua_vazia_madrugada_3.jpg",
+    "imagem": "grade/px_rua_0.jpg",
     "zoom": [
      1.0,
      1.1
@@ -3582,7 +3601,7 @@
    "fala": "Parou o carro na frente. A luz do quarto da filha estava acesa.",
    "cenas": [
     {
-     "imagem": "grade/rua_vazia_madrugada_3.jpg",
+     "imagem": "grade/px_rua_6.jpg",
      "zoom": [
       1.0,
       1.08
