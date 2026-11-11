@@ -16,7 +16,9 @@
  "mix": {
   "musica_ganho_db": 12,
   "fundo_sob_voz": -9,
-  "efeitos_sob_voz": -4
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true
  },
  "legendas": {
   "destaques": [
@@ -90,6 +92,9 @@
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
@@ -181,6 +186,9 @@
   },
   {
    "fala": "\"Filha… quem é que tá falando aí?\"",
+   "voz_fx": {
+    "tipo": "telefone"
+   },
    "cena": {
     "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
@@ -930,6 +938,10 @@
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta",
+    "tom": 0.8
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Abre, filha.\nÉ a mãe.”",
@@ -1356,6 +1368,10 @@
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta",
+    "tom": 0.92
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Abre, filha. É a mãe.”",
@@ -1948,6 +1964,9 @@
   },
   {
    "fala": "\"Abre, filha. A mãe esqueceu a chave na fruteira.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Abre, filha.\nA mãe esqueceu a chave\nna fruteira.”",
@@ -2020,6 +2039,9 @@
   },
   {
    "fala": "\"Tá frio aqui fora, Nina.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Tá frio aqui fora, Nina.”",
@@ -2512,6 +2534,9 @@
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
@@ -2573,6 +2598,9 @@
   },
   {
    "fala": "\"Filha… quem é que tá falando aí?\"",
+   "voz_fx": {
+    "tipo": "telefone"
+   },
    "cena": {
     "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
@@ -2634,6 +2662,10 @@
   },
   {
    "fala": "No telefone, a mãe sussurrou: \"Não fala com ela, Marina. Pelo amor de Deus.\"",
+   "voz_fx": {
+    "tipo": "telefone",
+    "de": "Não"
+   },
    "cena": {
     "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
@@ -2676,6 +2708,9 @@
   },
   {
    "fala": "\"Eu disse que, enquanto eu tivesse voz… você nunca ia ficar sozinha.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Eu disse que, enquanto\neu tivesse voz…\nvocê nunca ia ficar sozinha.”",
@@ -2728,6 +2763,9 @@
   },
   {
    "fala": "\"Marina… eu nunca contei isso pra ninguém.\"",
+   "voz_fx": {
+    "tipo": "telefone"
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Marina… eu nunca contei isso\npra ninguém.”",
@@ -2739,6 +2777,9 @@
   },
   {
    "fala": "\"Agora abre, Nina. A mãe tá cansada de ficar em pé.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
@@ -3116,6 +3157,9 @@
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Abre, filha. É a mãe.”",
@@ -3273,6 +3317,10 @@
   },
   {
    "fala": "\"Mãe… abre a porta.\"",
+   "voz_fx": {
+    "tipo": "telefone",
+    "tom": 0.8
+   },
    "cena": {
     "tipo": "texto",
     "texto": "“Mãe…\nabre a porta.”",

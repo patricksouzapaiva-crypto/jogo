@@ -1036,11 +1036,68 @@ def saltos(arquivos, limite_db=9.0):
     return achou
 
 
+# ---------------------------------------------------------------------------------------------------------
+# 11/11 — "worldizing": a fala de um personagem ganha o som do LUGAR de onde ela vem (atrás da porta, no
+# telefone). O narrador continua sendo o mesmo; o ouvido é que passa a saber onde a voz está. A duração de
+# cada trecho não muda (afinação por rubberband, sem mexer no tempo) — as pausas e a sincronia ficam intactas.
+VOZ_FX = {
+    # madeira maciça entre a voz e o ouvido: some o agudo, sobra o corpo; reflexo curto de corredor
+    "porta": "highpass=f=140,lowpass=f=2100,lowpass=f=2600,equalizer=f=320:t=q:w=1.0:g=3,"
+             "aecho=0.85:0.75:38|71|113:0.30|0.20|0.12,volume=-1.5dB",
+    # alto-falante de celular: só a faixa da telefonia, um pouco saturada
+    "telefone": "highpass=f=380,highpass=f=380,lowpass=f=3200,lowpass=f=3200,equalizer=f=1800:t=q:w=1.2:g=4,"
+                "acompressor=threshold=-24dB:ratio=6:attack=2:release=60:makeup=3,volume=-2dB",
+}
+
+
+def tratar_vozes(voz, batidas, tempos, destino):
+    """Batida com "voz_fx": {"tipo": "porta"|"telefone", "tom": 0.84, "de": "palavra"} — processa só aquele
+    trecho da narração (do começo da batida, ou da palavra "de", até o fim da batida) e devolve o novo wav."""
+    import numpy as np
+    pedidos, i0 = [], 0
+    for b in batidas:
+        pal = tokens(b["fala"])
+        fx = b.get("voz_fx")
+        if fx:
+            fx = {"tipo": fx} if isinstance(fx, str) else fx
+            k = next((j for j, w in enumerate(pal) if fx.get("de") and w.startswith(norm(fx["de"]))), 0)
+            pedidos.append((tempos[i0 + k][0], tempos[i0 + len(pal) - 1][1], fx))
+        i0 += len(pal)
+    if not pedidos:
+        return voz
+    sr = 48000
+    a = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", str(voz), "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
+                                     capture_output=True, check=True).stdout, np.float32).copy()
+    for t0, t1, fx in pedidos:
+        x0, x1 = max(0, int((t0 - 0.12) * sr)), min(len(a), int((t1 + 0.35) * sr))
+        cadeia = VOZ_FX[fx["tipo"]]
+        if fx.get("tom") and abs(fx["tom"] - 1) > 0.01:      # voz "grossa, arrastada": mais grave, mesmo tempo
+            cadeia = f"rubberband=pitch={fx['tom']}:formant=shifted," + cadeia
+        y = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-",
+                                          "-af", cadeia, "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
+                                         input=a[x0:x1].tobytes(), capture_output=True, check=True).stdout, np.float32)
+        n = x1 - x0
+        y = np.pad(y, (0, max(0, n - len(y))))[:n]
+        r = int(0.04 * sr); g = np.ones(n, np.float32); g[:r] = np.linspace(0, 1, r); g[-r:] = np.linspace(1, 0, r)
+        a[x0:x1] = a[x0:x1] * (1 - g) + y * g                 # emenda suave: sem clique na entrada/saída
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", str(destino)],
+                   input=a.tobytes(), check=True)
+    print(f"    falas com som de lugar (porta/telefone): {len(pedidos)}")
+    return destino
+
+
 def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=False):
     mix = {**MIX_PADRAO, **(mix or {})}
     sons = AQUI / "sons"
     ent = ["-i", str(voz_wav)]
-    f = [f"[0:a]aresample=48000,highpass=f=70,acompressor=threshold=-20dB:ratio=2.2:attack=8:release=180,"
+    # "voz_pro": cadeia de locução de estúdio — tira o embolado (300 Hz), dá corpo (120 Hz) e presença (3,5 kHz),
+    # doma o "s" e comprime em dois estágios leves (mais natural que um estágio forte)
+    cadeia_voz = ("highpass=f=80,equalizer=f=120:t=q:w=0.9:g=1.5,equalizer=f=300:t=q:w=1.2:g=-2.5,"
+                  "equalizer=f=3500:t=q:w=1.0:g=2,deesser=i=0.35:m=0.5:f=0.5,"
+                  "acompressor=threshold=-24dB:ratio=2:attack=12:release=200:makeup=1.5,"
+                  "acompressor=threshold=-14dB:ratio=3:attack=4:release=120,"
+                  if mix.get("voz_pro") else "highpass=f=70,acompressor=threshold=-20dB:ratio=2.2:attack=8:release=180,")
+    f = [f"[0:a]aresample=48000,{cadeia_voz}"
          f"adelay={int(inicio_voz * 1000)}:all=1,apad,atrim=0:{duracao:.3f},asplit=4[voz][chave][chave2][vozstem]"]
     n, camas = 1, []
     amb = sorted(plano["ambientes"], key=lambda a: a["t"])
@@ -1077,7 +1134,10 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
         f.append(f"anullsrc=r=48000:cl=stereo,atrim=0:{duracao:.3f}[vazio]")
         camas.append("[vazio]")
     cama = "[cama0]"
-    f.append(f"{''.join(camas)}amix=inputs={len(camas)}:normalize=0:duration=longest,apad,atrim=0:{duracao:.3f}{cama}")
+    # "fundo_bolso": abre um bolso na música onde mora a inteligibilidade da voz (2–4 kHz) — a trilha pode tocar
+    # mais presente sem disputar com o narrador (em vez de só abaixar o volume dela)
+    bolso = "equalizer=f=2800:t=q:w=0.9:g=-3.5,equalizer=f=1200:t=q:w=1.2:g=-1.5," if mix.get("fundo_bolso") else ""
+    f.append(f"{''.join(camas)}amix=inputs={len(camas)}:normalize=0:duration=longest,{bolso}apad,atrim=0:{duracao:.3f}{cama}")
     # automações: som abafado (passa-baixa) e quedas de volume
     cadeia = []
     for a0, a1, _ in plano["abafar"]:
@@ -1267,6 +1327,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
         i0 += n_pal
     if insercoes:
         voz_cortada, tempos = inserir_silencios(voz_cortada, tempos, insercoes, tmp / "voz_pausas.wav")
+    if not sem_voz:
+        voz_cortada = tratar_vozes(voz_cortada, batidas, tempos, tmp / "voz_fx.wav")
     ab = roteiro.get("abertura")
     meio = bool(ab and ab.get("antes_da_batida"))
     inicio_voz = (ab["duracao"] + ab.get("respiro", 0.15)) if (ab and not meio) else VOZ0

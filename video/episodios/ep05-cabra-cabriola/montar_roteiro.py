@@ -102,6 +102,21 @@ V = dict(com_vigia=True)
 PORTA = ((0.5, 0.45), (0.5, 0.42))      # a porta no fim do corredor (B01)
 FRESTA = ((0.5, 0.47), (0.5, 0.46))     # a fresta com as quatro sombras (B11c) — zoom >= 1.3 tira a data do canto
 
+# ================================================================ SOM DE LUGAR NAS FALAS (11/11)
+# A voz atrás da porta soa ATRÁS DA PORTA; a mãe de verdade soa NO TELEFONE. O público distingue as duas
+# "mães" pelo ouvido. E a voz da coisa evolui como na história: 1ª noite grossa (tom 0,80), 2ª quase (0,92),
+# depois perfeita — só a madeira no meio. O áudio do epílogo volta a ser grosso: outra voz, ainda aprendendo.
+def vfx(i, tipo, tom=None, de=None):
+    batidas[i]["voz_fx"] = {"tipo": tipo, **({"tom": tom} if tom else {}), **({"de": de} if de else {})}
+
+
+for i, tom in ((1, None), (36, 0.80), (54, 0.92), (80, None), (84, None), (105, None), (113, None), (117, None), (132, None)):
+    vfx(i, "porta", tom)
+for i in (6, 108, 116):
+    vfx(i, "telefone")
+vfx(111, "telefone", de="Não")
+vfx(139, "telefone", 0.80)
+
 # ================================================================ GANCHO (0:00–0:40) — sem Vigia
 C(0, img("B01_porta_corredor", (1.0, 1.1), PORTA))
 C(1, img("B01_porta_corredor", (1.3, 1.42), PORTA))
@@ -339,7 +354,7 @@ roteiro = {
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.20,
-    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4},
+    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True},
     "legendas": {"destaques": ["voz", "porta", "mãe", "abre", "Nina", "chave", "batidas"]},
     "ambiente_inicial": [{"som": "ep05_fundo_longa", "volume_db": -9}],
     "musica": {"som": "silencio", "volume_db": -40},
