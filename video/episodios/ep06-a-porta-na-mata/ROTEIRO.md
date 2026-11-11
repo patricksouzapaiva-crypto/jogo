@@ -28,7 +28,7 @@ infiltra, machuca e faz cada um jurar que foi o colega. O ser não mata: brinca 
 sozinho há muito tempo. Ele só entra se alguém abrir. Não copia ninguém de verdade: ele se veste do rosto
 que você conhece — só no olho de quem vê. Câmera não enxerga. E ele não mata porque brinquedo morto não brinca.
 
-**Fatos reais usados (conferir antes de gravar):** o "terceiro homem" de Shackleton (1916); a memória de
+**Fatos reais usados (CONFERIDOS em 11/11 — South Georgia Museum / James Caird Society; innocenceproject.org: 69% de 375 casos):** o "terceiro homem" de Shackleton (1916); a memória de
 testemunha ocular — a maioria das condenações de inocentes revertidas por DNA nos EUA teve testemunha que
 "tinha certeza" (Innocence Project). Lenda, nomes e caso são ficção.
 
@@ -64,8 +64,8 @@ São portas.
 Uma porta de madeira, com batente e maçaneta, em pé no meio de uma clareira.
 Sem parede. Sem escora. E firme.
 E guarda um fato, que eu vou precisar dele.
-Em mil novecentos e dezesseis, o explorador Ernest Shackleton atravessou uma ilha de gelo com dois homens, no limite da força.
-Os três escreveram a mesma coisa, sem combinar.
+Em mil novecentos e dezesseis, o explorador Ernest Shackleton atravessou uma ilha de montanha e gelo com dois homens, no limite da força.
+Os três contaram a mesma coisa, sem combinar.
 Que durante a travessia inteira… eles eram quatro.
 
 ## PARTE 1 — a clareira

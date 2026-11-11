@@ -1,0 +1,7 @@
+audio/*.wav
+audio/*.log
+grade/
+previas/
+busca/*_res/
+busca/*.log
+publicacao/shorts_final/*.mp4
