@@ -130,7 +130,7 @@ fx(6, "rindo", "ep06_risada", -17)
 C(11, vigia((1.0, 1.05)), (real("floresta_eua_2", "P06_A", (1.0, 1.08)), "guarda"), **V)
 C(12, real("floresta_escura_11", "P06_B", (1.0, 1.1)), (real("floresta_escura_3", "P06_A", (1.0, 1.1)), "achada"), **V)
 C(13, real("escada_wald_1", "P06_B", (1.0, 1.15), ((0.5, 0.5), (0.5, 0.45))), **V)
-C(14, real("escada_wald_1", "P06_B", (1.15, 1.35), ((0.5, 0.45), (0.5, 0.42))), (real("escada_wald_0", "P06_A", (1.0, 1.12)), "Sem"), **V)
+C(14, real("escada_wald_1", "P06_B", (1.15, 1.35), ((0.5, 0.45), (0.5, 0.42))), (real("escada_nada_0", "P06_A", (1.0, 1.12)), "Sem"), **V)
 C(15, texto("Não chegue perto.\nE não pergunte.", "não pergunte.", cps=40))
 C(16, vigia((1.0, 1.05)), (real("mata_atlantica_1", "P06_B", (1.0, 1.1)), "mata"), **V)
 C(17, vigia((1.04, 1.1), ((0.4, 0.45), (0.38, 0.43))))
@@ -194,7 +194,7 @@ C(57, img("P08_A", (1.5, 1.6), ((0.3, 0.5), (0.28, 0.5))))
 C(58, img("P08_B", (1.2, 1.3), ((0.75, 0.45), (0.78, 0.45))))
 C(59, vid("V03_mata", (1.0, 1.05), video_inicio=1.0))
 T(59, "fundir", 1.2); pausa(59, 1.6)
-C(60, real("serra_neblina_6", "P06_A", (1.0, 1.12)), (real("gps_0", "P06_B", (1.0, 1.1)), "GPS"))
+C(60, real("bussola_mapa_0", "P06_A", (1.0, 1.15), ((0.5, 0.5), (0.55, 0.45))))
 C(61, img("P06_B", (1.0, 1.25), ((0.5, 0.5), (0.775, 0.38))))
 C(62, vid("V05_trilha_capacete", (1.0, 1.04), video_inicio=3.0))
 C(63, img("P01_A", (1.0, 1.25), ((0.5, 0.45), (0.5, 0.43))))
@@ -213,7 +213,7 @@ C(71, vigia((1.0, 1.05)))
 saida_lenta(71, 2.2)
 C(72, vigia((1.05, 1.1), ((0.4, 0.45), (0.38, 0.42))))
 C(73, real("prisao_3", "P06_A", (1.0, 1.1)), (real("dna_1", "P06_B", (1.0, 1.1)), "soltas"), **V)
-C(74, real("testemunha_5", "P06_A", (1.0, 1.1)), (real("olho_escuro_0", "P06_B", (1.0, 1.2), ((0.5, 0.5), (0.5, 0.5))), "olhou"), **V)
+C(74, real("testemunha_5", "P06_A", (1.0, 1.1)), (real("olho_1", "P06_B", (1.0, 1.2), ((0.5, 0.5), (0.5, 0.5))), "olhou"), **V)
 C(75, texto("O seu cérebro não grava rosto.\nEle reconhece.", "reconhece.", cps=45))
 C(76, vigia((1.05, 1.12), ((0.4, 0.45), (0.37, 0.42))))
 pausa(72, 0.6); pausa(76, 0.8)
@@ -305,7 +305,7 @@ C(141, img("P09_A", (1.0, 1.1), ((0.45, 0.48), (0.47, 0.46))))
 C(142, img("P09_B", (1.8, 2.0), SEXTA_B))
 C(143, img("P14_A", (1.4, 1.5), ((0.5, 0.52), (0.5, 0.52))))
 C(144, texto("Ele não era um deles.\nNunca foi.", "Nunca foi.", cps=30))
-C(145, img("P14_A", (1.0, 1.1)), (real("olho_escuro_0", "P09_B", (1.0, 1.25), ((0.5, 0.5), (0.5, 0.5))), "só"))
+C(145, img("P14_A", (1.0, 1.1)), (real("olho_1", "P09_B", (1.0, 1.25), ((0.5, 0.5), (0.5, 0.5))), "só"))
 C(146, texto("A câmera não tem olho\npra enganar.", "enganar.", cps=34))
 C(147, img("P07_B", (1.0, 1.1), ((0.5, 0.6), (0.52, 0.58))))
 C(148, img("P07_A", (1.2, 1.3), ((0.5, 0.6), (0.5, 0.58))))
@@ -313,9 +313,9 @@ C(149, img("P11_A", (1.2, 1.3), ((0.4, 0.55), (0.42, 0.55))))
 C(150, vid("V05_trilha_capacete", (1.0, 1.04), video_inicio=2.0))
 C(151, img("P16_A", (1.0, 1.15), ((0.45, 0.5), (0.35, 0.5))))
 C(152, img("P16_B", (1.0, 1.12), ((0.5, 0.5), (0.45, 0.5))))
-C(153, real("rua_vazia_madrugada_3", "P06_A", (1.0, 1.12)))
+C(153, real("estac_trilha_5", "P06_A", (1.0, 1.12)))
 C(154, img("P06_A", (1.0, 1.2), ((0.5, 0.5), (0.53, 0.72 * 0.75))))
-C(155, real("rua_bairro_noite_3", "P06_B", (1.0, 1.1)))
+C(155, real("rua_vazia_madrugada_3", "P06_B", (1.0, 1.1)))
 C(156, vid("V03_mata", (1.0, 1.05), video_inicio=2.0))
 C(157, vid("V05_trilha_capacete", (1.0, 1.04), video_inicio=0.0))
 C(158, img("P06_B", (1.0, 1.15), ((0.5, 0.5), (0.6, 0.45))))
@@ -370,7 +370,7 @@ pausa(180, 1.0); pausa(183, 1.2); pausa(184, 0.8); pausa(185, 1.0); pausa(186, 1
 # trocar_vozes.py monta audio/voz_personagens.wav; a pausa seguinte encolhe o que a fala nova crescer.
 
 # ================================================================ SOM DE LUGAR (canal "ambiente")
-A_DB = -15
+A_DB = -19
 amb(11, "nenhum")                                    # o Vigia fala do abrigo: só a música
 amb(25, "ep06_mata_dia", A_DB)                       # a mata viva
 amb(39, "ep06_mata_muda", A_DB, em="bateram")        # bateram: os passarinhos somem
@@ -391,7 +391,7 @@ amb(165, "ep06_rua_noite", A_DB + 4)
 amb(179, "nenhum")
 
 # ================================================================ MÚSICA (canal "trilhas"): fundo ↔ tensão, nunca silêncio
-F_DB, T_DB = -21, -24
+F_DB, T_DB = -25, -27
 mus(0, "ep06_tensao_longa", T_DB)                    # gancho
 mus(11, "ep06_fundo_longa", F_DB)
 mus(39, "ep06_tensao_longa", T_DB, em="bateram"); mus(56, "ep06_fundo_longa", F_DB)

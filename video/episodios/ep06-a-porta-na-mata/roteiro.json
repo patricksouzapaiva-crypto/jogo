@@ -34,12 +34,12 @@
  "ambiente_inicial": [
   {
    "som": "ep06_mata_noite",
-   "volume_db": -12
+   "volume_db": -16
   }
  ],
  "musica": {
   "som": "ep06_tensao_longa",
-  "volume_db": -24
+  "volume_db": -27
  },
  "abertura": {
   "texto": "O VIGIA\nEP. 06 · A PORTA NA MATA",
@@ -87,7 +87,7 @@
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -347,7 +347,7 @@
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -416,7 +416,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/escada_wald_0.jpg",
+     "imagem": "grade/escada_nada_0.jpg",
      "zoom": [
       1.0,
       1.12
@@ -650,7 +650,7 @@
    "pausa_antes_s": 2.35,
    "ambiente": {
     "som": "ep06_mata_dia",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
@@ -942,12 +942,12 @@
    ],
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15,
+    "volume_db": -19,
     "em": "bateram"
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24,
+    "volume_db": -27,
     "em": "bateram"
    }
   },
@@ -1326,11 +1326,11 @@
    "pausa_antes_s": 2.6,
    "ambiente": {
     "som": "ep06_mata_noite",
-    "volume_db": -12
+    "volume_db": -16
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -1388,28 +1388,28 @@
    "pausa_antes_s": 1.6,
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
    "fala": "Duas horas em linha reta, com bússola e GPS.",
-   "cenas": [
-    {
-     "imagem": "grade/serra_neblina_6.jpg",
-     "zoom": [
-      1.0,
-      1.12
-     ]
-    },
-    {
-     "imagem": "grade/gps_0.jpg",
-     "zoom": [
-      1.0,
-      1.1
+   "cena": {
+    "imagem": "grade/bussola_mapa_0.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
      ],
-     "em": "GPS"
-    }
-   ]
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
   },
   {
    "fala": "Saíram na clareira da porta.",
@@ -1475,11 +1475,11 @@
    },
    "ambiente": {
     "som": "ep06_riacho",
-    "volume_db": -18
+    "volume_db": -22
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -1611,7 +1611,7 @@
    "pausa_antes_s": 4.0,
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
@@ -1644,7 +1644,7 @@
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -1703,7 +1703,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/olho_escuro_0.jpg",
+     "imagem": "grade/olho_1.jpg",
      "zoom": [
       1.0,
       1.2
@@ -1800,11 +1800,11 @@
    "pausa_antes_s": 2.2,
    "ambiente": {
     "som": "ep06_mata_noite",
-    "volume_db": -12
+    "volume_db": -16
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -2349,7 +2349,7 @@
    "pausa_antes_s": 5.0,
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    },
    "sem_legenda": true
   },
@@ -2497,7 +2497,7 @@
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -2731,7 +2731,7 @@
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -2892,7 +2892,7 @@
    "pausa_antes_s": 2.6,
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
@@ -2937,7 +2937,7 @@
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -2962,7 +2962,7 @@
    "pausa_antes_s": 1.0,
    "ambiente": {
     "som": "ep06_vento_capacete",
-    "volume_db": -19
+    "volume_db": -23
    }
   },
   {
@@ -3070,7 +3070,7 @@
    "pausa_antes_s": 2.0,
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
@@ -3179,7 +3179,7 @@
      ]
     },
     {
-     "imagem": "grade/olho_escuro_0.jpg",
+     "imagem": "grade/olho_1.jpg",
      "zoom": [
       1.0,
       1.25
@@ -3232,7 +3232,7 @@
    "pausa_antes_s": 3.39,
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -3332,7 +3332,7 @@
   {
    "fala": "E contou que, na véspera, aquilo tinha descido até o estacionamento, com a cara dele, só pra olhar os carros.",
    "cena": {
-    "imagem": "grade/rua_vazia_madrugada_3.jpg",
+    "imagem": "grade/estac_trilha_5.jpg",
     "zoom": [
      1.0,
      1.12
@@ -3363,7 +3363,7 @@
   {
    "fala": "Só deixava aquilo solto lá embaixo… sem ninguém que soubesse.",
    "cena": {
-    "imagem": "grade/rua_bairro_noite_3.jpg",
+    "imagem": "grade/rua_vazia_madrugada_3.jpg",
     "zoom": [
      1.0,
      1.1
@@ -3383,7 +3383,7 @@
    "pausa_antes_s": 1.6,
    "ambiente": {
     "som": "ep06_mata_dia",
-    "volume_db": -15
+    "volume_db": -19
    }
   },
   {
@@ -3419,11 +3419,11 @@
    "pausa_antes_s": 1.4,
    "ambiente": {
     "som": "ep06_mata_muda",
-    "volume_db": -15
+    "volume_db": -19
    },
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -3519,7 +3519,7 @@
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
@@ -3555,7 +3555,7 @@
    "pausa_antes_s": 2.8,
    "ambiente": {
     "som": "ep06_rua_noite",
-    "volume_db": -11
+    "volume_db": -15
    }
   },
   {
@@ -3619,7 +3619,7 @@
    ],
    "musica": {
     "som": "ep06_tensao_longa",
-    "volume_db": -24
+    "volume_db": -27
    }
   },
   {
@@ -3901,7 +3901,7 @@
    },
    "musica": {
     "som": "ep06_fundo_longa",
-    "volume_db": -21
+    "volume_db": -25
    }
   },
   {
