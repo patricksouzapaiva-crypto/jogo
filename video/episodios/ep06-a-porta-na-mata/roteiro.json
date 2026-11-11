@@ -162,7 +162,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.68
+   "pausa_antes_s": 2.13
   },
   {
    "fala": "Contou de novo. Seis.",
@@ -307,7 +307,7 @@
      "em": "melhor"
     }
    ],
-   "pausa_antes_s": 0.2
+   "pausa_antes_s": 0.65
   },
   {
    "fala": "Em dois mil e quinze, um homem que dizia ser guarda-florestal nos Estados Unidos começou a contar o que via no serviço.",
@@ -332,7 +332,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/floresta_eua_2.jpg",
      "zoom": [
       1.0,
       1.08
@@ -354,7 +354,7 @@
    "fala": "Gente que sumia em trilha fácil. Gente achada onde não tinha como chegar.",
    "cenas": [
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/floresta_escura_11.jpg",
      "zoom": [
       1.0,
       1.1
@@ -362,7 +362,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/floresta_escura_3.jpg",
      "zoom": [
       1.0,
       1.1
@@ -375,7 +375,7 @@
   {
    "fala": "E escadas.",
    "cena": {
-    "imagem": "grade/P06_B.jpg",
+    "imagem": "grade/escada_wald_1.jpg",
     "zoom": [
      1.0,
      1.15
@@ -398,7 +398,7 @@
    "fala": "Escadas de casa, limpas, inteiras, no meio da floresta. Sem casa nenhuma em volta.",
    "cenas": [
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/escada_wald_1.jpg",
      "zoom": [
       1.15,
       1.35
@@ -416,7 +416,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/escada_wald_0.jpg",
      "zoom": [
       1.0,
       1.12
@@ -461,7 +461,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/mata_atlantica_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -583,7 +583,7 @@
    "fala": "Em mil novecentos e dezesseis, o explorador Ernest Shackleton atravessou uma ilha de montanha e gelo com dois homens, no limite da força.",
    "cenas": [
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/shackleton_5.jpg",
      "zoom": [
       1.0,
       1.06
@@ -594,7 +594,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/south_georgia_3.jpg",
      "zoom": [
       1.0,
       1.1
@@ -607,7 +607,7 @@
   {
    "fala": "Os três contaram a mesma coisa, sem combinar.",
    "cena": {
-    "imagem": "grade/P06_A.jpg",
+    "imagem": "grade/shackleton_exp_1.jpg",
     "zoom": [
      1.0,
      1.1
@@ -630,7 +630,7 @@
    "fala": "Rafael, trinta e oito anos, trilheiro. Dois dias sem contato numa serra de Mata Atlântica.",
    "cenas": [
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/serra_neblina_3.jpg",
      "zoom": [
       1.0,
       1.08
@@ -639,7 +639,7 @@
      "duracao_entrada": 1.2
     },
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/trilha_mata_5.jpg",
      "zoom": [
       1.0,
       1.1
@@ -647,7 +647,7 @@
      "em": "Dois"
     }
    ],
-   "pausa_antes_s": 1.9,
+   "pausa_antes_s": 2.35,
    "ambiente": {
     "som": "ep06_mata_dia",
     "volume_db": -15
@@ -859,7 +859,7 @@
   {
    "fala": "Contou ali mesmo o que o avô, mateiro, dizia.",
    "cena": {
-    "imagem": "grade/P06_A.jpg",
+    "imagem": "grade/trilha_mata_6.jpg",
     "zoom": [
      1.0,
      1.1
@@ -887,7 +887,7 @@
     "vermelho": "não se atravessa.",
     "cps": 30
    },
-   "pausa_antes_s": 1.72,
+   "pausa_antes_s": 2.17,
    "sem_legenda": true
   },
   {
@@ -900,7 +900,7 @@
     ],
     "video_inicio": 3.0
    },
-   "pausa_antes_s": 1.41
+   "pausa_antes_s": 1.86
   },
   {
    "fala": "Eles obedeceram. Já estavam de costas quando bateram.",
@@ -1395,14 +1395,14 @@
    "fala": "Duas horas em linha reta, com bússola e GPS.",
    "cenas": [
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/serra_neblina_6.jpg",
      "zoom": [
       1.0,
       1.12
      ]
     },
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/gps_0.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1673,7 +1673,7 @@
    "fala": "Nos Estados Unidos, centenas de pessoas presas por crimes que não cometeram foram soltas depois, por exame de DNA.",
    "cenas": [
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/prisao_3.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1681,7 +1681,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/dna_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1695,7 +1695,7 @@
    "fala": "Na maioria desses casos, tinha uma testemunha. Honesta. Que olhou pro rosto errado e disse: foi ele. Tenho certeza.",
    "cenas": [
     {
-     "imagem": "grade/P06_A.jpg",
+     "imagem": "grade/testemunha_5.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1703,7 +1703,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "grade/P06_B.jpg",
+     "imagem": "grade/olho_escuro_0.jpg",
      "zoom": [
       1.0,
       1.2
@@ -1754,7 +1754,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.34
+   "pausa_antes_s": 1.79
   },
   {
    "fala": "Na segunda noite, o subtenente contou as lanternas. Seis.",
@@ -1921,7 +1921,7 @@
     "cps": 8,
     "tamanho": 150
    },
-   "pausa_antes_s": 1.93,
+   "pausa_antes_s": 2.38,
    "sem_legenda": true
   },
   {
@@ -1943,7 +1943,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.39
+   "pausa_antes_s": 2.84
   },
   {
    "fala": "Ouviram o estalo de lá.",
@@ -2071,33 +2071,13 @@
   },
   {
    "fala": "Me amarra. Se acontecer de novo comigo amarrado, vocês sabem que não sou eu.",
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "“Me amarra.”",
-     "estilo": "maquina",
-     "vermelho": "amarra.”",
-     "cps": 20
-    },
-    {
-     "imagem": "grade/P12_A.jpg",
-     "zoom": [
-      1.0,
-      1.1
-     ],
-     "foco": [
-      [
-       0.5,
-       0.55
-      ],
-      [
-       0.52,
-       0.55
-      ]
-     ],
-     "em": "Se"
-    }
-   ],
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Me amarra.\nSe acontecer de novo,\nvocês sabem que não sou eu.”",
+    "estilo": "maquina",
+    "vermelho": "não sou eu.”",
+    "cps": 22
+   },
    "sem_legenda": true
   },
   {
@@ -2119,7 +2099,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 0.9
+   "pausa_antes_s": 3.76
   },
   {
    "fala": "Amarraram ele numa árvore, com corda de rapel. O Caio ficou de guarda.",
@@ -2234,7 +2214,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.61
+   "pausa_antes_s": 2.06
   },
   {
    "fala": "O Caio largou a guarda e correu pra estancar o sangue dela.",
@@ -2391,7 +2371,8 @@
       0.48
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 0.16
   },
   {
    "fala": "E cada um tinha um álibi. Dado por outro… que também tinha sido visto.",
@@ -2603,7 +2584,7 @@
     "vermelho": "não souber?",
     "cps": 28
    },
-   "pausa_antes_s": 3.17,
+   "pausa_antes_s": 3.62,
    "sem_legenda": true
   },
   {
@@ -2616,7 +2597,7 @@
     ],
     "video_inicio": 0.5
    },
-   "pausa_antes_s": 2.96
+   "pausa_antes_s": 3.41
   },
   {
    "fala": "Se aquilo pegava rosto, voz e lembrança, descer a serra era levar pra dentro de casa uma coisa que a menina ia chamar de mãe.",
@@ -2834,7 +2815,7 @@
    "fala": "Em duas noites, cinco pessoas que entravam em incêndio umas pelas outras não conseguiam mais dar as costas pro colega.",
    "cenas": [
     {
-     "imagem": "grade/P07_B.jpg",
+     "imagem": "grade/bombeiros_fogo_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -2865,7 +2846,7 @@
   {
    "fala": "Lembra do Shackleton? Dos três que contaram quatro?",
    "cena": {
-    "imagem": "grade/P06_A.jpg",
+    "imagem": "grade/shackleton_5.jpg",
     "zoom": [
      1.0,
      1.12
@@ -2876,7 +2857,7 @@
   {
    "fala": "Eles acharam que o quarto estava ali pra ajudar.",
    "cena": {
-    "imagem": "grade/P06_A.jpg",
+    "imagem": "grade/south_georgia_1.jpg",
     "zoom": [
      1.0,
      1.12
@@ -2908,7 +2889,7 @@
     "entrada": "preto",
     "duracao_entrada": 1.2
    },
-   "pausa_antes_s": 2.15,
+   "pausa_antes_s": 2.6,
    "ambiente": {
     "som": "ep06_mata_muda",
     "volume_db": -15
@@ -3198,7 +3179,7 @@
      ]
     },
     {
-     "imagem": "grade/P09_B.jpg",
+     "imagem": "grade/olho_escuro_0.jpg",
      "zoom": [
       1.0,
       1.25
@@ -3216,7 +3197,7 @@
      "em": "só"
     }
    ],
-   "pausa_antes_s": 2.25
+   "pausa_antes_s": 2.7
   },
   {
    "fala": "A câmera não tem olho pra enganar.",
@@ -3248,7 +3229,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.94,
+   "pausa_antes_s": 3.39,
    "musica": {
     "som": "ep06_fundo_longa",
     "volume_db": -21
@@ -3351,7 +3332,7 @@
   {
    "fala": "E contou que, na véspera, aquilo tinha descido até o estacionamento, com a cara dele, só pra olhar os carros.",
    "cena": {
-    "imagem": "grade/P06_A.jpg",
+    "imagem": "grade/rua_vazia_madrugada_3.jpg",
     "zoom": [
      1.0,
      1.12
@@ -3382,7 +3363,7 @@
   {
    "fala": "Só deixava aquilo solto lá embaixo… sem ninguém que soubesse.",
    "cena": {
-    "imagem": "grade/P06_B.jpg",
+    "imagem": "grade/rua_bairro_noite_3.jpg",
     "zoom": [
      1.0,
      1.1
@@ -3522,7 +3503,7 @@
   {
    "fala": "Todos sobreviveram. O braço do Dênis ficou com oito pinos.",
    "cena": {
-    "imagem": "grade/P19_B.jpg",
+    "imagem": "grade/hospital_quarto_2.jpg",
     "zoom": [
      1.0,
      1.1
@@ -3571,7 +3552,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.35,
+   "pausa_antes_s": 2.8,
    "ambiente": {
     "som": "ep06_rua_noite",
     "volume_db": -11
@@ -3601,7 +3582,7 @@
    "fala": "Parou o carro na frente. A luz do quarto da filha estava acesa.",
    "cenas": [
     {
-     "imagem": "grade/P17_B.jpg",
+     "imagem": "grade/rua_vazia_madrugada_3.jpg",
      "zoom": [
       1.0,
       1.08
@@ -4030,7 +4011,7 @@
     "vermelho": "não se atravessa.",
     "cps": 30
    },
-   "pausa_antes_s": 2.1,
+   "pausa_antes_s": 2.55,
    "sem_legenda": true
   },
   {
@@ -4042,7 +4023,7 @@
     "vermelho": "conta de novo.",
     "cps": 26
    },
-   "pausa_antes_s": 1.51,
+   "pausa_antes_s": 1.96,
    "sem_legenda": true
   },
   {
@@ -4065,7 +4046,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.73
+   "pausa_antes_s": 2.18
   },
   {
    "fala": "Quantas pessoas tem na sua casa agora?",
@@ -4134,7 +4115,7 @@
     "som": "vinheta_ultimo_abrigo",
     "volume_db": -20
    },
-   "pausa_antes_s": 1.61
+   "pausa_antes_s": 2.06
   }
  ]
 }

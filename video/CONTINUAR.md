@@ -112,3 +112,23 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   chave no Google AI Studio. Enquanto isso: ele gera as imagens/clipes no app e me manda.
 - Próximos passos: receber imagens → conferir fatos (Shackleton, Innocence Project) → buscar fotos/vídeos reais →
   compor trilha nova → narração (Vigia + voz do Caio) → montar_roteiro.py → rascunho → final → pacote.
+
+## Ep. 06 em produção (11/11 noite) — rascunho em render
+- Recebido do usuário e CONFERIDO imagem por imagem: 40 imagens (P01–P19 A/B, P08 C/D = versões antigas) em
+  `imagens/` e 5 clipes do Flow em `clipes/` (V01 aproxima porta, V02 porta abre sozinha, V03 mata, V04 fogueira,
+  V05 trilha/capacete — este tem perfil de rosto à direita: `gradar.py` corta).
+- Fatos conferidos (Shackleton: South Georgia Museum/James Caird Society; Innocence Project: 69% de 375). Ajuste:
+  "os três CONTARAM a mesma coisa" (Crean não escreveu).
+- Narração: `narrar_fluxo.py narracao_texto.txt audio/voz_completa.wav` (646 s) + vinheta → `voz_com_vinheta_limpa.wav`;
+  `alinhar.py` → `audio/alinhamento.json`. Voz do Caio (falas 45 e 51): `trocar_vozes.py [Puck|Achird|Orus]`
+  (padrão Puck; amostras em `previas/amostras/` — o usuário ainda NÃO escolheu).
+- Trilha nova em código: `painel/ferramentas/sintetizar_trilha_ep06.py` → `sons/ep06_fundo_longa.mp3`, `ep06_tensao_longa.mp3`.
+  O usuário está gerando trilha no Flow Music (mandei 2 prompts: fundo e tensão); quando chegar, montar comparação.
+- Sons de lugar/efeitos (ElevenLabs): `sons/ep06_*` (mata dia/muda/noite, riacho, rua, estalo, risada, riso da menina,
+  porta, motor, vento do capacete). OS CRÉDITOS MENSAIS DO ELEVENLABS ACABARAM nesta leva (renovam no ciclo do plano).
+- Canais de som: "ambiente" = som do lugar; "trilhas" = música (fundo ↔ tensão, nunca silêncio).
+- Fotos reais: sem chave do Pixabay nesta sessão e Openverse instável → só 22 fotos (Wikimedia/Flickr) em
+  `imagens_reais/` com `CREDITOS.txt`; 5 reaproveitadas dos Eps. 04/05.
+- `montar_roteiro.py` garante sozinho o tempo de leitura das telas de texto (aumenta a pausa seguinte).
+- Render: `python3 gradar.py && python3 trocar_vozes.py && python3 montar_roteiro.py && python3 ../../painel/gerar.py roteiro.json previas/ep06_rascunho.mp4 --rascunho`
+  NÃO rodar gradar.py com render em andamento (reescreve os clipes de grade/).
