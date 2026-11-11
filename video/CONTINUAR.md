@@ -127,8 +127,10 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - Sons de lugar/efeitos (ElevenLabs): `sons/ep06_*` (mata dia/muda/noite, riacho, rua, estalo, risada, riso da menina,
   porta, motor, vento do capacete). OS CRÉDITOS MENSAIS DO ELEVENLABS ACABARAM nesta leva (renovam no ciclo do plano).
 - Canais de som: "ambiente" = som do lugar; "trilhas" = música (fundo ↔ tensão, nunca silêncio).
-- Fotos reais: sem chave do Pixabay nesta sessão e Openverse instável → só 22 fotos (Wikimedia/Flickr) em
-  `imagens_reais/` com `CREDITOS.txt`; 5 reaproveitadas dos Eps. 04/05.
+- Fotos reais: 23 fotos em `imagens_reais/` + 6 vídeos reais em `videos/` (Pixabay, Wikimedia, Flickr), com `CREDITOS.txt`.
+  A CHAVE DO PIXABAY EXISTE: está no script de configuração do ambiente (sem `export`), então não chega à sessão.
+  Para usar: ler com get_environment e passar no comando (`PIXABAY_API_KEY=... python3 buscar_imagens.py ...`);
+  nunca gravar a chave no repositório. Pedido ao usuário: mover para as variáveis de ambiente.
 - `montar_roteiro.py` garante sozinho o tempo de leitura das telas de texto (aumenta a pausa seguinte).
 - Render: `python3 gradar.py && python3 trocar_vozes.py && python3 montar_roteiro.py && python3 ../../painel/gerar.py roteiro.json previas/ep06_rascunho.mp4 --rascunho`
   NÃO rodar gradar.py com render em andamento (reescreve os clipes de grade/).
