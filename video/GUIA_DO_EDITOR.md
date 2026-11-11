@@ -526,3 +526,24 @@ numerada do Vigia é o diferencial do canal.
   3. **Folclore brasileiro como tema** do formato tema + história (lobisomem, Quaresma, Cruzeiro das Almas,
      causos do interior) — entra nos próximos episódios.
 - **CTR:** meta acima de 5% nos longos (ver no Studio → Alcance). Retenção e CTR anotados aqui por episódio.
+
+## 14. Acabamento de cinema (11/11, a partir do Ep. 05)
+
+**Imagem — correção de cor por episódio (`gradar.py` na pasta do episódio).** Todo material da história (imagens de IA
+e fotos reais) passa pela mesma correção, para parecer filmado pela mesma câmera: igualar a exposição dos planos,
+pouca cor e tom frio, UMA cor de destaque por episódio (Ep. 05: o âmbar das luzes de casa), curva de cópia (luz que
+não estoura, preto levemente levantado — nunca "mega escuro"), halação em volta das fontes de luz, lente mais mole
+nas imagens de IA. Grão NÃO se grava na imagem: é do motor, quadro a quadro (`"grao": 0.20`), com a luz que respira
+(`"cintilar": 0.045`). Sem tremor de quadro e sem barras de cinema.
+
+**Som — opções de `mix` no roteiro.** `"voz_pro": true` (cadeia de locução: EQ, de-esser, compressão em dois
+estágios) e `"fundo_bolso": true` (abre espaço na trilha na faixa da voz em vez de só abaixar a música).
+
+**Som de lugar nas falas.** `"voz_fx": {"tipo": "porta" | "telefone", "tom": 0.8}` na batida: a fala soa de onde
+vem (atrás da porta, no alto-falante do celular). `tom` < 1 deixa a voz grossa sem mudar a duração.
+
+**Vozes de personagens (exceção à regra "só a voz do Vigia").** Em falas-chave, o personagem pode ter voz própria,
+gerada no Gemini TTS (mãe do Ep. 05 = Gacrux; Marina = Leda). Regras: uma criatura que "fala" usa SEMPRE a voz do
+personagem (não alternar com o Vigia); personagens humanos só nos momentos de maior impacto; gerar a fala SEM
+instrução de interpretação (o TTS lê a instrução em voz alta); nunca acelerar a fala — se ficar mais longa, diminuir
+a pausa seguinte (`trocar_vozes.py` faz isso e mantém a duração do vídeo).

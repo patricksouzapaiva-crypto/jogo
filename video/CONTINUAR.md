@@ -73,3 +73,14 @@ Leia antes de qualquer coisa: `video/GUIA_DO_EDITOR.md` (regras da casa, seçõe
 Narração pelo Google Gemini TTS (grátis); ElevenLabs só para música/efeitos e pouco. Troca de pose só entre
 palavras. Nada de chiado. Trilha presente mas nunca por cima da voz; silêncio como ferramenta. Não encurtar
 as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA no fim. Nunca pedir chave no chat.
+
+
+## Estado em 11/11 (madrugada) — Ep. 05 em render final
+- Roteiro aprovado, narração pronta; falas-chave trocadas pela voz da mãe (Gacrux, aprovada pelo usuário: "A") e
+  áudio da Marina (Leda): `trocar_vozes.py` → `audio/voz_personagens.wav` (não vai pro git; refazer com o script,
+  precisa de `audio/voz_com_vinheta_limpa.wav` = narração do backup mp3 + vinheta, limpa com afftdn).
+- Correção de cor: `gradar.py` → pasta `grade/` (não vai pro git; rodar de novo após clonar).
+- Som novo (voz de estúdio, bolso, som de lugar) aprovado pelo usuário ("Gostei muito").
+- Render: `python3 ../../painel/gerar.py roteiro.json previas/ep05_final.mp4` (~1 h). NÃO rodar ffmpeg pesado em
+  paralelo com a codificação final: o contêiner reiniciou por falta de memória.
+- Depois do vídeo aprovado: pacote de publicação (3 capas, títulos, descrição com créditos, legendas, Shorts).
