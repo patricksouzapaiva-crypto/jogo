@@ -723,7 +723,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
          # Vigia em destaque (no cenário dele): maior, no terço esquerdo
          "canto_destaque": roteiro.get("canto_destaque", {"x": 60, "w": 560, "base": H + 40} if W > H else {"x": 140, "w": 520, "base": H - 300}),
          "legenda_y": leg.get("y", 1190 if H > W else H - 92), "legenda_tam": leg.get("tamanho", 56 if H > W else 50),
-         "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16),
+         "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16), "cintilar": roteiro.get("cintilar", 0),
          "vigia_padrao": roteiro.get("vigia_padrao", True),  # False: Vigia só nas cenas com "com_vigia"/"vigia"
          "cenas": [], "poses": [], "legendas": [], "escuros": []}
     plano = {"ambientes": [], "musica": roteiro.get("musica"), "trilhas": [], "efeitos": [], "abafar": [], "quedas": [],

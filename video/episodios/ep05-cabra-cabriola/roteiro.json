@@ -4,6 +4,7 @@
  "tema": "vigia",
  "avatar": "vigia_hd",
  "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "cintilar": 0.045,
  "apertar_pausas": false,
  "vigia_padrao": false,
  "preencher_pausas": {
@@ -11,7 +12,7 @@
  },
  "cauda": 1.6,
  "chuva": 0,
- "grao": 0.14,
+ "grao": 0.2,
  "mix": {
   "musica_ganho_db": 12,
   "fundo_sob_voz": -9,
@@ -66,7 +67,7 @@
   {
    "fala": "Três batidas na porta. Duas e dez da manhã.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.0,
      1.1
@@ -90,7 +91,7 @@
   {
    "fala": "\"Abre, filha. É a mãe.\"",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.3,
      1.42
@@ -110,7 +111,7 @@
   {
    "fala": "Era a voz dela. O jeito dela. Até a tossezinha no fim da frase.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.0,
      1.08
@@ -130,7 +131,7 @@
   {
    "fala": "A Marina já estava com a mão na chave.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.2,
      1.3
@@ -150,7 +151,7 @@
   {
    "fala": "Só que o celular, na outra mão, ainda estava em ligação.",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.0,
      1.08
@@ -181,7 +182,7 @@
   {
    "fala": "\"Filha… quem é que tá falando aí?\"",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.3,
      1.42
@@ -213,7 +214,7 @@
   {
    "fala": "E por que ela demorou tanto… pra aprender a falar.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.5,
      1.75
@@ -263,7 +264,7 @@
   {
    "fala": "Em mil novecentos e oitenta, dois pesquisadores fizeram um teste com bebês de menos de três dias de vida.",
    "cena": {
-    "imagem": "imagens_reais/bebe_mao_0.jpg",
+    "imagem": "grade/bebe_mao_0.jpg",
     "zoom": [
      1.0,
      1.06
@@ -277,7 +278,7 @@
   {
    "fala": "Uma chupeta ligada a um gravador. Dependendo do ritmo em que o bebê sugava, tocava uma voz… ou outra.",
    "cena": {
-    "imagem": "imagens_reais/bebe_mao_3.jpg",
+    "imagem": "grade/bebe_mao_3.jpg",
     "zoom": [
      1.0,
      1.1
@@ -298,7 +299,7 @@
   {
    "fala": "Eles mudavam o ritmo. De propósito. Pra ouvir a voz da própria mãe.",
    "cena": {
-    "imagem": "imagens_reais/maos_idosa_0.jpg",
+    "imagem": "grade/maos_idosa_0.jpg",
     "zoom": [
      1.0,
      1.1
@@ -372,7 +373,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+     "imagem": "grade/fechadura_antiga_2.jpg",
      "zoom": [
       1.0,
       1.2
@@ -404,7 +405,7 @@
    "fala": "Em Pernambuco, essa coisa tem nome. Cabra Cabriola.",
    "cenas": [
     {
-     "imagem": "imagens_reais/sabbath_goya_5.jpg",
+     "imagem": "grade/sabbath_goya_5.jpg",
      "zoom": [
       1.0,
       1.1
@@ -422,7 +423,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/bode_preto_3.jpg",
+     "imagem": "grade/bode_preto_3.jpg",
      "zoom": [
       1.0,
       1.12
@@ -446,7 +447,7 @@
    "fala": "Em mil novecentos e oito, o historiador Pereira da Costa registrou a história como o povo contava.",
    "cenas": [
     {
-     "imagem": "imagens_reais/pereira_4.jpg",
+     "imagem": "grade/pereira_4.jpg",
      "zoom": [
       1.0,
       1.06
@@ -457,7 +458,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/livro_antigo_3.jpg",
+     "imagem": "grade/livro_antigo_3.jpg",
      "zoom": [
       1.0,
       1.08
@@ -471,7 +472,7 @@
    "fala": "Uma mãe que trabalhava de noite. Os filhos trancados em casa, com uma ordem só: abrir a porta apenas pra voz dela.",
    "cenas": [
     {
-     "imagem": "imagens_reais/recife_rua_noite_1.jpg",
+     "imagem": "grade/recife_rua_noite_1.jpg",
      "zoom": [
       1.0,
       1.08
@@ -479,7 +480,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/porta_madeira_0.jpg",
+     "imagem": "grade/porta_madeira_0.jpg",
      "zoom": [
       1.0,
       1.1
@@ -503,7 +504,7 @@
    "fala": "Uma noite, alguma coisa bateu. Disse as palavras certas… com a voz errada. Grossa. Eles não abriram.",
    "cenas": [
     {
-     "imagem": "imagens_reais/fechadura_antiga_5.jpg",
+     "imagem": "grade/fechadura_antiga_5.jpg",
      "zoom": [
       1.0,
       1.1
@@ -511,7 +512,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/bode_preto_1.jpg",
+     "imagem": "grade/bode_preto_1.jpg",
      "zoom": [
       1.0,
       1.12
@@ -534,7 +535,7 @@
   {
    "fala": "E aí ela fez o que nenhum bicho faz. Ela esperou.",
    "cena": {
-    "imagem": "imagens_reais/cabra_escuro_0.jpg",
+    "imagem": "grade/cabra_escuro_0.jpg",
     "zoom": [
      1.0,
      1.15
@@ -556,7 +557,7 @@
    "fala": "Ficou escutando a mãe chegar. Noite após noite.",
    "cenas": [
     {
-     "imagem": "imagens_reais/janela_noite_3.jpg",
+     "imagem": "grade/janela_noite_3.jpg",
      "zoom": [
       1.0,
       1.1
@@ -574,7 +575,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/olho_cabra_0.jpg",
+     "imagem": "grade/olho_cabra_0.jpg",
      "zoom": [
       1.0,
       1.15
@@ -694,7 +695,7 @@
    "fala": "A Marina tinha vinte e nove anos e morava com a mãe num sobrado antigo, no centro do Recife.",
    "cenas": [
     {
-     "imagem": "imagens_reais/sobrado_recife_3.jpg",
+     "imagem": "grade/sobrado_recife_3.jpg",
      "zoom": [
       1.0,
       1.08
@@ -703,7 +704,7 @@
      "duracao_entrada": 1.2
     },
     {
-     "imagem": "imagens_reais/recife_rua_noite_0.jpg",
+     "imagem": "grade/recife_rua_noite_0.jpg",
      "zoom": [
       1.0,
       1.08
@@ -726,7 +727,7 @@
   {
    "fala": "Trabalhava de casa, revisando textos, quase sempre de madrugada.",
    "cena": {
-    "imagem": "imagens_reais/casa_antiga_noite_1.jpg",
+    "imagem": "grade/casa_antiga_noite_1.jpg",
     "zoom": [
      1.0,
      1.1
@@ -747,7 +748,7 @@
    "fala": "A mãe, dona Lourdes, era cuidadora de idosos. Três noites por semana, dormia no apartamento de um paciente,",
    "cenas": [
     {
-     "imagem": "imagens_reais/maos_idosa_0.jpg",
+     "imagem": "grade/maos_idosa_0.jpg",
      "zoom": [
       1.1,
       1.2
@@ -764,7 +765,7 @@
      ]
     },
     {
-     "imagem": "imagens_reais/predio_moderno_noite_9.jpg",
+     "imagem": "grade/predio_moderno_noite_9.jpg",
      "zoom": [
       1.0,
       1.06
@@ -776,7 +777,7 @@
   {
    "fala": "do outro lado da cidade.",
    "cena": {
-    "imagem": "imagens_reais/predio_moderno_noite_10.jpg",
+    "imagem": "grade/predio_moderno_noite_10.jpg",
     "zoom": [
      1.0,
      1.08
@@ -786,7 +787,7 @@
   {
    "fala": "Era assim desde que a Marina tinha seis anos. E desde aquela época, as duas tinham um combinado.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.0,
      1.08
@@ -806,7 +807,7 @@
   {
    "fala": "Quando voltava, a mãe batia três vezes. E dizia sempre a mesma frase:",
    "cena": {
-    "imagem": "imagens_reais/porta_madeira_0.jpg",
+    "imagem": "grade/porta_madeira_0.jpg",
     "zoom": [
      1.0,
      1.1
@@ -837,7 +838,7 @@
   {
    "fala": "Ela tinha a chave. Nunca precisou bater. Mas dizia que era pra filha saber, antes de qualquer coisa, que era ela.",
    "cena": {
-    "imagem": "imagens_reais/fechadura_antiga_1.jpg",
+    "imagem": "grade/fechadura_antiga_1.jpg",
     "zoom": [
      1.0,
      1.1
@@ -859,14 +860,14 @@
    "fala": "Numa terça-feira, com a mãe no plantão, bateram na porta. Duas e dez da manhã.",
    "cenas": [
     {
-     "imagem": "imagens_reais/rua_vazia_madrugada_3.jpg",
+     "imagem": "grade/rua_vazia_madrugada_3.jpg",
      "zoom": [
       1.0,
       1.08
      ]
     },
     {
-     "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+     "imagem": "grade/B01_porta_corredor.jpg",
      "zoom": [
       1.0,
       1.06
@@ -901,7 +902,7 @@
   {
    "fala": "Três batidas. Devagar demais.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.15,
      1.3
@@ -942,7 +943,7 @@
   {
    "fala": "As palavras estavam certas. A voz, não.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.5,
      1.65
@@ -963,7 +964,7 @@
   {
    "fala": "Era grossa. Arrastada. Como um disco tocando na rotação errada.",
    "cena": {
-    "imagem": "imagens_reais/corredor_abandonado_2.jpg",
+    "imagem": "grade/corredor_abandonado_2.jpg",
     "zoom": [
      1.0,
      1.12
@@ -983,7 +984,7 @@
   {
    "fala": "Como uma boca… que ainda não sabia fazer aquele som.",
    "cena": {
-    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "imagem": "grade/fechadura_antiga_2.jpg",
     "zoom": [
      1.1,
      1.4
@@ -1003,7 +1004,7 @@
   {
    "fala": "A Marina olhou pelo olho mágico. A luz da varanda estava apagada. Não dava pra ver nada.",
    "cena": {
-    "imagem": "imagens_tratadas/B04_olho_magico_escuro.jpg",
+    "imagem": "grade/B04_olho_magico_escuro.jpg",
     "zoom": [
      1.0,
      1.1
@@ -1023,7 +1024,7 @@
   {
    "fala": "Ela não abriu.",
    "cena": {
-    "imagem": "imagens_tratadas/B04_olho_magico_escuro.jpg",
+    "imagem": "grade/B04_olho_magico_escuro.jpg",
     "zoom": [
      1.2,
      1.3
@@ -1078,7 +1079,7 @@
    "fala": "Não eram passos. Eram… saltos. De dois em dois.",
    "cenas": [
     {
-     "imagem": "imagens_tratadas/B14_sombra_escada.jpg",
+     "imagem": "grade/B14_sombra_escada.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1095,7 +1096,7 @@
      ]
     },
     {
-     "imagem": "imagens_tratadas/B14_sombra_escada.jpg",
+     "imagem": "grade/B14_sombra_escada.jpg",
      "zoom": [
       1.35,
       1.5
@@ -1156,7 +1157,7 @@
    "fala": "Em mil oitocentos e doze, na Alemanha, os Irmãos Grimm publicaram \"O lobo e os sete cabritinhos\".",
    "cenas": [
     {
-     "imagem": "imagens_reais/grimm_retrato_0.jpg",
+     "imagem": "grade/grimm_retrato_0.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1167,7 +1168,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/livro_antigo_0.jpg",
+     "imagem": "grade/livro_antigo_0.jpg",
      "zoom": [
       1.0,
       1.08
@@ -1181,7 +1182,7 @@
    "fala": "O lobo bate na porta fingindo ser a mãe. A voz é grossa. Então ele come giz… pra afinar a voz.",
    "cenas": [
     {
-     "imagem": "imagens_reais/grimm_lobo_2.jpg",
+     "imagem": "grade/grimm_lobo_2.jpg",
      "zoom": [
       1.0,
       1.12
@@ -1199,7 +1200,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/porta_arranhada_1.jpg",
+     "imagem": "grade/porta_arranhada_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1221,7 +1222,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/mapa_antigo_1.jpg",
+     "imagem": "grade/mapa_antigo_1.jpg",
      "zoom": [
       1.0,
       1.12
@@ -1245,7 +1246,7 @@
    "fala": "Povos que nunca se encontraram… tiveram o mesmo pesadelo.",
    "cenas": [
     {
-     "imagem": "imagens_reais/mapa_antigo_6.jpg",
+     "imagem": "grade/mapa_antigo_6.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1311,7 +1312,7 @@
    "fala": "Na quinta-feira, a mãe estava no plantão de novo. E às duas e dez, bateram.",
    "cenas": [
     {
-     "imagem": "imagens_reais/recife_rua_noite_1.jpg",
+     "imagem": "grade/recife_rua_noite_1.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1320,7 +1321,7 @@
      "duracao_entrada": 1.2
     },
     {
-     "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+     "imagem": "grade/B01_porta_corredor.jpg",
      "zoom": [
       1.1,
       1.2
@@ -1368,7 +1369,7 @@
   {
    "fala": "A voz estava melhor. Mais fina. Quase.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.4,
      1.5
@@ -1389,7 +1390,7 @@
   {
    "fala": "Mas a frase saía igual demais. A mesma pausa. A mesma subida no fim. Como alguém repetindo uma coisa que decorou.",
    "cena": {
-    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "imagem": "grade/fechadura_antiga_2.jpg",
     "zoom": [
      1.0,
      1.25
@@ -1409,7 +1410,7 @@
   {
    "fala": "Dessa vez, a Marina gravou.",
    "cena": {
-    "imagem": "imagens_tratadas/B05_celular_chao.jpg",
+    "imagem": "grade/B05_celular_chao.jpg",
     "zoom": [
      1.0,
      1.1
@@ -1437,7 +1438,7 @@
      ]
     },
     {
-     "imagem": "imagens_reais/celular_escuro_0.jpg",
+     "imagem": "grade/celular_escuro_0.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1453,7 +1454,7 @@
   {
    "fala": "Três batidas. Nítidas.",
    "cena": {
-    "imagem": "imagens_tratadas/B05_celular_chao.jpg",
+    "imagem": "grade/B05_celular_chao.jpg",
     "zoom": [
      1.3,
      1.4
@@ -1484,7 +1485,7 @@
   {
    "fala": "A dona Lourdes disse que era moleque da rua. Que a filha andava dormindo pouco.",
    "cena": {
-    "imagem": "imagens_reais/maos_idosa_0.jpg",
+    "imagem": "grade/maos_idosa_0.jpg",
     "zoom": [
      1.15,
      1.25
@@ -1505,14 +1506,14 @@
    "fala": "Mas naquela tarde, sem avisar, ela chamou um chaveiro. E trocou a fechadura.",
    "cenas": [
     {
-     "imagem": "imagens_reais/chaveiro_0.jpg",
+     "imagem": "grade/chaveiro_0.jpg",
      "zoom": [
       1.0,
       1.1
      ]
     },
     {
-     "imagem": "imagens_reais/fechadura_antiga_1.jpg",
+     "imagem": "grade/fechadura_antiga_1.jpg",
      "zoom": [
       1.1,
       1.2
@@ -1534,7 +1535,7 @@
   {
    "fala": "Foi a Marina que achou o resto.",
    "cena": {
-    "imagem": "imagens_reais/beco_7.jpg",
+    "imagem": "grade/beco_7.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1545,7 +1546,7 @@
    "fala": "No beco ao lado da casa, embaixo da janela da cozinha, onde a mãe cantava lavando a louça, a terra estava pisada.",
    "cenas": [
     {
-     "imagem": "imagens_reais/beco_0.jpg",
+     "imagem": "grade/beco_0.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1562,7 +1563,7 @@
      ]
     },
     {
-     "imagem": "imagens_tratadas/B06_beco_marcas.jpg",
+     "imagem": "grade/B06_beco_marcas.jpg",
      "zoom": [
       1.0,
       1.08
@@ -1588,7 +1589,7 @@
   {
    "fala": "Duas marcas pequenas. Fundas. Lado a lado.",
    "cena": {
-    "imagem": "imagens_tratadas/B06_beco_marcas.jpg",
+    "imagem": "grade/B06_beco_marcas.jpg",
     "zoom": [
      1.3,
      1.45
@@ -1608,7 +1609,7 @@
   {
    "fala": "Alguma coisa tinha ficado ali, parada, por muito tempo.",
    "cena": {
-    "imagem": "imagens_tratadas/B06_beco_marcas.jpg",
+    "imagem": "grade/B06_beco_marcas.jpg",
     "zoom": [
      1.5,
      1.65
@@ -1628,7 +1629,7 @@
   {
    "fala": "Ouvindo.",
    "cena": {
-    "imagem": "imagens_reais/janela_noite_3.jpg",
+    "imagem": "grade/janela_noite_3.jpg",
     "zoom": [
      1.1,
      1.3
@@ -1649,7 +1650,7 @@
   {
    "fala": "O cinema conhece esse medo há muito tempo.",
    "cena": {
-    "imagem": "imagens_reais/cinema_antigo_3.jpg",
+    "imagem": "grade/cinema_antigo_3.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1669,7 +1670,7 @@
    "fala": "Em \"O Exorcista\", o momento que quebra o padre não é o grito, nem a cama tremendo.",
    "cenas": [
     {
-     "imagem": "imagens_reais/cinema_antigo_4.jpg",
+     "imagem": "grade/cinema_antigo_4.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1680,7 +1681,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/quarto_abandonado_1.jpg",
+     "imagem": "grade/quarto_abandonado_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1693,7 +1694,7 @@
   {
    "fala": "É quando a coisa fala com ele… com a voz da mãe dele, que tinha morrido.",
    "cena": {
-    "imagem": "imagens_reais/cadeira_vazia_2.jpg",
+    "imagem": "grade/cadeira_vazia_2.jpg",
     "zoom": [
      1.0,
      1.15
@@ -1726,7 +1727,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/floresta_escura_3.jpg",
+     "imagem": "grade/floresta_escura_3.jpg",
      "zoom": [
       1.0,
       1.12
@@ -1780,7 +1781,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/porta_entreaberta_0.jpg",
+     "imagem": "grade/porta_entreaberta_0.jpg",
      "zoom": [
       1.0,
       1.15
@@ -1804,7 +1805,7 @@
    "fala": "Em mil novecentos e vinte e três, o psiquiatra Joseph Capgras descreveu pacientes com uma certeza terrível:",
    "cenas": [
     {
-     "imagem": "imagens_reais/hospicio_0.jpg",
+     "imagem": "grade/hospicio_0.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1815,7 +1816,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/hospital_antigo_1.jpg",
+     "imagem": "grade/hospital_antigo_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1829,7 +1830,7 @@
    "fala": "a de que a mãe, o marido, o filho… tinham sido trocados por alguém idêntico.",
    "cenas": [
     {
-     "imagem": "imagens_reais/hospital_antigo_2.jpg",
+     "imagem": "grade/hospital_antigo_2.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1837,7 +1838,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/espelho_antigo_0.jpg",
+     "imagem": "grade/espelho_antigo_0.jpg",
      "zoom": [
       1.0,
       1.1
@@ -1860,7 +1861,7 @@
   {
    "fala": "O rosto era o mesmo. A voz era a mesma. Só faltava uma coisa: o sentimento de que era a pessoa.",
    "cena": {
-    "imagem": "imagens_reais/espelho_antigo_0.jpg",
+    "imagem": "grade/espelho_antigo_0.jpg",
     "zoom": [
      1.3,
      1.5
@@ -1892,7 +1893,7 @@
   {
    "fala": "No sábado, a mãe estava de folga. Dormia no quarto ao lado.",
    "cena": {
-    "imagem": "imagens_tratadas/B07_quarto_mae.jpg",
+    "imagem": "grade/B07_quarto_mae.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1915,7 +1916,7 @@
   {
    "fala": "Às duas e dez, bateram.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.0,
      1.1
@@ -1959,7 +1960,7 @@
   {
    "fala": "A Marina olhou pra cozinha. A chave da mãe estava na fruteira.",
    "cena": {
-    "imagem": "imagens_reais/fruteira_0.jpg",
+    "imagem": "grade/fruteira_0.jpg",
     "zoom": [
      1.0,
      1.15
@@ -1980,7 +1981,7 @@
   {
    "fala": "Ela foi até o quarto. A mãe dormia, de lado, respirando fundo.",
    "cena": {
-    "imagem": "imagens_tratadas/B07b_quarto_mae.jpg",
+    "imagem": "grade/B07b_quarto_mae.jpg",
     "zoom": [
      1.0,
      1.1
@@ -2000,7 +2001,7 @@
   {
    "fala": "E lá da porta da frente, a voz da mãe continuava:",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.2,
      1.3
@@ -2032,7 +2033,7 @@
   {
    "fala": "Nina. Ninguém mais no mundo chamava ela assim.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.45,
      1.6
@@ -2053,7 +2054,7 @@
   {
    "fala": "Ela acordou a mãe. As duas ficaram em pé no corredor, no escuro, de mãos dadas.",
    "cena": {
-    "imagem": "imagens_tratadas/B08_duas_corredor.jpg",
+    "imagem": "grade/B08_duas_corredor.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2073,7 +2074,7 @@
   {
    "fala": "E a dona Lourdes ouviu a própria voz… do lado de fora da casa dela.",
    "cena": {
-    "imagem": "imagens_tratadas/B08b_duas_corredor.jpg",
+    "imagem": "grade/B08b_duas_corredor.jpg",
     "zoom": [
      1.0,
      1.1
@@ -2093,7 +2094,7 @@
   {
    "fala": "Chamando a filha dela.",
    "cena": {
-    "imagem": "imagens_tratadas/B08_duas_corredor.jpg",
+    "imagem": "grade/B08_duas_corredor.jpg",
     "zoom": [
      1.3,
      1.4
@@ -2113,7 +2114,7 @@
   {
    "fala": "Ela não gritou. Não perguntou nada. Só apertou a mão da Marina e disse, bem baixinho:",
    "cena": {
-    "imagem": "imagens_tratadas/B09_maos_dadas.jpg",
+    "imagem": "grade/B09_maos_dadas.jpg",
     "zoom": [
      1.0,
      1.1
@@ -2133,7 +2134,7 @@
   {
    "fala": "\"Não abre.\"",
    "cena": {
-    "imagem": "imagens_tratadas/B09c_maos_dadas.jpg",
+    "imagem": "grade/B09c_maos_dadas.jpg",
     "zoom": [
      1.1,
      1.25
@@ -2155,14 +2156,14 @@
    "fala": "Ficaram ali até as quatro e pouco. Quando a voz parou, as duas ouviram a coisa ir embora.",
    "cenas": [
     {
-     "imagem": "imagens_tratadas/B08c_duas_corredor.jpg",
+     "imagem": "grade/B08c_duas_corredor.jpg",
      "zoom": [
       1.0,
       1.08
      ]
     },
     {
-     "imagem": "imagens_reais/escada_sinistra_1.jpg",
+     "imagem": "grade/escada_sinistra_1.jpg",
      "zoom": [
       1.0,
       1.1
@@ -2175,7 +2176,7 @@
    "fala": "Os saltos, descendo a escada. E alguma coisa dura… raspando no muro.",
    "cenas": [
     {
-     "imagem": "imagens_tratadas/B14_sombra_escada.jpg",
+     "imagem": "grade/B14_sombra_escada.jpg",
      "zoom": [
       1.2,
       1.35
@@ -2192,7 +2193,7 @@
      ]
     },
     {
-     "imagem": "imagens_reais/parede_mofo_1.jpg",
+     "imagem": "grade/parede_mofo_1.jpg",
      "zoom": [
       1.0,
       1.2
@@ -2277,7 +2278,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/bigorna_fogo_2.jpg",
+     "imagem": "grade/bigorna_fogo_2.jpg",
      "zoom": [
       1.0,
       1.15
@@ -2323,7 +2324,7 @@
    "fala": "A dona Lourdes tentou trocar os plantões. Não conseguiu: o seu Honório tinha piorado, e a família não confiava em mais ninguém.",
    "cenas": [
     {
-     "imagem": "imagens_reais/predio_moderno_noite_9.jpg",
+     "imagem": "grade/predio_moderno_noite_9.jpg",
      "zoom": [
       1.0,
       1.08
@@ -2332,7 +2333,7 @@
      "duracao_entrada": 1.2
     },
     {
-     "imagem": "imagens_tratadas/B13_celular_cabeceira.jpg",
+     "imagem": "grade/B13_celular_cabeceira.jpg",
      "zoom": [
       1.0,
       1.08
@@ -2355,7 +2356,7 @@
   {
    "fala": "Então as duas fizeram um plano.",
    "cena": {
-    "imagem": "imagens_tratadas/B09b_maos_dadas.jpg",
+    "imagem": "grade/B09b_maos_dadas.jpg",
     "zoom": [
      1.0,
      1.1
@@ -2365,7 +2366,7 @@
   {
    "fala": "Na noite do plantão, ficariam em ligação. A noite inteira. Sem desligar.",
    "cena": {
-    "imagem": "imagens_reais/celular_escuro_0.jpg",
+    "imagem": "grade/celular_escuro_0.jpg",
     "zoom": [
      1.0,
      1.12
@@ -2375,7 +2376,7 @@
   {
    "fala": "E a Marina escolheu uma pergunta. Uma coisa que só as duas sabiam.",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2396,7 +2397,7 @@
    "fala": "O que a mãe tinha dito a ela, vinte e dois anos antes, na noite em que o pai foi embora.",
    "cenas": [
     {
-     "imagem": "imagens_reais/cadeira_vazia_7.jpg",
+     "imagem": "grade/cadeira_vazia_7.jpg",
      "zoom": [
       1.0,
       1.15
@@ -2413,7 +2414,7 @@
      ]
     },
     {
-     "imagem": "imagens_reais/porta_entreaberta_0.jpg",
+     "imagem": "grade/porta_entreaberta_0.jpg",
      "zoom": [
       1.0,
       1.12
@@ -2443,7 +2444,7 @@
      "cps": 34
     },
     {
-     "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+     "imagem": "grade/B03_celular_ligacao.jpg",
      "zoom": [
       1.1,
       1.2
@@ -2482,7 +2483,7 @@
   {
    "fala": "Três batidas.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2512,7 +2513,7 @@
   {
    "fala": "\"Abre, filha. É a mãe.\"",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.25,
      1.4
@@ -2533,7 +2534,7 @@
   {
    "fala": "Perfeita. Era a voz dela. O jeito dela. Até a tossezinha no fim.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.0,
      1.1
@@ -2553,7 +2554,7 @@
   {
    "fala": "E no telefone, a mãe de verdade parou de falar.",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2573,7 +2574,7 @@
   {
    "fala": "\"Filha… quem é que tá falando aí?\"",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.3,
      1.42
@@ -2594,7 +2595,7 @@
   {
    "fala": "A Marina encostou a testa na madeira. E perguntou, pela porta:",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.5,
      1.6
@@ -2614,7 +2615,7 @@
   {
    "fala": "\"O que a senhora me disse… na noite em que o pai foi embora?\"",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.6,
      1.8
@@ -2634,7 +2635,7 @@
   {
    "fala": "No telefone, a mãe sussurrou: \"Não fala com ela, Marina. Pelo amor de Deus.\"",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.4,
      1.5
@@ -2655,7 +2656,7 @@
   {
    "fala": "E a voz atrás da porta respondeu. Sem pressa.",
    "cena": {
-    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "imagem": "grade/fechadura_antiga_2.jpg",
     "zoom": [
      1.0,
      1.35
@@ -2687,7 +2688,7 @@
   {
    "fala": "Certa. Palavra por palavra.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.25,
      1.35
@@ -2708,7 +2709,7 @@
   {
    "fala": "E no telefone, a dona Lourdes começou a chorar.",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.5,
      1.6
@@ -2739,7 +2740,7 @@
   {
    "fala": "\"Agora abre, Nina. A mãe tá cansada de ficar em pé.\"",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.8,
      2.0
@@ -2760,7 +2761,7 @@
   {
    "fala": "A Marina olhou pelo olho mágico. Dessa vez, a luz da varanda estava acesa.",
    "cena": {
-    "imagem": "imagens_tratadas/B10_olho_magico_luz.jpg",
+    "imagem": "grade/B10_olho_magico_luz.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2780,7 +2781,7 @@
   {
    "fala": "Não tinha ninguém.",
    "cena": {
-    "imagem": "imagens_tratadas/B10_olho_magico_luz.jpg",
+    "imagem": "grade/B10_olho_magico_luz.jpg",
     "zoom": [
      1.25,
      1.35
@@ -2801,7 +2802,7 @@
   {
    "fala": "Ninguém da altura dela.",
    "cena": {
-    "imagem": "imagens_tratadas/B10b_olho_magico_luz.jpg",
+    "imagem": "grade/B10b_olho_magico_luz.jpg",
     "zoom": [
      1.2,
      1.4
@@ -2822,7 +2823,7 @@
   {
    "fala": "Ela olhou pra baixo.",
    "cena": {
-    "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+    "imagem": "grade/B01_porta_corredor.jpg",
     "zoom": [
      1.6,
      1.8
@@ -2842,7 +2843,7 @@
   {
    "fala": "Na fresta da porta, a luz da rua estava cortada… em quatro lugares.",
    "cena": {
-    "imagem": "imagens_tratadas/B11c_fresta_quatro.jpg",
+    "imagem": "grade/B11c_fresta_quatro.jpg",
     "zoom": [
      1.3,
      1.6
@@ -2872,7 +2873,7 @@
   {
    "fala": "E a voz da mãe dela vinha dali. Da altura da fechadura.",
    "cena": {
-    "imagem": "imagens_tratadas/B11c_fresta_quatro.jpg",
+    "imagem": "grade/B11c_fresta_quatro.jpg",
     "zoom": [
      1.6,
      2.0
@@ -2892,7 +2893,7 @@
   {
    "fala": "Ela não abriu.",
    "cena": {
-    "imagem": "imagens_tratadas/B11c_fresta_quatro.jpg",
+    "imagem": "grade/B11c_fresta_quatro.jpg",
     "zoom": [
      2.0,
      2.15
@@ -2913,7 +2914,7 @@
   {
    "fala": "Sentou no chão, de costas pra porta, com a mãe no telefone. E ficou.",
    "cena": {
-    "imagem": "imagens_tratadas/B12_marina_chao.jpg",
+    "imagem": "grade/B12_marina_chao.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2937,7 +2938,7 @@
   {
    "fala": "A voz falou a noite inteira. Com paciência.",
    "cena": {
-    "imagem": "imagens_tratadas/B11c_fresta_quatro.jpg",
+    "imagem": "grade/B11c_fresta_quatro.jpg",
     "zoom": [
      1.35,
      1.45
@@ -2957,7 +2958,7 @@
   {
    "fala": "Depois de um tempo, nem pedia mais. Só conversava.",
    "cena": {
-    "imagem": "imagens_tratadas/B12_marina_chao.jpg",
+    "imagem": "grade/B12_marina_chao.jpg",
     "zoom": [
      1.2,
      1.3
@@ -2978,7 +2979,7 @@
    "fala": "Contava coisas de quando a Marina era pequena. O nome da boneca. A música da hora de dormir.",
    "cenas": [
     {
-     "imagem": "imagens_reais/quarto_abandonado_5.jpg",
+     "imagem": "grade/quarto_abandonado_5.jpg",
      "zoom": [
       1.0,
       1.12
@@ -2995,7 +2996,7 @@
      ]
     },
     {
-     "imagem": "imagens_tratadas/B12_marina_chao.jpg",
+     "imagem": "grade/B12_marina_chao.jpg",
      "zoom": [
       1.3,
       1.4
@@ -3025,7 +3026,7 @@
   {
    "fala": "Coisas que a mãe, no telefone, ouvia calada.",
    "cena": {
-    "imagem": "imagens_tratadas/B03_celular_ligacao.jpg",
+    "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
      1.2,
      1.3
@@ -3046,7 +3047,7 @@
    "fala": "Às cinco e vinte, clareou. E a casa ficou quieta.",
    "cenas": [
     {
-     "imagem": "imagens_reais/amanhecer_rua_2.jpg",
+     "imagem": "grade/amanhecer_rua_2.jpg",
      "zoom": [
       1.0,
       1.08
@@ -3056,7 +3057,7 @@
      "antecipar": 1.6
     },
     {
-     "imagem": "imagens_tratadas/B11b_fresta_vazia.jpg",
+     "imagem": "grade/B11b_fresta_vazia.jpg",
      "zoom": [
       1.3,
       1.4
@@ -3087,7 +3088,7 @@
   {
    "fala": "Às sete, bateram na porta. Três vezes.",
    "cena": {
-    "imagem": "imagens_tratadas/B11d_fresta_dia.jpg",
+    "imagem": "grade/B11d_fresta_dia.jpg",
     "zoom": [
      1.3,
      1.4
@@ -3127,7 +3128,7 @@
   {
    "fala": "E a Marina não conseguiu abrir.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.0,
      1.1
@@ -3148,7 +3149,7 @@
   {
    "fala": "Ficou parada, com a mão na chave, chorando… até a mãe usar a dela.",
    "cena": {
-    "imagem": "imagens_tratadas/B02_mao_chave.jpg",
+    "imagem": "grade/B02_mao_chave.jpg",
     "zoom": [
      1.2,
      1.35
@@ -3191,7 +3192,7 @@
      "antecipar": 1.6
     },
     {
-     "imagem": "imagens_reais/predio_moderno_noite_10.jpg",
+     "imagem": "grade/predio_moderno_noite_10.jpg",
      "zoom": [
       1.0,
       1.08
@@ -3226,7 +3227,7 @@
   {
    "fala": "Uma semana depois, no plantão, o celular dela vibrou. Duas e dez da manhã.",
    "cena": {
-    "imagem": "imagens_tratadas/B13_celular_cabeceira.jpg",
+    "imagem": "grade/B13_celular_cabeceira.jpg",
     "zoom": [
      1.0,
      1.08
@@ -3285,7 +3286,7 @@
   {
    "fala": "A voz era grossa. Arrastada. Errada.",
    "cena": {
-    "imagem": "imagens_tratadas/B13_celular_cabeceira.jpg",
+    "imagem": "grade/B13_celular_cabeceira.jpg",
     "zoom": [
      1.3,
      1.45
@@ -3351,7 +3352,7 @@
      "antecipar": 2.0
     },
     {
-     "imagem": "imagens_reais/pereira_4.jpg",
+     "imagem": "grade/pereira_4.jpg",
      "zoom": [
       1.0,
       1.08
@@ -3410,7 +3411,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/cabra_escuro_0.jpg",
+     "imagem": "grade/cabra_escuro_0.jpg",
      "zoom": [
       1.0,
       1.3
@@ -3453,7 +3454,7 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_tratadas/B01_porta_corredor.jpg",
+     "imagem": "grade/B01_porta_corredor.jpg",
      "zoom": [
       1.0,
       1.15

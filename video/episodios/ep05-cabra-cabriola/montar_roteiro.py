@@ -31,10 +31,7 @@ def vigia(z=(1.0, 1.04), foco=((0.55, 0.5), (0.57, 0.48))):
 
 
 def img(nome, z=(1.0, 1.06), foco=None, **kw):
-    if nome.startswith("B"):
-        arq = f"imagens_tratadas/{nome}.jpg"   # imagens de IA com filtro de foto velha (tratar_imagens_ia.py)
-    else:
-        arq = f"imagens_reais/{nome}.jpg"
+    arq = f"grade/{nome}.jpg"   # IA e fotos reais passam pela mesma correção de cor (gradar.py)
     c = {"imagem": arq, "zoom": list(z), **kw}
     if foco:
         c["foco"] = [list(foco[0]), list(foco[1])]
@@ -337,10 +334,11 @@ batidas.append({"fala": VINHETA, "cta_inicio": True, "sem_legenda": True, "ambie
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
     "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+    "cintilar": 0.045,  # acabamento de película: luz que respira + grão um pouco mais presente
     "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
-    "cauda": 1.6, "chuva": 0, "grao": 0.14,
+    "cauda": 1.6, "chuva": 0, "grao": 0.20,
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4},
     "legendas": {"destaques": ["voz", "porta", "mãe", "abre", "Nina", "chave", "batidas"]},
     "ambiente_inicial": [{"som": "ep05_fundo_longa", "volume_db": -9}],

@@ -654,6 +654,12 @@ function cenas(t) {
   ctx.globalCompositeOperation = "overlay"; ctx.globalAlpha = D.grao ?? 0.16;
   const r = rng(Math.floor(t * D.fps) + 1), dx = -Math.floor(r() * 512), dy = -Math.floor(r() * 512);
   for (let x = dx; x < W; x += 512) for (let y = dy; y < H; y += 512) ctx.drawImage(GRAO, x, y);
+  // "respiração" da luz (projetor/lâmpada velha): a imagem parada deixa de parecer foto — variação lenta e mínima
+  if (D.cintilar) {
+    const n = (Math.sin(t * 2.1) + Math.sin(t * 3.7 + 1.3) + Math.sin(t * 0.9 + 4)) / 3;
+    ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = D.cintilar * (0.5 + 0.5 * n);
+    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  }
   ctx.restore();
   if (c.cctv) interfaceCCTV(c, t);
   // escurecimento pontual (pausa / queda)
