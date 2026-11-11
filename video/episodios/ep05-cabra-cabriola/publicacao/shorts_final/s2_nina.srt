@@ -1,0 +1,51 @@
+1
+00:00:00,400 --> 00:00:01,820
+Abre, filha.
+
+2
+00:00:02,020 --> 00:00:04,240
+A mãe esqueceu a chave na fruteira.
+
+3
+00:00:06,650 --> 00:00:08,410
+A Marina olhou pra cozinha.
+
+4
+00:00:08,750 --> 00:00:11,860
+A chave da mãe estava na fruteira.
+
+5
+00:00:12,070 --> 00:00:13,270
+Ela foi até o quarto.
+
+6
+00:00:13,650 --> 00:00:14,690
+A mãe dormia,
+
+7
+00:00:14,920 --> 00:00:16,930
+de lado, respirando fundo.
+
+8
+00:00:17,510 --> 00:00:18,930
+E lá da porta da frente,
+
+9
+00:00:19,130 --> 00:00:20,570
+a voz da mãe continuava:
+
+10
+00:00:22,150 --> 00:00:23,380
+Tá frio aqui fora,
+
+11
+00:00:23,430 --> 00:00:24,230
+Nina.
+
+12
+00:00:26,670 --> 00:00:27,470
+Nina.
+
+13
+00:00:27,960 --> 00:00:30,720
+Ninguém mais no mundo chamava ela assim.

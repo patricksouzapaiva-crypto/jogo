@@ -7,3 +7,6 @@ busca/fotos3_res/
 audio/*.wav
 audio/*.log
 grade/
+publicacao/shorts_final/*.mp4
+shorts/*.wav
+shorts/*.log

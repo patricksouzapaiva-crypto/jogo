@@ -84,3 +84,10 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - Render: `python3 ../../painel/gerar.py roteiro.json previas/ep05_final.mp4` (~1 h). NÃO rodar ffmpeg pesado em
   paralelo com a codificação final: o contêiner reiniciou por falta de memória.
 - Depois do vídeo aprovado: pacote de publicação (3 capas, títulos, descrição com créditos, legendas, Shorts).
+
+## Ep. 05 ENTREGUE (11/11) — vídeo aprovado e pacote de publicação pronto
+- Vídeo final corrigido enviado ao usuário (`previas/O_Vigia_Ep05_Abre_filha.mp4`, 13min18; não vai pro git).
+- `publicacao/`: 3 capas, `YOUTUBE.md`, legenda pt-BR, 3 Shorts (≤35 s) com capas, .srt e `SHORTS.md`.
+- Lição: a imagem B14 "sombra na escada" era a foto do Ep. 04 arquivada errada — CONFERIR cada imagem recebida
+  olhando o arquivo antes de dar nome. Foi trocada por `escada_sinistra_2`/`escada_sinistra_0`.
+- Próximos: coletar CTR/retenção do Ep. 05 após 48 h; Ep. 06 (releitura de creepypasta), Ep. 07 (medo: oceano).
