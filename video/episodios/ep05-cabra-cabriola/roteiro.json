@@ -203,10 +203,10 @@
    "fala": "Até o fim deste vídeo, você vai entender o que estava do outro lado daquela porta.",
    "cena": {
     "tipo": "texto",
-    "texto": "Até o fim deste vídeo, você vai entender\no que estava do outro lado daquela porta.",
+    "texto": "O que estava do outro lado\ndaquela porta?",
     "estilo": "maquina",
-    "vermelho": "porta.",
-    "cps": 45
+    "vermelho": "porta?",
+    "cps": 40
    },
    "sem_legenda": true
   },
@@ -323,7 +323,7 @@
     "texto": "Você aprendeu essa voz\nantes de nascer.",
     "estilo": "maquina",
     "vermelho": "antes de nascer.",
-    "cps": 28
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -346,7 +346,8 @@
       0.43
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.8
   },
   {
    "fala": "Agora pensa comigo. E se alguma coisa… aprendesse essa senha?",
@@ -421,18 +422,18 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/cabra_chifres_1.jpg",
+     "imagem": "imagens_reais/bode_preto_3.jpg",
      "zoom": [
       1.0,
       1.12
      ],
      "foco": [
       [
-       0.58,
+       0.45,
        0.45
       ],
       [
-       0.58,
+       0.42,
        0.4
       ]
      ],
@@ -631,7 +632,7 @@
     "texto": "Na noite seguinte…\na porta se abriu.",
     "estilo": "maquina",
     "vermelho": "abriu.",
-    "cps": 22
+    "cps": 35
    },
    "sem_legenda": true
   },
@@ -661,10 +662,11 @@
      "texto": "Ela não arromba.\nEla aprende.",
      "estilo": "maquina",
      "vermelho": "aprende.",
-     "cps": 28,
+     "cps": 45,
      "em": "Ela"
     }
-   ]
+   ],
+   "pausa_antes_s": 0.8
   },
   {
    "fala": "Agora que você entende do que eu tô falando… vamos para a história de hoje.",
@@ -685,7 +687,8 @@
       0.42
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 0.5
   },
   {
    "fala": "A Marina tinha vinte e nove anos e morava com a mãe num sobrado antigo, no centro do Recife.",
@@ -824,10 +827,10 @@
    "fala": "\"Abre, filha. É a mãe.\"",
    "cena": {
     "tipo": "texto",
-    "texto": "Três batidas.\n— Abre, filha. É a mãe.",
+    "texto": "“Abre, filha. É a mãe.”",
     "estilo": "maquina",
-    "vermelho": "mãe.",
-    "cps": 30
+    "vermelho": "mãe.”",
+    "cps": 40
    },
    "sem_legenda": true
   },
@@ -849,7 +852,8 @@
       0.45
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "Numa terça-feira, com a mãe no plantão, bateram na porta. Duas e dez da manhã.",
@@ -930,7 +934,7 @@
     "texto": "“Abre, filha.\nÉ a mãe.”",
     "estilo": "maquina",
     "vermelho": "mãe.”",
-    "cps": 9
+    "cps": 14
    },
    "pausa_antes_s": 1.3,
    "sem_legenda": true
@@ -953,7 +957,8 @@
       0.42
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 2.1
   },
   {
    "fala": "Era grossa. Arrastada. Como um disco tocando na rotação errada.",
@@ -1049,33 +1054,14 @@
   },
   {
    "fala": "\"Tô aqui, filha. Que foi?\"",
-   "cenas": [
-    {
-     "imagem": "imagens/B13b_celular_cabeceira.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.55,
-       0.45
-      ],
-      [
-       0.6,
-       0.4
-      ]
-     ]
-    },
-    {
-     "tipo": "texto",
-     "texto": "Mãe: Tô aqui, filha. Que foi?",
-     "estilo": "maquina",
-     "vermelho": "Que foi?",
-     "cps": 40,
-     "em": "Que"
-    }
-   ]
+   "cena": {
+    "tipo": "texto",
+    "texto": "Mãe: Tô aqui, filha. Que foi?",
+    "estilo": "maquina",
+    "vermelho": "Que foi?",
+    "cps": 40
+   },
+   "sem_legenda": true
   },
   {
    "fala": "Lá fora, alguma coisa desceu os degraus da frente.",
@@ -1085,7 +1071,8 @@
      1.0,
      1.05
     ]
-   }
+   },
+   "pausa_antes_s": 2.0
   },
   {
    "fala": "Não eram passos. Eram… saltos. De dois em dois.",
@@ -1294,7 +1281,7 @@
     "texto": "Em todas elas,\no monstro começa errando.",
     "estilo": "maquina",
     "vermelho": "errando.",
-    "cps": 30
+    "cps": 50
    },
    "sem_legenda": true
   },
@@ -1317,7 +1304,8 @@
       0.42
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 0.5
   },
   {
    "fala": "Na quinta-feira, a mãe estava no plantão de novo. E às duas e dez, bateram.",
@@ -1372,7 +1360,7 @@
     "texto": "“Abre, filha. É a mãe.”",
     "estilo": "maquina",
     "vermelho": "mãe.”",
-    "cps": 14
+    "cps": 20
    },
    "pausa_antes_s": 1.0,
    "sem_legenda": true
@@ -1395,7 +1383,8 @@
       0.42
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.7
   },
   {
    "fala": "Mas a frase saía igual demais. A mesma pausa. A mesma subida no fim. Como alguém repetindo uma coisa que decorou.",
@@ -1896,7 +1885,7 @@
     "texto": "Às vezes, a única prova\nde que tem algo errado…\né um sentimento.",
     "estilo": "maquina",
     "vermelho": "sentimento.",
-    "cps": 32
+    "cps": 45
    },
    "sem_legenda": true
   },
@@ -1963,7 +1952,7 @@
     "texto": "“Abre, filha.\nA mãe esqueceu a chave\nna fruteira.”",
     "estilo": "maquina",
     "vermelho": "fruteira.”",
-    "cps": 18
+    "cps": 26
    },
    "sem_legenda": true
   },
@@ -1986,7 +1975,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.2
+   "pausa_antes_s": 2.9
   },
   {
    "fala": "Ela foi até o quarto. A mãe dormia, de lado, respirando fundo.",
@@ -2035,7 +2024,7 @@
     "texto": "“Tá frio aqui fora, Nina.”",
     "estilo": "maquina",
     "vermelho": "Nina.”",
-    "cps": 16
+    "cps": 24
    },
    "pausa_antes_s": 0.8,
    "sem_legenda": true
@@ -2059,7 +2048,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.6
+   "pausa_antes_s": 3.4
   },
   {
    "fala": "Ela acordou a mãe. As duas ficaram em pé no corredor, no escuro, de mãos dadas.",
@@ -2469,7 +2458,7 @@
        0.42
       ]
      ],
-     "em": "mãe"
+     "em": "contava"
     }
    ],
    "musica": {
@@ -2509,6 +2498,7 @@
      ]
     ]
    },
+   "pausa_antes_s": 0.9,
    "sons": [
     {
      "em": "batidas",
@@ -2690,7 +2680,7 @@
     "texto": "“Eu disse que, enquanto\neu tivesse voz…\nvocê nunca ia ficar sozinha.”",
     "estilo": "maquina",
     "vermelho": "sozinha.”",
-    "cps": 17
+    "cps": 28
    },
    "sem_legenda": true
   },
@@ -2712,7 +2702,8 @@
       0.6
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 2.8
   },
   {
    "fala": "E no telefone, a dona Lourdes começou a chorar.",
@@ -2741,7 +2732,7 @@
     "texto": "“Marina… eu nunca contei isso\npra ninguém.”",
     "estilo": "maquina",
     "vermelho": "ninguém.”",
-    "cps": 24
+    "cps": 36
    },
    "sem_legenda": true
   },
@@ -2764,7 +2755,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.5
+   "pausa_antes_s": 2.1
   },
   {
    "fala": "A Marina olhou pelo olho mágico. Dessa vez, a luz da varanda estava acesa.",
@@ -3129,7 +3120,7 @@
     "texto": "“Abre, filha. É a mãe.”",
     "estilo": "maquina",
     "vermelho": "mãe.”",
-    "cps": 22
+    "cps": 32
    },
    "sem_legenda": true
   },
@@ -3286,7 +3277,7 @@
     "texto": "“Mãe…\nabre a porta.”",
     "estilo": "maquina",
     "vermelho": "porta.”",
-    "cps": 8
+    "cps": 10
    },
    "pausa_antes_s": 1.4,
    "sem_legenda": true
@@ -3310,7 +3301,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 1.6
+   "pausa_antes_s": 1.9
   },
   {
    "fala": "Ainda.",
@@ -3419,19 +3410,19 @@
      "com_vigia": true
     },
     {
-     "imagem": "imagens_reais/cabra_chifres_1.jpg",
+     "imagem": "imagens_reais/cabra_escuro_0.jpg",
      "zoom": [
       1.0,
-      1.15
+      1.3
      ],
      "foco": [
       [
-       0.58,
-       0.42
+       0.4,
+       0.4
       ],
       [
-       0.58,
-       0.38
+       0.38,
+       0.33
       ]
      ],
      "em": "troca",
