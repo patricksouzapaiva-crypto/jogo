@@ -91,3 +91,10 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - Lição: a imagem B14 "sombra na escada" era a foto do Ep. 04 arquivada errada — CONFERIR cada imagem recebida
   olhando o arquivo antes de dar nome. Foi trocada por `escada_sinistra_2`/`escada_sinistra_0`.
 - Próximos: coletar CTR/retenção do Ep. 05 após 48 h; Ep. 06 (releitura de creepypasta), Ep. 07 (medo: oceano).
+
+## Ep. 06 em roteiro (11/11) — "Não deixa a gente dormir." (releitura do Experimento Russo do Sono)
+- Tema escolhido pelo usuário. `episodios/ep06-experimento-do-sono/PESQUISA.md` e `ROTEIRO.md` (rascunho, aguardando
+  aprovação). Sem sangue (o original é gráfico). Vozes de personagem só no interfone e na gravação final.
+- PENDENTE no canal: as tags de "Ela não dormia" (vídeo dsfFvTHiLPY) foram postas como insônia/experimento do sono
+  por engano — o vídeo é o Ep. 02 "A Sonâmbula" (sonambulismo). Corrigir quando o usuário autorizar (5 créditos).
+  O título dele segue travado por teste "Testar e comparar". A capa nova da sereia (y2i10N0kpCo) foi recusada.
