@@ -6,7 +6,7 @@ texto = open(sys.argv[1]).read(); saida = sys.argv[2]
 url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash-tts:streamGenerateContent?alt=sse"
 corpo = {"contents": [{"parts": [{"text": texto}]}],
          "generationConfig": {"responseModalities": ["AUDIO"],
-                              "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": "Algenib"}}}}}
+                              "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": __import__("os").environ.get("VOZ", "Algenib")}}}}}
 t0 = time.time()
 r = requests.post(url, headers={"x-goog-api-key": "proxy"}, json=corpo, stream=True, timeout=900)
 print("status", r.status_code, flush=True)
