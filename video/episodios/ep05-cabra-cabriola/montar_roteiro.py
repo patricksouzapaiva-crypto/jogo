@@ -32,7 +32,7 @@ def vigia(z=(1.0, 1.04), foco=((0.55, 0.5), (0.57, 0.48))):
 
 def img(nome, z=(1.0, 1.06), foco=None, **kw):
     if nome.startswith("B"):
-        arq = f"imagens/{nome}.{'png' if nome.startswith('B14') else 'jpg'}"
+        arq = f"imagens_tratadas/{nome}.jpg"   # imagens de IA com filtro de foto velha (tratar_imagens_ia.py)
     else:
         arq = f"imagens_reais/{nome}.jpg"
     c = {"imagem": arq, "zoom": list(z), **kw}
