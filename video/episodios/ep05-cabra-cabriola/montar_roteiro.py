@@ -3,7 +3,7 @@ As falas são endereçadas pelo ÍNDICE (a frase "Abre, filha. É a mãe." se re
 conferir os índices com: python3 montar_roteiro.py --falas
 Regras da casa: Vigia só nas inserções; música de fundo o episódio inteiro (silêncio = só de narração); a cantiga
 entra SOZINHA (o fundo sai); saída lenta das cenas tensas; clímax fica na imagem; ninguém com cara de IA; a criatura
-nunca aparece (só a sombra B14 e as quatro sombras na fresta B11c).
+nunca aparece (só as quatro sombras na fresta B11c).
 Uso: python3 montar_roteiro.py
 """
 import json
@@ -181,7 +181,7 @@ C(41, img("B04_olho_magico_escuro", (1.2, 1.3), ((0.55, 0.55), (0.55, 0.55))))
 C(42, texto("Marina: mãe, a senhora tá em casa?", "em casa?", cps=40))
 C(43, texto("Mãe: Tô aqui, filha. Que foi?", "Que foi?", cps=40))
 C(44, vid("escada_v_0", (1.0, 1.05)))
-C(45, img("B14_sombra_escada", (1.0, 1.06), ((0.5, 0.5), (0.48, 0.48))), (img("B14_sombra_escada", (1.35, 1.5), ((0.46, 0.45), (0.46, 0.43))), "saltos"))
+C(45, img("escada_sinistra_2", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.52))), (img("escada_sinistra_2", (1.3, 1.5), ((0.5, 0.6), (0.5, 0.72))), "saltos"))  # desce os degraus
 pausa(36, 1.3); pausa(41, 0.8)
 pausa(14, 1.8); pausa(24, 0.8); pausa(25, 0.5); pausa(33, 1.6); pausa(37, 2.1); pausa(44, 2.0)
 fx(34, "bateram", "ep05_batidas", -13)
@@ -247,7 +247,7 @@ C(88, img("B08_duas_corredor", (1.3, 1.4), ((0.5, 0.35), (0.5, 0.32))))     # a 
 C(89, img("B09_maos_dadas", (1.0, 1.1), ((0.5, 0.5), (0.52, 0.48))))
 C(90, img("B09c_maos_dadas", (1.1, 1.25), ((0.5, 0.45), (0.5, 0.45))))
 C(91, img("B08c_duas_corredor", (1.0, 1.08)), (img("escada_sinistra_1", (1.0, 1.1)), "Quando"))
-C(92, img("B14_sombra_escada", (1.2, 1.35), ((0.45, 0.5), (0.42, 0.55))), (img("parede_mofo_1", (1.0, 1.2), ((0.3, 0.5), (0.5, 0.5))), "raspando"))
+C(92, img("escada_sinistra_0", (1.1, 1.3), ((0.5, 0.55), (0.5, 0.7))), (img("parede_mofo_1", (1.0, 1.2), ((0.3, 0.5), (0.5, 0.5))), "raspando"))
 pausa(81, 2.9); pausa(84, 0.8); pausa(85, 3.4); pausa(90, 1.0)
 fx(79, "bateram", "ep05_batidas", -13)
 fx(92, "escada", "ep05_saltos", -16)

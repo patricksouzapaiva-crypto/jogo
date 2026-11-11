@@ -1,0 +1,196 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.045,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.2,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true
+ },
+ "legendas": {
+  "destaques": [
+   "voz",
+   "porta",
+   "mãe",
+   "abre",
+   "Nina",
+   "chave",
+   "batidas"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep05_fundo_longa",
+   "volume_db": -9
+  }
+ ],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "voz_arquivo": "s1_quem_ta_falando_voz.wav",
+ "batidas": [
+  {
+   "fala": "Três batidas na porta. Duas e dez da manhã.",
+   "cena": {
+    "imagem": "../grade/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
+   "cena": {
+    "imagem": "../grade/B01_porta_corredor.jpg",
+    "zoom": [
+     1.3,
+     1.42
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Era a voz dela. O jeito dela. Até a tossezinha no fim da frase.",
+   "cena": {
+    "imagem": "../grade/B02_mao_chave.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "A Marina já estava com a mão na chave.",
+   "cena": {
+    "imagem": "../grade/B02_mao_chave.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.33,
+      0.6
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Só que o celular, na outra mão, ainda estava em ligação.",
+   "cena": {
+    "imagem": "../grade/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.43
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "E do outro lado da linha, a onze quilômetros dali, a mãe dela perguntou:",
+   "cena": {
+    "tipo": "texto",
+    "texto": "EM LIGAÇÃO\nMÃE · 01:12:40",
+    "estilo": "maquina",
+    "vermelho": "MÃE",
+    "cps": 30,
+    "tamanho": 84
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Filha… quem é que tá falando aí?\"",
+   "voz_fx": {
+    "tipo": "telefone"
+   },
+   "cena": {
+    "imagem": "../grade/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.3,
+     1.42
+    ],
+    "foco": [
+     [
+      0.64,
+      0.42
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.3
+  }
+ ],
+ "cta": {
+  "titulo": "Quem está atrás da porta?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

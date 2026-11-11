@@ -1091,7 +1091,7 @@
    "fala": "Não eram passos. Eram… saltos. De dois em dois.",
    "cenas": [
     {
-     "imagem": "grade/B14_sombra_escada.jpg",
+     "imagem": "grade/escada_sinistra_2.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1102,25 +1102,25 @@
        0.5
       ],
       [
-       0.48,
-       0.48
+       0.5,
+       0.52
       ]
      ]
     },
     {
-     "imagem": "grade/B14_sombra_escada.jpg",
+     "imagem": "grade/escada_sinistra_2.jpg",
      "zoom": [
-      1.35,
+      1.3,
       1.5
      ],
      "foco": [
       [
-       0.46,
-       0.45
+       0.5,
+       0.6
       ],
       [
-       0.46,
-       0.43
+       0.5,
+       0.72
       ]
      ],
      "em": "saltos"
@@ -2198,19 +2198,19 @@
    "fala": "Os saltos, descendo a escada. E alguma coisa dura… raspando no muro.",
    "cenas": [
     {
-     "imagem": "grade/B14_sombra_escada.jpg",
+     "imagem": "grade/escada_sinistra_0.jpg",
      "zoom": [
-      1.2,
-      1.35
+      1.1,
+      1.3
      ],
      "foco": [
       [
-       0.45,
-       0.5
+       0.5,
+       0.55
       ],
       [
-       0.42,
-       0.55
+       0.5,
+       0.7
       ]
      ]
     },

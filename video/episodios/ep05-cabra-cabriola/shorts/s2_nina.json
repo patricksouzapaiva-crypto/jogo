@@ -1,0 +1,168 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.045,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.2,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true
+ },
+ "legendas": {
+  "destaques": [
+   "voz",
+   "porta",
+   "mãe",
+   "abre",
+   "Nina",
+   "chave",
+   "batidas"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep05_fundo_longa",
+   "volume_db": -9
+  }
+ ],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "voz_arquivo": "s2_nina_voz.wav",
+ "batidas": [
+  {
+   "fala": "\"Abre, filha. A mãe esqueceu a chave na fruteira.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Abre, filha.\nA mãe esqueceu a chave\nna fruteira.”",
+    "estilo": "maquina",
+    "vermelho": "fruteira.”",
+    "cps": 26,
+    "tamanho": 84
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A Marina olhou pra cozinha. A chave da mãe estava na fruteira.",
+   "cena": {
+    "imagem": "../grade/fruteira_0.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 2.35
+  },
+  {
+   "fala": "Ela foi até o quarto. A mãe dormia, de lado, respirando fundo.",
+   "cena": {
+    "imagem": "../grade/B07b_quarto_mae.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "E lá da porta da frente, a voz da mãe continuava:",
+   "cena": {
+    "imagem": "../grade/B01_porta_corredor.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "\"Tá frio aqui fora, Nina.\"",
+   "voz_fx": {
+    "tipo": "porta"
+   },
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Tá frio aqui fora, Nina.”",
+    "estilo": "maquina",
+    "vermelho": "Nina.”",
+    "cps": 24,
+    "tamanho": 84
+   },
+   "sem_legenda": true,
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Nina. Ninguém mais no mundo chamava ela assim.",
+   "cena": {
+    "imagem": "../grade/B01_porta_corredor.jpg",
+    "zoom": [
+     1.45,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 2.4
+  }
+ ],
+ "cta": {
+  "titulo": "Quem chamou ela de Nina?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}
