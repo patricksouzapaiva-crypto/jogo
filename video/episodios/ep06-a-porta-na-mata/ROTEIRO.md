@@ -1,4 +1,4 @@
-# O Vigia — Ep. 06 "A porta na mata" (RASCUNHO v3 para aprovação)
+# O Vigia — Ep. 06 "A porta na mata" (v3 — APROVADO pelo usuário em 11/11)
 
 Título no YouTube: **Se achar uma porta no meio da mata, não abra | Creepypasta**
 Alternativas: *As portas da mata | Creepypasta* · *Éramos cinco. Contamos seis. | Creepypasta*

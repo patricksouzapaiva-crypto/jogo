@@ -104,3 +104,11 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   ficaram em `episodios/ideias/experimento-do-sono/`.
 - O que o usuário quer numa releitura: NÃO pode parecer cópia; precisa de diferencial claro, versão brasileira,
   e EXPLICAR o que está acontecendo (não deixar em aberto como o original). Bem sinistro; descrever com palavras, sem imagem gráfica.
+
+## Ep. 06 "A porta na mata" — ROTEIRO v3 APROVADO (11/11)
+- `episodios/ep06-a-porta-na-mata/ROTEIRO.md` (190 falas, ~13 min) e `PEDIDO_IMAGENS_IA.md` (P01–P19 + clipes V01–V05).
+- Usuário assinou Google AI Pro (app Gemini, Flow, Nano Banana Pro). A CHAVE DA API continua no nível gratuito:
+  imagem e música dão 429 (testado 11/11). Para eu gerar sozinho, ele precisa ativar faturamento no projeto da
+  chave no Google AI Studio. Enquanto isso: ele gera as imagens/clipes no app e me manda.
+- Próximos passos: receber imagens → conferir fatos (Shackleton, Innocence Project) → buscar fotos/vídeos reais →
+  compor trilha nova → narração (Vigia + voz do Caio) → montar_roteiro.py → rascunho → final → pacote.
