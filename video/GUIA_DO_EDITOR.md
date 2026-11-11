@@ -547,3 +547,6 @@ gerada no Gemini TTS (mãe do Ep. 05 = Gacrux; Marina = Leda). Regras: uma criat
 personagem (não alternar com o Vigia); personagens humanos só nos momentos de maior impacto; gerar a fala SEM
 instrução de interpretação (o TTS lê a instrução em voz alta); nunca acelerar a fala — se ficar mais longa, diminuir
 a pausa seguinte (`trocar_vozes.py` faz isso e mantém a duração do vídeo).
+
+**Pacote de publicação (11/11):** só legenda em português. NÃO gerar legendas nem título/descrição traduzidos
+(espanhol/inglês) — o usuário não tem como enviar.
