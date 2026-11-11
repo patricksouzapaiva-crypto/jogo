@@ -114,8 +114,18 @@ for i, tom in ((1, None), (36, 0.80), (54, 0.92), (80, None), (84, None), (105, 
     vfx(i, "porta", tom)
 for i in (6, 108, 116):
     vfx(i, "telefone")
-vfx(111, "telefone", de="Não")
 vfx(139, "telefone", 0.80)
+
+# ================================================================ VOZES DOS PERSONAGENS (11/11)
+# A mãe (voz Gacrux) fala as falas-chave; a Marina (Leda) só no áudio do epílogo. trocar_vozes.py monta
+# audio/voz_personagens.wav e diz quanto cada fala nova cresceu: a pausa seguinte diminui o mesmo tanto.
+def aplicar_ajuste_pausas():
+    arq = AQUI / "audio" / "ajuste_pausas.json"
+    for k, d in (json.load(open(arq)) if arq.exists() else {}).items():
+        b = batidas[int(k)]
+        if b.get("pausa_antes_s"):
+            b["pausa_antes_s"] = round(max(0.3, b["pausa_antes_s"] + d), 2)
+
 
 # ================================================================ GANCHO (0:00–0:40) — sem Vigia
 C(0, img("B01_porta_corredor", (1.0, 1.1), PORTA))
@@ -348,7 +358,7 @@ batidas.append({"fala": VINHETA, "cta_inicio": True, "sem_legenda": True, "ambie
 
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
-    "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+    "voz_arquivo": "audio/voz_personagens.wav",
     "cintilar": 0.045,  # acabamento de película: luz que respira + grão um pouco mais presente
     "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
@@ -379,6 +389,7 @@ for b in batidas:
 if faltando:
     raise SystemExit("arquivos faltando: " + ", ".join(sorted(set(faltando))))
 sem = [i for i, b in enumerate(batidas) if not (b.get("cena") or b.get("cenas"))]
+aplicar_ajuste_pausas()
 (AQUI / "roteiro.json").write_text(json.dumps(roteiro, ensure_ascii=False, indent=1), encoding="utf-8")
 n_cenas = sum(len(b.get("cenas", [])) or 1 for b in batidas if b.get("cena") or b.get("cenas"))
 print(f"{len(batidas)} falas, {n_cenas} cenas, falas sem cena: {sem}")

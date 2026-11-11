@@ -3,7 +3,7 @@
  "formato": "16:9",
  "tema": "vigia",
  "avatar": "vigia_hd",
- "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "voz_arquivo": "audio/voz_personagens.wav",
  "cintilar": 0.045,
  "apertar_pausas": false,
  "vigia_padrao": false,
@@ -1995,7 +1995,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.9
+   "pausa_antes_s": 2.35
   },
   {
    "fala": "Ela foi até o quarto. A mãe dormia, de lado, respirando fundo.",
@@ -2071,7 +2071,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 3.4
+   "pausa_antes_s": 3.33
   },
   {
    "fala": "Ela acordou a mãe. As duas ficaram em pé no corredor, no escuro, de mãos dadas.",
@@ -2662,10 +2662,6 @@
   },
   {
    "fala": "No telefone, a mãe sussurrou: \"Não fala com ela, Marina. Pelo amor de Deus.\"",
-   "voz_fx": {
-    "tipo": "telefone",
-    "de": "Não"
-   },
    "cena": {
     "imagem": "grade/B03_celular_ligacao.jpg",
     "zoom": [
@@ -2739,7 +2735,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.8
+   "pausa_antes_s": 2.05
   },
   {
    "fala": "E no telefone, a dona Lourdes começou a chorar.",
@@ -2797,7 +2793,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 2.1
+   "pausa_antes_s": 0.89
   },
   {
    "fala": "A Marina olhou pelo olho mágico. Dessa vez, a luz da varanda estava acesa.",
