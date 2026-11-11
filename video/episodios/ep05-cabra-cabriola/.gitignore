@@ -4,3 +4,5 @@ busca/*.log
 previas/
 busca/fotos2_res/
 busca/fotos3_res/
+audio/*.wav
+audio/*.log

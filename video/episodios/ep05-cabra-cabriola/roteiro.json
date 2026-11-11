@@ -1,0 +1,3540 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "preencher_pausas": {
+  "min": 1.3
+ },
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4
+ },
+ "legendas": {
+  "destaques": [
+   "voz",
+   "porta",
+   "mãe",
+   "abre",
+   "Nina",
+   "chave",
+   "batidas"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep05_fundo_longa",
+   "volume_db": -9
+  }
+ ],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "abertura": {
+  "texto": "O VIGIA\nEP. 05 · ABRE, FILHA.",
+  "vermelho": "FILHA.",
+  "duracao": 3.2,
+  "segurar": 1.6,
+  "antes_da_batida": 9,
+  "sons": [
+   {
+    "som": "sub_drop",
+    "t": 0.2,
+    "volume_db": -12
+   }
+  ]
+ },
+ "cta": {
+  "titulo": "Qual voz faria você abrir?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "antes": 0.6,
+  "clique_em": "Inscreva-se",
+  "duracao": 2.5
+ },
+ "batidas": [
+  {
+   "fala": "Três batidas na porta. Duas e dez da manhã.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   }
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.3,
+     1.42
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Era a voz dela. O jeito dela. Até a tossezinha no fim da frase.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.45,
+      0.55
+     ],
+     [
+      0.42,
+      0.55
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A Marina já estava com a mão na chave.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.33,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Só que o celular, na outra mão, ainda estava em ligação.",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.62,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E do outro lado da linha, a onze quilômetros dali, a mãe dela perguntou:",
+   "cena": {
+    "tipo": "texto",
+    "texto": "EM LIGAÇÃO\nMÃE · 01:12:40",
+    "estilo": "maquina",
+    "vermelho": "MÃE",
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Filha… quem é que tá falando aí?\"",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.3,
+     1.42
+    ],
+    "foco": [
+     [
+      0.64,
+      0.42
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.3
+  },
+  {
+   "fala": "Até o fim deste vídeo, você vai entender o que estava do outro lado daquela porta.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Até o fim deste vídeo, você vai entender\no que estava do outro lado daquela porta.",
+    "estilo": "maquina",
+    "vermelho": "porta.",
+    "cps": 45
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E por que ela demorou tanto… pra aprender a falar.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.5,
+     1.75
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Qual foi a primeira voz que você conheceu na vida?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -9
+   },
+   "musica": {
+    "som": "ep05_cantiga",
+    "volume_db": -19
+   }
+  },
+  {
+   "fala": "Em mil novecentos e oitenta, dois pesquisadores fizeram um teste com bebês de menos de três dias de vida.",
+   "cena": {
+    "imagem": "imagens_reais/bebe_mao_0.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "tipo": "cartao",
+    "legenda_cartao": "Carolina do Norte · 1980",
+    "giro": -1.5,
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Uma chupeta ligada a um gravador. Dependendo do ritmo em que o bebê sugava, tocava uma voz… ou outra.",
+   "cena": {
+    "imagem": "imagens_reais/bebe_mao_3.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Eles mudavam o ritmo. De propósito. Pra ouvir a voz da própria mãe.",
+   "cena": {
+    "imagem": "imagens_reais/maos_idosa_0.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Você aprendeu essa voz antes de nascer.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Você aprendeu essa voz\nantes de nascer.",
+    "estilo": "maquina",
+    "vermelho": "antes de nascer.",
+    "cps": 28
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela é a senha mais antiga que você tem.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Agora pensa comigo. E se alguma coisa… aprendesse essa senha?",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+     "zoom": [
+      1.0,
+      1.2
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "em": "aprendesse",
+     "com_vigia": true
+    }
+   ],
+   "ambiente": {
+    "som": "ep05_fundo_b",
+    "volume_db": -9
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Em Pernambuco, essa coisa tem nome. Cabra Cabriola.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/sabbath_goya_5.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.2,
+       0.5
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/cabra_chifres_1.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.58,
+       0.45
+      ],
+      [
+       0.58,
+       0.4
+      ]
+     ],
+     "em": "Cabra",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Em mil novecentos e oito, o historiador Pereira da Costa registrou a história como o povo contava.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/pereira_4.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "F. A. Pereira da Costa · Pernambuco, 1908",
+     "giro": 1.2,
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/livro_antigo_3.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "em": "registrou",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Uma mãe que trabalhava de noite. Os filhos trancados em casa, com uma ordem só: abrir a porta apenas pra voz dela.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/recife_rua_noite_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/porta_madeira_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.7,
+       0.5
+      ],
+      [
+       0.75,
+       0.5
+      ]
+     ],
+     "em": "Os",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Uma noite, alguma coisa bateu. Disse as palavras certas… com a voz errada. Grossa. Eles não abriram.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/fechadura_antiga_5.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/bode_preto_1.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.45,
+       0.45
+      ],
+      [
+       0.42,
+       0.42
+      ]
+     ],
+     "em": "Grossa",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "E aí ela fez o que nenhum bicho faz. Ela esperou.",
+   "cena": {
+    "imagem": "imagens_reais/cabra_escuro_0.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Ficou escutando a mãe chegar. Noite após noite.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/janela_noite_3.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.6,
+       0.5
+      ],
+      [
+       0.7,
+       0.5
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/olho_cabra_0.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ],
+     "em": "Noite",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Depois, procurou um ferreiro. E mandou bater a própria língua na bigorna… até a voz afinar.",
+   "cenas": [
+    {
+     "video": "videos/ferreiro_v_0.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "com_vigia": true
+    },
+    {
+     "video": "videos/ferreiro_v_3.mp4",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "em": "bigorna",
+     "com_vigia": true
+    }
+   ],
+   "sons": [
+    {
+     "em": "bigorna",
+     "som": "ep05_bigorna",
+     "volume_db": -20,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Na noite seguinte… a porta se abriu.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Na noite seguinte…\na porta se abriu.",
+    "estilo": "maquina",
+    "vermelho": "abriu.",
+    "cps": 22
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Guarda isso: ela não arromba. Ela aprende.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "Ela não arromba.\nEla aprende.",
+     "estilo": "maquina",
+     "vermelho": "aprende.",
+     "cps": 28,
+     "em": "Ela"
+    }
+   ]
+  },
+  {
+   "fala": "Agora que você entende do que eu tô falando… vamos para a história de hoje.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.06,
+     1.14
+    ],
+    "foco": [
+     [
+      0.35,
+      0.45
+     ],
+     [
+      0.33,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A Marina tinha vinte e nove anos e morava com a mãe num sobrado antigo, no centro do Recife.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/sobrado_recife_3.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "entrada": "preto",
+     "duracao_entrada": 1.2
+    },
+    {
+     "imagem": "imagens_reais/recife_rua_noite_0.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.55,
+       0.5
+      ]
+     ],
+     "em": "sobrado"
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Trabalhava de casa, revisando textos, quase sempre de madrugada.",
+   "cena": {
+    "imagem": "imagens_reais/casa_antiga_noite_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A mãe, dona Lourdes, era cuidadora de idosos. Três noites por semana, dormia no apartamento de um paciente,",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/maos_idosa_0.jpg",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.5,
+       0.55
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens_reais/predio_moderno_noite_9.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "Três"
+    }
+   ]
+  },
+  {
+   "fala": "do outro lado da cidade.",
+   "cena": {
+    "imagem": "imagens_reais/predio_moderno_noite_10.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "Era assim desde que a Marina tinha seis anos. E desde aquela época, as duas tinham um combinado.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Quando voltava, a mãe batia três vezes. E dizia sempre a mesma frase:",
+   "cena": {
+    "imagem": "imagens_reais/porta_madeira_0.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.75,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Três batidas.\n— Abre, filha. É a mãe.",
+    "estilo": "maquina",
+    "vermelho": "mãe.",
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela tinha a chave. Nunca precisou bater. Mas dizia que era pra filha saber, antes de qualquer coisa, que era ela.",
+   "cena": {
+    "imagem": "imagens_reais/fechadura_antiga_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Numa terça-feira, com a mãe no plantão, bateram na porta. Duas e dez da manhã.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/rua_vazia_madrugada_3.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    {
+     "imagem": "imagens/B01_porta_corredor.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "em": "bateram"
+    }
+   ],
+   "sons": [
+    {
+     "em": "bateram",
+     "som": "ep05_batidas",
+     "volume_db": -13,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   }
+  },
+  {
+   "fala": "Três batidas. Devagar demais.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.15,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "Três",
+     "som": "ep05_batidas_lentas",
+     "volume_db": -13,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Abre, filha.\nÉ a mãe.”",
+    "estilo": "maquina",
+    "vermelho": "mãe.”",
+    "cps": 9
+   },
+   "pausa_antes_s": 1.3,
+   "sem_legenda": true
+  },
+  {
+   "fala": "As palavras estavam certas. A voz, não.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.5,
+     1.65
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Era grossa. Arrastada. Como um disco tocando na rotação errada.",
+   "cena": {
+    "imagem": "imagens_reais/corredor_abandonado_2.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Como uma boca… que ainda não sabia fazer aquele som.",
+   "cena": {
+    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "zoom": [
+     1.1,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.42
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "A Marina olhou pelo olho mágico. A luz da varanda estava apagada. Não dava pra ver nada.",
+   "cena": {
+    "imagem": "imagens/B04_olho_magico_escuro.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ela não abriu.",
+   "cena": {
+    "imagem": "imagens/B04_olho_magico_escuro.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.55,
+      0.55
+     ],
+     [
+      0.55,
+      0.55
+     ]
+    ]
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Mandou uma mensagem pra mãe. A resposta veio com uma foto do quarto do paciente.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Marina: mãe, a senhora tá em casa?",
+    "estilo": "maquina",
+    "vermelho": "em casa?",
+    "cps": 40
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Tô aqui, filha. Que foi?\"",
+   "cenas": [
+    {
+     "imagem": "imagens/B13b_celular_cabeceira.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.55,
+       0.45
+      ],
+      [
+       0.6,
+       0.4
+      ]
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "Mãe: Tô aqui, filha. Que foi?",
+     "estilo": "maquina",
+     "vermelho": "Que foi?",
+     "cps": 40,
+     "em": "Que"
+    }
+   ]
+  },
+  {
+   "fala": "Lá fora, alguma coisa desceu os degraus da frente.",
+   "cena": {
+    "video": "videos/escada_v_0.mp4",
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   }
+  },
+  {
+   "fala": "Não eram passos. Eram… saltos. De dois em dois.",
+   "cenas": [
+    {
+     "imagem": "imagens/B14_sombra_escada.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.48,
+       0.48
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/B14_sombra_escada.png",
+     "zoom": [
+      1.35,
+      1.5
+     ],
+     "foco": [
+      [
+       0.46,
+       0.45
+      ],
+      [
+       0.46,
+       0.43
+      ]
+     ],
+     "em": "saltos"
+    }
+   ],
+   "sons": [
+    {
+     "em": "saltos",
+     "som": "ep05_saltos",
+     "volume_db": -15,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Essa história não é só do Recife.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
+   },
+   "pausa_antes_s": 3.8000000000000003,
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Em mil oitocentos e doze, na Alemanha, os Irmãos Grimm publicaram \"O lobo e os sete cabritinhos\".",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/grimm_retrato_0.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "Irmãos Grimm · Alemanha, 1812",
+     "giro": -1.5,
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/livro_antigo_0.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "em": "publicaram",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "O lobo bate na porta fingindo ser a mãe. A voz é grossa. Então ele come giz… pra afinar a voz.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/grimm_lobo_2.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.4
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/porta_arranhada_1.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "em": "Então",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Existem versões na Armênia. No Egito. No Irã. No Marrocos. Em Portugal, de onde a nossa Cabra veio de navio.",
+   "cenas": [
+    {
+     "video": "videos/mapa_v_5.mp4",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/mapa_antigo_1.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.4,
+       0.5
+      ],
+      [
+       0.3,
+       0.45
+      ]
+     ],
+     "em": "Portugal",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Povos que nunca se encontraram… tiveram o mesmo pesadelo.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/mapa_antigo_6.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "em": "tiveram",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "E repara: em todas elas, o monstro começa errando.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Em todas elas,\no monstro começa errando.",
+    "estilo": "maquina",
+    "vermelho": "errando.",
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "É assim que você sabe que ele ainda está aprendendo.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Na quinta-feira, a mãe estava no plantão de novo. E às duas e dez, bateram.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/recife_rua_noite_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "entrada": "preto",
+     "duracao_entrada": 1.2
+    },
+    {
+     "imagem": "imagens/B01_porta_corredor.jpg",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "em": "bateram"
+    }
+   ],
+   "pausa_antes_s": 1.2,
+   "sons": [
+    {
+     "em": "bateram",
+     "som": "ep05_batidas",
+     "volume_db": -13,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   }
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Abre, filha. É a mãe.”",
+    "estilo": "maquina",
+    "vermelho": "mãe.”",
+    "cps": 14
+   },
+   "pausa_antes_s": 1.0,
+   "sem_legenda": true
+  },
+  {
+   "fala": "A voz estava melhor. Mais fina. Quase.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas a frase saía igual demais. A mesma pausa. A mesma subida no fim. Como alguém repetindo uma coisa que decorou.",
+   "cena": {
+    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Dessa vez, a Marina gravou.",
+   "cena": {
+    "imagem": "imagens/B05_celular_chao.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.55,
+      0.6
+     ],
+     [
+      0.6,
+      0.65
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "De manhã, mostrou pra mãe. As duas ouviram juntas, na mesa da cozinha.",
+   "cenas": [
+    {
+     "video": "videos/cozinha_v_3.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    {
+     "imagem": "imagens_reais/celular_escuro_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "em": "ouviram"
+    }
+   ],
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Três batidas. Nítidas.",
+   "cena": {
+    "imagem": "imagens/B05_celular_chao.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.6,
+      0.68
+     ],
+     [
+      0.62,
+      0.7
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E depois… nada. Só o chiado do corredor. No lugar onde a voz devia estar, a gravação estava vazia.",
+   "cena": {
+    "video": "videos/corredor_v_2.mp4",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "pausa_antes_s": 1.5
+  },
+  {
+   "fala": "A dona Lourdes disse que era moleque da rua. Que a filha andava dormindo pouco.",
+   "cena": {
+    "imagem": "imagens_reais/maos_idosa_0.jpg",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas naquela tarde, sem avisar, ela chamou um chaveiro. E trocou a fechadura.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/chaveiro_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    {
+     "imagem": "imagens_reais/fechadura_antiga_1.jpg",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.45,
+       0.45
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "trocou"
+    }
+   ]
+  },
+  {
+   "fala": "Foi a Marina que achou o resto.",
+   "cena": {
+    "imagem": "imagens_reais/beco_7.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "fala": "No beco ao lado da casa, embaixo da janela da cozinha, onde a mãe cantava lavando a louça, a terra estava pisada.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/beco_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.55
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/B06_beco_marcas.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.55
+      ],
+      [
+       0.5,
+       0.6
+      ]
+     ],
+     "em": "terra"
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Duas marcas pequenas. Fundas. Lado a lado.",
+   "cena": {
+    "imagem": "imagens/B06_beco_marcas.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.48,
+      0.75
+     ],
+     [
+      0.48,
+      0.77
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Alguma coisa tinha ficado ali, parada, por muito tempo.",
+   "cena": {
+    "imagem": "imagens/B06_beco_marcas.jpg",
+    "zoom": [
+     1.5,
+     1.65
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.55,
+      0.3
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ouvindo.",
+   "cena": {
+    "imagem": "imagens_reais/janela_noite_3.jpg",
+    "zoom": [
+     1.1,
+     1.3
+    ],
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.75,
+      0.5
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "O cinema conhece esse medo há muito tempo.",
+   "cena": {
+    "imagem": "imagens_reais/cinema_antigo_3.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "com_vigia": true,
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
+   },
+   "pausa_antes_s": 3.6,
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Em \"O Exorcista\", o momento que quebra o padre não é o grito, nem a cama tremendo.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/cinema_antigo_4.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "“O Exorcista” · 1973",
+     "giro": -1.5,
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/quarto_abandonado_1.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "em": "cama",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "É quando a coisa fala com ele… com a voz da mãe dele, que tinha morrido.",
+   "cena": {
+    "imagem": "imagens_reais/cadeira_vazia_2.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Em \"Aniquilação\", uma criatura se aproxima no escuro pedindo socorro. Com a voz da mulher que ela tinha acabado de levar.",
+   "cenas": [
+    {
+     "video": "videos/floresta_v_1.mp4",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "“Aniquilação” · 2018",
+     "giro": 1.2,
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/floresta_escura_3.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "em": "Com",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Um monstro que ruge, você enfrenta ou foge.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Um monstro que chama você pelo apelido, com a voz de quem você ama… você abre a porta.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.05,
+      1.1
+     ],
+     "foco": [
+      [
+       0.4,
+       0.45
+      ],
+      [
+       0.38,
+       0.42
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/porta_entreaberta_0.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "foco": [
+      [
+       0.7,
+       0.5
+      ],
+      [
+       0.72,
+       0.5
+      ]
+     ],
+     "em": "abre",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Em mil novecentos e vinte e três, o psiquiatra Joseph Capgras descreveu pacientes com uma certeza terrível:",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/hospicio_0.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "tipo": "cartao",
+     "legenda_cartao": "Paris · 1923",
+     "giro": -1.5,
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/hospital_antigo_1.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "em": "pacientes",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "a de que a mãe, o marido, o filho… tinham sido trocados por alguém idêntico.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/hospital_antigo_2.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/espelho_antigo_0.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco": [
+      [
+       0.6,
+       0.4
+      ],
+      [
+       0.65,
+       0.35
+      ]
+     ],
+     "em": "idêntico",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "O rosto era o mesmo. A voz era a mesma. Só faltava uma coisa: o sentimento de que era a pessoa.",
+   "cena": {
+    "imagem": "imagens_reais/espelho_antigo_0.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.68,
+      0.33
+     ],
+     [
+      0.7,
+      0.3
+     ]
+    ],
+    "com_vigia": true
+   }
+  },
+  {
+   "fala": "Às vezes, a única prova de que tem algo errado… é um sentimento.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Às vezes, a única prova\nde que tem algo errado…\né um sentimento.",
+    "estilo": "maquina",
+    "vermelho": "sentimento.",
+    "cps": 32
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "No sábado, a mãe estava de folga. Dormia no quarto ao lado.",
+   "cena": {
+    "imagem": "imagens/B07_quarto_mae.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 1.2
+   },
+   "pausa_antes_s": 2.0
+  },
+  {
+   "fala": "Às duas e dez, bateram.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "bateram",
+     "som": "ep05_batidas",
+     "volume_db": -13,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   }
+  },
+  {
+   "fala": "\"Abre, filha. A mãe esqueceu a chave na fruteira.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Abre, filha.\nA mãe esqueceu a chave\nna fruteira.”",
+    "estilo": "maquina",
+    "vermelho": "fruteira.”",
+    "cps": 18
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A Marina olhou pra cozinha. A chave da mãe estava na fruteira.",
+   "cena": {
+    "imagem": "imagens_reais/fruteira_0.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Ela foi até o quarto. A mãe dormia, de lado, respirando fundo.",
+   "cena": {
+    "imagem": "imagens/B07b_quarto_mae.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.65,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E lá da porta da frente, a voz da mãe continuava:",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Tá frio aqui fora, Nina.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Tá frio aqui fora, Nina.”",
+    "estilo": "maquina",
+    "vermelho": "Nina.”",
+    "cps": 16
+   },
+   "pausa_antes_s": 0.8,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Nina. Ninguém mais no mundo chamava ela assim.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.45,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Ela acordou a mãe. As duas ficaram em pé no corredor, no escuro, de mãos dadas.",
+   "cena": {
+    "imagem": "imagens/B08_duas_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E a dona Lourdes ouviu a própria voz… do lado de fora da casa dela.",
+   "cena": {
+    "imagem": "imagens/B08b_duas_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Chamando a filha dela.",
+   "cena": {
+    "imagem": "imagens/B08_duas_corredor.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.35
+     ],
+     [
+      0.5,
+      0.32
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ela não gritou. Não perguntou nada. Só apertou a mão da Marina e disse, bem baixinho:",
+   "cena": {
+    "imagem": "imagens/B09_maos_dadas.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Não abre.\"",
+   "cena": {
+    "imagem": "imagens/B09c_maos_dadas.jpg",
+    "zoom": [
+     1.1,
+     1.25
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Ficaram ali até as quatro e pouco. Quando a voz parou, as duas ouviram a coisa ir embora.",
+   "cenas": [
+    {
+     "imagem": "imagens/B08c_duas_corredor.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    {
+     "imagem": "imagens_reais/escada_sinistra_1.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "em": "Quando"
+    }
+   ]
+  },
+  {
+   "fala": "Os saltos, descendo a escada. E alguma coisa dura… raspando no muro.",
+   "cenas": [
+    {
+     "imagem": "imagens/B14_sombra_escada.png",
+     "zoom": [
+      1.2,
+      1.35
+     ],
+     "foco": [
+      [
+       0.45,
+       0.5
+      ],
+      [
+       0.42,
+       0.55
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens_reais/parede_mofo_1.jpg",
+     "zoom": [
+      1.0,
+      1.2
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ],
+     "em": "raspando"
+    }
+   ],
+   "sons": [
+    {
+     "em": "escada",
+     "som": "ep05_saltos",
+     "volume_db": -16,
+     "depois": true,
+     "atraso": 0.0
+    },
+    {
+     "em": "raspando",
+     "som": "ep05_raspar",
+     "volume_db": -18,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Lembra do ferreiro?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
+   },
+   "pausa_antes_s": 3.8000000000000003,
+   "sons": [
+    {
+     "em": "ferreiro",
+     "som": "ep05_bigorna",
+     "volume_db": -20,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Cada noite que elas não abriam… ela voltava pra bigorna.",
+   "cenas": [
+    {
+     "video": "videos/ferreiro_v_5.mp4",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/bigorna_fogo_2.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "em": "voltava",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Mas presta atenção num detalhe. Até agora, ela só disse coisas que ouviu. Ela repete.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ela ainda não sabe… conversar.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Ela ainda não sabe…\nconversar.",
+    "estilo": "maquina",
+    "vermelho": "conversar.",
+    "cps": 20
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A dona Lourdes tentou trocar os plantões. Não conseguiu: o seu Honório tinha piorado, e a família não confiava em mais ninguém.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/predio_moderno_noite_9.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "entrada": "preto",
+     "duracao_entrada": 1.2
+    },
+    {
+     "imagem": "imagens/B13_celular_cabeceira.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.4
+      ],
+      [
+       0.45,
+       0.35
+      ]
+     ],
+     "em": "Honório"
+    }
+   ],
+   "pausa_antes_s": 2.4
+  },
+  {
+   "fala": "Então as duas fizeram um plano.",
+   "cena": {
+    "imagem": "imagens/B09b_maos_dadas.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ]
+   }
+  },
+  {
+   "fala": "Na noite do plantão, ficariam em ligação. A noite inteira. Sem desligar.",
+   "cena": {
+    "imagem": "imagens_reais/celular_escuro_0.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ]
+   }
+  },
+  {
+   "fala": "E a Marina escolheu uma pergunta. Uma coisa que só as duas sabiam.",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.62,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "O que a mãe tinha dito a ela, vinte e dois anos antes, na noite em que o pai foi embora.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/cadeira_vazia_7.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "foco": [
+      [
+       0.3,
+       0.6
+      ],
+      [
+       0.25,
+       0.6
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens_reais/porta_entreaberta_0.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.7,
+       0.5
+      ],
+      [
+       0.72,
+       0.5
+      ]
+     ],
+     "em": "noite"
+    }
+   ]
+  },
+  {
+   "fala": "Terça-feira. A ligação já passava de uma hora. A mãe, do outro lado, contava baixinho como estava o seu Honório.",
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "TERÇA-FEIRA\nEM LIGAÇÃO · MÃE · 01:04:12",
+     "estilo": "maquina",
+     "vermelho": "MÃE",
+     "cps": 34
+    },
+    {
+     "imagem": "imagens/B03_celular_ligacao.jpg",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.62,
+       0.43
+      ],
+      [
+       0.63,
+       0.42
+      ]
+     ],
+     "em": "mãe"
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Duas e dez.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "02:10",
+    "estilo": "impacto",
+    "vermelho": "02:10",
+    "cps": 10,
+    "tamanho": 170
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Três batidas.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "batidas",
+     "som": "ep05_batidas",
+     "volume_db": -13,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.25,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "pausa_antes_s": 2.6
+  },
+  {
+   "fala": "Perfeita. Era a voz dela. O jeito dela. Até a tossezinha no fim.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.55
+     ],
+     [
+      0.4,
+      0.58
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E no telefone, a mãe de verdade parou de falar.",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.62,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Filha… quem é que tá falando aí?\"",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.3,
+     1.42
+    ],
+    "foco": [
+     [
+      0.64,
+      0.42
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "A Marina encostou a testa na madeira. E perguntou, pela porta:",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.5,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"O que a senhora me disse… na noite em que o pai foi embora?\"",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "No telefone, a mãe sussurrou: \"Não fala com ela, Marina. Pelo amor de Deus.\"",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.64,
+      0.42
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.5
+  },
+  {
+   "fala": "E a voz atrás da porta respondeu. Sem pressa.",
+   "cena": {
+    "imagem": "imagens_reais/fechadura_antiga_2.jpg",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "pausa_antes_s": 2.6
+  },
+  {
+   "fala": "\"Eu disse que, enquanto eu tivesse voz… você nunca ia ficar sozinha.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Eu disse que, enquanto\neu tivesse voz…\nvocê nunca ia ficar sozinha.”",
+    "estilo": "maquina",
+    "vermelho": "sozinha.”",
+    "cps": 17
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Certa. Palavra por palavra.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.25,
+     1.35
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.33,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E no telefone, a dona Lourdes começou a chorar.",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.5,
+     1.6
+    ],
+    "foco": [
+     [
+      0.64,
+      0.42
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "\"Marina… eu nunca contei isso pra ninguém.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Marina… eu nunca contei isso\npra ninguém.”",
+    "estilo": "maquina",
+    "vermelho": "ninguém.”",
+    "cps": 24
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Agora abre, Nina. A mãe tá cansada de ficar em pé.\"",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.8,
+     2.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.5
+  },
+  {
+   "fala": "A Marina olhou pelo olho mágico. Dessa vez, a luz da varanda estava acesa.",
+   "cena": {
+    "imagem": "imagens/B10_olho_magico_luz.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Não tinha ninguém.",
+   "cena": {
+    "imagem": "imagens/B10_olho_magico_luz.jpg",
+    "zoom": [
+     1.25,
+     1.35
+    ],
+    "foco": [
+     [
+      0.5,
+      0.48
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Ninguém da altura dela.",
+   "cena": {
+    "imagem": "imagens/B10b_olho_magico_luz.jpg",
+    "zoom": [
+     1.2,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.68
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Ela olhou pra baixo.",
+   "cena": {
+    "imagem": "imagens/B01_porta_corredor.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.78
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Na fresta da porta, a luz da rua estava cortada… em quatro lugares.",
+   "cena": {
+    "imagem": "imagens/B11c_fresta_quatro.jpg",
+    "zoom": [
+     1.3,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.47
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.0,
+   "sons": [
+    {
+     "em": "lugares",
+     "som": "sub_drop",
+     "volume_db": -14,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E a voz da mãe dela vinha dali. Da altura da fechadura.",
+   "cena": {
+    "imagem": "imagens/B11c_fresta_quatro.jpg",
+    "zoom": [
+     1.6,
+     2.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.47
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Ela não abriu.",
+   "cena": {
+    "imagem": "imagens/B11c_fresta_quatro.jpg",
+    "zoom": [
+     2.0,
+     2.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.47
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ]
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "Sentou no chão, de costas pra porta, com a mãe no telefone. E ficou.",
+   "cena": {
+    "imagem": "imagens/B12_marina_chao.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.62,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 2.0,
+    "antecipar": 2.0
+   },
+   "pausa_antes_s": 5.0
+  },
+  {
+   "fala": "A voz falou a noite inteira. Com paciência.",
+   "cena": {
+    "imagem": "imagens/B11c_fresta_quatro.jpg",
+    "zoom": [
+     1.35,
+     1.45
+    ],
+    "foco": [
+     [
+      0.5,
+      0.47
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Depois de um tempo, nem pedia mais. Só conversava.",
+   "cena": {
+    "imagem": "imagens/B12_marina_chao.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.62,
+      0.45
+     ],
+     [
+      0.64,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Contava coisas de quando a Marina era pequena. O nome da boneca. A música da hora de dormir.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/quarto_abandonado_5.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.45,
+       0.55
+      ],
+      [
+       0.4,
+       0.55
+      ]
+     ]
+    },
+    {
+     "imagem": "imagens/B12_marina_chao.jpg",
+     "zoom": [
+      1.3,
+      1.4
+     ],
+     "foco": [
+      [
+       0.64,
+       0.45
+      ],
+      [
+       0.65,
+       0.45
+      ]
+     ],
+     "em": "música"
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -9
+   },
+   "musica": {
+    "som": "ep05_cantiga",
+    "volume_db": -19
+   }
+  },
+  {
+   "fala": "Coisas que a mãe, no telefone, ouvia calada.",
+   "cena": {
+    "imagem": "imagens/B03_celular_ligacao.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.62,
+      0.43
+     ],
+     [
+      0.63,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Às cinco e vinte, clareou. E a casa ficou quieta.",
+   "cenas": [
+    {
+     "imagem": "imagens_reais/amanhecer_rua_2.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 1.6,
+     "antecipar": 1.6
+    },
+    {
+     "imagem": "imagens/B11b_fresta_vazia.jpg",
+     "zoom": [
+      1.3,
+      1.4
+     ],
+     "foco": [
+      [
+       0.5,
+       0.47
+      ],
+      [
+       0.5,
+       0.46
+      ]
+     ],
+     "em": "casa"
+    }
+   ],
+   "pausa_antes_s": 3.6,
+   "ambiente": {
+    "som": "ep05_fundo_c",
+    "volume_db": -9
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Às sete, bateram na porta. Três vezes.",
+   "cena": {
+    "imagem": "imagens/B11d_fresta_dia.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.38
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "vezes",
+     "som": "ep05_batidas",
+     "volume_db": -13,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "\"Abre, filha. É a mãe.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Abre, filha. É a mãe.”",
+    "estilo": "maquina",
+    "vermelho": "mãe.”",
+    "cps": 22
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E a Marina não conseguiu abrir.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.55
+     ],
+     [
+      0.4,
+      0.58
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Ficou parada, com a mão na chave, chorando… até a mãe usar a dela.",
+   "cena": {
+    "imagem": "imagens/B02_mao_chave.jpg",
+    "zoom": [
+     1.2,
+     1.35
+    ],
+    "foco": [
+     [
+      0.35,
+      0.6
+     ],
+     [
+      0.33,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Elas se mudaram naquele mês. Um apartamento no nono andar, com porteiro, câmera e interfone.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "com_vigia": true,
+     "entrada": "fundir",
+     "duracao_entrada": 1.6,
+     "antecipar": 1.6
+    },
+    {
+     "imagem": "imagens_reais/predio_moderno_noite_10.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "em": "apartamento",
+     "com_vigia": true
+    }
+   ],
+   "pausa_antes_s": 3.8000000000000003
+  },
+  {
+   "fala": "E um combinado novo: a dona Lourdes nunca mais bateu na porta.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Uma semana depois, no plantão, o celular dela vibrou. Duas e dez da manhã.",
+   "cena": {
+    "imagem": "imagens/B13_celular_cabeceira.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.48,
+      0.5
+     ]
+    ],
+    "entrada": "preto",
+    "duracao_entrada": 1.0
+   },
+   "pausa_antes_s": 1.2,
+   "sons": [
+    {
+     "em": "vibrou",
+     "som": "ep05_vibrar",
+     "volume_db": -16,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "ep05_tensao_longa",
+    "volume_db": -25
+   }
+  },
+  {
+   "fala": "Um áudio da Marina. Quatro segundos.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ÁUDIO · MARINA · 0:04",
+    "estilo": "maquina",
+    "vermelho": "MARINA",
+    "cps": 30
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Mãe… abre a porta.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "“Mãe…\nabre a porta.”",
+    "estilo": "maquina",
+    "vermelho": "porta.”",
+    "cps": 8
+   },
+   "pausa_antes_s": 1.4,
+   "sem_legenda": true
+  },
+  {
+   "fala": "A voz era grossa. Arrastada. Errada.",
+   "cena": {
+    "imagem": "imagens/B13_celular_cabeceira.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.48,
+      0.52
+     ],
+     [
+      0.47,
+      0.52
+     ]
+    ]
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Ainda.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Ainda.",
+    "estilo": "impacto",
+    "vermelho": "Ainda.",
+    "cps": 8,
+    "tamanho": 170
+   },
+   "pausa_antes_s": 1.6,
+   "sons": [
+    {
+     "em": "Ainda",
+     "som": "ep05_batidas_lentas",
+     "volume_db": -12,
+     "depois": true,
+     "atraso": 1.4
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Na história que o Pereira da Costa ouviu, em mil novecentos e oito, a porta se abriu.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "com_vigia": true,
+     "entrada": "fundir",
+     "duracao_entrada": 2.0,
+     "antecipar": 2.0
+    },
+    {
+     "imagem": "imagens_reais/pereira_4.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "em": "mil",
+     "com_vigia": true
+    }
+   ],
+   "pausa_antes_s": 6.2,
+   "musica": {
+    "som": "silencio",
+    "volume_db": -40
+   }
+  },
+  {
+   "fala": "Eu nunca gostei desse final.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Mas repara no que ele ensina: ela não desiste de uma casa. Ela só… troca de voz.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens_reais/cabra_chifres_1.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "foco": [
+      [
+       0.58,
+       0.42
+      ],
+      [
+       0.58,
+       0.38
+      ]
+     ],
+     "em": "troca",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "Hoje à noite, se alguém chamar você do outro lado da porta, com a voz de alguém que você ama…",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "com_vigia": true
+    },
+    {
+     "imagem": "imagens/B01_porta_corredor.jpg",
+     "zoom": [
+      1.0,
+      1.15
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "em": "outro",
+     "com_vigia": true
+    }
+   ]
+  },
+  {
+   "fala": "escuta até o fim. Com calma.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "E me conta nos comentários: qual é a voz que faria você abrir… sem pensar?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.08,
+     1.16
+    ],
+    "foco": [
+     [
+      0.35,
+      0.45
+     ],
+     [
+      0.33,
+      0.42
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
+   "cta_inicio": true,
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "nenhum"
+   },
+   "musica": {
+    "som": "vinheta_ultimo_abrigo",
+    "volume_db": -20
+   }
+  }
+ ]
+}
