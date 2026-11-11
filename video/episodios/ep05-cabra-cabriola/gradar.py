@@ -44,12 +44,12 @@ def gradar(arq, ia):
     a *= ganho; lum *= ganho
 
     # 3) paleta — saturação de "bleach bypass": pouca cor no geral, menos ainda nas sombras
-    sat = (0.36 if ia else 0.85) * (0.55 + 0.45 * np.clip(lum * 6, 0, 1))
+    sat = (0.45 if ia else 0.85) * (0.55 + 0.45 * np.clip(lum * 6, 0, 1))
     croma = a - lum
     if ia:
         # o âmbar das luzes de casa sobrevive (um pouco mais que o resto); verdes/azuis da IA somem
         quente = np.clip((a[..., :1] - a[..., 2:3]) / (lum + 0.02), 0, 1)
-        sat = sat * (1 + 0.65 * quente)
+        sat = sat * (1 + 1.0 * quente)
     a = lum + croma * sat
     # sombras frias (verde-azuladas), altas luzes âmbar: contraste de cor = profundidade
     s = np.clip(1 - lum / 0.18, 0, 1) ** 1.5
