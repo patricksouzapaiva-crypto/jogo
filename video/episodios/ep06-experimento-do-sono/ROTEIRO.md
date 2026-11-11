@@ -1,187 +1,209 @@
-# O Vigia — Ep. 06 "Não deixa a gente dormir." (RASCUNHO para aprovação)
+# O Vigia — Ep. 06 "O Experimento Russo do Sono" (RASCUNHO v2 para aprovação)
 
-Título no YouTube: **Não deixa a gente dormir. | Creepypasta**
-Alternativas: *O Experimento do Sono: o que eles viram no 9º dia | Creepypasta* · *Onze noites sem dormir | Creepypasta*
+Título no YouTube: **O Experimento Russo do Sono | Creepypasta**  (o nome é o que as pessoas buscam)
+Alternativas: *Eles imploraram pra não dormir | Creepypasta* · *Liga o gás de novo. | Creepypasta*
+Capa (texto diferente do título): **"DIA 15."** ou **"NÃO DEIXA A GENTE DORMIR."**
 
-Releitura de **O Experimento Russo do Sono** (creepypasta de 2010). Formato tema + história, regras do Ep. 05:
-gancho de ~40 s dentro da cena mais tensa, tema curto, curiosidades em pílulas no meio, clímax na imagem,
-saída lenta das cenas tensas, música o tempo todo. Alvo: 13–15 min (~1.900 palavras).
+**Pedido do usuário (11/11):** bem sinistro, no nível da creepypasta original; não precisa ser gráfico na
+imagem, mas pode descrever com palavras; a ideia é MELHORAR a creepypasta.
 
-**O que muda em relação à creepypasta:** nada de sangue nem ferimento (o original é gráfico; o nosso é
-psicológico). História nossa, no Brasil, hoje, com outro final. A homenagem fica em três imagens: as páginas
-tapando o vidro, o pedido para NÃO parar, e a frase que responde no interfone.
+**O que esta versão melhora no original:**
+1. O original é um relatório frio, sem ninguém para o público acompanhar. Aqui existe um ponto de vista:
+   **Aleksei, 22 anos, o operador de escuta** — o único que ouve os cinco microfones a noite inteira.
+2. O original explica demais no fim (o discurso do preso). Aqui a resposta é curta e deixa uma pergunta
+   que o público leva pra cama.
+3. O original aposta no choque. Aqui o pior é sempre **ouvido ou contado em três frases**, nunca mostrado
+   — e o horror maior não é o que eles fizeram com o corpo, é o que acontece quando alguém fecha os olhos.
+4. O tema real (microssono) vira a chave da história: o cérebro que "morre aos pedaços".
+5. Um final novo: a sexta pessoa que também não dormiu.
 
-**Vozes de personagens (regra do Ep. 05, só nas falas-chave):** a voz do interfone (dona Irene, voluntária) e,
-no fim, a voz do próprio Caio na gravação. Tudo o mais é o Vigia. Marcadas com 🎙.
+**Mantido do original (homenagem):** 1947, cinco presos, a câmara selada, o gás, a promessa de liberdade,
+os sussurros nos microfones, o homem que grita até perder a voz, as páginas nas vigias, o oxigênio, o pedido
+para religar o gás, o sedativo que não funciona, o coração que para quando ele dorme.
 
-**Personagens:** Caio, 26, técnico do turno da noite de um laboratório do sono. Cinco voluntários adultos num
-estudo pago de 11 noites sem dormir. Dona Irene, 58, professora aposentada, é quem fala pelo grupo.
+**Imagem:** nada de ferimento, sangue ou corpo na tela. Silhuetas, vigias tapadas, medidores, fitas,
+corredores, mãos. O que choca está na narração.
+
+**Vozes de personagem (só nas falas-chave, marcadas com 🎙):** a voz que sai do alto-falante da câmara
+(um dos presos, rouca) — com filtro de alto-falante antigo. Tudo o mais é o Vigia.
+
+**Créditos:** releitura livre de "The Russian Sleep Experiment" (Creepypasta Wiki, 2010, autor OrangeSoda),
+texto que a wiki publica sob licença CC BY-SA (conferir a página antes de publicar). Roteiro novo, com outras palavras; o crédito vai na descrição.
 
 ---
 
-## GANCHO (0:00–0:40) — sem Vigia
+## GANCHO (0:00–0:45) — sem Vigia
 
-Quatro e doze da manhã.
-Na tela do Caio, os cinco sensores de respiração mostravam a mesma coisa: sono profundo.
-Os cinco. Ao mesmo tempo.
-E no áudio da sala… cinco pessoas se levantaram.
-O interfone acendeu sozinho.
-🎙 "Pode abrir agora."
-O Caio estava com a mão na trava da porta.
-Até o fim deste vídeo, você vai entender por que ele não abriu.
-E por que, duas noites antes, aquelas mesmas pessoas imploraram… pra nunca mais dormir.
+No décimo quinto dia, eles abriram a câmara.
+Os soldados mais velhos, homens que tinham atravessado a guerra inteira, saíram de lá vomitando.
+Dos cinco que entraram, quatro ainda estavam vivos.
+Não deviam estar.
+E os quatro, com o pouco de voz que tinha sobrado, pediram a mesma coisa.
+Não pediram médico. Não pediram água. Não pediram pra sair.
+🎙 "Liga o gás de novo."
+Até o fim deste vídeo, você vai entender o que eles viram lá dentro.
+E por que preferiam qualquer coisa… a fechar os olhos.
 
-## TEMA (0:45–2:10) — Vigia apresenta
+## TEMA (0:50–2:10) — Vigia apresenta
 
 Quanto tempo você aguenta sem dormir?
-Em mil novecentos e cinquenta e nove, um radialista de Nova York chamado Peter Tripp ficou duzentas horas acordado, dentro de uma cabine de vidro, no meio da rua.
-No fim, ele via ratos correndo pelo estúdio. E tinha certeza de que o médico que cuidava dele… era um agente funerário. Que tinha vindo buscá-lo.
-Cinco anos depois, um estudante de dezessete anos chegou a duzentas e sessenta e quatro horas. Onze dias.
-E nos anos oitenta, em Chicago, um laboratório impediu ratos de dormir.
+Em mil novecentos e cinquenta e nove, um radialista de Nova York ficou duzentas horas acordado, numa cabine de vidro, no meio da rua.
+No fim, via ratos correndo pelo estúdio. E jurava que o médico que cuidava dele era um agente funerário… que tinha vindo buscá-lo.
+Nos anos oitenta, em Chicago, um laboratório impediu ratos de dormir.
 Todos morreram. Em duas, três semanas.
 Até hoje, ninguém sabe exatamente de quê.
-Em dois mil e dez, alguém juntou esses medos numa história só, e publicou na internet: O Experimento Russo do Sono.
-Cinco presos. Uma sala selada. Um gás pra ninguém dormir. Quinze dias.
-É ficção. Nunca aconteceu. Até a foto famosa é um boneco de Halloween.
-Mas milhões de pessoas acreditaram. Sabe por quê?
-Porque a parte mais assustadora… é a que é verdade.
-Guarda uma palavra: microssono. Eu volto nela.
-Agora, a história de hoje.
+Em dois mil e dez, alguém pegou esse medo e escreveu a história mais famosa da internet sobre ele.
+O Experimento Russo do Sono.
+É ficção. Nunca existiu nenhum documento. Até a foto famosa é um boneco de Halloween.
+Mas eu sempre achei que essa história foi contada do lado errado do vidro.
+Hoje eu vou te contar do lado certo.
+E guarda uma palavra, que eu volto nela: microssono.
 
-## PARTE 1 — o estudo
+## PARTE 1 — a câmara
 
-O Caio tinha vinte e seis anos e trabalhava no turno da noite de um laboratório do sono, em São Paulo.
-O trabalho dele era simples: sentar numa sala escura, olhar pra seis telas, e anotar.
-Naquele mês, o laboratório recebeu um estudo diferente. Pago por uma empresa de fora.
-Cinco voluntários. Adultos, saudáveis, bem pagos. Uma sala fechada, com camas, livros, um banheiro e um vidro espelhado.
-E no ar-condicionado da sala, um composto novo. Um estimulante.
-O objetivo estava na primeira página do protocolo: onze noites sem dormir. O recorde.
-A regra do Caio também: não entrar na sala. Em nenhuma hipótese. Falar só pelo interfone.
-Nas primeiras noites, foi quase divertido.
-Eles jogavam baralho. Contavam a vida. Riam alto.
-Uma delas, a dona Irene, professora aposentada, dava boa-noite pro vidro toda madrugada.
-🎙 "Boa noite, moço do vidro. Dorme por nós."
-O Caio sorria. E anotava: sem alterações.
+Mil novecentos e quarenta e sete. Uma instalação militar sem nome, em algum lugar da União Soviética.
+Cinco presos políticos receberam uma proposta: trinta dias sem dormir. Quem aguentasse, saía livre.
+Era mentira. Mas eles não sabiam.
+Foram trancados numa câmara selada. Cinco catres sem colchão. Livros. Água. Comida seca pra um mês.
+Pelas grades do teto, entrava ar misturado com um gás. Um estimulante experimental.
+Ninguém dormia ali dentro. Não por vontade. Por química.
+Não havia câmeras. Só duas vigias de vidro grosso… e cinco microfones.
+E na outra ponta dos fios, de fone no ouvido, das dez da noite às seis da manhã, ficava um rapaz de vinte e dois anos.
+Aleksei. Operador de escuta.
+O trabalho dele era ouvir. E escrever tudo.
+Nos primeiros quatro dias, ele quase gostou deles.
+Falavam da guerra. Das mulheres. Um deles cantava baixinho quando achava que ninguém ouvia.
+No quinto dia, eles pararam de conversar entre si.
+E começaram a falar com os microfones.
+Um por vez. Encostando a boca no metal. Sussurrando.
+Entregavam uns aos outros. Crimes inventados. Nomes. Qualquer coisa.
+Achavam que quem escutava… podia tirá-los dali.
+O Aleksei escrevia. E não dormia direito desde o segundo dia.
 
-## PARTE 2 — o quinto dia
+## PARTE 2 — o nono dia
 
-Na quinta noite, as conversas mudaram.
-Eles pararam de falar do que iam fazer quando saíssem.
-Na sexta, pararam de falar perto dos microfones.
-Iam os cinco pro canto mais longe do vidro. E cochichavam. Por horas.
-O Caio aumentava o volume no máximo. Só pegava uma palavra, de vez em quando.
-"Atrás."
-Na sétima noite, ele perguntou pelo interfone se estava tudo bem.
-Os cinco viraram pro vidro ao mesmo tempo.
-E ninguém respondeu.
-Na oitava, eles rasgaram os livros.
-Página por página. Com calma. E colaram todas no vidro, com a própria saliva, até não sobrar uma fresta.
-O Caio ficou só com o som.
-E o som… era pior.
+No nono dia, um deles começou a gritar.
+Não era grito de dor. Era um grito só. Comprido.
+Ele correu de uma ponta à outra da câmara, gritando, por três horas.
+O Aleksei ouviu a voz dele rachar. Depois rasgar. Depois virar só um chiado… de quem não tem mais com o que gritar.
+E o que deixou o Aleksei sem ar não foi o grito.
+Foram os outros quatro.
+Eles não reagiram. Não olharam. Continuaram sussurrando nos microfones, por cima do grito, como se ele não existisse.
+Depois, o Aleksei ouviu papel.
+Eles rasgaram os livros. Página por página. E colaram tudo nas vigias, com o que tinham… até não sobrar nenhuma fresta de vidro.
+E os sussurros pararam.
+Todos. De uma vez.
 
 ## INSERÇÃO 1 — microssono (Vigia)
 
-Lembra da palavra que eu pedi pra você guardar?
+Lembra da palavra?
 Depois de muito tempo acordado, o seu cérebro começa a fazer uma coisa sem pedir licença.
-Ele desliga. Por dois, três segundos. De olho aberto.
+Ele desliga. Dois, três segundos. De olho aberto.
 E você não percebe. Pra você, não passou tempo nenhum.
-Isso tem nome: microssono.
-E tem um detalhe que os pesquisadores descobriram depois. Não é o cérebro inteiro que apaga.
-São pedaços. Uma parte dorme. A outra continua… acordada, dirigindo, respondendo, assinando o seu nome.
-Então me responde uma coisa.
+Isso é microssono.
+E não é o cérebro inteiro que apaga. São pedaços.
+Uma parte dorme. A outra continua aí… andando, respondendo, assinando o seu nome.
+Então me diz.
 Nesses três segundos em que você não estava…
 quem estava?
 
-## PARTE 3 — o nono dia
+## PARTE 3 — o silêncio
 
-Na nona noite, a sala ficou em silêncio.
-Não era silêncio de gente quieta. Os microfones não pegavam nada. Nem passo. Nem tosse. Nem respiração.
-Mas os sensores continuavam ali. Cinco corações. Cinco pulmões. Todos acordados.
-O Caio ligou pra coordenadora. Ela mandou seguir o protocolo.
-Às três da manhã, ele não aguentou. Apertou o interfone.
-"Eu vou abrir a porta."
-Dessa vez, alguém respondeu. Bem perto do microfone.
-🎙 "A gente não quer mais sair."
-Era a dona Irene. Mas sem o boa-noite. Sem o moço.
-Ele perguntou o que estava acontecendo.
-🎙 "Você fica acordado tempo suficiente… e começa a ver quem fica no seu lugar."
-🎙 "Ele sempre esteve aqui, moço. Só esperava a gente fechar o olho."
-O Caio perguntou: quem?
-E a voz dela saiu baixinha. Quase com pena dele.
-🎙 "O seu tá atrás da sua cadeira."
-O Caio não virou.
-Ficou olhando pro vidro tapado, com as costas geladas… até o dia clarear.
+Três dias sem um som.
+Os microfones funcionavam: o Aleksei ouvia o chiado do gás entrando.
+Mas não ouvia passo. Nem tosse. Nem respiração.
+Os pesquisadores foram olhar o único número que não mentia: o consumo de oxigênio.
+Cinco pessoas vivas. Consumindo ar como quem corre.
+Em silêncio absoluto.
+Na madrugada do décimo quarto dia, o comandante mandou usar o alto-falante.
+Avisaram que a câmara seria aberta. Que todos deviam deitar no chão, longe da porta. Que um deles ganharia a liberdade.
+O Aleksei apertou os fones contra a cabeça.
+Dez segundos de chiado.
+E então uma voz. Calma. Encostada no microfone, como quem fala no ouvido.
+🎙 "A gente não quer mais a liberdade."
 
-## INSERÇÃO 2 — por que acreditamos (Vigia)
+## PARTE 4 — o décimo quinto dia
 
-Na creepypasta, quando os pesquisadores decidem abrir a câmara, os presos pedem uma coisa só.
-Que liguem o gás de novo.
-É por isso que essa história grudou em tanta gente.
-Todo monstro quer sair da jaula. Esses queriam ficar.
-Porque existe um medo mais antigo que o medo do escuro.
-O de pegar no sono… e não ser você que acorda.
+Ao meio-dia, cortaram o gás. Encheram a câmara de ar limpo.
+E os microfones, que estavam mudos havia três dias… estouraram.
+Eram as cinco vozes. Implorando. Chorando.
+🎙 "Liga de novo! Pelo amor de Deus… não deixa a gente dormir!"
+Abriram a porta.
+O que os soldados viram, eu não vou te descrever inteiro.
+Vou te dizer três coisas. E você monta o resto.
+A primeira: a comida estava intacta desde o quinto dia.
+A segunda: um deles estava morto, no chão, fazia tempo. E nos quatro vivos… faltavam partes. Não tinha havido briga. Não havia arma. As marcas eram das próprias mãos. Feitas com calma.
+A terceira: quando a luz do corredor bateu no rosto deles… os quatro estavam sorrindo.
+Foram precisos seis soldados pra tirar de lá um homem que não pesava cinquenta quilos.
+Ele não queria fugir.
+Queria voltar pra dentro.
 
-## PARTE 4 — a décima primeira noite
+## PARTE 5 — a enfermaria
 
-Na décima primeira noite, a coordenadora ligou. A empresa tinha encerrado o estudo.
-A ordem era cortar o composto do ar. Sem ele, depois de onze dias, ninguém ficaria acordado nem dez minutos.
-O Caio avisou pelo interfone.
-E a sala, que estava muda havia dois dias… explodiu.
-Batidas no vidro. Nas paredes. Na porta.
-🎙 "Não desliga! Pelo amor de Deus, moço… não deixa a gente dormir!"
-A mão dele ficou parada em cima do botão. Um minuto. Dois.
-Mas era o protocolo.
-Ele desligou.
-As batidas foram ficando lentas. Depois, sumiram.
-E na tela, uma por uma, as cinco linhas de respiração foram ficando compridas. Fundas. Iguais.
-Sono profundo.
-Quatro e doze da manhã.
-E no áudio da sala… cinco pessoas se levantaram.
-As páginas começaram a cair do vidro. De dentro pra fora. Uma por uma.
-Atrás delas, cinco pessoas em pé. Encostadas no vidro. De olhos fechados.
-O interfone acendeu.
-🎙 "Pode abrir agora."
-Não era a voz da dona Irene.
-Era uma voz calma. Descansada. Educada.
-🎙 "Pode abrir, Caio. Eles já dormiram."
-O Caio nunca tinha dito o nome dele pra ninguém naquela sala.
-Ele tirou a mão da trava.
-E ficou ali, de pé, de frente pra cinco pessoas dormindo em pé… até as sete da manhã.
+Na enfermaria, deram a ele um sedativo. Dose de derrubar um cavalo.
+Não fez efeito. Ele ria. E pedia o gás.
+Deram outra dose.
+As pálpebras dele finalmente desceram.
+E no instante exato em que os olhos fecharam… o coração parou.
+Não foi a dose. Os médicos conferiram.
+Ele não morreu dormindo.
+Ele morreu porque dormiu.
+Os outros três entenderam antes dos médicos. E pediram, com toda a educação, pra serem operados acordados.
+Sem anestesia.
+Uma enfermeira contou, anos depois, que um deles não tirou os olhos dela durante as seis horas de cirurgia.
+Sorrindo.
+Como quem espera alguém cochilar.
 
-## PARTE 5 — de manhã
+## INSERÇÃO 2 — o que os aparelhos mostraram (Vigia)
 
-Às sete, a equipe do dia chegou. Abriram a porta.
-Os cinco voluntários estavam nas camas. Acordaram bem. Com fome. Com saudade de casa.
-Não lembravam de nada depois da quinta noite.
-A dona Irene deu um abraço no Caio e agradeceu a paciência.
-O estudo foi arquivado. A empresa nunca publicou o resultado.
+Ligaram os sobreviventes a um aparelho que mede a atividade do cérebro.
+As linhas estavam normais. Agitadas, de quem está muito acordado.
+Mas de tempos em tempos, por dois ou três segundos… ficavam retas.
+Retas como as de um morto.
+E depois voltavam.
+Os médicos anotaram como defeito do aparelho.
+Você já sabe o nome disso.
+Só que neles… a parte que voltava não era mais a mesma que tinha ido.
+
+## PARTE 6 — a última noite
+
+O comandante mandou devolver os três pra câmara. E religar o gás.
+Queria ver até onde aquilo ia.
+Naquela noite, o Aleksei estava sozinho na sala de escuta. Décimo quinto turno seguido.
+Às três da manhã, um dos microfones estalou.
+Alguém tinha encostado a boca nele.
+🎙 "Você ainda tá aí, Aleksei."
+Ninguém naquela câmara sabia o nome dele.
+🎙 "Eles acham que a gente enlouqueceu. Você ouviu tudo. Você sabe que não."
+🎙 "A gente só ficou acordado tempo suficiente… pra ver quem fica no lugar."
+O Aleksei perguntou, pelo alto-falante, com a voz falhando: quem?
+🎙 "O que levanta quando você deita. Toda noite. Vocês só nunca ficaram pra ver."
+Uma pausa. O chiado do gás.
+E a voz, bem baixa, quase com carinho:
+🎙 "Há quantos dias você não dorme, Aleksei?"
+Ele fez a conta.
+Quinze turnos. Quatro horas de sono por dia, quando conseguia. Depois três. Depois nenhuma.
+Ele olhou pro vidro escuro da cabine de escuta. Pro próprio reflexo.
+O reflexo estava sorrindo.
+Ele não.
 
 ## EPÍLOGO
 
-O Caio pediu demissão no mesmo mês.
-Antes de sair, ele fez uma coisa que o protocolo não pedia. Puxou a gravação da câmera da sala de controle. A câmera que filmava ele.
-Onze noites. Ele tinha trabalhado todas. Dobrando turno. Dormindo quatro horas por dia.
-Ele foi direto pra última. Quatro e doze.
-Na gravação, ele está na cadeira. De olho aberto. Parado.
-Três segundos. Quatro.
-E aí, sem piscar, a mão dele sobe… e aperta o botão do interfone.
-A boca dele se mexe.
-🎙 "Pode abrir agora."
-A voz calma. A voz descansada.
-Era a dele.
-Ele voltou a gravação. Noite por noite.
-Na nona, às três da manhã, quando a dona Irene falou da cadeira…
-dá pra ver, na imagem, o Caio olhando pro vidro. Sem virar.
-E dá pra ver a cadeira.
-Ela estava girando. Bem devagar. Sozinha.
+A instalação foi fechada em menos de um mês.
+Os arquivos falam em cinco presos. Um comandante. Três pesquisadores.
+Não falam em nenhum operador de escuta.
+Mas sobrou uma fita. A da última noite.
+Ela termina com o chiado do gás… e, por cima dele, uma risada baixa. Comprida. Sem ar.
+Quem examinou a fita diz que a risada não vem dos alto-falantes da câmara.
+Vem de dentro da cabine.
+De quem estava gravando.
 
 ## FECHO — Vigia
 
-A creepypasta termina com uma frase que ficou famosa. Um dos presos olha pro pesquisador e diz: "Nós somos vocês."
-Eu sempre achei que ele estava mentindo.
-Não são vocês.
-São os que ficam acordados… quando vocês não estão.
-Hoje à noite, quando o sono vier, e você sentir aquele tranco, aquele susto de quem ia cair…
+Na versão que circula por aí, um dos presos diz que eles são a loucura que mora dentro de cada um.
+Eu nunca engoli essa explicação.
+Loucura não precisa esperar você dormir.
+Hoje à noite, quando o sono vier, e você sentir aquele tranco… aquele susto de quem ia cair…
 não é você pegando no sono.
 É alguém pegando o lugar.
 E me conta nos comentários: qual foi o máximo de tempo que você já ficou sem dormir… e o que você começou a ver?
@@ -192,26 +214,35 @@ E me conta nos comentários: qual foi o máximo de tempo que você já ficou sem
 
 ## Notas de produção
 
-**Imagens de IA a pedir (sem rosto: de costas, mãos, silhuetas):**
-1. Sala de controle escura, seis monitores, cadeira giratória vista de trás, vidro espelhado ao fundo.
-2. Monitor com cinco linhas de respiração (verde) — close.
-3. O vidro por dentro: sala com camas, livros, cinco silhuetas jogando baralho, de longe.
-4. Cinco silhuetas no canto, de costas, cochichando.
-5. O vidro totalmente coberto por páginas de livro, luz atrás.
-6. Painel de interfone com um botão e uma luz vermelha acesa — close da mão no botão.
-7. Mão na trava de uma porta de aço.
-8. Páginas caindo do vidro; atrás, cinco silhuetas em pé, encostadas, em contraluz (clímax — fica nesta imagem).
-9. Imagem de câmera de segurança (granulada, de cima): a sala de controle, o técnico na cadeira, de costas.
-10. A mesma câmera: a cadeira vazia, levemente girada.
+**Imagens de IA a pedir (sem rosto: de costas, mãos, silhuetas; estética soviética anos 40, filme velho):**
+1. Corredor de concreto de instalação militar, porta de aço com volante, lâmpada única.
+2. Vigia redonda de vidro grosso numa parede de aço, luz fria atrás.
+3. A câmara vista pela vigia: cinco catres de ferro, livros, cinco silhuetas sentadas, de longe.
+4. Cabine de escuta: gravador de rolo, fones, caderno, um rapaz de costas com os fones.
+5. Close de um microfone antigo de metal, uma boca quase encostando (só queixo e lábios na sombra).
+6. A vigia totalmente tapada por páginas de livro, por dentro, luz atrás.
+7. Medidor analógico de oxigênio com o ponteiro alto.
+8. A porta de aço entreaberta, luz saindo, soldados de costas parados na soleira (clímax — fica nesta imagem).
+9. Chão da câmara: páginas molhadas e catre virado — sem corpo, sem sangue.
+10. Enfermaria antiga: maca vazia com correias, luminária cirúrgica.
+11. Papel de registro com linhas agitadas que ficam retas num trecho.
+12. O vidro escuro da cabine com o reflexo de uma silhueta de fones (o reflexo é só sombra).
+13. Fita de rolo girando, close.
 
-**Fotos e vídeos reais (buscar):** cabine de rádio antiga, Times Square anos 50, laboratório do sono,
-eletrodos/EEG, ratos de laboratório, relógio marcando 4:12, corredor de hospital à noite, ar-condicionado
-de teto, livros rasgados, fita de gravação, estática de monitor.
+**Fotos e vídeos reais (buscar):** cabine de rádio antiga, Times Square anos 50, ratos de laboratório,
+prédios soviéticos abandonados, bunker, corredor de hospital antigo, gravador de rolo, válvulas e medidores,
+arquivo de pastas, neve em arame farpado.
 
-**Som:** fundo de piano e cordas (novo, composto em código), ruído de ar-condicionado como "tom de sala" do
-laboratório, bipe de monitor, batidas no vidro, papel rasgando, cadeira rangendo. Voz do interfone com o
-filtro de telefone + estalo de botão. Microssono: a trilha "pisca" (corte de 0,3 s no agudo) — sem silêncio total.
+**Som:** fundo de piano e cordas novo (mais grave e arrastado que o do Ep. 05), chiado de gás como "tom de
+sala" da câmara, estalo de microfone, papel rasgando, volante da porta, fita rodando. Voz da câmara com filtro
+de alto-falante antigo. O grito do nono dia NÃO é reproduzido: a trilha sobe e o Vigia descreve.
+Nos "microssonos" a trilha pisca (corte curto no agudo), sem silêncio total.
 
-**Cor de destaque do episódio:** o verde dos monitores (no Ep. 05 foi o âmbar).
+**Cor de destaque do episódio:** verde doentio da luz da câmara, sobre cinza frio.
 
-**Shorts previstos:** (1) o gancho; (2) "O seu tá atrás da sua cadeira."; (3) o microssono ("quem estava?").
+**Restrição:** esta versão descreve automutilação em uma frase, sem detalhe anatômico e sem imagem. Ainda
+assim é mais pesada que os episódios anteriores: há risco de anúncios limitados. Título, capa e descrição
+não usam palavras como "mutilação" ou "morte".
+
+**Shorts previstos:** (1) o gancho "Liga o gás de novo."; (2) "morreu porque dormiu"; (3) "Há quantos dias
+você não dorme, Aleksei?".
