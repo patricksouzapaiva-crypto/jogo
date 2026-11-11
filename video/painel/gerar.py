@@ -1043,10 +1043,10 @@ def saltos(arquivos, limite_db=9.0):
 VOZ_FX = {
     # madeira maciça entre a voz e o ouvido: some o agudo, sobra o corpo; reflexo curto de corredor
     "porta": "highpass=f=140,lowpass=f=2100,lowpass=f=2600,equalizer=f=320:t=q:w=1.0:g=3,"
-             "aecho=0.85:0.75:38|71|113:0.30|0.20|0.12,volume=-1.5dB",
+             "aecho=0.85:0.75:38|71|113:0.30|0.20|0.12,volume=3dB",
     # alto-falante de celular: só a faixa da telefonia, um pouco saturada
     "telefone": "highpass=f=380,highpass=f=380,lowpass=f=3200,lowpass=f=3200,equalizer=f=1800:t=q:w=1.2:g=4,"
-                "acompressor=threshold=-24dB:ratio=6:attack=2:release=60:makeup=3,volume=-2dB",
+                "acompressor=threshold=-24dB:ratio=6:attack=2:release=60:makeup=3,volume=2dB",
 }
 
 
