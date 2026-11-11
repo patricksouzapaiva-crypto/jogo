@@ -99,7 +99,7 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   por engano — o vídeo é o Ep. 02 "A Sonâmbula" (sonambulismo). Corrigir quando o usuário autorizar (5 créditos).
   O título dele segue travado por teste "Testar e comparar". A capa nova da sereia (y2i10N0kpCo) foi recusada.
 
-## Ep. 06 mudou (11/11): "Escadas na mata" — `episodios/ep06-escadas-na-mata/ROTEIRO.md` (rascunho, aguardando aprovação)
+## Ep. 06 mudou (11/11): "Escadas na mata" — `episodios/ep06-a-porta-na-mata/ROTEIRO.md (v2: portas em vez de escadas, bombeiros, o Remedo — ideia do usuário)` (rascunho, aguardando aprovação)
 - O experimento do sono foi descartado pelo usuário depois de 4 versões ("não está me agradando"); os rascunhos
   ficaram em `episodios/ideias/experimento-do-sono/`.
 - O que o usuário quer numa releitura: NÃO pode parecer cópia; precisa de diferencial claro, versão brasileira,
