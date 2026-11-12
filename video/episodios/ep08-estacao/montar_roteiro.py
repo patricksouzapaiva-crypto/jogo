@@ -115,8 +115,8 @@ def capitulo(i, n, titulo, ano, imagem, cena, em, atual=None):
         cap["linha"] = {"anos": LINHA, "de": LINHA[0], "atual": atual, "dur": 3.0}
     C(i, cap, (cena, em))
     pausa(i, 3.6)
-    fx(i, None, "ep08_tinta", -12, atraso=-3.2)
-    fx(i, None, "ep08_taiko", -12, atraso=-2.0)
+    fx(i, None, "ep08_tinta", -17, atraso=-3.2)   # 12/11: -12 dava salto depois da pausa
+    fx(i, None, "ep08_taiko", -17, atraso=-2.0)
 
 
 HIST = []                         # conversa do grupo "Família 🏠" (cada tela mostra o histórico + o que chega)
@@ -128,14 +128,14 @@ def chat(i, *novas, sons=True):
         m = dict(m); m.setdefault("apos", 0.3)
         msgs.append(m); HIST.append({k: v for k, v in m.items() if k not in ("apos", "em", "digitando")})
         if sons and "em" not in m:
-            fx(i, None, "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -12 if m["de"] == "Dani" else -14, atraso=m["apos"])
+            fx(i, None, "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -15 if m["de"] == "Dani" else -17, atraso=m["apos"])
         elif sons:
-            fx(i, m["em"], "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -12)
+            fx(i, m["em"], "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -15 if m["de"] == "Dani" else -17)
     C(i, {"tipo": "chat", "grupo": "Família 🏠", "membros": "Dani, Lucas, Mãe, Pai", "mensagens": msgs})
     batidas[i]["sem_legenda"] = True
 
 
-def kanji_som(i, em, db=-13, atraso=0.0):
+def kanji_som(i, em, db=-16, atraso=0.0):
     fx(i, em, "ep08_kanji", db, atraso=atraso)
 
 
@@ -252,10 +252,10 @@ C(51, grav("R03_okiku_poco_hokusai", (1.12, 1.22), ((0.5, 0.25), (0.5, 0.22)), a
            kanji=[{"texto": "一", "em": "Um", "x": 0.16, "y": 0.5, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
                   {"texto": "二", "em": "Dois", "x": 0.84, "y": 0.42, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
                   {"texto": "三", "em": "Três", "x": 0.5, "y": 0.72, "tam": 0.3, "modo": "sangue", "escrever": 0.6}]))
-kanji_som(51, "Um", -14); kanji_som(51, "Dois", -14); kanji_som(51, "Três", -13)
+kanji_som(51, "Um", -16); kanji_som(51, "Dois", -16); kanji_som(51, "Três", -16)
 C(52, img("N08_poco_noite", (1.05, 1.15), ((0.5, 0.6), (0.5, 0.65)), atmos={"neblina": 0.7},
           kanji=K("九", 0.8, 0.45, "sangue", "nove", tam=0.34, selo="呪", em="nove")))
-kanji_som(52, "nove"); fx(52, "grito", "ep08_taiko", -12, depois=True)
+kanji_som(52, "nove"); fx(52, "grito", "ep08_taiko", -16, depois=True)
 C(53, real("R10_poco_okiku_himeji", (1.0, 1.06), kanji=K("実在", 0.86, 0.42, "placa", "Foto real · castelo de Himeji", tam=0.14, fundo="vermelho", em="real")),
   (real("R11_poco_okiku_himeji_2", (1.0, 1.08)), "grade"))
 C(54, img("N08_poco_noite", (1.02, 1.12), ((0.5, 0.6), (0.5, 0.66)), atmos={"neblina": 0.8},
@@ -430,10 +430,10 @@ fx(142, "tambor", "ep08_taiko", -16, depois=True); fx(142, "sino", "ep08_sino_es
 C(143, vid("V04_sem_relogio", (1.0, 1.06)))
 C(144, cel(vid("V03_trilho_lanterna"), "00:21", "fraco"))
 C(145, cel(vid("V03_trilho_lanterna", (1.05, 1.15), video_inicio=3.0), "00:21", "fraco"))
-C(146, cel(img("D05_perna_trilho", (1.0, 1.0), zoom_digital={"x": 0.53, "y": 0.4, "ate": 2.0, "atraso": 0.2, "dur": 1.6}), "00:22", "fraco"))
-C(147, cel(img("D05_perna_trilho", (1.0, 1.0), zoom_digital={"x": 0.53, "y": 0.4, "ate": 2.6, "atraso": 0.0, "dur": 2.0}), "00:22", "fraco"))
-C(148, cel(img("D05_perna_trilho", (1.6, 2.0), ((0.53, 0.4), (0.53, 0.12))), "00:22", "fraco"))
-C(149, cel(img("D05_perna_trilho", (2.0, 2.1), ((0.53, 0.12), (0.53, 0.1))), "00:22", "fraco"))
+C(146, cel(img("D05_perna_trilho_clara", (1.0, 1.0), zoom_digital={"x": 0.53, "y": 0.4, "ate": 2.0, "atraso": 0.2, "dur": 1.6}), "00:22", "fraco"))
+C(147, cel(img("D05_perna_trilho_clara", (1.0, 1.0), zoom_digital={"x": 0.53, "y": 0.4, "ate": 2.6, "atraso": 0.0, "dur": 2.0}), "00:22", "fraco"))
+C(148, cel(img("D05_perna_trilho_clara", (1.6, 2.0), ((0.53, 0.4), (0.53, 0.12))), "00:22", "fraco"))
+C(149, cel(img("D05_perna_trilho_clara", (2.0, 2.1), ((0.53, 0.12), (0.53, 0.1))), "00:22", "fraco"))
 fx(149, "Ei", "ep08_ei", -5, depois=True)
 pausa(150, 1.8)                                                                     # o "Ei!" soa sozinho
 C(150, cel(vid("V03_trilho_lanterna", (1.1, 1.2), velocidade=2.0, mao=1.0), "00:22", "fraco"))
@@ -445,7 +445,7 @@ C(154, img("D06_carro_estrada", (1.1, 1.3), ((0.35, 0.6), (0.33, 0.62))))
 fx(154, "entrou", "ep08_porta_carro", -9, depois=True)
 pausa(155, 1.4)
 C(155, {"tipo": "mapa", "hora_inicio": "00:41", "hora_fim": "00:58", "progresso": [0.0, 0.5]})
-fx(155, None, "ep08_vibra", -12, atraso=0.1)
+fx(155, None, "ep08_vibra", -15, atraso=0.1)
 chat(158, {"de": "Lucas", "texto": "Dani, ele tá indo pro lado errado.", "hora": "12:47", "em": "Dani"})
 C(159, vid("V05_carro_montanha", (1.0, 1.04)))
 chat(160, {"de": "Pai", "texto": "DANI", "hora": "12:49", "em": "DANI"})
@@ -503,7 +503,7 @@ C(184, {"tipo": "chat", "grupo": "Oração pela Dani 🙏", "membros": "1.248 pa
     {"de": "Marcos", "texto": "Força família 🙏🙏", "hora": "22:15", "apos": -30},
     {"de": "desconhecido_1987", "texto": "Quem é a moça na janela de cima?", "hora": "03:12", "apos": 0.1}]})
 batidas[184]["sem_legenda"] = True
-fx(184, None, "ep08_msg", -12, atraso=0.1)
+fx(184, None, "ep08_msg", -16, atraso=0.1)
 pausa(185, 1.6)
 C(185, cel(vid("V07_vigilia_zoom_janela", (1.0, 1.0)), "16:12", vertical=True))
 C(187, cel(img("D10_vigilia_janela", (1.0, 1.0), zoom_digital={"x": 0.623, "y": 0.245, "ate": 3.2, "atraso": 0.2, "dur": 3.0}), "16:12", vertical=True))
@@ -553,7 +553,7 @@ roteiro = {
     "ambiente_inicial": [{"som": "ep08_trem_dentro", "volume_db": -16}],
     "musica": {"som": "ep08_japones_longa", "volume_db": T_DB},
     "abertura": {"texto": "O VIGIA\nEP. 08 · A ESTAÇÃO QUE NÃO EXISTE", "vermelho": "QUE NÃO EXISTE", "duracao": 3.2, "segurar": 1.6,
-                 "antes_da_batida": 7, "sons": [{"som": "ep08_taiko", "t": 0.2, "volume_db": -10}]},
+                 "antes_da_batida": 7, "sons": [{"som": "ep08_taiko", "t": 0.2, "volume_db": -15}]},
     "cta": {"titulo": "Você acabou de olhar.", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
             "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite",

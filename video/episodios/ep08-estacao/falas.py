@@ -47,6 +47,7 @@ def ler():
             if buf:
                 falas.append(buf); buf = ""
             personagens[len(falas)] = m.group(1); l = m.group(2)
+        l = l.replace("*", "")                      # itálico do markdown não vai pra legenda
         buf = (buf + " " + l).strip() if buf else l
         if buf.endswith(FIM_FRASE):
             falas.append(buf); buf = ""
