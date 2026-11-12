@@ -135,3 +135,17 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - `montar_roteiro.py` garante sozinho o tempo de leitura das telas de texto (aumenta a pausa seguinte).
 - Render: `python3 gradar.py && python3 trocar_vozes.py && python3 montar_roteiro.py && python3 ../../painel/gerar.py roteiro.json previas/ep06_rascunho.mp4 --rascunho`
   NÃO rodar gradar.py com render em andamento (reescreve os clipes de grade/).
+
+## Vigia falando (lip-sync) — teste pendente (12/11/2026)
+- Ferramenta: conector **ManyMotions**, modelo `fal-ai/kling-video/ai-avatar/v2/standard`
+  (`media_forge_generate`, type video, params `{image_url, audio_url, prompt}`); arquivos sobem com
+  `video_editor_request_upload` + PUT. Exige plano ativo na conta conectada (deu `billing_required` antes).
+- Teste: imagem = `cenarios/abrigo_16x9.png` + pose `vigia_hd/c_falando.png` centralizada (altura 660 em 1280x720);
+  áudio = `ep03-conceito/audio/voz_completa_v2.wav` de 30,5 s a 38,7 s ("Boa noite. Bem-vindo de volta ao Último
+  Abrigo. Me responde uma coisa, com sinceridade."), mono, mp3.
+  Prompt: "The cartoon narrator speaks calmly and mysteriously to the camera, lip-synced to the audio, subtle hand
+  gestures, blinking, keep the exact art style and background, static camera."
+- Regra combinada: Vigia falando só nos **apartes em tela cheia**; no canto seguem as trocas de pose (grátis).
+  Avisar quantos clipes antes de gerar (gasta créditos).
+- API do Google (chave grátis): vídeo (Gemini Omni) e imagem (Nano Banana) têm limite 0 — só TTS funciona.
+- Plano B grátis: boca animada pela voz (poses com boca fechada/aberta trocadas pelo volume da narração).
