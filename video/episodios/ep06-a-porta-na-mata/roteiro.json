@@ -38,8 +38,8 @@
   }
  ],
  "musica": {
-  "som": "ep06_tensao_longa",
-  "volume_db": -27
+  "som": "ep06_cx_tensao",
+  "volume_db": -31
  },
  "abertura": {
   "texto": "O VIGIA\nEP. 06 · A PORTA NA MATA",
@@ -86,8 +86,8 @@
     ]
    },
    "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
+    "som": "ep06_cx_tensao",
+    "volume_db": -31
    }
   },
   {
@@ -344,10 +344,6 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -14
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {
@@ -954,11 +950,6 @@
     "som": "ep06_mata_muda",
     "volume_db": -19,
     "em": "bateram"
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27,
-    "em": "bateram"
    }
   },
   {
@@ -1337,10 +1328,6 @@
    "ambiente": {
     "som": "ep06_mata_noite",
     "volume_db": -16
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {
@@ -1486,10 +1473,6 @@
    "ambiente": {
     "som": "ep06_riacho",
     "volume_db": -22
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
    }
   },
   {
@@ -1651,10 +1634,6 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -14
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {
@@ -1811,10 +1790,6 @@
    "ambiente": {
     "som": "ep06_mata_noite",
     "volume_db": -16
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
    }
   },
   {
@@ -2357,10 +2332,6 @@
     "antecipar": 2.0
    },
    "pausa_antes_s": 5.0,
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
-   },
    "sem_legenda": true
   },
   {
@@ -2504,10 +2475,6 @@
       0.5
      ]
     ]
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
    }
   },
   {
@@ -2737,10 +2704,6 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -14
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {
@@ -2943,10 +2906,6 @@
       0.5
      ]
     ]
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
    }
   },
   {
@@ -3238,11 +3197,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 3.39,
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
-   }
+   "pausa_antes_s": 3.39
   },
   {
    "fala": "E isso mudava a conta.",
@@ -3439,10 +3394,6 @@
    "ambiente": {
     "som": "ep06_mata_muda",
     "volume_db": -19
-   },
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
    }
   },
   {
@@ -3535,10 +3486,6 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -14
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {
@@ -3635,11 +3582,7 @@
      "depois": false,
      "atraso": 0.0
     }
-   ],
-   "musica": {
-    "som": "ep06_tensao_longa",
-    "volume_db": -27
-   }
+   ]
   },
   {
    "fala": "Pela janela, ela viu a menina deitada. Rindo.",
@@ -3917,10 +3860,6 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -14
-   },
-   "musica": {
-    "som": "ep06_fundo_longa",
-    "volume_db": -25
    }
   },
   {

@@ -396,16 +396,10 @@ amb(165, "ep06_rua_noite", A_DB + 4)
 amb(179, "nenhum")
 
 # ================================================================ MÚSICA (canal "trilhas"): fundo ↔ tensão, nunca silêncio
-F_DB, T_DB = -25, -27
-mus(0, "ep06_tensao_longa", T_DB)                    # gancho
-mus(11, "ep06_fundo_longa", F_DB)
-mus(39, "ep06_tensao_longa", T_DB, em="bateram"); mus(56, "ep06_fundo_longa", F_DB)
-mus(64, "ep06_tensao_longa", T_DB); mus(71, "ep06_fundo_longa", F_DB)
-mus(77, "ep06_tensao_longa", T_DB); mus(105, "ep06_fundo_longa", F_DB)
-mus(112, "ep06_tensao_longa", T_DB); mus(123, "ep06_fundo_longa", F_DB)
-mus(133, "ep06_tensao_longa", T_DB); mus(147, "ep06_fundo_longa", F_DB)
-mus(158, "ep06_tensao_longa", T_DB); mus(163, "ep06_fundo_longa", F_DB)
-mus(167, "ep06_tensao_longa", T_DB); mus(179, "ep06_fundo_longa", F_DB)
+F_DB, T_DB = -31, -31
+# Pedido do usuário (12/11): a trilha "caixinha — tensão" no episódio INTEIRO, contínua (sem reiniciar),
+# mais baixa que a do rascunho. Volume: −31 + 12 de ganho = −19 dB.
+mus(0, "ep06_cx_tensao", T_DB)
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
@@ -422,7 +416,7 @@ roteiro = {
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True},
     "legendas": {"destaques": ["porta", "seis", "cinco", "Remedo", "câmera", "Caio", "conta"]},
     "ambiente_inicial": [{"som": "ep06_mata_noite", "volume_db": A_DB + 3}],
-    "musica": {"som": "ep06_tensao_longa", "volume_db": T_DB},
+    "musica": {"som": "ep06_cx_tensao", "volume_db": T_DB},
     "abertura": {"texto": "O VIGIA\nEP. 06 · A PORTA NA MATA", "vermelho": "PORTA NA MATA", "duracao": 3.2, "segurar": 1.6,
                  "antes_da_batida": 11, "sons": [{"som": "sub_drop", "t": 0.2, "volume_db": -12}]},
     "cta": {"titulo": "Conta de novo.", "canal": "Último Abrigo",
