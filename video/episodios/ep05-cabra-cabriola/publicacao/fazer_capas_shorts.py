@@ -39,7 +39,9 @@ def texto(im, linhas, y, tam, cor=(232, 28, 36)):
     return im.convert("RGB")
 
 
-texto(base("B01_porta_corredor.jpg", (0.5, 0.42), 1.15), ["QUEM TÁ", "FALANDO AÍ?"], 1250, 190).save(AQUI / "capa_short1_quem_ta_falando.jpg", quality=92)
-texto(base("B08_duas_corredor.jpg", (0.5, 0.5), 1.0), ["QUEM CHAMOU", "“NINA”?"], 1330, 180).save(AQUI / "capa_short2_nina.jpg", quality=92)
-texto(base("B11c_fresta_quatro.jpg", (0.52, 0.5), 1.25), ["OLHA", "PRA BAIXO."], 330, 220).save(AQUI / "capa_short3_olha_pra_baixo.jpg", quality=92)
+# 12/11: o texto da capa COMPLETA o título (não repete) e fica na zona segura (y < ~1450): embaixo o app põe
+# título, canal e botões por cima.
+texto(base("B01_porta_corredor.jpg", (0.5, 0.42), 1.15), ["QUEM TÁ", "FALANDO AÍ?"], 1020, 200).save(AQUI / "capa_short1_quem_ta_falando.jpg", quality=92)
+texto(base("B08_duas_corredor.jpg", (0.5, 0.5), 1.0), ["QUEM CHAMOU", "“NINA”?"], 1060, 190).save(AQUI / "capa_short2_nina.jpg", quality=92)
+texto(base("B11c_fresta_quatro.jpg", (0.52, 0.5), 1.25), ["NÃO", "ABRE."], 300, 300).save(AQUI / "capa_short3_olha_pra_baixo.jpg", quality=92)
 print("ok")
