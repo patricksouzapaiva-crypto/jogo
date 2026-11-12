@@ -160,3 +160,8 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   pastas antigas uma a uma (`rm -r /tmp/painel_XXXX`). Um render morreu em 12/11 por "No space left on device".
 - Ep. 07: sons aprovados — corrente 5 (`ep07_corrente_base` + derivados longe/chegando/para/vai/rapida), respiração da
   criatura (`Rcriatura_a` → `ep07_respiracao_porta`/`_nuca`), gritos longe/perto. Falta: imagens do usuário.
+- Teste 2 (CTA, 12/11): trecho "Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso."
+  (`sons/vinheta_cta_voz.wav` de 4,25 s a 9,6 s), pose `c_falando` à esquerda (x=30%, altura 640) para sobrar
+  espaço ao botão; prompt pedindo olhos abertos na câmera e gestos com as duas mãos → bem mais natural.
+  Custo ≈ 47 créditos por segundo de áudio (253 por 5,4 s). A fala inteira (12,9 s) custaria ~610, mas é
+  gerada UMA vez e reutilizada em todos os episódios (a vinheta é fixa).
