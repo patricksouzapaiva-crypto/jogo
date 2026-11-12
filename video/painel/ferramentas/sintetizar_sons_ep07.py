@@ -1,4 +1,5 @@
-"""Sons do Ep. 07 "A ronda" feitos em código (os créditos do ElevenLabs acabaram em 11/11).
+"""REPROVADO PELO USUÁRIO em 12/11 ("não gostei desse sintetizado") — os sons do Ep. 07 vêm do ElevenLabs
+(episodios/ep07-a-ronda/gerar_sons.py). Mantido só como referência. Sons do Ep. 07 "A ronda" feitos em código (os créditos do ElevenLabs acabaram em 11/11).
 Efeitos (curtos, volume moderado, sem susto): a corrente arrastando elo por elo (perto e longe), a respiração do
 outro lado da porta, a maçaneta girando meia volta.
 Ambientes (laços longos, sem emenda audível): o hospital de noite (zumbido de luz + ar + bipes distantes), o
