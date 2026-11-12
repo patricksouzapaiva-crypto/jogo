@@ -1,0 +1,7 @@
+file 'bloco1.wav'
+file 'silencio.wav'
+file 'bloco2.wav'
+file 'silencio.wav'
+file 'bloco3.wav'
+file 'silencio.wav'
+file 'vinheta.wav'
