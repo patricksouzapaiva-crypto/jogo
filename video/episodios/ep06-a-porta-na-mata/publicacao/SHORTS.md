@@ -11,7 +11,7 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 ## Arquivos
 | Short | Vídeo | Legenda | Capa |
 |---|---|---|---|
-| 1 — Eram seis | `shorts_final/s1_eram_seis.mp4` (36 s) | `shorts_final/s1_eram_seis.srt` | `capa_short1_eram_seis.jpg` |
+| 1 — Eram seis | `shorts_final/s1_eram_seis.mp4` (36 s, refeito em 12/11: risada nova) | `shorts_final/s1_eram_seis.srt` | `capa_short1_eram_seis.jpg` |
 | 2 — Alguém bateu | `shorts_final/s2_alguem_bateu.mp4` (36 s, refeito em 12/11: abre com as batidas reais) | `shorts_final/s2_alguem_bateu.srt` | `capa_short2_alguem_bateu.jpg` |
 | 3 — Aponta a câmera | `shorts_final/s3_aponta_a_camera.mp4` (35 s) | `shorts_final/s3_aponta_a_camera.srt` | `capa_short3_aponta_a_camera.jpg` |
 
@@ -82,3 +82,12 @@ E alguém bateu. Três vezes. Na madeira.
 ```
 Você abriria? Eles estavam procurando um homem perdido… 👇
 ```
+
+---
+
+## Configurações (os 3)
+- Público: não é conteúdo para crianças · Conteúdo alterado ou sintético: **Sim**.
+- Playlist: **O Vigia — Casos** · Categoria: Entretenimento.
+- Tags (opcional): `terror, creepypasta, história de terror, porta na mata, bombeiros, mata atlântica, o vigia, último abrigo`
+- Capas refeitas em 12/11: texto na zona segura (o app cobre a parte de baixo) e o do Short 3 virou "CONTA DE NOVO."
+  (o antigo "CINCO NA TELA." repetia o título).

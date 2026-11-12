@@ -39,7 +39,8 @@ def texto(im, linhas, y, tam, cor=(232, 28, 36)):
     return im.convert("RGB")
 
 
-texto(base("P09_B.jpg", (0.71, 0.42), 1.0), ["QUEM ERA", "O SEXTO?"], 1300, 190).save(AQUI / "capa_short1_eram_seis.jpg", quality=92)
-texto(base("P01_B.jpg", (0.5, 0.45), 1.05), ["ALGUÉM", "BATEU."], 1320, 210).save(AQUI / "capa_short2_alguem_bateu.jpg", quality=92)
-texto(base("P14_A.jpg", (0.5, 0.5), 1.15), ["CINCO", "NA TELA."], 260, 210).save(AQUI / "capa_short3_aponta_a_camera.jpg", quality=92)
+# 12/11: o texto COMPLETA o título (não repete) e fica na zona segura (y < ~1450): embaixo o app cobre.
+texto(base("P09_B.jpg", (0.71, 0.42), 1.0), ["QUEM ERA", "O SEXTO?"], 1040, 200).save(AQUI / "capa_short1_eram_seis.jpg", quality=92)
+texto(base("P01_B.jpg", (0.5, 0.45), 1.05), ["ALGUÉM", "BATEU."], 1060, 220).save(AQUI / "capa_short2_alguem_bateu.jpg", quality=92)
+texto(base("P14_A.jpg", (0.5, 0.5), 1.15), ["CONTA", "DE NOVO."], 260, 220).save(AQUI / "capa_short3_aponta_a_camera.jpg", quality=92)
 print("ok")
