@@ -7,9 +7,6 @@
  "cintilar": 0.03,
  "apertar_pausas": false,
  "vigia_padrao": false,
- "preencher_pausas": {
-  "min": 1.3
- },
  "cauda": 1.6,
  "chuva": 0,
  "grao": 0.16,
@@ -42,13 +39,13 @@
  ],
  "musica": {
   "som": "ep08_japones_longa",
-  "volume_db": -35
+  "volume_db": -32
  },
  "abertura": {
   "texto": "O VIGIA\nEP. 08 · A ESTAÇÃO QUE NÃO EXISTE",
   "vermelho": "QUE NÃO EXISTE",
-  "duracao": 3.2,
-  "segurar": 1.6,
+  "duracao": 6.0,
+  "segurar": 4.0,
   "antes_da_batida": 7,
   "sons": [
    {
@@ -96,29 +93,29 @@
    "sons": [
     {
      "em": null,
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.1
     },
     {
      "em": null,
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.6
     },
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 1.2
     },
     {
      "em": "áudio",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -156,7 +153,10 @@
       "digitando": 0.8,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
@@ -171,8 +171,12 @@
     "celular": {
      "hora": "23:40"
     },
-    "mao": 0.6
-   }
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.43
   },
   {
    "fala": "Depois, uma foto. Uma plataforma vazia. Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo sabia ler.",
@@ -195,7 +199,10 @@
     "celular": {
      "hora": "23:47"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
@@ -205,21 +212,21 @@
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.4
     },
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 1.2
     },
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 2.0
     }
@@ -273,7 +280,10 @@
       "hora": "11:49",
       "apos": 2.0
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
@@ -284,7 +294,10 @@
     "zoom": [
      1.0,
      1.06
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "ambiente": {
     "som": "ep08_campo_noite",
@@ -318,7 +331,10 @@
       0.62,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -333,7 +349,7 @@
     "som": "ep08_tv_chiado",
     "volume_db": -24
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.95
   },
   {
    "fala": "Boa noite. Eu sou o Vigia.",
@@ -366,36 +382,27 @@
   },
   {
    "fala": "Hoje a gente vai atravessar o mundo, porque existe um país onde o medo funciona de um jeito diferente.",
-   "cenas": [
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.05
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
      ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "com_vigia": true
-    },
-    {
-     "imagem": "imagens/J07_palco_kabuki.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "país",
-     "com_vigia": true
-    }
-   ]
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "No terror do ocidente, quase sempre existe um motivo. Alguém mexeu onde não devia. Alguém fez o mal e está pagando.",
@@ -415,7 +422,10 @@
       0.38,
       0.43
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -445,7 +455,10 @@
       0.6,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -459,32 +472,7 @@
    "pausa_antes_s": 0.6
   },
   {
-   "fala": "Lá, a maldição não escolhe culpado. Você viu a fita. Entrou na casa. Pegou o trem errado. Pronto.",
-   "cenas": [
-    {
-     "imagem": "imagens/J08_tv_chiado.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ]
-    },
-    {
-     "imagem": "imagens/J06_fantasma_corredor.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "casa"
-    },
-    {
-     "imagem": "imagens/D01_vagao_vazio.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "em": "trem"
-    }
-   ]
+   "fala": "Lá, a maldição não escolhe culpado. Você viu a fita. Entrou na casa. Pegou o trem errado. Pronto."
   },
   {
    "fala": "Não importa se você é boa pessoa. Não tem reza que desfaz, não tem padre que expulsa.",
@@ -504,7 +492,10 @@
       0.57,
       0.48
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -536,7 +527,10 @@
       0.75,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -551,82 +545,61 @@
   },
   {
    "fala": "Hoje eu vou te mostrar de onde vem esse medo. Trezentos anos de fantasmas: das velas do século dezessete até um fórum de internet em dois mil e quatro.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R18_oyuki_okyo.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "linha": {
-      "anos": [
-       1666,
-       1677,
-       1741,
-       1750,
-       1825,
-       1979,
-       1991,
-       1998,
-       2004
-      ],
-      "de": 1666,
-      "atual": 2004,
-      "dur": 5.0
-     },
-     "com_vigia": true
+   "cena": {
+    "imagem": "imagens_reais/R18_oyuki_okyo.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "encaixe": "conter",
+    "atmos": {
+     "poeira": 0.5
     },
-    {
-     "imagem": "imagens/N09_estacao_noite.jpg",
-     "zoom": [
-      1.0,
-      1.08
+    "linha": {
+     "anos": [
+      1666,
+      1677,
+      1741,
+      1750,
+      1825,
+      1979,
+      1991,
+      1998,
+      2004
      ],
-     "atmos": {
-      "neblina": 0.5
-     },
-     "em": "fórum",
-     "com_vigia": true
-    }
-   ],
-   "pausa_antes_s": 0.6
+     "de": 1666,
+     "atual": 2004,
+     "dur": 7.0
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.78
   },
   {
    "fala": "E no fim… eu vou te contar o que aconteceu com uma brasileira que pegou o último trem de Hamamatsu.",
-   "cenas": [
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.05
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
      ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "com_vigia": true
-    },
-    {
-     "imagem": "imagens/H02_dani_plataforma.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "brasileira",
-     "com_vigia": true
-    }
-   ]
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Imagina uma sala no Japão do século dezessete. Noite de verão. Cem velas acesas.",
@@ -638,7 +611,7 @@
      "titulo": "Cem velas",
      "ano": "1677",
      "imagem": "imagens_reais/R08_cem_contos_reuniao.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -678,24 +651,26 @@
       "tam": 0.26,
       "atraso": 1.4
      },
-     "em": "sala"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Imagina"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     },
     {
      "em": "Cem",
@@ -711,27 +686,7 @@
    }
   },
   {
-   "fala": "Um grupo de pessoas senta em volta, e cada uma conta uma história de fantasma.",
-   "cena": {
-    "imagem": "imagens/L07b_cem_velas.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "atmos": {
-     "vela": 0.8
-    },
-    "foco": [
-     [
-      0.5,
-      0.6
-     ],
-     [
-      0.5,
-      0.55
-     ]
-    ]
-   }
+   "fala": "Um grupo de pessoas senta em volta, e cada uma conta uma história de fantasma."
   },
   {
    "fala": "No fim de cada história… uma vela é apagada.",
@@ -740,45 +695,18 @@
     "zoom": [
      1.0,
      1.05
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "sons": [
-    {
-     "em": "apagada",
-     "som": "ep08_vela",
-     "volume_db": -10,
-     "depois": true,
-     "atraso": 0.0
-    }
-   ],
    "pausa_antes_s": 1.0
   },
   {
-   "fala": "A sala vai ficando escura, conto por conto.",
-   "cena": {
-    "imagem": "imagens/J01_cem_velas_vazio.jpg",
-    "zoom": [
-     1.0,
-     1.12
-    ],
-    "atmos": {
-     "vela": 0.6,
-     "fumaca": 0.4
-    },
-    "foco": [
-     [
-      0.5,
-      0.6
-     ],
-     [
-      0.45,
-      0.65
-     ]
-    ]
-   }
+   "fala": "A sala vai ficando escura, conto por conto."
   },
   {
-   "fala": "Chamavam isso de *Hyakumonogatari Kaidankai*: a reunião dos cem contos sobrenaturais. Os samurais usavam como prova de coragem.",
+   "fala": "Chamavam isso de Hyakumonogatari Kaidankai: a reunião dos cem contos sobrenaturais. Os samurais usavam como prova de coragem.",
    "cena": {
     "imagem": "imagens_reais/R08_cem_contos_reuniao.jpg",
     "zoom": [
@@ -806,7 +734,10 @@
       0.6,
       0.6
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -830,8 +761,8 @@
      "vela": 0.8
     },
     "dof": {
-     "x": 0.27,
-     "y": 0.8,
+     "x": 0.21,
+     "y": 0.78,
      "r": 0.18,
      "atraso": 0.4
     },
@@ -844,7 +775,10 @@
       0.4,
       0.72
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -852,32 +786,32 @@
    "cena": {
     "imagem": "imagens/J02_vela_sombra.jpg",
     "zoom": [
-     1.15,
-     1.45
+     1.1,
+     1.4
     ],
     "atmos": {
      "vela": 1.0
     },
+    "dof": {
+     "x": 0.8,
+     "y": 0.4,
+     "r": 0.22,
+     "atraso": 1.0
+    },
     "foco": [
      [
-      0.45,
-      0.6
+      0.5,
+      0.55
      ],
      [
-      0.78,
-      0.42
+      0.8,
+      0.4
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "sons": [
-    {
-     "em": "apagasse",
-     "som": "ep08_vela",
-     "volume_db": -10,
-     "depois": true,
-     "atraso": 0.0
-    }
-   ],
    "pausa_antes_s": 1.2
   },
   {
@@ -913,7 +847,10 @@
       0.62,
       0.58
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -936,7 +873,10 @@
       0.47,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.4
   },
@@ -950,7 +890,7 @@
      "titulo": "O fantasma que não tem pés",
      "ano": "1750",
      "imagem": "imagens_reais/R18_oyuki_okyo.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -991,24 +931,26 @@
       "selo": "応挙",
       "atraso": 1.2
      },
-     "em": "pintor"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Em"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     },
     {
      "em": "Ōkyo",
@@ -1020,27 +962,7 @@
    ]
   },
   {
-   "fala": "Diz a história que era a amante dele, que tinha morrido jovem. E que ele pintou do jeito que ela apareceu pra ele, uma noite, depois de morta.",
-   "cena": {
-    "imagem": "imagens/L01_oyuki_pergaminho.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "atmos": {
-     "vela": 0.5
-    },
-    "foco": [
-     [
-      0.5,
-      0.45
-     ],
-     [
-      0.5,
-      0.4
-     ]
-    ]
-   }
+   "fala": "Diz a história que era a amante dele, que tinha morrido jovem. E que ele pintou do jeito que ela apareceu pra ele, uma noite, depois de morta."
   },
   {
    "fala": "Repara na pintura.",
@@ -1063,37 +985,18 @@
       0.5,
       0.2
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "Ela não tem pés. O corpo simplesmente… some. Vira névoa no fim do pano.",
-   "cena": {
-    "imagem": "imagens_reais/R18_oyuki_okyo.jpg",
-    "zoom": [
-     1.6,
-     1.8
-    ],
-    "encaixe": "conter",
-    "atmos": {
-     "neblina": 0.5,
-     "poeira": 0.4
-    },
-    "foco": [
-     [
-      0.5,
-      0.55
-     ],
-     [
-      0.5,
-      0.85
-     ]
-    ]
-   },
    "pausa_antes_s": 0.8
   },
   {
-   "fala": "Essa imagem virou o molde. Desde então, o fantasma japonês, o *yūrei*, é quase sempre assim:",
+   "fala": "Essa imagem virou o molde. Desde então, o fantasma japonês, o yūrei, é quase sempre assim:",
    "cena": {
     "imagem": "imagens/J06_fantasma_corredor.jpg",
     "zoom": [
@@ -1120,7 +1023,10 @@
       0.33,
       0.35
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -1133,44 +1039,10 @@
    ]
   },
   {
-   "fala": "roupa branca de enterro, a mesma que vestiam nos mortos.",
-   "cena": {
-    "imagem": "imagens/J06_fantasma_corredor.jpg",
-    "zoom": [
-     1.4,
-     1.6
-    ],
-    "foco": [
-     [
-      0.33,
-      0.35
-     ],
-     [
-      0.32,
-      0.4
-     ]
-    ]
-   }
+   "fala": "roupa branca de enterro, a mesma que vestiam nos mortos."
   },
   {
-   "fala": "Às vezes, um pano branco em triângulo na testa.",
-   "cena": {
-    "imagem": "imagens/L01b_oyuki_pergaminho.jpg",
-    "zoom": [
-     1.0,
-     1.12
-    ],
-    "foco": [
-     [
-      0.5,
-      0.45
-     ],
-     [
-      0.5,
-      0.3
-     ]
-    ]
-   }
+   "fala": "Às vezes, um pano branco em triângulo na testa."
   },
   {
    "fala": "As mãos caídas na frente do corpo, moles, sem força.",
@@ -1192,7 +1064,10 @@
       0.48,
       0.55
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -1216,11 +1091,14 @@
       0.4,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
-   "fala": "E existe um tipo de *yūrei* que é o pior de todos: o *onryō*. O espírito que volta por vingança.",
+   "fala": "E existe um tipo de yūrei que é o pior de todos: o onryō. O espírito que volta por vingança.",
    "cena": {
     "imagem": "imagens_reais/R17_hannya_hokusai.jpg",
     "zoom": [
@@ -1250,7 +1128,10 @@
       0.6,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1264,28 +1145,7 @@
    "pausa_antes_s": 0.4
   },
   {
-   "fala": "Quase sempre uma mulher. Quase sempre traída.",
-   "cena": {
-    "imagem": "imagens_reais/R06_oiwa_fantasma_kuniyoshi.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "encaixe": "conter",
-    "atmos": {
-     "poeira": 0.5
-    },
-    "foco": [
-     [
-      0.4,
-      0.4
-     ],
-     [
-      0.38,
-      0.3
-     ]
-    ]
-   }
+   "fala": "Quase sempre uma mulher. Quase sempre traída."
   },
   {
    "fala": "E três delas assombram o Japão há mais de trezentos anos.",
@@ -1306,7 +1166,10 @@
      "legenda": "três",
      "tam": 0.32,
      "em": "três"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1329,7 +1192,7 @@
      "titulo": "As três mulheres",
      "ano": "1666 · 1741 · 1825",
      "imagem": "imagens_reais/R06_oiwa_fantasma_kuniyoshi.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -1370,24 +1233,26 @@
       "selo": "怨",
       "atraso": 0.3
      },
-     "em": "Oiwa"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "A"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     },
     {
      "em": "Oiwa",
@@ -1399,7 +1264,7 @@
    ]
   },
   {
-   "fala": "Em mil oitocentos e vinte e cinco, estreou em Edo, a antiga Tóquio, uma peça de kabuki: *Yotsuya Kaidan*.",
+   "fala": "Em mil oitocentos e vinte e cinco, estreou em Edo, a antiga Tóquio, uma peça de kabuki: Yotsuya Kaidan.",
    "cena": {
     "imagem": "imagens/J07_palco_kabuki.jpg",
     "zoom": [
@@ -1417,7 +1282,10 @@
      "legenda": "Yotsuya Kaidan · 1825",
      "selo": "怨",
      "em": "kabuki"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1427,27 +1295,11 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 2.5
   },
   {
-   "fala": "Oiwa é casada com um samurai sem dinheiro. Ele quer casar com outra, mais rica.",
-   "cena": {
-    "imagem": "imagens/J07_palco_kabuki.jpg",
-    "zoom": [
-     1.15,
-     1.3
-    ],
-    "foco": [
-     [
-      0.5,
-      0.6
-     ],
-     [
-      0.6,
-      0.65
-     ]
-    ]
-   }
+   "fala": "Oiwa é casada com um samurai sem dinheiro. Ele quer casar com outra, mais rica."
   },
   {
    "fala": "Então ele dá um presente pra esposa. Um remédio.",
@@ -1458,8 +1310,8 @@
      1.6
     ],
     "dof": {
-     "x": 0.6,
-     "y": 0.68,
+     "x": 0.63,
+     "y": 0.62,
      "r": 0.2
     },
     "foco": [
@@ -1471,8 +1323,12 @@
       0.66,
       0.7
      ]
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
   },
   {
    "fala": "Era veneno. E o veneno não mata de uma vez. Ele deforma.",
@@ -1487,8 +1343,8 @@
      "poeira": 0.5
     },
     "dof": {
-     "x": 0.45,
-     "y": 0.4,
+     "x": 0.36,
+     "y": 0.2,
      "r": 0.25
     },
     "kanji": {
@@ -1500,7 +1356,10 @@
      "tam": 0.3,
      "glitch": true,
      "em": "veneno"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1515,27 +1374,6 @@
   },
   {
    "fala": "O rosto da Oiwa incha. Um olho cai. E quando ela penteia o cabelo… o cabelo sai, aos punhados, com sangue.",
-   "cena": {
-    "imagem": "imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
-    "zoom": [
-     1.2,
-     1.6
-    ],
-    "encaixe": "conter",
-    "atmos": {
-     "poeira": 0.5
-    },
-    "foco": [
-     [
-      0.5,
-      0.4
-     ],
-     [
-      0.55,
-      0.48
-     ]
-    ]
-   },
    "pausa_antes_s": 0.8
   },
   {
@@ -1546,34 +1384,16 @@
     "estilo": "impacto",
     "vermelho": "E volta.",
     "cps": 10,
-    "tamanho": 140
+    "tamanho": 140,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6,
    "sem_legenda": true
   },
   {
    "fala": "Volta no rosto da nova esposa. Volta numa lanterna de papel. Volta até o marido enlouquecer.",
-   "cenas": [
-    {
-     "imagem": "imagens/J05_lanterna.jpg",
-     "zoom": [
-      1.0,
-      1.1
-     ]
-    },
-    {
-     "imagem": "imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "em": "lanterna"
-    }
-   ],
    "pausa_antes_s": 2.65
   },
   {
@@ -1591,7 +1411,7 @@
     "dof": {
      "x": 0.55,
      "y": 0.47,
-     "r": 0.25,
+     "r": 0.22,
      "atraso": 1.5
     },
     "kanji": {
@@ -1612,7 +1432,10 @@
       0.55,
       0.47
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -1640,7 +1463,10 @@
      "legenda": "santuário Oiwa Inari · Tóquio",
      "fundo": "vermelho",
      "em": "santuário"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1650,30 +1476,11 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 1.31
   },
   {
    "fala": "Dizem que quem não vai… adoece. Ou sofre um acidente.",
-   "cena": {
-    "imagem": "imagens/J07_palco_kabuki.jpg",
-    "zoom": [
-     1.0,
-     1.15
-    ],
-    "atmos": {
-     "fumaca": 0.6
-    },
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.3,
-      0.55
-     ]
-    ]
-   },
    "pausa_antes_s": 0.8
   },
   {
@@ -1698,7 +1505,8 @@
      "atraso": 0.3
     },
     "entrada": "shoji",
-    "duracao_entrada": 0.9
+    "duracao_entrada": 0.9,
+    "antecipar": 0.9
    },
    "sons": [
     {
@@ -1718,27 +1526,7 @@
    ]
   },
   {
-   "fala": "Uma criada, encarregada de dez pratos de porcelana preciosos. Um deles some. Ela é acusada, morta, e jogada num poço.",
-   "cena": {
-    "imagem": "imagens/J03_poco_jardim.jpg",
-    "zoom": [
-     1.0,
-     1.12
-    ],
-    "atmos": {
-     "neblina": 0.5
-    },
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.5,
-      0.45
-     ]
-    ]
-   }
+   "fala": "Uma criada, encarregada de dez pratos de porcelana preciosos. Um deles some. Ela é acusada, morta, e jogada num poço."
   },
   {
    "fala": "E toda noite, desde então, do fundo do poço, sobe uma voz contando os pratos.",
@@ -1771,7 +1559,10 @@
       0.5,
       0.3
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -1833,7 +1624,10 @@
       0.5,
       0.22
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1858,7 +1652,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 3.1
   },
   {
    "fala": "Até o nove. E depois do nove… um grito.",
@@ -1890,7 +1684,10 @@
       0.5,
       0.65
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1908,38 +1705,31 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.4
+   "pausa_antes_s": 2.55
   },
   {
    "fala": "A peça é de mil setecentos e quarenta e um. Mas o poço é real. Fica dentro do castelo de Himeji, e você pode visitar. Está aqui. Com grade em cima.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R10_poco_okiku_himeji.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "kanji": {
-      "texto": "実在",
-      "x": 0.86,
-      "y": 0.42,
-      "modo": "placa",
-      "legenda": "Foto real · castelo de Himeji",
-      "tam": 0.14,
-      "fundo": "vermelho",
-      "em": "real"
-     }
+   "cena": {
+    "imagem": "imagens_reais/R10_poco_okiku_himeji.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "実在",
+     "x": 0.86,
+     "y": 0.42,
+     "modo": "placa",
+     "legenda": "Foto real · castelo de Himeji",
+     "tam": 0.14,
+     "fundo": "vermelho",
+     "em": "real"
     },
-    {
-     "imagem": "imagens_reais/R11_poco_okiku_himeji_2.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "grade"
-    }
-   ],
-   "pausa_antes_s": 1.6
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 3.78
   },
   {
    "fala": "Guarda esse poço na cabeça. Ele vai voltar.",
@@ -1970,7 +1760,10 @@
       0.5,
       0.66
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -1985,12 +1778,12 @@
   },
   {
    "fala": "E a terceira é a mais antiga, de mil seiscentos e sessenta e seis: a lanterna de peônia.",
-   "pausa_antes_s": 1.6,
+   "pausa_antes_s": 3.85,
    "cena": {
-    "imagem": "imagens/L06b_peonia.jpg",
+    "imagem": "imagens/J05b_lanterna.jpg",
     "zoom": [
      1.0,
-     1.08
+     1.1
     ],
     "atmos": {
      "vela": 0.5
@@ -2020,16 +1813,10 @@
      "dur": 3.0
     },
     "entrada": "vela",
-    "duracao_entrada": 1.6
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
    },
    "sons": [
-    {
-     "em": null,
-     "som": "ep08_vela",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": -1.0
-    },
     {
      "em": "lanterna",
      "som": "ep08_kanji",
@@ -2040,14 +1827,7 @@
    ]
   },
   {
-   "fala": "Um viúvo vê passar, numa noite de festa, uma moça linda segurando uma lanterna enfeitada com flores.",
-   "cena": {
-    "imagem": "imagens/L06c_peonia.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ]
-   }
+   "fala": "Um viúvo vê passar, numa noite de festa, uma moça linda segurando uma lanterna enfeitada com flores."
   },
   {
    "fala": "Ela começa a visitá-lo. Toda noite. E ele vai ficando pálido. Fraco.",
@@ -2069,44 +1849,34 @@
       0.5,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "Até que um vizinho espia pela parede de papel… e vê o homem abraçado com um esqueleto.",
-   "cenas": [
-    {
-     "imagem": "imagens/L06_peonia_esqueleto.jpg",
-     "zoom": [
-      1.0,
-      1.1
+   "cena": {
+    "imagem": "imagens/L06_peonia_esqueleto.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
      ],
-     "entrada": "shoji",
-     "duracao_entrada": 0.9
-    },
-    {
-     "imagem": "imagens_reais/R05_esqueleto_detalhe.jpg",
-     "zoom": [
-      1.0,
-      1.1
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "foco": [
-      [
-       0.45,
-       0.3
-      ],
-      [
-       0.45,
-       0.2
-      ]
-     ],
-     "em": "esqueleto"
-    }
-   ],
+     [
+      0.4,
+      0.45
+     ]
+    ],
+    "entrada": "shoji",
+    "duracao_entrada": 0.9,
+    "antecipar": 0.85
+   },
    "sons": [
     {
      "em": null,
@@ -2147,7 +1917,10 @@
       0.55,
       0.35
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -2164,29 +1937,33 @@
    "cena": {
     "imagem": "imagens_reais/R04_esqueleto_kuniyoshi.jpg",
     "zoom": [
-     1.5,
-     1.9
+     1.4,
+     1.8
     ],
     "dof": {
-     "x": 0.6,
-     "y": 0.35,
-     "r": 0.22
+     "x": 0.44,
+     "y": 0.3,
+     "r": 0.22,
+     "atraso": 0.8
     },
     "foco": [
      [
-      0.55,
+      0.45,
       0.35
      ],
      [
-      0.6,
+      0.44,
       0.3
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.0
   },
   {
-   "fala": "Em mil novecentos e noventa e um, um escritor chamado Koji Suzuki publicou um livro chamado *Ring*.",
+   "fala": "Em mil novecentos e noventa e um, um escritor chamado Koji Suzuki publicou um livro chamado Ring.",
    "cenas": [
     {
      "tipo": "capitulo",
@@ -2195,7 +1972,7 @@
      "titulo": "Do poço para a televisão",
      "ano": "1991 · 1998",
      "imagem": "imagens/J08_tv_chiado.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -2234,24 +2011,26 @@
       "legenda": "Ring · Koji Suzuki · 1991",
       "em": "livro"
      },
-     "em": "escritor"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Em"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     },
     {
      "em": "livro",
@@ -2267,7 +2046,7 @@
    }
   },
   {
-   "fala": "Em mil novecentos e noventa e oito, virou filme. *Ringu*. No Brasil, *O Chamado*.",
+   "fala": "Em mil novecentos e noventa e oito, virou filme. Ringu. No Brasil, O Chamado.",
    "cena": {
     "imagem": "imagens/J08_tv_chiado.jpg",
     "zoom": [
@@ -2302,55 +2081,44 @@
       0.8,
       0.38
      ]
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "Uma fita de vídeo. Quem assiste recebe um telefonema. E tem sete dias.",
-   "cenas": [
-    {
-     "imagem": "imagens/J08_tv_chiado.jpg",
-     "zoom": [
-      1.2,
-      1.4
-     ],
-     "foco": [
-      [
-       0.6,
-       0.75
-      ],
-      [
-       0.62,
-       0.82
-      ]
-     ]
-    },
-    {
-     "imagem": "imagens/J09_telefone.jpg",
-     "zoom": [
-      1.0,
-      1.1
-     ],
-     "em": "telefonema"
-    },
-    {
-     "imagem": "imagens/J09_telefone.jpg",
-     "zoom": [
-      1.1,
-      1.25
-     ],
-     "kanji": {
-      "texto": "七日",
-      "x": 0.2,
-      "y": 0.5,
-      "modo": "sangue",
-      "legenda": "sete dias",
-      "glitch": true,
-      "em": "sete"
-     },
+   "cena": {
+    "imagem": "imagens/J09_telefone.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "kanji": {
+     "texto": "七日",
+     "x": 0.2,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "sete dias",
+     "glitch": true,
      "em": "sete"
-    }
-   ],
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.62,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.28
+   },
    "sons": [
     {
      "em": "sete",
@@ -2359,68 +2127,15 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 0.03
   },
   {
    "fala": "E a coisa que sai da televisão é uma menina, a Sadako.",
-   "cena": {
-    "imagem": "imagens/J08_tv_chiado.jpg",
-    "zoom": [
-     1.3,
-     1.9
-    ],
-    "atmos": {
-     "pelicula": 0.8
-    },
-    "foco": [
-     [
-      0.7,
-      0.42
-     ],
-     [
-      0.8,
-      0.38
-     ]
-    ]
-   },
    "pausa_antes_s": 0.8
   },
   {
    "fala": "Repara de onde ela vem. Ela sai de um poço… como a Okiku.",
-   "cenas": [
-    {
-     "imagem": "imagens/J04_poco_cabelo.jpg",
-     "zoom": [
-      1.0,
-      1.2
-     ],
-     "atmos": {
-      "neblina": 0.4
-     },
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.6,
-       0.65
-      ]
-     ]
-    },
-    {
-     "imagem": "imagens_reais/R03_okiku_poco_hokusai.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "em": "Okiku"
-    }
-   ],
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -2428,64 +2143,52 @@
   },
   {
    "fala": "Ela tem o cabelo comprido caído no rosto e a roupa branca… como a Oiwa.",
-   "cenas": [
-    {
-     "imagem": "imagens/J06_fantasma_corredor.jpg",
-     "zoom": [
-      1.2,
-      1.4
+   "cena": {
+    "imagem": "imagens/J06_fantasma_corredor.jpg",
+    "zoom": [
+     1.2,
+     1.45
+    ],
+    "foco": [
+     [
+      0.33,
+      0.4
      ],
-     "foco": [
-      [
-       0.33,
-       0.4
-      ],
-      [
-       0.33,
-       0.35
-      ]
+     [
+      0.33,
+      0.35
      ]
-    },
-    {
-     "imagem": "imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "em": "Oiwa"
-    }
-   ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "A Sadako não é um monstro novo. É o fantasma de trezentos anos, que aprendeu a usar a televisão.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R18_oyuki_okyo.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     }
+   "cena": {
+    "imagem": "imagens/J08_tv_chiado.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "atmos": {
+     "pelicula": 0.6
     },
-    {
-     "imagem": "imagens/J08_tv_chiado.jpg",
-     "zoom": [
-      1.0,
-      1.1
+    "foco": [
+     [
+      0.5,
+      0.5
      ],
-     "atmos": {
-      "pelicula": 0.6
-     },
-     "em": "televisão"
-    }
-   ],
+     [
+      0.72,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.6
   },
   {
@@ -2495,12 +2198,15 @@
     "texto": "O Chamado (2002)\nquase US$ 250 milhões",
     "estilo": "maquina",
     "vermelho": "US$ 250 milhões",
-    "cps": 30
+    "cps": 30,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
   {
-   "fala": "E logo depois veio *Ju-On*, *O Grito*: uma casa onde alguém morreu com tanta raiva que a raiva ficou. Quem entra, leva junto. O som que a Kayako faz com a garganta, aquele estalo… dizem que foi o próprio diretor que gravou.",
+   "fala": "E logo depois veio Ju-On, O Grito: uma casa onde alguém morreu com tanta raiva que a raiva ficou. Quem entra, leva junto. O som que a Kayako faz com a garganta, aquele estalo… dizem que foi o próprio diretor que gravou.",
    "cena": {
     "imagem": "imagens/J06b_fantasma_corredor.jpg",
     "zoom": [
@@ -2519,7 +2225,10 @@
      "selo": "怨",
      "glitch": true,
      "em": "Ju-On"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -2530,7 +2239,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.27
+   "pausa_antes_s": 0.52
   },
   {
    "fala": "Mas o que deixa esses filmes insuportáveis não é a cara do fantasma.",
@@ -2552,7 +2261,10 @@
       0.78,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
@@ -2564,7 +2276,10 @@
     "estilo": "impacto",
     "vermelho": "regra.",
     "cps": 8,
-    "tamanho": 150
+    "tamanho": 150,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.8,
    "sem_legenda": true
@@ -2601,23 +2316,49 @@
   {
    "fala": "A fita: você assistiu, está amaldiçoado. Não importa por quê.",
    "cena": {
-    "imagem": "imagens/J08_tv_chiado.jpg",
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
     "zoom": [
      1.0,
-     1.1
+     1.05
     ],
-    "com_vigia": true
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "A casa: você entrou, está amaldiçoado. Não importa se era só o carteiro.",
    "cena": {
-    "imagem": "imagens/J06_fantasma_corredor.jpg",
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
     "zoom": [
-     1.0,
-     1.1
+     1.04,
+     1.08
     ],
-    "com_vigia": true
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -2638,7 +2379,10 @@
       0.38,
       0.43
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -2659,45 +2403,36 @@
       0.57,
       0.48
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
   {
    "fala": "E ela mora nos lugares mais comuns. Um poço. Uma televisão. Um banheiro de escola. Um trem.",
-   "cenas": [
-    {
-     "imagem": "imagens/J03_poco_jardim.jpg",
-     "zoom": [
-      1.0,
-      1.06
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
      ]
-    },
-    {
-     "imagem": "imagens/J08_tv_chiado.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "em": "televisão"
-    },
-    {
-     "imagem": "imagens/J11b_banheiro.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "em": "banheiro"
-    },
-    {
-     "imagem": "imagens/D01_vagao_vazio.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "em": "trem"
-    }
-   ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "E foi exatamente aí que os japoneses levaram o medo pra rua.",
@@ -2717,7 +2452,10 @@
       0.37,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
@@ -2731,7 +2469,7 @@
      "titulo": "As lendas que saíram da tela",
      "ano": "1950 → 1979",
      "imagem": "imagens/L02c_kuchisake_longe.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -2778,24 +2516,26 @@
       "atual": 1979,
       "dur": 3.0
      },
-     "em": "história"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Na"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     }
    ],
    "ambiente": {
@@ -2823,7 +2563,10 @@
       0.62,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -2846,31 +2589,14 @@
       0.58,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
-   "fala": "Se a criança dizia que sim… ela tirava a máscara. E a boca dela era cortada de uma orelha à outra.",
-   "cena": {
-    "imagem": "imagens/L02b_kuchisake_poste.jpg",
-    "zoom": [
-     1.0,
-     1.15
-    ],
-    "atmos": {
-     "pelicula": 0.8
-    },
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.5,
-      0.45
-     ]
-    ]
-   }
+   "fala": "Se a criança dizia que sim… ela tirava a máscara. E a boca dela era cortada de uma orelha à outra."
   },
   {
    "fala": "E perguntava de novo: \"E agora?\"",
@@ -2892,11 +2618,14 @@
       0.5,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
-   "fala": "A *Kuchisake-onna*. A mulher da boca cortada.",
+   "fala": "A Kuchisake-onna. A mulher da boca cortada.",
    "cena": {
     "imagem": "imagens/L02_kuchisake.jpg",
     "zoom": [
@@ -2925,7 +2654,10 @@
       0.5,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -2936,10 +2668,10 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.89
   },
   {
-   "fala": "E ela não era nova. Num livro ilustrado de mil oitocentos e um, o *Ehon Sayoshigure*, já aparece uma mulher de cabelo arrepiado e a boca rasgada até a orelha. Ela esperou quase duzentos anos… e voltou de máscara.",
+   "fala": "E ela não era nova. Num livro ilustrado de mil oitocentos e um, o Ehon Sayoshigure, já aparece uma mulher de cabelo arrepiado e a boca rasgada até a orelha. Ela esperou quase duzentos anos… e voltou de máscara.",
    "cena": {
     "imagem": "imagens_reais/R19_kuchisake_ehon_sayoshigure.jpg",
     "zoom": [
@@ -2967,7 +2699,10 @@
       0.42,
       0.22
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -2977,7 +2712,8 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "Em poucos meses, o boato atravessou o país inteiro. E não ficou só no boato: em várias cidades, as escolas começaram a mandar as crianças voltarem pra casa em grupo. Pais e professores fizeram ronda.",
@@ -2999,7 +2735,10 @@
       0.5,
       0.55
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3022,7 +2761,10 @@
       0.32,
       0.75
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3032,7 +2774,10 @@
     "texto": "A maldição só vive\nenquanto passa adiante.",
     "estilo": "maquina",
     "vermelho": "passa adiante.",
-    "cps": 30
+    "cps": 30,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.4,
    "sem_legenda": true
@@ -3064,7 +2809,10 @@
       0.68,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3106,7 +2854,10 @@
       0.65,
       0.65
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    }
   },
   {
@@ -3114,68 +2865,64 @@
    "cena": {
     "imagem": "imagens/L04_hanako_pes.jpg",
     "zoom": [
-     1.04,
-     1.12
+     1.05,
+     1.35
     ],
-    "mao": 0.5,
+    "mao": 0.4,
     "dof": {
-     "x": 0.58,
-     "y": 0.78,
-     "r": 0.2,
+     "x": 0.53,
+     "y": 0.76,
+     "r": 0.16,
      "atraso": 1.0
     },
     "foco": [
      [
-      0.55,
+      0.5,
       0.6
      ],
      [
-      0.58,
-      0.7
+      0.53,
+      0.74
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.2
   },
   {
    "fala": "E nos trilhos, tem a Teke Teke. Uma moça que caiu na linha do trem e foi cortada ao meio. Ela se arrasta pelos cotovelos, à noite, perto das estações. E faz esse som, que dá nome a ela: teke… teke… teke…",
    "pausa_antes_s": 1.6,
-   "cenas": [
-    {
-     "imagem": "imagens/J12_passagem_neve.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ]
+   "cena": {
+    "imagem": "imagens/L05_teketeke.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "kanji": {
+     "texto": "テケテケ",
+     "x": 0.18,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "Teke Teke",
+     "glitch": true,
+     "em": "som"
     },
-    {
-     "imagem": "imagens/L05_teketeke.jpg",
-     "zoom": [
-      1.0,
-      1.12
+    "foco": [
+     [
+      0.5,
+      0.5
      ],
-     "kanji": {
-      "texto": "テケテケ",
-      "x": 0.18,
-      "y": 0.5,
-      "modo": "sangue",
-      "legenda": "Teke Teke",
-      "glitch": true,
-      "em": "som"
-     },
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.58,
-       0.4
-      ]
-     ],
-     "em": "cotovelos"
-    }
-   ],
+     [
+      0.6,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "sons": [
     {
      "em": "som",
@@ -3201,7 +2948,10 @@
     ],
     "atmos": {
      "vela": 0.5
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "nenhum",
@@ -3237,7 +2987,10 @@
       0.5,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3247,7 +3000,8 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 1.44
   },
   {
    "fala": "Quando ela chegou lá, o cabelo dela era curto, cortado na altura do queixo. Os monges dizem que, com o tempo, o cabelo cresceu. Hoje passa dos joelhos. E dizem que, quando cortam… volta.",
@@ -3278,7 +3032,10 @@
       0.37,
       0.6
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3324,8 +3081,12 @@
       0.5,
       0.5
      ]
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.51
+   },
+   "pausa_antes_s": 0.26
   },
   {
    "fala": "Ele entrou na internet.",
@@ -3334,9 +3095,12 @@
     "texto": "Ele entrou\nna internet.",
     "estilo": "maquina",
     "vermelho": "na internet.",
-    "cps": 18
+    "cps": 18,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 0.6,
+   "pausa_antes_s": 2.04,
    "sem_legenda": true
   },
   {
@@ -3349,7 +3113,7 @@
      "titulo": "A estação que não existe",
      "ano": "2004",
      "imagem": "imagens/N09_estacao_noite.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -3377,24 +3141,26 @@
      "estilo": "maquina",
      "vermelho": "não para",
      "cps": 30,
-     "em": "fórum"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Oito"
     }
    ],
-   "pausa_antes_s": 5.6,
+   "pausa_antes_s": 7.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     }
    ],
    "sem_legenda": true,
@@ -3405,33 +3171,26 @@
   },
   {
    "fala": "Ela disse que estava no trem da linha Enshū, na província de Shizuoka. Que o trem não parava fazia tempo.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R13_trem_enshu_2.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "kanji": {
-      "texto": "遠州鉄道",
-      "x": 0.86,
-      "y": 0.45,
-      "modo": "placa",
-      "legenda": "Foto real · linha Enshū",
-      "tam": 0.11,
-      "fundo": "vermelho",
-      "em": "Enshū"
-     }
+   "cena": {
+    "imagem": "imagens_reais/R13_trem_enshu_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "遠州鉄道",
+     "x": 0.86,
+     "y": 0.45,
+     "modo": "placa",
+     "legenda": "Foto real · linha Enshū",
+     "tam": 0.11,
+     "fundo": "vermelho",
+     "em": "Enshū"
     },
-    {
-     "video": "clipes/V02b_janela_trem.mp4",
-     "zoom": [
-      1.0,
-      1.04
-     ],
-     "em": "parava"
-    }
-   ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "sons": [
     {
      "em": "Enshū",
@@ -3467,7 +3226,9 @@
      "selo": "駅",
      "em": "desceu"
     },
-    "entrada": "nanquim"
+    "entrada": "nanquim",
+    "duracao_entrada": 1.3,
+    "antecipar": 1.3
    },
    "sons": [
     {
@@ -3495,20 +3256,11 @@
    "ambiente": {
     "som": "ep08_campo_noite",
     "volume_db": -20
-   }
+   },
+   "pausa_antes_s": 1.55
   },
   {
    "fala": "Nenhuma estação com esse nome existe. Em nenhum mapa.",
-   "cena": {
-    "imagem": "imagens/N09b_estacao_noite.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "atmos": {
-     "neblina": 0.7
-    }
-   },
    "pausa_antes_s": 1.0
   },
   {
@@ -3519,7 +3271,10 @@
      1.0,
      1.1
     ],
-    "mao": 0.4
+    "mao": 0.4,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3542,7 +3297,10 @@
       0.4,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3583,7 +3341,10 @@
       0.8,
       0.5
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3603,7 +3364,10 @@
       0.35,
       0.6
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3623,39 +3387,35 @@
       0.33,
       0.62
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.4
   },
   {
    "fala": "A ferrovia negou que a estação existisse. Quem estuda a lenda aponta uma estação de verdade, parecida: esta aqui, Saginomiya.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R13_trem_enshu_2.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ]
-    },
-    {
-     "imagem": "imagens_reais/R14_saginomiya_plataforma.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "kanji": {
-      "texto": "実在",
-      "x": 0.86,
-      "y": 0.42,
-      "modo": "placa",
-      "legenda": "Foto real · estação Saginomiya",
-      "tam": 0.14,
-      "fundo": "vermelho",
-      "atraso": 0.2
-     },
+   "cena": {
+    "imagem": "imagens_reais/R14_saginomiya_plataforma.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "実在",
+     "x": 0.86,
+     "y": 0.42,
+     "modo": "placa",
+     "legenda": "Foto real · estação Saginomiya",
+     "tam": 0.14,
+     "fundo": "vermelho",
      "em": "Saginomiya"
-    }
-   ],
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -3688,8 +3448,12 @@
       0.25,
       0.45
      ]
-    ]
-   }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "para Kisaragi. E vendeu bilhetes com destino a Kisaragi. Esgotaram.",
@@ -3719,7 +3483,10 @@
       0.3,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3730,7 +3497,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 3.1
   },
   {
    "fala": "Agora repara de onde sai essa linha de trem.",
@@ -3750,7 +3517,10 @@
       0.65,
       0.48
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    }
   },
   {
@@ -3770,7 +3540,10 @@
      "tam": 0.28,
      "selo": "浜",
      "atraso": 0.1
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3784,34 +3557,7 @@
    "pausa_antes_s": 0.8
   },
   {
-   "fala": "A cidade que tem uma das maiores comunidades brasileiras do Japão. Desde mil novecentos e noventa, quando o Japão abriu as portas para os descendentes, milhares de brasileiros foram trabalhar nas fábricas de lá. Hoje, mais de duzentos mil brasileiros vivem no Japão.",
-   "cenas": [
-    {
-     "imagem": "imagens/H01_fabrica_noite.jpg",
-     "zoom": [
-      1.08,
-      1.25
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.85,
-       0.6
-      ]
-     ]
-    },
-    {
-     "imagem": "imagens/H02b_dani_plataforma.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "duzentos"
-    }
-   ]
+   "fala": "A cidade que tem uma das maiores comunidades brasileiras do Japão. Desde mil novecentos e noventa, quando o Japão abriu as portas para os descendentes, milhares de brasileiros foram trabalhar nas fábricas de lá. Hoje, mais de duzentos mil brasileiros vivem no Japão."
   },
   {
    "fala": "Os dekasseguis.",
@@ -3828,7 +3574,10 @@
      "modo": "tinta",
      "legenda": "dekasegi · trabalhar longe de casa",
      "atraso": 0.1
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -3842,24 +3591,7 @@
    "pausa_antes_s": 0.8
   },
   {
-   "fala": "E é aqui que começa a história que eu prometi.",
-   "cena": {
-    "imagem": "imagens/H02_dani_plataforma.jpg",
-    "zoom": [
-     1.08,
-     1.2
-    ],
-    "foco": [
-     [
-      0.3,
-      0.5
-     ],
-     [
-      0.28,
-      0.5
-     ]
-    ]
-   }
+   "fala": "E é aqui que começa a história que eu prometi."
   },
   {
    "fala": "A Daniela tinha vinte e seis anos e era de Londrina. Fazia dois anos que trabalhava numa fábrica de autopeças em Hamamatsu. Turno da noite. Mandava dinheiro pra casa todo mês.",
@@ -3871,7 +3603,7 @@
      "titulo": "A Dani",
      "ano": "Londrina → Hamamatsu",
      "imagem": "imagens/H02b_dani_plataforma.jpg",
-     "antecipar": 3.2,
+     "antecipar": 4.8,
      "entrada": "nanquim",
      "atmos": {
       "poeira": 0.6
@@ -3883,24 +3615,26 @@
       1.0,
       1.08
      ],
-     "em": "Fazia"
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "A"
     }
    ],
-   "pausa_antes_s": 3.6,
+   "pausa_antes_s": 5.2,
    "sons": [
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -17,
      "depois": false,
-     "atraso": -3.2
+     "atraso": -4.8
     },
     {
      "em": null,
      "som": "ep08_taiko",
      "volume_db": -17,
      "depois": false,
-     "atraso": -2.0
+     "atraso": -3.4
     }
    ],
    "ambiente": {
@@ -3923,7 +3657,10 @@
       "nome": "Londrina",
       "hora": "11:52"
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -3931,22 +3668,22 @@
    "sons": [
     {
      "em": null,
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.2
     },
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 1.0
     },
     {
      "em": null,
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 1.8
     }
@@ -4011,29 +3748,15 @@
       "hora": "11:06",
       "apos": 1.8
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
   {
    "fala": "Naquela noite, ela saiu atrasada. Pegou o último trem.",
-   "cenas": [
-    {
-     "imagem": "imagens/H02_dani_plataforma.jpg",
-     "zoom": [
-      1.0,
-      1.1
-     ]
-    },
-    {
-     "imagem": "imagens/N10_trem_noite.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "em": "trem"
-    }
-   ],
    "ambiente": {
     "som": "ep08_trem_dentro",
     "volume_db": -18
@@ -4044,15 +3767,15 @@
    "sons": [
     {
      "em": "foto",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     },
     {
      "em": "hoje",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4113,7 +3836,8 @@
       "em": "hoje",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -4122,8 +3846,15 @@
    "sons": [
     {
      "em": "áudio",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "áudio",
      "som": "ep08_vibra",
-     "volume_db": -15,
+     "volume_db": -16,
      "depois": false,
      "atraso": 0.0
     }
@@ -4179,7 +3910,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -4194,7 +3926,10 @@
     "celular": {
      "hora": "23:40"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -4203,7 +3938,7 @@
     {
      "em": "Dormiu",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4259,7 +3994,10 @@
       "digitando": 0.8,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sem_legenda": true,
    "pausa_antes_s": 0.51
@@ -4269,8 +4007,8 @@
    "sons": [
     {
      "em": "Não",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4326,7 +4064,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 0.4
@@ -4338,7 +4077,7 @@
     {
      "em": "áudio",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4394,7 +4133,8 @@
       "em": "áudio",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -4403,8 +4143,8 @@
    "sons": [
     {
      "em": "vídeo",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4461,7 +4201,8 @@
       "em": "vídeo",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -4476,7 +4217,10 @@
     "celular": {
      "hora": "23:44"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.4
   },
@@ -4501,7 +4245,10 @@
     "celular": {
      "hora": "23:44"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -4525,7 +4272,10 @@
     "celular": {
      "hora": "23:44"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.2
   },
@@ -4550,7 +4300,10 @@
     "celular": {
      "hora": "23:45"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -4574,7 +4327,10 @@
     "celular": {
      "hora": "23:45"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -4594,7 +4350,10 @@
     "zoom": [
      1.0,
      1.08
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -4642,7 +4401,10 @@
      "fonte": "mincho",
      "tam": 0.13,
      "em": "Kisaragi"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -4660,7 +4422,7 @@
     {
      "em": "estação",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4717,9 +4479,13 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "O Lucas procurou no mapa. Procurou de novo.",
@@ -4727,7 +4493,7 @@
     {
      "em": "Procurou",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4784,7 +4550,8 @@
       "digitando": 2.0,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -4794,7 +4561,7 @@
     {
      "em": "Dani",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4850,7 +4617,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 0.8
@@ -4860,8 +4628,8 @@
    "sons": [
     {
      "em": "Eu",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -4917,7 +4685,8 @@
       "digitando": 0.5,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 1.2
@@ -4943,7 +4712,10 @@
       0.22,
       0.6
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    }
   },
   {
@@ -4958,7 +4730,10 @@
      "hora": "23:58",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -4966,8 +4741,8 @@
    "sons": [
     {
      "em": "Só",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5022,7 +4797,10 @@
       "em": "Só",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
@@ -5031,8 +4809,8 @@
    "sons": [
     {
      "em": "áudio",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5087,7 +4865,8 @@
       "em": "áudio",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -5113,7 +4892,10 @@
      "hora": "00:10",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "ambiente": {
     "som": "ep08_tambor_longe",
@@ -5141,7 +4923,10 @@
       0.4,
       0.45
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -5168,7 +4953,10 @@
     "zoom": [
      1.0,
      1.06
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep08_campo_noite",
@@ -5187,7 +4975,10 @@
      "hora": "00:21",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -5203,13 +4994,16 @@
      "hora": "00:21",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "Uma perna.",
    "cena": {
-    "imagem": "imagens/D05_perna_trilho.jpg",
+    "imagem": "imagens/D05_perna_trilho_clara.jpg",
     "zoom": [
      1.0,
      1.0
@@ -5225,13 +5019,16 @@
      "hora": "00:22",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "Só uma. Parada. De pé.",
    "cena": {
-    "imagem": "imagens/D05_perna_trilho.jpg",
+    "imagem": "imagens/D05_perna_trilho_clara.jpg",
     "zoom": [
      1.0,
      1.0
@@ -5247,14 +5044,17 @@
      "hora": "00:22",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 1.0
+   "pausa_antes_s": 2.44
   },
   {
    "fala": "O resto do corpo ficava acima da luz.",
    "cena": {
-    "imagem": "imagens/D05_perna_trilho.jpg",
+    "imagem": "imagens/D05_perna_trilho_clara.jpg",
     "zoom": [
      1.6,
      2.0
@@ -5273,14 +5073,17 @@
      "hora": "00:22",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.2
   },
   {
    "fala": "E uma voz de homem, de lá de cima, gritou: \"Ei!\"",
    "cena": {
-    "imagem": "imagens/D05_perna_trilho.jpg",
+    "imagem": "imagens/D05_perna_trilho_clara.jpg",
     "zoom": [
      2.0,
      2.1
@@ -5299,7 +5102,10 @@
      "hora": "00:22",
      "sinal": "fraco"
     },
-    "mao": 0.6
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -5309,7 +5115,8 @@
      "depois": true,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 0.77
   },
   {
    "fala": "Ela correu. O vídeo virou um borrão.",
@@ -5325,7 +5132,10 @@
     "celular": {
      "hora": "00:22",
      "sinal": "fraco"
-    }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    }
   },
   {
@@ -5334,15 +5144,15 @@
    "sons": [
     {
      "em": "Saí",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     },
     {
      "em": "carro",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5404,7 +5214,10 @@
       "em": "carro",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sem_legenda": true
   },
@@ -5414,7 +5227,7 @@
     {
      "em": "Não",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5470,7 +5283,8 @@
       "digitando": 0.5,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -5479,8 +5293,8 @@
    "sons": [
     {
      "em": "Pai",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5536,7 +5350,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -5557,7 +5372,10 @@
       0.33,
       0.62
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -5572,7 +5390,7 @@
   },
   {
    "fala": "A localização dela chegou no grupo.",
-   "pausa_antes_s": 1.4,
+   "pausa_antes_s": 2.53,
    "cena": {
     "tipo": "mapa",
     "hora_inicio": "00:41",
@@ -5580,7 +5398,10 @@
     "progresso": [
      0.0,
      0.5
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -5609,7 +5430,7 @@
     {
      "em": "Dani",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5664,19 +5485,62 @@
       "em": "Dani",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
   {
    "fala": "Ela não respondeu.",
    "cena": {
-    "video": "clipes/V05_carro_montanha.mp4",
-    "zoom": [
-     1.0,
-     1.04
-    ]
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Dani, Lucas, Mãe, Pai",
+    "mensagens": [
+     {
+      "de": "Dani",
+      "tipo": "audio",
+      "duracao": "0:09",
+      "hora": "00:10",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "tipo": "foto",
+      "imagem": "imagens/D06_carro_estrada.jpg",
+      "hora": "00:35",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Saí numa estrada. Tem um carro parado. O motorista falou que me leva até a cidade.",
+      "hora": "00:35",
+      "apos": -30
+     },
+     {
+      "de": "Pai",
+      "texto": "Não entra, filha.",
+      "hora": "12:36",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Pai, eu tô sozinha no meio do mato. Ele parece normal.",
+      "hora": "00:36",
+      "apos": -30
+     },
+     {
+      "de": "Lucas",
+      "texto": "Dani, ele tá indo pro lado errado.",
+      "hora": "12:47",
+      "apos": -30
+     }
+    ],
+    "entrada": "corte"
    },
+   "sem_legenda": true,
    "ambiente": {
     "som": "ep08_tambor_longe",
     "volume_db": -26
@@ -5688,7 +5552,7 @@
     {
      "em": "DANI",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -5743,7 +5607,8 @@
       "em": "DANI",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 0.8
@@ -5751,25 +5616,19 @@
   {
    "fala": "Dois minutos.",
    "cena": {
-    "tipo": "mapa",
-    "hora_inicio": "00:41",
-    "hora_fim": "00:58",
-    "progresso": [
-     0.5,
-     0.7
-    ]
+    "video": "clipes/V05_carro_montanha.mp4",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
   {
    "fala": "Cinco.",
-   "cena": {
-    "video": "clipes/V05b_carro_montanha.mp4",
-    "zoom": [
-     1.0,
-     1.04
-    ]
-   },
    "pausa_antes_s": 1.2
   },
   {
@@ -5824,7 +5683,10 @@
       "digitando": 1.4,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
@@ -5833,8 +5695,15 @@
    "sons": [
     {
      "em": "fala",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "fala",
      "som": "ep08_vibra",
-     "volume_db": -15,
+     "volume_db": -16,
      "depois": false,
      "atraso": 0.0
     }
@@ -5888,7 +5757,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 1.4
@@ -5944,7 +5814,8 @@
       "digitando": 1.0,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true
   },
@@ -5953,8 +5824,8 @@
    "sons": [
     {
      "em": "falando",
-     "som": "ep08_vibra",
-     "volume_db": -15,
+     "som": "ep08_msg",
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -6008,7 +5879,8 @@
       "digitando": 0.6,
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "pausa_antes_s": 1.6
@@ -6023,7 +5895,10 @@
      0.7,
      1.0
     ],
-    "some": 3.37
+    "some": 3.37,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -6033,27 +5908,16 @@
   {
    "fala": "A polícia japonesa procurou a Daniela por semanas. O último trem daquela noite chegou ao fim da linha no horário normal. As câmeras não mostram ninguém descendo antes.",
    "pausa_antes_s": 5.800000000000001,
-   "cenas": [
-    {
-     "imagem": "imagens/N10b_trem_noite.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "entrada": "fundir",
-     "duracao_entrada": 2.2,
-     "antecipar": 2.2
-    },
-    {
-     "video": "clipes/V04_sem_relogio.mp4",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "video_inicio": 4.0,
-     "em": "câmeras"
-    }
-   ],
+   "cena": {
+    "imagem": "imagens/N10b_trem_noite.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 2.2,
+    "antecipar": 2.2
+   },
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -6065,21 +5929,21 @@
     {
      "em": "consulado",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     },
     {
      "em": "fábrica",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     },
     {
      "em": "todo",
      "som": "ep08_msg",
-     "volume_db": -17,
+     "volume_db": -19,
      "depois": false,
      "atraso": 0.0
     }
@@ -6116,7 +5980,10 @@
       "em": "todo",
       "apos": 0.3
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "sem_legenda": true
   },
@@ -6128,7 +5995,10 @@
     "estilo": "impacto",
     "vermelho": "Nada.",
     "cps": 8,
-    "tamanho": 150
+    "tamanho": 150,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6,
    "sem_legenda": true
@@ -6145,13 +6015,16 @@
      "hora": "16:10",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep08_quintal",
     "volume_db": -18
    },
-   "pausa_antes_s": 1.69
+   "pausa_antes_s": 2.5
   },
   {
    "fala": "Juntaram os parentes, os vizinhos, o pessoal da igreja. No quintal de casa, em Londrina.",
@@ -6175,7 +6048,10 @@
      "hora": "16:10",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -6200,7 +6076,10 @@
      "hora": "16:11",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6
   },
@@ -6216,7 +6095,10 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -6241,8 +6123,12 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
-   }
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.93
   },
   {
    "fala": "\"A gente só quer a nossa filha de volta. Se alguém souber de alguma coisa… compartilha. E reza com a gente.\"",
@@ -6266,12 +6152,16 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep08_quintal",
     "volume_db": -14
-   }
+   },
+   "pausa_antes_s": 1.22
   },
   {
    "fala": "E todo mundo rezou junto. De mãos dadas. De olhos fechados.",
@@ -6286,7 +6176,10 @@
      "hora": "16:13",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep08_reza",
@@ -6315,7 +6208,10 @@
      "hora": "16:13",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -6340,7 +6236,10 @@
      "hora": "16:13",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.0
   },
@@ -6401,7 +6300,10 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    },
    "ambiente": {
     "som": "ep08_quintal",
@@ -6428,13 +6330,17 @@
       "em": "comentou",
       "digitando": 1.6
      }
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "sem_legenda": true,
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
-   }
+   },
+   "pausa_antes_s": 1.85
   },
   {
    "fala": "\"Quem é a moça na janela de cima?\"",
@@ -6455,7 +6361,8 @@
       "hora": "03:12",
       "apos": 0.1
      }
-    ]
+    ],
+    "entrada": "corte"
    },
    "sem_legenda": true,
    "sons": [
@@ -6482,7 +6389,10 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep08_reza",
@@ -6502,17 +6412,20 @@
      1.0
     ],
     "zoom_digital": {
-     "x": 0.623,
-     "y": 0.245,
-     "ate": 3.2,
-     "atraso": 0.2,
-     "dur": 3.0
+     "x": 0.88,
+     "y": 0.23,
+     "ate": 3.0,
+     "atraso": 0.3,
+     "dur": 3.4
     },
+    "mao": 0,
     "celular": {
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.4
   },
@@ -6538,7 +6451,10 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.0
   },
@@ -6564,9 +6480,12 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 1.0
+   "pausa_antes_s": 2.03
   },
   {
    "fala": "As mãos soltas na frente do corpo.",
@@ -6590,7 +6509,10 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 1.2
   },
@@ -6617,7 +6539,8 @@
      ]
     ],
     "entrada": "fundir",
-    "duracao_entrada": 1.8
+    "duracao_entrada": 1.8,
+    "antecipar": 1.65
    },
    "ambiente": {
     "som": "nenhum",
@@ -6643,7 +6566,8 @@
       0.57,
       0.48
      ]
-    ]
+    ],
+    "entrada": "corte"
    },
    "pausa_antes_s": 2.4,
    "ambiente": {
@@ -6669,50 +6593,35 @@
       0.38,
       0.43
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
    "fala": "A Okiku conta pratos no fundo de um poço há trezentos anos. A Oiwa ainda cobra visita de quem conta a história dela. E uma estação que não existe… ainda recebe passageiros.",
-   "cenas": [
-    {
-     "imagem": "imagens_reais/R03_okiku_poco_hokusai.jpg",
-     "zoom": [
-      1.0,
-      1.06
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
      ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "com_vigia": true
-    },
-    {
-     "imagem": "imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "encaixe": "conter",
-     "atmos": {
-      "poeira": 0.5
-     },
-     "em": "Oiwa",
-     "com_vigia": true
-    },
-    {
-     "imagem": "imagens/N09_estacao_noite.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "atmos": {
-      "neblina": 0.6
-     },
-     "em": "estação",
-     "com_vigia": true
-    }
-   ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.6
   },
   {
@@ -6724,17 +6633,20 @@
      1.0
     ],
     "zoom_digital": {
-     "x": 0.623,
-     "y": 0.245,
+     "x": 0.88,
+     "y": 0.23,
      "ate": 2.6,
-     "atraso": 0.0,
-     "dur": 2.0
+     "atraso": 0.2,
+     "dur": 2.4
     },
+    "mao": 0,
     "celular": {
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
    }
   },
   {
@@ -6759,9 +6671,12 @@
      "hora": "16:12",
      "vertical": true
     },
-    "mao": 0.6
+    "mao": 0.15,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 1.0
+   "pausa_antes_s": 1.03
   },
   {
    "fala": "O terror japonês não precisa de culpado. Ele só precisa de alguém que olhe.",
@@ -6806,42 +6721,36 @@
       0.36,
       0.42
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.8
   },
   {
    "fala": "Então, se hoje à noite, voltando pra casa, o seu ônibus demorar um pouco mais pra parar…",
-   "cenas": [
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.05
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.42,
+      0.45
      ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "com_vigia": true
-    },
-    {
-     "video": "clipes/V02b_janela_trem.mp4",
-     "zoom": [
-      1.0,
-      1.04
-     ],
-     "em": "ônibus",
-     "com_vigia": true
-    }
-   ]
+     [
+      0.4,
+      0.43
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "não manda mensagem pra ninguém.",
@@ -6850,7 +6759,10 @@
     "texto": "Não manda mensagem\npra ninguém.",
     "estilo": "maquina",
     "vermelho": "pra ninguém.",
-    "cps": 26
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
    "pausa_antes_s": 0.6,
    "sem_legenda": true
@@ -6873,9 +6785,12 @@
       0.57,
       0.48
      ]
-    ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 2.53
+   "pausa_antes_s": 3.13
   },
   {
    "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",

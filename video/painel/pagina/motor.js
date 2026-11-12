@@ -577,6 +577,7 @@ function desenharCena(c, t, a = 1) {
     const sc = Math.min(D.W / im.width, D.H / im.height) * z, w = im.width * sc, h = im.height * sc;
     ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 50;
     ctx.drawImage(im, (D.W - w) / 2, (D.H - h) / 2, w, h); ctx.restore();
+    c._tf = [(D.W - w) / 2, (D.H - h) / 2, w, h];
     return;
   }
   const dur = Math.max(0.5, c.t1 - c.t0), e = (c.curva === "rapida" ? easeOut : easeInOut)(lin(t, c.t0, c.curva === "rapida" ? Math.min(dur, c.duracao_zoom || 1.2) : dur));
@@ -783,16 +784,20 @@ function kanjiSobre(c, t) {
     if (K.legenda) {
       const al = easeOut(lin(t, fimE - 0.1, 0.6)) * op;
       if (al > 0) {
-        const fs = Math.round(H * 0.024), lado = K.lado_legenda || (vert ? ((K.x ?? 0.78) > 0.5 ? "esq" : "dir") : "baixo");
+        const fs = Math.round(H * 0.032), lado = K.lado_legenda || (vert ? ((K.x ?? 0.78) > 0.5 ? "esq" : "dir") : "baixo");
         ctx.save(); ctx.font = `700 ${fs}px "Inter", "Oswald", sans-serif`; ctx.fillStyle = `rgba(244,238,224,${al})`;
         ctx.shadowColor = "rgba(0,0,0,.95)"; ctx.shadowBlur = 16;
         const letras = K.legenda.toUpperCase().split("").join(" ");
         const linha = (x0, y0, x1, y1) => { ctx.strokeStyle = `rgba(190,30,30,${al})`; ctx.lineWidth = Math.max(2, fs * 0.12); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); };
         if (lado === "baixo") { ctx.textAlign = "center"; ctx.fillText(letras, cx, cy + alt / 2 + fs * 2.0); const w = ctx.measureText(letras).width; linha(cx - w * 0.2, cy + alt / 2 + fs * 3.0, cx + w * 0.2, cy + alt / 2 + fs * 3.0); }
-        else {
-          const lx = lado === "esq" ? cx - larg * 0.95 : cx + larg * 0.95;
-          ctx.translate(lx, cy); ctx.rotate(Math.PI / 2); ctx.textAlign = "center"; ctx.fillText(letras, 0, 0);
-          const w = ctx.measureText(letras).width; linha(-w / 2, fs * 0.9, -w / 2 + w * 0.25, fs * 0.9);
+        else {   // 13/11: legenda SEMPRE na horizontal (antes girava 90° e ninguém lia), maior, ao lado do kanji
+          const fs2 = Math.round(H * 0.034); ctx.font = `700 ${fs2}px "Inter", "Oswald", sans-serif`;
+          const partes = K.legenda.toUpperCase().split(" · "), esq = lado === "esq", lx = esq ? cx - larg * 0.75 : cx + larg * 0.75;
+          ctx.textAlign = esq ? "right" : "left";
+          const y0 = cy - (partes.length - 1) * fs2 * 0.65;
+          partes.forEach((pt, k) => { ctx.font = `${k ? 500 : 700} ${k ? Math.round(fs2 * 0.8) : fs2}px "Inter", "Oswald", sans-serif`; ctx.fillText(pt, lx, y0 + k * fs2 * 1.3); });
+          ctx.font = `700 ${fs2}px "Inter", "Oswald", sans-serif`;
+          const w = Math.min(ctx.measureText(partes[0]).width, fs2 * 4); linha(esq ? lx - w : lx, y0 + fs2 * 0.45, esq ? lx : lx + w, y0 + fs2 * 0.45);
         }
         ctx.restore();
       }
@@ -811,7 +816,7 @@ function kanjiSobre(c, t) {
 // Sobreposição: linha {anos:[...], atual} (linha do tempo das lendas).
 function _ruido1(t, s) { return (Math.sin(t * 1.7 + s) + Math.sin(t * 2.9 + s * 1.3) * 0.6 + Math.sin(t * 5.3 + s * 2.1) * 0.3) / 1.9; }
 let _texNevoa = null, _campoTinta = null;
-function _fbm(n, w, h, sem, oitavas = 5) {   // ruído fractal em grade baixa (valores 0–1)
+function _fbm(n, w, h, sem, oitavas = 5, per = false) {   // per: periódico na horizontal (textura sem emenda)   // ruído fractal em grade baixa (valores 0–1)
   const r = _semente(sem), base = [];
   for (let o = 0; o < oitavas; o++) { const g = 2 ** (o + 2); const arr = []; for (let i = 0; i < (g + 1) * (g + 1); i++) arr.push(r()); base.push([g, arr]); }
   const out = new Float32Array(w * h);
@@ -820,7 +825,7 @@ function _fbm(n, w, h, sem, oitavas = 5) {   // ruído fractal em grade baixa (v
     for (const [g, arr] of base) {
       const fx = x / w * g, fy = y / h * g, x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
       const sx = tx * tx * (3 - 2 * tx), sy = ty * ty * (3 - 2 * ty);
-      const a = arr[y0 * (g + 1) + x0], b = arr[y0 * (g + 1) + x0 + 1], c = arr[(y0 + 1) * (g + 1) + x0], d = arr[(y0 + 1) * (g + 1) + x0 + 1];
+      const x1 = per ? (x0 + 1) % g : x0 + 1, a = arr[y0 * (g + 1) + x0], b = arr[y0 * (g + 1) + x1], c = arr[(y0 + 1) * (g + 1) + x0], d = arr[(y0 + 1) * (g + 1) + x1];
       v += amp * (a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy); tot += amp; amp *= 0.55;
     }
     out[y * w + x] = v / tot;
@@ -829,10 +834,10 @@ function _fbm(n, w, h, sem, oitavas = 5) {   // ruído fractal em grade baixa (v
 }
 function texNevoa() {
   if (_texNevoa) return _texNevoa;
-  const w = 512, h = 256, f = _fbm(0, w, h, "nevoa"), oc = document.createElement("canvas"); oc.width = w; oc.height = h;
+  const w = 512, h = 256, f = _fbm(0, w, h, "nevoa", 5, true), oc = document.createElement("canvas"); oc.width = w; oc.height = h;
   const g = oc.getContext("2d"), im = g.createImageData(w, h);
-  for (let i = 0; i < w * h; i++) { const v = Math.max(0, Math.min(1, (f[i] - 0.38) * 2.4)); im.data[i * 4] = 205; im.data[i * 4 + 1] = 212; im.data[i * 4 + 2] = 220; im.data[i * 4 + 3] = v * 255; }
-  // emenda horizontal (para rolar sem costura)
+  for (let i = 0; i < w * h; i++) { const yb = Math.floor(i / w), borda = Math.pow(Math.sin(Math.PI * (yb + 0.5) / h), 0.8), v = Math.max(0, Math.min(1, (f[i] - 0.38) * 2.4)) * borda; im.data[i * 4] = 205; im.data[i * 4 + 1] = 212; im.data[i * 4 + 2] = 220; im.data[i * 4 + 3] = v * 255; }
+  // 13/11: ruído periódico em x + bordas verticais suaves = sem a "linha passando" na neblina
   g.putImageData(im, 0, 0); _texNevoa = oc; return oc;
 }
 // ------------------------------------------------------------------ camada de cena
@@ -942,7 +947,7 @@ function profundidade(c, t) {   // foco num ponto: o resto desfoca e escurece, e
   if (k <= 0) return;
   const nit = _canvas("dofN", W, H), g = nit.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
   ctx.save(); ctx.filter = `blur(${Math.round(12 * k)}px) brightness(${1 - 0.35 * k})`; ctx.drawImage(nit, 0, 0); ctx.restore();
-  const cx = W * F.x, cy = H * F.y, r = Math.min(W, H) * (F.r ?? 0.25);
+  const tf = c._tf || [0, 0, W, H], cx = tf[0] + tf[2] * F.x, cy = tf[1] + tf[3] * F.y, r = Math.min(W, H) * (F.r ?? 0.25);
   const rg = g.createRadialGradient(cx, cy, r * 0.45, cx, cy, r);
   rg.addColorStop(0, "#000"); rg.addColorStop(1, "rgba(0,0,0,0)");
   g.globalCompositeOperation = "destination-in"; g.fillStyle = rg; g.fillRect(0, 0, W, H); g.globalCompositeOperation = "source-over";
@@ -951,13 +956,15 @@ function profundidade(c, t) {   // foco num ponto: o resto desfoca e escurece, e
 function zoomDigital(c, t) {   // zoom de celular até um ponto, pixelando cada vez mais
   const { W, H } = D, Z = c.zoom_digital, k = easeInOut(lin(t, c.t0 + (Z.atraso ?? 0.5), Z.dur ?? Math.max(1, c.t1 - c.t0 - 0.6)));
   if (k <= 0) return;
-  const z = 1 + ((Z.ate ?? 5) - 1) * k, cx = W * (Z.x ?? 0.5), cy = H * (Z.y ?? 0.4);
+  const tf = c._tf || [0, 0, W, H], z = 1 + ((Z.ate ?? 5) - 1) * k, cx = tf[0] + tf[2] * (Z.x ?? 0.5), cy = tf[1] + tf[3] * (Z.y ?? 0.4);
   const fonte = _canvas("zdF", W, H), g = fonte.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
-  const pix = Math.max(1, Math.round(1 + (z - 1) * 1.1)), pw = Math.max(16, Math.round(W / pix)), ph = Math.max(9, Math.round(H / pix));
-  const pq = _canvas("zdP", pw, ph), gp = pq.getContext("2d"); gp.imageSmoothingEnabled = true;
-  const sw = W / z, sh = H / z, sx = Math.min(W - sw, Math.max(0, cx - sw / 2)), sy = Math.min(H - sh, Math.max(0, cy - sh / 2));
-  gp.drawImage(fonte, sx, sy, sw, sh, 0, 0, pw, ph);
-  ctx.save(); ctx.imageSmoothingEnabled = pix < 3; ctx.drawImage(pq, 0, 0, W, H); ctx.restore();
+  // 13/11: no vídeo vertical o zoom fica DENTRO do quadro do celular (antes ampliava a tela toda, com o fundo)
+  const [rx, ry, rw, rh] = c._vv ? [c._vv[0], 0, c._vv[1], H] : [0, 0, W, H];
+  const pix = Math.max(1, Math.round(1 + (z - 1) * 1.1)), pw = Math.max(9, Math.round(rw / pix)), ph = Math.max(9, Math.round(rh / pix));
+  const pq = _canvas("zdP" + pw + "x" + ph, pw, ph), gp = pq.getContext("2d"); gp.imageSmoothingEnabled = true;
+  const sw = rw / z, sh = rh / z, sx = Math.min(rx + rw - sw, Math.max(rx, cx - sw / 2)), sy = Math.min(ry + rh - sh, Math.max(ry, cy - sh / 2));
+  gp.clearRect(0, 0, pw, ph); gp.drawImage(fonte, sx, sy, sw, sh, 0, 0, pw, ph);
+  ctx.save(); ctx.imageSmoothingEnabled = pix < 3; ctx.drawImage(pq, rx, ry, rw, rh); ctx.restore();
 }
 // ------------------------------------------------------------------ atmosfera
 function atmosfera(c, t) {
@@ -1014,6 +1021,7 @@ function videoVertical(c, t) {   // vídeo de celular em pé dentro do quadro 16
   const s = Math.max(vw / im.width, vh / im.height) * z, iw = im.width * s, ih = im.height * s;
   let ox = vx + vw / 2 - fx * iw, oy = vh / 2 - fy * ih; ox = Math.min(vx, Math.max(vx + vw - iw, ox)); oy = Math.min(0, Math.max(vh - ih, oy));
   ctx.save(); ctx.beginPath(); ctx.rect(vx, 0, vw, vh); ctx.clip(); ctx.drawImage(im, ox, oy, iw, ih); ctx.restore();
+  c._tf = [ox, oy, iw, ih];
   ctx.save(); ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 40; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.lineWidth = 2; ctx.strokeRect(vx, 0, vw, vh); ctx.restore();
   c._vv = [vx, vw];
 }
@@ -1056,21 +1064,15 @@ function _telefone(t, desenho) {   // moldura de celular no centro, grande, com 
 function telaChat(c, t) {
   _telefone(t, (px, py, pw, ph, u) => {
     ctx.fillStyle = "#101418"; ctx.fillRect(px, py, pw, ph);
-    // cabeçalho do grupo (genérico, sem marca)
-    ctx.fillStyle = "#1b222a"; ctx.fillRect(px, py, pw, 96 * u);
-    ctx.fillStyle = "#5a6b7d"; ctx.beginPath(); ctx.arc(px + 50 * u, py + 56 * u, 22 * u, 0, 6.283); ctx.fill();
-    ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(24 * u)}px "Inter", "Noto Color Emoji", sans-serif`; ctx.textAlign = "left";
-    ctx.fillText(c.grupo || "Família 🏠", px + 86 * u, py + 52 * u);
     const digit = (c.mensagens || []).find((m) => m.digitando_ate && t >= m.digitando_de && t < m.digitando_ate);
-    ctx.font = `500 ${Math.round(16 * u)}px "Inter", sans-serif`; ctx.fillStyle = digit ? "#7fd18b" : "#93a1ad";
-    ctx.fillText(digit ? `${digit.de} está digitando…` : (c.membros || "Dani, Lucas, Mãe, Pai"), px + 86 * u, py + 76 * u);
+    ctx.save(); ctx.beginPath(); ctx.rect(px, py + 100 * u, pw, ph - 100 * u); ctx.clip();
     // mensagens visíveis (as que já chegaram), de baixo pra cima
     const vis = (c.mensagens || []).filter((m) => t >= (m.t ?? c.t0));
-    let y = py + ph - 40 * u; const fs = Math.round(22 * u), larg = pw * 0.72;
+    let y = py + ph - (digit ? 112 : 40) * u; const fs = Math.round(22 * u), larg = pw * 0.72;   // com "digitando", as mensagens sobem
     ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`;
     const blocos = vis.map((m) => {
       const linhas = []; let atual = "";
-      if (m.tipo === "audio") return { m, h: 64 * u, linhas };
+      if (m.tipo === "audio") return { m, h: (m.de && m.de !== "eu" ? 96 : 64) * u, linhas };
       if (m.tipo === "foto" || m.tipo === "video") return { m, h: larg * 0.75 + 30 * u, linhas };
       for (const p of (m.texto || "").split(" ")) { const tt = atual ? atual + " " + p : p; if (ctx.measureText(tt).width > larg - 40 * u && atual) { linhas.push(atual); atual = p; } else atual = tt; }
       linhas.push(atual); return { m, h: linhas.length * fs * 1.3 + (m.de && m.de !== "eu" ? 30 : 12) * u + 26 * u, linhas };
@@ -1091,8 +1093,9 @@ function telaChat(c, t) {
       if (!meu && m.de) { ctx.fillStyle = corP; ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; ctx.fillText(m.de, bx + 18 * u, ty - 2 * u); ty += 26 * u; }
       ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`; ctx.fillStyle = "#eef2f5";
       if (m.tipo === "audio") {   // áudio com onda
-        ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 34 * u, by + (h - 10 * u) / 2, 14 * u, 0, 6.283); ctx.fill();
-        const r = _semente(m.texto || "audio"); for (let k = 0; k < 28; k++) { const hh = (6 + r() * 26) * u; ctx.fillRect(bx + 62 * u + k * 9 * u, by + (h - 10 * u) / 2 - hh / 2, 4 * u, hh); }
+        const ya = (!meu && m.de) ? ty + 14 * u : by + (h - 10 * u) / 2, nb = Math.floor((bw - 120 * u) / (9 * u));   // onda ABAIXO do nome
+        ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 34 * u, ya, 14 * u, 0, 6.283); ctx.fill();
+        const r = _semente(m.texto || "audio"); for (let k = 0; k < nb; k++) { const hh = (6 + r() * 22) * u; ctx.fillRect(bx + 62 * u + k * 9 * u, ya - hh / 2, 4 * u, hh); }
         ctx.font = `500 ${Math.round(15 * u)}px "Inter", sans-serif`; ctx.fillText(m.duracao || "0:07", bx + bw - 54 * u, by + h - 22 * u);
       } else if (m.tipo === "foto" || m.tipo === "video") {
         const im = IMG["img:" + m.imagem]; const iw = bw - 16 * u, ih = larg * 0.75 - 10 * u;
@@ -1104,6 +1107,14 @@ function telaChat(c, t) {
       ctx.restore();
       y = by - 8 * u;
     }
+    ctx.restore();
+    // cabeçalho do grupo POR CIMA (genérico, sem marca)
+    ctx.fillStyle = "#1b222a"; ctx.fillRect(px, py, pw, 100 * u);
+    ctx.fillStyle = "#5a6b7d"; ctx.beginPath(); ctx.arc(px + 50 * u, py + 56 * u, 22 * u, 0, 6.283); ctx.fill();
+    ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(24 * u)}px "Inter", "Noto Color Emoji", sans-serif`; ctx.textAlign = "left";
+    ctx.fillText(c.grupo || "Família 🏠", px + 86 * u, py + 52 * u);
+    ctx.font = `500 ${Math.round(16 * u)}px "Inter", sans-serif`; ctx.fillStyle = digit ? "#7fd18b" : "#93a1ad";
+    ctx.fillText(digit ? `${digit.de} está digitando…` : (c.membros || "Dani, Lucas, Mãe, Pai"), px + 86 * u, py + 76 * u);
     if (digit) {   // balão "digitando" com três pontos
       const bx = px + 68 * u, by = py + ph - 100 * u; ctx.fillStyle = "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, 90 * u, 46 * u, 16 * u); ctx.fill();
       for (let k = 0; k < 3; k++) { ctx.globalAlpha = 0.4 + 0.6 * Math.max(0, Math.sin(t * 7 - k * 0.8)); ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 26 * u + k * 19 * u, by + 23 * u, 6 * u, 0, 6.283); ctx.fill(); }
@@ -1208,15 +1219,27 @@ function telaRelogios(c, t) {   // dois fusos lado a lado: Hamamatsu (noite) × 
   });
   ctx.fillStyle = "#b51b1b"; ctx.fillRect(W / 2 - 2, H * 0.1, 4, H * 0.8 * easeOut(lin(t, c.t0, 0.8)));
 }
-function linhaTempo(c, t) {   // linha do tempo das lendas, no alto, aparece no começo da cena
-  const { W, H } = D, Lt = c.linha, anos = Lt.anos, a = Math.min(easeOut(lin(t, c.t0 + 0.2, 0.5)), 1 - easeInOut(lin(t, c.t0 + (Lt.dur ?? 4), 0.6)));
+function linhaTempo(c, t) {   // linha do tempo das lendas — 13/11: com faixa, todos os anos, ano atual grande (antes ninguém via)
+  const { W, H } = D, Lt = c.linha, anos = Lt.anos, dur = Lt.dur ?? 6;
+  const a = Math.min(easeOut(lin(t, c.t0 + 0.2, 0.6)), 1 - easeInOut(lin(t, c.t0 + dur, 0.8)));
   if (a <= 0) return;
-  const x0 = W * 0.18, x1 = W * 0.82, y = H * 0.085, mn = anos[0], mx = anos[anos.length - 1], X = (ano) => x0 + (x1 - x0) * (ano - mn) / (mx - mn);
-  ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = "rgba(240,232,215,.45)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
-  ctx.font = `600 ${Math.round(H * 0.018)}px "Inter", sans-serif`; ctx.textAlign = "center";
-  for (const ano of anos) { const x = X(ano), at = ano === Lt.atual; ctx.fillStyle = at ? "#e0302a" : "rgba(240,232,215,.7)"; ctx.beginPath(); ctx.arc(x, y, at ? 7 : 4, 0, 6.283); ctx.fill(); if (at || Lt.rotulos) ctx.fillText(String(ano), x, y + H * 0.04); }
-  const de = Lt.de ?? anos[0], k = easeInOut(lin(t, c.t0 + 0.4, 1.2)), xa = X(de) + (X(Lt.atual) - X(de)) * k;
-  ctx.strokeStyle = "#e0302a"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(xa, y); ctx.stroke();
+  const x0 = W * 0.12, x1 = W * 0.88, y = H * 0.1, mn = anos[0], mx = anos[anos.length - 1], X = (ano) => x0 + (x1 - x0) * (ano - mn) / (mx - mn);
+  ctx.save(); ctx.globalAlpha = a;
+  const fx = ctx.createLinearGradient(0, 0, 0, H * 0.24); fx.addColorStop(0, "rgba(0,0,0,.78)"); fx.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = fx; ctx.fillRect(0, 0, W, H * 0.24);
+  ctx.strokeStyle = "rgba(240,232,215,.6)"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
+  const de = Lt.de ?? anos[0], k = easeInOut(lin(t, c.t0 + 0.5, 1.6)), xa = X(de) + (X(Lt.atual) - X(de)) * k;
+  ctx.strokeStyle = "#e0302a"; ctx.lineWidth = 6; ctx.shadowColor = "rgba(224,48,42,.8)"; ctx.shadowBlur = 14;
+  ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(xa, y); ctx.stroke(); ctx.shadowBlur = 0;
+  ctx.textAlign = "center";
+  for (const ano of anos) {
+    const x = X(ano), at = ano === Lt.atual;
+    ctx.fillStyle = at ? "#ff3b30" : "rgba(240,232,215,.85)"; ctx.beginPath(); ctx.arc(x, y, at ? 11 : 6, 0, 6.283); ctx.fill();
+    if (!at) { ctx.font = `600 ${Math.round(H * 0.022)}px "Inter", sans-serif`; ctx.fillStyle = "rgba(240,232,215,.75)"; ctx.fillText(String(ano), x, y + H * 0.045); }
+  }
+  // o ano atual, grande, com o marcador "andando" até ele
+  ctx.font = `800 ${Math.round(H * 0.05)}px "Inter", sans-serif`; ctx.fillStyle = "#fff"; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 12;
+  ctx.fillText(String(Lt.atual), X(Lt.atual), y + H * 0.085);
   ctx.restore();
 }
 

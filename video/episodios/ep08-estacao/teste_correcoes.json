@@ -1,0 +1,312 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "regra",
+   "poço",
+   "real",
+   "estação",
+   "existe",
+   "Kisaragi",
+   "janela",
+   "olhar"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep08_trem_dentro",
+   "volume_db": -16
+  }
+ ],
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -32
+ },
+ "batidas": [
+  {
+   "fala": "Imagina uma sala no Japão do século dezessete. Noite de verão. Cem velas acesas.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第一章",
+     "numero_pt": "Capítulo 1",
+     "titulo": "Cem velas",
+     "ano": "1677",
+     "imagem": "imagens_reais/R08_cem_contos_reuniao.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     },
+     "linha": {
+      "anos": [
+       1666,
+       1677,
+       1741,
+       1750,
+       1825,
+       1979,
+       1991,
+       1998,
+       2004
+      ],
+      "de": 1666,
+      "atual": 1677,
+      "dur": 3.0
+     }
+    },
+    {
+     "imagem": "imagens/L07_cem_velas.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "atmos": {
+      "vela": 0.8
+     },
+     "kanji": {
+      "texto": "百",
+      "x": 0.86,
+      "y": 0.45,
+      "modo": "luz",
+      "legenda": "cem",
+      "tam": 0.26,
+      "atraso": 1.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Imagina"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Era veneno. E o veneno não mata de uma vez. Ele deforma.",
+   "cena": {
+    "imagem": "imagens_reais/R06_oiwa_fantasma_kuniyoshi.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "encaixe": "conter",
+    "atmos": {
+     "poeira": 0.5
+    },
+    "dof": {
+     "x": 0.36,
+     "y": 0.2,
+     "r": 0.25
+    },
+    "kanji": {
+     "texto": "毒",
+     "x": 0.2,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "veneno",
+     "tam": 0.3,
+     "glitch": true,
+     "em": "veneno"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Dizem que uma voz responde: \"Estou.\"",
+   "cena": {
+    "imagem": "imagens/L04_hanako_pes.jpg",
+    "zoom": [
+     1.05,
+     1.35
+    ],
+    "mao": 0.4,
+    "dof": {
+     "x": 0.53,
+     "y": 0.76,
+     "r": 0.16,
+     "atraso": 1.0
+    },
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.53,
+      0.74
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "A mãe mandou um áudio pedindo pra ela falar com o maquinista.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Dani, Lucas, Mãe, Pai",
+    "mensagens": [
+     {
+      "de": "Pai",
+      "texto": "almoçando aqui, a comida tá sem graça sem você 😂",
+      "hora": "11:06",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "tipo": "foto",
+      "imagem": "imagens/D01_vagao_vazio.jpg",
+      "hora": "23:20",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Só eu hoje 😅",
+      "hora": "23:20",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "tipo": "audio",
+      "duracao": "0:09",
+      "hora": "23:40",
+      "apos": -30
+     },
+     {
+      "de": "Lucas",
+      "texto": "Dormiu e passou do ponto de novo 😂",
+      "hora": "11:41",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Não dormi. O trem não parou em nenhuma estação.",
+      "hora": "23:41",
+      "apos": -30
+     },
+     {
+      "de": "Mãe",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "11:42",
+      "em": "áudio",
+      "apos": 0.3
+     }
+    ],
+    "entrada": "corte"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Às meia-noite e dez, um áudio. A voz dela sussurrando:",
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Dani, Lucas, Mãe, Pai",
+    "mensagens": [
+     {
+      "de": "Dani",
+      "tipo": "video",
+      "imagem": "imagens/D02_cabine_silhueta.jpg",
+      "hora": "23:44",
+      "apos": -30
+     },
+     {
+      "de": "Pai",
+      "texto": "Que estação é essa?",
+      "hora": "11:52",
+      "apos": -30
+     },
+     {
+      "de": "Lucas",
+      "texto": "…",
+      "hora": "11:53",
+      "apos": -30
+     },
+     {
+      "de": "Lucas",
+      "texto": "Dani, não existe estação com esse nome.",
+      "hora": "11:54",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Eu tô em cima dela.",
+      "hora": "23:54",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "o celular tá sem serviço mas o grupo funciona??",
+      "hora": "00:02",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "tipo": "audio",
+      "duracao": "0:09",
+      "hora": "00:10",
+      "em": "áudio",
+      "apos": 0.3
+     }
+    ],
+    "entrada": "corte"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "De pé. Parada. Olhando pra baixo, pra eles.",
+   "cena": {
+    "imagem": "imagens/D10_vigilia_janela.jpg",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "zoom_digital": {
+     "x": 0.88,
+     "y": 0.23,
+     "ate": 3.0,
+     "atraso": 0.3,
+     "dur": 3.4
+    },
+    "mao": 0,
+    "celular": {
+     "hora": "16:12",
+     "vertical": true
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.4
+  }
+ ]
+}

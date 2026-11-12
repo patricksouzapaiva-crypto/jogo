@@ -51,7 +51,7 @@ def vid(nome, z=(1.0, 1.04), **kw):
 def cel(c, hora, sinal=None, vertical=False):
     """Vídeo/foto de celular: interface de gravação, foco caçando e mão."""
     c = dict(c); c["celular"] = {"hora": hora, **({"sinal": sinal} if sinal else {}), **({"vertical": True} if vertical else {})}
-    c.setdefault("mao", 0.6)
+    c.setdefault("mao", 0.15 if vertical else 0.6)
     return c
 
 
@@ -110,13 +110,15 @@ def capitulo(i, n, titulo, ano, imagem, cena, em, atual=None):
     """Cartão de capítulo na pausa antes da fala (com taiko longe), depois a primeira cena entra na palavra `em`."""
     nums = "一二三四五六七"
     cap = {"tipo": "capitulo", "numero": f"第{nums[n - 1]}章" if n else "最終章", "numero_pt": f"Capítulo {n}" if n else "A história",
-           "titulo": titulo, "ano": ano, "imagem": imagem, "antecipar": 3.2, "entrada": "nanquim", "atmos": {"poeira": 0.6}}
+           "titulo": titulo, "ano": ano, "imagem": imagem, "antecipar": 4.8, "entrada": "nanquim", "atmos": {"poeira": 0.6}}
     if atual:
         cap["linha"] = {"anos": LINHA, "de": LINHA[0], "atual": atual, "dur": 3.0}
-    C(i, cap, (cena, em))
-    pausa(i, 3.6)
-    fx(i, None, "ep08_tinta", -17, atraso=-3.2)   # 12/11: -12 dava salto depois da pausa
-    fx(i, None, "ep08_taiko", -17, atraso=-2.0)
+    primeira = falas[i].split()[0].strip(",.:;…\"")
+    cena = dict(cena); cena.setdefault("entrada", "fundir"); cena.setdefault("duracao_entrada", 0.8)
+    C(i, cap, (cena, primeira))                     # 13/11: antes entrava no meio da frase
+    pausa(i, 5.2)
+    fx(i, None, "ep08_tinta", -17, atraso=-4.8)   # 12/11: -12 dava salto depois da pausa
+    fx(i, None, "ep08_taiko", -17, atraso=-3.4)
 
 
 HIST = []                         # conversa do grupo "Família 🏠" (cada tela mostra o histórico + o que chega)
@@ -128,9 +130,9 @@ def chat(i, *novas, sons=True):
         m = dict(m); m.setdefault("apos", 0.3)
         msgs.append(m); HIST.append({k: v for k, v in m.items() if k not in ("apos", "em", "digitando")})
         if sons and "em" not in m:
-            fx(i, None, "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -15 if m["de"] == "Dani" else -17, atraso=m["apos"])
+            fx(i, None, "ep08_msg", -19, atraso=m["apos"])
         elif sons:
-            fx(i, m["em"], "ep08_vibra" if m["de"] == "Dani" else "ep08_msg", -15 if m["de"] == "Dani" else -17)
+            fx(i, m["em"], "ep08_msg", -19)
     C(i, {"tipo": "chat", "grupo": "Família 🏠", "membros": "Dani, Lucas, Mãe, Pai", "mensagens": msgs})
     batidas[i]["sem_legenda"] = True
 
@@ -164,19 +166,18 @@ pausa(6, 0.6)
 # ================================================================ TEMA — Vigia
 C(7, vigia((1.0, 1.04)))
 saida_lenta(7, 1.2)
-C(8, vigia((1.0, 1.05)), (img("J07_palco_kabuki", (1.0, 1.08)), "país"), **V)
+C(8, vigia((1.0, 1.05)))
 C(9, vigia((1.04, 1.1), ((0.4, 0.45), (0.38, 0.43))))
 C(10, real("R17_hannya_hokusai", (1.0, 1.1), ((0.6, 0.45), (0.6, 0.42)), encaixe="conter",
            kanji=K("日本", 0.2, 0.5, "luz", "Japão", atraso=0.1, selo="怖")))
 kanji_som(10, "Japão", atraso=-0.2)
-C(11, img("J08_tv_chiado", (1.0, 1.06)), (img("J06_fantasma_corredor", (1.0, 1.08)), "casa"), (img("D01_vagao_vazio", (1.0, 1.06)), "trem"))
+C(11, img("J08_tv_chiado", (1.0, 1.1), ((0.5, 0.5), (0.7, 0.45))))
 C(12, vigia((1.0, 1.05)))
 C(13, img("J02_vela_sombra", (1.0, 1.12), ((0.5, 0.6), (0.75, 0.45)), atmos={"vela": 0.7},
           kanji=K("掟", 0.22, 0.5, "sangue", "a regra", tam=0.3, atraso=0.4)))
 kanji_som(13, "regra")
-C(14, grav("R18_oyuki_okyo", (1.0, 1.06), linha={"anos": LINHA, "de": 1666, "atual": 2004, "dur": 5.0}),
-  (img("N09_estacao_noite", (1.0, 1.08), atmos={"neblina": 0.5}), "fórum"), **V)
-C(15, vigia((1.0, 1.05)), (img("H02_dani_plataforma", (1.0, 1.08)), "brasileira"), **V)
+C(14, grav("R18_oyuki_okyo", (1.0, 1.06), linha={"anos": LINHA, "de": 1666, "atual": 2004, "dur": 7.0}))
+C(15, vigia((1.0, 1.05)))
 amb(7, "nenhum")
 pausa(10, 0.6); pausa(13, 0.6); pausa(14, 0.6)
 
@@ -186,14 +187,12 @@ capitulo(16, 1, "Cem velas", "1677", R + "R08_cem_contos_reuniao.jpg",
 kanji_som(16, "Cem")
 C(17, img("L07b_cem_velas", (1.0, 1.1), ((0.5, 0.6), (0.5, 0.55)), atmos={"vela": 0.8}))
 C(18, vid("V06_cem_velas_apagando", (1.0, 1.05)))
-fx(18, "apagada", "ep08_vela", -10, depois=True)
 C(19, img("J01_cem_velas_vazio", (1.0, 1.12), ((0.5, 0.6), (0.45, 0.65)), atmos={"vela": 0.6, "fumaca": 0.4}))
 C(20, real("R08_cem_contos_reuniao", (1.0, 1.1), ((0.5, 0.55), (0.6, 0.6)), atmos={"poeira": 0.5},
            kanji=K("百物語", 0.12, 0.5, "tinta", "Hyakumonogatari Kaidankai", selo="百", atraso=0.6)))
 kanji_som(20, "Hyakumonogatari")
-C(21, img("J02_vela_sombra", (1.0, 1.06), ((0.4, 0.75), (0.4, 0.72)), atmos={"vela": 0.8}, dof={"x": 0.27, "y": 0.8, "r": 0.18, "atraso": 0.4}))
-C(22, img("J02_vela_sombra", (1.15, 1.45), ((0.45, 0.6), (0.78, 0.42)), atmos={"vela": 1.0}))
-fx(22, "apagasse", "ep08_vela", -10, depois=True)
+C(21, img("J02_vela_sombra", (1.0, 1.06), ((0.4, 0.75), (0.4, 0.72)), atmos={"vela": 0.8}, dof={"x": 0.21, "y": 0.78, "r": 0.18, "atraso": 0.4}))
+C(22, img("J02_vela_sombra", (1.1, 1.4), ((0.5, 0.55), (0.8, 0.4)), atmos={"vela": 1.0}, dof={"x": 0.8, "y": 0.4, "r": 0.22, "atraso": 1.0}))
 C(23, real("R08_cem_contos_reuniao", (1.05, 1.12), ((0.6, 0.6), (0.62, 0.58)), linha={"anos": LINHA, "de": 1666, "atual": 1677, "dur": 3.0}))
 C(24, img("J06b_fantasma_corredor", (1.0, 1.15), ((0.5, 0.5), (0.47, 0.45)), atmos={"neblina": 0.5}))
 amb(16, "nenhum")
@@ -229,14 +228,14 @@ kanji_som(37, "Oiwa")
 C(38, img("J07_palco_kabuki", (1.0, 1.1), atmos={"fumaca": 0.4}, kanji=K("四谷怪談", 0.84, 0.5, "luz", "Yotsuya Kaidan · 1825", selo="怨", em="kabuki")))
 kanji_som(38, "kabuki")
 C(39, img("J07_palco_kabuki", (1.15, 1.3), ((0.5, 0.6), (0.6, 0.65))))
-C(40, img("J07_palco_kabuki", (1.4, 1.6), ((0.62, 0.68), (0.66, 0.7)), dof={"x": 0.6, "y": 0.68, "r": 0.2}))
-C(41, grav("R06_oiwa_fantasma_kuniyoshi", (1.0, 1.06), dof={"x": 0.45, "y": 0.4, "r": 0.25},
+C(40, img("J07_palco_kabuki", (1.4, 1.6), ((0.62, 0.68), (0.66, 0.7)), dof={"x": 0.63, "y": 0.62, "r": 0.2}))
+C(41, grav("R06_oiwa_fantasma_kuniyoshi", (1.0, 1.06), dof={"x": 0.36, "y": 0.2, "r": 0.25},
            kanji=K("毒", 0.2, 0.5, "sangue", "veneno", tam=0.3, glitch=True, em="veneno")))
 kanji_som(41, "veneno")
 C(42, grav("R01_oiwa_lanterna_hokusai", (1.2, 1.6), ((0.5, 0.4), (0.55, 0.48))))
 C(43, texto("Ela morre.\nE volta.", "E volta.", "impacto", cps=10, tamanho=140))
-C(44, img("J05_lanterna", (1.0, 1.1)), (grav("R01_oiwa_lanterna_hokusai", (1.0, 1.08)), "lanterna"))
-C(45, grav("R01_oiwa_lanterna_hokusai", (1.0, 1.15), ((0.5, 0.5), (0.55, 0.47)), dof={"x": 0.55, "y": 0.47, "r": 0.25, "atraso": 1.5},
+C(44, grav("R01_oiwa_lanterna_hokusai", (1.0, 1.08)))
+C(45, grav("R01_oiwa_lanterna_hokusai", (1.0, 1.15), ((0.5, 0.5), (0.55, 0.47)), dof={"x": 0.55, "y": 0.47, "r": 0.22, "atraso": 1.5},
            kanji=K("北斎", 0.84, 0.5, "tinta", "Katsushika Hokusai · 1831", selo="北斎", atraso=0.8)))
 kanji_som(45, "Hokusai")
 C(46, img("J05b_lanterna", (1.0, 1.1), kanji=K("於岩稲荷", 0.2, 0.5, "placa", "santuário Oiwa Inari · Tóquio", fundo="vermelho", em="santuário")))
@@ -256,23 +255,22 @@ kanji_som(51, "Um", -16); kanji_som(51, "Dois", -16); kanji_som(51, "Três", -16
 C(52, img("N08_poco_noite", (1.05, 1.15), ((0.5, 0.6), (0.5, 0.65)), atmos={"neblina": 0.7},
           kanji=K("九", 0.8, 0.45, "sangue", "nove", tam=0.34, selo="呪", em="nove")))
 kanji_som(52, "nove"); fx(52, "grito", "ep08_taiko", -16, depois=True)
-C(53, real("R10_poco_okiku_himeji", (1.0, 1.06), kanji=K("実在", 0.86, 0.42, "placa", "Foto real · castelo de Himeji", tam=0.14, fundo="vermelho", em="real")),
-  (real("R11_poco_okiku_himeji_2", (1.0, 1.08)), "grade"))
+C(53, real("R10_poco_okiku_himeji", (1.0, 1.08), kanji=K("実在", 0.86, 0.42, "placa", "Foto real · castelo de Himeji", tam=0.14, fundo="vermelho", em="real")))
 C(54, img("N08_poco_noite", (1.02, 1.12), ((0.5, 0.6), (0.5, 0.66)), atmos={"neblina": 0.8},
           kanji=K("お菊井戸", 0.82, 0.5, "recorte", "O poço da Okiku", fundo="nanquim", atraso=0.4)))
 kanji_som(54, "poço")
-C(55, img("L06b_peonia", (1.0, 1.08), atmos={"vela": 0.5},
+C(55, img("J05b_lanterna", (1.0, 1.1), atmos={"vela": 0.5},
           kanji=K("牡丹燈籠", 0.84, 0.5, "luz", "Botan Dōrō · a lanterna de peônia", em="lanterna"),
           linha={"anos": LINHA, "de": 1825, "atual": 1666, "dur": 3.0}))
-T(55, "vela", 1.6); fx(55, None, "ep08_vela", -10, atraso=-1.0); kanji_som(55, "lanterna")
-C(56, img("L06c_peonia", (1.0, 1.1)))
+T(55, "vela", 1.6); kanji_som(55, "lanterna")
+C(56, img("J05b_lanterna", (1.1, 1.2), ((0.5, 0.5), (0.5, 0.45)), atmos={"vela": 0.5}))
 C(57, img("J05_lanterna", (1.0, 1.15), ((0.5, 0.55), (0.5, 0.5)), atmos={"vela": 0.7}))
-C(58, img("L06_peonia_esqueleto", (1.0, 1.1)), (grav("R05_esqueleto_detalhe", (1.0, 1.1), ((0.45, 0.3), (0.45, 0.2))), "esqueleto"))
+C(58, img("L06_peonia_esqueleto", (1.0, 1.1), ((0.5, 0.5), (0.4, 0.45))))
 T(58, "shoji", 0.9); fx(58, None, "ep08_shoji", -11, atraso=-0.5)
 C(59, real("R04_esqueleto_kuniyoshi", (1.0, 1.08), ((0.4, 0.45), (0.55, 0.35)), atmos={"poeira": 0.6},
            kanji=K("相馬の古内裏", 0.1, 0.5, "tinta", "Utagawa Kuniyoshi · c. 1844", selo="国芳", em="Kuniyoshi")))
 kanji_som(59, "Kuniyoshi")
-C(60, real("R04_esqueleto_kuniyoshi", (1.5, 1.9), ((0.55, 0.35), (0.6, 0.3)), dof={"x": 0.6, "y": 0.35, "r": 0.22}))
+C(60, real("R04_esqueleto_kuniyoshi", (1.4, 1.8), ((0.45, 0.35), (0.44, 0.3)), dof={"x": 0.44, "y": 0.3, "r": 0.22, "atraso": 0.8}))
 pausa(41, 0.6); pausa(42, 0.8); pausa(43, 0.6); pausa(47, 0.8); pausa(51, 0.6); pausa(52, 0.4); pausa(53, 1.6)
 pausa(54, 0.6); pausa(58, 0.6); pausa(60, 1.0)
 
@@ -283,13 +281,12 @@ capitulo(61, 4, "Do poço para a televisão", "1991 · 1998", I + "J08_tv_chiado
 kanji_som(61, "livro")
 C(62, img("J08_tv_chiado", (1.1, 1.25), ((0.6, 0.45), (0.8, 0.38)), atmos={"pelicula": 0.6},
           linha={"anos": LINHA, "de": 1991, "atual": 1998, "dur": 2.5}))
-C(63, img("J08_tv_chiado", (1.2, 1.4), ((0.6, 0.75), (0.62, 0.82))), (img("J09_telefone", (1.0, 1.1)), "telefonema"),
-  (img("J09_telefone", (1.1, 1.25), kanji=K("七日", 0.2, 0.5, "sangue", "sete dias", glitch=True, em="sete")), "sete"))
+C(63, img("J09_telefone", (1.0, 1.15), ((0.5, 0.5), (0.62, 0.4)), kanji=K("七日", 0.2, 0.5, "sangue", "sete dias", glitch=True, em="sete")))
 kanji_som(63, "sete")
 C(64, img("J08_tv_chiado", (1.3, 1.9), ((0.7, 0.42), (0.8, 0.38)), atmos={"pelicula": 0.8}))
-C(65, img("J04_poco_cabelo", (1.0, 1.2), ((0.5, 0.5), (0.6, 0.65)), atmos={"neblina": 0.4}), (grav("R03_okiku_poco_hokusai", (1.0, 1.06)), "Okiku"))
-C(66, img("J06_fantasma_corredor", (1.2, 1.4), ((0.33, 0.4), (0.33, 0.35))), (grav("R01_oiwa_lanterna_hokusai", (1.0, 1.06)), "Oiwa"))
-C(67, grav("R18_oyuki_okyo", (1.0, 1.08)), (img("J08_tv_chiado", (1.0, 1.1), atmos={"pelicula": 0.6}), "televisão"))
+C(65, img("J04_poco_cabelo", (1.0, 1.25), ((0.5, 0.5), (0.6, 0.65)), atmos={"neblina": 0.4}))
+C(66, img("J06_fantasma_corredor", (1.2, 1.45), ((0.33, 0.4), (0.33, 0.35))))
+C(67, img("J08_tv_chiado", (1.0, 1.15), ((0.5, 0.5), (0.72, 0.42)), atmos={"pelicula": 0.6}))
 C(68, texto("O Chamado (2002)\nquase US$ 250 milhões", "US$ 250 milhões", cps=30))
 C(69, img("J06b_fantasma_corredor", (1.0, 1.15), atmos={"neblina": 0.4},
           kanji=K("呪怨", 0.18, 0.5, "sangue", "Ju-On · O Grito", selo="怨", glitch=True, em="Ju-On")))
@@ -302,12 +299,11 @@ pausa(64, 0.8); pausa(67, 0.6); pausa(70, 0.6); pausa(71, 0.8)
 # ================================================================ APARTE — Vigia
 C(72, vigia((1.0, 1.05)))
 saida_lenta(72, 1.6)
-C(73, img("J08_tv_chiado", (1.0, 1.1)), **V)
-C(74, img("J06_fantasma_corredor", (1.0, 1.1)), **V)
+C(73, vigia((1.0, 1.05)))
+C(74, vigia((1.04, 1.08), ((0.45, 0.48), (0.43, 0.46))))
 C(75, vigia((1.04, 1.1), ((0.4, 0.45), (0.38, 0.43))))
 C(76, vigia((1.0, 1.06)))
-C(77, img("J03_poco_jardim", (1.0, 1.06)), (img("J08_tv_chiado", (1.0, 1.06)), "televisão"), (img("J11b_banheiro", (1.0, 1.06)), "banheiro"),
-  (img("D01_vagao_vazio", (1.0, 1.06)), "trem"))
+C(77, vigia((1.0, 1.05)))
 C(78, vigia((1.05, 1.12), ((0.4, 0.45), (0.37, 0.42))))
 amb(72, "nenhum")
 pausa(76, 0.6); pausa(78, 0.6)
@@ -334,9 +330,8 @@ C(89, img("J11_banheiro_escuro", (1.0, 1.1), ((0.5, 0.5), (0.68, 0.5)),
 kanji_som(89, "Hanako-san"); fx(89, "pergunta", "ep08_bate_cabine", -6, depois=True)
 pausa(90, 2.4)                                                                        # as três batidas soam SOZINHAS
 C(90, img("L04b_hanako_sombra", (1.04, 1.12), ((0.6, 0.6), (0.65, 0.65)), mao=0.5))
-C(91, img("L04_hanako_pes", (1.04, 1.12), ((0.55, 0.6), (0.58, 0.7)), mao=0.5, dof={"x": 0.58, "y": 0.78, "r": 0.2, "atraso": 1.0}))
-C(92, img("J12_passagem_neve", (1.0, 1.08)), (img("L05_teketeke", (1.0, 1.12), ((0.5, 0.5), (0.58, 0.4)),
-                                                  kanji=K("テケテケ", 0.18, 0.5, "sangue", "Teke Teke", glitch=True, em="som")), "cotovelos"))
+C(91, img("L04_hanako_pes", (1.05, 1.35), ((0.5, 0.6), (0.53, 0.74)), mao=0.4, dof={"x": 0.53, "y": 0.76, "r": 0.16, "atraso": 1.0}))
+C(92, img("L05_teketeke", (1.0, 1.15), ((0.5, 0.5), (0.6, 0.42)), kanji=K("テケテケ", 0.18, 0.5, "sangue", "Teke Teke", glitch=True, em="som")))
 kanji_som(92, "som")
 C(93, img("J13b_boneca_cabelo", (1.0, 1.08), atmos={"vela": 0.5}))
 C(94, img("L03b_boneca_okiku", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45)), atmos={"vela": 0.5},
@@ -353,8 +348,7 @@ pausa(84, 0.6); pausa(88, 0.4); pausa(91, 1.2); pausa(93, 0.4); pausa(95, 1.0); 
 # ================================================================ PARTE 6 — a estação que não existe (2004)
 capitulo(98, 6, "A estação que não existe", "2004", I + "N09_estacao_noite.jpg",
          texto("2channel · 08/01/2004\n> Hasumi: o trem não para", "não para", cps=30), "fórum", 2004)
-C(99, real("R13_trem_enshu_2", (1.0, 1.08), kanji=K("遠州鉄道", 0.86, 0.45, "placa", "Foto real · linha Enshū", tam=0.11, fundo="vermelho", em="Enshū")),
-  (vid("V02b_janela_trem", (1.0, 1.04)), "parava"))
+C(99, real("R13_trem_enshu_2", (1.0, 1.08), kanji=K("遠州鉄道", 0.86, 0.45, "placa", "Foto real · linha Enshū", tam=0.11, fundo="vermelho", em="Enshū")))
 kanji_som(99, "Enshū"); batidas[98]["sem_legenda"] = True
 pausa(98, 2.0); pausa(99, 3.0)                                       # tempo de ler "Ele entrou na internet" e o fórum
 C(100, img("N09_estacao_noite", (1.0, 1.12), atmos={"neblina": 0.7},
@@ -367,8 +361,7 @@ fx(103, "tambor", "ep08_tambor_longe", -14); fx(103, "sino", "ep08_sino_estacao"
 C(104, img("D04b_plataforma_trilho", (1.0, 1.12), ((0.5, 0.5), (0.8, 0.5))))
 C(105, img("D06_carro_estrada", (1.0, 1.12), ((0.5, 0.5), (0.35, 0.6))))
 C(106, img("D06_carro_estrada", (1.12, 1.2), ((0.35, 0.6), (0.33, 0.62))))
-C(107, real("R13_trem_enshu_2", (1.0, 1.05)), (real("R14_saginomiya_plataforma", (1.0, 1.08),
-   kanji=K("実在", 0.86, 0.42, "placa", "Foto real · estação Saginomiya", tam=0.14, fundo="vermelho", atraso=0.2)), "Saginomiya"))
+C(107, real("R14_saginomiya_plataforma", (1.0, 1.08), kanji=K("実在", 0.86, 0.42, "placa", "Foto real · estação Saginomiya", tam=0.14, fundo="vermelho", em="Saginomiya")))
 C(108, real("R14_saginomiya_plataforma", (1.1, 1.4), ((0.4, 0.5), (0.25, 0.45)),
             kanji=K("さぎの宮", 0.82, 0.45, "placa", "Saginomiya", tam=0.12, fundo="nenhum", em="placa")))
 C(109, img("D03b_placa_kisaragi", (1.0, 1.12), ((0.5, 0.5), (0.3, 0.45)),
@@ -377,7 +370,7 @@ kanji_som(109, "Kisaragi")
 C(110, real("R13_trem_enshu_2", (1.05, 1.2), ((0.6, 0.5), (0.65, 0.48))))
 C(111, img("H01_fabrica_noite", (1.0, 1.08), kanji=K("浜松", 0.2, 0.5, "luz", "Hamamatsu", tam=0.28, selo="浜", atraso=0.1)))
 kanji_som(111, "Hamamatsu", atraso=-0.1)
-C(112, img("H01_fabrica_noite", (1.08, 1.25), ((0.5, 0.5), (0.85, 0.6))), (img("H02b_dani_plataforma", (1.0, 1.08)), "duzentos"))
+C(112, img("H02b_dani_plataforma", (1.0, 1.1)))
 C(113, img("H02_dani_plataforma", (1.0, 1.08), kanji=K("出稼ぎ", 0.8, 0.5, "tinta", "dekasegi · trabalhar longe de casa", atraso=0.1)))
 kanji_som(113, "dekasseguis", atraso=-0.1)
 C(114, img("H02_dani_plataforma", (1.08, 1.2), ((0.3, 0.5), (0.28, 0.5))))
@@ -392,10 +385,11 @@ C(116, {"tipo": "relogios", "lados": [{"nome": "Hamamatsu", "hora": "23:52", "im
 chat(117, {"de": "Dani", "texto": "Saindo da fábrica 🏭", "hora": "23:05", "apos": 0.2},
      {"de": "Mãe", "texto": "Vai com Deus filha ❤️", "hora": "11:06", "apos": 1.0},
      {"de": "Pai", "texto": "almoçando aqui, a comida tá sem graça sem você 😂", "hora": "11:06", "apos": 1.8})
-C(118, img("H02_dani_plataforma", (1.0, 1.1)), (img("N10_trem_noite", (1.0, 1.08)), "trem"))
+C(118, img("N10_trem_noite", (1.0, 1.1)))
 chat(119, {"de": "Dani", "tipo": "foto", "imagem": I + "D01_vagao_vazio.jpg", "hora": "23:20", "em": "foto"},
      {"de": "Dani", "texto": "Só eu hoje 😅", "hora": "23:20", "em": "hoje"})
 chat(120, {"de": "Dani", "tipo": "audio", "duracao": "0:09", "hora": "23:40", "em": "áudio", "digitando": 0.6})
+fx(120, "áudio", "ep08_vibra", -16)
 C(121, cel(vid("V02_janela_trem"), "23:40"))
 chat(122, {"de": "Lucas", "texto": "Dormiu e passou do ponto de novo 😂", "hora": "11:41", "em": "Dormiu", "digitando": 0.8})
 pausa(122, 2.0)
@@ -447,12 +441,12 @@ pausa(155, 1.4)
 C(155, {"tipo": "mapa", "hora_inicio": "00:41", "hora_fim": "00:58", "progresso": [0.0, 0.5]})
 fx(155, None, "ep08_vibra", -15, atraso=0.1)
 chat(158, {"de": "Lucas", "texto": "Dani, ele tá indo pro lado errado.", "hora": "12:47", "em": "Dani"})
-C(159, vid("V05_carro_montanha", (1.0, 1.04)))
+chat(159)                                                                          # "Ela não respondeu." — a conversa parada
 chat(160, {"de": "Pai", "texto": "DANI", "hora": "12:49", "em": "DANI"})
-C(161, {"tipo": "mapa", "hora_inicio": "00:41", "hora_fim": "00:58", "progresso": [0.5, 0.7]})
-C(162, vid("V05b_carro_montanha", (1.0, 1.04)))
+C(161, vid("V05_carro_montanha", (1.0, 1.05)))                                      # "Dois minutos." "Cinco." — dentro do carro
 chat(163, {"de": "Dani", "texto": "…", "hora": "00:53", "em": "mensagem", "digitando": 1.4}, sons=False)
 chat(164, {"de": "Dani", "texto": "ele não fala japonês", "hora": "00:53", "em": "fala", "digitando": 0.6})
+fx(164, "fala", "ep08_vibra", -16)
 chat(165, {"de": "Dani", "texto": "…", "hora": "00:54", "em": "depois", "digitando": 1.0}, sons=False)
 chat(166, {"de": "Dani", "texto": "ele tá falando com alguém. em português. com a voz do pai.", "hora": "00:54", "em": "falando", "digitando": 0.6})
 _ali = json.load(open(AQUI / "audio" / "alinhamento.json"))
@@ -469,7 +463,7 @@ pausa(147, 1.0); pausa(148, 1.2); pausa(154, 0.6); pausa(157, 1.2); pausa(160, 0
 pausa(164, 1.4); pausa(166, 1.6); pausa(168, 1.6)
 
 # ================================================================ A VIRADA — o vídeo da vigília
-C(169, img("N10b_trem_noite", (1.0, 1.08)), (vid("V04_sem_relogio", (1.0, 1.06), video_inicio=4.0), "câmeras"))
+C(169, img("N10b_trem_noite", (1.0, 1.1)))
 saida_lenta(169, 3.6, dur=2.2)
 HIST.extend([{"de": "Lucas", "texto": "alguma notícia?", "hora": "09:02"}])
 chat(170, {"de": "Mãe", "texto": "Liguei no consulado de novo", "hora": "15:20", "em": "consulado"},
@@ -506,7 +500,7 @@ batidas[184]["sem_legenda"] = True
 fx(184, None, "ep08_msg", -16, atraso=0.1)
 pausa(185, 1.6)
 C(185, cel(vid("V07_vigilia_zoom_janela", (1.0, 1.0)), "16:12", vertical=True))
-C(187, cel(img("D10_vigilia_janela", (1.0, 1.0), zoom_digital={"x": 0.623, "y": 0.245, "ate": 3.2, "atraso": 0.2, "dur": 3.0}), "16:12", vertical=True))
+C(187, cel(img("D10_vigilia_janela", (1.0, 1.0), zoom_digital={"x": 0.88, "y": 0.23, "ate": 3.0, "atraso": 0.3, "dur": 3.4}, mao=0), "16:12", vertical=True))
 C(188, cel(img("D11_janela_close", (1.0, 1.06), ((0.45, 0.5), (0.45, 0.48))), "16:12", vertical=True))
 C(189, cel(img("D11_janela_close", (1.1, 1.3), ((0.45, 0.45), (0.45, 0.42))), "16:12", vertical=True))
 C(190, cel(img("D11_janela_close", (1.3, 1.4), ((0.45, 0.5), (0.45, 0.62))), "16:12", vertical=True))
@@ -518,17 +512,16 @@ pausa(171, 0.6); pausa(174, 0.6); pausa(180, 1.0); pausa(184, 1.4); pausa(186, 0
 pausa(189, 1.0); pausa(190, 1.2); pausa(191, 1.4)
 
 # ================================================================ FECHO — Vigia (corte seco, sem transição)
-C(192, vigia((1.0, 1.04)))
+C(192, dict(vigia((1.0, 1.04)), entrada="corte"))
 pausa(192, 2.4)
 C(193, vigia((1.04, 1.1), ((0.4, 0.45), (0.38, 0.43))))
-C(194, grav("R03_okiku_poco_hokusai", (1.0, 1.06)), (grav("R01_oiwa_lanterna_hokusai", (1.0, 1.06)), "Oiwa"),
-  (img("N09_estacao_noite", (1.0, 1.08), atmos={"neblina": 0.6}), "estação"), **V)
-C(195, cel(img("D10_vigilia_janela", (1.0, 1.0), zoom_digital={"x": 0.623, "y": 0.245, "ate": 2.6, "atraso": 0.0, "dur": 2.0}), "16:12", vertical=True))
+C(194, vigia((1.0, 1.05)))
+C(195, cel(img("D10_vigilia_janela", (1.0, 1.0), zoom_digital={"x": 0.88, "y": 0.23, "ate": 2.6, "atraso": 0.2, "dur": 2.4}, mao=0), "16:12", vertical=True))
 C(196, cel(img("D11_janela_close", (1.2, 1.3), ((0.45, 0.45), (0.45, 0.43))), "16:12", vertical=True))
 C(197, vigia((1.0, 1.05)))
 saida_lenta(197, 1.6)
 C(198, vigia((1.05, 1.12), ((0.4, 0.45), (0.36, 0.42))))
-C(199, vigia((1.0, 1.05)), (vid("V02b_janela_trem", (1.0, 1.04)), "ônibus"), **V)
+C(199, vigia((1.04, 1.1), ((0.42, 0.45), (0.4, 0.43))))
 C(200, texto("Não manda mensagem\npra ninguém.", "pra ninguém.", cps=26))
 C(201, vigia((1.0, 1.05)))
 amb(192, "nenhum")
@@ -539,20 +532,19 @@ batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "amb
                 "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
 
 voz = "audio/voz_personagens.wav" if (AQUI / "audio" / "voz_personagens.wav").exists() else "audio/voz_com_vinheta_limpa.wav"
-T_DB = -35
+T_DB = -32                                   # 13/11: "música de fundo um pouco mais alta"
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
     "voz_arquivo": voz,
     "cintilar": 0.03, "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
-    "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.16,
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
             "efeitos_pico_max": -3},
     "legendas": {"destaques": ["Japão", "regra", "poço", "real", "estação", "existe", "Kisaragi", "janela", "olhar"]},
     "ambiente_inicial": [{"som": "ep08_trem_dentro", "volume_db": -16}],
     "musica": {"som": "ep08_japones_longa", "volume_db": T_DB},
-    "abertura": {"texto": "O VIGIA\nEP. 08 · A ESTAÇÃO QUE NÃO EXISTE", "vermelho": "QUE NÃO EXISTE", "duracao": 3.2, "segurar": 1.6,
+    "abertura": {"texto": "O VIGIA\nEP. 08 · A ESTAÇÃO QUE NÃO EXISTE", "vermelho": "QUE NÃO EXISTE", "duracao": 6.0, "segurar": 4.0,
                  "antes_da_batida": 7, "sons": [{"som": "ep08_taiko", "t": 0.2, "volume_db": -15}]},
     "cta": {"titulo": "Você acabou de olhar.", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
@@ -622,6 +614,81 @@ def aplicar_ajuste_pausas():
             b["pausa_antes_s"] = round(max(0.3, b["pausa_antes_s"] + d), 2)
 
 
+def ritmo():
+    """13/11 (pedido do usuário): ritmo contínuo, nada de corte rápido nem troca no meio da frase.
+    - cena comum fica >= 3,6 s; cena com kanji/linha do tempo fica >= 6,5 s depois que o kanji aparece;
+    - se a frase seguinte é curta e a cena dela é uma imagem comum, ela CONTINUA a anterior (sem cortar);
+    - se não dá pra continuar (tela de conversa, Vigia, vídeo...), a pausa antes dela cresce (até 2,5 s);
+    - toda troca é uma fusão curta que termina ANTES da voz (a legenda nunca chega antes da imagem)."""
+    from gerar import tokens as tk, norm
+    t_ini = [_ali[_ini[i]][0] for i in range(len(falas))]
+
+    def dur(i):
+        return t_ini[i + 1] - t_ini[i] + batidas[i + 1].get("pausa_antes_s", 0) if i + 1 < len(falas) else 4.0
+
+    def t_palavra(i, palavra):
+        ws = [norm(w) for w in tk(falas[i])]
+        alvo = norm(palavra)
+        k = next((j for j, w in enumerate(ws) if w == alvo or w.startswith(alvo)), 0)
+        return _ali[_ini[i] + k][0] - t_ini[i]
+
+    def precisa(b, i):
+        cs = cenas_de(b); n = 3.6
+        for c in cs:
+            ks = c.get("kanji") or []
+            ks = ks if isinstance(ks, list) else [ks]
+            for K in ks:
+                off = t_palavra(i, K["em"]) if K.get("em") else K.get("atraso", 0.5)
+                n = max(n, off + (6.5 if K.get("legenda") or len(K.get("texto", "")) > 1 else 3.5))
+            if c.get("linha"):
+                n = max(n, 6.5)
+            if c.get("tipo") == "texto":
+                n = max(n, 4.0)
+        return n
+
+    def comum(b):
+        cs = cenas_de(b)
+        return len(cs) == 1 and not any(c.get(k) for c in cs for k in ("tipo", "vigia", "video", "celular", "kanji", "linha", "dof",
+                                                                       "zoom_digital", "entrada"))
+    def tipo_de(b):
+        c = cenas_de(b)[0]
+        return "vigia" if c.get("vigia") else c.get("tipo") or "imagem"
+
+    PROTEGE = {58, 91, 146, 149, 187, 188, 191}
+    continuadas, alongadas = [], []
+    acc, falta = 0.0, 0.0
+    for i, b in enumerate(batidas[:len(falas)]):
+        if i == 0:
+            acc, falta = dur(0), precisa(b, 0); continue
+        if not cenas_de(b):
+            acc += dur(i); continue
+        tipo_ant = next((tipo_de(batidas[j]) for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), None)
+        if tipo_de(b) in ("chat", "vigia", "mapa") and tipo_de(b) == tipo_ant and not any(c.get("kanji") for c in cenas_de(b)):
+            acc += dur(i); continue                   # mesma tela (conversa→conversa, Vigia→Vigia): não é corte
+        if acc < falta and comum(b) and i not in PROTEGE:
+            b.pop("cena", None); b.pop("cenas", None); continuadas.append(i); acc += dur(i); continue
+        if acc < falta:
+            extra = round(min(2.5, falta - acc), 2); b["pausa_antes_s"] = round(b.get("pausa_antes_s", 0) + extra, 2); alongadas.append((i, extra))
+        acc, falta = dur(i), precisa(b, i)
+    # fusões que terminam antes da voz
+    for i, b in enumerate(batidas[1:len(falas)], 1):
+        cs = cenas_de(b)
+        if not cs:
+            continue
+        c = cs[0]
+        if c.get("tipo") == "capitulo" or c.get("entrada") == "corte":
+            continue
+        ant = next((cenas_de(batidas[j]) for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), [{}])[-1]
+        if c.get("tipo") == "chat" and ant.get("tipo") == "chat":
+            c["entrada"] = "corte"; continue          # conversa → conversa: a tela é a mesma
+        padrao = {"nanquim": 1.3, "shoji": 0.9, "vela": 1.6}.get(c.get("entrada"), 0.6)
+        c.setdefault("entrada", "fundir"); c.setdefault("duracao_entrada", padrao)
+        c["antecipar"] = round(min(c["duracao_entrada"], b.get("pausa_antes_s", 0) + 0.25), 2)
+    print("frases que continuam a imagem anterior:", continuadas)
+    print("pausas alongadas para o kanji/cena respirar (fala, s):", alongadas)
+
+
+ritmo()
 garantir_leitura()
 aplicar_ajuste_pausas()
 sem = [i for i, b in enumerate(batidas) if not cenas_de(b)]

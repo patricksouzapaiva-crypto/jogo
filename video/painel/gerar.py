@@ -239,12 +239,19 @@ def inserir_silencios(wav, tempos, insercoes, destino):
                 t = (max(0, j0) + int(np.argmin(e_)) + q // 2) / sr
             print(f"    aviso: pausa sem silêncio real por perto (palavra {i}); corte no ponto mais quieto")
         corte = int(t * sr)
-        pedacos += [a[cursor:corte], np.zeros(int(seg * sr), np.float32)]
+        # 13/11: fade curto nos dois lados do corte (antes o corte era seco e às vezes "comia" o fim da palavra)
+        pedaco = a[cursor:corte].copy(); nf = min(len(pedaco), int(0.015 * sr))
+        if nf: pedaco[-nf:] *= np.linspace(1, 0, nf, dtype=np.float32)
+        if cursor and pedacos:
+            ni = min(len(pedaco), int(0.015 * sr)); pedaco[:ni] *= np.linspace(0, 1, ni, dtype=np.float32)
+        pedacos += [pedaco, np.zeros(int(seg * sr), np.float32)]
         cursor = corte
         for j in range(i, len(tempos)):
             tempos[j] = (tempos[j][0] + seg, tempos[j][1] + seg)
         desloc += seg
-    pedacos.append(a[cursor:])
+    resto = a[cursor:].copy(); ni = min(len(resto), int(0.015 * sr))
+    if cursor and ni: resto[:ni] *= np.linspace(0, 1, ni, dtype=np.float32)
+    pedacos.append(resto)
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", destino],
                    input=np.concatenate(pedacos).tobytes(), check=True)
     return destino, tempos
