@@ -1,18 +1,14 @@
 R01_oiwa_lanterna_hokusai: File:Oiwa LCCN2005678554.jpg — Katsushika, Hokusai, 1760-1849, artist — Public domain — https://commons.wikimedia.org/wiki/File:Oiwa_LCCN2005678554.jpg
-R02_koheiji_hokusai: File:Hokusai, cento storie (di fantasmi), il fantasma di Kohada Koheiji, 1831-32.jpg — Katsushika Hokusai — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File:Hokusai,_cento_storie_(di_fantasmi),_il_fantasma_di_Kohada_Koheiji,_1831-32.jpg
 R03_okiku_poco_hokusai: File:Katsushika Hokusai, il fantasma di okiku alla tenuta di sara, dalla serie 100 storie di fantasmi, 1831-32 ca.jpg — Sailko — CC BY 3.0 — https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai,_il_fantasma_di_okiku_alla_tenuta_di_sara,_dalla_serie_100_storie_di_fantasmi,_1831-32_ca.jpg
 R04_esqueleto_kuniyoshi: File:Takiyasha the Witch and the Skeleton Spectre, by Utagawa Kuniyoshi.jpg — ? — Public domain — https://commons.wikimedia.org/wiki/File:Takiyasha_the_Witch_and_the_Skeleton_Spectre,_by_Utagawa_Kuniyoshi.jpg
 R05_esqueleto_detalhe: File:Takiyasha the Witch and the Skeleton Spectre 3.jpg — Utagawa Kuniyoshi — Public domain — https://commons.wikimedia.org/wiki/File:Takiyasha_the_Witch_and_the_Skeleton_Spectre_3.jpg
 R06_oiwa_fantasma_kuniyoshi: File:Tokaido Yotsuya Kaidan-Onoe Matsusuke as the Ghost of the Murdered Wife Oiwa, in "A Tale of Horror from the Yotsuya Station on the Tokaido Road" MET DP136979.jpg — Utagawa Toyokuni I — CC0 — https://commons.wikimedia.org/wiki/File:Tokaido_Yotsuya_Kaidan-Onoe_Matsusuke_as_the_Ghost_of_the_Murdered_Wife_Oiwa,_in_%22A_Tale_of_Horror_from_the_Yotsuya_Station_on_the_Tokaido_Road%22_MET_DP136979.jpg
-R07_fantasma_kyosai: File:'Female Ghost' by Kawanabe Kyosai, Cincinnati Art Museum.JPG — Kawanabe Kyōsai — Public domain — https://commons.wikimedia.org/wiki/File:%27Female_Ghost%27_by_Kawanabe_Kyosai,_Cincinnati_Art_Museum.JPG
 R08_cem_contos_reuniao: File:One-hundred-tale ghost story gathering LCCN2004666376.jpg — Kawanabe, Kyōsai, 1831-1889, artist — Public domain — https://commons.wikimedia.org/wiki/File:One-hundred-tale_ghost_story_gathering_LCCN2004666376.jpg
 R09_raposas_de_fogo_chikanobu: File:Chikanobu Foxfires.jpg — Toyohara Chikanobu — Public domain — https://commons.wikimedia.org/wiki/File:Chikanobu_Foxfires.jpg
 R10_poco_okiku_himeji: File:Himeji Castle Okiku Well.jpg — Drivephotographer — CC0 — https://commons.wikimedia.org/wiki/File:Himeji_Castle_Okiku_Well.jpg
 R11_poco_okiku_himeji_2: File:Okiku Well in Himeji Castle 4.jpg — そらみみ — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Okiku_Well_in_Himeji_Castle_4.jpg
-R12_trem_enshu: File:Enshu Railway Line 1501.JPG — まも(Mamo) — Public domain — https://commons.wikimedia.org/wiki/File:Enshu_Railway_Line_1501.JPG
 R13_trem_enshu_2: File:Enshu-Railway Series2000-2003.jpg — MaedaAkihiko — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Enshu-Railway_Series2000-2003.jpg
 R14_saginomiya_plataforma: File:Enshu-railway-09-Saginomiya-station-platform-20110110.jpg — LERK (talk · contribs) — CC BY 3.0 — https://commons.wikimedia.org/wiki/File:Enshu-railway-09-Saginomiya-station-platform-20110110.jpg
-R15_saginomiya_placa: File:ET-Saginomiya Station-Running in board 2.jpg — ButuCC — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:ET-Saginomiya_Station-Running_in_board_2.jpg
-R16_oiwa_hokusai_met: File:MET DP251153.jpg — Shunbaisai Hokuei — CC0 — https://commons.wikimedia.org/wiki/File:MET_DP251153.jpg
 R17_hannya_hokusai: File:Hokusai, The laughing demon cph.3g08747.jpg — Katsushika Hokusai — Public domain — https://commons.wikimedia.org/wiki/File:Hokusai,_The_laughing_demon_cph.3g08747.jpg
 R18_oyuki_okyo: File:Oyuki.jpg — Maruyama Ōkyo — Public domain — https://commons.wikimedia.org/wiki/File:Oyuki.jpg
+R19_kuchisake_ehon_sayoshigure: File:Ehon-Sayoshigure Kuchisake onna.jpg — Tanapat user — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Ehon-Sayoshigure_Kuchisake_onna.jpg
