@@ -14,7 +14,8 @@
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
-  "fundo_bolso": true
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
  },
  "legendas": {
   "destaques": [
@@ -40,6 +41,36 @@
  "voz_arquivo": "s2_nina_voz.wav",
  "batidas": [
   {
+   "fala": "Às duas e dez, bateram.",
+   "cena": {
+    "imagem": "../grade/B01_porta_corredor.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "bateram",
+     "som": "ep05_batidas_v2",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.1
+    }
+   ]
+  },
+  {
    "fala": "\"Abre, filha. A mãe esqueceu a chave na fruteira.\"",
    "voz_fx": {
     "tipo": "porta"
@@ -52,7 +83,8 @@
     "cps": 26,
     "tamanho": 84
    },
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 1.4
   },
   {
    "fala": "A Marina olhou pra cozinha. A chave da mãe estava na fruteira.",
@@ -92,27 +124,6 @@
      [
       0.5,
       0.5
-     ]
-    ],
-    "encaixe": "cobrir"
-   }
-  },
-  {
-   "fala": "E lá da porta da frente, a voz da mãe continuava:",
-   "cena": {
-    "imagem": "../grade/B01_porta_corredor.jpg",
-    "zoom": [
-     1.2,
-     1.3
-    ],
-    "foco": [
-     [
-      0.5,
-      0.45
-     ],
-     [
-      0.5,
-      0.42
      ]
     ],
     "encaixe": "cobrir"

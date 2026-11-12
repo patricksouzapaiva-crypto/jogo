@@ -14,7 +14,8 @@
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
-  "fundo_bolso": true
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
  },
  "legendas": {
   "destaques": [
@@ -40,7 +41,7 @@
  "voz_arquivo": "s1_quem_ta_falando_voz.wav",
  "batidas": [
   {
-   "fala": "Três batidas na porta. Duas e dez da manhã.",
+   "fala": "Três batidas na porta.",
    "cena": {
     "imagem": "../grade/B01_porta_corredor.jpg",
     "zoom": [
@@ -58,7 +59,20 @@
      ]
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "sons": [
+    {
+     "em": "batidas",
+     "som": "ep05_batidas_v2",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.1
+    }
+   ]
+  },
+  {
+   "fala": "Duas e dez da manhã.",
+   "pausa_antes_s": 1.4
   },
   {
    "fala": "\"Abre, filha. É a mãe.\"",

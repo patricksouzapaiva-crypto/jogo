@@ -1,7 +1,10 @@
 # Shorts do Ep. 05 "Abre, filha." — pacote de postagem (canal Último Abrigo)
 
-Regras da auditoria: **até 35 s**, gancho no primeiro meio segundo, título limpo com no máximo 2 hashtags, e cada
+Regras da auditoria: **até 35 s** (o 1 tem ~35 s por causa da pausa das batidas), gancho no primeiro meio segundo, título limpo com no máximo 2 hashtags, e cada
 Short é um **teaser** do episódio (termina em aberto).
+
+**Refeito em 12/11** com as novas regras: títulos sem "Creepypasta" (só na descrição), até ~50 caracteres e com
+estruturas diferentes; **batidas reais na porta** (ElevenLabs), altas e tocando sozinhas numa pausa, nos Shorts 1 e 2.
 
 **Em todos:** YouTube Studio → Detalhes → **Vídeo relacionado → "Abre, filha." (Ep. 05)**.
 É esse campo que coloca o link do episódio completo dentro do Short.
@@ -12,8 +15,8 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 ## Arquivos
 | Short | Vídeo | Legenda | Capa |
 |---|---|---|---|
-| 1 — Quem tá falando aí? | `shorts_final/s1_quem_ta_falando.mp4` (34 s) | `shorts_final/s1_quem_ta_falando.srt` | `capa_short1_quem_ta_falando.jpg` |
-| 2 — Nina | `shorts_final/s2_nina.mp4` (35 s) | `shorts_final/s2_nina.srt` | `capa_short2_nina.jpg` |
+| 1 — Quem tá falando aí? | `shorts_final/s1_quem_ta_falando.mp4` (~35 s) | `shorts_final/s1_quem_ta_falando.srt` | `capa_short1_quem_ta_falando.jpg` |
+| 2 — Nina | `shorts_final/s2_nina.mp4` (~33 s) | `shorts_final/s2_nina.srt` | `capa_short2_nina.jpg` |
 | 3 — Olha pra baixo | `shorts_final/s3_olha_pra_baixo.mp4` (30 s) | `shorts_final/s3_olha_pra_baixo.srt` | `capa_short3_olha_pra_baixo.jpg` |
 
 **Capa:** no app do YouTube (celular), ao enviar o Short, toque no lápis da miniatura → escolher imagem da galeria.
@@ -24,11 +27,11 @@ Gerar de novo: `python3 fazer_capas_shorts.py`. A legenda já vai gravada na ima
 ## Short 1 — "Quem tá falando aí?" (postar primeiro)
 **Título**
 ```
-A mãe dela estava na porta. E no telefone. | Creepypasta #shorts
+A mãe dela tava na porta… e no telefone #shorts #terror
 ```
 **Descrição**
 ```
-Duas e dez da manhã. Três batidas. "Abre, filha. É a mãe." Era a voz dela, o jeito dela.
+Três batidas na porta. Duas e dez da manhã. "Abre, filha. É a mãe." Era a voz dela, o jeito dela.
 Só que a Marina ainda estava em ligação… com a mãe.
 
 🕯️ História completa: O Vigia — Ep. 05 "Abre, filha." (vídeo relacionado aqui embaixo)
@@ -46,7 +49,7 @@ Você abriria? Ou perguntaria alguma coisa antes? 👇
 ## Short 3 — "Olha pra baixo"
 **Título**
 ```
-Ela olhou pelo olho mágico. Não tinha ninguém da altura dela | Creepypasta #shorts
+Ela olhou pra baixo. A voz vinha dali. #shorts #terror
 ```
 **Descrição**
 ```
@@ -68,11 +71,11 @@ Quatro sombras na fresta da porta. O que tem quatro… e fala com a voz da sua m
 ## Short 2 — "Nina"
 **Título**
 ```
-A mãe dormia no quarto. E chamava lá fora. | Creepypasta #shorts
+A mãe dormia no quarto… e chamava lá fora #shorts #terror
 ```
 **Descrição**
 ```
-"Abre, filha. A mãe esqueceu a chave na fruteira." A chave estava na fruteira. E a mãe, dormindo no quarto ao lado.
+Duas e dez. Três batidas. "Abre, filha. A mãe esqueceu a chave na fruteira." A chave estava na fruteira. E a mãe, dormindo no quarto ao lado.
 Lá fora, a voz continuou: "Tá frio aqui fora, Nina."
 
 🕯️ História completa: O Vigia — Ep. 05 "Abre, filha." (vídeo relacionado aqui embaixo)

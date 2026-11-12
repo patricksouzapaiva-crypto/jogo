@@ -12,6 +12,7 @@ longo = json.load(open(AQUI / "roteiro.json"))
 VOZ = AQUI / longo["voz_arquivo"]
 (AQUI / "shorts").mkdir(exist_ok=True)
 MAX_VOZ = 31.0  # + 3,4 s de chamada final = ~35 s
+BATIDA_DB, PAUSA_PORTA = -6, 1.4   # 12/11: som-chave alto (−5 a −9) e numa pausa só dele (as 3 batidas acabam em ~1,4 s)
 
 cache = AQUI / "shorts" / "alinhamento.json"
 palavras = [w for b in longo["batidas"] for w in tokens(b["fala"])]
@@ -28,9 +29,14 @@ ini.append(k)
 
 SHORTS = [
     # 1. o gancho: a voz perfeita atrás da porta… com a mãe no telefone
-    {"nome": "s1_quem_ta_falando", "de": 0, "ate": 6, "titulo": "Quem está atrás da porta?"},
+    #    12/11: as batidas reais (ElevenLabs) tocam SOZINHAS logo depois de "Três batidas na porta." (guia, seção 16)
+    {"nome": "s1_quem_ta_falando", "de": 0, "ate": 6, "titulo": "Quem está atrás da porta?",
+     "dividir": {0: "Três batidas na porta."}, "batidas_porta": {0: "batidas"}},
     # 2. a 3ª noite: a mãe dorme no quarto ao lado — e a voz dela chama lá fora
-    {"nome": "s2_nina", "de": 80, "ate": 85, "titulo": "Quem chamou ela de Nina?"},
+    #    12/11: começa em "Às duas e dez, bateram." com as batidas reais sozinhas; sai a ponte "E lá da porta da frente…"
+    #    (a voz da mãe já vem abafada pela porta) para caber em 35 s
+    {"nome": "s2_nina", "de": 79, "ate": 85, "pular": [83], "titulo": "Quem chamou ela de Nina?",
+     "batidas_porta": {79: "bateram"}},
     # 3. o clímax sem o final: o olho mágico vazio, a fresta, a altura da fechadura
     {"nome": "s3_olha_pra_baixo", "de": 118, "ate": 123, "titulo": "O que está atrás da porta?"},
 ]
@@ -89,7 +95,21 @@ for S in SHORTS:
                     "".join(f"[{i}:a]" for i in range(len(partes))) + f"concat=n={len(partes)}:v=0:a=1", str(arq)], check=True)
     for q in partes:
         q.unlink()
-    bat = [copy.deepcopy(longo["batidas"][i]) for i in usar]
+    bat = []
+    for i in usar:
+        x = copy.deepcopy(longo["batidas"][i])
+        x.pop("sons", None) if i in S.get("batidas_porta", {}) else None
+        if i in S.get("dividir", {}):          # parte a batida em duas: o som da porta toca sozinho no meio
+            frase = S["dividir"][i]; resto = x["fala"][len(frase):].strip()
+            assert x["fala"].startswith(frase), x["fala"]
+            y = {"fala": resto}
+            x["fala"] = frase; x["_porta"] = True
+            bat += [x, y]
+        else:
+            x["_porta"] = i in S.get("batidas_porta", {})
+            bat.append(x)
+        if x["_porta"]:
+            x["sons"] = [{"em": S["batidas_porta"][i], "som": "ep05_batidas_v2", "volume_db": BATIDA_DB, "depois": True, "atraso": 0.1}]
     for j, x in enumerate(bat):
         for ch in ("musica", "ambiente"):
             x.pop(ch, None)
@@ -98,8 +118,12 @@ for S in SHORTS:
         if p and j > 0:
             ant = bat[j - 1].get("cena") or (bat[j - 1].get("cenas") or [{}])[-1]
             x["pausa_antes_s"] = min(p, 2.4 if ant.get("tipo") == "texto" else 1.2)  # depois de tela de texto: tempo de ler
+        if j > 0 and bat[j - 1].pop("_porta", False):
+            x["pausa_antes_s"] = PAUSA_PORTA      # as três batidas soam sozinhas, sem voz por cima
         for c in ([x["cena"]] if x.get("cena") else []) + x.get("cenas", []):
             ajustar_cena(c)
+    for x in bat:
+        x.pop("_porta", None)
     if S.get("primeira_cena"):
         c = copy.deepcopy(S["primeira_cena"]); ajustar_cena(c)
         bat[0].pop("cenas", None); bat[0]["cena"] = c
@@ -108,6 +132,7 @@ for S in SHORTS:
     r = {k: v for k, v in longo.items() if k not in ("batidas", "abertura", "cta", "voz_arquivo", "preencher_pausas")}
     r.update({"formato": "9:16", "voz_arquivo": arq.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
               "vigia_padrao": False,
+              "mix": {**longo.get("mix", {}), "efeitos_pico_max": -3},
               "musica": {"som": "silencio", "volume_db": -40},
               "ambiente_inicial": [{"som": "ep05_fundo_longa", "volume_db": -9}],
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": "Episódio completo no canal",
