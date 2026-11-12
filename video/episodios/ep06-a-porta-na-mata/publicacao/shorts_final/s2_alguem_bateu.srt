@@ -1,63 +1,63 @@
 1
-00:00:00,400 --> 00:00:01,560
-Três batidas.
+00:00:00,400 --> 00:00:03,240
+Já estavam de costas quando bateram.
 
 2
-00:00:01,720 --> 00:00:03,140
-Na madeira.
+00:00:04,890 --> 00:00:05,900
+Três batidas.
 
 3
-00:00:04,380 --> 00:00:05,830
-Os cinco estavam do mesmo lado da
+00:00:06,090 --> 00:00:07,510
+Na madeira.
 
 4
-00:00:05,880 --> 00:00:06,450
-porta.
+00:00:08,720 --> 00:00:10,210
+Os cinco estavam do mesmo lado da
 
 5
-00:00:06,500 --> 00:00:08,020
-A Íris correu pro outro.
+00:00:10,260 --> 00:00:10,770
+porta.
 
 6
-00:00:08,280 --> 00:00:09,080
-Ninguém.
+00:00:10,820 --> 00:00:12,400
+A Íris correu pro outro.
 
 7
-00:00:10,930 --> 00:00:11,840
-Bateram de novo.
+00:00:12,620 --> 00:00:13,420
+Ninguém.
 
 8
-00:00:12,110 --> 00:00:13,000
-Mais fraco.
+00:00:15,300 --> 00:00:16,220
+Bateram de novo.
 
 9
-00:00:13,130 --> 00:00:15,670
-Como quem está cansado.
+00:00:16,480 --> 00:00:17,380
+Mais fraco.
 
 10
-00:00:17,100 --> 00:00:18,620
-O Caio olhou pro subtenente.
+00:00:17,500 --> 00:00:20,040
+Como quem está cansado.
 
 11
-00:00:18,900 --> 00:00:19,700
-Chefe.
+00:00:22,260 --> 00:00:23,800
+O Caio olhou pro subtenente.
 
 12
-00:00:19,780 --> 00:00:20,690
-A gente subiu aqui atrás de um
+00:00:24,060 --> 00:00:24,850
+Chefe.
 
 13
-00:00:20,740 --> 00:00:21,490
-homem.
+00:00:24,900 --> 00:00:25,870
+A gente subiu aqui atrás de um
 
 14
-00:00:21,540 --> 00:00:23,180
-E tem alguém batendo.
+00:00:25,920 --> 00:00:26,630
+homem.
 
 15
-00:00:24,410 --> 00:00:25,840
-Não tinha resposta pra isso.
+00:00:26,680 --> 00:00:28,350
+E tem alguém batendo.
 
 16
-00:00:27,330 --> 00:00:28,820
+00:00:30,100 --> 00:00:31,590
 O Caio abriu.

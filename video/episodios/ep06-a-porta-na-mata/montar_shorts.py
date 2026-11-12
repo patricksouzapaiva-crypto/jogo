@@ -24,7 +24,8 @@ SHORTS = [
     # 1. o gancho: as lanternas contadas — cinco bombeiros, seis luzes, a risada do Caio de boca fechada
     {"nome": "s1_eram_seis", "de": 0, "ate": 8, "titulo": "Quem era o sexto?"},
     # 2. as batidas: os cinco do mesmo lado da porta, e alguém bate — o Caio abre
-    {"nome": "s2_alguem_bateu", "de": 40, "ate": 47, "titulo": "O que passou pela porta?"},
+    {"nome": "s2_alguem_bateu", "de": 39, "ate": 47, "pular": [46],  # 12/11: começa em "…quando bateram." para as
+     "sem_prefixo": "Eles obedeceram.", "titulo": "O que passou pela porta?"},  # batidas reais abrirem o Short (≈35 s)
     # 3. a câmera: cinco na tela, seis no olho
     {"nome": "s3_aponta_a_camera", "de": 134, "ate": 143, "pular": [138], "titulo": "Quantos tem na sua casa?"},
 ]
@@ -64,6 +65,8 @@ for S in SHORTS:
     partes, total = [], 0.0
     for n, (x, y) in enumerate(trechos):
         p0, p1 = ini[x], ini[y + 1] - 1
+        if n == 0 and S.get("sem_prefixo"):
+            p0 += len(tokens(S["sem_prefixo"]))   # corta as primeiras palavras da 1ª batida (voz e texto)
         t0 = tempos[p0][0] - (0.12 if n == 0 else 0.25)  # gancho: a 1ª palavra entra quase no 1º quadro
         if p0 > 0:
             t0 = max(t0, tempos[p0 - 1][1] + 0.05)
@@ -84,6 +87,9 @@ for S in SHORTS:
     for q in partes:
         q.unlink()
     bat = [copy.deepcopy(longo["batidas"][i]) for i in usar]
+    if S.get("sem_prefixo"):
+        assert bat[0]["fala"].startswith(S["sem_prefixo"])
+        bat[0]["fala"] = bat[0]["fala"][len(S["sem_prefixo"]):].strip()
     for j, x in enumerate(bat):
         for ch in ("musica", "ambiente"):
             x.pop(ch, None)
@@ -92,6 +98,8 @@ for S in SHORTS:
         if p and j > 0:
             ant = bat[j - 1].get("cena") or (bat[j - 1].get("cenas") or [{}])[-1]
             x["pausa_antes_s"] = min(p, 2.4 if ant.get("tipo") == "texto" else 1.2)  # depois de tela de texto: tempo de ler
+            if any(q.get("depois") for q in bat[j - 1].get("sons", [])):
+                x["pausa_antes_s"] = min(p, 2.0)   # 12/11: pausa que isola um som-chave (batidas) fica inteira (guia, seção 16)
         for c in ([x["cena"]] if x.get("cena") else []) + x.get("cenas", []):
             ajustar_cena(c)
     if S.get("primeira_cena"):

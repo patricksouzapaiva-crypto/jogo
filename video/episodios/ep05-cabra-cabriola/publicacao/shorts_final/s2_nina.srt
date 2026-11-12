@@ -1,51 +1,51 @@
 1
-00:00:00,400 --> 00:00:01,820
-Abre, filha.
+00:00:00,400 --> 00:00:01,720
+Às duas e dez,
 
 2
-00:00:02,020 --> 00:00:04,240
-A mãe esqueceu a chave na fruteira.
+00:00:02,090 --> 00:00:02,890
+bateram.
 
 3
-00:00:06,650 --> 00:00:08,410
-A Marina olhou pra cozinha.
+00:00:05,380 --> 00:00:06,940
+Abre, filha.
 
 4
-00:00:08,750 --> 00:00:11,860
-A chave da mãe estava na fruteira.
+00:00:07,160 --> 00:00:09,340
+A mãe esqueceu a chave na fruteira.
 
 5
-00:00:12,070 --> 00:00:13,270
-Ela foi até o quarto.
+00:00:11,790 --> 00:00:13,530
+A Marina olhou pra cozinha.
 
 6
-00:00:13,650 --> 00:00:14,690
-A mãe dormia,
+00:00:13,910 --> 00:00:17,010
+A chave da mãe estava na fruteira.
 
 7
-00:00:14,920 --> 00:00:16,930
-de lado, respirando fundo.
+00:00:17,110 --> 00:00:18,370
+Ela foi até o quarto.
 
 8
-00:00:17,510 --> 00:00:18,930
-E lá da porta da frente,
+00:00:18,770 --> 00:00:19,810
+A mãe dormia,
 
 9
-00:00:19,130 --> 00:00:20,570
-a voz da mãe continuava:
+00:00:19,990 --> 00:00:22,010
+de lado, respirando fundo.
 
 10
-00:00:22,150 --> 00:00:23,380
+00:00:23,500 --> 00:00:24,720
 Tá frio aqui fora,
 
 11
-00:00:23,430 --> 00:00:24,230
+00:00:24,770 --> 00:00:25,570
 Nina.
 
 12
-00:00:26,670 --> 00:00:27,470
+00:00:28,020 --> 00:00:28,820
 Nina.
 
 13
-00:00:27,960 --> 00:00:30,720
+00:00:29,310 --> 00:00:32,070
 Ninguém mais no mundo chamava ela assim.

@@ -14,7 +14,8 @@
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
-  "fundo_bolso": true
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
  },
  "legendas": {
   "destaques": [
@@ -177,8 +178,8 @@
    "sons": [
     {
      "em": "rindo",
-     "som": "ep06_risada",
-     "volume_db": -17,
+     "som": "ep06_risada_v2",
+     "volume_db": -11,
      "depois": true,
      "atraso": 0.0
     }

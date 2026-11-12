@@ -14,7 +14,8 @@
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
-  "fundo_bolso": true
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
  },
  "legendas": {
   "destaques": [
@@ -34,6 +35,47 @@
  "voz_arquivo": "s2_alguem_bateu_voz.wav",
  "batidas": [
   {
+   "fala": "Já estavam de costas quando bateram.",
+   "cenas": [
+    {
+     "imagem": "../grade/P07_B.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../grade/P01_B.jpg",
+     "zoom": [
+      1.2,
+      1.35
+     ],
+     "foco": [
+      [
+       0.5,
+       0.42
+      ],
+      [
+       0.5,
+       0.4
+      ]
+     ],
+     "em": "bateram",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": "bateram",
+     "som": "ep06_batidas_v2",
+     "volume_db": -5,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
    "fala": "Três batidas. Na madeira.",
    "cena": {
     "video": "../grade/V01_aproxima_porta.mp4",
@@ -42,7 +84,8 @@
      1.03
     ],
     "encaixe": "cobrir"
-   }
+   },
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "Os cinco estavam do mesmo lado da porta.",
@@ -112,9 +155,9 @@
    },
    "sons": [
     {
-     "em": "novo",
-     "som": "ep05_batidas_lentas",
-     "volume_db": -19,
+     "em": "cansado",
+     "som": "ep06_batidas_fracas_v2",
+     "volume_db": -9,
      "depois": true,
      "atraso": 0.0
     }
@@ -141,7 +184,7 @@
     ],
     "encaixe": "cobrir"
    },
-   "pausa_antes_s": 1.2
+   "pausa_antes_s": 2.0
   },
   {
    "fala": "\"Chefe. A gente subiu aqui atrás de um homem. E tem alguém batendo.\"",
@@ -163,28 +206,6 @@
     ],
     "encaixe": "cobrir"
    }
-  },
-  {
-   "fala": "Não tinha resposta pra isso.",
-   "cena": {
-    "imagem": "../grade/P01_A.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "foco": [
-     [
-      0.5,
-      0.45
-     ],
-     [
-      0.5,
-      0.43
-     ]
-    ],
-    "encaixe": "cobrir"
-   },
-   "pausa_antes_s": 0.9
   },
   {
    "fala": "O Caio abriu.",
@@ -209,8 +230,8 @@
    "sons": [
     {
      "em": "abriu",
-     "som": "ep06_porta_range",
-     "volume_db": -17,
+     "som": "ep06_porta_range_v2",
+     "volume_db": -11,
      "depois": true,
      "atraso": 0.0
     }

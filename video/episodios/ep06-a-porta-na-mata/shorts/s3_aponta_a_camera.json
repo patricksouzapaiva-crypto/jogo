@@ -14,7 +14,8 @@
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
-  "fundo_bolso": true
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
  },
  "legendas": {
   "destaques": [
