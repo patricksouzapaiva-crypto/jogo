@@ -5,3 +5,5 @@ imagens_reais/originais/
 previas/*.log
 previas/*.tempos.json
 vozes/brutas/
+audio/*.wav
+audio/*.log

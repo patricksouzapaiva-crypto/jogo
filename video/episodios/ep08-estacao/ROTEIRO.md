@@ -1,4 +1,4 @@
-# O Vigia — Ep. 08 "A estação que não existe" (v1 — RASCUNHO, aguardando aprovação do usuário)
+# O Vigia — Ep. 08 "A estação que não existe" (v1 — aprovado; vozes: Dani = Aoede, mãe = Gacrux)
 
 **Pedido do usuário (12/11):** "algo bem produzido… imagens reais dessas lendas, bem sinistras, mostrando e citando
 essas lendas. Não quero que seja só a história. Tem que ser completo, dando contexto, explicando o terror japonês,
@@ -26,8 +26,8 @@ vira para quem está assistindo (como a fita de *Ringu*).
 *(tela de celular: conversa do grupo "Família 🏠"; mensagens aparecendo; som de trem por baixo)*
 
 Onze e quarenta da noite, no Japão. Meio-dia e quarenta, em Londrina.
-No grupo da família, chega uma mensagem da Dani:
-"Gente… esse trem não para faz vinte minutos."
+No grupo da família, chega um áudio da Dani:
+🎙dani1 "Gente… esse trem não para faz vinte minutos. E lá fora… não tem luz nenhuma. Nenhuma."
 Depois, uma foto. Uma plataforma vazia. Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo
 sabia ler.
 A família inteira acompanhou o que aconteceu depois. Ao vivo. Mensagem por mensagem.
@@ -211,10 +211,10 @@ E todo dia, na volta, mandava mensagem no grupo da família. Lá era quase meia-
 Era o jeito dela de almoçar com eles.
 Naquela noite, ela saiu atrasada. Pegou o último trem.
 Às onze e vinte, mandou uma foto do vagão vazio: "Só eu hoje 😅".
-Às onze e quarenta, mandou outra mensagem:
-"Gente… esse trem não para faz vinte minutos."
+Às onze e quarenta, mandou um áudio:
+🎙dani1 "Gente… esse trem não para faz vinte minutos. E lá fora… não tem luz nenhuma. Nenhuma."
 O irmão, o Lucas, respondeu rindo: "Dormiu e passou do ponto de novo."
-Ela respondeu rápido: "Não dormi. O trem não parou em nenhuma estação. E lá fora não tem luz nenhuma."
+Ela respondeu rápido: "Não dormi. O trem não parou em nenhuma estação."
 *(pausa)*
 A mãe mandou um áudio pedindo pra ela falar com o maquinista.
 A Dani mandou um vídeo.
@@ -225,7 +225,7 @@ Ela bateu no vidro. A sombra não se mexeu.
 O vídeo terminava com o trem freando.
 *(pausa — o trem para; sino de estação)*
 A próxima foto era de uma plataforma.
-Uma única luz. Um banco de madeira. E uma placa, escrita à mão: きさらぎ.
+Uma única luz. Um banco de madeira. E uma placa, escrita à mão: Kisaragi.
 "Que estação é essa?", perguntou o pai.
 O Lucas procurou no mapa. Procurou de novo.
 "Dani, não existe estação com esse nome."
@@ -235,7 +235,7 @@ O trem foi embora sem ela. Sem ninguém descer, sem ninguém subir. Só… foi.
 Ela tentou ligar pra um táxi. O celular dizia "sem serviço". Mas as mensagens do grupo… continuavam chegando.
 Só as do grupo.
 Às meia-noite e dez, um áudio. A voz dela sussurrando:
-"Tem um tambor tocando. Longe. E um sino. Vocês tão ouvindo?"
+🎙dani2 "Tem um tambor tocando. Longe. E um sino. Vocês tão ouvindo?"
 No fundo do áudio, todo mundo ouviu. Um tambor. Devagar. E um sino pequeno.
 *(pausa)*
 Ela resolveu voltar andando pelos trilhos, de onde o trem tinha vindo.
@@ -280,7 +280,7 @@ Juntaram os parentes, os vizinhos, o pessoal da igreja. No quintal de casa, em L
 Velas acesas no chão. Uma foto da Dani, impressa, presa num cavalete.
 O Lucas segurou o celular e gravou.
 A mãe falou olhando pra câmera, com a voz quebrando:
-"A gente só quer a nossa filha de volta. Se alguém souber de alguma coisa… compartilha. E reza com a gente."
+🎙mae "A gente só quer a nossa filha de volta. Se alguém souber de alguma coisa… compartilha. E reza com a gente."
 E todo mundo rezou junto. De mãos dadas. De olhos fechados.
 Atrás deles, a casa. Dois andares. E, no andar de cima, a janela do quarto da Dani.
 O quarto que estava fechado desde que ela foi pro Japão.
