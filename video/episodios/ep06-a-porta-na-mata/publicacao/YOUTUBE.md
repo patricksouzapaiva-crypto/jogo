@@ -2,19 +2,19 @@
 
 Vídeo: `O_Vigia_Ep06_A_porta_na_mata.mp4` (1920×1080, 14min35). Formato tema + história.
 
-## Títulos (regra de 12/11: sem "Creepypasta" no título, em português, até ~65 caracteres)
-1. **Achamos uma porta no meio da mata… e alguém bateu do outro lado**  ← recomendado (63 car.; "Eu/nós [ação]… e [consequência]")
-2. Algo voltou da mata com a gente… e tinha o rosto do meu amigo (61 car.)
-3. Eu contei as lanternas… e tinha uma a mais (41 car.; curto, bom para celular)
-4. Se achar uma porta no meio da mata, não abra (44 car.)
+## Títulos (regra de 12/11: sem "Creepypasta", em português, até ~50 caracteres, gancho de curiosidade)
+1. **Éramos cinco. As lanternas eram seis.**  ← recomendado (37 car.: contradição que pede o clique)
+2. Achamos uma porta no meio da mata (33 car.)
+3. Alguém bateu do outro lado da porta (35 car.)
+4. Algo voltou da mata com a gente (31 car.)
 
 ## Capas (as 3 no "Testar e comparar" do YouTube Studio)
 | Arquivo | O que mostra | Combina com |
 |---|---|---|
-| `capa_A_eram_seis.jpg` | as lanternas em volta do fogo + "ERAM SEIS." | título 1, 2 ou 4 |
-| `capa_B_alguem_bateu.jpg` | a porta azul sozinha na neblina + "ALGUÉM BATEU." | título 2, 3 ou 4 (não com o 1: repete) |
+| `capa_A_eram_seis.jpg` | as lanternas em volta do fogo + "ERAM SEIS." | títulos 2, 3 ou 4 (não com o 1: repete) |
+| `capa_B_alguem_bateu.jpg` | a porta azul sozinha na neblina + "ALGUÉM BATEU." | títulos 1, 2 ou 4 |
 | `capa_C_conta_de_novo.jpg` | o bombeiro de costas atravessando a porta + "CONTA DE NOVO." | qualquer título |
-Com o título 1: testar as capas A e C.
+Com o título 1: testar as capas B e C.
 Capa e título não repetem a mesma frase. Gerar de novo: `python3 fazer_capas.py`.
 
 ## Descrição

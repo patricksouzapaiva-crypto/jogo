@@ -504,6 +504,12 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   curtas e de impacto. Estruturas que funcionam no horror narrado:
   "Eu [ação]… e [consequência assustadora]" · "Algo [aconteceu]… e não era o que eu pensava".
   Nos Shorts: frase limpa + no máximo 2 hashtags (ex.: `#shorts #terror`).
+  **Diagnóstico de CTR do usuário (12/11):** o que derruba o clique é (1) título longo e descritivo — o YouTube
+  corta: mirar ATÉ ~50 caracteres (a frase precisa funcionar inteira no celular); (2) "| Creepypasta" /
+  "Creepypasta de Terror" no fim, que parece spam; (3) falta de gancho emocional ou de curiosidade; (4) títulos
+  todos com a mesma cara. Então: cada título com UMA pergunta na cabeça de quem lê, e variar a estrutura de um
+  vídeo para o outro (1ª pessoa "Eu…", contradição "Éramos cinco. As lanternas eram seis.", regra/ameaça "Não
+  abra.", detalhe impossível "Ela estava no telefone… e na porta"). Nada de Maiúscula Em Toda Palavra.
 
 ## 13. Auditoria do canal (vidIQ + Analytics, 10/11/2026) — o que adotamos
 O usuário decidiu **manter o estilo** (O Vigia, tema + história, edição dinâmica); a auditoria entra como ajuste,
