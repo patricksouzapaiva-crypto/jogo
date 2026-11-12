@@ -778,6 +778,18 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                 # saída lenta de cena tensa: a transição começa ANTES, dentro do silêncio, e termina quando a voz volta
                 if c.get("antecipar") and D["cenas"]:
                     c["t0"] = max(D["cenas"][-1]["t0"] + 0.5, c["t0"] - float(c["antecipar"]))
+            # 12/11 (Ep. 08): chat (mensagens presas a palavras), mapa (ponto some numa palavra), relógios
+            for m in c.get("mensagens", []):
+                m["t"] = rel.em(k, m.pop("em")) if m.get("em") else c["t0"] + float(m.get("apos", 0))
+                if m.get("digitando"):
+                    m["digitando_de"], m["digitando_ate"] = m["t"] - float(m["digitando"]), m["t"]
+                if m.get("imagem"):
+                    m["imagem"] = str((base / m["imagem"]).resolve())
+            for lado in c.get("lados", []):
+                if lado.get("imagem"):
+                    lado["imagem"] = str((base / lado["imagem"]).resolve())
+            if c.get("some_em"):
+                c["some"] = rel.em(k, c.pop("some_em")) - c["t0"]
             if c.get("video"):  # cena com vídeo curto: os quadros são extraídos depois que a duração da cena é conhecida
                 c["video"] = str((base / c["video"]).resolve())
                 if not Path(c["video"]).exists():

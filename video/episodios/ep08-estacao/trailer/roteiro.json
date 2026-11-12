@@ -1,0 +1,676 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_limpa.wav",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 3.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "poço",
+   "real",
+   "estação",
+   "existe",
+   "participar"
+  ]
+ },
+ "musica": {
+  "som": "ep08_cx_tensao",
+  "volume_db": -33
+ },
+ "batidas": [
+  {
+   "fala": "Onze e quarenta da noite, no Japão. No grupo da família, chega uma mensagem.",
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "chat",
+     "grupo": "Família 🏠",
+     "membros": "Dani, Lucas, Mãe, Pai",
+     "mensagens": [
+      {
+       "de": "Dani",
+       "tipo": "foto",
+       "imagem": "../imagens/N10b_trem_noite.jpg",
+       "hora": "23:20",
+       "apos": 0.2
+      },
+      {
+       "de": "Dani",
+       "texto": "Só eu hoje 😅",
+       "hora": "23:20",
+       "apos": 1.0
+      },
+      {
+       "de": "Lucas",
+       "texto": "kkkk dormiu de novo?",
+       "hora": "11:21",
+       "lado": "dir",
+       "apos": 2.2
+      },
+      {
+       "de": "Dani",
+       "texto": "Gente… esse trem não para faz vinte minutos.",
+       "hora": "23:40",
+       "em": "mensagem",
+       "digitando": 1.4
+      }
+     ]
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_msg",
+     "volume_db": -12,
+     "em": null,
+     "depois": false,
+     "atraso": 0.2
+    },
+    {
+     "som": "ep08_msg",
+     "volume_db": -12,
+     "em": null,
+     "depois": false,
+     "atraso": 1.0
+    },
+    {
+     "som": "ep08_msg",
+     "volume_db": -14,
+     "em": null,
+     "depois": false,
+     "atraso": 2.2
+    },
+    {
+     "som": "ep08_vibra",
+     "volume_db": -12,
+     "em": "mensagem",
+     "depois": true,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_taiko",
+     "volume_db": -6,
+     "em": "mensagem",
+     "depois": true,
+     "atraso": 1.6
+    }
+   ],
+   "ambiente": {
+    "som": "ep08_trem_dentro",
+    "volume_db": -12
+   }
+  },
+  {
+   "fala": "Em mil oitocentos e vinte e cinco, uma mulher envenenada voltou… numa lanterna de papel.",
+   "pausa_antes_s": 3.4,
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第一章",
+     "numero_pt": "Capítulo 1",
+     "titulo": "As três mulheres",
+     "ano": "1666 · 1741 · 1825",
+     "imagem": "../imagens_reais/R06_oiwa_fantasma_kuniyoshi.jpg",
+     "antecipar": 3.0,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.7
+     }
+    },
+    {
+     "imagem": "../imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
+     "em": "uma",
+     "encaixe": "conter",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "entrada": "nanquim",
+     "dof": {
+      "x": 0.53,
+      "y": 0.5,
+      "r": 0.2,
+      "atraso": 1.6
+     },
+     "atmos": {
+      "poeira": 0.6,
+      "vela": 0.5
+     },
+     "kanji": {
+      "texto": "四谷怪談",
+      "x": 0.82,
+      "y": 0.5,
+      "modo": "luz",
+      "legenda": "Yotsuya Kaidan · 1825",
+      "selo": "怨",
+      "atraso": 0.5
+     },
+     "linha": {
+      "anos": [
+       1666,
+       1677,
+       1750,
+       1825,
+       1979,
+       1998,
+       2004
+      ],
+      "de": 1666,
+      "atual": 1825,
+      "dur": 3.5
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_tinta",
+     "volume_db": -10,
+     "em": "uma",
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_pincel",
+     "volume_db": -10,
+     "em": "uma",
+     "depois": false,
+     "atraso": 0.5
+    },
+    {
+     "som": "ep08_carimbo",
+     "volume_db": -9,
+     "em": "voltou",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Outra conta pratos, toda noite, no fundo de um poço.",
+   "cenas": [
+    {
+     "imagem": "../imagens_reais/R03_okiku_poco_hokusai.jpg",
+     "encaixe": "conter",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "entrada": "shoji",
+     "atmos": {
+      "poeira": 0.5
+     },
+     "kanji": {
+      "texto": "皿屋敷",
+      "x": 0.17,
+      "y": 0.5,
+      "modo": "sangue",
+      "legenda": "A mansão dos pratos",
+      "selo": "呪",
+      "glitch": true,
+      "atraso": 0.6
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_shoji",
+     "volume_db": -10,
+     "em": null,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_pincel",
+     "volume_db": -12,
+     "em": "pratos",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Um. Dois. Três…",
+   "pausa_antes_s": 0.6,
+   "cenas": [
+    {
+     "imagem": "../imagens_reais/R03_okiku_poco_hokusai.jpg",
+     "encaixe": "conter",
+     "zoom": [
+      1.12,
+      1.22
+     ],
+     "foco": [
+      [
+       0.5,
+       0.25
+      ],
+      [
+       0.5,
+       0.22
+      ]
+     ],
+     "atmos": {
+      "neblina": 0.5
+     },
+     "kanji": [
+      {
+       "texto": "一",
+       "em": "Um",
+       "x": 0.16,
+       "y": 0.5,
+       "tam": 0.3,
+       "modo": "sangue",
+       "escrever": 0.5
+      },
+      {
+       "texto": "二",
+       "em": "Dois",
+       "x": 0.84,
+       "y": 0.42,
+       "tam": 0.3,
+       "modo": "sangue",
+       "escrever": 0.5
+      },
+      {
+       "texto": "三",
+       "em": "Três",
+       "x": 0.5,
+       "y": 0.72,
+       "tam": 0.3,
+       "modo": "sangue",
+       "escrever": 0.6,
+       "glitch": true,
+       "selo": "九"
+      }
+     ]
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_pincel",
+     "volume_db": -9,
+     "em": "Um",
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_pincel",
+     "volume_db": -9,
+     "em": "Dois",
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_pincel",
+     "volume_db": -8,
+     "em": "Três",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E o poço… é real.",
+   "pausa_antes_s": 0.8,
+   "cenas": [
+    {
+     "imagem": "../imagens_reais/R11_poco_okiku_himeji_2.jpg",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "entrada": "shoji",
+     "kanji": {
+      "texto": "実在",
+      "x": 0.85,
+      "y": 0.42,
+      "tam": 0.14,
+      "modo": "placa",
+      "fundo": "vermelho",
+      "legenda": "Foto real · Himeji",
+      "atraso": 0.2,
+      "escrever": 0.6
+     }
+    },
+    {
+     "imagem": "../imagens/N08_poco_noite.jpg",
+     "em": "real",
+     "zoom": [
+      1.02,
+      1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.6
+      ],
+      [
+       0.5,
+       0.65
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 1.2,
+     "atmos": {
+      "neblina": 0.8
+     },
+     "kanji": {
+      "texto": "お菊井戸",
+      "x": 0.82,
+      "y": 0.5,
+      "modo": "recorte",
+      "legenda": "O poço da Okiku",
+      "atraso": 0.6
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_shoji",
+     "volume_db": -10,
+     "em": null,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_taiko",
+     "volume_db": -10,
+     "em": "real",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Em mil novecentos e setenta e nove, uma mulher de máscara parava as crianças na rua.",
+   "pausa_antes_s": 1.2,
+   "cenas": [
+    {
+     "imagem": "../imagens/L02_kuchisake.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "entrada": "vela",
+     "atmos": {
+      "pelicula": 1.0
+     },
+     "kanji": {
+      "texto": "口裂け女",
+      "x": 0.16,
+      "y": 0.5,
+      "modo": "sangue",
+      "legenda": "A mulher da boca cortada",
+      "glitch": true,
+      "atraso": 1.6
+     },
+     "linha": {
+      "anos": [
+       1666,
+       1677,
+       1750,
+       1825,
+       1979,
+       1998,
+       2004
+      ],
+      "de": 1825,
+      "atual": 1979,
+      "dur": 3.5
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_vela",
+     "volume_db": -8,
+     "em": null,
+     "depois": false,
+     "atraso": -0.6
+    },
+    {
+     "som": "ep08_pincel",
+     "volume_db": -12,
+     "em": "máscara",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Na escola, ela espera no terceiro banheiro.",
+   "cenas": [
+    {
+     "imagem": "../imagens/L04_hanako_pes.jpg",
+     "zoom": [
+      1.04,
+      1.1
+     ],
+     "foco": [
+      [
+       0.55,
+       0.6
+      ],
+      [
+       0.58,
+       0.7
+      ]
+     ],
+     "mao": 0.6,
+     "dof": {
+      "x": 0.58,
+      "y": 0.78,
+      "r": 0.2,
+      "atraso": 1.0
+     },
+     "kanji": {
+      "texto": "花子さん",
+      "x": 0.16,
+      "y": 0.48,
+      "modo": "luz",
+      "fundo": "nanquim",
+      "legenda": "Hanako-san",
+      "atraso": 0.4
+     }
+    }
+   ]
+  },
+  {
+   "fala": "E em dois mil e quatro… uma mulher desceu numa estação que não existe.",
+   "pausa_antes_s": 0.9,
+   "cenas": [
+    {
+     "imagem": "../imagens/N09_estacao_noite.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "entrada": "nanquim",
+     "atmos": {
+      "neblina": 0.7
+     },
+     "kanji": {
+      "texto": "きさらぎ駅",
+      "x": 0.5,
+      "y": 0.4,
+      "vertical": false,
+      "fonte": "mincho",
+      "tam": 0.15,
+      "modo": "luz",
+      "legenda": "Kisaragi · estação",
+      "glitch": true,
+      "selo": "駅",
+      "em": "desceu"
+     },
+     "linha": {
+      "anos": [
+       1666,
+       1677,
+       1750,
+       1825,
+       1979,
+       1998,
+       2004
+      ],
+      "de": 1979,
+      "atual": 2004,
+      "dur": 3.0
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_tinta",
+     "volume_db": -10,
+     "em": null,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_freio",
+     "volume_db": -16,
+     "em": "desceu",
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_sino_estacao",
+     "volume_db": -12,
+     "em": "existe",
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep08_tambor_longe",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "O ponto azul andava. Mas não andava pra cidade.",
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "mapa",
+     "titulo": "Localização em tempo real · Dani",
+     "some_em": "cidade"
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_porta_carro",
+     "volume_db": -12,
+     "em": null,
+     "depois": false,
+     "atraso": -0.4
+    }
+   ]
+  },
+  {
+   "fala": "Ela mandou tudo pro grupo. Ao vivo.",
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "chat",
+     "grupo": "Família 🏠",
+     "membros": "Dani, Lucas, Mãe, Pai",
+     "mensagens": [
+      {
+       "de": "Pai",
+       "texto": "DANI",
+       "hora": "11:52",
+       "lado": "dir",
+       "apos": 0.1
+      },
+      {
+       "de": "Dani",
+       "texto": "ele não fala japonês",
+       "hora": "23:53",
+       "em": "grupo",
+       "digitando": 1.0
+      },
+      {
+       "de": "Dani",
+       "texto": "ele tá falando com alguém. em português. com a voz do pai.",
+       "hora": "23:54",
+       "em": "vivo",
+       "digitando": 0.8
+      }
+     ]
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_vibra",
+     "volume_db": -12,
+     "em": "grupo",
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "som": "ep08_vibra",
+     "volume_db": -12,
+     "em": "vivo",
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E, no Japão… assistir já é participar.",
+   "pausa_antes_s": 0.8,
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "きさらぎ",
+     "numero_pt": "O Vigia · Episódio 08",
+     "titulo": "A estação que não existe",
+     "ano": "Em breve no Último Abrigo",
+     "imagem": "../imagens/N09b_estacao_noite.jpg",
+     "entrada": "vela",
+     "selo": "終",
+     "atmos": {
+      "neblina": 0.6
+     }
+    }
+   ],
+   "sons": [
+    {
+     "som": "ep08_taiko",
+     "volume_db": -6,
+     "em": "Japão",
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,8 +1,8 @@
 // Motor do estilo "avatar + painel animado".
 // Desenha o quadro do instante t (função pura de t) a partir da linha do tempo D gerada pelo gerar.py.
 "use strict";
-const cv = document.getElementById("tela");
-const ctx = cv.getContext("2d");
+let cv = document.getElementById("tela");
+let ctx = cv.getContext("2d");
 let D = null;
 const IMG = {};
 
@@ -36,7 +36,8 @@ window.preparar = async function (dados) {
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
   for (const p of D.paineis || []) if (p.imagem) lista.push(["img:" + p.imagem, p.imagem]);
-  for (const c of D.cenas || []) { lista.push(["img:" + c.imagem, c.imagem]); if (c.revelar && c.revelar.clara) lista.push(["img:" + c.revelar.clara, c.revelar.clara]); }
+  for (const c of D.cenas || []) for (const x of [...(c.mensagens || []), ...(c.lados || [])]) if (x.imagem) lista.push(["img:" + x.imagem, x.imagem]);
+  for (const c of D.cenas || []) { if (c.imagem) lista.push(["img:" + c.imagem, c.imagem]); if (c.revelar && c.revelar.clara) lista.push(["img:" + c.revelar.clara, c.revelar.clara]); }
   for (const [k, src] of lista) IMG[k] = await carregarImg(src);
   D._estrelas = (() => { const r = rng(7); return Array.from({ length: 16 }, () => ({ x: r(), y: r(), f: 0.3 + r() * 0.8, fase: r() * 6.28, s: 0.6 + r() * 0.8 })); })();
   D._poeira = (() => { const r = rng(11); return Array.from({ length: 40 }, () => ({ x: r(), y: r(), v: 0.004 + r() * 0.01, s: 1 + r() * 2.5, fase: r() * 6.28 })); })();
@@ -569,8 +570,8 @@ function desenharCena(c, t, a = 1) {
   if (c.encaixe === "conter" || (c.encaixe !== "cobrir" && (ra / rt < 0.7 || ra / rt > 1.45))) {
     // formato muito diferente do vídeo: fundo desfocado + imagem inteira no centro
     ctx.save(); ctx.globalAlpha = a; ctx.filter = "blur(28px) brightness(0.45)";
-    const sb = Math.max(D.W / im.width, D.H / im.height) * 1.1;
-    ctx.drawImage(im, (D.W - im.width * sb) / 2, (D.H - im.height * sb) / 2, im.width * sb, im.height * sb);
+    const ep = easeInOut(lin(t, c.t0, Math.max(0.5, c.t1 - c.t0))), sb = Math.max(D.W / im.width, D.H / im.height) * (1.12 + 0.06 * ep);
+    ctx.drawImage(im, (D.W - im.width * sb) / 2 - D.W * 0.03 * ep, (D.H - im.height * sb) / 2, im.width * sb, im.height * sb);
     ctx.filter = "none";
     const z = (c.zoom ? c.zoom[0] + (c.zoom[1] - c.zoom[0]) * easeInOut(lin(t, c.t0, Math.max(0.5, c.t1 - c.t0))) : 1);
     const sc = Math.min(D.W / im.width, D.H / im.height) * z, w = im.width * sc, h = im.height * sc;
@@ -672,7 +673,7 @@ function kanjiSobre(c, t) {
     // tempos: pincelada (0–35%), escrita (20–100%), carimbo e respingos no fim, pulso de luz
     const dur = K.escrever ?? Math.min(2.6, 0.38 * txt.length + 0.7);
     const fundoPadrao = { luz: "vermelho", sangue: "nanquim", tinta: "vermelho", recorte: "nanquim", placa: "nenhum" }[modo];
-    const fundo = K.fundo ?? fundoPadrao;
+    const fundo = txt.length < 2 && K.fundo == null ? "nenhum" : (K.fundo ?? fundoPadrao);
     const pP = easeOut(lin(t, t0, dur * 0.4)), pE = easeOut(lin(t, t0 + dur * 0.2, dur * 0.8));
     const fimE = t0 + dur, vida = Math.max(0.5, c.t1 - t0);
     const sair = K.sair ?? 0.6, aOut = 1 - easeInOut(lin(t, c.t1 - sair, sair));
@@ -799,19 +800,400 @@ function kanjiSobre(c, t) {
   }
 }
 
+// ================================================================== OBRA-PRIMA (Ep. 08, 12/11)
+// Cada cena é pintada inteira numa camada própria (camadaCena) e as transições juntam duas camadas:
+//   entrada: "nanquim" (mancha de tinta abre a próxima), "shoji" (porta de correr), "vela" (apaga e acende),
+//            "fundir", "preto" (como antes). duracao_entrada (s).
+// Câmera:  mao (0–1, celular na mão), dof {x,y,r,atraso} (foco com desfoque em volta), paralaxe nas gravuras.
+// Atmosfera: atmos: ["neblina","poeira","vela","pelicula","fumaca"] (ou {neblina:0.6,...}).
+// Celular: celular {hora, vertical, sinal:"fraco"}, zoom_digital {ate, x, y, atraso, dur}.
+// Tipos novos: "chat" (grupo da família), "mapa" (ponto azul), "capitulo" (第一章), "relogios" (dois fusos).
+// Sobreposição: linha {anos:[...], atual} (linha do tempo das lendas).
+function _ruido1(t, s) { return (Math.sin(t * 1.7 + s) + Math.sin(t * 2.9 + s * 1.3) * 0.6 + Math.sin(t * 5.3 + s * 2.1) * 0.3) / 1.9; }
+let _texNevoa = null, _campoTinta = null;
+function _fbm(n, w, h, sem, oitavas = 5) {   // ruído fractal em grade baixa (valores 0–1)
+  const r = _semente(sem), base = [];
+  for (let o = 0; o < oitavas; o++) { const g = 2 ** (o + 2); const arr = []; for (let i = 0; i < (g + 1) * (g + 1); i++) arr.push(r()); base.push([g, arr]); }
+  const out = new Float32Array(w * h);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    let v = 0, amp = 1, tot = 0;
+    for (const [g, arr] of base) {
+      const fx = x / w * g, fy = y / h * g, x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0;
+      const sx = tx * tx * (3 - 2 * tx), sy = ty * ty * (3 - 2 * ty);
+      const a = arr[y0 * (g + 1) + x0], b = arr[y0 * (g + 1) + x0 + 1], c = arr[(y0 + 1) * (g + 1) + x0], d = arr[(y0 + 1) * (g + 1) + x0 + 1];
+      v += amp * (a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy); tot += amp; amp *= 0.55;
+    }
+    out[y * w + x] = v / tot;
+  }
+  return out;
+}
+function texNevoa() {
+  if (_texNevoa) return _texNevoa;
+  const w = 512, h = 256, f = _fbm(0, w, h, "nevoa"), oc = document.createElement("canvas"); oc.width = w; oc.height = h;
+  const g = oc.getContext("2d"), im = g.createImageData(w, h);
+  for (let i = 0; i < w * h; i++) { const v = Math.max(0, Math.min(1, (f[i] - 0.38) * 2.4)); im.data[i * 4] = 205; im.data[i * 4 + 1] = 212; im.data[i * 4 + 2] = 220; im.data[i * 4 + 3] = v * 255; }
+  // emenda horizontal (para rolar sem costura)
+  g.putImageData(im, 0, 0); _texNevoa = oc; return oc;
+}
+// ------------------------------------------------------------------ camada de cena
+function camadaCena(c, t, alvo) {
+  const { W, H } = D, sCtx = ctx, sCv = cv;
+  cv = alvo; ctx = alvo.getContext("2d");
+  ctx.save(); ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over"; ctx.filter = "none";
+  ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  if (c.tipo === "chat") telaChat(c, t);
+  else if (c.tipo === "mapa") telaMapa(c, t);
+  else if (c.tipo === "capitulo") telaCapitulo(c, t);
+  else if (c.tipo === "relogios") telaRelogios(c, t);
+  else {
+    ctx.save();
+    if (c.mao) {   // celular na mão: deriva + micro-tremor + leve giro
+      const k = c.mao, ox = W * 0.006 * k * _ruido1(t * 0.9, 1) + W * 0.0015 * k * Math.sin(t * 17), oy = H * 0.008 * k * _ruido1(t * 0.8, 4) + H * 0.0015 * k * Math.sin(t * 13 + 1);
+      ctx.translate(W / 2 + ox, H / 2 + oy); ctx.rotate(0.006 * k * _ruido1(t * 0.6, 7)); ctx.scale(1 + 0.03 * k, 1 + 0.03 * k); ctx.translate(-W / 2, -H / 2);
+    }
+    if (c.celular && c.celular.vertical) videoVertical(c, t); else desenharCena(c, t);
+    ctx.restore();
+    if (c.zoom_digital) zoomDigital(c, t);
+    if (c.dof) profundidade(c, t);
+  }
+  if (c.atmos) atmosfera(c, t);
+  if (c.celular) interfaceCelular(c, t);
+  if (c.kanji) kanjiSobre(c, t);
+  if (c.linha) linhaTempo(c, t);
+  ctx.restore();
+  ctx = sCtx; cv = sCv;
+}
+// ------------------------------------------------------------------ transições
+function _mascaraTinta(p, W, H) {
+  const w = 192, h = 108;
+  if (!_campoTinta) {   // campo: ruído fractal + manchas que crescem de 3 sementes
+    const f = _fbm(0, w, h, "tinta", 5), r = _semente("sementes"), sem = [[0.5 + (r() - 0.5) * 0.3, 0.5 + (r() - 0.5) * 0.3], [r(), r()], [r(), r()]];
+    _campoTinta = new Float32Array(w * h);
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      let d = 9; for (const [sx, sy] of sem) d = Math.min(d, Math.hypot(x / w - sx, (y / h - sy) * 0.6));
+      _campoTinta[y * w + x] = 0.55 * d / 0.62 + 0.45 * f[y * w + x];
+    }
+  }
+  const m = _canvas("mTinta", w, h), g = m.getContext("2d"), im = g.createImageData(w, h);
+  const borda = _canvas("bTinta", w, h), gb = borda.getContext("2d"), ib = gb.createImageData(w, h);
+  const lim = p * 1.12;
+  for (let i = 0; i < w * h; i++) {
+    const v = _campoTinta[i], a = Math.max(0, Math.min(1, (lim - v) / 0.025));
+    im.data[i * 4 + 3] = a * 255;
+    const e = Math.max(0, 1 - Math.abs(v - lim) / 0.035); ib.data[i * 4 + 3] = e * 230;
+  }
+  g.putImageData(im, 0, 0); gb.putImageData(ib, 0, 0);
+  return [m, borda];
+}
+function transicao(tipo, A, B, k, t) {
+  const { W, H } = D;
+  if (tipo === "nanquim") {
+    ctx.drawImage(A, 0, 0);
+    const [m, borda] = _mascaraTinta(k, W, H);
+    const o = _canvas("trB", W, H), g = o.getContext("2d");
+    g.globalCompositeOperation = "source-over"; g.clearRect(0, 0, W, H); g.drawImage(B, 0, 0);
+    g.globalCompositeOperation = "destination-in"; g.imageSmoothingEnabled = true; g.drawImage(m, 0, 0, W, H); g.globalCompositeOperation = "source-over";
+    ctx.drawImage(o, 0, 0);
+    ctx.save(); ctx.globalAlpha = 0.85 * Math.sin(Math.PI * Math.min(1, k * 1.05)); ctx.filter = "blur(3px)";
+    const ob = _canvas("trBorda", W, H), gb = ob.getContext("2d"); gb.clearRect(0, 0, W, H); gb.drawImage(borda, 0, 0, W, H);
+    gb.globalCompositeOperation = "source-in"; gb.fillStyle = "#050403"; gb.fillRect(0, 0, W, H); gb.globalCompositeOperation = "source-over";
+    ctx.drawImage(ob, 0, 0); ctx.restore();
+  } else if (tipo === "shoji") {
+    const e = easeInOut(k), x = W * (1 - e);
+    ctx.save(); ctx.filter = `brightness(${1 - 0.45 * e})`; ctx.drawImage(A, -W * 0.12 * e, 0); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(x, 0, W - x, H); ctx.clip(); ctx.drawImage(B, x * 0.25, 0);
+    // treliça de papel por cima da cena que entra, sumindo
+    ctx.globalAlpha = 0.55 * (1 - e); ctx.fillStyle = "#efe6d2"; ctx.fillRect(x, 0, W - x, H);
+    ctx.globalAlpha = 0.6 * (1 - e); ctx.strokeStyle = "#3a2a1c"; ctx.lineWidth = Math.max(2, W / 640);
+    const cel = W / 9; for (let gx = x; gx < W; gx += cel) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
+    for (let gy = 0; gy < H; gy += cel * 0.75) { ctx.beginPath(); ctx.moveTo(x, gy); ctx.lineTo(W, gy); ctx.stroke(); }
+    ctx.restore();
+    // a moldura de madeira da porta
+    const bw = W * 0.016; const gr = ctx.createLinearGradient(x - bw, 0, x + bw, 0);
+    gr.addColorStop(0, "rgba(0,0,0,0)"); gr.addColorStop(0.35, "#2a1b10"); gr.addColorStop(0.55, "#5a3b22"); gr.addColorStop(0.7, "#24170d"); gr.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = gr; ctx.fillRect(x - bw, 0, bw * 2, H);
+  } else if (tipo === "vela") {   // íris fecha na cena velha (com fumaça) e abre na nova
+    const fecha = k < 0.5, kk = fecha ? 1 - k * 2 : (k - 0.5) * 2, img = fecha ? A : B;
+    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+    const r = Math.hypot(W, H) * 0.55 * easeInOut(kk);
+    if (r > 2) {
+      const o = _canvas("trV", W, H), g = o.getContext("2d"); g.globalCompositeOperation = "source-over"; g.clearRect(0, 0, W, H); g.drawImage(img, 0, 0);
+      const rg = g.createRadialGradient(W / 2, H * 0.48, r * 0.55, W / 2, H * 0.48, r);
+      rg.addColorStop(0, "#000"); rg.addColorStop(1, "rgba(0,0,0,0)");
+      g.globalCompositeOperation = "destination-in"; g.fillStyle = rg; g.fillRect(0, 0, W, H); g.globalCompositeOperation = "source-over";
+      ctx.drawImage(o, 0, 0);
+      ctx.save(); ctx.globalCompositeOperation = "soft-light"; ctx.globalAlpha = 0.5 * (1 - kk); ctx.fillStyle = "#ff9a40"; ctx.fillRect(0, 0, W, H); ctx.restore();
+    }
+    // fumaça subindo do centro quando escurece
+    const fum = Math.sin(Math.PI * k); if (fum > 0.02) {
+      ctx.save(); ctx.globalAlpha = 0.35 * fum; ctx.strokeStyle = "#cfcfcf"; ctx.lineCap = "round";
+      for (let i = 0; i < 4; i++) { ctx.lineWidth = W * (0.004 + i * 0.002); ctx.filter = `blur(${4 + i * 3}px)`; ctx.beginPath();
+        for (let s = 0; s <= 30; s++) { const u = s / 30, y = H * (0.55 - u * 0.5 * (0.6 + k)), x = W / 2 + Math.sin(u * 6 + t * 2 + i) * W * 0.03 * u * (1 + i); s ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+        ctx.stroke(); }
+      ctx.restore();
+    }
+  } else if (tipo === "fundir") { ctx.drawImage(A, 0, 0); ctx.globalAlpha = easeInOut(k); ctx.drawImage(B, 0, 0); ctx.globalAlpha = 1; }
+  else if (tipo === "preto") { ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = easeInOut(k); ctx.drawImage(B, 0, 0); ctx.globalAlpha = 1; }
+  else ctx.drawImage(B, 0, 0);
+}
+// ------------------------------------------------------------------ câmera
+function profundidade(c, t) {   // foco num ponto: o resto desfoca e escurece, entra devagar
+  const { W, H } = D, F = c.dof, k = easeInOut(lin(t, c.t0 + (F.atraso ?? 0.8), F.dur ?? 1.6));
+  if (k <= 0) return;
+  const nit = _canvas("dofN", W, H), g = nit.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
+  ctx.save(); ctx.filter = `blur(${Math.round(12 * k)}px) brightness(${1 - 0.35 * k})`; ctx.drawImage(nit, 0, 0); ctx.restore();
+  const cx = W * F.x, cy = H * F.y, r = Math.min(W, H) * (F.r ?? 0.25);
+  const rg = g.createRadialGradient(cx, cy, r * 0.45, cx, cy, r);
+  rg.addColorStop(0, "#000"); rg.addColorStop(1, "rgba(0,0,0,0)");
+  g.globalCompositeOperation = "destination-in"; g.fillStyle = rg; g.fillRect(0, 0, W, H); g.globalCompositeOperation = "source-over";
+  ctx.drawImage(nit, 0, 0);
+}
+function zoomDigital(c, t) {   // zoom de celular até um ponto, pixelando cada vez mais
+  const { W, H } = D, Z = c.zoom_digital, k = easeInOut(lin(t, c.t0 + (Z.atraso ?? 0.5), Z.dur ?? Math.max(1, c.t1 - c.t0 - 0.6)));
+  if (k <= 0) return;
+  const z = 1 + ((Z.ate ?? 5) - 1) * k, cx = W * (Z.x ?? 0.5), cy = H * (Z.y ?? 0.4);
+  const fonte = _canvas("zdF", W, H), g = fonte.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
+  const pix = Math.max(1, Math.round(1 + (z - 1) * 1.1)), pw = Math.max(16, Math.round(W / pix)), ph = Math.max(9, Math.round(H / pix));
+  const pq = _canvas("zdP", pw, ph), gp = pq.getContext("2d"); gp.imageSmoothingEnabled = true;
+  const sw = W / z, sh = H / z, sx = Math.min(W - sw, Math.max(0, cx - sw / 2)), sy = Math.min(H - sh, Math.max(0, cy - sh / 2));
+  gp.drawImage(fonte, sx, sy, sw, sh, 0, 0, pw, ph);
+  ctx.save(); ctx.imageSmoothingEnabled = pix < 3; ctx.drawImage(pq, 0, 0, W, H); ctx.restore();
+}
+// ------------------------------------------------------------------ atmosfera
+function atmosfera(c, t) {
+  const { W, H } = D, A = Array.isArray(c.atmos) ? Object.fromEntries(c.atmos.map((n) => [n, 1])) : c.atmos;
+  ctx.save();
+  if (A.neblina || A.fumaca) {
+    const tex = texNevoa(), forte = A.neblina || A.fumaca, sobe = !!A.fumaca;
+    ctx.globalCompositeOperation = "screen";
+    for (let cam = 0; cam < 2; cam++) {
+      const vel = (cam ? 0.018 : 0.011) * W, esc = cam ? 1.6 : 2.4, tw = W * esc, th = H * esc * 0.6;
+      const ox = -((t * vel) % tw), oy = sobe ? -((t * H * 0.02 * (cam + 1)) % th) : H * (cam ? 0.25 : 0.45) - th * 0.5;
+      ctx.globalAlpha = forte * (cam ? 0.18 : 0.24);
+      for (let x = ox; x < W; x += tw) for (let y = sobe ? oy : oy; y < H; y += sobe ? th : H * 9) ctx.drawImage(tex, x, y, tw, th);
+    }
+  }
+  if (A.poeira) {
+    const r = _semente("poeira"); ctx.globalCompositeOperation = "screen";
+    for (let i = 0; i < 70; i++) {
+      const z = 0.3 + r() * 0.7, x = ((r() * W + t * W * 0.006 * z + Math.sin(t * 0.7 + i) * 12) % W + W) % W, y = ((r() * H - t * H * 0.01 * z) % H + H) % H;
+      const s = 1 + z * 2.6, a = A.poeira * (0.15 + 0.5 * z) * (0.6 + 0.4 * Math.sin(t * 2 + i));
+      ctx.globalAlpha = a; ctx.fillStyle = "#fff4dc"; ctx.beginPath(); ctx.arc(x, y, s, 0, 6.283); ctx.fill();
+    }
+  }
+  if (A.vela) {   // luz de vela: quente, tremendo, de baixo
+    const n = 0.75 + 0.25 * _ruido1(t * 3.2, 2) + 0.08 * Math.sin(t * 31);
+    const vx = W * (c.vela_x ?? 0.5), vy = H * (c.vela_y ?? 0.8);
+    ctx.globalCompositeOperation = "soft-light"; ctx.globalAlpha = A.vela * 0.55 * n;
+    const rg = ctx.createRadialGradient(vx, vy, 0, vx, vy, H * 0.9); rg.addColorStop(0, "#ffb050"); rg.addColorStop(1, "rgba(255,120,30,0)");
+    ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "multiply"; ctx.globalAlpha = A.vela * (1 - n) * 0.5; ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+  }
+  if (A.pelicula) {   // película 1970: vazamento de luz, riscos, poeira, tremor de janela
+    const f = Math.floor(t * 24), r = _semente("pel" + f);
+    ctx.globalCompositeOperation = "screen";
+    const lx = W * (0.85 + 0.15 * Math.sin(t * 0.37)), ly = H * (0.2 + 0.3 * Math.sin(t * 0.23 + 1));
+    const lg = ctx.createRadialGradient(lx, ly, 0, lx, ly, W * 0.45); lg.addColorStop(0, "rgba(255,110,40,.55)"); lg.addColorStop(0.5, "rgba(255,60,20,.18)"); lg.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.globalAlpha = A.pelicula * (0.5 + 0.5 * _ruido1(t, 9)); ctx.fillStyle = lg; ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "source-over";
+    for (let i = 0; i < 3; i++) if (r() < 0.35) { ctx.globalAlpha = 0.25 * A.pelicula; ctx.fillStyle = r() < 0.5 ? "#fff" : "#000"; ctx.fillRect(r() * W, 0, 1 + r() * 1.5, H); }
+    for (let i = 0; i < 14; i++) { ctx.globalAlpha = 0.5 * A.pelicula * r(); ctx.fillStyle = r() < 0.5 ? "#fff" : "#000"; ctx.beginPath(); ctx.arc(r() * W, r() * H, 0.6 + r() * 2.2, 0, 6.283); ctx.fill(); }
+    ctx.globalCompositeOperation = "soft-light"; ctx.globalAlpha = 0.35 * A.pelicula; ctx.fillStyle = "#c8902a"; ctx.fillRect(0, 0, W, H);
+  }
+  ctx.restore();
+}
+// ------------------------------------------------------------------ celular
+function videoVertical(c, t) {   // vídeo de celular em pé dentro do quadro 16:9, com fundo desfocado dele mesmo
+  const { W, H } = D, im = IMG["img:" + c.imagem]; if (!im) return;
+  ctx.save(); ctx.filter = "blur(30px) brightness(0.35)";
+  const sb = Math.max(W / im.width, H / im.height) * 1.1; ctx.drawImage(im, (W - im.width * sb) / 2, (H - im.height * sb) / 2, im.width * sb, im.height * sb);
+  ctx.restore();
+  const vh = H, vw = H * 9 / 16, vx = (W - vw) / 2, e = easeInOut(lin(t, c.t0, Math.max(0.5, c.t1 - c.t0)));
+  const [z0, z1] = c.zoom || [1.0, 1.06], z = z0 + (z1 - z0) * e, f = c.foco || [[0.5, 0.5], [0.5, 0.5]];
+  const fx = f[0][0] + (f[1][0] - f[0][0]) * e, fy = f[0][1] + (f[1][1] - f[0][1]) * e;
+  const s = Math.max(vw / im.width, vh / im.height) * z, iw = im.width * s, ih = im.height * s;
+  let ox = vx + vw / 2 - fx * iw, oy = vh / 2 - fy * ih; ox = Math.min(vx, Math.max(vx + vw - iw, ox)); oy = Math.min(0, Math.max(vh - ih, oy));
+  ctx.save(); ctx.beginPath(); ctx.rect(vx, 0, vw, vh); ctx.clip(); ctx.drawImage(im, ox, oy, iw, ih); ctx.restore();
+  ctx.save(); ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 40; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.lineWidth = 2; ctx.strokeRect(vx, 0, vw, vh); ctx.restore();
+  c._vv = [vx, vw];
+}
+function interfaceCelular(c, t) {
+  const { W, H } = D, C = c.celular, u = H / 1080;
+  const [vx, vw] = C.vertical && c._vv ? c._vv : [0, W];
+  ctx.save();
+  // foco caçando: pulsos curtos de desfoque
+  const caça = Math.max(0, Math.sin(t * 1.3 + 2) - 0.86) / 0.14 + (t - c.t0 < 0.8 ? 1 - (t - c.t0) / 0.8 : 0);
+  if (caça > 0.02) { const o = _canvas("celF", W, H), g = o.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0); ctx.filter = `blur(${(caça * 6).toFixed(1)}px)`; ctx.drawImage(o, 0, 0); ctx.filter = "none"; }
+  // compressão de sinal fraco: blocos
+  if (C.sinal === "fraco" && Math.sin(t * 2.3) > 0.55) {
+    const o = _canvas("celB", W, H), g = o.getContext("2d"); g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
+    const p = _canvas("celP", Math.round(W / 14), Math.round(H / 14)), gp = p.getContext("2d"); gp.drawImage(o, 0, 0, p.width, p.height);
+    ctx.save(); ctx.imageSmoothingEnabled = false; ctx.globalAlpha = 0.55; ctx.drawImage(p, 0, 0, W, H); ctx.restore();
+  }
+  ctx.font = `600 ${Math.round(26 * u)}px "Inter", sans-serif`; ctx.fillStyle = "rgba(255,255,255,.92)"; ctx.shadowColor = "rgba(0,0,0,.8)"; ctx.shadowBlur = 6;
+  const s = Math.floor(t - c.t0), mm = String(Math.floor(s / 60)).padStart(2, "0"), ss = String(s % 60).padStart(2, "0");
+  ctx.textAlign = "center";
+  ctx.fillStyle = "rgba(220,30,30,.95)"; ctx.beginPath(); ctx.roundRect ? ctx.roundRect(vx + vw / 2 - 62 * u, 26 * u, 124 * u, 40 * u, 8 * u) : ctx.rect(vx + vw / 2 - 62 * u, 26 * u, 124 * u, 40 * u); ctx.fill();
+  ctx.fillStyle = "#fff"; ctx.fillText(`${mm}:${ss}`, vx + vw / 2, 55 * u);
+  ctx.textAlign = "left"; ctx.fillText(C.hora || "23:41", vx + 26 * u, 55 * u);
+  ctx.textAlign = "right"; ctx.fillText(C.sinal === "fraco" ? "sem serviço" : "4G", vx + vw - 26 * u, 55 * u);
+  // quadrado de foco
+  const fx = vx + vw * (C.foco_x ?? 0.5), fy = H * (C.foco_y ?? 0.5), q = 70 * u * (1 + 0.15 * caça);
+  ctx.strokeStyle = `rgba(255,214,10,${0.5 + 0.5 * Math.min(1, caça)})`; ctx.lineWidth = 2 * u; ctx.shadowBlur = 0;
+  for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { ctx.beginPath(); ctx.moveTo(fx + sx * q, fy + sy * q * 0.6); ctx.lineTo(fx + sx * q, fy + sy * q); ctx.lineTo(fx + sx * q * 0.6, fy + sy * q); ctx.stroke(); }
+  ctx.restore();
+}
+function _telefone(t, desenho) {   // moldura de celular no centro, grande, com aproximação lenta (lê no celular do espectador)
+  const { W, H } = D, ph = H * 1.0, pw = ph * 0.56, px = (W - pw) / 2, py = (H - ph) / 2 + H * 0.02, u = ph / 680;
+  const c0 = D.cenas[cenaAtual(t)] || { t0: t, t1: t + 1 }, zc = 1 + 0.07 * easeInOut(lin(t, c0.t0, Math.max(1, c0.t1 - c0.t0)));
+  ctx.translate(W / 2, H * 0.62); ctx.scale(zc, zc); ctx.translate(-W / 2, -H * 0.62);
+  const rg = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.6); rg.addColorStop(0, "#14181c"); rg.addColorStop(1, "#020203");
+  ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+  ctx.save(); ctx.shadowColor = "rgba(120,170,255,.25)"; ctx.shadowBlur = 80; ctx.fillStyle = "#0a0a0b";
+  ctx.beginPath(); ctx.roundRect(px - 10 * u, py - 10 * u, pw + 20 * u, ph + 20 * u, 46 * u); ctx.fill(); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.roundRect(px, py, pw, ph, 38 * u); ctx.clip(); desenho(px, py, pw, ph, u); ctx.restore();
+}
+function telaChat(c, t) {
+  _telefone(t, (px, py, pw, ph, u) => {
+    ctx.fillStyle = "#101418"; ctx.fillRect(px, py, pw, ph);
+    // cabeçalho do grupo (genérico, sem marca)
+    ctx.fillStyle = "#1b222a"; ctx.fillRect(px, py, pw, 96 * u);
+    ctx.fillStyle = "#5a6b7d"; ctx.beginPath(); ctx.arc(px + 50 * u, py + 56 * u, 22 * u, 0, 6.283); ctx.fill();
+    ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(24 * u)}px "Inter", "Noto Color Emoji", sans-serif`; ctx.textAlign = "left";
+    ctx.fillText(c.grupo || "Família 🏠", px + 86 * u, py + 52 * u);
+    const digit = (c.mensagens || []).find((m) => m.digitando_ate && t >= m.digitando_de && t < m.digitando_ate);
+    ctx.font = `500 ${Math.round(16 * u)}px "Inter", sans-serif`; ctx.fillStyle = digit ? "#7fd18b" : "#93a1ad";
+    ctx.fillText(digit ? `${digit.de} está digitando…` : (c.membros || "Dani, Lucas, Mãe, Pai"), px + 86 * u, py + 76 * u);
+    // mensagens visíveis (as que já chegaram), de baixo pra cima
+    const vis = (c.mensagens || []).filter((m) => t >= (m.t ?? c.t0));
+    let y = py + ph - 40 * u; const fs = Math.round(22 * u), larg = pw * 0.72;
+    ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`;
+    const blocos = vis.map((m) => {
+      const linhas = []; let atual = "";
+      if (m.tipo === "audio") return { m, h: 64 * u, linhas };
+      if (m.tipo === "foto" || m.tipo === "video") return { m, h: larg * 0.75 + 30 * u, linhas };
+      for (const p of (m.texto || "").split(" ")) { const tt = atual ? atual + " " + p : p; if (ctx.measureText(tt).width > larg - 40 * u && atual) { linhas.push(atual); atual = p; } else atual = tt; }
+      linhas.push(atual); return { m, h: linhas.length * fs * 1.3 + (m.de && m.de !== "eu" ? 30 : 12) * u + 26 * u, linhas };
+    });
+    for (let i = blocos.length - 1; i >= 0 && y > py + 110 * u; i--) {
+      const { m, h, linhas } = blocos[i], meu = m.de === "eu" || m.lado === "dir";
+      const ent = easeOut(lin(t, m.t ?? c.t0, 0.25)), bw = m.tipo === "audio" ? larg * 0.8 : m.tipo === "foto" || m.tipo === "video" ? larg : Math.min(larg, Math.max(...linhas.map((l) => ctx.measureText(l).width)) + 40 * u, larg);
+      const bx = meu ? px + pw - bw - 18 * u : px + 18 * u, by = y - h;
+      ctx.save(); ctx.globalAlpha = ent; ctx.translate(0, (1 - ent) * 20 * u);
+      ctx.fillStyle = meu ? "#2c4a6e" : "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, bw, h - 10 * u, 16 * u); ctx.fill();
+      let ty = by + 30 * u;
+      if (!meu && m.de) { ctx.fillStyle = m.cor || "#e6a95a"; ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; ctx.fillText(m.de, bx + 18 * u, ty - 2 * u); ty += 26 * u; }
+      ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`; ctx.fillStyle = "#eef2f5";
+      if (m.tipo === "audio") {   // áudio com onda
+        ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 34 * u, by + (h - 10 * u) / 2, 14 * u, 0, 6.283); ctx.fill();
+        const r = _semente(m.texto || "audio"); for (let k = 0; k < 28; k++) { const hh = (6 + r() * 26) * u; ctx.fillRect(bx + 62 * u + k * 9 * u, by + (h - 10 * u) / 2 - hh / 2, 4 * u, hh); }
+        ctx.font = `500 ${Math.round(15 * u)}px "Inter", sans-serif`; ctx.fillText(m.duracao || "0:07", bx + bw - 54 * u, by + h - 22 * u);
+      } else if (m.tipo === "foto" || m.tipo === "video") {
+        const im = IMG["img:" + m.imagem]; const iw = bw - 16 * u, ih = larg * 0.75 - 10 * u;
+        if (im) { const s = Math.max(iw / im.width, ih / im.height); ctx.save(); ctx.beginPath(); ctx.roundRect(bx + 8 * u, ty - 16 * u, iw, ih, 10 * u); ctx.clip(); ctx.drawImage(im, bx + 8 * u + (iw - im.width * s) / 2, ty - 16 * u + (ih - im.height * s) / 2, im.width * s, im.height * s); ctx.restore(); }
+        if (m.tipo === "video") { ctx.fillStyle = "rgba(0,0,0,.5)"; ctx.beginPath(); ctx.arc(bx + bw / 2, ty - 16 * u + ih / 2, 30 * u, 0, 6.283); ctx.fill(); ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(bx + bw / 2 - 9 * u, ty - 16 * u + ih / 2 - 14 * u); ctx.lineTo(bx + bw / 2 + 15 * u, ty - 16 * u + ih / 2); ctx.lineTo(bx + bw / 2 - 9 * u, ty - 16 * u + ih / 2 + 14 * u); ctx.fill(); }
+      } else linhas.forEach((l, k) => ctx.fillText(l, bx + 20 * u, ty + k * fs * 1.3));
+      ctx.font = `500 ${Math.round(13 * u)}px "Inter", sans-serif`; ctx.fillStyle = "#93a1ad"; ctx.textAlign = "right";
+      ctx.fillText((m.hora || "") + (meu ? "  ✓✓" : ""), bx + bw - 14 * u, by + h - 18 * u); ctx.textAlign = "left";
+      ctx.restore();
+      y = by - 8 * u;
+    }
+    if (digit) {   // balão "digitando" com três pontos
+      const bx = px + 18 * u, by = py + ph - 100 * u; ctx.fillStyle = "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, 90 * u, 46 * u, 16 * u); ctx.fill();
+      for (let k = 0; k < 3; k++) { ctx.globalAlpha = 0.4 + 0.6 * Math.max(0, Math.sin(t * 7 - k * 0.8)); ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 26 * u + k * 19 * u, by + 23 * u, 6 * u, 0, 6.283); ctx.fill(); }
+      ctx.globalAlpha = 1;
+    }
+  });
+}
+function telaMapa(c, t) {
+  _telefone(t, (px, py, pw, ph, u) => {
+    ctx.fillStyle = "#1c2420"; ctx.fillRect(px, py, pw, ph);
+    const r = _semente("mapa");
+    ctx.save(); ctx.translate(px, py);
+    for (let i = 0; i < 9; i++) { ctx.fillStyle = "rgba(40,70,48,.85)"; ctx.beginPath(); ctx.ellipse(r() * pw, r() * ph, pw * (0.15 + r() * 0.3), ph * (0.06 + r() * 0.12), r() * 3, 0, 6.283); ctx.fill(); }
+    ctx.strokeStyle = "rgba(90,120,95,.35)"; ctx.lineWidth = 1.2 * u;   // curvas de nível (montanha)
+    for (let k = 1; k < 8; k++) { ctx.beginPath(); ctx.ellipse(pw * 0.72, ph * 0.22, pw * 0.05 * k, ph * 0.03 * k, 0.4, 0, 6.283); ctx.stroke(); }
+    ctx.strokeStyle = "#3b4644"; ctx.lineWidth = 6 * u; ctx.lineCap = "round";
+    const rota = [[0.18, 0.92], [0.24, 0.74], [0.35, 0.62], [0.42, 0.48], [0.55, 0.4], [0.64, 0.3], [0.7, 0.24]];
+    ctx.beginPath(); rota.forEach(([x, y], k) => k ? ctx.lineTo(x * pw, y * ph) : ctx.moveTo(x * pw, y * ph)); ctx.stroke();
+    for (let i = 0; i < 6; i++) { ctx.lineWidth = 3 * u; ctx.beginPath(); ctx.moveTo(r() * pw, r() * ph); ctx.lineTo(r() * pw, r() * ph); ctx.stroke(); }
+    ctx.fillStyle = "#9fb0a6"; ctx.font = `600 ${Math.round(18 * u)}px "Inter", sans-serif`; ctx.fillText(c.cidade || "Hamamatsu ↓", pw * 0.06, ph * 0.97);
+    // ponto azul andando pela rota e sumindo no fim
+    const p = easeInOut(lin(t, c.t0 + 0.4, Math.max(1, (c.some ?? (c.t1 - c.t0)) - 0.6))), n = rota.length - 1, f = p * n, k0 = Math.min(n - 1, Math.floor(f)), fr = f - k0;
+    const x = (rota[k0][0] + (rota[k0 + 1][0] - rota[k0][0]) * fr) * pw, y = (rota[k0][1] + (rota[k0 + 1][1] - rota[k0][1]) * fr) * ph;
+    const vivo = c.some == null || t < c.t0 + c.some, pis = vivo ? 1 : Math.max(0, 1 - (t - c.t0 - c.some) / 0.4) * (Math.sin(t * 40) > 0 ? 1 : 0.2);
+    ctx.globalAlpha = pis; ctx.fillStyle = "rgba(66,133,244,.25)"; ctx.beginPath(); ctx.arc(x, y, (26 + 10 * Math.sin(t * 4)) * u, 0, 6.283); ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(x, y, 13 * u, 0, 6.283); ctx.fill(); ctx.fillStyle = "#4285f4"; ctx.beginPath(); ctx.arc(x, y, 9 * u, 0, 6.283); ctx.fill();
+    ctx.globalAlpha = 1; ctx.restore();
+    ctx.fillStyle = "rgba(10,12,14,.85)"; ctx.fillRect(px, py, pw, 70 * u); ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(20 * u)}px "Inter", sans-serif`;
+    ctx.fillText(c.titulo || "Localização em tempo real · Dani", px + 24 * u, py + 44 * u);
+  });
+}
+function telaCapitulo(c, t) {   // abertura de capítulo: papel escuro, número em kanji, título e ano
+  const { W, H } = D;
+  const im = c.imagem ? IMG["img:" + c.imagem] : null;
+  if (im) { ctx.save(); ctx.filter = "blur(6px) brightness(0.28) saturate(0.5)"; const s = Math.max(W / im.width, H / im.height) * (1.05 + 0.04 * lin(t, c.t0, 6)); ctx.drawImage(im, (W - im.width * s) / 2, (H - im.height * s) / 2, im.width * s, im.height * s); ctx.restore(); }
+  else { const g = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.7); g.addColorStop(0, "#1a1512"); g.addColorStop(1, "#050404"); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); }
+  const a = easeOut(lin(t, c.t0 + 0.9, 0.8));
+  ctx.save(); ctx.globalAlpha = a; ctx.textAlign = "left";
+  ctx.fillStyle = "#b51b1b"; ctx.fillRect(W * 0.42, H * 0.36, W * 0.004, H * 0.28 * a);
+  ctx.font = `700 ${Math.round(H * 0.03)}px "Inter", sans-serif`; ctx.fillStyle = "#c9b9a0"; ctx.fillText((c.numero_pt || "CAPÍTULO 1").toUpperCase().split("").join(" "), W * 0.44, H * 0.405);
+  ctx.font = `700 ${Math.round(H * 0.085)}px "Cinzel", serif`; ctx.fillStyle = "#f2ead8"; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 20;
+  const titulo = c.titulo || "", n = Math.floor(lin(t, c.t0 + 1.1, 0.9) * titulo.length);
+  let fsT = Math.round(H * 0.085); ctx.font = `700 ${fsT}px "Cinzel", serif`;
+  const maxW = W * 0.5; let linhasT = [titulo];
+  if (ctx.measureText(titulo).width > maxW) { const ps = titulo.split(" "), meio = Math.ceil(ps.length / 2); linhasT = [ps.slice(0, meio).join(" "), ps.slice(meio).join(" ")]; }
+  while (Math.max(...linhasT.map((l) => ctx.measureText(l).width)) > maxW && fsT > 20) { fsT -= 2; ctx.font = `700 ${fsT}px "Cinzel", serif`; }
+  let resto = n; linhasT.forEach((l, k) => { const m = Math.max(0, Math.min(l.length, resto)); resto -= l.length + 1; ctx.fillText(l.slice(0, m), W * 0.44, H * 0.51 + k * fsT * 1.1 - (linhasT.length - 1) * fsT * 0.35); });
+  ctx.font = `700 ${Math.round(H * 0.04)}px "Inter", sans-serif`; ctx.fillStyle = "#d4302a"; ctx.globalAlpha = a * easeOut(lin(t, c.t0 + 1.8, 0.5));
+  ctx.fillText(c.ano || "", W * 0.44, H * (c.titulo && c.titulo.length > 22 ? 0.67 : 0.6));
+  ctx.restore();
+  if (!c.kanji && c.numero) c.kanji = [{ texto: c.numero, x: 0.3, y: 0.5, tam: 0.17, modo: "luz", fundo: "vermelho", atraso: 0.15, escrever: 1.0, sombra: 0.3, respingos: true, selo: c.selo }];
+}
+function telaRelogios(c, t) {   // dois fusos lado a lado: Hamamatsu (noite) × Londrina (dia)
+  const { W, H } = D, L = c.lados || [];
+  [0, 1].forEach((i) => {
+    const lado = L[i] || {}, x0 = i * W / 2, im = lado.imagem ? IMG["img:" + lado.imagem] : null;
+    ctx.save(); ctx.beginPath(); ctx.rect(x0, 0, W / 2, H); ctx.clip();
+    if (im) { const s = Math.max(W / 2 / im.width, H / im.height) * (1.04 + 0.04 * lin(t, c.t0, 6)); ctx.filter = `brightness(${lado.brilho ?? 0.6})`; ctx.drawImage(im, x0 + (W / 2 - im.width * s) / 2, (H - im.height * s) / 2, im.width * s, im.height * s); ctx.filter = "none"; }
+    else { ctx.fillStyle = i ? "#c9b48a" : "#0b0e14"; ctx.fillRect(x0, 0, W / 2, H); }
+    ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x0, 0, W / 2, H);
+    const base = (lado.hora || "23:40").split(":").map(Number), s = Math.floor((t - c.t0) * (c.velocidade || 1)), mm = base[1] + Math.floor(s / 60);
+    const txt = `${String(base[0] + Math.floor(mm / 60)).padStart(2, "0")}:${String(mm % 60).padStart(2, "0")}`;
+    ctx.textAlign = "center"; ctx.font = `700 ${Math.round(H * 0.17)}px "DejaVu Sans Mono", monospace`; ctx.fillStyle = i ? "#fff4d8" : "#cfe3ff";
+    ctx.shadowColor = i ? "rgba(255,200,120,.6)" : "rgba(120,170,255,.6)"; ctx.shadowBlur = 30; ctx.fillText(txt, x0 + W / 4, H * 0.55);
+    ctx.shadowBlur = 8; ctx.font = `700 ${Math.round(H * 0.032)}px "Inter", sans-serif`; ctx.fillStyle = "#f4efe4";
+    ctx.fillText((lado.nome || "").toUpperCase().split("").join(" "), x0 + W / 4, H * 0.66);
+    ctx.restore();
+  });
+  ctx.fillStyle = "#b51b1b"; ctx.fillRect(W / 2 - 2, H * 0.1, 4, H * 0.8 * easeOut(lin(t, c.t0, 0.8)));
+}
+function linhaTempo(c, t) {   // linha do tempo das lendas, no alto, aparece no começo da cena
+  const { W, H } = D, Lt = c.linha, anos = Lt.anos, a = Math.min(easeOut(lin(t, c.t0 + 0.2, 0.5)), 1 - easeInOut(lin(t, c.t0 + (Lt.dur ?? 4), 0.6)));
+  if (a <= 0) return;
+  const x0 = W * 0.18, x1 = W * 0.82, y = H * 0.085, mn = anos[0], mx = anos[anos.length - 1], X = (ano) => x0 + (x1 - x0) * (ano - mn) / (mx - mn);
+  ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = "rgba(240,232,215,.45)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
+  ctx.font = `600 ${Math.round(H * 0.018)}px "Inter", sans-serif`; ctx.textAlign = "center";
+  for (const ano of anos) { const x = X(ano), at = ano === Lt.atual; ctx.fillStyle = at ? "#e0302a" : "rgba(240,232,215,.7)"; ctx.beginPath(); ctx.arc(x, y, at ? 7 : 4, 0, 6.283); ctx.fill(); if (at || Lt.rotulos) ctx.fillText(String(ano), x, y + H * 0.04); }
+  const de = Lt.de ?? anos[0], k = easeInOut(lin(t, c.t0 + 0.4, 1.2)), xa = X(de) + (X(Lt.atual) - X(de)) * k;
+  ctx.strokeStyle = "#e0302a"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(xa, y); ctx.stroke();
+  ctx.restore();
+}
+
 function cenas(t) {
   const { W, H } = D, T = D.tema;
   ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
   const i = cenaAtual(t);
   if (i < 0) return;
   const c = D.cenas[i], ant = D.cenas[i - 1];
-  const dt = c.duracao_entrada || 0.5;
-  if (c.entrada === "fundir" && ant && t < c.t0 + dt) {
-    desenharCena(ant, t); desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
-  } else if (c.entrada === "preto" && t < c.t0 + dt) {
-    desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
-  } else desenharCena(c, t);
-  if (c.kanji) kanjiSobre(c, t);
+  const padrao = { nanquim: 1.3, shoji: 0.9, vela: 1.6 }[c.entrada] || 0.5;
+  const dt = c.duracao_entrada || padrao;
+  const A = _canvas("camA", W, H), B = _canvas("camB", W, H);
+  if (c.entrada && c.entrada !== "corte" && t < c.t0 + dt && (ant || c.entrada === "preto")) {
+    if (ant) camadaCena(ant, t, A);
+    camadaCena(c, t, B);
+    transicao(c.entrada, A, B, lin(t, c.t0, dt), t);
+  } else { camadaCena(c, t, A); ctx.drawImage(A, 0, 0); }
   // revelação: clareia as sombras só na região onde a criatura sempre esteve e desenha um círculo vermelho
   if (c.revelar) {
     const R = c.revelar, k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));
