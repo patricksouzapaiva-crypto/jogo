@@ -3,7 +3,7 @@
  "formato": "16:9",
  "tema": "vigia",
  "avatar": "vigia_hd",
- "voz_arquivo": "audio/voz_personagens.wav",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
  "cintilar": 0.045,
  "apertar_pausas": false,
  "vigia_padrao": false,
@@ -1105,7 +1105,7 @@
      ]
     ]
    },
-   "pausa_antes_s": 0.51
+   "pausa_antes_s": 0.9
   },
   {
    "fala": "O Caio abriu.",

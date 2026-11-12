@@ -121,7 +121,8 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   "os três CONTARAM a mesma coisa" (Crean não escreveu).
 - Narração: `narrar_fluxo.py narracao_texto.txt audio/voz_completa.wav` (646 s) + vinheta → `voz_com_vinheta_limpa.wav`;
   `alinhar.py` → `audio/alinhamento.json`. Voz do Caio (falas 45 e 51): `trocar_vozes.py [Puck|Achird|Orus]`
-  (padrão Puck; amostras em `previas/amostras/` — o usuário ainda NÃO escolheu).
+  DECISÃO DO USUÁRIO (12/11): a voz do Caio ficou "muito artificial, desconexa" → REMOVIDA; o Vigia narra as falas dele.
+  Lição: voz de personagem só funciona com som de lugar (porta, telefone, rádio); voz seca ao ar livre soa falsa.
 - Trilha nova em código: `painel/ferramentas/sintetizar_trilha_ep06.py` → `sons/ep06_fundo_longa.mp3`, `ep06_tensao_longa.mp3`.
   O usuário está gerando trilha no Flow Music (mandei 2 prompts: fundo e tensão); quando chegar, montar comparação.
 - Sons de lugar/efeitos (ElevenLabs): `sons/ep06_*` (mata dia/muda/noite, riacho, rua, estalo, risada, riso da menina,
