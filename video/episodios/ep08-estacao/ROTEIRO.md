@@ -6,7 +6,9 @@ citando tudo que a gente puder." → Episódio em formato **documentário + hist
 terror japonês (do kabuki à internet) com gravuras e fotos reais, e termina na Estação Kisaragi, na versão de uma
 brasileira em Hamamatsu.
 
-**Título (regra de 12/11: até ~50 caracteres, sem "Creepypasta", estruturas variadas):**
+**TÍTULO APROVADO (12/11): "Por que o terror japonês é o mais pesado do mundo"** (49 car.). Capa: completa o título sem repetir ("NÃO TEM REZA QUE DESFAZ." ou "VOCÊ SÓ PRECISA OLHAR.").
+
+Opções anteriores:
 1. **Ela desceu numa estação que não existe** (38 car.) ← recomendado
 2. O terror japonês é diferente. E é pior. (40)
 3. O trem não parava. Ela mandou áudio no grupo (44)
