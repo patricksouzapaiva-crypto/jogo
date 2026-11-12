@@ -11,9 +11,9 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 ## Arquivos
 | Short | Vídeo | Legenda | Capa |
 |---|---|---|---|
-| 1 — Eram seis | `shorts_final/s1_eram_seis.mp4` | `shorts_final/s1_eram_seis.srt` | `capa_short1_eram_seis.jpg` |
-| 2 — Alguém bateu | `shorts_final/s2_alguem_bateu.mp4` | `shorts_final/s2_alguem_bateu.srt` | `capa_short2_alguem_bateu.jpg` |
-| 3 — Aponta a câmera | `shorts_final/s3_aponta_a_camera.mp4` | `shorts_final/s3_aponta_a_camera.srt` | `capa_short3_aponta_a_camera.jpg` |
+| 1 — Eram seis | `shorts_final/s1_eram_seis.mp4` (36 s) | `shorts_final/s1_eram_seis.srt` | `capa_short1_eram_seis.jpg` |
+| 2 — Alguém bateu | `shorts_final/s2_alguem_bateu.mp4` (33 s) | `shorts_final/s2_alguem_bateu.srt` | `capa_short2_alguem_bateu.jpg` |
+| 3 — Aponta a câmera | `shorts_final/s3_aponta_a_camera.mp4` (35 s) | `shorts_final/s3_aponta_a_camera.srt` | `capa_short3_aponta_a_camera.jpg` |
 
 **Capa:** no app do YouTube (celular), ao enviar o Short, toque no lápis da miniatura → escolher imagem da galeria.
 Gerar de novo: `python3 fazer_capas_shorts.py`.
