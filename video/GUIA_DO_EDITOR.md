@@ -579,9 +579,13 @@ tem alguém lá").
 Gancho bom × ruim: ruim "Eu estava acampando com meus amigos quando começamos a ouvir barulhos…"; bom "As
 pegadas paravam exatamente na entrada da minha tenda. Não havia pegadas saindo. E eu estava sozinho."
 
-**Como isso se encaixa no formato do Vigia (proposta; mostrar no roteiro do Ep. 07 para o usuário confirmar):**
-- O bloco de "tema" (fato real) NÃO fica mais entre o gancho e o contexto: no máximo 20–30 s dentro do
-  contexto, ou vira a 1ª inserção do Vigia, depois do primeiro evento da escalada.
-- Primeira pessoa: a história é o RELATO de quem viveu ("eu"), e o Vigia só abre a moldura em uma frase
-  ("Esse relato chegou pra mim…"), aparece nas inserções e fecha. Até o Ep. 06 a história era contada pelo Vigia
-  em terceira pessoa.
+**Como isso se encaixa no formato do Vigia — DECISÃO DO USUÁRIO (12/11):** "gosto do estilo que estamos";
+o formato fica: o **Vigia continua contando** (terceira pessoa) e **trazendo os fatos reais** como temos feito.
+NÃO trocar para relato em primeira pessoa. Do material de retenção, adotar só o que melhora sem mudar o estilo:
+- Gancho de 0–30 s no meio da ação ou na frase mais assustadora (já fazemos; manter).
+- Tema/fato real enxuto e com cara de curiosidade; o contexto da história (quem, onde, qual a situação) chega
+  rápido e direto logo depois.
+- Escalada com 3 a 5 eventos, cada um pior que o anterior.
+- Clímax em frases curtas; detalhes sensoriais (som, cheiro, temperatura, textura) nas cenas-chave.
+- Quebra de expectativa (o que os personagens acham ≠ o que é).
+- Final com eco: uma frase do Vigia que fique na cabeça.
