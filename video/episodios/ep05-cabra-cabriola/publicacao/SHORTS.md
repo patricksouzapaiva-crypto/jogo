@@ -15,8 +15,8 @@ Poste **um por dia**, entre 12h–14h ou 19h–21h, a partir do dia seguinte ao 
 ## Arquivos
 | Short | Vídeo | Legenda | Capa |
 |---|---|---|---|
-| 1 — Quem tá falando aí? | `shorts_final/s1_quem_ta_falando.mp4` (~35 s) | `shorts_final/s1_quem_ta_falando.srt` | `capa_short1_quem_ta_falando.jpg` |
-| 2 — Nina | `shorts_final/s2_nina.mp4` (~33 s) | `shorts_final/s2_nina.srt` | `capa_short2_nina.jpg` |
+| 1 — Quem tá falando aí? | `shorts_final/s1_quem_ta_falando.mp4` (35 s) | `shorts_final/s1_quem_ta_falando.srt` | `capa_short1_quem_ta_falando.jpg` |
+| 2 — Nina | `shorts_final/s2_nina.mp4` (36 s) | `shorts_final/s2_nina.srt` | `capa_short2_nina.jpg` |
 | 3 — Olha pra baixo | `shorts_final/s3_olha_pra_baixo.mp4` (30 s) | `shorts_final/s3_olha_pra_baixo.srt` | `capa_short3_olha_pra_baixo.jpg` |
 
 **Capa:** no app do YouTube (celular), ao enviar o Short, toque no lápis da miniatura → escolher imagem da galeria.
