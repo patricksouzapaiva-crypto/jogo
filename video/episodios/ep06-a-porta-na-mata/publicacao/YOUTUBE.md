@@ -1,29 +1,33 @@
 # Publicação no YouTube — O Vigia, Ep. 06 "A porta na mata" (canal Último Abrigo)
 
-Vídeo: `O_Vigia_Ep06_A_porta_na_mata.mp4` (1920×1080, 14min35). Formato tema + história.
+Vídeo: `O_Vigia_Ep06_A_porta_na_mata.mp4` (1920×1080, 14min38; versão de 12/11 com as batidas reais). Formato tema + história.
 
-## Títulos (regra de 12/11: sem "Creepypasta", em português, até ~50 caracteres, gancho de curiosidade)
-1. **Éramos cinco. As lanternas eram seis.**  ← recomendado (37 car.: contradição que pede o clique)
-2. Achamos uma porta no meio da mata (33 car.)
-3. Alguém bateu do outro lado da porta (35 car.)
-4. Algo voltou da mata com a gente (31 car.)
+## Título (regra de 12/11: sem "Creepypasta", português, até ~50 caracteres, gancho de curiosidade)
+**Usar:** `Éramos cinco. As lanternas eram seis.` (37 car.)
+Contradição de números: o cérebro para pra conferir. Não entrega a porta nem o final, e a capa completa a pergunta.
 
-## Capas (as 3 no "Testar e comparar" do YouTube Studio)
-| Arquivo | O que mostra | Combina com |
+Reservas para o "Testar e comparar" de títulos, com estruturas diferentes:
+- `Nunca abra uma porta no meio da mata` (36 car.): aviso direto
+- `Algo voltou da mata com a gente` (31 car.): consequência em aberto
+
+## Capa (versão 3, 12/11: estilo filmagem achada) — as 3 no "Testar e comparar" do YouTube Studio
+A capa é um quadro da gravação da câmera do capacete de outro bombeiro: REC, hora, bateria acabando, "CAM 02 · CAPACETE",
+granulado, linhas de vídeo e lente distorcida. Ao lado da porta, um vulto parado na neblina.
+| Arquivo | Visual | Por quê |
 |---|---|---|
-| `capa_A_eram_seis.jpg` | as lanternas em volta do fogo + "ERAM SEIS." | títulos 2, 3 ou 4 (não com o 1: repete) |
-| `capa_B_alguem_bateu.jpg` | a porta azul sozinha na neblina + "ALGUÉM BATEU." | títulos 1, 2 ou 4 |
-| `capa_C_conta_de_novo.jpg` | o bombeiro de costas atravessando a porta + "CONTA DE NOVO." | qualquer título |
-Com o título 1: testar as capas B e C.
-Capa e título não repetem a mesma frase. Gerar de novo: `python3 fazer_capas.py`.
+| **`capa_v3_B_quem_voltou_noturna.jpg`** ← principal | visão noturna verde + **"QUEM VOLTOU?"** | no feed, o verde é a única capa dessa cor e o vermelho do texto salta em cima dele; o vulto lê melhor |
+| `capa_v3_A_quem_voltou.jpg` | câmera comum de noite, só a porta azul com cor + **"QUEM VOLTOU?"** | a mesma ideia, mais sóbria |
+| `capa_v3_C_conta_de_novo.jpg` | câmera comum + **"CONTA DE NOVO."** | conversa com o título (contagem) |
+Texto de 2 palavras à esquerda, longe do selo de duração. Capa e título nunca repetem a mesma frase.
+Gerar de novo: `python3 fazer_capas_v3.py` (as v2 e as antigas `capa_A/B/C` ficam como histórico).
 
 ## Descrição
 ```
-Nos Estados Unidos, guardas-florestais contam sobre escadas no meio da floresta, sem casa nenhuma em volta. Aqui no Brasil, quem trabalha em mata fechada conta outra coisa: portas. Uma porta de madeira, em pé no meio de uma clareira. Sem parede. E firme.
 Cinco bombeiros subiram a serra atrás de um trilheiro desaparecido. Na segunda noite, o subtenente contou as lanternas em volta do fogo. Eles eram cinco. As lanternas eram seis.
+E, no meio da clareira, tinha uma porta. De madeira, pintada de azul. Sem parede nenhuma. Alguém bateu… do outro lado.
 
-🕯️ O Vigia — Episódio 06: A porta na mata. Uma creepypasta brasileira.
-Histórias de terror psicológico, contadas pelo Vigia, aqui no Último Abrigo.
+🕯️ O Vigia — Episódio 06: A porta na mata.
+Nos Estados Unidos, guardas-florestais contam sobre escadas no meio da floresta. Aqui, quem trabalha em mata fechada conta outra coisa: portas. Uma creepypasta brasileira de terror psicológico, contada pelo Vigia, aqui no Último Abrigo.
 
 💬 Quantas pessoas tem na sua casa agora? Tem certeza? Conta aqui nos comentários.
 
@@ -74,7 +78,7 @@ Demais fotos e vídeos: Pixabay (licença Pixabay) e CC0. As imagens foram recor
 
 👁️ Inscreva-se no Último Abrigo e ative o sininho para não perder o próximo caso.
 
-#terror #creepypasta #lendasbrasileiras
+#terror #creepypasta #históriasdeterror
 ```
 
 ## Comentário fixado
