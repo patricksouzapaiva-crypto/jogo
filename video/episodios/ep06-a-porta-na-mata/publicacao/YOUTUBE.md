@@ -3,12 +3,18 @@
 Vídeo: `O_Vigia_Ep06_A_porta_na_mata.mp4` (1920×1080, 14min38; versão de 12/11 com as batidas reais). Formato tema + história.
 
 ## Título (regra de 12/11: sem "Creepypasta", português, até ~50 caracteres, gancho de curiosidade)
-**Usar:** `Éramos cinco. As lanternas eram seis.` (37 car.)
-Contradição de números: o cérebro para pra conferir. Não entrega a porta nem o final, e a capa completa a pergunta.
+**Usar:** `Abrimos uma porta na mata. Voltamos em seis.` (44 car.) — refeito em 12/11 a pedido do usuário
+- Estrutura "nós fizemos X… e Y": primeira pessoa e uma consequência que dá medo.
+- Promete a imagem que só este episódio tem, a porta no meio da mata, e a ameaça vem nos números: quem abriu
+  a porta não sabe quem voltou junto.
+- Fecha com a capa sem repetir: o título diz "voltamos em seis" e a capa pergunta **"QUEM VOLTOU?"**.
+- É verdade na história: na descida, a câmera mostra seis pessoas (cinco bombeiros e o resgatado). O título não mente,
+  só deixa a dúvida.
 
-Reservas para o "Testar e comparar" de títulos, com estruturas diferentes:
+Reservas para o "Testar e comparar" de títulos:
+- `Alguém bateu numa porta sem parede, na mata` (44 car.): situação impossível
 - `Nunca abra uma porta no meio da mata` (36 car.): aviso direto
-- `Algo voltou da mata com a gente` (31 car.): consequência em aberto
+- (antigo) `Éramos cinco. As lanternas eram seis.`: bom enigma, mas não mostra a porta nem cria risco
 
 ## Capa (versão 3, 12/11: estilo filmagem achada) — as 3 no "Testar e comparar" do YouTube Studio
 A capa é um quadro da gravação da câmera do capacete de outro bombeiro: REC, hora, bateria acabando, "CAM 02 · CAPACETE",
