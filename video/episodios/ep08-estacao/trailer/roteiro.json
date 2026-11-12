@@ -196,8 +196,8 @@
      "atraso": 0.0
     },
     {
-     "som": "ep08_pincel",
-     "volume_db": -10,
+     "som": "ep08_kanji",
+     "volume_db": -13,
      "em": "uma",
      "depois": false,
      "atraso": 0.5
@@ -250,8 +250,8 @@
      "atraso": 0.0
     },
     {
-     "som": "ep08_pincel",
-     "volume_db": -12,
+     "som": "ep08_kanji",
+     "volume_db": -14,
      "em": "pratos",
      "depois": false,
      "atraso": 0.0
@@ -316,22 +316,22 @@
    ],
    "sons": [
     {
-     "som": "ep08_pincel",
-     "volume_db": -9,
+     "som": "ep08_kanji",
+     "volume_db": -14,
      "em": "Um",
      "depois": false,
      "atraso": 0.0
     },
     {
-     "som": "ep08_pincel",
-     "volume_db": -9,
+     "som": "ep08_kanji",
+     "volume_db": -14,
      "em": "Dois",
      "depois": false,
      "atraso": 0.0
     },
     {
-     "som": "ep08_pincel",
-     "volume_db": -8,
+     "som": "ep08_kanji",
+     "volume_db": -13,
      "em": "Três",
      "depois": false,
      "atraso": 0.0
@@ -468,8 +468,8 @@
      "atraso": -0.6
     },
     {
-     "som": "ep08_pincel",
-     "volume_db": -12,
+     "som": "ep08_kanji",
+     "volume_db": -14,
      "em": "máscara",
      "depois": false,
      "atraso": 0.0

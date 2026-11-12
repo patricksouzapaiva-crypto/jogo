@@ -25,19 +25,19 @@ B.append({"fala": falas[1], "pausa_antes_s": 3.4, "cenas": [
    "dof": {"x": 0.53, "y": 0.5, "r": 0.2, "atraso": 1.6}, "atmos": {"poeira": 0.6, "vela": 0.5},
    "kanji": {"texto": "四谷怪談", "x": 0.82, "y": 0.5, "modo": "luz", "legenda": "Yotsuya Kaidan · 1825", "selo": "怨", "atraso": 0.5},
    "linha": {"anos": LINHA, "de": 1666, "atual": 1825, "dur": 3.5}}],
-  "sons": [fx("ep08_tinta", -10, "uma"), fx("ep08_pincel", -10, "uma", False, 0.5), fx("ep08_carimbo", -9, "voltou")],
+  "sons": [fx("ep08_tinta", -10, "uma"), fx("ep08_kanji", -13, "uma", False, 0.5), fx("ep08_carimbo", -9, "voltou")],
   "ambiente": {"som": "ep08_campo_noite", "volume_db": -24}})
 # 2 — Okiku (porta de correr, kanji vermelho com glitch)
 B.append({"fala": falas[2], "cenas": [{"imagem": R + "R03_okiku_poco_hokusai.jpg", "encaixe": "conter", "zoom": [1.0, 1.08], "entrada": "shoji",
    "atmos": {"poeira": 0.5}, "kanji": {"texto": "皿屋敷", "x": 0.17, "y": 0.5, "modo": "sangue", "legenda": "A mansão dos pratos", "selo": "呪", "glitch": True, "atraso": 0.6}}],
-  "sons": [fx("ep08_shoji", -10), fx("ep08_pincel", -12, "pratos")]})
+  "sons": [fx("ep08_shoji", -10), fx("ep08_kanji", -14, "pratos")]})
 # 3 — a contagem: um kanji por número, no ritmo da voz
 B.append({"fala": falas[3], "pausa_antes_s": 0.6, "cenas": [{"imagem": R + "R03_okiku_poco_hokusai.jpg", "encaixe": "conter", "zoom": [1.12, 1.22],
    "foco": [[0.5, 0.25], [0.5, 0.22]], "atmos": {"neblina": 0.5},
    "kanji": [{"texto": "一", "em": "Um", "x": 0.16, "y": 0.5, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
              {"texto": "二", "em": "Dois", "x": 0.84, "y": 0.42, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
              {"texto": "三", "em": "Três", "x": 0.5, "y": 0.72, "tam": 0.3, "modo": "sangue", "escrever": 0.6, "selo": "九"}]}],
-  "sons": [fx("ep08_pincel", -9, "Um"), fx("ep08_pincel", -9, "Dois"), fx("ep08_pincel", -8, "Três")]})
+  "sons": [fx("ep08_kanji", -14, "Um"), fx("ep08_kanji", -14, "Dois"), fx("ep08_kanji", -13, "Três")]})
 # 4 — o poço real: foto de dia (prova) → a mesma de noite, com neblina e kanji recortado
 B.append({"fala": falas[4], "pausa_antes_s": 0.8, "cenas": [
   {"imagem": R + "R11_poco_okiku_himeji_2.jpg", "zoom": [1.0, 1.04], "entrada": "shoji", "kanji": {"texto": "実在", "x": 0.85, "y": 0.42, "tam": 0.14, "modo": "placa", "fundo": "vermelho", "legenda": "Foto real · Himeji", "atraso": 0.2, "escrever": 0.6}},
@@ -48,7 +48,7 @@ B.append({"fala": falas[4], "pausa_antes_s": 0.8, "cenas": [
 B.append({"fala": falas[5], "pausa_antes_s": 1.2, "cenas": [{"imagem": I + "L02_kuchisake.jpg", "zoom": [1.0, 1.12], "foco": [[0.5, 0.5], [0.5, 0.42]], "entrada": "vela",
    "atmos": {"pelicula": 1.0}, "kanji": {"texto": "口裂け女", "x": 0.16, "y": 0.5, "modo": "sangue", "legenda": "A mulher da boca cortada", "glitch": True, "atraso": 1.6},
    "linha": {"anos": LINHA, "de": 1825, "atual": 1979, "dur": 3.5}}],
-  "sons": [fx("ep08_vela", -8, None, False, -0.6), fx("ep08_pincel", -12, "máscara")]})
+  "sons": [fx("ep08_vela", -8, None, False, -0.6), fx("ep08_kanji", -14, "máscara")]})
 # 6 — Hanako: celular na mão, foco nos pés
 B.append({"fala": falas[6], "cenas": [{"imagem": I + "L04_hanako_pes.jpg", "zoom": [1.04, 1.1], "foco": [[0.55, 0.6], [0.58, 0.7]], "mao": 0.6,
    "dof": {"x": 0.58, "y": 0.78, "r": 0.2, "atraso": 1.0}, "kanji": {"texto": "花子さん", "x": 0.16, "y": 0.48, "modo": "luz", "fundo": "nanquim", "legenda": "Hanako-san", "atraso": 0.4}}]})
