@@ -27,8 +27,9 @@ Realistic documentary photograph, 35mm film, Japan, cold desaturated palette, sl
 | **D06** | A dark country road at night in rural Japan, an old dark sedan stopped on the shoulder with headlights on and the driver's door closed, fog, rice fields. Seen from a distance. |
 | **D07** | Through a car's rear side window at night, a mountain road and dense black forest passing by, the dashboard glow, the back of the driver's head and shoulders only, blurry. |
 | **D08** | A smartphone screen glow in the dark, showing a generic map with a blue dot in a large empty green area, no app logos. |
-| **D09** | Filmed from a sidewalk at noon, a simple Brazilian house in Londrina with a window; through the glass, a family sitting at a lunch table seen from behind and blurry, no faces. Slightly from below, voyeuristic, handheld. |
-| **D10** | A Brazilian street name sign on a corner at noon, crossed out with black marker, with Japanese hiragana "きさらぎ" hand-written on it in black. Handheld, slight blur. |
+| **D09** | A backyard of a simple two-story Brazilian house in Londrina on a cloudy Sunday afternoon: about fifteen people seen FROM BEHIND, holding hands in a circle, heads bowed, praying; candles on the grass; a framed photo on a small easel turned away from the camera (we only see the back of the frame). The house behind them, with a closed window on the second floor. Shot vertically on a phone, handheld. |
+| **D10** | The same backyard vigil, same framing; on the second floor, behind the window glass, a woman standing still in a white dress, very long black hair falling in front of her face covering it completely, hands hanging limp; she looks down at the people praying. Subtle, barely noticeable at first glance. |
+| **D11** | Close crop of that second-floor window: the woman in white behind the glass, long black hair covering the whole face, reflection of the cloudy sky on the glass. Grainy, phone zoom quality. |
 
 ## Hamamatsu e a fábrica (estilo B)
 | Código | Prompt |
@@ -61,5 +62,5 @@ Realistic documentary photograph, 35mm film, Japan, cold desaturated palette, sl
 | **V03** | Phone flashlight footage walking on train tracks at night; the beam finds a single leg standing on the track ahead; the camera stops. |
 | **V04** | Static security-camera footage, black and white, timestamp, of a tiny rural platform at night; a lone figure with a backpack walks out of frame along the tracks; the lamp flickers. |
 | **V05** | Phone footage from a car back seat at night, mountain road, forest passing, the dashboard light, the driver only from behind. |
-| **V06** | Slow push-in toward a window from a sidewalk at noon, a family lunch table inside seen blurry through the glass, then the camera turns to the street sign. |
+| **V06** | Vertical phone video of a backyard prayer vigil seen from behind (people holding hands, candles), the two-story house in the background; very slow digital zoom toward the second-floor window, where a still figure in white with long hair over the face stands behind the glass. |
 | **V07** | Candles being blown out one by one in a dark tatami room, slow, smoke, until one remains. |

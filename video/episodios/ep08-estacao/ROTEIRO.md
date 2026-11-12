@@ -17,7 +17,8 @@ brasileira em Hamamatsu.
 fantasma (a roupa de enterro) e o vermelho do trem Enshū.
 **Estrutura de retenção (regra de 12/11):** gancho 0–30 s → tema curto → 6 blocos de lendas, cada um mais perto de
 hoje (1677 → 2004), cada um terminando numa pergunta que puxa o seguinte → a história da Dani com escalada em 5
-mensagens → clímax em frases curtas → virada → eco que vira para quem está assistindo (como a fita de *Ringu*).
+mensagens → clímax em frases curtas → virada (o vídeo da vigília e a moça na janela) → corte seco pro Vigia → eco que
+vira para quem está assistindo (como a fita de *Ringu*).
 
 ---
 
@@ -267,40 +268,50 @@ O ponto azul parou.
 E sumiu.
 *(silêncio — só o tambor, muito longe)*
 
-## A VIRADA
+## A VIRADA (final novo — ideia do usuário, 12/11)
 
 A polícia japonesa procurou a Daniela por semanas. O último trem daquela noite chegou ao fim da linha no horário
 normal. As câmeras não mostram ninguém descendo antes.
-A família fez tudo certo. Ligou pro consulado. Ligou pra fábrica. Rezou.
-Três dias depois, num almoço que ninguém conseguia comer, o celular de todo mundo vibrou ao mesmo tempo.
-Mensagem da Dani.
-Um vídeo.
-Gravado de fora. Da calçada. Na frente da casa deles, em Londrina.
-Pela janela, dava pra ver a família sentada na mesa. Almoçando. Olhando pro celular.
-A câmera chega mais perto do vidro. Bem devagar.
-No fundo, longe… um tambor. E um sino.
-O vídeo termina com o celular virando pra rua. Pra placa da rua.
-Alguém tinha riscado o nome por cima.
-E escrito, à mão: きさらぎ.
-
-## EPÍLOGO
-
-O grupo "Família 🏠" ainda existe.
-Ninguém tem coragem de sair. Ninguém tem coragem de apagar.
-Às vezes, perto da meia-noite no Japão… meio-dia aqui… aparece lá em cima: "Dani está digitando…"
-E ninguém responde.
-Porque todo mundo ali já entendeu a regra.
-Eles acompanharam tudo. Ao vivo. Mensagem por mensagem.
-E, no Japão, assistir… já é participar.
+A família fez tudo o que podia. Ligou pro consulado. Ligou pra fábrica. Ligou pra todo mundo.
+Nada.
+Então, num domingo à tarde, eles fizeram a última coisa que restava.
+*(estilo vídeo de celular na vertical, dentro do quadro; som de quintal: passarinho, vento, um cachorro longe)*
+Juntaram os parentes, os vizinhos, o pessoal da igreja. No quintal de casa, em Londrina.
+Velas acesas no chão. Uma foto da Dani, impressa, presa num cavalete.
+O Lucas segurou o celular e gravou.
+A mãe falou olhando pra câmera, com a voz quebrando:
+"A gente só quer a nossa filha de volta. Se alguém souber de alguma coisa… compartilha. E reza com a gente."
+E todo mundo rezou junto. De mãos dadas. De olhos fechados.
+Atrás deles, a casa. Dois andares. E, no andar de cima, a janela do quarto da Dani.
+O quarto que estava fechado desde que ela foi pro Japão.
+*(pausa)*
+O vídeo foi postado naquela noite. Compartilhado por milhares de pessoas. Em grupos de família, em perfis de
+desaparecidos, em páginas de oração.
+Ninguém da família reparou.
+Foi um desconhecido que comentou, três dias depois. Uma frase só:
+"Quem é a moça na janela de cima?"
+*(o mesmo vídeo de novo; o quadro vai se aproximando devagar da janela do segundo andar — sem música, só o vento
+e as vozes rezando)*
+Volta o vídeo. Repara na janela.
+Enquanto a família reza, de olhos fechados… tem alguém lá em cima.
+De pé. Parada. Olhando pra baixo, pra eles.
+Roupa branca.
+O cabelo preto, comprido, caído na frente dos olhos.
+As mãos soltas na frente do corpo.
+Igual a uma pintura de mil setecentos e cinquenta.
+*(zoom final, lento, até a janela ocupar a tela — o cabelo, o branco — e CORTE seco pro Vigia, em silêncio)*
 
 ## FECHO — Vigia
 
+A família da Daniela pediu que todo mundo assistisse. Que compartilhasse. Que olhasse.
+E todo mundo olhou.
 A Okiku conta pratos no fundo de um poço há trezentos anos. A Oiwa ainda cobra visita de quem conta a história
 dela. E uma estação que não existe… ainda recebe passageiros.
-O terror japonês não precisa de culpado. Só precisa de alguém que olhe.
-E você olhou.
-Você acompanhou a Dani do primeiro áudio até o último vídeo.
-Então, se hoje, voltando pra casa, o seu ônibus demorar um pouco mais pra parar…
+E às vezes… devolve.
+Não do jeito que foram.
+O terror japonês não precisa de culpado. Ele só precisa de alguém que olhe.
+E você acabou de olhar pra aquela janela.
+Então, se hoje à noite, voltando pra casa, o seu ônibus demorar um pouco mais pra parar…
 não manda mensagem pra ninguém.
 E me conta aqui nos comentários: de todas essas lendas… qual você não teria coragem de ouvir até o fim?
 *(vinheta do Vigia)*
@@ -336,7 +347,36 @@ E me conta aqui nos comentários: de todas essas lendas… qual você não teria
   ferrovia trocou temporariamente a placa de Saginomiya para Kisaragi e vendeu bilhetes que esgotaram.
 - **Brasileiros no Japão:** Hamamatsu é uma das maiores comunidades brasileiras do país; abertura para
   descendentes em 1990; ~212 mil brasileiros no Japão (dez/2024). Diferença Brasília–Japão: 12 horas.
-- **Ficção:** a Daniela, a família, o grupo, o vídeo final. A lenda de 2004 é contada como lenda de internet.
+- **Ficção:** a Daniela, a família, o grupo, o vídeo da vigília no quintal e a figura na janela. A lenda de 2004 é contada como lenda de internet.
+
+## Direção de edição — "a nossa obra-prima" (pedido do usuário, 12/11)
+**Kanji sobre a imagem, nunca só tela preta** (motor novo: `cena.kanji`, 5 modos — testado em `previas/teste_kanji.mp4`):
+| Trecho | Kanji | Modo / onde |
+|---|---|---|
+| Gancho | きさらぎ | `placa` (pincel preto) sobre a placa de madeira da plataforma |
+| Tema | 呪い (maldição) | `recorte` — as letras feitas da própria imagem escura |
+| Cem velas | 百物語 | `tinta` sobre a gravura da reunião (papel claro) |
+| Ōkyo | 幽霊 · 怨霊 | `luz` ao lado da Oyuki; 怨霊 em `sangue` quando fala do onryō |
+| Oiwa | 四谷怪談 / お岩 | `luz` sobre a lanterna de Hokusai |
+| Okiku | 一 二 三 … 九 | **um número por vez, no ritmo da contagem da voz**, `tinta`→`sangue` no nove; depois 皿屋敷 |
+| Peônia | 牡丹灯籠 | `luz` sobre o esqueleto de Kuniyoshi |
+| Ringu | 七日 (sete dias) | `recorte` sobre a TV chiando |
+| Kuchisake | 私、きれい？ ("eu sou bonita?") · 口裂け女 | `sangue` horizontal |
+| Hanako / Teke Teke / boneca | 花子さん · テケテケ · お菊人形 | `luz` / `recorte`, curtos |
+| Kisaragi real | きさらぎ駅 · 浜松 · 出稼ぎ | `luz` mincho horizontal sobre a estação real; 出稼ぎ ("dekassegui") sobre a fábrica |
+| Final | (nenhum) | a janela fica limpa — o silêncio é o efeito |
+Sempre com a tradução pequena em português ao lado (`legenda`), entrando depois da pincelada.
+
+**Cortes:** sempre no fim de palavra/frase (o motor já corta na fronteira); nas partes documentais, um corte a cada
+3–5 s com zoom lento até o detalhe que a voz cita; na história, telas do grupo e vídeos de celular alternando;
+no clímax, cortes mais curtos (2 s) acompanhando as frases curtas; antes da janela, um plano longo e parado.
+**Gravuras:** tratamento "museu" (inteira, fundo desfocado dela mesma), sem as barras de cor das digitalizações;
+zoom até o rosto/mão citado.
+**Áudio:** voz Algenib (Gemini), pausas preservadas; trilha de caixinha com variação japonesa, baixa o episódio
+inteiro; sons-chave do ElevenLabs altos e sozinhos (freio do trem, sino da plataforma, tambor, o "Ei!", a porta do
+carro); som de lugar nos vídeos de celular; no fim, a música SAI antes da janela — só vento e reza — e o corte pro
+Vigia é seco e silencioso (sem susto: nada alto no corte).
+**Voz da mãe no vídeo da vigília:** uma frase, com som de quintal (é "voz com som de lugar") — opcional.
 
 ## Notas de produção
 - **Imagens reais (já baixadas em `imagens_reais/`, com CREDITOS.txt):** R01 Oiwa na lanterna (Hokusai), R03 Okiku
@@ -361,4 +401,4 @@ E me conta aqui nos comentários: de todas essas lendas… qual você não teria
   pentatônica in, koto/shamisen bem discretos). Sons-chave pela regra de 12/11: ElevenLabs, altos e isolados.
 
 **Shorts previstos:** (1) a Okiku contando os pratos + o poço real; (2) "Eu sou bonita?" (1979, escolas em grupo);
-(3) a Dani: "não existe estação com esse nome" / "eu tô em cima dela".
+(3) a vigília no quintal: "Quem é a moça na janela de cima?" (termina no zoom, sem o corte).

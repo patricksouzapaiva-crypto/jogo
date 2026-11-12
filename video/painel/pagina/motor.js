@@ -31,7 +31,7 @@ function carregarImg(src) {
 window.preparar = async function (dados) {
   D = dados;
   cv.width = D.W; cv.height = D.H;
-  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton"];
+  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho"];
   for (const f of fams) for (const p of ["400", "500", "700", "800"]) { try { await document.fonts.load(`${p} 40px "${f}"`); } catch (e) {} }
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
@@ -594,6 +594,121 @@ function desenharCena(c, t, a = 1) {
   c._tf = [ox, oy, iw, ih];   // posição da imagem na tela (para a revelação achar a criatura)
 }
 
+// ------------------------------------------------------------------ kanji sobre a imagem (Ep. 08, 12/11)
+// c.kanji = [{texto:"きさらぎ", t|atraso, x, y (fração da tela, centro), tam (fração da altura de um caractere),
+//   vertical (padrão true), modo:"tinta"|"luz"|"sangue"|"recorte"|"placa", fonte:"pincel"|"mincho",
+//   escrever (s para escrever tudo), legenda:"KISARAGI · ESTAÇÃO", lado_legenda:"dir"|"esq"|"baixo",
+//   sombra (0–1: escurece em volta p/ ler), opacidade, sair (s de saída antes do fim da cena)}]
+// O texto é "escrito" de cima pra baixo (ou da esquerda pra direita) com borda macia e textura de pincel seco.
+let _ruidoPincel = null;
+function ruidoPincel() {
+  if (_ruidoPincel) return _ruidoPincel;
+  const n = 192, oc = document.createElement("canvas"); oc.width = oc.height = n;
+  const g = oc.getContext("2d"), im = g.createImageData(n, n);
+  for (let i = 0; i < n * n; i++) {   // fibras de pincel: ruído esticado na horizontal + falhas raras
+    const y = Math.floor(i / n), x = i % n;
+    const v = 0.78 + 0.22 * Math.sin(y * 0.9 + Math.sin(x * 0.05) * 3) * Math.random() + (Math.random() < 0.025 ? -0.6 : 0);
+    im.data[i * 4 + 3] = Math.max(0, Math.min(255, v * 255)); im.data[i * 4] = im.data[i * 4 + 1] = im.data[i * 4 + 2] = 255;
+  }
+  g.putImageData(im, 0, 0); _ruidoPincel = oc; return oc;
+}
+let _ocK = null, _ocK2 = null;
+function kanjiSobre(c, t) {
+  const { W, H } = D;
+  for (const K of c.kanji) {
+    const t0 = K.t ?? (c.t0 + (K.atraso ?? 0.5));
+    if (t < t0) continue;
+    const vert = K.vertical !== false, txt = [...(K.texto || "")];
+    const tam = Math.round(H * (K.tam ?? (vert ? 0.17 : 0.2)));
+    const fam = K.fonte === "mincho" ? '800 ' + tam + 'px "Shippori Mincho"' : '400 ' + tam + 'px "Yuji Syuku"';
+    const passo = tam * (vert ? 1.02 : 1.0);
+    const cx = W * (K.x ?? 0.78), cy = H * (K.y ?? 0.5);
+    const larg = vert ? tam : txt.length * passo, alt = vert ? txt.length * passo : tam;
+    // deriva lenta (vivo, nunca parado) e saída
+    const vida = Math.max(0.5, c.t1 - t0), e = easeInOut(lin(t, t0, vida));
+    const sair = K.sair ?? 0.6, aOut = 1 - easeInOut(lin(t, c.t1 - sair, sair));
+    const dy = -H * 0.012 * e, esc = 1 + 0.025 * e;
+    if (!_ocK) { _ocK = document.createElement("canvas"); _ocK2 = document.createElement("canvas"); }
+    _ocK.width = _ocK2.width = W; _ocK.height = _ocK2.height = H;
+    const g = _ocK.getContext("2d");
+    g.clearRect(0, 0, W, H); g.save();
+    g.translate(cx, cy + dy); g.scale(esc, esc); g.translate(-cx, -cy);
+    g.font = fam; g.fillStyle = "#fff"; g.textAlign = "center"; g.textBaseline = "middle";
+    txt.forEach((ch, i) => {
+      const px = vert ? cx : cx - larg / 2 + passo * (i + 0.5), py = vert ? cy - alt / 2 + passo * (i + 0.5) : cy;
+      g.fillText(ch, px, py);
+    });
+    g.restore();
+    // pincel: textura seca + revelação progressiva com borda macia (frente de tinta)
+    g.globalCompositeOperation = "destination-in";
+    g.fillStyle = g.createPattern(ruidoPincel(), "repeat"); g.fillRect(0, 0, W, H);
+    const dur = K.escrever ?? Math.min(2.2, 0.35 * txt.length + 0.4), p = easeOut(lin(t, t0, dur)), pena = tam * 0.6;
+    let gr;
+    if (vert) { const y0 = cy - alt / 2 - pena, y1 = cy + alt / 2; const fy = y0 + (y1 - y0 + pena) * p; gr = g.createLinearGradient(0, fy - pena, 0, fy); }
+    else { const x0 = cx - larg / 2 - pena, x1 = cx + larg / 2; const fx = x0 + (x1 - x0 + pena) * p; gr = g.createLinearGradient(fx - pena, 0, fx, 0); }
+    gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    g.globalCompositeOperation = "source-over";
+    const op = (K.opacidade ?? 1) * aOut;
+    ctx.save();
+    // área de leitura: escurece em volta do texto, sem caixa (vinheta local)
+    const sb = K.sombra ?? (K.modo === "tinta" ? 0 : 0.45);
+    if (sb > 0) {
+      const rg = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(larg, alt) * 0.9);
+      rg.addColorStop(0, `rgba(0,0,0,${sb * op})`); rg.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+    }
+    const tinge = (cor) => {   // pinta a máscara de uma cor (em _ocK2)
+      const h = _ocK2.getContext("2d"); h.globalCompositeOperation = "source-over"; h.clearRect(0, 0, W, H);
+      h.drawImage(_ocK, 0, 0); h.globalCompositeOperation = "source-in"; h.fillStyle = cor; h.fillRect(0, 0, W, H);
+      h.globalCompositeOperation = "source-over"; return _ocK2;
+    };
+    const modo = K.modo || "luz";
+    if (modo === "tinta") {            // nanquim: some no papel claro, escurece a figura (gravuras)
+      ctx.globalAlpha = 0.9 * op; ctx.globalCompositeOperation = "multiply"; ctx.drawImage(tinge("#16100c"), 0, 0);
+      ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 0.22 * op; ctx.drawImage(_ocK2, 0, 0);
+    } else if (modo === "sangue") {     // vermelho que "entra" na imagem + brilho
+      ctx.globalAlpha = 0.55 * op; ctx.filter = `blur(${Math.round(tam * 0.06)}px)`; ctx.drawImage(tinge("#ff2a1e"), 0, 0); ctx.filter = "none";
+      ctx.globalAlpha = 0.9 * op; ctx.drawImage(tinge("#b0141a"), 0, 0);
+      ctx.globalCompositeOperation = "overlay"; ctx.globalAlpha = 0.6 * op; ctx.drawImage(tinge("#ff5a40"), 0, 0);
+    } else if (modo === "recorte") {    // as letras SÃO a imagem, clareada: a figura aparece por dentro do kanji
+      const h = _ocK2.getContext("2d"); h.globalCompositeOperation = "source-over"; h.clearRect(0, 0, W, H);
+      h.filter = "brightness(2.3) contrast(1.25) saturate(0.6)"; h.drawImage(cv, 0, 0); h.filter = "none";
+      h.globalCompositeOperation = "destination-in"; h.drawImage(_ocK, 0, 0); h.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = 0.5 * op; ctx.filter = `blur(${Math.round(tam * 0.05)}px)`; ctx.drawImage(tinge("rgba(255,250,235,1)"), 0, 0); ctx.filter = "none";
+      const h2 = _ocK2.getContext("2d");   // refaz o recorte (tinge sobrescreveu)
+      h2.clearRect(0, 0, W, H); h2.filter = "brightness(2.3) contrast(1.25) saturate(0.6)"; h2.drawImage(cv, 0, 0); h2.filter = "none";
+      h2.globalCompositeOperation = "destination-in"; h2.drawImage(_ocK, 0, 0); h2.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = op; ctx.drawImage(_ocK2, 0, 0);
+    } else if (modo === "placa") {      // tinta preta firme (placa de estação escrita à mão), sem brilho
+      ctx.globalAlpha = 0.95 * op; ctx.drawImage(tinge("#141210"), 0, 0);
+    } else {                            // "luz": branco-papel com brilho, mesclado (screen + overlay) na imagem escura
+      ctx.globalAlpha = 0.5 * op; ctx.filter = `blur(${Math.round(tam * 0.07)}px)`; ctx.drawImage(tinge("#f4ecd8"), 0, 0); ctx.filter = "none";
+      ctx.globalCompositeOperation = "screen"; ctx.globalAlpha = 0.85 * op; ctx.drawImage(_ocK2, 0, 0);
+      ctx.globalCompositeOperation = "overlay"; ctx.globalAlpha = 0.7 * op; ctx.drawImage(_ocK2, 0, 0);
+    }
+    ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
+    // legenda em português (pequena, espaçada), entra depois que o kanji termina de ser escrito
+    if (K.legenda) {
+      const al = easeOut(lin(t, t0 + dur * 0.85, 0.6)) * op;
+      if (al > 0) {
+        const fs = Math.round(H * 0.026);
+        ctx.font = `700 ${fs}px "Inter", "Oswald", sans-serif`; ctx.fillStyle = `rgba(240,234,220,${0.92 * al})`;
+        ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 14;
+        const lado = K.lado_legenda || (vert ? (K.x ?? 0.78) > 0.5 ? "esq" : "dir" : "baixo");
+        const letras = K.legenda.toUpperCase().split("").join(" ");
+        if (lado === "baixo") { ctx.textAlign = "center"; ctx.fillText(letras, cx, cy + alt / 2 + fs * 1.6); }
+        else {
+          ctx.save(); ctx.translate(lado === "esq" ? cx - larg * 0.75 : cx + larg * 0.75, cy); ctx.rotate(Math.PI / 2);
+          ctx.textAlign = "center"; ctx.fillText(letras, 0, 0); ctx.restore();
+        }
+        ctx.shadowBlur = 0;
+      }
+    }
+    ctx.restore();
+  }
+}
+
 function cenas(t) {
   const { W, H } = D, T = D.tema;
   ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
@@ -606,6 +721,7 @@ function cenas(t) {
   } else if (c.entrada === "preto" && t < c.t0 + dt) {
     desenharCena(c, t, easeInOut(lin(t, c.t0, dt)));
   } else desenharCena(c, t);
+  if (c.kanji) kanjiSobre(c, t);
   // revelação: clareia as sombras só na região onde a criatura sempre esteve e desenha um círculo vermelho
   if (c.revelar) {
     const R = c.revelar, k = easeInOut(lin(t, c.t0 + (R.atraso ?? 0.6), R.duracao ?? 1.4));

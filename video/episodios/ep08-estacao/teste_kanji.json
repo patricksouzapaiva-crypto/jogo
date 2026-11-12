@@ -1,0 +1,125 @@
+{
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "formato": "16:9",
+ "vigia_padrao": false,
+ "batidas": [
+  {
+   "fala": "Oiwa voltou numa lanterna de papel, seis anos depois da estreia.",
+   "cena": {
+    "imagem": "imagens_reais/R01_oiwa_lanterna_hokusai.jpg",
+    "encaixe": "conter",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "kanji": {
+     "texto": "四谷怪談",
+     "x": 0.86,
+     "y": 0.5,
+     "tam": 0.15,
+     "modo": "luz",
+     "legenda": "Yotsuya Kaidan · 1825",
+     "atraso": 0.6
+    }
+   }
+  },
+  {
+   "fala": "E toda noite, do fundo do poço, sobe uma voz contando os pratos.",
+   "cena": {
+    "imagem": "imagens_reais/R03_okiku_poco_hokusai.jpg",
+    "encaixe": "conter",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "kanji": {
+     "texto": "皿屋敷",
+     "x": 0.17,
+     "y": 0.5,
+     "tam": 0.17,
+     "modo": "sangue",
+     "legenda": "A mansão dos pratos",
+     "atraso": 0.5
+    }
+   }
+  },
+  {
+   "fala": "O poço é real. Fica dentro do castelo de Himeji.",
+   "cena": {
+    "imagem": "imagens_reais/R10_poco_okiku_himeji.jpg",
+    "zoom": [
+     1.02,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ],
+    "kanji": {
+     "texto": "お菊井戸",
+     "x": 0.8,
+     "y": 0.45,
+     "tam": 0.16,
+     "modo": "recorte",
+     "legenda": "O poço da Okiku",
+     "atraso": 0.4
+    }
+   }
+  },
+  {
+   "fala": "Um esqueleto do tamanho do palácio. Ele não ataca. Ele só olha.",
+   "cena": {
+    "imagem": "imagens_reais/R05_esqueleto_detalhe.jpg",
+    "encaixe": "conter",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "幽霊",
+     "x": 0.2,
+     "y": 0.5,
+     "tam": 0.22,
+     "modo": "tinta",
+     "legenda": "Yūrei · fantasma",
+     "atraso": 0.4
+    }
+   }
+  },
+  {
+   "fala": "Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo sabia ler.",
+   "cena": {
+    "imagem": "imagens_reais/R14_saginomiya_plataforma.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "きさらぎ駅",
+     "x": 0.5,
+     "y": 0.5,
+     "tam": 0.13,
+     "vertical": false,
+     "modo": "luz",
+     "fonte": "mincho",
+     "legenda": "Kisaragi · estação",
+     "atraso": 0.5
+    }
+   }
+  }
+ ],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "preencher_pausas": false,
+ "modo": "cenas",
+ "grao": 0.2
+}

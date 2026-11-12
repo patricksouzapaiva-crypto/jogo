@@ -762,7 +762,13 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         t0 = rel.inicio(k)
         cenas = ([b["cena"]] if b.get("cena") else []) + b.get("cenas", [])
         for c in cenas:
-            c = dict(c)
+            c = json.loads(json.dumps(c))
+            # 12/11 (Ep. 08): kanji/texto japonês SOBRE a imagem (pincel, mesclado à figura). "em": palavra → "t" (s)
+            if c.get("kanji"):
+                c["kanji"] = [c["kanji"]] if isinstance(c["kanji"], dict) else c["kanji"]
+                for kj in c["kanji"]:
+                    if kj.get("em"):
+                        kj["t"] = rel.em(k, kj.pop("em"))
             if not D["cenas"]:
                 c["t0"] = 0.0
             elif D["cenas"][-1].get("abertura") and len(D["cenas"]) == 1:
