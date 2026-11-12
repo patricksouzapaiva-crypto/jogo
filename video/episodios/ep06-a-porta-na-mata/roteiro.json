@@ -39,7 +39,7 @@
  ],
  "musica": {
   "som": "ep06_cx_tensao",
-  "volume_db": -31
+  "volume_db": -35
  },
  "abertura": {
   "texto": "O VIGIA\nEP. 06 · A PORTA NA MATA",
@@ -87,7 +87,7 @@
    },
    "musica": {
     "som": "ep06_cx_tensao",
-    "volume_db": -31
+    "volume_db": -35
    }
   },
   {

@@ -396,9 +396,9 @@ amb(165, "ep06_rua_noite", A_DB + 4)
 amb(179, "nenhum")
 
 # ================================================================ MÚSICA (canal "trilhas"): fundo ↔ tensão, nunca silêncio
-F_DB, T_DB = -31, -31
+F_DB, T_DB = -35, -35
 # Pedido do usuário (12/11): a trilha "caixinha — tensão" no episódio INTEIRO, contínua (sem reiniciar),
-# mais baixa que a do rascunho. Volume: −31 + 12 de ganho = −19 dB.
+# mais baixa que a do rascunho (o usuário pediu "um pouco mais baixo" 2 vezes). Volume: −35 + 12 = −23 dB.
 mus(0, "ep06_cx_tensao", T_DB)
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
