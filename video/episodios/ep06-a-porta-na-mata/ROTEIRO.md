@@ -1,7 +1,7 @@
-# O Vigia — Ep. 06 "A porta na mata" (v3 — APROVADO pelo usuário em 11/11)
+# O Vigia — Ep. 06 "A porta na mata" — ROTEIRO FINAL (narrado e publicado assim, 12/11)
 
-Título no YouTube: **Se achar uma porta no meio da mata, não abra | Creepypasta**
-Alternativas: *As portas da mata | Creepypasta* · *Éramos cinco. Contamos seis. | Creepypasta*
+Título no YouTube (regra de 12/11): **Éramos cinco. As lanternas eram seis.**
+Alternativas: *Achamos uma porta no meio da mata* · *Alguém bateu do outro lado da porta* · *Algo voltou da mata com a gente*
 Capa (texto diferente do título): **"CONTA DE NOVO."** ou **"ERAM SEIS."**
 
 **Ideia do usuário:** no Brasil não são escadas, são portas no meio da mata, sem parede e firmes. Bombeiros
@@ -33,7 +33,7 @@ testemunha ocular — a maioria das condenações de inocentes revertidas por DN
 "tinha certeza" (Innocence Project). Lenda, nomes e caso são ficção.
 
 **Imagem:** os ferimentos são CONTADOS, nunca mostrados (no máximo tala, atadura, mão enfaixada).
-**Vozes de personagem (🎙):** só o cabo Caio — quatro falas.
+**Vozes de personagem:** nenhuma. As falas do Caio (🎙) foram testadas com voz própria e o usuário achou artificial: o Vigia narra tudo.
 
 ---
 
