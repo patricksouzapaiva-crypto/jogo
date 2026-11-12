@@ -561,7 +561,7 @@ a pausa seguinte (`trocar_vozes.py` faz isso e mantém a duração do vídeo).
 **Pacote de publicação (11/11):** só legenda em português. NÃO gerar legendas nem título/descrição traduzidos
 (espanhol/inglês) — o usuário não tem como enviar.
 
-## 15. Estrutura de retenção (orientação do usuário, 12/11/2026) — vale a partir do Ep. 07
+## 15. Estrutura de retenção (orientação do usuário, 12/11/2026) — SÓ para os próximos roteiros (Ep. 07 em diante; o Ep. 06 sai como está)
 Diagnóstico: a introdução costuma ser lenta; se os primeiros 30–45 s não prendem, a maioria sai.
 
 | Parte | Tempo | O que fazer |
@@ -579,7 +579,7 @@ tem alguém lá").
 Gancho bom × ruim: ruim "Eu estava acampando com meus amigos quando começamos a ouvir barulhos…"; bom "As
 pegadas paravam exatamente na entrada da minha tenda. Não havia pegadas saindo. E eu estava sozinho."
 
-**Como isso se encaixa no formato do Vigia (proposta, aguardando o usuário):**
+**Como isso se encaixa no formato do Vigia (proposta; mostrar no roteiro do Ep. 07 para o usuário confirmar):**
 - O bloco de "tema" (fato real) NÃO fica mais entre o gancho e o contexto: no máximo 20–30 s dentro do
   contexto, ou vira a 1ª inserção do Vigia, depois do primeiro evento da escalada.
 - Primeira pessoa: a história é o RELATO de quem viveu ("eu"), e o Vigia só abre a moldura em uma frase
