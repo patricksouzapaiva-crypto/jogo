@@ -38,9 +38,9 @@ Realistic documentary photograph, 35mm film, Japan, cold desaturated palette, sl
 | **H02** | A woman seen from behind in a factory uniform with a backpack, waiting alone on a lit suburban Japanese train platform at night. |
 
 ## O Japão antigo e os fantasmas (estilo B, mas pode ser mais escuro e teatral)
+(As lendas sem imagem boa — Oyuki, Kuchisake-onna, boneca Okiku, Hanako, Teke Teke, lanterna de peônia, cem velas — vão com referência e prompt próprio, mandados no chat em 12/11.)
 | Código | Prompt |
 |---|---|
-| **J01** | An Edo-period tatami room at night lit by dozens of candles in a circle, most already blown out, thin smoke rising, shoji paper walls, nobody visible. |
 | **J02** | One single candle left burning in a dark tatami room, the paper wall behind it showing the faint shadow of a tall figure with long loose hair. |
 | **J03** | An old Japanese stone well in an overgrown garden at night, a wooden lid half open, mist rising from inside. |
 | **J04** | Looking down into a deep old stone well from above, darkness, and long black hair floating on the dark water at the bottom. |
@@ -49,10 +49,6 @@ Realistic documentary photograph, 35mm film, Japan, cold desaturated palette, sl
 | **J07** | A kabuki theatre stage in darkness, a single spotlight on an empty stage with a paper lantern and a white sheet; old wooden theatre. |
 | **J08** | An old CRT television in a dark Japanese apartment showing only static, the static light on the tatami floor; a VHS tape on the floor. |
 | **J09** | An old rotary telephone on a low table in a dark Japanese room, the phone off the hook. |
-| **J10** | A Japanese residential street at dusk in 1979, a woman seen from behind under a street lamp wearing a white surgical mask strap visible behind the ear, long coat; a child's school backpack (randoseru) on the sidewalk. |
-| **J11** | The third stall door of an old Japanese school girls' bathroom, slightly open, dim light, tiled floor, nobody visible. |
-| **J12** | Train tracks at dusk in Hokkaido, snow, a crossing gate, empty, a long scratch mark in the snow along the rails. |
-| **J13** | An old traditional Japanese doll in a glass case in a Buddhist temple, its long black hair falling far past its knees, candles and incense (no realistic human face: the doll's face in shadow). |
 
 ## Clipes no Flow (5 a 8 s; estilo celular ou câmera de segurança; sem pessoas de frente)
 | Código | Prompt |
