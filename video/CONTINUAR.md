@@ -136,7 +136,7 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - Render: `python3 gradar.py && python3 trocar_vozes.py && python3 montar_roteiro.py && python3 ../../painel/gerar.py roteiro.json previas/ep06_rascunho.mp4 --rascunho`
   NÃO rodar gradar.py com render em andamento (reescreve os clipes de grade/).
 
-## Vigia falando (lip-sync) — teste pendente (12/11/2026)
+## Vigia falando (lip-sync) — testado em 12/11/2026: funcionou (traço mantido, boca sincronizada); custo 379 créditos por clipe de ~8 s; vídeo sai em https://manymotions.com + caminho do result.video
 - Ferramenta: conector **ManyMotions**, modelo `fal-ai/kling-video/ai-avatar/v2/standard`
   (`media_forge_generate`, type video, params `{image_url, audio_url, prompt}`); arquivos sobem com
   `video_editor_request_upload` + PUT. Exige plano ativo na conta conectada (deu `billing_required` antes).
