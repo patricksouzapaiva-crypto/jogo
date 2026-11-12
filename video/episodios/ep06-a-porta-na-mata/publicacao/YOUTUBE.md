@@ -34,25 +34,25 @@ CAPÍTULOS
 1:34 Os três que eram quatro
 1:52 A busca
 2:11 A clareira que não estava no mapa
-2:55 As batidas
-3:26 O Caio abriu
-4:05 A primeira noite
-4:40 O riacho
-5:19 Você tem certeza do que viu?
-5:51 O Remedo
-6:22 O estalo
-6:49 "Me amarra."
-7:59 Três da manhã
-8:28 Seis mosquetões
-8:43 E se for eu?
-9:24 O que ele quer
-9:56 A câmera
-10:34 Cinco na tela, seis no olho
-11:15 O trilheiro
-11:52 Se já abriu…
-12:18 Três dias depois
-12:36 A janela
-13:33 Conta de novo
+2:56 As batidas
+3:29 O Caio abriu
+4:08 A primeira noite
+4:43 O riacho
+5:22 Você tem certeza do que viu?
+5:54 O Remedo
+6:25 O estalo
+6:52 "Me amarra."
+8:02 Três da manhã
+8:31 Seis mosquetões
+8:46 E se for eu?
+9:27 O que ele quer
+9:59 A câmera
+10:37 Cinco na tela, seis no olho
+11:18 O trilheiro
+11:55 Se já abriu…
+12:21 Três dias depois
+12:39 A janela
+13:36 Conta de novo
 
 Fatos reais citados: as histórias das "escadas na floresta", contadas na internet a partir de 2015 por um suposto guarda-florestal dos Estados Unidos; a travessia da Geórgia do Sul por Ernest Shackleton, Frank Worsley e Tom Crean (1916), em que os três relataram a sensação de um quarto companheiro; e a identificação errada por testemunhas oculares, presente na maioria das condenações revertidas por exame de DNA nos Estados Unidos (Innocence Project). A lenda do Remedo, os bombeiros e o caso são ficção.
 Imagens, vozes e trilha produzidas com auxílio de inteligência artificial.

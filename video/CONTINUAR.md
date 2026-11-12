@@ -149,3 +149,14 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   Avisar quantos clipes antes de gerar (gasta créditos).
 - API do Google (chave grátis): vídeo (Gemini Omni) e imagem (Nano Banana) têm limite 0 — só TTS funciona.
 - Plano B grátis: boca animada pela voz (poses com boca fechada/aberta trocadas pelo volume da narração).
+
+## 12/11 — Ep. 06 v3 (batidas reais) e Shorts refeitos
+- Ep. 06 refeito com batidas reais do ElevenLabs (`ep06_batidas_v2`, `_fracas_v2`), `efeitos_pico_max` -3, pausas de
+  isolamento (1,6 s antes da batida 40; 1,4 s antes da 44). Rangido da porta baixado para -15 (a -11 subia 2 dB acima
+  da voz). Final: `previas/ep06_final_v3.mp4` → entrega `previas/O_Vigia_Ep06_A_porta_na_mata.mp4`. Tempos +3 s depois de
+  2:55: legendas e capítulos do YOUTUBE.md já regerados.
+- Shorts do Ep. 05 (1 e 2) e do Ep. 06 (1 e 2) refeitos; capas com texto na zona segura (y < ~1450) e sem repetir o título.
+- **Disco:** cada render final deixa ~5 GB em `/tmp/painel_*` se falhar. Antes de um render longo, `df -h /`; apague as
+  pastas antigas uma a uma (`rm -r /tmp/painel_XXXX`). Um render morreu em 12/11 por "No space left on device".
+- Ep. 07: sons aprovados — corrente 5 (`ep07_corrente_base` + derivados longe/chegando/para/vai/rapida), respiração da
+  criatura (`Rcriatura_a` → `ep07_respiracao_porta`/`_nuca`), gritos longe/perto. Falta: imagens do usuário.

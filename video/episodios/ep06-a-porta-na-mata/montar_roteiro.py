@@ -190,7 +190,7 @@ pausa(54, 1.2); pausa(55, 1.6)
 fx(39, "bateram", "ep06_batidas_v2", -5)                         # 12/11: batidas reais (ElevenLabs), bem mais altas — o usuário achou fracas
 fx(43, "cansado", "ep06_batidas_fracas_v2", -9)
 pausa(40, 1.6); pausa(44, 1.4)                                       # as batidas soam SOZINHAS, sem narração por cima
-fx(47, "abriu", "ep06_porta_range_v2", -11)
+fx(47, "abriu", "ep06_porta_range_v2", -15)  # 12/11: -11 ficou 2 dB acima da voz (salto)
 fx(52, "Devagar", "ep06_porta_range_v2", -15)
 
 # ================================================================ PARTE 3 — a primeira noite
