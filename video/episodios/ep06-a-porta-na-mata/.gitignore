@@ -5,3 +5,6 @@ previas/
 busca/*_res/
 busca/*.log
 publicacao/shorts_final/*.mp4
+shorts/*.mp4
+shorts/*.log
+publicacao/shorts_final/*.mp4
