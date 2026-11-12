@@ -1115,7 +1115,7 @@ function telaMapa(c, t) {   // mapa de celular "de verdade": cidade, arrozais, r
   _telefone(t, (px, py, pw, ph, u) => {
     const MW = pw * 1.35, MH = ph * 1.12, r = _semente("mapa2");
     const rota = [[0.12, 0.88], [0.2, 0.8], [0.27, 0.74], [0.33, 0.66], [0.4, 0.6], [0.46, 0.52], [0.53, 0.47], [0.6, 0.4], [0.66, 0.33], [0.72, 0.27], [0.78, 0.2], [0.82, 0.15]];
-    const dur = Math.max(1, (c.some ?? (c.t1 - c.t0)) - 0.4), p = easeInOut(lin(t, c.t0 + 0.3, dur)), n = rota.length - 1, f = p * n, k0 = Math.min(n - 1, Math.floor(f)), fr = f - k0;
+    const dur = Math.max(1, (c.some ?? (c.t1 - c.t0)) - 0.4), P = c.progresso || [0, 1], p = P[0] + (P[1] - P[0]) * easeInOut(lin(t, c.t0 + 0.3, dur)), n = rota.length - 1, f = p * n, k0 = Math.min(n - 1, Math.floor(f)), fr = f - k0;
     const dx = (rota[k0][0] + (rota[k0 + 1][0] - rota[k0][0]) * fr), dy = (rota[k0][1] + (rota[k0 + 1][1] - rota[k0][1]) * fr);
     const camX = Math.min(MW - pw, Math.max(0, dx * MW - pw / 2)), camY = Math.min(MH - ph, Math.max(0, dy * MH - ph * 0.55));
     ctx.save(); ctx.translate(px - camX, py - camY);
