@@ -1,0 +1,235 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.045,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.2,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true
+ },
+ "legendas": {
+  "destaques": [
+   "porta",
+   "seis",
+   "cinco",
+   "Remedo",
+   "câmera",
+   "Caio",
+   "conta"
+  ]
+ },
+ "musica": {
+  "som": "ep06_cx_tensao",
+  "volume_db": -33
+ },
+ "voz_arquivo": "s2_alguem_bateu_voz.wav",
+ "batidas": [
+  {
+   "fala": "Três batidas. Na madeira.",
+   "cena": {
+    "video": "../grade/V01_aproxima_porta.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Os cinco estavam do mesmo lado da porta.",
+   "cena": {
+    "imagem": "../grade/P07_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "A Íris correu pro outro. Ninguém.",
+   "cena": {
+    "imagem": "../grade/P02_B.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Bateram de novo. Mais fraco. Como quem está cansado.",
+   "cena": {
+    "imagem": "../grade/P01_B.jpg",
+    "zoom": [
+     1.35,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.42
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "novo",
+     "som": "ep05_batidas_lentas",
+     "volume_db": -19,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "O Caio olhou pro subtenente.",
+   "cena": {
+    "imagem": "../grade/P07_B.jpg",
+    "zoom": [
+     1.5,
+     1.6
+    ],
+    "foco": [
+     [
+      0.45,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "\"Chefe. A gente subiu aqui atrás de um homem. E tem alguém batendo.\"",
+   "cena": {
+    "imagem": "../grade/P07_A.jpg",
+    "zoom": [
+     1.6,
+     1.75
+    ],
+    "foco": [
+     [
+      0.28,
+      0.6
+     ],
+     [
+      0.3,
+      0.58
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Não tinha resposta pra isso.",
+   "cena": {
+    "imagem": "../grade/P01_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.43
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.9
+  },
+  {
+   "fala": "O Caio abriu.",
+   "cena": {
+    "imagem": "../grade/P04_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "abriu",
+     "som": "ep06_porta_range",
+     "volume_db": -17,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "ambiente_inicial": [
+  {
+   "som": "ep06_mata_muda",
+   "volume_db": -19
+  }
+ ],
+ "cta": {
+  "titulo": "O que passou pela porta?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

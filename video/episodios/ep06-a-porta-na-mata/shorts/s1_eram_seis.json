@@ -1,0 +1,246 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.045,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.2,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true
+ },
+ "legendas": {
+  "destaques": [
+   "porta",
+   "seis",
+   "cinco",
+   "Remedo",
+   "câmera",
+   "Caio",
+   "conta"
+  ]
+ },
+ "musica": {
+  "som": "ep06_cx_tensao",
+  "volume_db": -33
+ },
+ "voz_arquivo": "s1_eram_seis_voz.wav",
+ "batidas": [
+  {
+   "fala": "Na segunda noite, o subtenente contou as lanternas em volta do fogo.",
+   "cena": {
+    "imagem": "../grade/P08_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Uma. Duas. Três. Quatro. Cinco.",
+   "cena": {
+    "imagem": "../grade/P08_B.jpg",
+    "zoom": [
+     1.45,
+     1.45
+    ],
+    "foco": [
+     [
+      0.58,
+      0.42
+     ],
+     [
+      0.8,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Seis.",
+   "cena": {
+    "imagem": "../grade/P09_B.jpg",
+    "zoom": [
+     1.6,
+     1.75
+    ],
+    "foco": [
+     [
+      0.72,
+      0.36
+     ],
+     [
+      0.725,
+      0.35
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Eles eram cinco.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Eles eram cinco.",
+    "estilo": "maquina",
+    "vermelho": "cinco.",
+    "cps": 30,
+    "tamanho": 84
+   },
+   "sem_legenda": true,
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Ele chamou nome por nome. Cinco responderam.",
+   "cena": {
+    "imagem": "../grade/P09_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 2.13
+  },
+  {
+   "fala": "Contou de novo. Seis.",
+   "cena": {
+    "imagem": "../grade/P09_B.jpg",
+    "zoom": [
+     1.45,
+     1.7
+    ],
+    "foco": [
+     [
+      0.62,
+      0.42
+     ],
+     [
+      0.72,
+      0.36
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E a sexta lanterna estava rindo.",
+   "cena": {
+    "imagem": "../grade/P09_B.jpg",
+    "zoom": [
+     1.9,
+     2.1
+    ],
+    "foco": [
+     [
+      0.72,
+      0.36
+     ],
+     [
+      0.725,
+      0.35
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "rindo",
+     "som": "ep06_risada",
+     "volume_db": -17,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Com a risada do Caio.",
+   "cena": {
+    "imagem": "../grade/P09_B.jpg",
+    "zoom": [
+     2.1,
+     2.2
+    ],
+    "foco": [
+     [
+      0.72,
+      0.36
+     ],
+     [
+      0.725,
+      0.35
+     ]
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Só que o Caio estava bem do lado dele. De boca fechada.",
+   "cena": {
+    "imagem": "../grade/P09_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "ambiente_inicial": [
+  {
+   "som": "ep06_mata_muda",
+   "volume_db": -19
+  }
+ ],
+ "cta": {
+  "titulo": "Quem era o sexto?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}
