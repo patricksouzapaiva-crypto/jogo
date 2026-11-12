@@ -19,7 +19,7 @@ que deve ser copiado para a descrição do vídeo.
 import io, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
-UA = {"User-Agent": "UltimoAbrigoEditor/1.0 (https://github.com/patricksouzapaiva-crypto/jogo) python-urllib"}
+UA = {"User-Agent": "VideoResearchTool/1.0 (image search for a video project) python-urllib"}
 
 
 def abrir(url, tentativas=5):
