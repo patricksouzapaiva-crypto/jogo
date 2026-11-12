@@ -352,10 +352,11 @@ pausa(84, 0.6); pausa(88, 0.4); pausa(91, 1.2); pausa(93, 0.4); pausa(95, 1.0); 
 
 # ================================================================ PARTE 6 — a estação que não existe (2004)
 capitulo(98, 6, "A estação que não existe", "2004", I + "N09_estacao_noite.jpg",
-         texto("2channel · 8 de janeiro de 2004 · madrugada\n\n> Hasumi: estou num trem que não para", "não para", cps=26), "fórum", 2004)
+         texto("2channel · 08/01/2004\n> Hasumi: o trem não para", "não para", cps=30), "fórum", 2004)
 C(99, real("R13_trem_enshu_2", (1.0, 1.08), kanji=K("遠州鉄道", 0.86, 0.45, "placa", "Foto real · linha Enshū", tam=0.11, fundo="vermelho", em="Enshū")),
   (vid("V02b_janela_trem", (1.0, 1.04)), "parava"))
 kanji_som(99, "Enshū"); batidas[98]["sem_legenda"] = True
+pausa(98, 2.0); pausa(99, 3.0)                                       # tempo de ler "Ele entrou na internet" e o fórum
 C(100, img("N09_estacao_noite", (1.0, 1.12), atmos={"neblina": 0.7},
            kanji=K("きさらぎ駅", 0.5, 0.4, "luz", "Kisaragi · estação", vertical=False, fonte="mincho", tam=0.15, glitch=True, selo="駅", em="desceu")))
 T(100, "nanquim"); fx(100, None, "ep08_tinta", -11, atraso=-0.6); fx(100, "desceu", "ep08_freio", -16); fx(100, "Kisaragi", "ep08_sino_estacao", -12, depois=True)
@@ -454,7 +455,12 @@ chat(163, {"de": "Dani", "texto": "…", "hora": "00:53", "em": "mensagem", "dig
 chat(164, {"de": "Dani", "texto": "ele não fala japonês", "hora": "00:53", "em": "fala", "digitando": 0.6})
 chat(165, {"de": "Dani", "texto": "…", "hora": "00:54", "em": "depois", "digitando": 1.0}, sons=False)
 chat(166, {"de": "Dani", "texto": "ele tá falando com alguém. em português. com a voz do pai.", "hora": "00:54", "em": "falando", "digitando": 0.6})
-C(167, {"tipo": "mapa", "hora_inicio": "00:41", "hora_fim": "00:58", "progresso": [0.7, 1.0], "some_em": "sumiu"})
+_ali = json.load(open(AQUI / "audio" / "alinhamento.json"))
+sys.path.insert(0, str(AQUI.parents[1] / "painel"))
+from gerar import tokens as _tok  # noqa: E402
+_ini = [sum(len(_tok(f)) for f in falas[:j]) for j in range(len(falas))]
+_some = _ali[_ini[168] + 1][0] - _ali[_ini[167]][0] + 1.6          # "sumiu" (2ª palavra da fala 168) + a pausa antes dela
+C(167, {"tipo": "mapa", "hora_inicio": "00:41", "hora_fim": "00:58", "progresso": [0.7, 1.0], "some": round(_some, 2)})
 amb(115, "nenhum"); amb(118, "ep08_trem_dentro", -18); amb(131, "ep08_campo_noite", -18); amb(141, "ep08_tambor_longe", -16)
 amb(143, "ep08_campo_noite", -18); amb(155, "ep08_trem_dentro", -40); amb(159, "ep08_tambor_longe", -26)
 HIST.clear()

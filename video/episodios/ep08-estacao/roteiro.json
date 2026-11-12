@@ -3373,14 +3373,14 @@
     },
     {
      "tipo": "texto",
-     "texto": "2channel · 8 de janeiro de 2004 · madrugada\n\n> Hasumi: estou num trem que não para",
+     "texto": "2channel · 08/01/2004\n> Hasumi: o trem não para",
      "estilo": "maquina",
      "vermelho": "não para",
-     "cps": 26,
+     "cps": 30,
      "em": "fórum"
     }
    ],
-   "pausa_antes_s": 4.75,
+   "pausa_antes_s": 5.6,
    "sons": [
     {
      "em": null,
@@ -3441,7 +3441,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.4
+   "pausa_antes_s": 3.4
   },
   {
    "fala": "Que, quando finalmente parou, ela desceu numa estação chamada Kisaragi.",
@@ -6023,7 +6023,7 @@
      0.7,
      1.0
     ],
-    "some_em": "sumiu"
+    "some": 3.37
    }
   },
   {
