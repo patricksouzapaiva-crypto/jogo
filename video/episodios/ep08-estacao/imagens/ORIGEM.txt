@@ -1,0 +1,26 @@
+Imagens geradas pelo usuário (Nano Banana Pro) em 12/11, ampliadas para 1920 px.
+L01_oyuki_pergaminho.jpg <- Photograph_of_hanging_ghost_scroll_6911e1b5.jpg
+L01b_oyuki_pergaminho.jpg <- Antique_Japanese_hanging_scroll_#U2026_ce84599c.jpg
+L02_kuchisake.jpg <- Woman_standing_on_street_at_7e771041.jpg
+L02b_kuchisake_poste.jpg <- Woman_standing_on_residential_st#U2026_236200ee.jpg
+L02c_kuchisake_longe.jpg <- Woman_standing_on_street_e62775ae.jpg
+L03_boneca_okiku.jpg <- Traditional_doll_inside_display_#U2026_5aa908cc.jpg
+L03b_boneca_okiku.jpg <- Traditional_doll_in_Buddhist_temple_a869e91f.jpg
+L03c_boneca_flash.jpg <- Traditional_doll_in_Buddhist_temple_ec6a51e1.jpg
+L04_hanako_pes.jpg <- Old_Japanese_school_bathroom_shadow_2b6a2668.jpg
+L04b_hanako_sombra.jpg <- Old_Japanese_school_bathroom_int#U2026_2a40b597.jpg
+L04c_hanako_corredor.jpg <- Empty_Japanese_school_bathroom_i#U2026_1d6215d4.jpg
+L05_teketeke.jpg <- Figure_crawling_on_snowy_railway_f22e504e.jpg
+L05b_teketeke.jpg <- Figure_on_snowy_railway_tracks_2559d212.jpg
+L06_peonia_esqueleto.jpg <- Woman_walking_with_lantern_shadow_edec36b7.jpg
+L06b_peonia.jpg <- Woman_walking_with_lantern_shadow_d20cea07.jpg
+L06c_peonia.jpg <- Woman_holding_lantern_casting_sk#U2026_3ba40569.jpg
+L07_cem_velas.jpg <- People_gathering_in_dark_room_35260af5.jpg
+L07b_cem_velas.jpg <- People_gathered_in_dark_room_50c07373.jpg
+N08_poco_noite.jpg <- Okiku_well_at_night_360835b9.jpg
+N08b_poco_noite.jpg <- Okiku_well_at_night_38f04314.jpg
+N09_estacao_noite.jpg <- Empty_train_station_at_night_44b52aeb.jpg
+N09b_estacao_noite.jpg <- Empty_train_station_at_night_476d9f6e.jpg
+N09c_estacao_noite.jpg <- Empty_railway_station_at_night_d4dcdfac.jpg
+N10_trem_noite.jpg <- Train_stopped_at_rural_platform_8bb7f47c.jpg
+N10b_trem_noite.jpg <- Train_stopped_at_rural_platform_41fc1814.jpg
