@@ -1,0 +1,13 @@
+Clipes do Flow enviados pelo usuário em 12/11 (NOV12_PARTE_1..2), 1280x720, 7,9 s.
+V03_trilho_lanterna.mp4 <- Camera_moving_toward_distant_leg_114cde33.mp4
+V02_janela_trem.mp4 <- Camera_panning_toward_train_window_38fd2f28.mp4
+V02b_janela_trem.mp4 <- Camera_panning_toward_train_window_a5929e36.mp4
+V05_carro_montanha.mp4 <- Car_driving_through_forest_road_baabc2ff.mp4
+V04_dani_plataforma.mp4 <- Woman_walking_on_train_platform_61b35a75.mp4
+V01_cabine_silhueta.mp4 <- Camera_advancing_down_empty_train_42b53b63.mp4
+V01b_cabine_silhueta.mp4 <- Camera_advancing_down_empty_train_cc0804ea.mp4
+V06_cem_velas_apagando.mp4 <- Candles_burning_out_in_room_cb099b38.mp4
+V05b_carro_montanha.mp4 <- Car_driving_through_forest_road_89bfe2ae.mp4
+X_vigilia_rosto_visivel.mp4 <- Digital_zoom_toward_upstairs_window_26e8aa07.mp4
+V07_vigilia_zoom_janela.mp4 <- Digital_zoom_toward_upstairs_window_316fa53f.mp4
+Observações: V01/V01b — a figura fica de frente e nítida após ~5 s: usar só até ~4,5 s (silhueta). V04 — carimbo de hora ilegível no canto: cobrir. V07 — legenda '9:16' no canto inferior direito: cortar. X_vigilia_rosto_visivel — rosto da moça aparece no fim: não usar (regra da casa).
