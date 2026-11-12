@@ -1,4 +1,4 @@
-# O Vigia — Ep. 07 "A ronda" (v1 — a partir do roteiro do usuário, aguardando aprovação)
+# O Vigia — Ep. 07 "A ronda" (v1 — APROVADO pelo usuário em 12/11: "já pode seguir pro episódio 7")
 
 **Base:** roteiro escrito pelo usuário ("A corrente parava na minha porta toda noite"). Mantidos: a perna
 quebrada, o silêncio da 3ª noite, a corrente que para na porta e respira por horas, a sombra por baixo da
