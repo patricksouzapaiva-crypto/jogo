@@ -589,3 +589,12 @@ NÃO trocar para relato em primeira pessoa. Do material de retenção, adotar s�
 - Clímax em frases curtas; detalhes sensoriais (som, cheiro, temperatura, textura) nas cenas-chave.
 - Quebra de expectativa (o que os personagens acham ≠ o que é).
 - Final com eco: uma frase do Vigia que fique na cabeça.
+
+## 16. Sons importantes mais altos (pedido do usuário, 12/11/2026)
+"Alguns sons importantes devem ser mais altos" — as batidas na porta dos Eps. 05/06 ficaram baixas e fracas.
+- Causa: o teto "sem_sustos" do mixador limitava TODO efeito a 8 dB abaixo da voz. Agora, nos episódios, usar
+  `"mix": {"efeitos_pico_max": -3}` (o efeito chega a 3 dB da voz: claro, mas sem virar susto barulhento).
+- O som que a história NOMEIA (batidas, estalo, corrente, maçaneta) toca SOZINHO: abrir 1,4–1,6 s de pausa logo
+  depois da palavra (`pausa(i+1, 1.6)`) e pôr o efeito com `depois=True`. Nível do efeito-chave: −5 a −9 dB.
+- Efeitos-chave sempre gravados de verdade (ElevenLabs), nunca sintetizados em código: o usuário reprovou os
+  sintetizados ("fraco e ruim"). Gerar 2–4 versões e escolher pela análise (ex.: batidas = exatamente 3 golpes).

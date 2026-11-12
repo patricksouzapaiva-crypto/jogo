@@ -129,7 +129,7 @@ C(8, img("P09_A", (1.0, 1.12), ((0.45, 0.5), (0.5, 0.48))))
 C(9, texto("Quem era o sexto?", "sexto?", cps=30))
 C(10, img("P07_A", (1.0, 1.08), ((0.5, 0.55), (0.5, 0.5))), (img("P01_B", (1.0, 1.2), PORTA1B), "melhor"))
 pausa(2, 1.4); pausa(3, 1.0); pausa(5, 0.6); pausa(6, 0.8); pausa(8, 1.2); pausa(9, 0.6)
-fx(6, "rindo", "ep06_risada", -17)
+fx(6, "rindo", "ep06_risada_v2", -11)
 
 # ================================================================ TEMA — Vigia apresenta
 C(11, vigia((1.0, 1.05)), (real("px_ranger_4", "P06_A", (1.0, 1.08)), "guarda"), **V)
@@ -187,10 +187,11 @@ C(55, img("P01_B", (1.5, 1.8), PORTA1B))
 saida_lenta(41, 2.6)
 pausa(43, 1.4); pausa(44, 2.0); pausa(46, 0.9); pausa(47, 1.6); pausa(48, 1.6); pausa(51, 0.8); pausa(52, 1.2)
 pausa(54, 1.2); pausa(55, 1.6)
-fx(39, "bateram", "ep05_batidas", -13)
-fx(43, "novo", "ep05_batidas_lentas", -19)
-fx(47, "abriu", "ep06_porta_range", -17)
-fx(52, "Devagar", "ep06_porta_range", -21)
+fx(39, "bateram", "ep06_batidas_v2", -5)                         # 12/11: batidas reais (ElevenLabs), bem mais altas — o usuário achou fracas
+fx(43, "cansado", "ep06_batidas_fracas_v2", -9)
+pausa(40, 1.6); pausa(44, 1.4)                                       # as batidas soam SOZINHAS, sem narração por cima
+fx(47, "abriu", "ep06_porta_range_v2", -11)
+fx(52, "Devagar", "ep06_porta_range_v2", -15)
 
 # ================================================================ PARTE 3 — a primeira noite
 C(56, img("P08_A", (1.0, 1.08), ((0.45, 0.5), (0.4, 0.5))))
@@ -256,8 +257,8 @@ C(104, texto("Era o Caio.", "Caio.", "impacto", cps=8, tamanho=150))
 pausa(79, 1.2); pausa(80, 2.2); pausa(82, 1.2); pausa(83, 1.0); pausa(84, 2.2); pausa(85, 1.6); pausa(86, 2.0)
 pausa(89, 0.8); pausa(90, 1.4); pausa(92, 0.9); pausa(94, 1.6); pausa(96, 0.9); pausa(97, 1.2); pausa(98, 0.8)
 pausa(99, 1.6); pausa(100, 1.2); pausa(101, 1.0); pausa(103, 1.4); pausa(104, 1.4)
-fx(79, "risada", "ep06_risada", -17)
-fx(85, "estalo", "ep06_estalo", -15)
+fx(79, "risada", "ep06_risada_v2", -11)
+fx(85, "estalo", "ep06_estalo_v2", -7)
 
 # ================================================================ PARTE 5 — os testes
 C(105, texto("03:00", "03:00", "impacto", cps=10, tamanho=170))
@@ -352,9 +353,9 @@ C(177, img("P17_B", (2.6, 2.75), JANELA))
 C(178, img("P17_B", (2.75, 2.85), JANELA))
 pausa(165, 1.0); pausa(167, 1.6); pausa(168, 1.2); pausa(169, 1.6); pausa(170, 1.4); pausa(171, 2.0); pausa(172, 1.4)
 pausa(173, 1.0); pausa(174, 1.0); pausa(175, 2.2); pausa(176, 1.4); pausa(177, 2.0); pausa(178, 1.4)
-fx(167, "carro", "ep06_motor", -20, depois=False)
-fx(168, "Rindo", "ep06_riso_menina", -18)
-fx(173, "ninguém", "ep06_riso_menina", -20)
+fx(167, "carro", "ep06_motor", -14, depois=False)
+fx(168, "Rindo", "ep06_riso_menina", -13)
+fx(173, "ninguém", "ep06_riso_menina", -15)
 
 # ================================================================ FECHO — Vigia
 C(179, vigia((1.0, 1.05)))
@@ -413,7 +414,8 @@ roteiro = {
     "vigia_padrao": False,
     "preencher_pausas": {"min": 1.3},
     "cauda": 1.6, "chuva": 0, "grao": 0.20,
-    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True},
+    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
+            "efeitos_pico_max": -3},   # 12/11: sons importantes (batidas, estalo) mais altos — pedido do usuário
     "legendas": {"destaques": ["porta", "seis", "cinco", "Remedo", "câmera", "Caio", "conta"]},
     "ambiente_inicial": [{"som": "ep06_mata_noite", "volume_db": A_DB + 3}],
     "musica": {"som": "ep06_cx_tensao", "volume_db": T_DB},
