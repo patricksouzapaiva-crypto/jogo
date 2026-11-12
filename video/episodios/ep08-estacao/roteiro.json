@@ -176,7 +176,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.43
+   "pausa_antes_s": 0.44
   },
   {
    "fala": "Depois, uma foto. Uma plataforma vazia. Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo sabia ler.",
@@ -575,7 +575,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.78
+   "pausa_antes_s": 1.76
   },
   {
    "fala": "E no fim… eu vou te contar o que aconteceu com uma brasileira que pegou o último trem de Hamamatsu.",
@@ -1328,7 +1328,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.64
   },
   {
    "fala": "Era veneno. E o veneno não mata de uma vez. Ele deforma.",
@@ -1394,7 +1394,7 @@
   },
   {
    "fala": "Volta no rosto da nova esposa. Volta numa lanterna de papel. Volta até o marido enlouquecer.",
-   "pausa_antes_s": 2.65
+   "pausa_antes_s": 2.63
   },
   {
    "fala": "Seis anos depois da estreia, o mestre Hokusai desenhou a Oiwa saindo de uma lanterna. É essa imagem aqui.",
@@ -1705,7 +1705,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 2.55
+   "pausa_antes_s": 2.54
   },
   {
    "fala": "A peça é de mil setecentos e quarenta e um. Mas o poço é real. Fica dentro do castelo de Himeji, e você pode visitar. Está aqui. Com grade em cima.",
@@ -1729,7 +1729,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 3.78
+   "pausa_antes_s": 3.39
   },
   {
    "fala": "Guarda esse poço na cabeça. Ele vai voltar.",
@@ -1778,7 +1778,7 @@
   },
   {
    "fala": "E a terceira é a mais antiga, de mil seiscentos e sessenta e seis: a lanterna de peônia.",
-   "pausa_antes_s": 3.85,
+   "pausa_antes_s": 3.88,
    "cena": {
     "imagem": "imagens/J05b_lanterna.jpg",
     "zoom": [
@@ -2117,7 +2117,7 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.28
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -2128,7 +2128,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.03
+   "pausa_antes_s": 0.91
   },
   {
    "fala": "E a coisa que sai da televisão é uma menina, a Sadako.",
@@ -2136,6 +2136,29 @@
   },
   {
    "fala": "Repara de onde ela vem. Ela sai de um poço… como a Okiku.",
+   "cena": {
+    "imagem": "imagens/J04_poco_cabelo.jpg",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.65
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -2238,8 +2261,7 @@
      "depois": false,
      "atraso": 0.0
     }
-   ],
-   "pausa_antes_s": 0.52
+   ]
   },
   {
    "fala": "Mas o que deixa esses filmes insuportáveis não é a cara do fantasma.",
@@ -2307,7 +2329,7 @@
     "duracao_entrada": 1.6,
     "antecipar": 1.6
    },
-   "pausa_antes_s": 4.71,
+   "pausa_antes_s": 4.56,
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -2544,30 +2566,7 @@
    }
   },
   {
-   "fala": "Uma mulher de máscara cirúrgica parava as crianças na rua, voltando da escola, e perguntava:",
-   "cena": {
-    "imagem": "imagens/J10b_kuchisake_costas.jpg",
-    "zoom": [
-     1.0,
-     1.1
-    ],
-    "atmos": {
-     "pelicula": 1.0
-    },
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.62,
-      0.5
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "fala": "Uma mulher de máscara cirúrgica parava as crianças na rua, voltando da escola, e perguntava:"
   },
   {
    "fala": "\"Eu sou bonita?\"",
@@ -2668,7 +2667,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.89
+   "pausa_antes_s": 0.61
   },
   {
    "fala": "E ela não era nova. Num livro ilustrado de mil oitocentos e um, o Ehon Sayoshigure, já aparece uma mulher de cabelo arrepiado e a boca rasgada até a orelha. Ela esperou quase duzentos anos… e voltou de máscara.",
@@ -3001,7 +3000,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 1.44
+   "pausa_antes_s": 1.39
   },
   {
    "fala": "Quando ela chegou lá, o cabelo dela era curto, cortado na altura do queixo. Os monges dizem que, com o tempo, o cabelo cresceu. Hoje passa dos joelhos. E dizem que, quando cortam… volta.",
@@ -3046,7 +3045,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 1.0
+   "pausa_antes_s": 1.08
   },
   {
    "fala": "Mas em dois mil e quatro, o medo japonês mudou de casa mais uma vez.",
@@ -3084,9 +3083,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.51
+    "antecipar": 0.6
    },
-   "pausa_antes_s": 0.26
+   "pausa_antes_s": 0.96
   },
   {
    "fala": "Ele entrou na internet.",
@@ -3100,7 +3099,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 2.04,
+   "pausa_antes_s": 2.03,
    "sem_legenda": true
   },
   {
@@ -3257,7 +3256,7 @@
     "som": "ep08_campo_noite",
     "volume_db": -20
    },
-   "pausa_antes_s": 1.55
+   "pausa_antes_s": 1.77
   },
   {
    "fala": "Nenhuma estação com esse nome existe. Em nenhum mapa.",
@@ -4000,7 +3999,7 @@
     "antecipar": 0.6
    },
    "sem_legenda": true,
-   "pausa_antes_s": 0.51
+   "pausa_antes_s": 0.53
   },
   {
    "fala": "Ela respondeu rápido: \"Não dormi. O trem não parou em nenhuma estação.\"",
@@ -4404,7 +4403,7 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.6
    },
    "sons": [
     {
@@ -4414,7 +4413,8 @@
      "depois": false,
      "atraso": 0.0
     }
-   ]
+   ],
+   "pausa_antes_s": 0.86
   },
   {
    "fala": "\"Que estação é essa?\", perguntou o pai.",
@@ -5049,7 +5049,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 2.44
+   "pausa_antes_s": 2.51
   },
   {
    "fala": "O resto do corpo ficava acima da luz.",
@@ -5390,7 +5390,7 @@
   },
   {
    "fala": "A localização dela chegou no grupo.",
-   "pausa_antes_s": 2.53,
+   "pausa_antes_s": 2.44,
    "cena": {
     "tipo": "mapa",
     "hora_inicio": "00:41",
@@ -5895,7 +5895,7 @@
      0.7,
      1.0
     ],
-    "some": 3.37,
+    "some": 4.44,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -6161,11 +6161,11 @@
     "som": "ep08_quintal",
     "volume_db": -14
    },
-   "pausa_antes_s": 1.22
+   "pausa_antes_s": 0.35
   },
   {
    "fala": "E todo mundo rezou junto. De mãos dadas. De olhos fechados.",
-   "pausa_antes_s": 0.51,
+   "pausa_antes_s": 0.3,
    "cena": {
     "imagem": "imagens/D10b_vigilia_janela.jpg",
     "zoom": [
@@ -6340,7 +6340,7 @@
     "som": "nenhum",
     "volume_db": -20
    },
-   "pausa_antes_s": 1.85
+   "pausa_antes_s": 1.87
   },
   {
    "fala": "\"Quem é a moça na janela de cima?\"",
@@ -6409,16 +6409,19 @@
     "imagem": "imagens/D10_vigilia_janela.jpg",
     "zoom": [
      1.0,
-     1.0
+     3.2
     ],
-    "zoom_digital": {
-     "x": 0.88,
-     "y": 0.23,
-     "ate": 3.0,
-     "atraso": 0.3,
-     "dur": 3.4
-    },
     "mao": 0,
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.893,
+      0.245
+     ]
+    ],
     "celular": {
      "hora": "16:12",
      "vertical": true
@@ -6485,7 +6488,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 2.03
+   "pausa_antes_s": 2.36
   },
   {
    "fala": "As mãos soltas na frente do corpo.",
@@ -6629,17 +6632,20 @@
    "cena": {
     "imagem": "imagens/D10_vigilia_janela.jpg",
     "zoom": [
-     1.0,
-     1.0
+     1.6,
+     3.0
     ],
-    "zoom_digital": {
-     "x": 0.88,
-     "y": 0.23,
-     "ate": 2.6,
-     "atraso": 0.2,
-     "dur": 2.4
-    },
     "mao": 0,
+    "foco": [
+     [
+      0.8,
+      0.3
+     ],
+     [
+      0.893,
+      0.245
+     ]
+    ],
     "celular": {
      "hora": "16:12",
      "vertical": true
@@ -6676,7 +6682,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.03
+   "pausa_antes_s": 1.12
   },
   {
    "fala": "O terror japonês não precisa de culpado. Ele só precisa de alguém que olhe.",
@@ -6790,7 +6796,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 3.13
+   "pausa_antes_s": 2.44
   },
   {
    "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",

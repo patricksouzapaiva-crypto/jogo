@@ -1075,7 +1075,7 @@ function telaChat(c, t) {
       if (m.tipo === "audio") return { m, h: (m.de && m.de !== "eu" ? 96 : 64) * u, linhas };
       if (m.tipo === "foto" || m.tipo === "video") return { m, h: larg * 0.75 + 30 * u, linhas };
       for (const p of (m.texto || "").split(" ")) { const tt = atual ? atual + " " + p : p; if (ctx.measureText(tt).width > larg - 40 * u && atual) { linhas.push(atual); atual = p; } else atual = tt; }
-      linhas.push(atual); return { m, h: linhas.length * fs * 1.3 + (m.de && m.de !== "eu" ? 30 : 12) * u + 26 * u, linhas };
+      linhas.push(atual); return { m, h: linhas.length * fs * 1.3 + (m.de && m.de !== "eu" ? 30 : 12) * u + 44 * u, linhas };   // 13/11: espaço pro horário
     });
     for (let i = blocos.length - 1; i >= 0 && y > py + 110 * u; i--) {
       const { m, h, linhas } = blocos[i], meu = m.de === "eu";
@@ -1093,7 +1093,7 @@ function telaChat(c, t) {
       if (!meu && m.de) { ctx.fillStyle = corP; ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; ctx.fillText(m.de, bx + 18 * u, ty - 2 * u); ty += 26 * u; }
       ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`; ctx.fillStyle = "#eef2f5";
       if (m.tipo === "audio") {   // áudio com onda
-        const ya = (!meu && m.de) ? ty + 14 * u : by + (h - 10 * u) / 2, nb = Math.floor((bw - 120 * u) / (9 * u));   // onda ABAIXO do nome
+        const ya = (!meu && m.de) ? ty + 14 * u : by + (h - 10 * u) / 2, nb = Math.floor((bw - 150 * u) / (9 * u));   // onda ABAIXO do nome
         ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 34 * u, ya, 14 * u, 0, 6.283); ctx.fill();
         const r = _semente(m.texto || "audio"); for (let k = 0; k < nb; k++) { const hh = (6 + r() * 22) * u; ctx.fillRect(bx + 62 * u + k * 9 * u, ya - hh / 2, 4 * u, hh); }
         ctx.font = `500 ${Math.round(15 * u)}px "Inter", sans-serif`; ctx.fillText(m.duracao || "0:07", bx + bw - 54 * u, by + h - 22 * u);
