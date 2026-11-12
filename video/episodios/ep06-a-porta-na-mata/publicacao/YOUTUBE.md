@@ -2,17 +2,19 @@
 
 Vídeo: `O_Vigia_Ep06_A_porta_na_mata.mp4` (1920×1080, 14min35). Formato tema + história.
 
-## Títulos (escolha um; "| Creepypasta" no fim)
-1. **Se achar uma porta no meio da mata, não abra | Creepypasta**  ← recomendado (regra + lugar: dá curiosidade e busca)
-2. Éramos cinco. Contamos seis. | Creepypasta
-3. As portas da mata | Creepypasta
+## Títulos (regra de 12/11: sem "Creepypasta" no título, em português, até ~65 caracteres)
+1. **Achamos uma porta no meio da mata… e alguém bateu do outro lado**  ← recomendado (63 car.; "Eu/nós [ação]… e [consequência]")
+2. Algo voltou da mata com a gente… e tinha o rosto do meu amigo (61 car.)
+3. Eu contei as lanternas… e tinha uma a mais (41 car.; curto, bom para celular)
+4. Se achar uma porta no meio da mata, não abra (44 car.)
 
 ## Capas (as 3 no "Testar e comparar" do YouTube Studio)
 | Arquivo | O que mostra | Combina com |
 |---|---|---|
-| `capa_A_eram_seis.jpg` | as lanternas em volta do fogo + "ERAM SEIS." | título 1 ou 3 |
-| `capa_B_alguem_bateu.jpg` | a porta azul sozinha na neblina + "ALGUÉM BATEU." | título 1 ou 2 |
-| `capa_C_conta_de_novo.jpg` | o bombeiro de costas atravessando a porta + "CONTA DE NOVO." | título 1 |
+| `capa_A_eram_seis.jpg` | as lanternas em volta do fogo + "ERAM SEIS." | título 1, 2 ou 4 |
+| `capa_B_alguem_bateu.jpg` | a porta azul sozinha na neblina + "ALGUÉM BATEU." | título 2, 3 ou 4 (não com o 1: repete) |
+| `capa_C_conta_de_novo.jpg` | o bombeiro de costas atravessando a porta + "CONTA DE NOVO." | qualquer título |
+Com o título 1: testar as capas A e C.
 Capa e título não repetem a mesma frase. Gerar de novo: `python3 fazer_capas.py`.
 
 ## Descrição
@@ -20,7 +22,7 @@ Capa e título não repetem a mesma frase. Gerar de novo: `python3 fazer_capas.p
 Nos Estados Unidos, guardas-florestais contam sobre escadas no meio da floresta, sem casa nenhuma em volta. Aqui no Brasil, quem trabalha em mata fechada conta outra coisa: portas. Uma porta de madeira, em pé no meio de uma clareira. Sem parede. E firme.
 Cinco bombeiros subiram a serra atrás de um trilheiro desaparecido. Na segunda noite, o subtenente contou as lanternas em volta do fogo. Eles eram cinco. As lanternas eram seis.
 
-🕯️ O Vigia — Episódio 06: A porta na mata.
+🕯️ O Vigia — Episódio 06: A porta na mata. Uma creepypasta brasileira.
 Histórias de terror psicológico, contadas pelo Vigia, aqui no Último Abrigo.
 
 💬 Quantas pessoas tem na sua casa agora? Tem certeza? Conta aqui nos comentários.

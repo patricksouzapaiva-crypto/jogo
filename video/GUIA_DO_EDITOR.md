@@ -448,7 +448,7 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   - **Capa:** alto contraste, UMA figura ou detalhe escondido que incomode na hora (a forma no canto, um olho
     no escuro, a silhueta na porta), sem poluição: no máximo 2–3 palavras grandes, ou nenhuma. Sempre gerar
     2–3 versões para o "Testar e comparar" do YouTube Studio.
-  - **Título:** curto e direto, gancho misterioso ou ordem/ameaça (≤ 5 palavras antes do "| Creepypasta");
+  - **Título:** curto e direto, gancho misterioso ou ordem/ameaça (sem "| Creepypasta" — ver regra de 12/11);
     deve criar uma pergunta que só o vídeo responde. Capa e título contam coisas DIFERENTES (não repetir).
   - **Gancho (0–45 s):** começar DENTRO da cena mais tensa da história — imagem forte nos primeiros 2 s, a
     pergunta/ameaça dita nos primeiros 5–8 s — e só depois a abertura e o contexto. Nada de contextualização
@@ -498,8 +498,12 @@ Exemplo de `roteiro.json` (caminhos relativos ao próprio arquivo):
   realistic textures, no cinematic lighting, no fantasy art, no CGI look` — referência: a foto do braço
   robótico de laboratório usada na amostra (luz fria, cores lavadas, enquadramento de registro).
 - Amostra aprovada: 3min37 do Ep. 03 com fotos reais (roteiro gerado a partir de `ep03-conceito/roteiro.json`).
-- **Títulos (regra do usuário):** todo título termina com **" | Creepypasta"** — no longo e nos Shorts
-  (nos Shorts: `<título> | Creepypasta #shorts`). Palavra de busca forte do nicho; aumenta o alcance.
+- **Títulos (regra do usuário, SUBSTITUÍDA em 12/11):** ~~todo título termina com " | Creepypasta"~~.
+  **NOVA REGRA (12/11/2026):** título SEM "Creepypasta" (a palavra vai só na descrição e nas tags) — mais limpo
+  e profissional. Títulos em PORTUGUÊS (os melhores vídeos do canal são em PT). Máximo 60–70 caracteres, frases
+  curtas e de impacto. Estruturas que funcionam no horror narrado:
+  "Eu [ação]… e [consequência assustadora]" · "Algo [aconteceu]… e não era o que eu pensava".
+  Nos Shorts: frase limpa + no máximo 2 hashtags (ex.: `#shorts #terror`).
 
 ## 13. Auditoria do canal (vidIQ + Analytics, 10/11/2026) — o que adotamos
 O usuário decidiu **manter o estilo** (O Vigia, tema + história, edição dinâmica); a auditoria entra como ajuste,
@@ -514,7 +518,7 @@ numerada do Vigia é o diferencial do canal.
   estavam longos demais — a partir de agora, cortar.
 - **Todo Short é teaser de um longo:** termina em aberto e usa o recurso **"Vídeo relacionado"** do YouTube
   apontando para o episódio. Cada longo gera 3 Shorts de ≤ 35 s.
-- **Títulos:** manter "| Creepypasta"; nos Shorts, frase limpa + no máximo 2 hashtags (nunca repetidas).
+- **Títulos:** sem "| Creepypasta" (regra de 12/11); nos Shorts, frase limpa + no máximo 2 hashtags (nunca repetidas).
   Acrescentar uma promessa quando couber (um número, "o que a ciência explica", "nunca contei") — **sem
   chamar de REAL uma história que é ficção** (os fatos reais das inserções podem ser a promessa).
 - **Tags:** só do nicho (terror, creepypasta, o tema do episódio). Limpar as tags erradas dos Shorts de março
