@@ -181,3 +181,19 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   `ferramentas/sintetizar_caixinha_ep08.py tensao ../sons/ep08_cx_tensao.mp3 1300`.
 - Falta: imagens da noite da Dani (D01–D11), Hamamatsu/fábrica, J02–J09, clipes Flow; decisões do usuário: voz da
   Dani (2 áudios) e da mãe na vigília, título (recomendado "Ela desceu numa estação que não existe").
+
+## 12/11 (noite) — Ep. 08 rascunho 2 APROVADO ("excelente") → render final 1080p
+- Título aprovado: **"Por que o terror japonês é o mais pesado do mundo"**. Capa: "NÃO TEM REZA QUE DESFAZ." ou
+  "VOCÊ SÓ PRECISA OLHAR." (não repetir o título). Vozes: Dani = Aoede, mãe = Gacrux (`trocar_vozes.py`).
+- Trilha aprovada: `sons/ep08_japones_longa.mp3` (koto + shakuhachi, `ferramentas/sintetizar_japones_ep08.py`).
+- Fluxo: `falas.py` → `narrar.py` (3 blocos; bloco 2 refeito com introdução pra não mudar o timbre) → `alinhar.py`
+  → `trocar_vozes.py` → `montar_roteiro.py` → `painel/gerar.py roteiro.json previas/ep08_final.mp4`.
+- **Regras de ritmo novas do usuário (valem para TODOS os episódios):** nada de troca de cena no meio da frase
+  (uma cena por frase), sem cortes rápidos, legenda nunca muda de lugar, kanji/legendas pequenas com tempo de leitura,
+  foco do `dof` no ponto certo, nenhum ruído tipo "TV fora do ar", música um pouco mais alta.
+  `montar_roteiro.py: ritmo()` aplica mínimos (imagem 3,6 s; kanji c/ legenda 6,5 s; `linha` 6,5 s).
+- Motor (12/11): `dof`/`zoom_digital` x,y agora em FRAÇÃO DA IMAGEM (`c._tf`); neblina sem emenda (fim da
+  "linha passando"); legenda do kanji horizontal e maior; `linha` do tempo com faixa e destaque; chat sem sobrepor
+  o cabeçalho, áudio com onda abaixo do nome; `mapa.progresso`; `inserir_silencios` com fades de 15 ms.
+- Entrega: `previas/O_Vigia_Ep08_Por_que_o_terror_japones.mp4` + `publicacao/legendas_pt-BR.srt`.
+- Pendente: pacote de publicação (capa, descrição com capítulos, Shorts) — pedir "pode" antes de mexer no canal.
