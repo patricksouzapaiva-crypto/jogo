@@ -560,3 +560,28 @@ a pausa seguinte (`trocar_vozes.py` faz isso e mantém a duração do vídeo).
 
 **Pacote de publicação (11/11):** só legenda em português. NÃO gerar legendas nem título/descrição traduzidos
 (espanhol/inglês) — o usuário não tem como enviar.
+
+## 15. Estrutura de retenção (orientação do usuário, 12/11/2026) — vale a partir do Ep. 07
+Diagnóstico: a introdução costuma ser lenta; se os primeiros 30–45 s não prendem, a maioria sai.
+
+| Parte | Tempo | O que fazer |
+|---|---|---|
+| 1. Gancho | 0–25/30 s | Começar no meio da ação ou com a frase mais assustadora. Nunca "Olá, hoje eu vou contar…". |
+| 2. Contexto rápido | até ~1min30 | Quem é o narrador, onde está, qual a situação inicial — curto e direto. |
+| 3. Escalada | 1min30 → 70% | 3 a 5 eventos, cada um PIOR que o anterior. |
+| 4. Clímax | 70–85% | A revelação ou o momento mais intenso; frases curtas (ritmo rápido). |
+| 5. Resolução + eco | últimos 15–20% | Final incompleto ou twist + UMA frase final que fique na cabeça. |
+
+Técnicas: **primeira pessoa forte** ("eu" o tempo todo — o espectador dentro da história); **detalhes
+sensoriais** (som, cheiro, temperatura, textura); **quebra de expectativa** (o que o narrador acha ≠ o que é);
+**frases curtas no clímax**; **eco no fim** (ex.: "E às vezes, quando eu olho pela janela de madrugada… ainda
+tem alguém lá").
+Gancho bom × ruim: ruim "Eu estava acampando com meus amigos quando começamos a ouvir barulhos…"; bom "As
+pegadas paravam exatamente na entrada da minha tenda. Não havia pegadas saindo. E eu estava sozinho."
+
+**Como isso se encaixa no formato do Vigia (proposta, aguardando o usuário):**
+- O bloco de "tema" (fato real) NÃO fica mais entre o gancho e o contexto: no máximo 20–30 s dentro do
+  contexto, ou vira a 1ª inserção do Vigia, depois do primeiro evento da escalada.
+- Primeira pessoa: a história é o RELATO de quem viveu ("eu"), e o Vigia só abre a moldura em uma frase
+  ("Esse relato chegou pra mim…"), aparece nas inserções e fecha. Até o Ep. 06 a história era contada pelo Vigia
+  em terceira pessoa.
