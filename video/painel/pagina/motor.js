@@ -1076,13 +1076,19 @@ function telaChat(c, t) {
       linhas.push(atual); return { m, h: linhas.length * fs * 1.3 + (m.de && m.de !== "eu" ? 30 : 12) * u + 26 * u, linhas };
     });
     for (let i = blocos.length - 1; i >= 0 && y > py + 110 * u; i--) {
-      const { m, h, linhas } = blocos[i], meu = m.de === "eu" || m.lado === "dir";
-      const ent = easeOut(lin(t, m.t ?? c.t0, 0.25)), bw = m.tipo === "audio" ? larg * 0.8 : m.tipo === "foto" || m.tipo === "video" ? larg : Math.min(larg, Math.max(...linhas.map((l) => ctx.measureText(l).width)) + 40 * u, larg);
-      const bx = meu ? px + pw - bw - 18 * u : px + 18 * u, by = y - h;
+      const { m, h, linhas } = blocos[i], meu = m.de === "eu";
+      const ent = easeOut(lin(t, m.t ?? c.t0, 0.25)); ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; const wNome = m.de && m.de !== "eu" ? ctx.measureText(m.de).width + 40 * u : 0; ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`;
+      const bw = m.tipo === "audio" ? larg * 0.8 : m.tipo === "foto" || m.tipo === "video" ? larg : Math.min(larg, Math.max(wNome, ...linhas.map((l) => ctx.measureText(l).width + 40 * u)));
+      const av = meu ? 0 : 50 * u, bx = meu ? px + pw - bw - 18 * u : px + 18 * u + av, by = y - h;
+      const COR = { Dani: "#e6a95a", Lucas: "#6fb3ff", "Mãe": "#ff8fb1", Pai: "#7fd18b" }, corP = m.cor || COR[m.de] || "#c9a7ff";
       ctx.save(); ctx.globalAlpha = ent; ctx.translate(0, (1 - ent) * 20 * u);
+      if (!meu) {   // avatar com a inicial, ao lado do balão
+        ctx.fillStyle = corP; ctx.globalAlpha = ent * 0.9; ctx.beginPath(); ctx.arc(bx - 26 * u, by + 22 * u, 19 * u, 0, 6.283); ctx.fill(); ctx.globalAlpha = ent;
+        ctx.fillStyle = "#101418"; ctx.font = `800 ${Math.round(18 * u)}px "Inter", sans-serif`; ctx.textAlign = "center"; ctx.fillText(m.de[0], bx - 26 * u, by + 28 * u); ctx.textAlign = "left";
+      }
       ctx.fillStyle = meu ? "#2c4a6e" : "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, bw, h - 10 * u, 16 * u); ctx.fill();
       let ty = by + 30 * u;
-      if (!meu && m.de) { ctx.fillStyle = m.cor || "#e6a95a"; ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; ctx.fillText(m.de, bx + 18 * u, ty - 2 * u); ty += 26 * u; }
+      if (!meu && m.de) { ctx.fillStyle = corP; ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; ctx.fillText(m.de, bx + 18 * u, ty - 2 * u); ty += 26 * u; }
       ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`; ctx.fillStyle = "#eef2f5";
       if (m.tipo === "audio") {   // áudio com onda
         ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 34 * u, by + (h - 10 * u) / 2, 14 * u, 0, 6.283); ctx.fill();
@@ -1099,34 +1105,68 @@ function telaChat(c, t) {
       y = by - 8 * u;
     }
     if (digit) {   // balão "digitando" com três pontos
-      const bx = px + 18 * u, by = py + ph - 100 * u; ctx.fillStyle = "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, 90 * u, 46 * u, 16 * u); ctx.fill();
+      const bx = px + 68 * u, by = py + ph - 100 * u; ctx.fillStyle = "#232b33"; ctx.beginPath(); ctx.roundRect(bx, by, 90 * u, 46 * u, 16 * u); ctx.fill();
       for (let k = 0; k < 3; k++) { ctx.globalAlpha = 0.4 + 0.6 * Math.max(0, Math.sin(t * 7 - k * 0.8)); ctx.fillStyle = "#cfd8df"; ctx.beginPath(); ctx.arc(bx + 26 * u + k * 19 * u, by + 23 * u, 6 * u, 0, 6.283); ctx.fill(); }
       ctx.globalAlpha = 1;
     }
   });
 }
-function telaMapa(c, t) {
+function telaMapa(c, t) {   // mapa de celular "de verdade": cidade, arrozais, rio, ferrovia, rodovia, serra; câmera segue o ponto
   _telefone(t, (px, py, pw, ph, u) => {
-    ctx.fillStyle = "#1c2420"; ctx.fillRect(px, py, pw, ph);
-    const r = _semente("mapa");
-    ctx.save(); ctx.translate(px, py);
-    for (let i = 0; i < 9; i++) { ctx.fillStyle = "rgba(40,70,48,.85)"; ctx.beginPath(); ctx.ellipse(r() * pw, r() * ph, pw * (0.15 + r() * 0.3), ph * (0.06 + r() * 0.12), r() * 3, 0, 6.283); ctx.fill(); }
-    ctx.strokeStyle = "rgba(90,120,95,.35)"; ctx.lineWidth = 1.2 * u;   // curvas de nível (montanha)
-    for (let k = 1; k < 8; k++) { ctx.beginPath(); ctx.ellipse(pw * 0.72, ph * 0.22, pw * 0.05 * k, ph * 0.03 * k, 0.4, 0, 6.283); ctx.stroke(); }
-    ctx.strokeStyle = "#3b4644"; ctx.lineWidth = 6 * u; ctx.lineCap = "round";
-    const rota = [[0.18, 0.92], [0.24, 0.74], [0.35, 0.62], [0.42, 0.48], [0.55, 0.4], [0.64, 0.3], [0.7, 0.24]];
-    ctx.beginPath(); rota.forEach(([x, y], k) => k ? ctx.lineTo(x * pw, y * ph) : ctx.moveTo(x * pw, y * ph)); ctx.stroke();
-    for (let i = 0; i < 6; i++) { ctx.lineWidth = 3 * u; ctx.beginPath(); ctx.moveTo(r() * pw, r() * ph); ctx.lineTo(r() * pw, r() * ph); ctx.stroke(); }
-    ctx.fillStyle = "#9fb0a6"; ctx.font = `600 ${Math.round(18 * u)}px "Inter", sans-serif`; ctx.fillText(c.cidade || "Hamamatsu ↓", pw * 0.06, ph * 0.97);
-    // ponto azul andando pela rota e sumindo no fim
-    const p = easeInOut(lin(t, c.t0 + 0.4, Math.max(1, (c.some ?? (c.t1 - c.t0)) - 0.6))), n = rota.length - 1, f = p * n, k0 = Math.min(n - 1, Math.floor(f)), fr = f - k0;
-    const x = (rota[k0][0] + (rota[k0 + 1][0] - rota[k0][0]) * fr) * pw, y = (rota[k0][1] + (rota[k0 + 1][1] - rota[k0][1]) * fr) * ph;
-    const vivo = c.some == null || t < c.t0 + c.some, pis = vivo ? 1 : Math.max(0, 1 - (t - c.t0 - c.some) / 0.4) * (Math.sin(t * 40) > 0 ? 1 : 0.2);
-    ctx.globalAlpha = pis; ctx.fillStyle = "rgba(66,133,244,.25)"; ctx.beginPath(); ctx.arc(x, y, (26 + 10 * Math.sin(t * 4)) * u, 0, 6.283); ctx.fill();
-    ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(x, y, 13 * u, 0, 6.283); ctx.fill(); ctx.fillStyle = "#4285f4"; ctx.beginPath(); ctx.arc(x, y, 9 * u, 0, 6.283); ctx.fill();
-    ctx.globalAlpha = 1; ctx.restore();
-    ctx.fillStyle = "rgba(10,12,14,.85)"; ctx.fillRect(px, py, pw, 70 * u); ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(20 * u)}px "Inter", sans-serif`;
-    ctx.fillText(c.titulo || "Localização em tempo real · Dani", px + 24 * u, py + 44 * u);
+    const MW = pw * 1.35, MH = ph * 1.12, r = _semente("mapa2");
+    const rota = [[0.12, 0.88], [0.2, 0.8], [0.27, 0.74], [0.33, 0.66], [0.4, 0.6], [0.46, 0.52], [0.53, 0.47], [0.6, 0.4], [0.66, 0.33], [0.72, 0.27], [0.78, 0.2], [0.82, 0.15]];
+    const dur = Math.max(1, (c.some ?? (c.t1 - c.t0)) - 0.4), p = easeInOut(lin(t, c.t0 + 0.3, dur)), n = rota.length - 1, f = p * n, k0 = Math.min(n - 1, Math.floor(f)), fr = f - k0;
+    const dx = (rota[k0][0] + (rota[k0 + 1][0] - rota[k0][0]) * fr), dy = (rota[k0][1] + (rota[k0 + 1][1] - rota[k0][1]) * fr);
+    const camX = Math.min(MW - pw, Math.max(0, dx * MW - pw / 2)), camY = Math.min(MH - ph, Math.max(0, dy * MH - ph * 0.55));
+    ctx.save(); ctx.translate(px - camX, py - camY);
+    ctx.fillStyle = "#1e2622"; ctx.fillRect(0, 0, MW, MH);
+    // arrozais (retângulos claros em grade torta) na planície
+    for (let i = 0; i < 160; i++) { const x = r() * MW * 0.75, y = MH * 0.35 + r() * MH * 0.65; ctx.fillStyle = r() < 0.5 ? "#26332a" : "#2a382d"; ctx.save(); ctx.translate(x, y); ctx.rotate(0.3); ctx.fillRect(0, 0, 22 * u + r() * 28 * u, 14 * u + r() * 16 * u); ctx.restore(); }
+    // serra: manchas de mata escura com curvas de nível e sombra
+    for (let i = 0; i < 7; i++) { const x = MW * (0.55 + r() * 0.45), y = MH * (r() * 0.45), rx = MW * (0.1 + r() * 0.12), ry = MH * (0.08 + r() * 0.1);
+      const gr = ctx.createRadialGradient(x - rx * 0.3, y - ry * 0.3, 0, x, y, rx); gr.addColorStop(0, "#2f4434"); gr.addColorStop(1, "#18241b"); ctx.fillStyle = gr; ctx.beginPath(); ctx.ellipse(x, y, rx, ry, r() * 3, 0, 6.283); ctx.fill();
+      ctx.strokeStyle = "rgba(120,150,120,.22)"; ctx.lineWidth = 1.1 * u; for (let k = 1; k < 6; k++) { ctx.beginPath(); ctx.ellipse(x, y, rx * k / 6, ry * k / 6, 0.4, 0, 6.283); ctx.stroke(); } }
+    // cidade (quadras) no canto de baixo
+    for (let gx = 0; gx < 9; gx++) for (let gy = 0; gy < 7; gy++) { if (r() < 0.15) continue; ctx.fillStyle = "#353b3e"; ctx.fillRect(MW * 0.01 + gx * 24 * u, MH * 0.76 + gy * 19 * u, 19 * u, 14 * u); }
+    // rio
+    ctx.strokeStyle = "#1f4a66"; ctx.lineWidth = 16 * u; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(MW * 0.32, 0); ctx.bezierCurveTo(MW * 0.25, MH * 0.35, MW * 0.48, MH * 0.55, MW * 0.36, MH); ctx.stroke();
+    // ferrovia (cinza com dormentes) saindo da cidade
+    ctx.strokeStyle = "#8a8f93"; ctx.lineWidth = 4 * u; ctx.beginPath(); ctx.moveTo(MW * 0.05, MH * 0.82); ctx.bezierCurveTo(MW * 0.3, MH * 0.72, MW * 0.35, MH * 0.4, MW * 0.6, MH * 0.12); ctx.stroke();
+    ctx.setLineDash([3 * u, 9 * u]); ctx.lineWidth = 10 * u; ctx.strokeStyle = "rgba(138,143,147,.6)"; ctx.stroke(); ctx.setLineDash([]);
+    // estradas: rodovia amarela + ruas
+    ctx.strokeStyle = "#3f4a4c"; ctx.lineWidth = 5 * u; for (let i = 0; i < 14; i++) { ctx.beginPath(); ctx.moveTo(r() * MW, r() * MH); ctx.quadraticCurveTo(r() * MW, r() * MH, r() * MW, r() * MH); ctx.stroke(); }
+    ctx.strokeStyle = "#b08a2e"; ctx.lineWidth = 9 * u; ctx.beginPath(); rota.forEach(([x, y], k) => k ? ctx.lineTo(x * MW, y * MH) : ctx.moveTo(x * MW, y * MH)); ctx.stroke();
+    ctx.strokeStyle = "#e0b44a"; ctx.lineWidth = 5 * u; ctx.stroke();
+    // rótulos
+    const rot = (txt, x, y, tam, cor) => { ctx.font = `700 ${Math.round(tam * u)}px "Inter", "Shippori Mincho", sans-serif`; ctx.fillStyle = cor; ctx.strokeStyle = "rgba(10,14,12,.85)"; ctx.lineWidth = 4 * u; ctx.strokeText(txt, x, y); ctx.fillText(txt, x, y); };
+    rot("浜松 Hamamatsu", MW * 0.03, MH * 0.72, 20, "#e6e9ea"); rot("天竜川", MW * 0.37, MH * 0.3, 15, "#6fa8d0"); rot("国道152号", MW * 0.47, MH * 0.5, 14, "#e0b44a");
+    rot("山", MW * 0.7, MH * 0.12, 22, "#9fb79f"); rot("山", MW * 0.88, MH * 0.3, 22, "#9fb79f");
+    // rastro azul do caminho já feito
+    ctx.strokeStyle = "rgba(66,133,244,.85)"; ctx.lineWidth = 7 * u; ctx.beginPath();
+    for (let k = 0; k <= k0; k++) k ? ctx.lineTo(rota[k][0] * MW, rota[k][1] * MH) : ctx.moveTo(rota[k][0] * MW, rota[k][1] * MH);
+    ctx.lineTo(dx * MW, dy * MH); ctx.stroke();
+    // o ponto: azul com cone de direção; quando some, fica cinza e congela
+    const some = c.some != null && t >= c.t0 + c.some, x = dx * MW, y = dy * MH;
+    if (!some) {
+      const ang = Math.atan2(rota[k0 + 1][1] - rota[k0][1], rota[k0 + 1][0] - rota[k0][0]);
+      ctx.fillStyle = "rgba(66,133,244,.22)"; ctx.beginPath(); ctx.moveTo(x, y); ctx.arc(x, y, 60 * u, ang - 0.45, ang + 0.45); ctx.fill();
+      ctx.fillStyle = "rgba(66,133,244,.2)"; ctx.beginPath(); ctx.arc(x, y, (24 + 10 * Math.sin(t * 4)) * u, 0, 6.283); ctx.fill();
+    }
+    ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(x, y, 13 * u, 0, 6.283); ctx.fill();
+    ctx.fillStyle = some ? "#7d8790" : "#4285f4"; ctx.beginPath(); ctx.arc(x, y, 9 * u, 0, 6.283); ctx.fill();
+    ctx.restore();
+    // barra de cima (contato) e de baixo (estado)
+    ctx.fillStyle = "rgba(14,18,22,.92)"; ctx.fillRect(px, py, pw, 92 * u);
+    ctx.fillStyle = "#e6a95a"; ctx.beginPath(); ctx.arc(px + 44 * u, py + 50 * u, 20 * u, 0, 6.283); ctx.fill();
+    ctx.fillStyle = "#101418"; ctx.font = `800 ${Math.round(18 * u)}px "Inter", sans-serif`; ctx.textAlign = "center"; ctx.fillText("D", px + 44 * u, py + 57 * u); ctx.textAlign = "left";
+    ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(21 * u)}px "Inter", sans-serif`; ctx.fillText("Dani", px + 76 * u, py + 44 * u);
+    ctx.font = `500 ${Math.round(15 * u)}px "Inter", sans-serif`; ctx.fillStyle = some ? "#e2685a" : "#7fd18b";
+    ctx.fillText(some ? "Localização indisponível" : "Localização em tempo real", px + 76 * u, py + 68 * u);
+    const km = (3.2 + 14.6 * p).toFixed(1).replace(".", ","), hm = c.hora_inicio || "23:43", [hh, mn] = hm.split(":").map(Number), mi = mn + Math.floor(p * 15);
+    ctx.fillStyle = "rgba(14,18,22,.92)"; ctx.fillRect(px, py + ph - 110 * u, pw, 110 * u);
+    ctx.fillStyle = "#e9eef2"; ctx.font = `700 ${Math.round(22 * u)}px "Inter", sans-serif`; ctx.fillText(`${km} km de Hamamatsu`, px + 26 * u, py + ph - 66 * u);
+    ctx.font = `500 ${Math.round(16 * u)}px "Inter", sans-serif`; ctx.fillStyle = "#93a1ad";
+    ctx.fillText(some ? `Última atualização ${c.hora_fim || "23:58"}` : `Atualizado agora · ${String(hh).padStart(2, "0")}:${String(mi % 60).padStart(2, "0")}`, px + 26 * u, py + ph - 36 * u);
   });
 }
 function telaCapitulo(c, t) {   // abertura de capítulo: papel escuro, número em kanji, título e ano

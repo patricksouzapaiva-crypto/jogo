@@ -59,8 +59,13 @@
        "de": "Lucas",
        "texto": "kkkk dormiu de novo?",
        "hora": "11:21",
-       "lado": "dir",
-       "apos": 2.2
+       "apos": 2.0
+      },
+      {
+       "de": "Mãe",
+       "texto": "Fala com o maquinista, filha",
+       "hora": "11:22",
+       "apos": 3.0
       },
       {
        "de": "Dani",
@@ -92,7 +97,14 @@
      "volume_db": -14,
      "em": null,
      "depois": false,
-     "atraso": 2.2
+     "atraso": 2.0
+    },
+    {
+     "som": "ep08_msg",
+     "volume_db": -14,
+     "em": null,
+     "depois": false,
+     "atraso": 3.0
     },
     {
      "som": "ep08_vibra",
@@ -297,7 +309,6 @@
        "tam": 0.3,
        "modo": "sangue",
        "escrever": 0.6,
-       "glitch": true,
        "selo": "九"
       }
      ]
@@ -580,7 +591,8 @@
    "cenas": [
     {
      "tipo": "mapa",
-     "titulo": "Localização em tempo real · Dani",
+     "hora_inicio": "23:43",
+     "hora_fim": "23:58",
      "some_em": "cidade"
     }
    ],
@@ -607,8 +619,13 @@
        "de": "Pai",
        "texto": "DANI",
        "hora": "11:52",
-       "lado": "dir",
        "apos": 0.1
+      },
+      {
+       "de": "Mãe",
+       "texto": "filha responde a mãe",
+       "hora": "11:52",
+       "apos": 0.7
       },
       {
        "de": "Dani",

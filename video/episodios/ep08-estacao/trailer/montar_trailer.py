@@ -11,9 +11,10 @@ B = []
 B.append({"fala": falas[0], "sem_legenda": True, "cenas": [{"tipo": "chat", "grupo": "Família 🏠", "membros": "Dani, Lucas, Mãe, Pai",
   "mensagens": [{"de": "Dani", "tipo": "foto", "imagem": I + "N10b_trem_noite.jpg", "hora": "23:20", "apos": 0.2},
                 {"de": "Dani", "texto": "Só eu hoje 😅", "hora": "23:20", "apos": 1.0},
-                {"de": "Lucas", "texto": "kkkk dormiu de novo?", "hora": "11:21", "lado": "dir", "apos": 2.2},
+                {"de": "Lucas", "texto": "kkkk dormiu de novo?", "hora": "11:21", "apos": 2.0},
+                {"de": "Mãe", "texto": "Fala com o maquinista, filha", "hora": "11:22", "apos": 3.0},
                 {"de": "Dani", "texto": "Gente… esse trem não para faz vinte minutos.", "hora": "23:40", "em": "mensagem", "digitando": 1.4}]}],
-  "sons": [fx("ep08_msg", -12, None, False, 0.2), fx("ep08_msg", -12, None, False, 1.0), fx("ep08_msg", -14, None, False, 2.2),
+  "sons": [fx("ep08_msg", -12, None, False, 0.2), fx("ep08_msg", -12, None, False, 1.0), fx("ep08_msg", -14, None, False, 2.0), fx("ep08_msg", -14, None, False, 3.0),
            fx("ep08_vibra", -12, "mensagem", True), fx("ep08_taiko", -6, "mensagem", True, 1.6)],
   "ambiente": {"som": "ep08_trem_dentro", "volume_db": -12}})
 # 1 — capítulo + Oiwa (paralaxe, foco no olho, kanji com hanko, linha do tempo, poeira)
@@ -35,7 +36,7 @@ B.append({"fala": falas[3], "pausa_antes_s": 0.6, "cenas": [{"imagem": R + "R03_
    "foco": [[0.5, 0.25], [0.5, 0.22]], "atmos": {"neblina": 0.5},
    "kanji": [{"texto": "一", "em": "Um", "x": 0.16, "y": 0.5, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
              {"texto": "二", "em": "Dois", "x": 0.84, "y": 0.42, "tam": 0.3, "modo": "sangue", "escrever": 0.5},
-             {"texto": "三", "em": "Três", "x": 0.5, "y": 0.72, "tam": 0.3, "modo": "sangue", "escrever": 0.6, "glitch": True, "selo": "九"}]}],
+             {"texto": "三", "em": "Três", "x": 0.5, "y": 0.72, "tam": 0.3, "modo": "sangue", "escrever": 0.6, "selo": "九"}]}],
   "sons": [fx("ep08_pincel", -9, "Um"), fx("ep08_pincel", -9, "Dois"), fx("ep08_pincel", -8, "Três")]})
 # 4 — o poço real: foto de dia (prova) → a mesma de noite, com neblina e kanji recortado
 B.append({"fala": falas[4], "pausa_antes_s": 0.8, "cenas": [
@@ -58,11 +59,12 @@ B.append({"fala": falas[7], "pausa_antes_s": 0.9, "cenas": [{"imagem": I + "N09_
   "sons": [fx("ep08_tinta", -10), fx("ep08_freio", -16, "desceu"), fx("ep08_sino_estacao", -12, "existe", True)],
   "ambiente": {"som": "ep08_tambor_longe", "volume_db": -20}})
 # 8 — o mapa com o ponto azul indo pra montanha
-B.append({"fala": falas[8], "sem_legenda": True, "cenas": [{"tipo": "mapa", "titulo": "Localização em tempo real · Dani", "some_em": "cidade"}],
+B.append({"fala": falas[8], "sem_legenda": True, "cenas": [{"tipo": "mapa", "hora_inicio": "23:43", "hora_fim": "23:58", "some_em": "cidade"}],
   "sons": [fx("ep08_porta_carro", -12, None, False, -0.4)]})
 # 9 — o grupo de novo: as últimas mensagens
 B.append({"fala": falas[9], "sem_legenda": True, "cenas": [{"tipo": "chat", "grupo": "Família 🏠", "membros": "Dani, Lucas, Mãe, Pai", "mensagens": [
-  {"de": "Pai", "texto": "DANI", "hora": "11:52", "lado": "dir", "apos": 0.1},
+  {"de": "Pai", "texto": "DANI", "hora": "11:52", "apos": 0.1},
+  {"de": "Mãe", "texto": "filha responde a mãe", "hora": "11:52", "apos": 0.7},
   {"de": "Dani", "texto": "ele não fala japonês", "hora": "23:53", "em": "grupo", "digitando": 1.0},
   {"de": "Dani", "texto": "ele tá falando com alguém. em português. com a voz do pai.", "hora": "23:54", "em": "vivo", "digitando": 0.8}]}],
   "sons": [fx("ep08_vibra", -12, "grupo"), fx("ep08_vibra", -12, "vivo")]})
