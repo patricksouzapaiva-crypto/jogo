@@ -151,6 +151,10 @@ Uma mulher de máscara cirúrgica parava as crianças na rua, voltando da escola
 Se a criança dizia que sim… ela tirava a máscara. E a boca dela era cortada de uma orelha à outra.
 E perguntava de novo: "E agora?"
 A *Kuchisake-onna*. A mulher da boca cortada.
+E ela não era nova. Num livro ilustrado de mil oitocentos e um, o *Ehon Sayoshigure*, já aparece uma mulher de
+cabelo arrepiado e a boca rasgada até a orelha. Ela esperou quase duzentos anos… e voltou de máscara.
+*(R19: a ilustração, com textura de papel velho; a atribuição do desenho ao livro vem da Wikimedia — dizer "aparece"
+e não "o desenho original de 1801", porque é um redesenho moderno)*
 Em poucos meses, o boato atravessou o país inteiro. E não ficou só no boato: em várias cidades, as escolas
 começaram a mandar as crianças voltarem pra casa em grupo. Pais e professores fizeram ronda.
 Sabe quando aquilo acabou? Nas férias de julho. Quando as crianças pararam de se encontrar… a história parou de
