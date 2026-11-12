@@ -1,0 +1,9 @@
+{
+ "C_longe":   [10, "Massive heavy thick iron chain, huge rusty links, slowly dragged across a concrete hospital floor far down a long empty corridor, deep low metallic thuds and grinding scrape, link by link, heavy and menacing, long echo, no footsteps, no music"],
+ "C_chega":   [10, "Massive heavy thick iron chain with huge rusty links dragged slowly across a tiled floor, coming closer and closer, deep heavy metallic clanks and low grinding scrape, each pull heavy and deliberate, menacing, cinematic, close perspective at the end, no footsteps, no music"],
+ "C_para":    [5,  "Massive heavy iron chain dragged the last few links across a tiled floor right outside a door, a final deep heavy metallic clank as it stops, then the chain settles with a low rattle, close, menacing, no music"],
+ "C_vai":     [10, "Massive heavy iron chain with thick rusty links slowly dragged away down a long tiled corridor, deep heavy clanks and grinding scrape fading into the distance, long echo, no music"],
+ "C_rapida":  [6,  "Massive heavy iron chains dragged fast and violently across a stone floor, rushing closer through a dark corridor, loud heavy clanking and grinding metal, menacing, cinematic, no voices, no music"],
+ "G_longe":   [5,  "A man screaming in agony and despair, a long raw scream, heard far away from behind closed doors at the end of a long empty hospital corridor at night, echoing, muffled by distance, no music"],
+ "G_perto":   [5,  "A man screaming in agony and despair, raw desperate scream, close, inside an old empty stone room with echo, chains rattling softly, no music"]
+}
