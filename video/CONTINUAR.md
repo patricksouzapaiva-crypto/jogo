@@ -165,3 +165,19 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   espaço ao botão; prompt pedindo olhos abertos na câmera e gestos com as duas mãos → bem mais natural.
   Custo ≈ 47 créditos por segundo de áudio (253 por 5,4 s). A fala inteira (12,9 s) custaria ~610, mas é
   gerada UMA vez e reutilizada em todos os episódios (a vinheta é fixa).
+
+## 12/11 — Ep. 08 "A estação que não existe" (terror japonês + Kisaragi) — trailer APROVADO
+- Pasta `episodios/ep08-estacao/`: ROTEIRO.md (documentário 1666→2004 + história da Dani; final novo do usuário:
+  vigília no quintal e a Dani de branco na janela de cima → zoom → corte seco pro Vigia), PESQUISA.md (fontes),
+  PEDIDO_IMAGENS_IA.md, `imagens_reais/` (gravuras e fotos reais limpas + CREDITOS.txt), `imagens/` (25 do usuário
+  ampliadas, ORIGEM.txt), `trailer/` (montar_trailer.py, roteiro.json), `previas/O_Vigia_Ep08_trailer_v3.mp4` = aprovado.
+- **Motor novo** (pagina/motor.js, 12/11): `cena.kanji` (5 modos: luz/sangue/tinta/recorte/placa; pincelada de fundo,
+  hanko `selo`, respingos, `glitch`, `legenda`, `em`), transições `entrada`: nanquim/shoji/vela, `dof`, `mao`,
+  paralaxe nas gravuras, `atmos` (neblina/poeira/vela/pelicula/fumaca), `celular {vertical, sinal}`, `zoom_digital`,
+  tipos `chat` (família com nomes/cores/avatares), `mapa` (GPS com `some_em`), `capitulo` (第一章), `relogios`, e
+  sobreposição `linha` (linha do tempo). Fontes japonesas: Yuji Syuku (pincel) e Shippori Mincho.
+- **Som dos kanjis = `ep08_kanji`** (onda grave suave). O pincel áspero foi REPROVADO ("som de chocalho").
+- Trilha `ep08_cx_tensao` (caixinha em escala in + koto + rin) — gerar a versão longa com
+  `ferramentas/sintetizar_caixinha_ep08.py tensao ../sons/ep08_cx_tensao.mp3 1300`.
+- Falta: imagens da noite da Dani (D01–D11), Hamamatsu/fábrica, J02–J09, clipes Flow; decisões do usuário: voz da
+  Dani (2 áudios) e da mãe na vigília, título (recomendado "Ela desceu numa estação que não existe").
