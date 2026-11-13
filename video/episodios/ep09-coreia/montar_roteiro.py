@@ -42,7 +42,8 @@ def img(nome, z=(1.0, 1.08), foco=None, **kw):
 
 def c3(nome, mov="entrar", foco=(0.5, 0.5), forca=1.0, desfoque=0.0, **kw):
     """Câmera 3D: a câmera anda dentro da imagem (profundidade real). O vídeo é gerado no fim, com a duração da cena."""
-    return {"imagem": I + nome + ".jpg", "zoom": [1.0, 1.0], "_c3d": {"mov": mov, "foco": list(foco), "forca": forca,
+    arq = nome if "/" in nome else I + nome + ".jpg"            # também aceita as bases dos clipes (clipes/base_V0x.jpg)
+    return {"imagem": arq, "zoom": [1.0, 1.0], "_c3d": {"mov": mov, "foco": list(foco), "forca": forca,
                                                                     "desfoque": desfoque}, **kw}
 
 
@@ -236,7 +237,7 @@ C(38, c3("B02_A", "entrar", (0.8, 0.33), 1.0, 0.5))
 C(39, ficha("2006 · agência de defesa do consumidor\n\"asfixia por ventilador\"\nentre os acidentes de verão", "\"asfixia por ventilador\""))
 C(40, img("B02_B", (1.2, 1.5), ((0.8, 0.35), (0.82, 0.36)), dof={"x": 0.82, "y": 0.36, "r": 0.2, "atraso": 0.6}))
 C(41, img("B06_A", (1.0, 1.08), ((0.5, 0.5), (0.3, 0.6)), dof={"x": 0.29, "y": 0.62, "r": 0.18}))
-C(42, c3("B06_B", "entrar", (0.29, 0.62), 0.9, 0.5))
+C(42, c3("B06_A", "entrar", (0.29, 0.62), 0.9, 0.5))
 C(43, vid("V02_ventilador", (1.0, 1.04)))
 C(44, vid("V02b_ventilador", (1.0, 1.06)))
 C(45, img("B07_A", (1.0, 1.12), ((0.5, 0.5), (0.3, 0.45)), dof={"x": 0.28, "y": 0.45, "r": 0.2, "atraso": 0.4}))
@@ -267,7 +268,7 @@ pausa(51, 0.8); pausa(53, 0.6); pausa(54, 0.6); pausa(55, 0.8); pausa(56, 0.4); 
 pausa(61, 0.6); pausa(62, 0.4)
 
 # ================================================================ A BIA — 2: a parede
-C(63, c3("B06_B", "entrar", (0.12, 0.45), 0.9, 0.4))
+C(63, c3(CL + "base_V03.jpg", "entrar", (0.3, 0.5), 0.9, 0.3))         # a parede, de perto
 C(64, vid("V03_batidas_parede", (1.0, 1.04)))
 C(65, img("B07_B", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5))))
 C(66, vid("V03b_batidas_parede", (1.0, 1.06)))
@@ -296,7 +297,7 @@ C(78, img("B07_A", (1.0, 1.1), ((0.5, 0.5), (0.3, 0.45))))
 C(79, c3("S02_A", "entrar", (0.62, 0.5), 0.9, 0.35))
 C(80, img("B11_B", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.3))))
 C(81, img("S02_B", (1.0, 1.1), ((0.6, 0.6), (0.6, 0.5))))
-C(82, c3("B06_B", "entrar", (0.8, 0.4), 1.1, 0.5))
+C(82, c3(CL + "base_V02.jpg", "entrar", (0.82, 0.4), 1.1, 0.5))       # o ventilador no escuro
 amb(71, "nenhum"); amb(73, "ep09_corredor", -26); amb(82, "ep09_ventilador", -22)
 pausa(72, 0.6); pausa(74, 0.6); pausa(76, 0.6); pausa(78, 1.0); pausa(81, 0.6)
 

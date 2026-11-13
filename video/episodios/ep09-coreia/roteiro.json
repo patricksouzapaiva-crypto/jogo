@@ -166,17 +166,17 @@
    "fala": "É só isso. Um ventilador girando, num quarto de sete metros quadrados, do outro lado do mundo.",
    "pausa_antes_s": 5.0,
    "cena": {
-    "imagem": "imagens/B06_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 2.0,
-    "antecipar": 2.0
+    "antecipar": 2.0,
+    "video": "camera3d/B06_B_188b42ce0670.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -278,14 +278,14 @@
   {
    "fala": "Até o fim deste vídeo, você vai entender o que aconteceu com ela.",
    "cena": {
-    "imagem": "imagens/B01_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_B_0abdf31a47dc.mp4"
    },
    "ambiente": {
     "som": "ep09_corredor",
@@ -295,14 +295,14 @@
   {
    "fala": "E por que, na Coreia, os mortos não têm medo de ficar. Eles têm medo de ficar sozinhos.",
    "cena": {
-    "imagem": "imagens/B10_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B10_B_76f549b88c49.mp4"
    },
    "pausa_antes_s": 0.4
   },
@@ -571,14 +571,14 @@
   {
    "fala": "E vou te contar o que aconteceu com uma brasileira que alugou um quarto de sete metros quadrados no andar que não existe.",
    "cena": {
-    "imagem": "imagens/B02_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B02_A_1c1c141f4517.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -664,14 +664,14 @@
   {
    "fala": "Um prédio de quartinhos. Cama, mesa, ventilador. Sete metros quadrados, em média, e metade sem janela.",
    "cena": {
-    "imagem": "imagens/B02_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B02_B_f83b7cff77b9.mp4"
    },
    "ambiente": {
     "som": "ep09_corredor",
@@ -721,14 +721,14 @@
   {
    "fala": "O quarto dela era o F-zero-três.",
    "cena": {
-    "imagem": "imagens/B01_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_A_34435cb49b8b.mp4"
    }
   },
   {
@@ -1119,17 +1119,17 @@
   {
    "fala": "Em hospital, é quase regra. Ninguém quer ser internado no andar da morte.",
    "cena": {
-    "imagem": "imagens/B01_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_B_c8936fc05827.mp4"
    },
    "ambiente": {
     "som": "ep09_corredor",
@@ -1139,14 +1139,14 @@
   {
    "fala": "No prédio da Bia, o F tinha oito quartos.",
    "cena": {
-    "imagem": "imagens/B01_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_A_e44c9c0d37e5.mp4"
    }
   },
   {
@@ -1206,14 +1206,14 @@
   {
    "fala": "Existe uma crença na Coreia que gente de fora acha engraçada: dormir de porta fechada com o ventilador ligado mata.",
    "cena": {
-    "imagem": "imagens/B02_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B02_A_9e925e4621e8.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -1297,14 +1297,14 @@
   {
    "fala": "E toda noite, às três, ela acordava com o vento no rosto.",
    "cena": {
-    "imagem": "imagens/B06_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B06_B_52fbf31142c9.mp4"
    },
    "sons": [
     {
@@ -1444,10 +1444,9 @@
   {
    "fala": "Lá existe um conto que todo coreano conhece. O de duas irmãs: Janghwa e Hongryeon.",
    "cena": {
-    "imagem": "imagens/S03_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.6
@@ -1462,7 +1461,8 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/S03_A_d4396b3dcc2f.mp4"
    },
    "sons": [
     {
@@ -1557,17 +1557,17 @@
   {
    "fala": "Mandaram a Janghwa embora na mesma noite, e o filho da madrasta foi junto, para \"levar até a casa de um tio\".",
    "cena": {
-    "imagem": "imagens/S03_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/S03_B_d517d2e0e136.mp4"
    },
    "pausa_antes_s": 3.77
   },
@@ -1734,14 +1734,14 @@
   {
    "fala": "Na segunda semana, começou o choro. Baixinho, toda noite perto das três, do outro lado da parede.",
    "cena": {
-    "imagem": "imagens/B06_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B06_B_a2d8e1938a85.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -1804,14 +1804,14 @@
    "fala": "De manhã, a Bia perguntou para a ajumma, a dona do prédio, quem morava no F-zero-quatro.",
    "pausa_antes_s": 3.2,
    "cena": {
-    "imagem": "imagens/B12_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B12_B_94549a1ce4c1.mp4"
    },
    "sons": [
     {
@@ -1889,14 +1889,14 @@
   {
    "fala": "E não falou mais nada.",
    "cena": {
-    "imagem": "imagens/B12_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B12_A_8a793b6028d0.mp4"
    },
    "pausa_antes_s": 1.4
   },
@@ -1981,14 +1981,14 @@
   {
    "fala": "Pela lei coreana, é quando alguém isolado da família e dos amigos morre, e o corpo só é encontrado setenta e duas horas depois. Ou mais.",
    "cena": {
-    "imagem": "imagens/B13_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B13_B_78ed999d916f.mp4"
    },
    "ambiente": {
     "som": "ep09_corredor",
@@ -2067,14 +2067,14 @@
   {
    "fala": "Um jornal coreano contou a história de um homem que morreu sozinho num goshiwon de seis metros quadrados, em Seul.",
    "cena": {
-    "imagem": "imagens/B01_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_B_beea3acd83ba.mp4"
    }
   },
   {
@@ -2104,14 +2104,14 @@
   {
    "fala": "Existe até uma profissão para isso: as equipes de limpeza especial. Que entram no quarto depois, para tirar o que ficou. As manchas. O cheiro. As coisas de alguém que ninguém veio buscar.",
    "cena": {
-    "imagem": "imagens/S02_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/S02_A_bc86aa78aeda.mp4"
    }
   },
   {
@@ -2164,14 +2164,14 @@
   {
    "fala": "Ela foi achada por causa do ventilador. Que ficou ligado tanto tempo… que queimou.",
    "cena": {
-    "imagem": "imagens/B06_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B06_B_2986ba94edfe.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -2587,17 +2587,17 @@
      }
     },
     {
-     "imagem": "imagens/S04_A.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "vela": 0.6
      },
      "entrada": "fundir",
      "duracao_entrada": 0.8,
-     "em": "Se"
+     "em": "Se",
+     "video": "camera3d/S04_A_bcc5e1ed802d.mp4"
     }
    ],
    "pausa_antes_s": 5.2,
@@ -2720,10 +2720,9 @@
   {
    "fala": "A lenda mais famosa é a de Arang, da cidade de Miryang. Filha de um magistrado, atacada, morta e escondida no mato. Durante anos, ela apareceu para cada novo magistrado da cidade, e todos morreram de susto.",
    "cena": {
-    "imagem": "imagens/S06_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "kanji": {
      "texto": "아랑",
@@ -2735,7 +2734,8 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/S06_A_09ba1a6c9e16.mp4"
    },
    "sons": [
     {
@@ -2786,10 +2786,9 @@
   {
    "fala": "Existe um ritual chamado casamento de almas. A família da moça morta encontra a família de um rapaz que também morreu solteiro. E os dois mortos se casam. Com cerimônia, roupa, comida.",
    "cena": {
-    "imagem": "imagens/S05_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.8
@@ -2804,7 +2803,8 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/S05_A_de21c837fe9b.mp4"
    },
    "sons": [
     {
@@ -2884,28 +2884,28 @@
   {
    "fala": "Ninguém veio buscar ela. Ninguém procurou um noivo.",
    "cena": {
-    "imagem": "imagens/B01_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B01_B_5417ea34eb37.mp4"
    },
    "pausa_antes_s": 2.5
   },
   {
    "fala": "Então ela procurou sozinha.",
    "cena": {
-    "imagem": "imagens/B10_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B10_B_25913301bbbc.mp4"
    },
    "pausa_antes_s": 1.4
   },
@@ -3564,14 +3564,14 @@
   {
    "fala": "De manhã, a ajumma abriu o F-zero-três com a chave reserva.",
    "cena": {
-    "imagem": "imagens/B12_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B12_A_f9b38011851b.mp4"
    },
    "sons": [
     {
@@ -3595,14 +3595,14 @@
   {
    "fala": "A Bia não estava.",
    "cena": {
-    "imagem": "imagens/B02_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B02_B_e4f885b4879d.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -3614,14 +3614,14 @@
    "fala": "O celular dela estava em cima da cama. O ventilador, ligado. Virado para a parede.",
    "cenas": [
     {
-     "imagem": "imagens/B06_B.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "entrada": "fundir",
      "duracao_entrada": 0.6,
-     "antecipar": 0.6
+     "antecipar": 0.6,
+     "video": "camera3d/B06_B_f4d39dacf09a.mp4"
     },
     {
      "imagem": "imagens/B06_A.jpg",
@@ -3685,28 +3685,28 @@
   {
    "fala": "E atrás dele, entre as tábuas, dois cadernos.",
    "cena": {
-    "imagem": "imagens/B07_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B07_B_a2c6bb851133.mp4"
    },
    "pausa_antes_s": 0.7
   },
   {
    "fala": "O primeiro era antigo, com a capa amarela de umidade. Centenas de páginas com a mesma palavra coreana, escrita à mão, de novo e de novo, até o papel rasgar.",
    "cena": {
-    "imagem": "imagens/B08_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B08_A_75fd48b9af1e.mp4"
    }
   },
   {
@@ -3789,14 +3789,14 @@
   {
    "fala": "Uma frase só, repetida até a última página:",
    "cena": {
-    "imagem": "imagens/B09_A.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B09_A_2b60bd7873ee.mp4"
    },
    "pausa_antes_s": 0.4
   },
@@ -3827,14 +3827,14 @@
   {
    "fala": "A ajumma chamou uma mudang para fazer o ritual no corredor. A mudang subiu até o F, parou na porta do F-zero-quatro, e não quis entrar.",
    "cena": {
-    "imagem": "imagens/B01_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/B01_B_b0348dd722ba.mp4"
    },
    "ambiente": {
     "som": "ep09_corredor",
@@ -4281,14 +4281,14 @@
   {
    "fala": "E se o ventilador ligar sozinho… não olha pra parede.",
    "cena": {
-    "imagem": "imagens/B06_B.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/B06_B_e71f5ccf827d.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
