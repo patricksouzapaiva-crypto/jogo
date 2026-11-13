@@ -2,13 +2,13 @@
 # Codifica a cópia de envio em 4 pedaços (vídeo) + áudio inteiro, e junta. Retomável.
 cd "$(dirname "$0")"
 B=${1:-3000}; OUT=${2:-O_Vigia_Ep08_envio.mp4}   # kbps do vídeo, nome da saída
-M=../ep08_final.mp4; Q=9404   # quadros por pedaço (30 fps); o último leva o resto
+M=${M:-../ep08_final.mp4}; Q=9404   # quadros por pedaço (30 fps); o último leva o resto
 for i in 0 1 2 3; do
   [ -f v$i.ok ] && continue
   ( s=$(python3 -c "print($i*$Q/30)"); ex=""; [ $i -lt 3 ] && ex="-frames:v $Q"
     ffmpeg -nostdin -y -v error -ss $s -i $M $ex -an -c:v libx264 -preset slow -b:v ${B}k -maxrate $((B*5/3))k -bufsize $((B*5/2))k -threads 2 v$i.mp4 && touch v$i.ok ) &
 done
-[ -f a.ok ] || ( ffmpeg -nostdin -y -v error -i $M -vn -c:a aac -b:a 160k a.m4a && touch a.ok ) &
+[ -f a.ok ] || ( ffmpeg -nostdin -y -v error -i $M -vn -c:a aac -b:a ${AB:-160}k a.m4a && touch a.ok ) &
 wait
 ls v0.ok v1.ok v2.ok v3.ok a.ok >/dev/null || { echo FALHOU; exit 1; }
 printf "file 'v%d.mp4'\n" 0 1 2 3 > lista.txt
