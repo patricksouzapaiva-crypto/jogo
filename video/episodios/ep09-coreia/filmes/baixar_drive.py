@@ -4,8 +4,8 @@ import time, sys, gdown
 from pathlib import Path
 PASTA = "https://drive.google.com/drive/folders/1QBKiUWbwEfHYEZmiBAlKRESsmS9KmZ1a"
 AQUI = Path(__file__).parent
-ultimo = time.time()
-while time.time() - ultimo < 1800:
+ultimo = time.time(); LIMITE = float(sys.argv[1]) if len(sys.argv) > 1 else 1800
+while time.time() - ultimo < LIMITE:
     try:
         fs = gdown.download_folder(PASTA, skip_download=True, quiet=True) or []
     except Exception as e:
@@ -23,4 +23,4 @@ while time.time() - ultimo < 1800:
         except Exception as e:
             print("falhou:", f.path, e, flush=True)
     time.sleep(120)
-print("fim: nada novo há 30 min", flush=True)
+print(f"fim: nada novo há {LIMITE / 60:.0f} min", flush=True)
