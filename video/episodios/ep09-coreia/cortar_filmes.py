@@ -18,7 +18,7 @@ EXHUMA = "EXHUMA (2024) · DIR. JANG JAE-HYUN · SHOWBOX"
 R = {"114623": (1920, 1030, 240, 25), "142451": (1920, 1040, 240, 20), "143012": (1920, 1040, 240, 20),
      "112939": (1636, 920, 382, 140)}   # 112939 (Netflix): só a parte de baixo, sem o logo e sem a marca do título
 FUNDIR = {"exhuma_tambor"}
-ALVO = 5.0                                                     # duração mínima depois da câmera lenta (s)
+ALVO = 6.0                                                     # duração mínima depois da câmera lenta (s)
 TRECHOS = {
     "irmas_deque": ("114623", 98.2, 101.3, IRMAS),           # a menina sozinha no deque do lago
     "irmas_casa": ("114623", 62.6, 65.2, IRMAS),             # a casa no capim seco (61,6–62,4 tem o ícone de carregando da gravação; 66+ ela vira o rosto)
@@ -43,6 +43,7 @@ for nome in pedidos:
     cor = "eq=saturation=0.82:contrast=1.06:brightness=-0.03,noise=alls=7:allf=t"
     filtro = (
         f"[0:v]crop={w}:{h}:{x}:{y},scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,"
+        f"mpdecimate,setpts=N/24/TB,"   # rascunho 1 "travando": a gravação repetia quadros irregularmente; volta a 24 q/s regulares
         f"setpts={fator:.4f}*PTS,{interp},{cor},split[a][b];"
         f"[a]scale=480:270,boxblur=12:3,eq=brightness=-0.22:saturation=0.6,scale=1920:1080[fundo];"
         f"[b]scale={fw}:{fh},pad={fw + 4}:{fh + 4}:2:2:color=0xb8b0a4@0.55[quadro];"

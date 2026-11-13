@@ -741,6 +741,11 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     ab = roteiro.get("abertura")
     if ab and ab.get("imagem") and not (base / ab["imagem"]).exists() and (base / "provisorias" / Path(ab["imagem"]).name).exists():
         ab = dict(ab, imagem="provisorias/" + Path(ab["imagem"]).name)
+    te = roteiro.get("titulo_ep")
+    if te:   # 13/11 (Ep. 09): título do episódio escrito ao lado do Vigia, na pausa antes da batida (sem corte)
+        t1 = rel.inicio(te["antes_da_batida"]) - te.get("folga", 1.4)
+        D["titulo_ep"] = {"t0": t1 - te.get("duracao", 5.0), "t1": t1, "linhas": te["linhas"],
+                          "vermelho": te.get("vermelho"), "x": te.get("x", 0.56)}
     if ab and ab.get("antes_da_batida"):
         kb = ab["antes_da_batida"]
         t_a0, t_a1 = rel.fim(kb - 1) + 0.3 + ab.get("segurar", 0), rel.inicio(kb) - 0.3  # "segurar": a cena anterior fica

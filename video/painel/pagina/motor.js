@@ -1553,6 +1553,34 @@ async function atualizarVideos(t) {
   }
 }
 
+// 13/11 (Ep. 09): entrada do episódio JUNTO com o Vigia — o nome escrito ao lado dele, sem corte para outro cartão.
+// D.titulo_ep = {t0, t1, linhas: ["O VIGIA · EPISÓDIO 09", "O QUARTO", "DO ANDAR F"], vermelho: "ANDAR F", x}
+function tituloEpisodio(t) {
+  const T = D.titulo_ep; if (t < T.t0 || t > T.t1 + 1.2) return;
+  const { W, H } = D, a = Math.min(easeOut(lin(t, T.t0, 1.4)), 1 - easeInOut(lin(t, T.t1, 1.2)));
+  if (a <= 0) return;
+  const x = W * (T.x ?? 0.56);
+  ctx.save(); ctx.globalAlpha = a;
+  const g = ctx.createLinearGradient(x - W * 0.08, 0, W, 0);      // escurece só atrás do texto
+  g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(0.25, "rgba(0,0,0,.55)"); g.addColorStop(1, "rgba(0,0,0,.7)");
+  ctx.fillStyle = g; ctx.fillRect(x - W * 0.08, 0, W, H);
+  const [l0, ...grandes] = T.linhas, tam = Math.round(H * 0.105);
+  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  ctx.font = `700 ${Math.round(H * 0.026)}px "Inter", sans-serif`; ctx.fillStyle = "#c9b9a0";
+  ctx.fillText(l0.split("").join(" "), x, H * 0.38);
+  ctx.fillStyle = "#b51b1b"; ctx.fillRect(x, H * 0.405, W * 0.3 * easeOut(lin(t, T.t0 + 0.4, 1.2)), Math.max(2, H * 0.004));
+  ctx.font = `400 ${tam}px "Anton", sans-serif`; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 24;
+  grandes.forEach((l, k) => {
+    const y = H * 0.52 + k * tam * 1.05, ent = easeOut(lin(t, T.t0 + 0.6 + k * 0.5, 1.0));
+    ctx.globalAlpha = a * ent;
+    const v = T.vermelho && l.includes(T.vermelho) ? T.vermelho : null;
+    if (v) {
+      const antes = l.slice(0, l.indexOf(v)); ctx.fillStyle = "#f2ead8"; ctx.fillText(antes, x, y);
+      ctx.fillStyle = "#d4302a"; ctx.fillText(v, x + ctx.measureText(antes).width, y);
+    } else { ctx.fillStyle = "#f2ead8"; ctx.fillText(l, x, y); }
+  });
+  ctx.restore();
+}
 // ------------------------------------------------------------------ quadro
 window.quadro = async function (t) {
   await atualizarVideos(t);
@@ -1571,8 +1599,28 @@ function quadroSinc(t) {
       // sem Vigia nas telas de texto e nas cenas marcadas "sem_vigia" (tensão/imersão): sai e volta junto com o corte
       const cT = ciT >= 0 ? D.cenas[ciT] : {};
       const semV = cT.tipo === "texto" || cT.sem_vigia || (D.vigia_padrao === false && !cT.com_vigia && !cT.vigia);
-      if (!semV || (D.cta && t >= D.cta.t0)) (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+      // 13/11 (Ep. 09): o Vigia entra e sai JUNTO com a fusão da cena do abrigo (antes ele surgia de uma vez por cima
+      // da imagem anterior ainda sumindo, e sumia de uma vez enquanto o abrigo ainda estava na tela)
+      const cA = ciT > 0 ? D.cenas[ciT - 1] : null, emFusao = cT.entrada && cT.entrada !== "corte",
+            dtF = cT.duracao_entrada || 0.5, pF = emFusao ? lin(t, cT.t0, dtF) : 1;
+      const ehV = (x) => x && (x.vigia || x.com_vigia || (D.vigia_padrao !== false && x.tipo !== "texto" && !x.sem_vigia));
+      let aV = 1;
+      if (!semV && !ehV(cA)) aV = easeInOut(pF);                         // entrando no Vigia
+      const saindo = semV && ehV(cA) && pF < 1;                          // saindo do Vigia para outra cena
+      if (saindo) aV = 1 - easeInOut(pF);
+      if ((!semV || saindo) || (D.cta && t >= D.cta.t0)) {
+        const desenhaV = () => (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+        if (aV >= 0.999 || (D.cta && t >= D.cta.t0)) desenhaV();
+        else if (aV > 0.001) {
+          const VC = _canvas("camV", D.W, D.H), sC = ctx; VC.getContext("2d").clearRect(0, 0, D.W, D.H);
+          ctx = VC.getContext("2d"); ctx.save();
+          if (saindo) { const sv = D.cenas[ciT]; D.cenas[ciT] = cA; desenhaV(); D.cenas[ciT] = sv; } else desenhaV();
+          ctx.restore(); ctx = sC;
+          ctx.save(); ctx.globalAlpha = aV; ctx.drawImage(VC, 0, 0); ctx.restore();
+        }
+      }
     }
+    if (D.titulo_ep) tituloEpisodio(t);
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
     return;

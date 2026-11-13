@@ -153,7 +153,7 @@ def pincel(i, em, db=-16, atraso=0.0):
 
 
 def HAN(tam, x=0.5, **kw):                                                  # o elemento-marca: cada vez maior
-    return K("한", x, 0.5, "tinta", "han", tam=tam, **kw)
+    return K("한", x, 0.5, "luz", "han", tam=tam, **kw)               # rascunho 1: "tinta" (preto) sumia no escuro
 
 # ================================================================ GANCHO — sem Vigia (03:00 em Seul / 15:00 em BH)
 C(0, {"tipo": "relogios", "lados": [{"nome": "Seul", "hora": "03:00", "imagem": I + "S01_B.jpg", "brilho": 0.55},
@@ -177,7 +177,8 @@ pausa(9, 0.4)
 
 # ================================================================ TEMA — Vigia
 C(10, vigia((1.0, 1.04)))
-saida_lenta(10, 1.4)
+saida_lenta(10, 5.4, dur=2.2)       # rascunho 1: o abrigo entra devagar e o título aparece ao lado do Vigia, sem corte
+fx(10, None, "ep09_jing", -17, atraso=-6.2)
 C(11, vigia((1.0, 1.05)))
 C(12, img("B14_A", (1.0, 1.08), ((0.5, 0.5), (0.62, 0.45)), atmos={"chuva": 0.3}))
 C(13, img("S01_A", (1.0, 1.12), ((0.5, 0.5), (0.58, 0.18)), dof={"x": 0.58, "y": 0.18, "r": 0.2, "atraso": 0.4}))
@@ -194,7 +195,8 @@ pausa(13, 0.6); pausa(15, 0.8); pausa(17, 0.6); pausa(19, 0.6)
 
 # ================================================================ A BIA — 1: as regras
 C(20, cel(img("B14_A", (1.0, 1.06), ((0.55, 0.55), (0.6, 0.6)), atmos={"chuva": 0.3}), "21:14"))
-C(21, img("B14_B", (1.0, 1.1), ((0.2, 0.2), (0.22, 0.18)), kanji=K("고시원", 0.78, 0.5, "placa", "goshiwon", fundo="vermelho", em="goshiwon")))
+C(21, img("B14_B", (1.0, 1.1), ((0.2, 0.2), (0.22, 0.18)), kanji=K("고시원", 0.78, 0.5, "placa", "goshiwon", fundo="vermelho", atraso=0.3)))
+pausa(22, 2.5)                      # rascunho 1: o 고시원 sumia antes de dar para ler
 pincel(21, "goshiwon")
 C(22, c3("B02_B", "entrar", (0.5, 0.45), 0.9, 0.0))
 C(23, img("B03_A", (1.0, 1.35), ((0.5, 0.5), (0.59, 0.5)), dof={"x": 0.59, "y": 0.5, "r": 0.16, "atraso": 1.2}))
@@ -208,10 +210,12 @@ HIST += [{"de": "Bia", "tipo": "foto", "imagem": I + "B04_A_regras.jpg", "hora":
          {"de": "Bia", "texto": "olha as regras do meu andar kkkkk", "hora": "09:41"}]
 fx(25, "mandou", "ep08_msg", -19)
 # cada regra: a câmera vai até a linha dela na folha (Regra 1 no alto … Regra 4 embaixo)
-C(26, img("B04_A_regras", (1.35, 1.4), ((0.53, 0.1), (0.53, 0.11)), dof={"x": 0.5, "y": 0.5, "r": 0.34}))
-C(27, img("B04_A_regras", (1.35, 1.4), ((0.53, 0.2), (0.53, 0.21)), dof={"x": 0.5, "y": 0.5, "r": 0.34}))
-C(28, img("B04_A_regras", (1.3, 1.36), ((0.53, 0.33), (0.53, 0.34)), dof={"x": 0.5, "y": 0.5, "r": 0.34}))
-C(29, img("B04_A_regras", (1.3, 1.36), ((0.53, 0.47), (0.53, 0.48)), dof={"x": 0.5, "y": 0.5, "r": 0.34}))
+def regra(n, z=(1.32, 1.38)):
+    y = {1: 0.13, 2: 0.21, 3: 0.325, 4: 0.48}[n]
+    return img("B04_A_regras", z, ((0.58, y), (0.69, y)))
+
+
+C(26, regra(1)); C(27, regra(2)); C(28, regra(3)); C(29, regra(4))
 chat(30, {"de": "Bia", "tipo": "audio", "duracao": "0:03", "hora": "09:42", "apos": 0.1})
 C(31, img("B04_A_regras", (1.0, 1.04), ((0.5, 0.4), (0.5, 0.4)), atmos={"poeira": 0.3}))
 amb(20, "ep09_seul_chuva", -26); amb(22, "ep09_corredor", -28)
@@ -291,7 +295,7 @@ pincel(71, "godoksa")
 C(73, c3("B13_B", "entrar", (0.55, 0.75), 0.9, 0.4))
 C(74, ficha("2024 · 3.924 mortes solitárias\nMinistério da Saúde e Bem-Estar da Coreia", "3.924"))
 C(75, img("S01_A", (1.0, 1.1), ((0.5, 0.5), (0.4, 0.6))))
-C(76, img("B13_A", (1.1, 1.3), ((0.3, 0.6), (0.65, 0.8)), dof={"x": 0.7, "y": 0.8, "r": 0.2}))
+C(76, img("B13_A", (1.0, 1.08), ((0.55, 0.7), (0.6, 0.75))))
 C(77, c3("B01_B", "entrar", (0.49, 0.42), 0.8, 0.2))
 C(78, img("B07_A", (1.0, 1.1), ((0.5, 0.5), (0.3, 0.45))))
 C(79, c3("S02_A", "entrar", (0.62, 0.5), 0.9, 0.35))
@@ -303,14 +307,14 @@ pausa(72, 0.6); pausa(74, 0.6); pausa(76, 0.6); pausa(78, 1.0); pausa(81, 0.6)
 
 # ================================================================ A BIA — 3: o nome em vermelho
 C(83, img("B05_B", (1.0, 1.06), ((0.4, 0.5), (0.5, 0.5))))
-C(84, img("B05_A", (1.2, 1.4), ((0.67, 0.45), (0.67, 0.45)), kanji=K("빨간색", 0.22, 0.5, "sangue", "vermelho", em="Vermelha")))
+C(84, img("B05_A", (1.05, 1.15), ((0.62, 0.45), (0.65, 0.45)), kanji=K("빨간색", 0.22, 0.5, "sangue", "vermelho", em="Vermelha")))
 pincel(84, "Vermelha")
 C(85, vid("V04_plaquinha", (1.0, 1.04)))
 chat(86, {"de": "Bia", "tipo": "foto", "imagem": I + "B05_A.jpg", "hora": "10:12", "apos": 0.1},
      {"de": "Bia", "texto": "alguém riscou meu nome 😶", "hora": "10:12", "apos": 0.9})
 chat(87, {"de": "Bia", "tipo": "audio", "duracao": "0:05", "hora": "10:20", "apos": 0.1})
-C(88, img("B05_A", (1.0, 1.1), ((0.6, 0.45), (0.67, 0.45)), dof={"x": 0.68, "y": 0.45, "r": 0.2}))
-C(89, img("B05_B", (1.3, 1.45), ((0.67, 0.45), (0.67, 0.45))))
+C(88, img("B05_A", (1.0, 1.08), ((0.55, 0.45), (0.62, 0.45))))
+C(89, img("B05_A", (1.1, 1.18), ((0.66, 0.45), (0.67, 0.45))))
 C(90, img("F01_A", (1.0, 1.08), ((0.6, 0.6), (0.65, 0.62))))
 chat(91, {"de": "eu", "tipo": "audio", "duracao": "0:04", "hora": "15:22", "apos": 0.1})
 C(92, img("B14_B", (1.0, 1.08), ((0.5, 0.5), (0.6, 0.6)), atmos={"chuva": 0.3}))
@@ -349,7 +353,7 @@ C(108, img("F01_B", (1.0, 1.1), ((0.5, 0.55), (0.65, 0.65)), dof={"x": 0.66, "y"
 chat(109, {"de": "Bia", "tipo": "audio", "duracao": "0:11", "hora": "15:02", "apos": 0.2})
 C(110, vid("V01_corredor", (1.0, 1.05)))
 C(111, vid("V05b_figura_corredor", (1.0, 1.03)))
-C(112, img("B04_A_regras", (1.3, 1.36), ((0.53, 0.31), (0.53, 0.33)), dof={"x": 0.53, "y": 0.32, "r": 0.2}))
+C(112, regra(3, (1.36, 1.42)))
 chat(113, {"de": "eu", "texto": "NÃO SOU EU. NÃO ABRE.", "hora": "15:03", "check": "✓", "em": "maiúsculas", "digitando": 1.0})
 C(114, img("F02_B", (1.0, 1.12), ((0.5, 0.45), (0.55, 0.35)), dof={"x": 0.55, "y": 0.35, "r": 0.22}))
 amb(106, "ep09_ventilador", -24); amb(108, "ep09_sala_bh", -28); amb(110, "ep09_corredor", -22)
@@ -363,19 +367,19 @@ capitulo(115, 5, "A mudang", "무당 · o ritual gut", I + "S05_B.jpg",
          img("S05_B", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45)), atmos={"vela": 0.6},
              kanji=K("무당", 0.82, 0.45, "sangue", "mudang · a xamã", em="mudang")), "Quando")
 pincel(115, "mudang")
-C(116, img("S01_A", (1.0, 1.12), ((0.5, 0.5), (0.85, 0.35)), dof={"x": 0.85, "y": 0.35, "r": 0.2, "atraso": 0.8}))
+C(116, img("S01_A", (1.0, 1.08), ((0.45, 0.5), (0.6, 0.45))))
 C(117, filme("exhuma_tambor", kanji=K("굿", 0.12, 0.45, "sangue", "gut · o ritual", em="gut")))
 pincel(117, "gut")
 C(118, img("S05_A", (1.05, 1.2), ((0.5, 0.5), (0.4, 0.4)), atmos={"vela": 0.8}))
-C(119, filme("exhuma_danca"))
-C(120, filme("exhuma_cova"))
+C(119, img("S05_B", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45)), atmos={"vela": 0.5}), (filme("exhuma_danca"), "Exhuma"))
+C(120, filme("exhuma_cova"), (ficha("Exhuma (2024) · dir. Jang Jae-hyun · Showbox\n11,9 milhões de ingressos", "11,9 milhões"), "primeiro"))
 C(121, filme("exhuma_caixao"), (filme("exhuma_montanha"), "estacas"))
-C(122, ficha("Exhuma (2024) · dir. Jang Jae-hyun · Showbox\n11,9 milhões de ingressos", "11,9 milhões"))
-C(123, img("S06_B", (1.0, 1.1), ((0.5, 0.5), (0.4, 0.45))))
+C(122, img("S06_B", (1.0, 1.08), ((0.45, 0.5), (0.4, 0.45))))
+C(123, img("S04_B", (1.0, 1.08), ((0.66, 0.5), (0.66, 0.45)), atmos={"vela": 0.5}))
 C(124, img("S05_B", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5)), atmos={"vela": 0.5}, kanji=HAN(0.42, atraso=0.6)))
 amb(115, "nenhum")
 musica(115, "08_gut_mudang", -29)
-pausa(117, 0.6); pausa(119, 0.6); pausa(120, 0.6); pausa(122, 0.8); pausa(124, 1.6)
+pausa(117, 0.6); pausa(119, 0.6); pausa(120, 0.6); pausa(121, 0.6); pausa(122, 0.8); pausa(124, 1.6)
 
 # ================================================================ A BIA — 5: o quarto
 C(125, c3("B12_A", "entrar", (0.5, 0.42), 0.9, 0.3))
@@ -447,8 +451,8 @@ roteiro = {
                                "mudang", "godoksa"]},
     "ambiente_inicial": [{"som": "ep09_ventilador", "volume_db": -22}],
     "musica": {"som": "ep09_m01_tres_da_tarde", "volume_db": -28},
-    "abertura": {"texto": "O VIGIA\nEP. 09 · O QUARTO DO ANDAR F", "vermelho": "ANDAR F", "duracao": 6.0, "segurar": 4.0,
-                 "antes_da_batida": 10, "sons": [{"som": "ep09_jing", "t": 0.2, "volume_db": -16}]},
+    "titulo_ep": {"antes_da_batida": 10, "linhas": ["O VIGIA · EPISÓDIO 09", "O QUARTO", "DO ANDAR F"], "vermelho": "ANDAR F",
+                  "duracao": 5.2, "folga": 1.0, "x": 0.55},
     "cta": {"titulo": "Liga pra alguém hoje.", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
             "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite",
@@ -596,6 +600,9 @@ def ritmo():
     print("pausas alongadas para o kanji/cena respirar (fala, s):", alongadas)
 
 
+for _b in batidas:                                   # rascunho 1: tira TODO foco redondo (dof) das imagens
+    for _c in cenas_de(_b):
+        _c.pop("dof", None)
 ritmo()
 garantir_leitura()
 aplicar_ajuste_pausas()
@@ -627,8 +634,10 @@ def camera_3d():
             c["zoom"] = [1.0, 1.06]; continue
         fim = inicios[k + 1][0] if k + 1 < len(inicios) else t + 6
         dur = round(max(4.0, fim - t) + 2.5, 1)
-        chave = hashlib.md5(json.dumps([c["imagem"], p, dur], sort_keys=True).encode()).hexdigest()[:12]
-        arq = C3D / f"{Path(c['imagem']).stem}_{chave}.mp4"
+        chave = hashlib.md5(json.dumps([c["imagem"], p], sort_keys=True).encode()).hexdigest()[:10]
+        # reaproveita um vídeo do mesmo movimento se a duração for parecida (até 3 s mais longo): o motor usa só o começo
+        prontos = sorted((float(f.stem.rsplit("_", 1)[1]), f) for f in C3D.glob(f"{Path(c['imagem']).stem}_{chave}_*.mp4"))
+        arq = next((f for d_, f in prontos if dur <= d_ <= dur + 3.0), C3D / f"{Path(c['imagem']).stem}_{chave}_{dur}.mp4")
         if not arq.exists():
             camera3d.gerar(AQUI / c["imagem"], arq, dur, p["mov"], tuple(p["foco"]), p["forca"], p["desfoque"]); feitos += 1
         c["video"] = str(arq.relative_to(AQUI)); c.pop("imagem", None)
