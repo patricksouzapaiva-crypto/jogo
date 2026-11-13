@@ -206,3 +206,23 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   cópia de 530 MB). Entrega pendente: o arquivo não cabe no chat (limite 400 MB) e esta sessão não pode criar Releases no
   GitHub (repo é PÚBLICO). Usuário escolheu "esperar" — opções: 4 partes de ~375 MB pelo chat + comando para juntar.
 - `previas/ep08_final.mp4` e `ep08_final_v2_som.mp4` têm a legenda antiga (não usar).
+
+## 13/11 — Ep. 08 ENTREGUE (o usuário posta)
+- Vídeo 1,5 GB entregue em 4 partes (juntou com sucesso). `publicacao/`: YOUTUBE.md (título, capas E/A/F, descrição com
+  20 capítulos, créditos, tags, comentário fixado), SHORTS.md + `shorts_final/` (3 Shorts, ordem 1 → 3 → 2), capas.
+
+## 13/11 — Ep. 09 "O terror coreano é pior do que você imagina" (história: "O quarto do andar F") — EM PRODUÇÃO
+- `episodios/ep09-coreia/`: ROTEIRO.md v2 APROVADO; vozes Bia = Leda, mãe = Sulafat, voz falsa no corredor = Sulafat
+  sussurrada (`vozes/`). Imagens/clipes do Flow em `imagens/` e `clipes/` (B04 refeita: `regras_folha.py`).
+- Fluxo: `falas.py` → `narrar.py` (4 blocos, Algenib) → `alinhar.py` → `trocar_vozes.py` → `montar_roteiro.py` →
+  `rascunho.sh` (gera câmera 3D + `gerar.py --rascunho`). "B. A." (비아 lido errado) foi silenciado em
+  `audio/voz_com_vinheta_limpa.wav` (original em `_original.wav`); o 비아 aparece pintado nesse silêncio.
+- **Trilha nova, APROVADA ("ficaram excelentes")**: 10 faixas compostas por parte (ElevenLabs Music,
+  `trilha/gerar_trilha.py`; instrumentos coreanos + tema de gayageum), checadas contra "pancada" (`trilha/analisar.py`),
+  `montar_trilha.py` iguala volume e instala `painel/sons/ep09_m*.mp3`. Música mais presente: -7 dB sob a voz.
+  **Pedido do usuário: no terror a música é o que mais marca — manter esse padrão (faixa por parte) nos próximos.**
+- Motor novo: `ferramentas/camera3d.py` (Depth Anything V2: paralaxe real + foco de lente; cenas `c3(...)` no montar),
+  `cortar_filmes.py` (Exhuma/Two Sisters: recorte sem logo Netflix, câmera lenta minterpolate, moldura "TRECHO DE FILME"
+  com crédito, sem áudio; brutos e prontos fora do git), fontes coreanas Nanum (reserva das japonesas), chat `check`.
+- Pedido do usuário (13/11): "atenção à iluminação, jogo de câmera e foco" — foco de cada imagem conferido na grade.
+- Falta: rascunho para o usuário; depois final, capa ("NÃO RESPONDA DEPOIS DAS 3."), descrição, Shorts.
