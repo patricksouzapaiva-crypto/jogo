@@ -1,281 +1,270 @@
-# O Vigia — Ep. 09 "O quarto do andar F" (v2 — APROVADO 13/11; vozes: Bia = Leda, mãe = Sulafat)
+# O Vigia — Ep. 09 "O que voltou da montanha" (v3 — história aprovada 13/11; roteiro aguardando aprovação)
 
-**Pedido do usuário (13/11):** v1 "gostei, mas o terror está fraco — quero algo mais pesado e sinistro".
-**O que mudou da v1 → v2:**
-- O fantasma não é mais "só quer ser ouvida". Ela **quer companhia** — e a tradição coreana diz como se resolve isso:
-  casando a morta (영혼결혼식, casamento de almas). Ela escolheu a Bia.
-- Base real e pesada: **고독사 (godoksa)**, as mortes solitárias. Na Coreia, 3.924 pessoas em 2024 morreram sozinhas
-  e só foram achadas 72 horas ou mais depois; goshiwons estão entre os lugares onde isso mais cresce; um caso real de
-  um homem num goshiwon de 6,6 m² achado pelo cheiro. Tudo em PESQUISA.md com fonte.
-- As **regras do prédio** na porta (lidas pelo Vigia, uma a uma; a Bia quebra cada uma).
-- O conto das irmãs com o detalhe real e cruel (o rato esfolado na cama).
-- **Final sem salvação:** a Bia some. O quarto é achado com o ventilador ligado virado pra parede. E até hoje, toda
-  tarde às três, chega no grupo da família um áudio do número dela: só o barulho de um ventilador. A mãe ainda responde.
-- Fecho que vira para quem assiste: "se você mora sozinho… quantos dias até alguém perceber?"
-- Mantido: sem susto pulando na tela, sem rosto de IA, Vigia só no tema/apartes/fecho; trechos de filme com ficha.
-
-**TÍTULO APROVADO (13/11): "O terror coreano é pior do que você imagina"** (44 car.) — "triste" foi recusado.
-
-**Capa:** o corredor do goshiwon com a figura de branco bem pequena no fundo + **"NÃO RESPONDA DEPOIS DAS 3."**
-(alternativa: a porta com o nome em vermelho + "ELA NÃO QUER IR SOZINHA.")
-
-
-**Duração:** ~2.500 palavras ≈ 20 min. **Elemento-marca:** 한 (han) em pincel, cada vez maior; no fim, o 한 vira o
-nome da Bia em vermelho (비아).
+**Pedido do usuário (13/11):** a v2 (a Bia) era "mais lamento do que terror". Juntar os 4 contos — a Irmã Raposa, o
+Jangsan-beom, o Jogo do Elevador e o hospital de Gonjiam — numa história só. **Sustos liberados, desde que bem
+construídos** (silêncio antes, nada gratuito, saída lenta depois).
+**Título (aprovado antes):** "O terror coreano é pior do que você imagina". **Capa:** a definir (ideia: o painel do
+elevador com o botão 4 aceso + "NÃO OLHA PRA ELA.").
+**Vozes:** Rafa (novo, 27 anos), Lívia (nova, 19), mãe (Sulafat), pai (novo), as vozes falsas (a da Lívia e, no fim, a do próprio Rafa — as mesmas tomadas, distorcidas).
+**Fatos (PESQUISA.md):** Irmã Raposa = conto popular com 75+ variantes; Jangsan-beom = lenda de Busan espalhada na
+internet em 2012–2013, filme The Mimic (2017); Jogo do Elevador = ritual da internet (Coreia ou Japão, origem
+disputada); Gonjiam = hospital fechado nos anos 90, CNN 2012, filme 2018, demolido em 2018; a sala 402 foi INVENTADA
+pelo filme. Ano da história: 2017.
 
 ---
 
-## GANCHO (0:00–0:40) — sem Vigia
-*(celular: grupo "Família BH 💛"; relógios Seul 03:00 / Belo Horizonte 15:00; som de ventilador por baixo)*
+## GANCHO (sem Vigia)
+*(celular: grupo "Família 🏠"; relógios Busan 03:00 / Belo Horizonte 15:00; som de elevador por baixo)*
 
-Três da tarde, em Belo Horizonte. Três da manhã, em Seul.
-No grupo da família, chega um áudio do número da Bia.
-A mãe aperta o play.
-*(5 s: só o ventilador. Nada mais.)*
-É só isso. Um ventilador girando, num quarto de sete metros quadrados, do outro lado do mundo.
-Chega todo dia. Sempre às três.
-E a mãe responde todos.
-🎙mae "Filha… a mãe tá aqui."
-O problema é que a Bia desapareceu faz oito meses.
-Até o fim deste vídeo, você vai entender o que aconteceu com ela.
-E por que, na Coreia, os mortos não têm medo de ficar. Eles têm medo de ficar sozinhos.
+Três da manhã, em Busan, na Coreia do Sul.
+No grupo da família, chega um áudio do Rafa.
+🎙rafa "Mãe… eu tô no elevador. Ele tá subindo. E esse prédio não tem dez andares."
+*(4 s: só o motor do elevador subindo. Um sino de andar.)*
+Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.
+Desde o dia em que a irmã dele voltou da montanha.
+Até o fim deste vídeo, você vai entender por que, na Coreia, quando alguém da sua família te chama de longe… você
+não vai.
 
-## TEMA (0:40–1:55) — Vigia apresenta
+## TEMA — Vigia
 
 Boa noite. Eu sou o Vigia.
-Na última vez, a gente foi ao Japão, onde a maldição é uma regra. Hoje, a gente vai para o país do lado.
-A Coreia do Sul. O país do K-pop, das novelas que o Brasil inteiro maratona.
-E de um dos terrores mais pesados do mundo.
-No terror coreano, o fantasma quase nunca é um monstro. Ele foi uma pessoa. Uma pessoa que morreu sem justiça,
-sem despedida… ou sem ninguém do lado.
-*(pincel: 한 aparece no centro da tela, pequeno)*
-Os coreanos costumam chamar essa dor de *han*.
-Não tem tradução. Igual a nossa saudade. Só que a saudade é de quem foi embora.
-O *han* é a dor de quem ficou. E que não para de crescer.
-Hoje eu vou te mostrar quatrocentos anos dessa dor, dos contos da era Joseon até o maior filme de terror da história
-da Coreia.
-E vou te contar o que aconteceu com uma brasileira que alugou um quarto de sete metros quadrados no andar que não
-existe.
+Na última vez, a gente foi ao Japão. Hoje, a gente atravessa o mar. Para a Coreia do Sul.
+O país do K-pop e das novelas. E de um tipo de terror que o ocidente quase não conhece.
+No terror coreano, o monstro raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que
+você ama.
+Hoje eu vou te contar quatro histórias que todo coreano conhece. Um conto que as avós contavam pras crianças não
+saírem de noite. Uma criatura que imita vozes, numa montanha de Busan. Um ritual que a internet jura que leva para
+outro mundo. E o hospital abandonado mais famoso da Ásia.
+E vou te contar como essas quatro histórias aconteceram com uma família de Belo Horizonte. Na mesma semana.
 
-## A BIA — 1: as regras
-*(fotos de celular: Seul; corredor estreito; elevador; folha A4 colada na porta)*
+## O RAFA — 1: a montanha
+*(fotos de celular: Busan, praia de Haeundae, prédios, a montanha atrás)*
 
-A Bia tinha vinte e dois anos. Aprendeu coreano com as músicas, depois com as novelas. Juntou dinheiro três anos
-para um semestre de intercâmbio em Seul.
-Para economizar, alugou um *goshiwon*.
-*(FICHA 01 — GOSHIWON: "quartos feitos para quem estudava anos para concurso · média de 7,2 m² · metade sem janela")*
-Um prédio de quartinhos. Cama, mesa, ventilador. Sete metros quadrados, em média, e metade sem janela.
-No elevador, os botões iam: um, dois, três… F… cinco.
-O quarto dela era o F-zero-três.
-Na porta, colada com fita, tinha uma folha. A Bia traduziu e mandou no grupo, achando graça.
-*(a folha em coreano; a tradução aparece linha por linha)*
-Regra um: desligue o ventilador antes de dormir.
-Regra dois: não bata na parede do F-zero-quatro.
-Regra três: se ouvir alguém chamando o seu nome depois das três, não responda.
-Regra quatro: nunca escreva nada em vermelho neste andar.
-🎙bia "Gente, é tipo novela de terror, eu amei!"
-A Bia quebrou todas.
+O Rafa tinha vinte e sete anos e morava em Busan fazia dois. Dava aula de português para coreanos.
+Em outubro de dois mil e dezessete, a irmã caçula, a Lívia, de dezenove, foi passar duas semanas com ele.
+No penúltimo dia, eles subiram o monte Jangsan. Uma montanha de seiscentos metros, bem atrás dos prédios de Haeundae.
+*(trilha no fim da tarde; luz baixa; sem música)*
+Na volta, começou a escurecer. A Lívia foi na frente, filmando tudo com o celular.
+Numa curva, o Rafa perdeu ela de vista.
+Ele chamou. Nada.
+Aí, da mata, do lado esquerdo da trilha, veio a voz dela.
+🎙livia "Rafa! Aqui! Vem ver isso!"
+*(pausa)*
+Ele foi abrir a localização dela no celular, pra achar o caminho.
+O pontinho azul da Lívia estava do lado direito da trilha. Do lado oposto da voz.
+E da esquerda, de novo, a mesma frase. Igualzinha. Com a mesma risada no fim.
+🎙falsa "Rafa! Aqui! Vem ver isso!"
+*(silêncio — a câmera parada na mata escura)*
+O Rafa não foi.
+Ficou parado no meio da trilha, ouvindo a irmã chamar ele da mata. Do mesmo jeito. Por mais de dez minutos.
+Até que a voz parou. No meio de uma palavra.
 
-## PARTE 1 — o andar F
-*(placa: 제1장 · 사; botões de elevador reais; corredor de hospital)*
+## PARTE 1 — o que mora no monte Jangsan
+*(placa: 제1장; Busan à noite; mata; fotos e relatos de fóruns; o filme The Mimic)*
 
-Na Coreia, o número quatro se fala *sa*. E *sa* também é como se diz "morte".
-Por isso, em muito prédio coreano, o quarto andar some. Vira a letra F, de *four*. Ou não existe: do três, você
-vai direto pro cinco.
-Em hospital, é quase regra. Ninguém quer ser internado no andar da morte.
-No prédio da Bia, o F tinha oito quartos.
-Só dois tinham luz acesa à noite. O dela.
-E o F-zero-quatro, que a dona do prédio jurava estar vazio.
+Em dois mil e treze, começaram a aparecer relatos num fórum coreano. Todos sobre a mesma montanha. O Jangsan.
+Moradores de Busan diziam ter visto um bicho grande, de quatro patas, coberto de um pelo branco e comprido. Que se
+movia rápido demais entre as árvores.
+Mas o que assustava não era a aparência. Era o som.
+*(FICHA 01 — "장산범 · Jangsan-beom · 'o tigre do Jangsan' · relatos desde 2012–2013 · Busan")*
+Segundo os relatos, ele imita vozes. O choro de uma mulher. Um cachorro. O seu nome.
+E, principalmente, a voz de alguém da sua família, chamando de dentro da mata.
+Quem segue a voz… não volta.
+Os coreanos deram um nome: Jangsan-beom. O tigre do Jangsan.
+Ninguém nunca provou que ele existe. Nenhuma foto, nenhum corpo.
+🎬 *(The Mimic, 2017 — a mata; sem áudio)*
+Mesmo assim, a lenda se espalhou tão rápido que, em dois mil e dezessete, virou filme. Uma mulher que acolhe uma menina
+perdida perto de uma caverna. E a menina começa a falar com a voz da filha dela.
+E no fórum, a regra que todo mundo repetia era uma só:
+Se uma voz conhecida te chamar da mata à noite, confirma por mensagem antes de ir.
+*(pincel: 목소리 — "a voz")*
 
-## PARTE 2 — o ventilador
-*(ventilador antigo girando; aviso oficial; timer)*
+## O RAFA — 2: os tênis
+*(polícia; lanternas; a trilha de manhã; os tênis lado a lado)*
 
-Existe uma crença na Coreia que gente de fora acha engraçada: dormir de porta fechada com o ventilador ligado mata.
-Não existe prova científica nenhuma. Mas é tão forte que, em dois mil e seis, uma agência do governo listou
-"asfixia por ventilador" entre os acidentes de verão.
-*(FICHA 02 — "2006 · agência de defesa do consumidor · asfixia por ventilador")*
-Até hoje, muito ventilador coreano vem com um timer, para desligar sozinho de madrugada.
-A Bia desligava o dela toda noite. Regra um.
-E toda noite, às três, ela acordava com o vento no rosto.
-O ventilador ligado. Girando devagar.
-E parado. Apontado para a parede do F-zero-quatro.
-Como se alguém do outro lado estivesse com calor.
+A Lívia não desceu da montanha naquela noite.
+A polícia de Busan procurou com cães, drones e mais de cinquenta voluntários.
+No segundo dia, acharam os tênis dela. No meio da trilha. Lado a lado. Com os cadarços amarrados.
+Como se alguém tivesse tirado com cuidado… e seguido descalço.
+No grupo da família, a mãe mandava áudio de hora em hora.
+🎙mae "Rafa, pelo amor de Deus, me fala que achou ela."
+No terceiro dia, ao amanhecer, um senhor que varria a entrada da trilha viu uma moça sentada no primeiro degrau.
+Era a Lívia.
+Descalça, sem nenhum arranhão. Sorrindo.
+Ela disse que não lembrava de nada.
+A família chorou de alívio no grupo. A mãe mandou trinta corações.
+Só o Rafa não mandou nada.
+Porque a primeira coisa que a Lívia disse quando viu ele foi:
+"Oppa."
+É como as irmãs coreanas chamam o irmão mais velho.
+A Lívia não falava coreano.
 
-## PARTE 3 — as irmãs (Joseon)
-*(placa: 제2장; pinturas da era Joseon; casa de madeira; lago)*
+## PARTE 2 — a irmã raposa
+*(placa: 제2장; pinturas da era Joseon; uma casa de madeira; estábulo; lua)*
 
-Para entender o que tinha naquela parede, a gente precisa voltar uns trezentos anos. Para a era Joseon.
-Lá existe um conto que todo coreano conhece. O de duas irmãs: Janghwa e Hongryeon.
-Filhas de um homem viúvo. Criadas por uma madrasta que odiava as duas.
-Uma noite, a madrasta esfolou um rato e escondeu na cama da mais velha.
-De manhã, mostrou para o pai. Disse que a filha tinha abortado. Que a família estava desonrada.
-O pai acreditou.
-Mandaram a Janghwa embora na mesma noite, e o filho da madrasta foi junto, para "levar até a casa de um tio".
-Ela nunca chegou.
-🎬 *(A Tale of Two Sisters, 2003 — a menina sozinha no deque do lago; sem áudio)*
-Morreu num lago.
-A irmã mais nova não aguentou, e foi atrás dela. No mesmo lago.
-*(FICHA 03 — "Conto da era Joseon · autor desconhecido · baseado num caso julgado em Cheolsan")*
-Depois disso, cada magistrado novo que chegava na cidade morria na primeira noite.
-As duas irmãs apareciam no quarto. Molhadas. Em pé. Em silêncio.
-Até que veio um que não morreu de medo. Ele perguntou o que elas queriam.
-E elas contaram.
-🎬 *(A Tale of Two Sisters — a casa no capim seco)*
-Em dois mil e três, o diretor Kim Jee-woon fez disso um dos filmes mais elogiados do terror asiático. Hollywood
-refez seis anos depois.
-Repara: o fantasma coreano não aparece para matar. Ele aparece porque ninguém ouviu.
-Quem não ouve… não passa da primeira noite.
-*(pincel: 한, maior)*
+Existe um conto que as avós coreanas contam há séculos. Tem mais de setenta versões. Chama-se *Yeou Nui*. A Irmã Raposa.
+Um homem rico tinha três filhos, e nenhuma filha. Ele rezou tanto por uma menina que disse:
+"Me dá uma filha. Nem que seja uma raposa."
+A filha nasceu.
+*(FICHA 02 — "여우누이 · A Irmã Raposa · conto popular coreano · mais de 75 versões registradas")*
+Quando ela fez seis anos, começou a morrer uma vaca por noite no estábulo. Sem marca nenhuma no corpo. Só sem o fígado.
+O pai mandou o filho mais velho vigiar.
+De madrugada, ele viu a irmãzinha entrar no estábulo. Ela passou óleo de gergelim no braço, até o ombro. Enfiou o braço
+dentro da vaca. E puxou o fígado.
+E comeu. Ali mesmo. Quente.
+De manhã, ele contou para o pai. E o pai, que tinha rezado tanto por aquela menina, expulsou o filho de casa.
+O mesmo aconteceu com o segundo filho.
+O terceiro, o mais novo, entendeu o jogo. Disse que não viu nada. E ficou.
+*(pincel: 간 — "fígado")*
+Anos depois, os dois irmãos expulsos voltaram.
+A vila estava vazia. Nenhum cachorro, nenhuma galinha. Nenhuma pessoa.
+Na porta da casa, a irmã esperava eles. Sorrindo.
+"Oppa. Vocês voltaram."
+Ela tinha comido os pais. O irmão mais novo. A vila inteira.
+E disse, com toda a calma, que só faltavam mais dois.
+Repara: no conto, o monstro não vem de fora. Ele nasceu dentro de casa. Usa o rosto de quem você ama.
+E o pior não é o monstro. É que ninguém acredita em quem viu.
 
-## A BIA — 2: a parede
-*(chat; luz do corredor por baixo da porta; som abafado)*
+## O RAFA — 3: o óleo
+*(chat; o apartamento à noite; a cozinha de costas; tudo sem rostos)*
 
-Na segunda semana, começou o choro. Baixinho, toda noite perto das três, do outro lado da parede.
-A Bia bateu na parede. Regra dois.
-O choro parou.
-E do outro lado, alguém bateu de volta. Quatro vezes.
-*(4 batidas — som do lugar, abafado)*
-De manhã, a Bia perguntou para a *ajumma*, a dona do prédio, quem morava no F-zero-quatro.
-A senhora demorou para responder.
-"Ninguém. Desde que a moça morreu."
-E não falou mais nada.
+Nos dias seguintes, a Lívia parecia bem. Até feliz. Ria, comia, mandava foto no grupo.
+Mas comia muito. E só de noite.
+Na terceira noite, apareceram dois cachorros mortos no prédio da frente. Sem marca nenhuma.
+O Rafa contou no grupo. O pai respondeu:
+🎙pai "Filho, você tá estressado. Ela tá viva, é isso que importa."
+Naquela madrugada, o Rafa acordou com sede.
+A luz da cozinha estava acesa.
+A Lívia estava de costas, na frente da pia. Parada.
+Ele ouviu um barulho baixo, molhado. De mão esfregando mão.
+No balcão, o vidro de óleo de gergelim. Aberto. Pela metade.
+Ela estava passando óleo no braço. Devagar. Até o ombro.
+*(silêncio total)*
+O Rafa deu um passo para trás.
+E, do quarto, atrás dele, a voz da Lívia, sonolenta:
+🎙livia "Oppa? Não consegue dormir?"
+*(SUSTO 1 — a voz vem do lado oposto da tela; a figura da cozinha não se mexe)*
+Quando ele olhou de novo para a cozinha… a luz estava apagada. E não tinha ninguém.
+De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.
 
-## PARTE 4 — quem morre sozinho
-*(placa: 제3장; corredores de prédios; portas com correspondência acumulada; equipe de limpeza de costas, de macacão)*
+## PARTE 3 — o elevador
+*(placa: 제3장; painéis de elevador; corredores de prédio; telas de fórum)*
 
-Existe uma palavra coreana que não aparece nas novelas: *godoksa*.
-Morte solitária.
-Pela lei coreana, é quando alguém isolado da família e dos amigos morre, e o corpo só é encontrado setenta e duas
-horas depois. Ou mais.
-*(FICHA 04 — "2024 · 3.924 mortes solitárias · Ministério da Saúde e Bem-Estar da Coreia")*
-Em dois mil e vinte e quatro, foram três mil novecentas e vinte e quatro pessoas. Mais de dez por dia.
-E os lugares onde isso mais cresce são justamente os menores: quitinetes, motéis… goshiwons.
-Quase sempre, quem descobre é o dono do prédio. Pelo cheiro.
-Um jornal coreano contou a história de um homem que morreu sozinho num goshiwon de seis metros quadrados, em Seul.
-Foi achado dias depois. Pelo vizinho de parede.
-Existe até uma profissão para isso: as equipes de limpeza especial. Que entram no quarto depois, para tirar o que
-ficou. As manchas. O cheiro. As coisas de alguém que ninguém veio buscar.
-A *ajumma* nunca contou quanto tempo a moça do F-zero-quatro ficou lá.
-Mas tinha um detalhe que todo mundo do prédio sabia.
-Ela foi achada por causa do ventilador. Que ficou ligado tanto tempo… que queimou.
+Existe um ritual que se espalhou pela internet da Coreia e do Japão. Ninguém sabe ao certo onde nasceu.
+Chama-se o Jogo do Elevador. E promete levar você para outro mundo.
+*(FICHA 03 — "엘리베이터 게임 · o Jogo do Elevador · ritual da internet · origem disputada entre Coreia e Japão")*
+As regras são sempre as mesmas.
+Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.
+Entra no elevador e aperta, nesta ordem: quatro. Dois. Seis. Dois. Dez.
+*(o painel; os botões acendem um a um)*
+Se ninguém entrar no caminho, aperta o cinco.
+No quinto andar, vai entrar uma mulher.
+Não olha para ela. Não fala com ela. Não responde, aconteça o que acontecer.
+Aí você aperta o um. Se o elevador descer, acabou: o ritual falhou, e você está salvo.
+Mas se ele subir… até o dez…
+Você chegou.
+Dizem que, do outro lado, o mundo é igual a este. Só que vazio. E que a única pessoa que você vai encontrar lá…
+é a mulher do quinto andar.
+O Rafa leu isso tudo às quatro da manhã, num fórum coreano, procurando "pessoa que volta diferente".
+E embaixo do post, tinha um comentário.
+"Quem volta da montanha nunca é quem subiu. O de verdade fica do outro lado. Para buscar, tem que fazer o jogo onde
+muita gente morreu sofrendo. Num prédio que tenha o quarto andar."
 
-## A BIA — 3: o nome em vermelho
-*(chat; foto da porta; a plaquinha com o nome em vermelho)*
+## PARTE 4 — o hospital
+*(placa: 제4장; fotos reais do hospital abandonado; corredores; janelas quebradas; o filme Gonjiam)*
 
-Uma semana depois, a Bia escreveu um recado para a vizinha de cima, na porta. Com a única caneta que tinha.
-Vermelha. Regra quatro.
-Na manhã seguinte, a plaquinha da porta do F-zero-três, onde estava escrito "Bia" em letras coreanas, tinha sido
-coberta. O nome dela. Em vermelho.
-Uma amiga coreana da faculdade viu a foto e ficou pálida.
-🎙bia "Ela disse que aqui só se escreve em vermelho o nome de quem já morreu."
-É uma das superstições mais fortes do país. Muita gente evita escrever o nome de alguém vivo em vermelho.
-É como marcar a pessoa.
-Naquela tarde, a mãe ligou de Belo Horizonte.
-🎙mae "Filha, sai desse lugar. Pelo amor de Deus. Vem pra casa."
-A Bia disse que ia. No fim do mês.
+Na Coreia, o número quatro se fala *sa*. Igual à palavra "morte". Muitos prédios pulam o quarto andar.
+E existe um prédio que nunca pulou.
+*(FICHA 04 — "곤지암 정신병원 · Gonjiam · Gwangju, Gyeonggi · abandonado nos anos 90 · CNN 2012: 'um dos 7 lugares mais assustadores do planeta'")*
+O hospital psiquiátrico de Gonjiam, a uma hora de Seul. Fechado nos anos noventa. Abandonado no meio do mato.
+A internet coreana diz que os pacientes morriam lá dentro. Que o diretor desapareceu. Que de noite as janelas acendem.
+Nada disso foi provado. O hospital fechou por dívidas.
+Mas, em dois mil e doze, a CNN colocou Gonjiam entre os sete lugares mais assustadores do planeta.
+E desde então, todo fim de semana, gente pulava o muro para passar a noite lá dentro. E filmar.
+🎬 *(Gonjiam: Haunted Asylum, 2018 — o corredor com lanternas; sem áudio)*
+Em dois mil e dezoito, virou filme. Um grupo que transmite ao vivo uma noite no hospital, tentando abrir a sala
+quatrocentos e dois. A porta que ninguém nunca conseguiu abrir.
+A sala 402 foi inventada pelo filme. Mas, nos fóruns, ela já existia antes. Todo mundo jurava que tinha visto a porta.
+O Rafa pegou o último ônibus para Gwangju numa sexta-feira.
+Não avisou ninguém.
 
-## PARTE 5 — a moça de branco
-*(placa: 제4장; pinturas e fotografias antigas; hanbok branco de luto; cabelo solto)*
+## O RAFA — 4: o ritual
+*(o hospital à noite; a lanterna do celular; o elevador; luz que pisca)*
 
-Se você já viu um filme de terror coreano, você conhece ela. Roupa branca. Cabelo preto, comprido, solto no rosto.
-*Cheonyeo gwishin*. A virgem fantasma.
-É o espírito de uma moça que morreu antes de casar. Numa sociedade em que a vida de uma mulher só contava a partir
-daí, ela morreu antes de existir.
-Sem marido, sem filhos. Sem ninguém para fazer os rituais por ela, para dizer o nome dela nas datas certas.
-Por isso ela fica.
-A lenda mais famosa é a de Arang, da cidade de Miryang. Filha de um magistrado, atacada, morta e escondida no
-mato. Durante anos, ela apareceu para cada novo magistrado da cidade, e todos morreram de susto.
-*(FICHA 05 — "Arang · Miryang · primeira versão escrita em 1810 · ritual Arangje até hoje")*
-Mas a parte que pouca gente conta é como a Coreia aprendeu a acalmar essas moças.
-Casando elas.
-Existe um ritual chamado *casamento de almas*. A família da moça morta encontra a família de um rapaz que também
-morreu solteiro. E os dois mortos se casam. Com cerimônia, roupa, comida.
-Para que nenhum dos dois… fique sozinho.
-*(pincel: 한, maior)*
-A moça do F-zero-quatro nunca teve casamento nenhum.
-Ninguém veio buscar ela. Ninguém procurou um noivo.
-Então ela procurou sozinha.
+Ele pulou o muro à uma da manhã.
+O hospital tinha só quatro andares. O elevador estava parado havia mais de vinte anos. Sem porta, sem luz, sem nada.
+O Rafa entrou mesmo assim. Encostou na parede de metal. E esperou dar três horas.
+*(silêncio; só a respiração dele)*
+Às três em ponto, a luz do elevador acendeu.
+O painel acendeu junto.
+E tinha botões até o dez.
+🎙rafa "Mãe… eu tô no elevador. Ele tá subindo. E esse prédio não tem dez andares."
+*(o som do gancho, agora no lugar certo)*
+Quatro. Dois. Seis. Dois. Dez.
+Ninguém entrou.
+Cinco.
+A porta abriu no quinto andar. De um prédio de quatro.
+Entrou alguém. Ele ouviu os passos. Descalços. Sentiu o cheiro: óleo de gergelim.
+Não olhou.
+E, do lado dele, tão perto que ele sentiu o ar na orelha, a voz da irmã.
+🎙falsa "Rafa… sou eu. Olha pra mim."
+Ele não olhou.
+🎙falsa "Oppa. Olha pra mim."
+Apertou o um.
+O elevador subiu.
 
-## A BIA — 4: o chamado
-*(chat ao vivo; relógios 03:00 / 15:00; ventilador; a mãe digitando)*
+## O RAFA — 5: o outro lado
+*(o mesmo hospital, mas limpo e iluminado; todas as portas abertas; um corredor sem fim)*
 
-Na última noite, às três da manhã, a Bia mandou um áudio no grupo.
-🎙bia "Mãe… tem alguém me chamando no corredor. Com a sua voz."
-A mãe estava sentada no sofá, em Belo Horizonte, com o celular na mão. Em silêncio.
-A Bia mandou outro áudio. Dava para ouvir o ventilador.
-E, por baixo, uma voz de mulher, em português, muito baixa, dizendo:
-🎙voz "Bia… abre. É a mãe."
-Regra três.
-A mãe digitou, em maiúsculas: "NÃO SOU EU. NÃO ABRE."
-A mensagem ficou com um tracinho só. Entregue. Nunca lida.
+Quando a porta abriu, era o hospital. O mesmo corredor.
+Só que inteiro. Pintado. Com as lâmpadas acesas. Como se tivesse sido abandonado ontem.
+E todas as portas estavam abertas.
+Menos uma. No fim do corredor. A quatrocentos e dois.
+Ele foi andando. O chão estava frio. E tinha pegadas de pé descalço, oleosas, indo até a porta.
+Encostou o ouvido.
+Do outro lado, bem baixinho, alguém chorava.
+🎙livia "Rafa…"
+Ele abriu.
+*(SUSTO 2 — silêncio de 3 s; a porta abre; a sala vazia; corte para a figura no canto, de costas, encolhida)*
+A Lívia estava no canto, no chão. Magra. De costas. Com a mesma roupa da montanha. Os pés pretos de terra.
+Ela não virou. Só disse, sem voz:
+🎙livia "Não fala nada. Ela tá ouvindo."
+Ele pegou a mão dela. Estava gelada.
+Voltaram pelo corredor sem olhar para trás. O elevador estava esperando, de porta aberta.
+Ele apertou o um.
+E, enquanto a porta fechava, lá do fim do corredor, a voz dele mesmo, chamando:
+🎙rafa_falso "Lívia! Aqui! Vem ver isso!"
 
-## PARTE 6 — a mudang
-*(placa: 제5장; fotos reais de rituais *gut*; tambores; roupas coloridas; leques; facas)*
+## O RAFA — 6: a ligação
+*(amanhecer no mato; o muro do hospital; o celular; chamada de vídeo)*
 
-Quando um morto não vai embora, os coreanos chamam uma *mudang*. A xamã.
-Uma tradição mais antiga que qualquer igreja ou templo da península, e que existe até hoje: no meio dos prédios
-de Seul, você ainda acha placas de xamãs.
-O ritual se chama *gut*. Tambor, roupas coloridas, comida para os mortos.
-E um momento em que a mudang deixa o morto falar pela boca dela.
-🎬 *(Exhuma, 2024 — a mudang Hwa-rim dançando no ritual; sem áudio)*
-Em dois mil e vinte e quatro, um filme sobre isso parou a Coreia. *Exhuma*. Uma mudang jovem, um especialista em
-túmulos e uma família rica com uma maldição no sangue.
-🎬 *(Exhuma — a família de preto atrás da cova aberta)*
-*(FICHA 06 — "Exhuma (2024) · dir. Jang Jae-hyun · Showbox · 11,9 milhões de ingressos")*
-Quase doze milhões de pessoas foram ao cinema. Foi o primeiro filme de terror sobre o oculto a passar de dez milhões
-de ingressos na Coreia.
-🎬 *(Exhuma — o caixão visto de cima, dentro da terra)*
-E o que tem debaixo daquela terra não é só um fantasma. É a ocupação japonesa. As estacas de ferro que, segundo uma
-lenda muito contada, foram cravadas nas montanhas para cortar a força do país.
-O ritual do filme foi inventado. A ferida que ele cutuca… é real.
-O terror coreano pesa porque o fantasma nunca é só um fantasma.
-É uma dor que ninguém terminou de enterrar.
-*(pincel: 한, grande)*
-
-## A BIA — 5: o quarto
-*(manhã; o corredor do F; a porta; a polícia; tudo sem rostos)*
-
-De manhã, a *ajumma* abriu o F-zero-três com a chave reserva.
-A Bia não estava.
-O celular dela estava em cima da cama. O ventilador, ligado. Virado para a parede.
-O papel de parede, descolado num canto.
-E atrás dele, entre as tábuas, dois cadernos.
-O primeiro era antigo, com a capa amarela de umidade. Centenas de páginas com a mesma palavra coreana, escrita à mão,
-de novo e de novo, até o papel rasgar.
-*(pincel em vermelho: 합격)*
-*Hapgyeok.* "Aprovada."
-A moça do F-zero-quatro estudou oito anos para um concurso, trancada num quarto de sete metros quadrados.
-Nunca passou. E ninguém veio buscar ela.
-O segundo caderno era novo. A letra era da Bia. Em português.
-Uma frase só, repetida até a última página:
-"Ela não queria ir sozinha."
-
-## A BIA — 6: até hoje
-*(relógios 03:00 / 15:00; o chat; a porta do F04)*
-
-A polícia de Seul nunca encontrou a Bia. O caso continua aberto.
-A *ajumma* chamou uma mudang para fazer o ritual no corredor. A mudang subiu até o F, parou na porta do
-F-zero-quatro, e não quis entrar.
-Disse só uma coisa: que não precisava mais de ritual.
-Que a moça do quarto quatro já tinha com quem ficar.
-Hoje, a plaquinha do F-zero-quatro tem um nome. Escrito em vermelho.
-*(pincel em vermelho: 비아 — só na tela, a voz fica em silêncio)*
-Bia.
-E toda tarde, às três, em Belo Horizonte, o celular da mãe vibra.
-Um áudio. Só o barulho de um ventilador.
-Ela responde todos.
-*(silêncio — só o ventilador — corte seco pro Vigia)*
+Quando a porta abriu de novo, era o térreo do hospital abandonado. Escuro. Destruído. Amanhecendo lá fora.
+A Lívia estava do lado dele. Segurando a mão dele. Em silêncio.
+O Rafa saiu, sentou no mato e ligou para a mãe.
+🎙rafa "Mãe. Eu achei a Lívia. A de verdade. Tá aqui comigo."
+A mãe ficou quieta. Depois perguntou:
+🎙mae "Que Lívia, filho? A Lívia chegou ontem. Pegou o voo sozinha. Tá aqui do meu lado."
+A mãe virou a câmera.
+No sofá da sala, em Belo Horizonte, sentada de costas para a câmera, estava a irmã dele.
+Ela virou só o rosto. Devagar.
+🎙falsa "Oppa. Você voltou."
+*(SUSTO 3 — o rosto NUNCA aparece: corta no movimento, tela preta, 2 s)*
+O Rafa olhou para a Lívia do lado dele.
+Ela continuava em silêncio. Segurando a mão dele.
+E a mão dela… estava escorregadia. Com cheiro de óleo de gergelim.
+*(silêncio — corte seco pro Vigia)*
 
 ## FECHO — Vigia
 
-No Japão, a maldição é uma regra.
-Na Coreia, ela é uma pergunta: quem morreu sem ninguém do lado?
-Três mil novecentas e vinte e quatro pessoas, em um ano. Achadas pelo cheiro, pelo barulho de um ventilador, pela
-correspondência acumulada na porta.
-*Han* não tem tradução. Mas talvez você já tenha sentido. É a dor que a gente guarda tanto tempo que ela começa a
-ter vida própria.
-Então, antes de ir dormir, me responde uma coisa. Só pra você mesmo.
-Se você morasse sozinho… quantos dias levaria até alguém perceber?
-Liga pra alguém hoje.
-E se o ventilador ligar sozinho… não olha pra parede.
+O hospital de Gonjiam foi demolido em dois mil e dezoito. Não existe mais.
+O monte Jangsan continua lá, atrás dos prédios de Haeundae. Com trilha sinalizada. E com placas pedindo para ninguém
+sair dela depois que escurece.
+O Rafa nunca mais mandou áudio no grupo.
+A mãe diz que os dois filhos estão bem. Que a Lívia está ótima. Que come muito. Só de noite.
+No conto da Irmã Raposa, ela precisava de mais dois.
+Então, hoje, antes de dormir, uma coisa só.
+Se alguém da sua família te chamar de longe… de outro cômodo, da rua, de um número estranho…
+manda uma mensagem antes de ir.
+E se a resposta chegar da pessoa que está do seu lado…
+não olha pra ela.
 *(vinheta do Vigia)*

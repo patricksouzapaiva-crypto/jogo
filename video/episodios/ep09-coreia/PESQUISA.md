@@ -84,3 +84,23 @@ Regra: tudo que o Vigia afirma como fato precisa estar aqui com fonte. O que nã
 ## (13/11, v2) Janghwa e Hongryeon — detalhes do conto
 - A madrasta põe um rato esfolado na cama de Janghwa para fingir que ela abortou; o filho da madrasta leva a moça e
   ela morre afogada num lago. (versão mais contada; conferir em https://en.wikipedia.org/wiki/The_Story_of_Jang-hwa_and_Hong-ryeon)
+
+## v3 (13/11) — os 4 contos (fontes)
+- **Jangsan-beom (장산범):** lenda de Busan (monte Jangsan, Haeundae); criatura de pelo branco e comprido que imita vozes
+  (choro de mulher, nomes, vozes de parentes); relatos em fóruns a partir de 2012–2013; sem prova nenhuma. Filme
+  "The Mimic" (장산범, 2017). Fontes: https://en.wikipedia.org/wiki/Jangsan_(Busan) · https://mythlok.com/urban-legends/jangsan-beom/ ·
+  Korea Times (koreatimes.co.kr/www/nation/2024/12/113_140177.html).
+- **A Irmã Raposa (여우누이):** conto popular, 75+ variantes (estudo de 2021). O pai pede uma filha "nem que seja raposa";
+  aos seis anos, uma vaca morre por noite sem o fígado; os irmãos que veem são expulsos; o mais novo mente e fica; os
+  expulsos voltam e acham a vila vazia, ela comeu os pais e precisa de "mais dois"; fogem com garrafas mágicas de um
+  monge. Óleo de gergelim no braço: em várias versões (asianews.network). Fontes: https://en.wikipedia.org/wiki/The_Fox_Sister ·
+  https://asianews.network/fox-sister-a-korean-tale-darker-than-your-average-ghost-story/ · https://folklore.usc.edu/the-fox-sister/
+- **Jogo do Elevador:** prédio de 10+ andares, sozinho; 4-2-6-2-10, depois 5; no 5º entra uma mulher (não olhar, não
+  falar); aperta 1: se subir até o 10, chegou ao outro mundo. Origem disputada (Coreia × Japão). Fontes:
+  https://theghostinmymachine.com/2014/06/25/the-most-dangerous-games-elevator-to-another-world/ ·
+  https://www.scarymommy.com/elevator-game/
+- **Gonjiam (곤지암 정신병원):** Gwangju (Gyeonggi); fechado nos anos 90 (dívidas — as histórias de mortes e do diretor
+  não têm prova); CNN Travel 2012 "sete lugares mais assustadores do planeta"; filme "Gonjiam: Haunted Asylum"
+  (28/03/2018, dir. Jung Bum-shik; o dono processou para barrar o filme e perdeu); demolido ~2 meses depois (2018).
+  **A sala 402 é invenção do filme.** Fontes: https://en.wikipedia.org/wiki/Gonjiam:_Haunted_Asylum ·
+  https://www.atlasobscura.com/places/gonjiam-psychiatric-hospital · https://www.curiousarchive.com/?p=2137
