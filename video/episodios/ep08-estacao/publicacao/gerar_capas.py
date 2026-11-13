@@ -124,3 +124,33 @@ kanji(c, "怨", 40, 20, 280)
 texto(c, ["NÃO TEM REZA", "QUE DESFAZ."], 48, 365, [(255, 250, 240), VERMELHO], [118, 118])
 selo(c, 52, 640)
 salvar(c, "capa_C_poco.jpg")
+
+# ---- 13/11 (2ª rodada, "mais sinistras") ----
+# D — Kasane com a foice (pintura do séc. XIX): o fantasma mais repulsivo das lendas; corpo inteiro à direita.
+d = Image.open(R / "R20_kasane_kinugawa.jpg").convert("RGB")
+d = a_direita(d, (0.0, 0.08, 1.0, 0.72))
+d = escurecer(tratar(d, sat=0.85, luz=0.95, contraste=1.35), "esq", 0.95, 0.5)
+d = grao(d).convert("RGBA")
+kanji(d, "怨", 40, 20, 280)
+texto(d, ["NÃO TEM REZA", "QUE DESFAZ."], 48, 365, [(255, 250, 240), VERMELHO], [118, 118])
+selo(d, 52, 640)
+salvar(d, "capa_D_kasane.jpg")
+
+# E — Kasane, só o rosto (olhos vermelhos) bem grande: o olhar que dá nome à frase.
+e = Image.open(R / "R20_kasane_kinugawa.jpg").convert("RGB")
+e = a_direita(e, (0.18, 0.12, 0.78, 0.42))
+e = escurecer(tratar(e, sat=0.9, luz=0.95, contraste=1.4), "esq", 0.95, 0.5)
+e = grao(e).convert("RGBA")
+texto(e, ["VOCÊ SÓ", "PRECISA", "OLHAR."], 48, 70, [(255, 250, 240), (255, 250, 240), VERMELHO], [120, 120, 170])
+selo(e, 52, 640)
+salvar(e, "capa_E_kasane_rosto.jpg")
+
+# F — Máscara Hannya (Nō, séc. XVIII, Met Museum): o demônio do ciúme, encarando de frente.
+f = Image.open(R / "R21_hannya_mascara_met.jpg").convert("RGB")
+f = a_direita(f, (0.08, 0.06, 0.92, 0.94))
+f = escurecer(tratar(f, sat=0.95, luz=0.9, contraste=1.35), "esq", 0.95, 0.5)
+f = grao(f).convert("RGBA")
+kanji(f, "鬼", 40, 20, 280)
+texto(f, ["NÃO TEM REZA", "QUE DESFAZ."], 48, 365, [(255, 250, 240), VERMELHO], [118, 118])
+selo(f, 52, 640)
+salvar(f, "capa_F_hannya.jpg")
