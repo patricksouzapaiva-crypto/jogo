@@ -1,0 +1,6 @@
+Ep. 09 — imagens geradas pelo usuário (13/11, 4 zips "EP09_ANDAR_F_PARTE_1..4_DE_4"), a partir de PEDIDO_IMAGENS_IA.md.
+44 imagens = 22 cenas × variações A/B (16:9, 1672×941), convertidas de PNG para JPEG (qualidade 93).
+B04_A_regras.jpg: B04_A com o texto da folha trocado pelas 4 regras do roteiro em coreano manuscrito
+  (regras_folha.py; fonte Nanum Pen Script, OFL). O Flow tinha escrito regras genéricas de convivência.
+Conferidas a olho: B08 (합격 repetido), B09 ("Ela não queria ir sozinha"), B10 (figura no fim do corredor),
+B11 (F04 com 비아 em vermelho) estão corretas.
