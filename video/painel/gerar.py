@@ -1319,9 +1319,12 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
         tempos, casadas = voz_simulada(batidas, wav), 1.0
         roteiro["apertar_pausas"] = False
     else:
-        ouvidas = transcrever(wav, texto)
+        # 13/11: VOZ_TEMPOS=<wav> tira os tempos de outra gravação de MESMA duração (ex.: a narração antes de uma
+        # emenda de uma palavra) — o Whisper re-transcreve diferente e mexeria nas cenas de um vídeo já aprovado
+        wav_t = Path(os.environ["VOZ_TEMPOS"]) if os.environ.get("VOZ_TEMPOS") else wav
+        ouvidas = transcrever(wav_t, texto)
         tempos, casadas = alinhar(palavras, ouvidas)
-        tempos = ajustar_inicios(wav, tempos)
+        tempos = ajustar_inicios(wav_t, tempos)
     print(f"    {casadas:.0%} das palavras reconhecidas")
     if casadas < 0.7:
         print("    aviso: narração muito diferente do roteiro (a voz pode ter lido instruções ou pulado trechos)")

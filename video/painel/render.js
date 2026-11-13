@@ -1,5 +1,6 @@
 // Renderiza a linha do tempo em MP4 (sem áudio) com Chromium headless em paralelo.
-// Uso: node render.js linha_do_tempo.json saida.mp4 [--workers 4] [--rascunho]
+// Uso: node render.js linha_do_tempo.json saida.mp4 [--workers 4] [--rascunho] [--quadros i0:i1]
+// --quadros: desenha só esse trecho (ex.: refazer o começo de um vídeo pronto e emendar)
 "use strict";
 const { chromium } = require("playwright");
 const http = require("http");
@@ -12,6 +13,7 @@ const entrada = path.resolve(args[0]), saida = path.resolve(args[1]);
 const W_ARG = args.indexOf("--workers");
 const WORKERS = W_ARG >= 0 ? +args[W_ARG + 1] : 4;
 const RASCUNHO = args.includes("--rascunho");
+const Q_ARG = args.indexOf("--quadros");
 const D = JSON.parse(fs.readFileSync(entrada, "utf8"));
 
 const TIPOS = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2", ".json": "application/json" };
@@ -47,12 +49,14 @@ async function trabalhador(browser, porta, i0, i1, arq) {
   await new Promise((r) => servidor.listen(0, "127.0.0.1", r));
   const porta = servidor.address().port;
   const browser = await chromium.launch({ args: ["--disable-web-security"] });
-  const n = Math.ceil(D.duracao * D.fps), por = Math.ceil(n / WORKERS);
+  const total = Math.ceil(D.duracao * D.fps);
+  const [q0, q1] = Q_ARG >= 0 ? args[Q_ARG + 1].split(":").map(Number) : [0, total];
+  const n = Math.min(q1, total) - q0, por = Math.ceil(n / WORKERS);
   const tmp = fs.mkdtempSync(path.join(require("os").tmpdir(), "painel_"));
   const partes = [];
   const t0 = Date.now();
   await Promise.all(Array.from({ length: WORKERS }, (_, k) => {
-    const i0 = k * por, i1 = Math.min(n, i0 + por);
+    const i0 = q0 + k * por, i1 = Math.min(q0 + n, i0 + por);
     if (i0 >= i1) return null;
     const arq = path.join(tmp, `parte_${k}.mp4`); partes[k] = arq;
     return trabalhador(browser, porta, i0, i1, arq);

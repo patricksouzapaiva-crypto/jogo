@@ -27,7 +27,7 @@ vira para quem está assistindo (como a fita de *Ringu*).
 ## GANCHO (0:00–0:30) — sem Vigia
 *(tela de celular: conversa do grupo "Família 🏠"; mensagens aparecendo; som de trem por baixo)*
 
-Onze e quarenta da noite, no Japão. Meio-dia e quarenta, em Londrina.
+Onze e quarenta da noite, no Japão. Onze e quarenta, em Londrina.
 No grupo da família, chega um áudio da Dani:
 🎙dani1 "Gente… esse trem não para faz vinte minutos. E lá fora… não tem luz nenhuma. Nenhuma."
 Depois, uma foto. Uma plataforma vazia. Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo
