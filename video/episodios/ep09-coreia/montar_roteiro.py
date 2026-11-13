@@ -189,7 +189,7 @@ C(17, img("S04_A", (1.04, 1.12), ((0.67, 0.5), (0.67, 0.45)), atmos={"vela": 0.6
 C(18, img("S03_A", (1.0, 1.1), ((0.6, 0.5), (0.62, 0.48)), atmos={"neblina": 0.5}))
 C(19, c3("B02_A", "entrar", (0.8, 0.35), 1.0, 0.3))
 amb(10, "nenhum")
-musica(10, "02_han", -27)
+musica(10, "02_han", -30)
 pausa(13, 0.6); pausa(15, 0.8); pausa(17, 0.6); pausa(19, 0.6)
 
 # ================================================================ A BIA — 1: as regras
@@ -215,7 +215,7 @@ C(29, img("B04_A_regras", (1.3, 1.36), ((0.53, 0.47), (0.53, 0.48)), dof={"x": 0
 chat(30, {"de": "Bia", "tipo": "audio", "duracao": "0:03", "hora": "09:42", "apos": 0.1})
 C(31, img("B04_A_regras", (1.0, 1.04), ((0.5, 0.4), (0.5, 0.4)), atmos={"poeira": 0.3}))
 amb(20, "ep09_seul_chuva", -26); amb(22, "ep09_corredor", -28)
-musica(20, "03_as_regras", -27)
+musica(20, "03_as_regras", -30)
 pausa(23, 0.6); pausa(26, 0.4); pausa(27, 0.4); pausa(28, 0.4); pausa(29, 0.4); pausa(31, 0.8)
 
 # ================================================================ PARTE 1 — o andar F
@@ -263,7 +263,7 @@ C(58, img("S04_A", (1.0, 1.08), ((0.3, 0.6), (0.2, 0.75)), atmos={"vela": 0.7}))
 C(60, filme("irmas_casa"))
 C(61, img("S03_B", (1.0, 1.1), ((0.55, 0.5), (0.58, 0.45)), atmos={"neblina": 0.6}, kanji=HAN(0.26, atraso=1.5)))
 amb(46, "nenhum"); amb(47, "ep09_lago", -24); amb(54, "nenhum"); amb(55, "ep09_lago", -24); amb(60, "nenhum")
-musica(46, "04_joseon_irmas", -27)
+musica(46, "04_joseon_irmas", -30)
 pausa(51, 0.8); pausa(53, 0.6); pausa(54, 0.6); pausa(55, 0.8); pausa(56, 0.4); pausa(57, 0.8); pausa(59, 0.6)
 pausa(61, 0.6); pausa(62, 0.4)
 
@@ -281,7 +281,7 @@ fx(63, "choro", "ep09_choro_parede", -26)
 fx(64, "bateu", "ep09_batidas", -18, atraso=0.1)
 batidas[67].setdefault("sons", []).append({"em": None, "som": "ep09_batidas", "volume_db": -14, "depois": False, "atraso": -3.0})
 amb(67, "ep09_corredor", -24)
-musica(63, "05_a_parede", -28)
+musica(63, "05_a_parede", -31)
 pausa(65, 0.8); pausa(68, 0.8); pausa(69, 0.6); pausa(70, 1.4)
 
 # ================================================================ PARTE 4 — quem morre sozinho
@@ -315,7 +315,7 @@ C(90, img("F01_A", (1.0, 1.08), ((0.6, 0.6), (0.65, 0.62))))
 chat(91, {"de": "eu", "tipo": "audio", "duracao": "0:04", "hora": "15:22", "apos": 0.1})
 C(92, img("B14_B", (1.0, 1.08), ((0.5, 0.5), (0.6, 0.6)), atmos={"chuva": 0.3}))
 amb(83, "ep09_corredor", -26); amb(90, "ep09_sala_bh", -26); amb(92, "ep09_seul_chuva", -26)
-musica(83, "06_moca_de_branco", -28)
+musica(83, "06_moca_de_branco", -31)
 pausa(85, 0.6); pausa(88, 0.4); pausa(89, 0.8); pausa(92, 1.0)
 
 # ================================================================ PARTE 5 — a moça de branco
@@ -355,7 +355,7 @@ C(114, img("F02_B", (1.0, 1.12), ((0.5, 0.45), (0.55, 0.35)), dof={"x": 0.55, "y
 amb(106, "ep09_ventilador", -24); amb(108, "ep09_sala_bh", -28); amb(110, "ep09_corredor", -22)
 amb(112, "ep09_corredor", -26); amb(113, "ep09_sala_bh", -30)
 batidas[111]["ambiente"] = {"som": "ep09_ventilador", "volume_db": -20}
-musica(106, "07_o_chamado", -26)
+musica(106, "07_o_chamado", -29)
 pausa(108, 0.6); pausa(110, 0.8); pausa(112, 1.2); pausa(114, 0.8)
 
 # ================================================================ PARTE 6 — a mudang
@@ -374,7 +374,7 @@ C(122, ficha("Exhuma (2024) · dir. Jang Jae-hyun · Showbox\n11,9 milhões de i
 C(123, img("S06_B", (1.0, 1.1), ((0.5, 0.5), (0.4, 0.45))))
 C(124, img("S05_B", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5)), atmos={"vela": 0.5}, kanji=HAN(0.42, atraso=0.6)))
 amb(115, "nenhum")
-musica(115, "08_gut_mudang", -26)
+musica(115, "08_gut_mudang", -29)
 pausa(117, 0.6); pausa(119, 0.6); pausa(120, 0.6); pausa(122, 0.8); pausa(124, 1.6)
 
 # ================================================================ A BIA — 5: o quarto
@@ -394,7 +394,7 @@ C(134, img("B09_B", (1.0, 1.06), ((0.5, 0.5), (0.45, 0.45))))
 C(135, c3("B09_A", "entrar", (0.53, 0.5), 0.9, 0.4))
 C(136, texto("\"Ela não queria\nir sozinha.\"", "ir sozinha.\"", cps=14, tamanho=120))
 amb(125, "ep09_corredor", -26); amb(126, "ep09_ventilador", -22)
-musica(125, "09_o_quarto", -27)
+musica(125, "09_o_quarto", -30)
 pausa(126, 0.6); pausa(128, 0.6); pausa(129, 0.6); pausa(131, 1.0); pausa(133, 0.8); pausa(135, 0.4); pausa(136, 0.6)
 
 # ================================================================ A BIA — 6: até hoje
@@ -426,7 +426,7 @@ C(151, vigia((1.05, 1.12), ((0.4, 0.45), (0.36, 0.42))))
 C(152, vigia((1.0, 1.05)))
 C(153, c3("B06_B", "entrar", (0.8, 0.42), 1.0, 0.5))
 amb(146, "nenhum"); amb(153, "ep09_ventilador", -24)
-musica(146, "10_fecho", -28)
+musica(146, "10_fecho", -31)
 pausa(149, 0.8); pausa(151, 0.8); pausa(152, 0.6); pausa(153, 0.6)
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
@@ -440,13 +440,13 @@ roteiro = {
     "cintilar": 0.03, "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
-    # 13/11: trilha mais presente ("no terror a música é o que mais marca"): -7 dB sob a voz (era -9)
-    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -7, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
+    # 13/11: trilha mais presente que no Ep. 08 (+4 dB), mas o rascunho 1 abafava a voz: -3 dB nas faixas e -9 sob a voz
+    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
             "efeitos_pico_max": -3},
     "legendas": {"destaques": ["Coreia", "han", "regra", "F-zero-quatro", "sozinha", "sozinhos", "vermelho", "ventilador",
                                "mudang", "godoksa"]},
     "ambiente_inicial": [{"som": "ep09_ventilador", "volume_db": -22}],
-    "musica": {"som": "ep09_m01_tres_da_tarde", "volume_db": -25},
+    "musica": {"som": "ep09_m01_tres_da_tarde", "volume_db": -28},
     "abertura": {"texto": "O VIGIA\nEP. 09 · O QUARTO DO ANDAR F", "vermelho": "ANDAR F", "duracao": 6.0, "segurar": 4.0,
                  "antes_da_batida": 10, "sons": [{"som": "ep09_jing", "t": 0.2, "volume_db": -16}]},
     "cta": {"titulo": "Liga pra alguém hoje.", "canal": "Último Abrigo",

@@ -21,7 +21,7 @@ FUNDIR = {"exhuma_tambor"}
 ALVO = 5.0                                                     # duração mínima depois da câmera lenta (s)
 TRECHOS = {
     "irmas_deque": ("114623", 98.2, 101.3, IRMAS),           # a menina sozinha no deque do lago
-    "irmas_casa": ("114623", 60.9, 63.6, IRMAS),             # a casa no capim seco (antes de ela virar o rosto)
+    "irmas_casa": ("114623", 62.6, 65.2, IRMAS),             # a casa no capim seco (61,6–62,4 tem o ícone de carregando da gravação; 66+ ela vira o rosto)
     "exhuma_danca": ("112939", 124.8, 127.6, EXHUMA),        # a mudang Hwa-rim dançando no ritual
     "exhuma_cova": ("142451", 4.9, 6.2, EXHUMA),             # a família de preto atrás da cova aberta
     "exhuma_caixao": ("143012", 36.8, 38.1, EXHUMA),         # o caixão visto de cima, dentro da terra
@@ -36,7 +36,7 @@ for nome in pedidos:
     lento = min(1.0, (b - a) / ALVO)                           # 1 = velocidade normal
     fator = 1 / lento
     fw, fh = 1536, 864                                         # o trecho dentro da moldura (80%)
-    fx, fy = (1920 - fw) // 2, 70
+    fx, fy = (1920 - fw) // 2, 120                            # crédito EM CIMA: embaixo a legenda cobria
     # movimento rápido (baquetas) deforma na interpolação por movimento: ali o quadro funde no seguinte (borrão suave)
     interp = ("minterpolate=fps=30:mi_mode=blend" if nome in FUNDIR else
               "minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1")
@@ -47,8 +47,8 @@ for nome in pedidos:
         f"[a]scale=480:270,boxblur=12:3,eq=brightness=-0.22:saturation=0.6,scale=1920:1080[fundo];"
         f"[b]scale={fw}:{fh},pad={fw + 4}:{fh + 4}:2:2:color=0xb8b0a4@0.55[quadro];"
         f"[fundo][quadro]overlay={fx - 2}:{fy - 2},"
-        f"drawtext=fontfile={FONTE}:text='TRECHO DE FILME':fontsize=22:fontcolor=0xc8302c:x={fx}:y={fy + fh + 26},"
-        f"drawtext=fontfile={FONTE}:text='{credito}':fontsize=22:fontcolor=0xd8d0c4:x={fx + 230}:y={fy + fh + 26},"
+        f"drawtext=fontfile={FONTE}:text='TRECHO DE FILME':fontsize=22:fontcolor=0xc8302c:x={fx}:y={fy - 46},"
+        f"drawtext=fontfile={FONTE}:text='{credito}':fontsize=22:fontcolor=0xd8d0c4:x={fx + 230}:y={fy - 46},"
         f"format=yuv420p[v]"
     )
     saida = SAI / f"{nome}.mp4"

@@ -12,7 +12,7 @@
  "grao": 0.14,
  "mix": {
   "musica_ganho_db": 12,
-  "fundo_sob_voz": -7,
+  "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
   "fundo_bolso": true,
@@ -40,7 +40,7 @@
  ],
  "musica": {
   "som": "ep09_m01_tres_da_tarde",
-  "volume_db": -25
+  "volume_db": -28
  },
  "abertura": {
   "texto": "O VIGIA\nEP. 09 · O QUARTO DO ANDAR F",
@@ -336,7 +336,7 @@
    },
    "musica": {
     "som": "ep09_m02_han",
-    "volume_db": -27
+    "volume_db": -30
    }
   },
   {
@@ -617,7 +617,7 @@
    },
    "musica": {
     "som": "ep09_m03_as_regras",
-    "volume_db": -27
+    "volume_db": -30
    }
   },
   {
@@ -1438,7 +1438,7 @@
    },
    "musica": {
     "som": "ep09_m04_joseon_irmas",
-    "volume_db": -27
+    "volume_db": -30
    }
   },
   {
@@ -1758,7 +1758,7 @@
    ],
    "musica": {
     "som": "ep09_m05_a_parede",
-    "volume_db": -28
+    "volume_db": -31
    }
   },
   {
@@ -2207,7 +2207,7 @@
    },
    "musica": {
     "som": "ep09_m06_moca_de_branco",
-    "volume_db": -28
+    "volume_db": -31
    }
   },
   {
@@ -2937,7 +2937,7 @@
    },
    "musica": {
     "som": "ep09_m07_o_chamado",
-    "volume_db": -26
+    "volume_db": -29
    },
    "pausa_antes_s": 0.65
   },
@@ -3368,7 +3368,7 @@
    },
    "musica": {
     "som": "ep09_m08_gut_mudang",
-    "volume_db": -26
+    "volume_db": -29
    }
   },
   {
@@ -3588,7 +3588,7 @@
    },
    "musica": {
     "som": "ep09_m09_o_quarto",
-    "volume_db": -27
+    "volume_db": -30
    },
    "pausa_antes_s": 2.5
   },
@@ -4118,7 +4118,7 @@
    },
    "musica": {
     "som": "ep09_m10_fecho",
-    "volume_db": -28
+    "volume_db": -31
    }
   },
   {
