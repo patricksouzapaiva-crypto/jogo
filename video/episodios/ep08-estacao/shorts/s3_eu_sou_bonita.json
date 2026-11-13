@@ -1,0 +1,229 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "regra",
+   "poço",
+   "real",
+   "estação",
+   "existe",
+   "Kisaragi",
+   "janela",
+   "olhar"
+  ]
+ },
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -31
+ },
+ "voz_arquivo": "s3_eu_sou_bonita_voz.wav",
+ "batidas": [
+  {
+   "fala": "Uma mulher de máscara cirúrgica parava as crianças na rua, voltando da escola, e perguntava:",
+   "cena": {
+    "imagem": "../imagens/L02c_kuchisake_longe.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "atmos": {
+     "pelicula": 0.8
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "\"Eu sou bonita?\"",
+   "cena": {
+    "imagem": "../imagens/L02c_kuchisake_longe.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "atmos": {
+     "pelicula": 0.8
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Se a criança dizia que sim… ela tirava a máscara. E a boca dela era cortada de uma orelha à outra."
+  },
+  {
+   "fala": "E perguntava de novo: \"E agora?\"",
+   "cena": {
+    "imagem": "../imagens/L02_kuchisake.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "atmos": {
+     "pelicula": 0.8
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "A Kuchisake-onna. A mulher da boca cortada.",
+   "cena": {
+    "imagem": "../imagens/L02_kuchisake.jpg",
+    "zoom": [
+     1.12,
+     1.2
+    ],
+    "atmos": {
+     "pelicula": 0.6
+    },
+    "kanji": {
+     "texto": "口裂け女",
+     "x": 0.5,
+     "y": 0.2,
+     "modo": "sangue",
+     "legenda": "Kuchisake-onna · a mulher da boca cortada",
+     "glitch": true,
+     "selo": "口",
+     "atraso": 0.3,
+     "vertical": false,
+     "tam": 0.12,
+     "lado_legenda": "baixo"
+    },
+    "foco": [
+     [
+      0.5,
+      0.42
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "Kuchisake-onna",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.61
+  },
+  {
+   "fala": "E ela não era nova. Num livro ilustrado de mil oitocentos e um, o Ehon Sayoshigure, já aparece uma mulher de cabelo arrepiado e a boca rasgada até a orelha. Ela esperou quase duzentos anos… e voltou de máscara.",
+   "cena": {
+    "imagem": "../imagens_reais/R19_kuchisake_ehon_sayoshigure.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "encaixe": "cobrir",
+    "atmos": {
+     "poeira": 0.5
+    },
+    "kanji": {
+     "texto": "絵本小夜時雨",
+     "x": 0.5,
+     "y": 0.2,
+     "modo": "tinta",
+     "legenda": "Ehon Sayoshigure · 1801",
+     "em": "livro",
+     "vertical": false,
+     "tam": 0.08,
+     "lado_legenda": "baixo"
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.22
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "livro",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "cta": {
+  "titulo": "E agora?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

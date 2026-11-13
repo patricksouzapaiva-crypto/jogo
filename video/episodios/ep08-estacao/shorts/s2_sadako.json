@@ -1,0 +1,175 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "regra",
+   "poço",
+   "real",
+   "estação",
+   "existe",
+   "Kisaragi",
+   "janela",
+   "olhar"
+  ]
+ },
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -31
+ },
+ "voz_arquivo": "s2_sadako_voz.wav",
+ "batidas": [
+  {
+   "fala": "Uma fita de vídeo. Quem assiste recebe um telefonema. E tem sete dias.",
+   "cena": {
+    "imagem": "../imagens/J09_telefone.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "kanji": {
+     "texto": "七日",
+     "x": 0.5,
+     "y": 0.2,
+     "modo": "sangue",
+     "legenda": "sete dias",
+     "glitch": true,
+     "em": "sete",
+     "vertical": false,
+     "tam": 0.14,
+     "lado_legenda": "baixo"
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "sete",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E a coisa que sai da televisão é uma menina, a Sadako.",
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Repara de onde ela vem. Ela sai de um poço… como a Okiku.",
+   "cena": {
+    "imagem": "../imagens/J04_poco_cabelo.jpg",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.65
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Ela tem o cabelo comprido caído no rosto e a roupa branca… como a Oiwa.",
+   "cena": {
+    "imagem": "../imagens/J06_fantasma_corredor.jpg",
+    "zoom": [
+     1.2,
+     1.45
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "A Sadako não é um monstro novo. É o fantasma de trezentos anos, que aprendeu a usar a televisão.",
+   "cena": {
+    "imagem": "../imagens/J08_tv_chiado.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "atmos": {
+     "pelicula": 0.6
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.6
+  }
+ ],
+ "cta": {
+  "titulo": "A Sadako tem trezentos anos.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

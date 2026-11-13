@@ -1,0 +1,274 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "regra",
+   "poço",
+   "real",
+   "estação",
+   "existe",
+   "Kisaragi",
+   "janela",
+   "olhar"
+  ]
+ },
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -31
+ },
+ "voz_arquivo": "s1_kisaragi_voz.wav",
+ "batidas": [
+  {
+   "fala": "Onze e quarenta da noite, no Japão. Onze e quarenta, em Londrina.",
+   "cena": {
+    "tipo": "relogios",
+    "lados": [
+     {
+      "nome": "Hamamatsu",
+      "hora": "23:40",
+      "imagem": "../imagens/H01_fabrica_noite.jpg",
+      "brilho": 0.5
+     },
+     {
+      "nome": "Londrina",
+      "hora": "11:40"
+     }
+    ],
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "No grupo da família, chega um áudio da Dani:",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.6
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 1.2
+    },
+    {
+     "em": "áudio",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Dani, Lucas, Mãe, Pai",
+    "mensagens": [
+     {
+      "de": "Dani",
+      "tipo": "foto",
+      "imagem": "../imagens/D01_vagao_vazio.jpg",
+      "hora": "23:20",
+      "apos": 0.1
+     },
+     {
+      "de": "Dani",
+      "texto": "Só eu hoje 😅",
+      "hora": "23:20",
+      "apos": 0.6
+     },
+     {
+      "de": "Lucas",
+      "texto": "kkkk dormiu de novo?",
+      "hora": "11:21",
+      "apos": 1.2
+     },
+     {
+      "de": "Dani",
+      "tipo": "audio",
+      "duracao": "0:09",
+      "hora": "23:40",
+      "em": "áudio",
+      "digitando": 0.8,
+      "apos": 0.3
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Gente… esse trem não para faz vinte minutos. E lá fora… não tem luz nenhuma. Nenhuma.\"",
+   "cena": {
+    "video": "../clipes/V02_janela_trem.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "celular": {
+     "hora": "23:40"
+    },
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.44
+  },
+  {
+   "fala": "Depois, uma foto. Uma plataforma vazia. Uma placa de madeira, escrita à mão, numa letra que ninguém do grupo sabia ler.",
+   "cena": {
+    "imagem": "../imagens/D03_placa_kisaragi.jpg",
+    "zoom": [
+     1.0,
+     1.25
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.33
+     ]
+    ],
+    "celular": {
+     "hora": "23:47"
+    },
+    "mao": 0.6,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A família inteira acompanhou o que aconteceu depois. Ao vivo. Mensagem por mensagem.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.4
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 1.2
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 2.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Dani, Lucas, Mãe, Pai",
+    "mensagens": [
+     {
+      "de": "Dani",
+      "tipo": "foto",
+      "imagem": "../imagens/D01_vagao_vazio.jpg",
+      "hora": "23:20",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "texto": "Só eu hoje 😅",
+      "hora": "23:20",
+      "apos": -30
+     },
+     {
+      "de": "Lucas",
+      "texto": "kkkk dormiu de novo?",
+      "hora": "11:21",
+      "apos": -30
+     },
+     {
+      "de": "Dani",
+      "tipo": "audio",
+      "duracao": "0:09",
+      "hora": "23:40",
+      "apos": -30
+     },
+     {
+      "de": "Pai",
+      "texto": "Filha??",
+      "hora": "11:48",
+      "apos": 0.4
+     },
+     {
+      "de": "Mãe",
+      "texto": "Dani responde a mãe",
+      "hora": "11:48",
+      "apos": 1.2
+     },
+     {
+      "de": "Lucas",
+      "texto": "que lugar é esse",
+      "hora": "11:49",
+      "apos": 2.0
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  }
+ ],
+ "cta": {
+  "titulo": "Ela desceu numa estação que não existe.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep08_trem_dentro",
+   "volume_db": -18
+  }
+ ]
+}

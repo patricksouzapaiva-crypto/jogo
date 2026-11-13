@@ -789,7 +789,17 @@ function kanjiSobre(c, t) {
         ctx.shadowColor = "rgba(0,0,0,.95)"; ctx.shadowBlur = 16;
         const letras = K.legenda.toUpperCase().split("").join(" ");
         const linha = (x0, y0, x1, y1) => { ctx.strokeStyle = `rgba(190,30,30,${al})`; ctx.lineWidth = Math.max(2, fs * 0.12); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); };
-        if (lado === "baixo") { ctx.textAlign = "center"; ctx.fillText(letras, cx, cy + alt / 2 + fs * 2.0); const w = ctx.measureText(letras).width; linha(cx - w * 0.2, cy + alt / 2 + fs * 3.0, cx + w * 0.2, cy + alt / 2 + fs * 3.0); }
+        if (lado === "baixo") {   // 13/11: em várias linhas (" · ") e sem passar da largura da tela (Shorts)
+          ctx.textAlign = "center";
+          const partes = ctx.measureText(letras).width > W * 0.9 ? K.legenda.toUpperCase().split(" · ") : [letras];
+          let yy = cy + alt / 2 + fs * 2.0, wmax = 0;
+          partes.forEach((pt, k) => {
+            let f = k ? Math.round(fs * 0.85) : fs; ctx.font = `${k ? 500 : 700} ${f}px "Inter", "Oswald", sans-serif`;
+            while (ctx.measureText(pt).width > W * 0.9 && f > 12) { f -= 2; ctx.font = `${k ? 500 : 700} ${f}px "Inter", "Oswald", sans-serif`; }
+            ctx.fillText(pt, cx, yy); wmax = Math.max(wmax, ctx.measureText(pt).width); yy += fs * 1.35;
+          });
+          linha(cx - wmax * 0.2, yy - fs * 0.35, cx + wmax * 0.2, yy - fs * 0.35);
+        }
         else {   // 13/11: legenda SEMPRE na horizontal (antes girava 90° e ninguém lia), maior, ao lado do kanji
           const fs2 = Math.round(H * 0.034); ctx.font = `700 ${fs2}px "Inter", "Oswald", sans-serif`;
           const partes = K.legenda.toUpperCase().split(" · "), esq = lado === "esq", lx = esq ? cx - larg * 0.75 : cx + larg * 0.75;
@@ -1201,23 +1211,27 @@ function telaCapitulo(c, t) {   // abertura de capítulo: papel escuro, número 
   ctx.restore();
   if (!c.kanji && c.numero) c.kanji = [{ texto: c.numero, x: 0.3, y: 0.5, tam: 0.17, modo: "luz", fundo: "vermelho", atraso: 0.15, escrever: 1.0, sombra: 0.3, respingos: true, selo: c.selo }];
 }
-function telaRelogios(c, t) {   // dois fusos lado a lado: Hamamatsu (noite) × Londrina (dia)
-  const { W, H } = D, L = c.lados || [];
+function telaRelogios(c, t) {   // dois fusos: Hamamatsu (noite) × Londrina (dia); 13/11: no vertical, um em cima do outro
+  const { W, H } = D, L = c.lados || [], pe = H > W;
   [0, 1].forEach((i) => {
-    const lado = L[i] || {}, x0 = i * W / 2, im = lado.imagem ? IMG["img:" + lado.imagem] : null;
-    ctx.save(); ctx.beginPath(); ctx.rect(x0, 0, W / 2, H); ctx.clip();
-    if (im) { const s = Math.max(W / 2 / im.width, H / im.height) * (1.04 + 0.04 * lin(t, c.t0, 6)); ctx.filter = `brightness(${lado.brilho ?? 0.6})`; ctx.drawImage(im, x0 + (W / 2 - im.width * s) / 2, (H - im.height * s) / 2, im.width * s, im.height * s); ctx.filter = "none"; }
-    else { ctx.fillStyle = i ? "#c9b48a" : "#0b0e14"; ctx.fillRect(x0, 0, W / 2, H); }
-    ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x0, 0, W / 2, H);
+    const lado = L[i] || {}, im = lado.imagem ? IMG["img:" + lado.imagem] : null;
+    const x0 = pe ? 0 : i * W / 2, y0 = pe ? i * H / 2 : 0, qw = pe ? W : W / 2, qh = pe ? H / 2 : H;
+    ctx.save(); ctx.beginPath(); ctx.rect(x0, y0, qw, qh); ctx.clip();
+    if (im) { const s = Math.max(qw / im.width, qh / im.height) * (1.04 + 0.04 * lin(t, c.t0, 6)); ctx.filter = `brightness(${lado.brilho ?? 0.6})`; ctx.drawImage(im, x0 + (qw - im.width * s) / 2, y0 + (qh - im.height * s) / 2, im.width * s, im.height * s); ctx.filter = "none"; }
+    else { ctx.fillStyle = i ? "#c9b48a" : "#0b0e14"; ctx.fillRect(x0, y0, qw, qh); }
+    ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x0, y0, qw, qh);
     const base = (lado.hora || "23:40").split(":").map(Number), s = Math.floor((t - c.t0) * (c.velocidade || 1)), mm = base[1] + Math.floor(s / 60);
     const txt = `${String(base[0] + Math.floor(mm / 60)).padStart(2, "0")}:${String(mm % 60).padStart(2, "0")}`;
-    ctx.textAlign = "center"; ctx.font = `700 ${Math.round(H * 0.17)}px "DejaVu Sans Mono", monospace`; ctx.fillStyle = i ? "#fff4d8" : "#cfe3ff";
-    ctx.shadowColor = i ? "rgba(255,200,120,.6)" : "rgba(120,170,255,.6)"; ctx.shadowBlur = 30; ctx.fillText(txt, x0 + W / 4, H * 0.55);
-    ctx.shadowBlur = 8; ctx.font = `700 ${Math.round(H * 0.032)}px "Inter", sans-serif`; ctx.fillStyle = "#f4efe4";
-    ctx.fillText((lado.nome || "").toUpperCase().split("").join(" "), x0 + W / 4, H * 0.66);
+    const M = Math.min(W, H), cxr = x0 + qw / 2, cyr = pe ? y0 + qh * (i ? 0.72 : 0.55) : H * 0.55;   // o de baixo desce: a legenda fica a 62% da altura
+    ctx.textAlign = "center"; ctx.font = `700 ${Math.round(M * 0.17 * (pe ? 1.25 : 1))}px "DejaVu Sans Mono", monospace`; ctx.fillStyle = i ? "#fff4d8" : "#cfe3ff";
+    ctx.shadowColor = i ? "rgba(255,200,120,.6)" : "rgba(120,170,255,.6)"; ctx.shadowBlur = 30; ctx.fillText(txt, cxr, cyr);
+    ctx.shadowBlur = 8; ctx.font = `700 ${Math.round(M * 0.032 * (pe ? 1.3 : 1))}px "Inter", sans-serif`; ctx.fillStyle = "#f4efe4";
+    ctx.fillText((lado.nome || "").toUpperCase().split("").join(" "), cxr, cyr + M * (pe ? 0.13 : 0.11));
     ctx.restore();
   });
-  ctx.fillStyle = "#b51b1b"; ctx.fillRect(W / 2 - 2, H * 0.1, 4, H * 0.8 * easeOut(lin(t, c.t0, 0.8)));
+  ctx.fillStyle = "#b51b1b";
+  if (pe) ctx.fillRect(W * 0.1, H / 2 - 2, W * 0.8 * easeOut(lin(t, c.t0, 0.8)), 4);
+  else ctx.fillRect(W / 2 - 2, H * 0.1, 4, H * 0.8 * easeOut(lin(t, c.t0, 0.8)));
 }
 function linhaTempo(c, t) {   // linha do tempo das lendas — 13/11: com faixa, todos os anos, ano atual grande (antes ninguém via)
   const { W, H } = D, Lt = c.linha, anos = Lt.anos, dur = Lt.dur ?? 6;
@@ -1431,6 +1445,12 @@ function legendas(t) {
     const a = Math.min(lin(t, L.t0, 0.12), 1 - lin(t, L.t1 - 0.12, 0.12));
     const tam = D.legenda_tam || 56, lh = tam * 1.22, y0 = D.legenda_y - (L.linhas.length - 1) * lh;
     fonte(700, tam, T.fonte_texto); ctx.textBaseline = "alphabetic";
+    if (D.H > D.W || D.legenda_caixa) {   // 13/11: Shorts — faixa escura atrás da legenda (lê em cima de imagem clara)
+      const lmax = Math.max(...L.linhas.map((l) => ctx.measureText(l).width)), px = tam * 0.45;
+      ctx.globalAlpha = a * 0.5; ctx.fillStyle = "#000";
+      const bx = D.W / 2 - lmax / 2 - px, by = y0 - tam * 1.0, bw = lmax + 2 * px, bh = (L.linhas.length - 1) * lh + tam * 1.45;
+      ctx.beginPath(); ctx.roundRect ? ctx.roundRect(bx, by, bw, bh, tam * 0.3) : ctx.rect(bx, by, bw, bh); ctx.fill(); ctx.globalAlpha = 1;
+    }
     L.linhas.forEach((linha, k) => {
       const pal = linha.split(" ");
       const larg = ctx.measureText(linha).width;
