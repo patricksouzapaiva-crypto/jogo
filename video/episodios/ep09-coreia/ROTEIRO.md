@@ -1,4 +1,4 @@
-# O Vigia — Ep. 09 "O quarto do andar F" (v2 — APROVADO 13/11)
+# O Vigia — Ep. 09 "O quarto do andar F" (v2 — APROVADO 13/11; vozes: Bia = Leda, mãe = Sulafat)
 
 **Pedido do usuário (13/11):** v1 "gostei, mas o terror está fraco — quero algo mais pesado e sinistro".
 **O que mudou da v1 → v2:**
