@@ -1,0 +1,2 @@
+filmes/*
+!filmes/baixar_drive.py
