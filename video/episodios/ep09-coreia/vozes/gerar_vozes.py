@@ -17,8 +17,11 @@ FALAS = {
  "mae2": ("Fale em português do Brasil, com sotaque mineiro, como uma mãe de uns 50 anos gravando um áudio muito "
           "baixinho, cansada, com carinho, depois de meses sem notícia da filha, quase sem forças: ",
           "Filha... a mãe tá aqui."),
+ # a voz falsa no corredor: a mesma voz da mãe, mas sussurrada, lenta e sem emoção (o filtro do corredor vem depois)
+ "voz1": ("Fale em português do Brasil, com sotaque mineiro, sussurrando bem devagar, sem nenhuma emoção, como alguém "
+          "encostado do outro lado de uma porta, chamando baixinho, com pausas longas: ", "Bia... abre. ... É a mãe."),
 }
-VOZES = {"bia": ["Leda", "Zephyr", "Laomedeia"], "mae": ["Sulafat", "Vindemiatrix", "Achernar"]}
+VOZES = {"bia": ["Leda", "Zephyr", "Laomedeia"], "mae": ["Sulafat", "Vindemiatrix", "Achernar"], "voz": ["Sulafat"]}
 for chave, (estilo, fala) in FALAS.items():
     for voz in VOZES[chave[:3]]:
         saida = f"{AQUI}/brutas/{chave}_{voz}.wav"

@@ -204,7 +204,7 @@ Na última noite, às três da manhã, a Bia mandou um áudio no grupo.
 A mãe estava sentada no sofá, em Belo Horizonte, com o celular na mão. Em silêncio.
 A Bia mandou outro áudio. Dava para ouvir o ventilador.
 E, por baixo, uma voz de mulher, em português, muito baixa, dizendo:
-"Bia… abre. É a mãe."
+🎙voz "Bia… abre. É a mãe."
 Regra três.
 A mãe digitou, em maiúsculas: "NÃO SOU EU. NÃO ABRE."
 A mensagem ficou com um tracinho só. Entregue. Nunca lida.

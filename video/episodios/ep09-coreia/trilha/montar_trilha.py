@@ -1,0 +1,21 @@
+"""Junta as 10 faixas na ordem do episódio (para ouvir a trilha inteira): volume igualado (-18 LUFS), a volta do
+silêncio do 08 (150 s) entra em fade (regra: sem pancada) e cada faixa emenda na seguinte com 4 s de crossfade.
+Saída: Trilha_O_Vigia_Ep09.mp3 (e faixas_prontas/*.wav para a montagem)."""
+import glob, subprocess
+from pathlib import Path
+AQUI = Path(__file__).parent; (AQUI / "faixas_prontas").mkdir(exist_ok=True)
+CORRECAO = {"08_gut_mudang": "volume='if(between(t,149.9,153.5),(t-149.9)/3.6,1)':eval=frame,"}
+fs = sorted(glob.glob(str(AQUI / "faixas" / "*.mp3")))
+prontas = []
+for f in fs:
+    n = Path(f).stem; out = AQUI / "faixas_prontas" / f"{n}.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-af", CORRECAO.get(n, "") + "loudnorm=I=-18:TP=-2:LRA=14",
+                    "-ar", "44100", str(out)], check=True)
+    prontas.append(out)
+args = []; [args.extend(["-i", str(p)]) for p in prontas]
+filt, ant = "", "[0]"
+for k in range(1, len(prontas)):
+    filt += f"{ant}[{k}]acrossfade=d=4:c1=tri:c2=tri[x{k}];"; ant = f"[x{k}]"
+subprocess.run(["ffmpeg", "-v", "error", "-y", *args, "-filter_complex", filt.rstrip(";"), "-map", ant,
+                "-b:a", "192k", str(AQUI / "Trilha_O_Vigia_Ep09.mp3")], check=True)
+print("ok")
