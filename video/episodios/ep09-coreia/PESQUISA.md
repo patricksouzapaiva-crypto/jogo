@@ -63,3 +63,24 @@ Regra: tudo que o Vigia afirma como fato precisa estar aqui com fonte. O que nã
 
 ## Fuso
 - Seul (UTC+9) × Brasília (UTC−3, sem horário de verão desde 2019) = 12 h. 3h da madrugada em Seul = 15h no Brasil.
+
+## (13/11, v2) Mortes solitárias — 고독사 (godoksa)
+- Definição legal: morte de pessoa isolada de família e amigos cujo corpo é encontrado 72 h ou mais depois.
+  2023: 3.661 casos (Ministério da Saúde e Bem-Estar); 2024: 3.924 (+7,2%), levantamento anunciado em 27/11/2025.
+  https://www.asiae.co.kr/en/article/2025112712125688708 ; https://www.koreaherald.com/article/10625073
+- Proporção em quitinetes, officetels, motéis e goshiwons subiu em 5 anos; quem acha o corpo costuma ser o dono ou o
+  zelador. https://www.asiae.co.kr/en/article/2025112712125688708
+- Caso real: homem morto sozinho num goshiwon de 6,6 m² em Seul, achado dias depois pelo cheiro.
+  https://www.koreatimes.co.kr/southkorea/health/20170816/making-a-living-from-the-dead
+- Empresas de "limpeza especial" (특수청소) depois de mortes sem ninguém; de ~30 para ~300 profissionais em 5 anos
+  (dado da reportagem). https://www.koreatimes.co.kr/southkorea/health/20170816/making-a-living-from-the-dead
+
+## (13/11, v2) Casamento de almas — 영혼결혼식
+- A virgem fantasma (처녀귀신) é afastada por exorcismo ou por "casamento de almas": um casamento entre a moça morta
+  solteira e um rapaz morto solteiro (총각귀신), para as almas descansarem. https://wikipedia.com/wiki/Korean_Virgin_Ghost
+- Mudang: ainda contratada por uma minoria depois de mortes; muita desconfiança (cristãos).
+  https://durham-repository.worktribe.com/OutputFile/1481384
+
+## (13/11, v2) Janghwa e Hongryeon — detalhes do conto
+- A madrasta põe um rato esfolado na cama de Janghwa para fingir que ela abortou; o filho da madrasta leva a moça e
+  ela morre afogada num lago. (versão mais contada; conferir em https://en.wikipedia.org/wiki/The_Story_of_Jang-hwa_and_Hong-ryeon)
