@@ -1,4 +1,4 @@
-# O Vigia — Ep. 09 "O quarto do andar F" (v2 — mais pesado; para aprovação)
+# O Vigia — Ep. 09 "O quarto do andar F" (v2 — APROVADO 13/11)
 
 **Pedido do usuário (13/11):** v1 "gostei, mas o terror está fraco — quero algo mais pesado e sinistro".
 **O que mudou da v1 → v2:**
@@ -14,12 +14,11 @@
 - Fecho que vira para quem assiste: "se você mora sozinho… quantos dias até alguém perceber?"
 - Mantido: sem susto pulando na tela, sem rosto de IA, Vigia só no tema/apartes/fecho; trechos de filme com ficha.
 
-**Título (opções):**
-1. **Por que o terror coreano é o mais triste do mundo** (48) ← continua recomendado
-2. O terror coreano não te assusta. Ele te deixa sozinho. (52)
-3. Por que os fantasmas coreanos não vão embora (44)
+**TÍTULO APROVADO (13/11): "O terror coreano é pior do que você imagina"** (44 car.) — "triste" foi recusado.
 
-**Capa:** a porta F03 com a plaquinha e o nome escrito em vermelho + **"ELA NÃO QUER IR SOZINHA."**
+**Capa:** o corredor do goshiwon com a figura de branco bem pequena no fundo + **"NÃO RESPONDA DEPOIS DAS 3."**
+(alternativa: a porta com o nome em vermelho + "ELA NÃO QUER IR SOZINHA.")
+
 
 **Duração:** ~2.500 palavras ≈ 20 min. **Elemento-marca:** 한 (han) em pincel, cada vez maior; no fim, o 한 vira o
 nome da Bia em vermelho (비아).
