@@ -18,7 +18,11 @@ while time.time() - ultimo < LIMITE:
         alvo.parent.mkdir(parents=True, exist_ok=True)
         try:
             gdown.download(id=f.id, output=str(alvo) + ".parcial", quiet=True)
-            Path(str(alvo) + ".parcial").rename(alvo)
+            parc = Path(str(alvo) + ".parcial")
+            if not parc.exists() or parc.stat().st_size < 200_000:   # Drive ainda processando: vem vazio
+                parc.unlink(missing_ok=True); print("vazio (Drive processando), tento de novo:", f.path, flush=True)
+                continue
+            parc.rename(alvo)
             print("ok:", f.path, f"{alvo.stat().st_size / 1e6:.0f} MB", flush=True); ultimo = time.time()
         except Exception as e:
             print("falhou:", f.path, e, flush=True)
