@@ -197,3 +197,12 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
   o cabeçalho, áudio com onda abaixo do nome; `mapa.progresso`; `inserir_silencios` com fades de 15 ms.
 - Entrega: `previas/O_Vigia_Ep08_Por_que_o_terror_japones.mp4` + `publicacao/legendas_pt-BR.srt`.
 - Pendente: pacote de publicação (capa, descrição com capítulos, Shorts) — pedir "pode" antes de mexer no canal.
+
+## 13/11 — Ep. 08 corrigido: "Onze e quarenta, em Londrina" (era "meio-dia e quarenta"; Brasília–Japão = 12 h)
+- `corrigir_hora.py` emenda a voz (mesma duração); `VOZ_TEMPOS=audio/voz_personagens_meiodia.wav` no gerar.py mantém os
+  tempos aprovados; `render.js --quadros 0:298` redesenhou só o começo; emenda no keyframe de 9,933 s.
+- **Vídeo final para subir no YouTube: `episodios/ep08-estacao/previas/O_Vigia_Ep08_Por_que_o_terror_japones_1080p.mp4`
+  (1,5 GB, 37615 quadros).** Legenda: `publicacao/legendas_pt-BR.srt`. O usuário escolheu subir o de 1,5 GB (não fazer a
+  cópia de 530 MB). Entrega pendente: o arquivo não cabe no chat (limite 400 MB) e esta sessão não pode criar Releases no
+  GitHub (repo é PÚBLICO). Usuário escolheu "esperar" — opções: 4 partes de ~375 MB pelo chat + comando para juntar.
+- `previas/ep08_final.mp4` e `ep08_final_v2_som.mp4` têm a legenda antiga (não usar).
