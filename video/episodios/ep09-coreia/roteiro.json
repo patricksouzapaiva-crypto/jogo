@@ -1304,7 +1304,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/B06_B_52fbf31142c9.mp4"
+    "video": "camera3d/B06_A_feed5d6fb83e.mp4"
    },
    "sons": [
     {
@@ -1741,7 +1741,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/B06_B_a2d8e1938a85.mp4"
+    "video": "camera3d/base_V03_3e830fb1bafe.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
@@ -2171,7 +2171,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/B06_B_2986ba94edfe.mp4"
+    "video": "camera3d/base_V02_1f663a365597.mp4"
    },
    "ambiente": {
     "som": "ep09_ventilador",
