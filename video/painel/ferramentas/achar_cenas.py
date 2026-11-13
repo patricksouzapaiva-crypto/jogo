@@ -1,6 +1,6 @@
 """Acha, num filme/trailer, os planos que combinam com cada momento do roteiro (13/11, Ep. 09).
 
-1. Tarja preta (letterbox): ffmpeg cropdetect → recorte da imagem útil.
+1. Imagem útil: mede a textura por coluna/linha (pega tarja preta E barra colorida de gravação de tela).
 2. Cortes de cena: PySceneDetect (detector adaptativo) → lista de planos.
 3. Busca por descrição: CLIP (open_clip, ViT-B-32 laion2b) em 3 quadros de cada plano; cada pedido do roteiro vira um
    texto em inglês ("a female shaman dancing in a ritual") e os planos são ordenados pela semelhança.
@@ -17,28 +17,39 @@ from PIL import Image, ImageDraw
 
 
 def recorte_util(video):
-    """Retângulo sem tarja preta (amostra 8 trechos espalhados)."""
+    """Retângulo da imagem de verdade. Funciona com tarja preta (cinema) E com as barras coloridas e borradas que
+    aparecem em gravação de tela do celular (modo ambiente do YouTube): em vez de procurar preto, mede a TEXTURA
+    (variação entre pixels vizinhos) em 24 quadros espalhados; barra lisa ou borrada tem textura ~0."""
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", video],
                                capture_output=True, text=True).stdout)
-    achados = []
-    for k in range(8):
-        t = dur * (k + 0.5) / 8
-        out = subprocess.run(["ffmpeg", "-nostdin", "-ss", f"{t:.2f}", "-i", video, "-t", "2", "-vf",
-                              "cropdetect=limit=24:round=2:reset=0", "-f", "null", "-"],
-                             capture_output=True, text=True).stderr
-        m = re.findall(r"crop=(\d+):(\d+):(\d+):(\d+)", out)
-        if m:
-            achados.append(tuple(map(int, m[-1])))
-    if not achados:
-        return None
-    # o maior retângulo (cenas escuras fazem o cropdetect "comer" imagem; o maior é o seguro)
-    return max(achados, key=lambda r: r[0] * r[1]), dur
+    w, h = map(int, subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v", "-show_entries",
+                                    "stream=width,height", "-of", "csv=p=0", video],
+                                   capture_output=True, text=True).stdout.strip().split(","))
+    sw, sh = 480, max(2, round(480 * h / w))
+    col, lin = np.zeros(sw), np.zeros(sh)
+    for k in range(24):
+        raw = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-ss", f"{dur * (k + 0.5) / 24:.2f}", "-i", video,
+                              "-frames:v", "1", "-vf", f"scale={sw}:{sh},format=gray", "-f", "rawvideo", "-"],
+                             capture_output=True).stdout
+        if len(raw) < sw * sh:
+            continue
+        g = np.frombuffer(raw[:sw * sh], np.uint8).reshape(sh, sw).astype(np.float32)
+        col += np.abs(np.diff(g, axis=0)).mean(0)          # textura vertical de cada coluna
+        lin += np.abs(np.diff(g, axis=1)).mean(1)          # textura horizontal de cada linha
+    def faixa(v):
+        lim = 0.5 * np.median(v[len(v) // 3: 2 * len(v) // 3])
+        ok = np.where(v > lim)[0]
+        return (ok[0], ok[-1] + 1) if len(ok) else (0, len(v))
+    x0, x1 = faixa(col); y0, y1 = faixa(lin)
+    X0, X1 = round(x0 * w / sw), round(x1 * w / sw); Y0, Y1 = round(y0 * h / sh), round(y1 * h / sh)
+    cw, ch = (X1 - X0) // 2 * 2, (Y1 - Y0) // 2 * 2
+    return (cw, ch, X0, Y0), dur
 
 
 def planos(video):
     from scenedetect import detect, AdaptiveDetector
     ps = detect(video, AdaptiveDetector(), show_progress=False)
-    return [(a.get_seconds(), b.get_seconds()) for a, b in ps]
+    return [(a.seconds, b.seconds) for a, b in ps]
 
 
 def quadro(video, t, crop):
