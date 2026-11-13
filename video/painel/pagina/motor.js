@@ -31,7 +31,7 @@ function carregarImg(src) {
 window.preparar = async function (dados) {
   D = dados;
   cv.width = D.W; cv.height = D.H;
-  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho"];
+  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho", "Nanum Brush Script", "Nanum Myeongjo"];
   for (const f of fams) for (const p of ["400", "500", "700", "800"]) { try { await document.fonts.load(`${p} 40px "${f}"`); } catch (e) {} }
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
@@ -666,7 +666,7 @@ function kanjiSobre(c, t) {
     if (t < t0) continue;
     const modo = K.modo || "luz", vert = K.vertical !== false, txt = [...(K.texto || "")];
     const tam = Math.round(H * (K.tam ?? (vert ? 0.2 : 0.21)));
-    const fonte = K.fonte === "mincho" ? `800 ${tam}px "Shippori Mincho"` : `400 ${tam}px "Yuji Syuku"`;
+    const fonte = K.fonte === "mincho" ? `800 ${tam}px "Shippori Mincho", "Nanum Myeongjo"` : `400 ${tam}px "Yuji Syuku", "Nanum Brush Script"`;
     const passo = tam * (vert ? 1.0 : 0.98);
     const cx = W * (K.x ?? 0.78), cy = H * (K.y ?? 0.5);
     const larg = vert ? tam : txt.length * passo, alt = vert ? txt.length * passo : tam;
@@ -773,7 +773,7 @@ function kanjiSobre(c, t) {
       h.clearRect(0, 0, z, z); h.fillStyle = "#b71c1c"; h.beginPath();
       if (h.roundRect) h.roundRect(z * 0.08, z * 0.08, z * 0.84, z * 0.84, z * 0.08); else h.rect(z * 0.08, z * 0.08, z * 0.84, z * 0.84);
       h.fill();
-      h.globalCompositeOperation = "destination-out"; h.font = `800 ${Math.round(z * 0.62)}px "Shippori Mincho"`; h.textAlign = "center"; h.textBaseline = "middle";
+      h.globalCompositeOperation = "destination-out"; h.font = `800 ${Math.round(z * 0.62)}px "Shippori Mincho", "Nanum Myeongjo"`; h.textAlign = "center"; h.textBaseline = "middle";
       h.fillStyle = "#000"; h.fillText(K.selo, z / 2, z / 2 + z * 0.03);
       h.globalAlpha = 0.5; h.fillStyle = h.createPattern(ruidoPincel(), "repeat"); h.fillRect(0, 0, z, z);   // carimbo gasto
       h.globalAlpha = 1; h.globalCompositeOperation = "source-over";
@@ -1092,7 +1092,7 @@ function telaChat(c, t) {
       const ent = easeOut(lin(t, m.t ?? c.t0, 0.25)); ctx.font = `700 ${Math.round(17 * u)}px "Inter", sans-serif`; const wNome = m.de && m.de !== "eu" ? ctx.measureText(m.de).width + 40 * u : 0; ctx.font = `500 ${fs}px "Inter", "Noto Color Emoji", sans-serif`;
       const bw = m.tipo === "audio" ? larg * 0.8 : m.tipo === "foto" || m.tipo === "video" ? larg : Math.min(larg, Math.max(wNome, ...linhas.map((l) => ctx.measureText(l).width + 40 * u)));
       const av = meu ? 0 : 50 * u, bx = meu ? px + pw - bw - 18 * u : px + 18 * u + av, by = y - h;
-      const COR = { Dani: "#e6a95a", Lucas: "#6fb3ff", "Mãe": "#ff8fb1", Pai: "#7fd18b" }, corP = m.cor || COR[m.de] || "#c9a7ff";
+      const COR = { Dani: "#e6a95a", Bia: "#e6a95a", Lucas: "#6fb3ff", "Mãe": "#ff8fb1", Pai: "#7fd18b", "Tia Nena": "#7fd18b" }, corP = m.cor || COR[m.de] || "#c9a7ff";
       ctx.save(); ctx.globalAlpha = ent; ctx.translate(0, (1 - ent) * 20 * u);
       if (!meu) {   // avatar com a inicial, ao lado do balão
         ctx.fillStyle = corP; ctx.globalAlpha = ent * 0.9; ctx.beginPath(); ctx.arc(bx - 26 * u, by + 22 * u, 19 * u, 0, 6.283); ctx.fill(); ctx.globalAlpha = ent;
@@ -1113,7 +1113,7 @@ function telaChat(c, t) {
         if (m.tipo === "video") { ctx.fillStyle = "rgba(0,0,0,.5)"; ctx.beginPath(); ctx.arc(bx + bw / 2, ty - 16 * u + ih / 2, 30 * u, 0, 6.283); ctx.fill(); ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(bx + bw / 2 - 9 * u, ty - 16 * u + ih / 2 - 14 * u); ctx.lineTo(bx + bw / 2 + 15 * u, ty - 16 * u + ih / 2); ctx.lineTo(bx + bw / 2 - 9 * u, ty - 16 * u + ih / 2 + 14 * u); ctx.fill(); }
       } else linhas.forEach((l, k) => ctx.fillText(l, bx + 20 * u, ty + k * fs * 1.3));
       ctx.font = `500 ${Math.round(13 * u)}px "Inter", sans-serif`; ctx.fillStyle = "#93a1ad"; ctx.textAlign = "right";
-      ctx.fillText((m.hora || "") + (meu ? "  ✓✓" : ""), bx + bw - 14 * u, by + h - 18 * u); ctx.textAlign = "left";
+      ctx.fillText((m.hora || "") + (meu ? "  " + (m.check || "✓✓") : ""), bx + bw - 14 * u, by + h - 18 * u); ctx.textAlign = "left";
       ctx.restore();
       y = by - 8 * u;
     }
@@ -1159,7 +1159,7 @@ function telaMapa(c, t) {   // mapa de celular "de verdade": cidade, arrozais, r
     ctx.strokeStyle = "#b08a2e"; ctx.lineWidth = 9 * u; ctx.beginPath(); rota.forEach(([x, y], k) => k ? ctx.lineTo(x * MW, y * MH) : ctx.moveTo(x * MW, y * MH)); ctx.stroke();
     ctx.strokeStyle = "#e0b44a"; ctx.lineWidth = 5 * u; ctx.stroke();
     // rótulos
-    const rot = (txt, x, y, tam, cor) => { ctx.font = `700 ${Math.round(tam * u)}px "Inter", "Shippori Mincho", sans-serif`; ctx.fillStyle = cor; ctx.strokeStyle = "rgba(10,14,12,.85)"; ctx.lineWidth = 4 * u; ctx.strokeText(txt, x, y); ctx.fillText(txt, x, y); };
+    const rot = (txt, x, y, tam, cor) => { ctx.font = `700 ${Math.round(tam * u)}px "Inter", "Shippori Mincho", "Nanum Myeongjo", sans-serif`; ctx.fillStyle = cor; ctx.strokeStyle = "rgba(10,14,12,.85)"; ctx.lineWidth = 4 * u; ctx.strokeText(txt, x, y); ctx.fillText(txt, x, y); };
     rot("浜松 Hamamatsu", MW * 0.03, MH * 0.72, 20, "#e6e9ea"); rot("天竜川", MW * 0.37, MH * 0.3, 15, "#6fa8d0"); rot("国道152号", MW * 0.47, MH * 0.5, 14, "#e0b44a");
     rot("山", MW * 0.7, MH * 0.12, 22, "#9fb79f"); rot("山", MW * 0.88, MH * 0.3, 22, "#9fb79f");
     // rastro azul do caminho já feito

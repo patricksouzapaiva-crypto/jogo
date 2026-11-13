@@ -19,3 +19,8 @@ for k in range(1, len(prontas)):
 subprocess.run(["ffmpeg", "-v", "error", "-y", *args, "-filter_complex", filt.rstrip(";"), "-map", ant,
                 "-b:a", "192k", str(AQUI / "Trilha_O_Vigia_Ep09.mp3")], check=True)
 print("ok")
+# instala as faixas no motor: painel/sons/ep09_m<nome>.mp3 (já com o volume igualado e a correção do 08)
+SONS = AQUI.parents[2] / "painel" / "sons"
+for p in prontas:
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(p), "-b:a", "192k", str(SONS / f"ep09_m{p.stem}.mp3")], check=True)
+print("instaladas no motor:", len(prontas))

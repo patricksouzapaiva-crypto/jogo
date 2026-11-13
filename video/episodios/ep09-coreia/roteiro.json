@@ -1,0 +1,4312 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_personagens.wav",
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "vigia_padrao": false,
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -7,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Coreia",
+   "han",
+   "regra",
+   "F-zero-quatro",
+   "sozinha",
+   "sozinhos",
+   "vermelho",
+   "ventilador",
+   "mudang",
+   "godoksa"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep09_ventilador",
+   "volume_db": -22
+  }
+ ],
+ "musica": {
+  "som": "ep09_m01_tres_da_tarde",
+  "volume_db": -25
+ },
+ "abertura": {
+  "texto": "O VIGIA\nEP. 09 · O QUARTO DO ANDAR F",
+  "vermelho": "ANDAR F",
+  "duracao": 6.0,
+  "segurar": 4.0,
+  "antes_da_batida": 10,
+  "sons": [
+   {
+    "som": "ep09_jing",
+    "t": 0.2,
+    "volume_db": -16
+   }
+  ]
+ },
+ "cta": {
+  "titulo": "Liga pra alguém hoje.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "antes": 0.6,
+  "clique_em": "Inscreva-se",
+  "duracao": 2.5
+ },
+ "batidas": [
+  {
+   "fala": "Três da tarde, em Belo Horizonte. Três da manhã, em Seul.",
+   "cena": {
+    "tipo": "relogios",
+    "lados": [
+     {
+      "nome": "Seul",
+      "hora": "03:00",
+      "imagem": "imagens/S01_B.jpg",
+      "brilho": 0.55
+     },
+     {
+      "nome": "Belo Horizonte",
+      "hora": "15:00",
+      "imagem": "imagens/F01_A.jpg",
+      "brilho": 0.75
+     }
+    ]
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "No grupo da família, chega um áudio do número da Bia.",
+   "sons": [
+    {
+     "em": "áudio",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "em": "áudio",
+      "digitando": 0.6,
+      "apos": 0.3
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A mãe aperta o play.",
+   "cena": {
+    "imagem": "imagens/F02_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.62,
+     "y": 0.32,
+     "r": 0.24,
+     "atraso": 0.2
+    },
+    "foco": [
+     [
+      0.6,
+      0.35
+     ],
+     [
+      0.62,
+      0.32
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.42
+   },
+   "sons": [
+    {
+     "em": "play",
+     "som": "ep08_vibra",
+     "volume_db": -30,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.17
+  },
+  {
+   "fala": "É só isso. Um ventilador girando, num quarto de sete metros quadrados, do outro lado do mundo.",
+   "pausa_antes_s": 5.0,
+   "cena": {
+    "imagem": "imagens/B06_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 2.0,
+    "antecipar": 2.0
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -12
+   }
+  },
+  {
+   "fala": "Chega todo dia. Sempre às três.",
+   "cena": {
+    "video": "clipes/V06_celular_cama.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "E a mãe responde todos.",
+   "cena": {
+    "imagem": "imagens/F01_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "dof": {
+     "x": 0.66,
+     "y": 0.62,
+     "r": 0.2,
+     "atraso": 0.3
+    },
+    "foco": [
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.65,
+      0.65
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.41
+   },
+   "pausa_antes_s": 0.16
+  },
+  {
+   "fala": "\"Filha… a mãe tá aqui.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:02",
+      "hora": "15:01",
+      "apos": 0.1
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sem_legenda": true,
+   "pausa_antes_s": 1.66
+  },
+  {
+   "fala": "O problema é que a Bia desapareceu faz oito meses.",
+   "ambiente": {
+    "som": "ep09_seul_chuva",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Até o fim deste vídeo, você vai entender o que aconteceu com ela.",
+   "cena": {
+    "imagem": "imagens/B01_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "E por que, na Coreia, os mortos não têm medo de ficar. Eles têm medo de ficar sozinhos.",
+   "cena": {
+    "imagem": "imagens/B10_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Boa noite. Eu sou o Vigia.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.6,
+    "antecipar": 1.6
+   },
+   "pausa_antes_s": 3.0,
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "musica": {
+    "som": "ep09_m02_han",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Na última vez, a gente foi ao Japão, onde a maldição é uma regra. Hoje, a gente vai para o país do lado.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A Coreia do Sul. O país do K-pop, das novelas que o Brasil inteiro maratona.",
+   "cena": {
+    "imagem": "imagens/B14_A.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "chuva": 0.3
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.62,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E de um dos terrores mais pesados do mundo.",
+   "cena": {
+    "imagem": "imagens/S01_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.58,
+     "y": 0.18,
+     "r": 0.2,
+     "atraso": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.58,
+      0.18
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "No terror coreano, o fantasma quase nunca é um monstro. Ele foi uma pessoa. Uma pessoa que morreu sem justiça, sem despedida… ou sem ninguém do lado.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.59
+   },
+   "pausa_antes_s": 0.34
+  },
+  {
+   "fala": "Os coreanos costumam chamar essa dor de han.",
+   "cena": {
+    "imagem": "imagens/S04_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "kanji": {
+     "texto": "한",
+     "x": 0.5,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "han",
+     "tam": 0.18,
+     "em": "han",
+     "atraso": 0.1
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.65,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "han",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Não tem tradução. Igual a nossa saudade. Só que a saudade é de quem foi embora.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.08
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "O han é a dor de quem ficou. E que não para de crescer.",
+   "cena": {
+    "imagem": "imagens/S04_A.jpg",
+    "zoom": [
+     1.04,
+     1.12
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "foco": [
+     [
+      0.67,
+      0.5
+     ],
+     [
+      0.67,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Hoje eu vou te mostrar quatrocentos anos dessa dor, dos contos da era Joseon até o maior filme de terror da história da Coreia.",
+   "cena": {
+    "imagem": "imagens/S03_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "atmos": {
+     "neblina": 0.5
+    },
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.62,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E vou te contar o que aconteceu com uma brasileira que alugou um quarto de sete metros quadrados no andar que não existe.",
+   "cena": {
+    "imagem": "imagens/B02_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A Bia tinha vinte e dois anos. Aprendeu coreano com as músicas, depois com as novelas. Juntou dinheiro três anos para um semestre de intercâmbio em Seul.",
+   "cena": {
+    "imagem": "imagens/B14_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "chuva": 0.3
+    },
+    "foco": [
+     [
+      0.55,
+      0.55
+     ],
+     [
+      0.6,
+      0.6
+     ]
+    ],
+    "celular": {
+     "hora": "21:14"
+    },
+    "mao": 0.5,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_seul_chuva",
+    "volume_db": -26
+   },
+   "musica": {
+    "som": "ep09_m03_as_regras",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Para economizar, alugou um goshiwon.",
+   "cena": {
+    "imagem": "imagens/B14_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "kanji": {
+     "texto": "고시원",
+     "x": 0.78,
+     "y": 0.5,
+     "modo": "placa",
+     "legenda": "goshiwon",
+     "fundo": "vermelho",
+     "em": "goshiwon"
+    },
+    "foco": [
+     [
+      0.2,
+      0.2
+     ],
+     [
+      0.22,
+      0.18
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "goshiwon",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Um prédio de quartinhos. Cama, mesa, ventilador. Sete metros quadrados, em média, e metade sem janela.",
+   "cena": {
+    "imagem": "imagens/B02_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -28
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "No elevador, os botões iam: um, dois, três… F… cinco.",
+   "cena": {
+    "imagem": "imagens/B03_A.jpg",
+    "zoom": [
+     1.0,
+     1.35
+    ],
+    "dof": {
+     "x": 0.59,
+     "y": 0.5,
+     "r": 0.16,
+     "atraso": 1.2
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.59,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "F",
+     "som": "ep09_elevador",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "O quarto dela era o F-zero-três.",
+   "cena": {
+    "imagem": "imagens/B01_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Na porta, colada com fita, tinha uma folha. A Bia traduziu e mandou no grupo, achando graça.",
+   "cenas": [
+    {
+     "imagem": "imagens/B04_A_regras.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.52,
+       0.32
+      ]
+     ],
+     "celular": {
+      "hora": "21:40"
+     },
+     "mao": 0.5,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "tipo": "chat",
+     "grupo": "Família BH 💛",
+     "membros": "Bia, Mãe, Pai, Tia Nena",
+     "mensagens": [
+      {
+       "de": "Bia",
+       "tipo": "foto",
+       "imagem": "imagens/B04_A_regras.jpg",
+       "hora": "09:41",
+       "apos": 0.1
+      },
+      {
+       "de": "Bia",
+       "texto": "olha as regras do meu andar kkkkk",
+       "hora": "09:41",
+       "apos": 0.9
+      }
+     ],
+     "em": "mandou"
+    }
+   ],
+   "sons": [
+    {
+     "em": "mandou",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.99
+  },
+  {
+   "fala": "Regra um: desligue o ventilador antes de dormir.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.35,
+     1.4
+    ],
+    "dof": {
+     "x": 0.5,
+     "y": 0.5,
+     "r": 0.34
+    },
+    "foco": [
+     [
+      0.53,
+      0.1
+     ],
+     [
+      0.53,
+      0.11
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Regra dois: não bata na parede do F-zero-quatro.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.35,
+     1.4
+    ],
+    "dof": {
+     "x": 0.5,
+     "y": 0.5,
+     "r": 0.34
+    },
+    "foco": [
+     [
+      0.53,
+      0.2
+     ],
+     [
+      0.53,
+      0.21
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Regra três: se ouvir alguém chamando o seu nome depois das três, não responda.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "dof": {
+     "x": 0.5,
+     "y": 0.5,
+     "r": 0.34
+    },
+    "foco": [
+     [
+      0.53,
+      0.33
+     ],
+     [
+      0.53,
+      0.34
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Regra quatro: nunca escreva nada em vermelho neste andar.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "dof": {
+     "x": 0.5,
+     "y": 0.5,
+     "r": 0.34
+    },
+    "foco": [
+     [
+      0.53,
+      0.47
+     ],
+     [
+      0.53,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "\"Gente, é tipo novela de terror, eu amei!\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:02",
+      "hora": "15:01",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B04_A_regras.jpg",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "olha as regras do meu andar kkkkk",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": 0.1
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.27
+   },
+   "sem_legenda": true,
+   "pausa_antes_s": 0.02
+  },
+  {
+   "fala": "A Bia quebrou todas.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.3
+  },
+  {
+   "fala": "Na Coreia, o número quatro se fala sa. E sa também é como se diz \"morte\".",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "제1장",
+     "numero_pt": "Capítulo 1",
+     "titulo": "O andar que não existe",
+     "ano": "사 · 4 · morte",
+     "imagem": "imagens/B03_B.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.5
+     }
+    },
+    {
+     "imagem": "imagens/B03_B.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "kanji": [
+      {
+       "texto": "사",
+       "x": 0.2,
+       "y": 0.45,
+       "modo": "sangue",
+       "legenda": "sa · quatro",
+       "tam": 0.26,
+       "em": "sa"
+      },
+      {
+       "texto": "死",
+       "x": 0.8,
+       "y": 0.45,
+       "modo": "sangue",
+       "legenda": "sa · morte",
+       "tam": 0.26,
+       "em": "morte",
+       "glitch": true
+      }
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.6,
+       0.52
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Na"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep09_buk",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    },
+    {
+     "em": "sa",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "morte",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Por isso, em muito prédio coreano, o quarto andar some. Vira a letra F, de four. Ou não existe: do três, você vai direto pro cinco.",
+   "cena": {
+    "imagem": "imagens/B03_A.jpg",
+    "zoom": [
+     1.1,
+     1.5
+    ],
+    "dof": {
+     "x": 0.59,
+     "y": 0.5,
+     "r": 0.14,
+     "atraso": 1.5
+    },
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.59,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 3.1
+  },
+  {
+   "fala": "Em hospital, é quase regra. Ninguém quer ser internado no andar da morte.",
+   "cena": {
+    "imagem": "imagens/B01_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "No prédio da Bia, o F tinha oito quartos.",
+   "cena": {
+    "imagem": "imagens/B01_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Só dois tinham luz acesa à noite. O dela.",
+   "cena": {
+    "imagem": "imagens/S01_B.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "dof": {
+     "x": 0.6,
+     "y": 0.18,
+     "r": 0.18,
+     "atraso": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.6,
+      0.2
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E o F-zero-quatro, que a dona do prédio jurava estar vazio.",
+   "cena": {
+    "imagem": "imagens/B11_B.jpg",
+    "zoom": [
+     1.0,
+     1.14
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.25
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Existe uma crença na Coreia que gente de fora acha engraçada: dormir de porta fechada com o ventilador ligado mata.",
+   "cena": {
+    "imagem": "imagens/B02_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Não existe prova científica nenhuma. Mas é tão forte que, em dois mil e seis, uma agência do governo listou \"asfixia por ventilador\" entre os acidentes de verão.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "2006 · agência de defesa do consumidor\n\"asfixia por ventilador\"\nentre os acidentes de verão",
+    "estilo": "maquina",
+    "vermelho": "\"asfixia por ventilador\"",
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Até hoje, muito ventilador coreano vem com um timer, para desligar sozinho de madrugada.",
+   "cena": {
+    "imagem": "imagens/B02_B.jpg",
+    "zoom": [
+     1.2,
+     1.5
+    ],
+    "dof": {
+     "x": 0.82,
+     "y": 0.36,
+     "r": 0.2,
+     "atraso": 0.6
+    },
+    "foco": [
+     [
+      0.8,
+      0.35
+     ],
+     [
+      0.82,
+      0.36
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "pausa_antes_s": 0.83
+  },
+  {
+   "fala": "A Bia desligava o dela toda noite. Regra um.",
+   "cena": {
+    "imagem": "imagens/B06_A.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "dof": {
+     "x": 0.29,
+     "y": 0.62,
+     "r": 0.18
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.3,
+      0.6
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E toda noite, às três, ela acordava com o vento no rosto.",
+   "cena": {
+    "imagem": "imagens/B06_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "três",
+     "som": "ep09_ventilador_liga",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.44
+  },
+  {
+   "fala": "O ventilador ligado. Girando devagar.",
+   "cena": {
+    "video": "clipes/V02_ventilador.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "E parado. Apontado para a parede do F-zero-quatro.",
+   "cena": {
+    "video": "clipes/V02b_ventilador.mp4",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Como se alguém do outro lado estivesse com calor.",
+   "cena": {
+    "imagem": "imagens/B07_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.28,
+     "y": 0.45,
+     "r": 0.2,
+     "atraso": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.3,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Para entender o que tinha naquela parede, a gente precisa voltar uns trezentos anos. Para a era Joseon.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "제2장",
+     "numero_pt": "Capítulo 2",
+     "titulo": "As duas irmãs",
+     "ano": "era Joseon · séc. XVII",
+     "imagem": "imagens/S03_B.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.5
+     }
+    },
+    {
+     "imagem": "imagens/S03_A.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "atmos": {
+      "neblina": 0.6
+     },
+     "foco": [
+      [
+       0.6,
+       0.5
+      ],
+      [
+       0.62,
+       0.48
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Para"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep09_buk",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "musica": {
+    "som": "ep09_m04_joseon_irmas",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Lá existe um conto que todo coreano conhece. O de duas irmãs: Janghwa e Hongryeon.",
+   "cena": {
+    "imagem": "imagens/S03_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.6
+    },
+    "kanji": {
+     "texto": "장화홍련",
+     "x": 0.2,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "Janghwa e Hongryeon",
+     "em": "Janghwa"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "Janghwa",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep09_lago",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Filhas de um homem viúvo. Criadas por uma madrasta que odiava as duas."
+  },
+  {
+   "fala": "Uma noite, a madrasta esfolou um rato e escondeu na cama da mais velha.",
+   "cena": {
+    "imagem": "imagens/S04_A.jpg",
+    "zoom": [
+     1.1,
+     1.3
+    ],
+    "atmos": {
+     "vela": 0.8
+    },
+    "dof": {
+     "x": 0.16,
+     "y": 0.8,
+     "r": 0.15
+    },
+    "foco": [
+     [
+      0.15,
+      0.85
+     ],
+     [
+      0.17,
+      0.82
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "De manhã, mostrou para o pai. Disse que a filha tinha abortado. Que a família estava desonrada.",
+   "cena": {
+    "imagem": "imagens/S04_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "foco": [
+     [
+      0.67,
+      0.5
+     ],
+     [
+      0.67,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O pai acreditou.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "O pai acreditou.",
+    "estilo": "impacto",
+    "vermelho": "acreditou.",
+    "cps": 10,
+    "tamanho": 130,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Mandaram a Janghwa embora na mesma noite, e o filho da madrasta foi junto, para \"levar até a casa de um tio\".",
+   "cena": {
+    "imagem": "imagens/S03_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 3.77
+  },
+  {
+   "fala": "Ela nunca chegou.",
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Morreu num lago.",
+   "cena": {
+    "video": "filmes_prontos/irmas_deque.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A irmã mais nova não aguentou, e foi atrás dela. No mesmo lago.",
+   "ambiente": {
+    "som": "ep09_lago",
+    "volume_db": -24
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Depois disso, cada magistrado novo que chegava na cidade morria na primeira noite.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Conto da era Joseon · autor desconhecido\nbaseado num caso julgado em Cheolsan",
+    "estilo": "maquina",
+    "vermelho": "Cheolsan",
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4,
+   "sem_legenda": true
+  },
+  {
+   "fala": "As duas irmãs apareciam no quarto. Molhadas. Em pé. Em silêncio.",
+   "cena": {
+    "imagem": "imagens/S04_B.jpg",
+    "zoom": [
+     1.05,
+     1.2
+    ],
+    "atmos": {
+     "vela": 0.4,
+     "neblina": 0.3
+    },
+    "foco": [
+     [
+      0.66,
+      0.5
+     ],
+     [
+      0.66,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 3.88
+  },
+  {
+   "fala": "Até que veio um que não morreu de medo. Ele perguntou o que elas queriam.",
+   "cena": {
+    "imagem": "imagens/S04_A.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "foco": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.2,
+      0.75
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E elas contaram.",
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Em dois mil e três, o diretor Kim Jee-woon fez disso um dos filmes mais elogiados do terror asiático. Hollywood refez seis anos depois.",
+   "cena": {
+    "video": "filmes_prontos/irmas_casa.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Repara: o fantasma coreano não aparece para matar. Ele aparece porque ninguém ouviu.",
+   "cena": {
+    "imagem": "imagens/S03_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "atmos": {
+     "neblina": 0.6
+    },
+    "kanji": {
+     "texto": "한",
+     "x": 0.5,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "han",
+     "tam": 0.26,
+     "atraso": 1.5
+    },
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.58,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Quem não ouve… não passa da primeira noite.",
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Na segunda semana, começou o choro. Baixinho, toda noite perto das três, do outro lado da parede.",
+   "cena": {
+    "imagem": "imagens/B06_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -26
+   },
+   "sons": [
+    {
+     "em": "choro",
+     "som": "ep09_choro_parede",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "musica": {
+    "som": "ep09_m05_a_parede",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "A Bia bateu na parede. Regra dois.",
+   "cena": {
+    "video": "clipes/V03_batidas_parede.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "bateu",
+     "som": "ep09_batidas",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ]
+  },
+  {
+   "fala": "O choro parou.",
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "E do outro lado, alguém bateu de volta. Quatro vezes.",
+   "cena": {
+    "video": "clipes/V03b_batidas_parede.mp4",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "De manhã, a Bia perguntou para a ajumma, a dona do prédio, quem morava no F-zero-quatro.",
+   "pausa_antes_s": 3.2,
+   "cena": {
+    "imagem": "imagens/B12_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_batidas",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -3.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "A senhora demorou para responder.",
+   "cena": {
+    "imagem": "imagens/B12_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "dof": {
+     "x": 0.5,
+     "y": 0.4,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "\"Ninguém. Desde que a moça morreu.\"",
+   "cena": {
+    "imagem": "imagens/B11_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.51,
+     "y": 0.1,
+     "r": 0.18,
+     "atraso": 0.5
+    },
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.51,
+      0.12
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E não falou mais nada.",
+   "cena": {
+    "imagem": "imagens/B12_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.4
+  },
+  {
+   "fala": "Existe uma palavra coreana que não aparece nas novelas: godoksa.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "제3장",
+     "numero_pt": "Capítulo 3",
+     "titulo": "Quem morre sozinho",
+     "ano": "고독사 · godoksa",
+     "imagem": "imagens/B13_B.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.5
+     }
+    },
+    {
+     "imagem": "imagens/B13_A.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "kanji": {
+      "texto": "고독사",
+      "x": 0.2,
+      "y": 0.45,
+      "modo": "sangue",
+      "legenda": "godoksa · morte solitária",
+      "em": "godoksa"
+     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.6,
+       0.72
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Existe"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep09_buk",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    },
+    {
+     "em": "godoksa",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Morte solitária.",
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Pela lei coreana, é quando alguém isolado da família e dos amigos morre, e o corpo só é encontrado setenta e duas horas depois. Ou mais.",
+   "cena": {
+    "imagem": "imagens/B13_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "Em dois mil e vinte e quatro, foram três mil novecentas e vinte e quatro pessoas. Mais de dez por dia.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "2024 · 3.924 mortes solitárias\nMinistério da Saúde e Bem-Estar da Coreia",
+    "estilo": "maquina",
+    "vermelho": "3.924",
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "E os lugares onde isso mais cresce são justamente os menores: quitinetes, motéis… goshiwons.",
+   "cena": {
+    "imagem": "imagens/S01_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "pausa_antes_s": 2.86
+  },
+  {
+   "fala": "Quase sempre, quem descobre é o dono do prédio. Pelo cheiro.",
+   "cena": {
+    "imagem": "imagens/B13_A.jpg",
+    "zoom": [
+     1.1,
+     1.3
+    ],
+    "dof": {
+     "x": 0.7,
+     "y": 0.8,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.65,
+      0.8
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Um jornal coreano contou a história de um homem que morreu sozinho num goshiwon de seis metros quadrados, em Seul.",
+   "cena": {
+    "imagem": "imagens/B01_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Foi achado dias depois. Pelo vizinho de parede.",
+   "cena": {
+    "imagem": "imagens/B07_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.3,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Existe até uma profissão para isso: as equipes de limpeza especial. Que entram no quarto depois, para tirar o que ficou. As manchas. O cheiro. As coisas de alguém que ninguém veio buscar.",
+   "cena": {
+    "imagem": "imagens/S02_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A ajumma nunca contou quanto tempo a moça do F-zero-quatro ficou lá.",
+   "cena": {
+    "imagem": "imagens/B11_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas tinha um detalhe que todo mundo do prédio sabia.",
+   "cena": {
+    "imagem": "imagens/S02_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Ela foi achada por causa do ventilador. Que ficou ligado tanto tempo… que queimou.",
+   "cena": {
+    "imagem": "imagens/B06_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -22
+   },
+   "pausa_antes_s": 0.58
+  },
+  {
+   "fala": "Uma semana depois, a Bia escreveu um recado para a vizinha de cima, na porta. Com a única caneta que tinha.",
+   "cena": {
+    "imagem": "imagens/B05_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "musica": {
+    "som": "ep09_m06_moca_de_branco",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Vermelha. Regra quatro.",
+   "cena": {
+    "imagem": "imagens/B05_A.jpg",
+    "zoom": [
+     1.2,
+     1.4
+    ],
+    "kanji": {
+     "texto": "빨간색",
+     "x": 0.22,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "vermelho",
+     "em": "Vermelha"
+    },
+    "foco": [
+     [
+      0.67,
+      0.45
+     ],
+     [
+      0.67,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "Vermelha",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Na manhã seguinte, a plaquinha da porta do F-zero-três, onde estava escrito \"Bia\" em letras coreanas, tinha sido coberta. O nome dela. Em vermelho.",
+   "cena": {
+    "video": "clipes/V04_plaquinha.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 3.1
+  },
+  {
+   "fala": "Uma amiga coreana da faculdade viu a foto e ficou pálida.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.9
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:02",
+      "hora": "15:01",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B04_A_regras.jpg",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "olha as regras do meu andar kkkkk",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": 0.1
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": 0.9
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Ela disse que aqui só se escreve em vermelho o nome de quem já morreu.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:02",
+      "hora": "15:01",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B04_A_regras.jpg",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "olha as regras do meu andar kkkkk",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": 0.1
+     }
+    ],
+    "entrada": "corte"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "É uma das superstições mais fortes do país. Muita gente evita escrever o nome de alguém vivo em vermelho.",
+   "cena": {
+    "imagem": "imagens/B05_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "dof": {
+     "x": 0.68,
+     "y": 0.45,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.67,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.3
+  },
+  {
+   "fala": "É como marcar a pessoa.",
+   "cena": {
+    "imagem": "imagens/B05_B.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.67,
+      0.45
+     ],
+     [
+      0.67,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Naquela tarde, a mãe ligou de Belo Horizonte.",
+   "ambiente": {
+    "som": "ep09_sala_bh",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "\"Filha, sai desse lugar. Pelo amor de Deus. Vem pra casa.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B04_A_regras.jpg",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "olha as regras do meu andar kkkkk",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:04",
+      "hora": "15:22",
+      "apos": 0.1
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A Bia disse que ia. No fim do mês.",
+   "cena": {
+    "imagem": "imagens/B14_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "chuva": 0.3
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.6
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_seul_chuva",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 0.3
+  },
+  {
+   "fala": "Se você já viu um filme de terror coreano, você conhece ela. Roupa branca. Cabelo preto, comprido, solto no rosto.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "제4장",
+     "numero_pt": "Capítulo 4",
+     "titulo": "A moça de branco",
+     "ano": "처녀귀신 · cheonyeo gwishin",
+     "imagem": "imagens/S04_B.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.5
+     }
+    },
+    {
+     "imagem": "imagens/S04_A.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "vela": 0.6
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Se"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep09_buk",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Cheonyeo gwishin. A virgem fantasma.",
+   "cena": {
+    "imagem": "imagens/B10_A.jpg",
+    "zoom": [
+     1.2,
+     1.6
+    ],
+    "dof": {
+     "x": 0.48,
+     "y": 0.36,
+     "r": 0.12,
+     "atraso": 0.8
+    },
+    "kanji": {
+     "texto": "처녀귀신",
+     "x": 0.8,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "cheonyeo gwishin · a virgem fantasma",
+     "glitch": true,
+     "em": "Cheonyeo"
+    },
+    "foco": [
+     [
+      0.48,
+      0.38
+     ],
+     [
+      0.48,
+      0.36
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Cheonyeo",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "É o espírito de uma moça que morreu antes de casar. Numa sociedade em que a vida de uma mulher só contava a partir daí, ela morreu antes de existir."
+  },
+  {
+   "fala": "Sem marido, sem filhos. Sem ninguém para fazer os rituais por ela, para dizer o nome dela nas datas certas.",
+   "cena": {
+    "imagem": "imagens/S05_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.45,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Por isso ela fica.",
+   "cena": {
+    "video": "clipes/V05_figura_corredor.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "A lenda mais famosa é a de Arang, da cidade de Miryang. Filha de um magistrado, atacada, morta e escondida no mato. Durante anos, ela apareceu para cada novo magistrado da cidade, e todos morreram de susto.",
+   "cena": {
+    "imagem": "imagens/S06_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "kanji": {
+     "texto": "아랑",
+     "x": 0.8,
+     "y": 0.45,
+     "modo": "tinta",
+     "legenda": "Arang · Miryang",
+     "em": "Arang"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Arang",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 1.96
+  },
+  {
+   "fala": "Mas a parte que pouca gente conta é como a Coreia aprendeu a acalmar essas moças.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Arang · Miryang\nprimeira versão escrita em 1810\nritual Arangje até hoje",
+    "estilo": "maquina",
+    "vermelho": "Arangje",
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Casando elas.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Casando elas.",
+    "estilo": "impacto",
+    "vermelho": "Casando",
+    "cps": 10,
+    "tamanho": 130,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 4.09,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Existe um ritual chamado casamento de almas. A família da moça morta encontra a família de um rapaz que também morreu solteiro. E os dois mortos se casam. Com cerimônia, roupa, comida.",
+   "cena": {
+    "imagem": "imagens/S05_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.8
+    },
+    "kanji": {
+     "texto": "영혼결혼식",
+     "x": 0.14,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "casamento de almas",
+     "em": "casamento"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "casamento",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 3.3
+  },
+  {
+   "fala": "Para que nenhum dos dois… fique sozinho.",
+   "cena": {
+    "imagem": "imagens/S05_B.jpg",
+    "zoom": [
+     1.15,
+     1.35
+    ],
+    "atmos": {
+     "vela": 0.8
+    },
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "A moça do F-zero-quatro nunca teve casamento nenhum.",
+   "cena": {
+    "imagem": "imagens/B11_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "kanji": {
+     "texto": "한",
+     "x": 0.8,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "han",
+     "tam": 0.34,
+     "atraso": 1.0
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.43,
+      0.8
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Ninguém veio buscar ela. Ninguém procurou um noivo.",
+   "cena": {
+    "imagem": "imagens/B01_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "Então ela procurou sozinha.",
+   "cena": {
+    "imagem": "imagens/B10_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.4
+  },
+  {
+   "fala": "Na última noite, às três da manhã, a Bia mandou um áudio no grupo.",
+   "cena": {
+    "tipo": "relogios",
+    "lados": [
+     {
+      "nome": "Seul",
+      "hora": "03:00",
+      "imagem": "imagens/B06_B.jpg",
+      "brilho": 0.6
+     },
+     {
+      "nome": "Belo Horizonte",
+      "hora": "15:00",
+      "imagem": "imagens/F01_B.jpg",
+      "brilho": 0.8
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -24
+   },
+   "musica": {
+    "som": "ep09_m07_o_chamado",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 0.65
+  },
+  {
+   "fala": "\"Mãe… tem alguém me chamando no corredor. Com a sua voz.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "texto": "olha as regras do meu andar kkkkk",
+      "hora": "09:41",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:04",
+      "hora": "15:22",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": 0.1
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A mãe estava sentada no sofá, em Belo Horizonte, com o celular na mão. Em silêncio.",
+   "cena": {
+    "imagem": "imagens/F01_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "dof": {
+     "x": 0.66,
+     "y": 0.62,
+     "r": 0.22
+    },
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.65,
+      0.65
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_sala_bh",
+    "volume_db": -28
+   },
+   "pausa_antes_s": 0.3
+  },
+  {
+   "fala": "A Bia mandou outro áudio. Dava para ouvir o ventilador.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:03",
+      "hora": "09:42",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:04",
+      "hora": "15:22",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "15:02",
+      "apos": 0.2
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E, por baixo, uma voz de mulher, em português, muito baixa, dizendo:",
+   "cena": {
+    "video": "clipes/V01_corredor.mp4",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -22
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "\"Bia… abre. É a mãe.\"",
+   "cena": {
+    "video": "clipes/V05b_figura_corredor.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Regra três.",
+   "cena": {
+    "imagem": "imagens/B04_A_regras.jpg",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "dof": {
+     "x": 0.53,
+     "y": 0.32,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.53,
+      0.31
+     ],
+     [
+      0.53,
+      0.33
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 0.3
+  },
+  {
+   "fala": "A mãe digitou, em maiúsculas: \"NÃO SOU EU. NÃO ABRE.\"",
+   "sons": [
+    {
+     "em": "maiúsculas",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "tipo": "foto",
+      "imagem": "imagens/B05_A.jpg",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:04",
+      "hora": "15:22",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "15:02",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "NÃO SOU EU. NÃO ABRE.",
+      "hora": "15:03",
+      "check": "✓",
+      "em": "maiúsculas",
+      "digitando": 1.0,
+      "apos": 0.3
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "ep09_sala_bh",
+    "volume_db": -30
+   },
+   "pausa_antes_s": 2.15
+  },
+  {
+   "fala": "A mensagem ficou com um tracinho só. Entregue. Nunca lida.",
+   "cena": {
+    "imagem": "imagens/F02_B.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.55,
+     "y": 0.35,
+     "r": 0.22
+    },
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.55,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Quando um morto não vai embora, os coreanos chamam uma mudang. A xamã.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "제5장",
+     "numero_pt": "Capítulo 5",
+     "titulo": "A mudang",
+     "ano": "무당 · o ritual gut",
+     "imagem": "imagens/S05_B.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.5
+     }
+    },
+    {
+     "imagem": "imagens/S05_B.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "atmos": {
+      "vela": 0.6
+     },
+     "kanji": {
+      "texto": "무당",
+      "x": 0.82,
+      "y": 0.45,
+      "modo": "sangue",
+      "legenda": "mudang · a xamã",
+      "em": "mudang"
+     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Quando"
+    }
+   ],
+   "pausa_antes_s": 5.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep09_buk",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    },
+    {
+     "em": "mudang",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "musica": {
+    "som": "ep09_m08_gut_mudang",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Uma tradição mais antiga que qualquer igreja ou templo da península, e que existe até hoje: no meio dos prédios de Seul, você ainda acha placas de xamãs.",
+   "cena": {
+    "imagem": "imagens/S01_A.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "dof": {
+     "x": 0.85,
+     "y": 0.35,
+     "r": 0.2,
+     "atraso": 0.8
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.85,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "O ritual se chama gut. Tambor, roupas coloridas, comida para os mortos.",
+   "cena": {
+    "video": "filmes_prontos/exhuma_tambor.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "kanji": {
+     "texto": "굿",
+     "x": 0.12,
+     "y": 0.45,
+     "modo": "sangue",
+     "legenda": "gut · o ritual",
+     "em": "gut"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "gut",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E um momento em que a mudang deixa o morto falar pela boca dela."
+  },
+  {
+   "fala": "Em dois mil e vinte e quatro, um filme sobre isso parou a Coreia. Exhuma. Uma mudang jovem, um especialista em túmulos e uma família rica com uma maldição no sangue.",
+   "cena": {
+    "video": "filmes_prontos/exhuma_danca.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Quase doze milhões de pessoas foram ao cinema. Foi o primeiro filme de terror sobre o oculto a passar de dez milhões de ingressos na Coreia.",
+   "cena": {
+    "video": "filmes_prontos/exhuma_cova.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E o que tem debaixo daquela terra não é só um fantasma. É a ocupação japonesa. As estacas de ferro que, segundo uma lenda muito contada, foram cravadas nas montanhas para cortar a força do país.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/exhuma_caixao.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "video": "filmes_prontos/exhuma_montanha.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "estacas"
+    }
+   ]
+  },
+  {
+   "fala": "O ritual do filme foi inventado. A ferida que ele cutuca… é real.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Exhuma (2024) · dir. Jang Jae-hyun · Showbox\n11,9 milhões de ingressos",
+    "estilo": "maquina",
+    "vermelho": "11,9 milhões",
+    "cps": 26,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8,
+   "sem_legenda": true
+  },
+  {
+   "fala": "O terror coreano pesa porque o fantasma nunca é só um fantasma.",
+   "cena": {
+    "imagem": "imagens/S06_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.4,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "pausa_antes_s": 3.12
+  },
+  {
+   "fala": "É uma dor que ninguém terminou de enterrar.",
+   "cena": {
+    "imagem": "imagens/S05_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "kanji": {
+     "texto": "한",
+     "x": 0.5,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "han",
+     "tam": 0.42,
+     "atraso": 0.6
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "De manhã, a ajumma abriu o F-zero-três com a chave reserva.",
+   "cena": {
+    "imagem": "imagens/B12_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "chave",
+     "som": "ep09_chave",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   },
+   "musica": {
+    "som": "ep09_m09_o_quarto",
+    "volume_db": -27
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "A Bia não estava.",
+   "cena": {
+    "imagem": "imagens/B02_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -22
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "O celular dela estava em cima da cama. O ventilador, ligado. Virado para a parede.",
+   "cenas": [
+    {
+     "imagem": "imagens/B06_B.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens/B06_A.jpg",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.8,
+       0.4
+      ],
+      [
+       0.82,
+       0.4
+      ]
+     ],
+     "em": "ventilador"
+    }
+   ],
+   "pausa_antes_s": 1.92
+  },
+  {
+   "fala": "O papel de parede, descolado num canto.",
+   "cena": {
+    "imagem": "imagens/B07_A.jpg",
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "dof": {
+     "x": 0.27,
+     "y": 0.45,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.3,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "papel",
+     "som": "ep09_papel",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E atrás dele, entre as tábuas, dois cadernos.",
+   "cena": {
+    "imagem": "imagens/B07_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.7
+  },
+  {
+   "fala": "O primeiro era antigo, com a capa amarela de umidade. Centenas de páginas com a mesma palavra coreana, escrita à mão, de novo e de novo, até o papel rasgar.",
+   "cena": {
+    "imagem": "imagens/B08_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Hapgyeok. \"Aprovada.\"",
+   "cena": {
+    "imagem": "imagens/B08_B.jpg",
+    "zoom": [
+     1.1,
+     1.25
+    ],
+    "kanji": {
+     "texto": "합격",
+     "x": 0.78,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "hapgyeok · aprovada",
+     "tam": 0.3,
+     "em": "Hapgyeok"
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.4,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Hapgyeok",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "A moça do F-zero-quatro estudou oito anos para um concurso, trancada num quarto de sete metros quadrados."
+  },
+  {
+   "fala": "Nunca passou. E ninguém veio buscar ela.",
+   "cena": {
+    "imagem": "imagens/B08_A.jpg",
+    "zoom": [
+     1.2,
+     1.4
+    ],
+    "dof": {
+     "x": 0.4,
+     "y": 0.45,
+     "r": 0.2
+    },
+    "foco": [
+     [
+      0.35,
+      0.4
+     ],
+     [
+      0.4,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "O segundo caderno era novo. A letra era da Bia. Em português."
+  },
+  {
+   "fala": "Uma frase só, repetida até a última página:",
+   "cena": {
+    "imagem": "imagens/B09_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "\"Ela não queria ir sozinha.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "\"Ela não queria\nir sozinha.\"",
+    "estilo": "maquina",
+    "vermelho": "ir sozinha.\"",
+    "cps": 14,
+    "tamanho": 120,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "A polícia de Seul nunca encontrou a Bia. O caso continua aberto.",
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 2.94
+  },
+  {
+   "fala": "A ajumma chamou uma mudang para fazer o ritual no corredor. A mudang subiu até o F, parou na porta do F-zero-quatro, e não quis entrar.",
+   "cena": {
+    "imagem": "imagens/B01_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_corredor",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Disse só uma coisa: que não precisava mais de ritual.",
+   "cena": {
+    "imagem": "imagens/B11_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.4,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Que a moça do quarto quatro já tinha com quem ficar.",
+   "cena": {
+    "imagem": "imagens/S05_B.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Hoje, a plaquinha do F-zero-quatro tem um nome. Escrito em vermelho.",
+   "cena": {
+    "video": "clipes/V04b_plaquinha.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.86
+  },
+  {
+   "fala": "Bia.",
+   "cena": {
+    "imagem": "imagens/B11_A.jpg",
+    "zoom": [
+     1.3,
+     1.6
+    ],
+    "kanji": {
+     "texto": "비아",
+     "x": 0.22,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "Bia",
+     "tam": 0.3,
+     "atraso": 0.1,
+     "escrever": 1.2
+    },
+    "foco": [
+     [
+      0.51,
+      0.12
+     ],
+     [
+      0.51,
+      0.1
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.8,
+    "antecipar": 1.8
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_kanji",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -1.6
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "E toda tarde, às três, em Belo Horizonte, o celular da mãe vibra.",
+   "cena": {
+    "imagem": "imagens/F02_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "dof": {
+     "x": 0.62,
+     "y": 0.35,
+     "r": 0.22
+    },
+    "foco": [
+     [
+      0.6,
+      0.4
+     ],
+     [
+      0.62,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "vibra",
+     "som": "ep08_vibra",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep09_sala_bh",
+    "volume_db": -28
+   },
+   "pausa_antes_s": 2.5
+  },
+  {
+   "fala": "Um áudio. Só o barulho de um ventilador.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família BH 💛",
+    "membros": "Bia, Mãe, Pai, Tia Nena",
+    "mensagens": [
+     {
+      "de": "Bia",
+      "texto": "alguém riscou meu nome 😶",
+      "hora": "10:12",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "10:20",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:04",
+      "hora": "15:22",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "15:02",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "NÃO SOU EU. NÃO ABRE.",
+      "hora": "15:03",
+      "check": "✓",
+      "apos": -30
+     },
+     {
+      "de": "Bia",
+      "tipo": "audio",
+      "duracao": "0:05",
+      "hora": "15:00",
+      "apos": 0.2
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sem_legenda": true,
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Ela responde todos.",
+   "cena": {
+    "imagem": "imagens/F01_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.62,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.56
+  },
+  {
+   "fala": "No Japão, a maldição é uma regra.",
+   "pausa_antes_s": 2.4,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "corte"
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "musica": {
+    "som": "ep09_m10_fecho",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Na Coreia, ela é uma pergunta: quem morreu sem ninguém do lado?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Três mil novecentas e vinte e quatro pessoas, em um ano. Achadas pelo cheiro, pelo barulho de um ventilador, pela correspondência acumulada na porta.",
+   "cena": {
+    "imagem": "imagens/B13_A.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.65,
+      0.75
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Han não tem tradução. Mas talvez você já tenha sentido. É a dor que a gente guarda tanto tempo que ela começa a ter vida própria.",
+   "cena": {
+    "imagem": "imagens/S04_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "kanji": {
+     "texto": "한",
+     "x": 0.5,
+     "y": 0.5,
+     "modo": "tinta",
+     "legenda": "han",
+     "tam": 0.5,
+     "atraso": 0.8
+    },
+    "foco": [
+     [
+      0.66,
+      0.5
+     ],
+     [
+      0.66,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Então, antes de ir dormir, me responde uma coisa. Só pra você mesmo.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.42,
+      0.45
+     ],
+     [
+      0.4,
+      0.43
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Se você morasse sozinho… quantos dias levaria até alguém perceber?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "foco": [
+     [
+      0.4,
+      0.45
+     ],
+     [
+      0.36,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Liga pra alguém hoje.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E se o ventilador ligar sozinho… não olha pra parede.",
+   "cena": {
+    "imagem": "imagens/B06_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_ventilador",
+    "volume_db": -24
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
+   "cta_inicio": true,
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "nenhum"
+   },
+   "musica": {
+    "som": "vinheta_ultimo_abrigo",
+    "volume_db": -20
+   }
+  }
+ ]
+}

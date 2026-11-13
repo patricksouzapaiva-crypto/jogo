@@ -259,7 +259,7 @@ F-zero-quatro, e não quis entrar.
 Disse só uma coisa: que não precisava mais de ritual.
 Que a moça do quarto quatro já tinha com quem ficar.
 Hoje, a plaquinha do F-zero-quatro tem um nome. Escrito em vermelho.
-비아.
+*(pincel em vermelho: 비아 — só na tela, a voz fica em silêncio)*
 Bia.
 E toda tarde, às três, em Belo Horizonte, o celular da mãe vibra.
 Um áudio. Só o barulho de um ventilador.
