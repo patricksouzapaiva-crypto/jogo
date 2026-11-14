@@ -200,7 +200,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M03_B_35be001e88_10.7.mp4"
+    "video": "camera3d/M03_B_35be001e88_11.1.mp4"
    },
    "pausa_antes_s": 0.4,
    "ambiente": {
@@ -893,7 +893,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M02_A_1450b322de_8.1.mp4"
+    "video": "camera3d/M02_A_1450b322de_8.3.mp4"
    }
   },
   {
@@ -1144,7 +1144,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M04_A_3b4cbcb2bb_12.2.mp4"
+    "video": "camera3d/M04_A_3b4cbcb2bb_12.1.mp4"
    },
    "sons": [
     {
@@ -1389,7 +1389,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/C05_B_d4b252c09f_9.2.mp4"
+    "video": "camera3d/C05_B_d4b252c09f_9.4.mp4"
    },
    "pausa_antes_s": 0.8
   },
@@ -2542,7 +2542,7 @@
     "som": "ep09_m05_a_parede",
     "volume_db": -32
    },
-   "pausa_antes_s": 1.41
+   "pausa_antes_s": 0.43
   },
   {
    "fala": "De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.",
@@ -2665,7 +2665,7 @@
     "som": "ep09_lenda_elevador",
     "volume_db": -26
    },
-   "pausa_antes_s": 0.65
+   "pausa_antes_s": 0.69
   },
   {
    "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
@@ -3191,7 +3191,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H01_C_35050b6638_9.0.mp4"
+    "video": "camera3d/H01_C_35050b6638_8.9.mp4"
    },
    "pausa_antes_s": 0.6,
    "sons": [
@@ -3215,7 +3215,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H01_A_67d2a01050_9.3.mp4"
+    "video": "camera3d/H01_A_67d2a01050_9.4.mp4"
    }
   },
   {
@@ -4517,7 +4517,7 @@
     "som": "ep09_m07_o_chamado",
     "volume_db": -32
    },
-   "pausa_antes_s": 1.64,
+   "pausa_antes_s": 0.93,
    "sons": [
     {
      "em": null,
