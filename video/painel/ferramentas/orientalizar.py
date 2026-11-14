@@ -54,8 +54,9 @@ def orientalizar(arq, saida):
     for k, t in enumerate(np.arange(6, dur - 8, 20.0)):
         colocar(cam, ler(f"ep09_gut_jing_{k % 2 + 1}", "afade=t=in:d=0.08,afade=t=out:st=4:d=3," + macio), t, -13, ref)
     longe = "afade=t=in:d=2,afade=t=out:st=6:d=3,highpass=f=300,lowpass=f=4000,aecho=0.8:0.6:180|340:0.25|0.12"
-    for t, v in ((dur * 0.33, 1), (dur * 0.7, 2)):
-        colocar(cam, ler(f"ep09_amb_daegeum_longe_{v}", longe), t, -10, ref)
+    # flauta "de vez em quando" (pedido 15/11): a cada ~28 s, alternando as duas tomadas, longe, nunca junto do gongo
+    for k, t in enumerate(np.arange(14, dur - 10, 28.0)):
+        colocar(cam, ler(f"ep09_amb_daegeum_longe_{k % 2 + 1}", longe), t, -8, ref)
     # 3) cola: compressão leve no conjunto para não ter picos, e a música só 1,5 dB mais baixa (continua sendo a faixa)
     out = mus * 10 ** (-1.5 / 20) + cam
     pico = np.abs(out).max(); out *= min(1.0, 10 ** (-3 / 20) / pico)
