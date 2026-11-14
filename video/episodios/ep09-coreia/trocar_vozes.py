@@ -34,7 +34,7 @@ ESCOLHA = {
     146: ("livia4_Despina", PERTO, 0.6),
     151: ("rafa_falso1_Umbriel", CORREDOR, 0.65),
     155: ("rafa2_Umbriel", CEL, 0.9),
-    # 157 (mãe, "Que Lívia, filho?…"): a cota do Gemini acabou antes dela — por enquanto fica a leitura do Vigia
+    157: ("mae2_Sulafat", CEL, 0.9),        # a ligação (Sulafat no Gemini 3.8 Flash Lite, escolhida pelo usuário 14/11)
     161: ("falsa3_Despina", CEL, 0.85),       # pela chamada de vídeo
 }
 FIM = {}
