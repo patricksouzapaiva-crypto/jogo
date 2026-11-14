@@ -535,6 +535,36 @@ fx(164, "escorregadia", "sub_drop", -22)
 # FECHO: a última frase com uma respiração colada no ouvido
 fx(174, None, "ep07_respiracao_nuca", -27, pan=-0.85, atraso=0.3)
 
+
+# ---------------------------------------------------------------- SONNISS (15/11): efeitos profissionais no lugar dos fracos
+def tira(i, som):
+    batidas[i]["sons"] = [s_ for s_ in batidas[i].get("sons", []) if s_["som"] != som]
+
+
+SN = "ep09_sn_"
+for i in (27, 54, 89, 105):                                              # o sopro do cartão de capítulo
+    tira(i, "whoosh"); fx(i, None, SN + "horror_whoosh", -25, atraso=-5.0, ate=3.5, saida=1.5)
+fx(3, None, SN + "elevador_shepard", -27, atraso=-4.0, ate=4.5, saida=1.0)   # "ele tá subindo": o som que nunca para de subir
+fx(28, None, SN + "respiracao_pulsante", -31, ate=24, saida=4.0)          # a criatura: uma respiração grande, pulsando, na mata
+tira(86, "stinger_cordas"); fx(86, None, SN + "stinger_cello", -11, atraso=-0.05, ate=4.0, saida=2.0)
+tira(79, "tecla"); fx(79, "acesa", SN + "interruptor", -22)
+tira(87, "tecla"); fx(87, "apagada", SN + "interruptor", -20)
+tira(99, "braam_horror"); fx(99, None, SN + "horror_momento", -19, ate=6.0, saida=2.5)
+fx(123, None, SN + "coracao_panico", -27, ate=14, saida=3.0)              # o coração dele acelera nos botões
+tira(126, "ep09_elevador"); fx(126, "abriu", SN + "elevador_porta_sobe", -24, ate=3.5, saida=0.8)
+tira(127, "passos_atrasados")
+for k, d in enumerate((0.0, 0.62, 1.25, 1.9)):                          # pés descalços na chapa de metal, à esquerda
+    fx(127, "passos", SN + f"descalco_metal_{k % 3 + 1}", -24 + k * 1.5, atraso=d, pan=-0.55 + k * 0.08)
+tira(129, "ep07_respiracao_nuca"); fx(129, "orelha", SN + "sussurro_fantasma", -21, pan=-0.9)
+tira(134, "riser_tensao"); fx(134, None, SN + "elevador_shepard", -21, ate=9.0, saida=2.5)
+fx(135, None, SN + "elevador_mecanismo", -26, atraso=-1.0)
+tira(144, "ep06_porta_range"); fx(144, None, SN + "porta_rangido_lento", -21, atraso=-2.9, ate=3.2, saida=0.4)
+tira(144, "stinger_cordas"); fx(144, "canto", SN + "horror_boom", -13, ate=4.0, saida=1.5)
+fx(150, "fechava", SN + "elevador_porta_fecha", -24)
+tira(161, "stinger_cordas"); fx(161, None, SN + "stinger_swell", -12, atraso=-0.05, ate=5.0, saida=2.5)
+fx(161, None, SN + "piano_horror_reverso", -24, atraso=-11.0)              # o piano ao contrário cresce até ela virar o rosto
+fx(84, "passo", SN + "respiracao_medo", -26)
+
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
                 "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})

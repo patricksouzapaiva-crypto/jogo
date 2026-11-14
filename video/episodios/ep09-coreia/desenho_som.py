@@ -21,7 +21,7 @@ def ler(nome, db=0.0, filtro="anull"):
 
 CAMADAS = {
     # a trilha do monte Jangsan à noite: pinheiros, vento, e um grave que não deixa relaxar
-    "mata_tensa": [("ep09_mata_noite", 0), ("ep06_mata_noite", -7), ("drone_tensao", -15, "lowpass=f=400")],
+    "mata_tensa": [("ep09_sn_mata_noite_corujas", 0), ("ep09_mata_noite", -6), ("drone_tensao", -15, "lowpass=f=400")],   # corujas: Sonniss
     # o hospital abandonado: o oco do prédio, goteira, vento nas janelas, e o drone
     "hospital_tenso": [("ep09_hospital", 0), ("ep07_hospital_noite", -6), ("drone_terror", -14, "lowpass=f=500")],
     # o elevador do ritual: o motor + um coração baixo (o dele) + o grave

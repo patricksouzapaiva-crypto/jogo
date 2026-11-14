@@ -1,0 +1,4 @@
+Efeitos ep09_sn_* (painel/sons): Sonniss GDC Game Audio Bundle (2015–2026), baixados um a um do espelho do
+archive.org (itens sonniss-gdc-*-game-audio-bundle-normalized). Licença Sonniss: royalty-free, uso comercial
+liberado (inclusive YouTube monetizado), sem crédito obrigatório; não pode revender os sons como biblioteca.
+Ferramenta: painel/ferramentas/sonniss.py (índice, busca e download).
