@@ -1404,7 +1404,12 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
                     "-c:a", "aac", "-b:a", "256k", "-aac_is", "0", "-aac_ms", "0", "-aac_pns", "0",  # 10/11: o estéreo de intensidade do AAC distorcia o canal direito (+6 dB)
  "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
-               "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])]},
+               "poses": [(round(p["t"], 2), p["pose"], p.get("tipo")) for p in D.get("poses", [])],
+               # 14/11: lista das cenas (para a revisão quadro a quadro: ferramentas/revisar.py video)
+               "cenas": [{"t0": round(c.get("t0", 0), 2), "tipo": c.get("tipo") or ("vigia" if c.get("vigia") else
+                          "video" if c.get("quadros") else "imagem"), "arquivo": Path(str(c.get("video") or c.get("imagem") or "")).name,
+                          "kanji": [k.get("texto") for k in (c.get("kanji") or [])] if isinstance(c.get("kanji"), list) else [],
+                          "entrada": c.get("entrada")} for c in D.get("cenas", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
     if not os.environ.get("MANTER_TEMP"):  # 10/11: cada render deixava 1,5–2,5 GB em /tmp e o disco encheu
         shutil.rmtree(tmp, ignore_errors=True)

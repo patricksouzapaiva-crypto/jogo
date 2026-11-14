@@ -59,3 +59,18 @@ for nome in pedidos:
     d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(saida)],
                              capture_output=True, text=True).stdout)
     print(f"ok {nome}: {b - a:.1f}s → {d:.1f}s ({lento:.2f}×)", flush=True)
+    # 14/11: folha de conferência (um quadro a cada 0,4 s do trecho pronto) — olhar ANTES de usar: ícone de
+    # carregando da gravação, legenda gravada, logo, letreiro, rosto cortado, quadro deformado pela câmera lenta
+    from PIL import Image
+    qs = []
+    for k in range(int(d / 0.4)):
+        tmpq = SAI / "_q.jpg"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{k * 0.4:.2f}", "-i", str(saida), "-frames:v", "1",
+                        "-vf", "scale=320:-2", str(tmpq)], check=True)
+        qs.append(Image.open(tmpq).copy())
+    if qs:
+        cols = 6; h = qs[0].height
+        folha = Image.new("RGB", (320 * cols, h * ((len(qs) + cols - 1) // cols)))
+        for k, q in enumerate(qs):
+            folha.paste(q, ((k % cols) * 320, (k // cols) * h))
+        folha.save(SAI / f"{nome}_conferir.jpg", quality=80)
