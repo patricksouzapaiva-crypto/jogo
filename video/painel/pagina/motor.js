@@ -1516,7 +1516,7 @@ function chamadaYouTube(t) {
   ctx.shadowColor = inscrito ? "rgba(0,0,0,.5)" : "rgba(230,33,23,.55)"; ctx.shadowBlur = 40;
   rr(-bw / 2, -bh / 2, bw, bh, bh / 2); ctx.fill(); ctx.shadowBlur = 0;
   fonte(800, 56, T.fonte_texto); ctx.fillStyle = "#fff"; ctx.textBaseline = "middle";
-  ctx.fillText(inscrito ? "INSCRITO" : "INSCREVER-SE", -30, 4);
+  ctx.fillText(inscrito ? (D.cta.botao_ok || "INSCRITO") : (D.cta.botao || "INSCREVER-SE"), -30, 4);
   const balanco = inscrito ? Math.sin((dt - clique) * 22) * 0.45 * Math.max(0, 1 - (dt - clique) / 0.9) : 0;
   sino(bw / 2 - 75, -4, 34, balanco, "#fff");
   ctx.restore(); ctx.textBaseline = "alphabetic";

@@ -1,0 +1,2313 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "en/voz_completa_en.wav",
+ "apertar_pausas": false,
+ "preencher_pausas": {
+  "min": 1.3
+ },
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -3
+ },
+ "legendas": {
+  "destaques": [
+   "behind",
+   "closer",
+   "every",
+   "look",
+   "she",
+   "her"
+  ]
+ },
+ "ambiente_inicial": [],
+ "musica": {
+  "som": "silencio",
+  "volume_db": -40
+ },
+ "abertura": {
+  "texto": "THE WATCHER\nEP. 03 · CLOSER.",
+  "duracao": 3.2,
+  "antes_da_batida": 6,
+  "sons": [
+   {
+    "som": "braam_horror",
+    "t": 0.2,
+    "volume_db": -6
+   }
+  ]
+ },
+ "cta": {
+  "titulo": "Did you like this story?",
+  "canal": "The Last Shelter",
+  "subtitulo": "Subscribe for more cases from The Watcher",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.8,
+  "botao": "SUBSCRIBE",
+  "botao_ok": "SUBSCRIBED"
+ },
+ "batidas": [
+  {
+   "fala": "\"Lucas… it's me. Sorry, I know it's late.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "VOICE MESSAGE · 3:40 AM\nLucas… it's me. Sorry, I know it's late.",
+    "estilo": "maquina",
+    "tamanho": 60
+   },
+   "sem_legenda": true,
+   "voz_fx": "telefone"
+  },
+  {
+   "fala": "\"I found her. She's in every single photo.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "VOICE MESSAGE · 3:40 AM\nI found her. She's in every single photo.",
+    "vermelho": "photo.",
+    "estilo": "maquina",
+    "tamanho": 60
+   },
+   "sem_legenda": true,
+   "voz_fx": "telefone"
+  },
+  {
+   "fala": "\"And she knows… that I know.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "VOICE MESSAGE · 3:40 AM\nAnd she knows… that I know.",
+    "vermelho": "know.",
+    "estilo": "maquina",
+    "tamanho": 60
+   },
+   "sem_legenda": true,
+   "voz_fx": "telefone"
+  },
+  {
+   "fala": "That was the last message Rafael left on his brother's phone. At three forty in the morning.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "That was the last message Rafael left on his brother's phone. At three forty in the morning.",
+    "estilo": "maquina",
+    "vermelho": "morning."
+   },
+   "musica": {
+    "som": "drone_tensao",
+    "volume_db": -26
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "When Lucas got there the next morning, the apartment door was locked from the inside.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "When Lucas got there the next morning, the apartment door was locked from the inside.",
+    "estilo": "maquina"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "And Rafael was gone.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "And Rafael was gone.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sons": [
+    {
+     "em": "gone",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Good evening. Welcome back to The Last Shelter.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   },
+   "enfase": [
+    {
+     "em": "Good",
+     "pose": "c_cafe_convite",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Tell me something. And be honest."
+  },
+  {
+   "fala": "Have you ever felt… someone walking behind you? Inside your own home?"
+  },
+  {
+   "fala": "That chill in the hallway. That certainty that if you turn around right now, someone will be there.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.1,
+     1.22
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.6,
+      0.35
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "So you turn around. And there's no one.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "And there's no one.",
+    "vermelho": "one.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sem_legenda": false
+  },
+  {
+   "fala": "Everyone has felt it. And tonight, I'm going to tell you about a man who decided to find out why.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.0
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.55,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "In twenty fourteen, in Switzerland, a group of scientists ran a strange experiment.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Switzerland · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "Volunteers were blindfolded and moved a robotic arm in front of their bodies. And a second robot, behind them, touched their backs. With a half-second delay.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Switzerland · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": 1.2
+   }
+  },
+  {
+   "fala": "Many of them began to feel someone standing behind them. Some counted two, three, four presences. Some begged them to stop."
+  },
+  {
+   "fala": "The scientists' conclusion was simple: it's the brain. A delay between what the body does and what it feels. Nothing more.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Switzerland · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "Nothing more.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Nothing more.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Rafael was thirty-four. A sound engineer. He lived alone in an old apartment, on the third floor, at the end of a quiet street.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.536,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "And ever since he was a child, he had felt it.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.62,
+      0.55
+     ],
+     [
+      0.62,
+      0.52
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "The first time was at his grandmother's house, in the countryside. A long hallway, with creaking floorboards, that ran from the kitchen to the bedrooms.",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.485,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "He was about seven. Every night, he ran down that hallway, certain that someone was coming after him.",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.45,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Once, he told his grandmother. She didn't laugh. She just held his face in both hands and said, very seriously:"
+  },
+  {
+   "fala": "\"Don't look for it, child. If you don't look… you won't find.\"",
+   "cena": {
+    "imagem": "imagens/R5.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.475,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "He never understood what she meant. Not until many years later."
+  },
+  {
+   "fala": "At first, it was rare. Every now and then, watching TV, he'd feel someone's eyes on the back of his neck.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.47000000000000003,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "But it was in the hallway that it truly began.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.476,
+      0.47000000000000003
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "The apartment had a long hallway, from the living room to the bedroom. And every time he walked down it at night, he felt someone coming up behind him.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.42,
+      0.4
+     ],
+     [
+      0.42,
+      0.37
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "He would stop. The silence stopped with him.",
+   "sons": [
+    {
+     "em": "him.",
+     "som": "passos_atrasados",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "And every time he turned around… the hallway was empty.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.45999999999999996,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Try something right now. Don't look behind you.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "Try",
+     "pose": "s_silencio",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "Just pay attention to the back of your neck.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Don't look behind you.",
+    "vermelho": "you.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sem_legenda": false
+  },
+  {
+   "fala": "Feel that?",
+   "enfase": [
+    {
+     "em": "Feel",
+     "pose": "s_encarando",
+     "segurar": 2.0
+    }
+   ],
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.08,
+     1.12
+    ],
+    "foco": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.3,
+      0.6
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Over time, the feeling stopped being rare.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.416,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Every night. In the kitchen, opening the fridge. In the shower. Lying in bed.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.22,
+      0.42
+     ],
+     [
+      0.22,
+      0.39
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "And the worst part wasn't feeling someone behind him. The worst part was feeling that, every night, it was a little closer."
+  },
+  {
+   "fala": "closer.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "closer.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "He started hearing things. Footsteps in the hallway that stopped half a second after his own. Slow breathing, right after he turned off the light.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.566,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Being a sound engineer, he did what he knew how to do. He left a professional microphone recording in the hallway all night long.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.485,
+      0.53
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "In the morning, he put on his headphones and listened. Hours of silence. His own footsteps going to the bathroom, at two in the morning.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.45,
+      0.6
+     ],
+     [
+      0.45,
+      0.57
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "And right after each of his steps… another step. Lighter. Half a second behind.",
+   "sons": [
+    {
+     "em": "step.",
+     "som": "passos_atrasados",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "He played that part about twenty times. Whenever he stopped in the hallway, the other footsteps stopped too.",
+   "cena": {
+    "imagem": "imagens/R6.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.475,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Except, the last time, after he had already gone back to bed… the footsteps kept going. Slowly. All the way to the bedroom door.",
+   "sons": [
+    {
+     "em": "door.",
+     "som": "stinger_cordas",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "He went to a doctor. Had tests done. Everything was normal.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.566,
+      0.515
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "The doctor prescribed sleeping pills and said it was stress. Exhaustion.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.72,
+      0.55
+     ],
+     [
+      0.72,
+      0.52
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "The pills made him sleep. But they didn't make the feeling go away."
+  },
+  {
+   "fala": "It was on one of those sleepless nights that he found the study from Switzerland.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Switzerland · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": -1.5
+   }
+  },
+  {
+   "fala": "And, for the first time in months, he felt relief. It was the brain. That's all. A half-second delay.",
+   "cena": {
+    "tipo": "cartao",
+    "imagem": "imagens/R1.png",
+    "legenda_cartao": "EPFL · Switzerland · 2014",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "giro": 1.2
+   }
+  },
+  {
+   "fala": "For a few days, it worked. He slept better. He walked down the hallway without looking back."
+  },
+  {
+   "fala": "Until the night when, brushing his teeth, he felt the back of his neck go cold.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.458,
+      0.485
+     ]
+    ],
+    "lado": "dir"
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "It wasn't a shiver. It was cold. As if someone were breathing right there, inches away from him.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.36,
+      0.45
+     ],
+     [
+      0.36,
+      0.42000000000000004
+     ]
+    ],
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "breathing",
+     "som": "respiracao_nuca",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "He didn't turn around. For the first time, he was afraid to turn around."
+  },
+  {
+   "fala": "After that night, Rafael changed the whole apartment.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.572,
+      0.506
+     ]
+    ],
+    "lado": "esq"
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "He pushed all the furniture against the walls. Left the lights on. Put mirrors in the corners, to see what was coming up behind him.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.74,
+      0.52
+     ],
+     [
+      0.74,
+      0.49
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "And he started sleeping sitting up, with his back to the wall."
+  },
+  {
+   "fala": "But the feeling didn't go away. It just kept getting closer.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.62,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "One Sunday, his brother Lucas showed up unannounced. He thought the apartment looked strange. The furniture pressed against the walls, the mirrors, the lights on in broad daylight.",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.485
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Rafael tried to explain. Lucas laughed, a little awkwardly. Said he needed some sleep, needed to get out, see people.",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42000000000000004
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "On his way out, halfway down the hallway, Lucas stopped. He rubbed the back of his neck."
+  },
+  {
+   "fala": "\"Man… where is this draft coming from?\"",
+   "cena": {
+    "imagem": "imagens/R7.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "from?",
+     "som": "respiracao_nuca",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Rafael didn't answer. He just opened the door. And waited for his brother to leave."
+  },
+  {
+   "fala": "One sleepless night, he posted on an internet forum. He asked if anyone else felt it. Someone walking behind them, a little closer every night.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.515,
+      0.485
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Within hours, dozens of replies came in. People from all over Brazil. From other countries. Everyone describing the same thing.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.55,
+      0.42000000000000004
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "One reply caught his eye. A user who signed only with his initials. He said he had found a way to prove it. That he would take photos of his home every night and compare them."
+  },
+  {
+   "fala": "Rafael replied, asking him to share whatever he found.",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.525,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Three days later, one last message arrived. Just one sentence."
+  },
+  {
+   "fala": "\"Don't look for her.\"",
+   "cena": {
+    "imagem": "imagens/R4.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.55,
+      0.4
+     ],
+     [
+      0.56,
+      0.38
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "her.",
+     "som": "sub_drop",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "After that, the account never replied again.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "After that, the account never replied again.",
+    "estilo": "maquina",
+    "vermelho": "again."
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "A little curiosity, since we're here.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -24
+   },
+   "enfase": [
+    {
+     "em": "A",
+     "pose": "c_cafe_indicador",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Each of your eyes has a blind spot. A place where the optic nerve leaves the eye, and where you, quite literally, can't see anything.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "blind spot.",
+    "vermelho": "spot.",
+    "estilo": "impacto",
+    "tamanho": 140,
+    "cps": 10
+   },
+   "sem_legenda": false
+  },
+  {
+   "fala": "You never notice it. Because your brain paints over that hole with whatever it thinks should be there.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "In other words… it hides from you what you can't see."
+  },
+  {
+   "fala": "Remember that.",
+   "enfase": [
+    {
+     "em": "Remember",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.6
+    }
+   ]
+  },
+  {
+   "fala": "When we're afraid of something we can't see… what do we do?"
+  },
+  {
+   "fala": "We try to prove it doesn't exist.",
+   "enfase": [
+    {
+     "em": "prove",
+     "pose": "c_pensativo_queixo",
+     "segurar": 1.8
+    }
+   ]
+  },
+  {
+   "fala": "That's exactly what Rafael decided to do.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.47000000000000003,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Every night, he started photographing the apartment. Every room. Same angle, same time.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.4,
+      0.42
+     ],
+     [
+      0.4,
+      0.39
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "The idea was simple. If the photos showed nothing, the feeling was all in his head. And he could finally forget about it.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.476,
+      0.47000000000000003
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "Weeks went by. Hundreds of photos.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.416,
+      0.476
+     ]
+    ],
+    "lado": "dir"
+   }
+  },
+  {
+   "fala": "One night, he printed them all and spread them out on the table. To look at them calmly. To prove, once and for all, that there was nothing there.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "And for a long time… there wasn't.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Until he stopped at a photo of the street. Way in the back, past the last streetlight, between two trees."
+  },
+  {
+   "fala": "A shape. Tall. Too thin. Standing still.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "still.",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "He picked up the next photo. The living room. And he looked."
+  },
+  {
+   "fala": "There it was. In the reflection on the window.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.51,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "In the hallway. In the kitchen doorway. In the corner of the bedroom."
+  },
+  {
+   "fala": "In every one.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "every",
+     "som": "braam_horror",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "every",
+     "pose": "e_maos_na_boca",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "And in each photo… a little closer."
+  },
+  {
+   "fala": "in every one.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "in every one.",
+    "estilo": "impacto",
+    "cps": 12
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Rafael picked up a red pen. And, with a shaking hand, he circled each one.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_2",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "When he was done, he understood the most terrifying thing of all.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "It had never been a feeling."
+  },
+  {
+   "fala": "It was someone. It always had been.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "sons": [
+    {
+     "em": "been.",
+     "som": "sub_drop",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "And only then did he remember his grandmother. \"If you don't look, you won't find.\""
+  },
+  {
+   "fala": "He had looked.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.3,
+     1.36
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.51,
+      0.43
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Three forty in the morning.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Three forty in the morning.",
+    "estilo": "impacto",
+    "cps": 12,
+    "vermelho": "morning."
+   },
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "That's when he recorded the message for his brother.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "That's when he recorded the message for his brother.",
+    "estilo": "maquina"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"I found her. She's in every single photo. And she knows that I know.\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "VOICE MESSAGE · 3:40 AM\nI found her. She's in every single photo. And she knows that I know.",
+    "vermelho": "know.",
+    "estilo": "maquina",
+    "tamanho": 60
+   },
+   "sem_legenda": true,
+   "voz_fx": "telefone"
+  },
+  {
+   "fala": "After that, Rafael did the only thing left to do.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.515,
+      0.476
+     ]
+    ],
+    "encaixe": "cobrir",
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "He opened the front camera on his phone. And, without turning his body, he looked at the hallway behind him on the screen.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.55,
+      0.42
+     ],
+     [
+      0.55,
+      0.39
+     ]
+    ],
+    "encaixe": "cobrir",
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "behind",
+     "som": "riser_tensao",
+     "volume_db": -6,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "She was right there.",
+   "sons": [
+    {
+     "em": "there.",
+     "som": "braam_horror",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "there.",
+     "pose": "e_aterrorizado_maos",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "One step behind him. At the height of his face.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.525,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "encaixe": "cobrir",
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "And, for the first time, she wasn't standing still.",
+   "sons": [
+    {
+     "em": "still.",
+     "som": "stinger_cordas",
+     "volume_db": -4,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ],
+   "enfase": [
+    {
+     "em": "still.",
+     "pose": "e_medo_gola",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "The phone fell to the hallway floor. And kept recording.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "The ceiling. The light bulb swinging. His slippers on the floor.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "No sound. No scream."
+  },
+  {
+   "fala": "Just the empty hallway.",
+   "cena": {
+    "imagem": "imagens/H9.png",
+    "zoom": [
+     1.06,
+     1.0
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "lado": "esq"
+   }
+  },
+  {
+   "fala": "Lucas arrived in the morning. The door was locked from the inside. The windows, shut.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   },
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "The phone, on the hallway floor. The battery, almost dead.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "And on the living room table, dozens of photos. Each one with a red circle.",
+   "cena": {
+    "imagem": "imagens/R2.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Rafael's case became a statistic. In Brazil alone, in twenty twenty-five, more than eighty-four thousand people went missing.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Most of them are found.",
+   "cena": {
+    "imagem": "imagens/R3.png",
+    "zoom": [
+     1.18,
+     1.26
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "Some… never are.",
+   "sons": [
+    {
+     "em": "never",
+     "som": "sub_drop",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "The scientists were right about one thing.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   }
+  },
+  {
+   "fala": "There really is a delay.",
+   "enfase": [
+    {
+     "em": "delay.",
+     "pose": "c_dedo_explicando",
+     "segurar": 1.6
+    }
+   ]
+  },
+  {
+   "fala": "It's just not in your brain."
+  },
+  {
+   "fala": "She was in the images all along. From the very beginning.",
+   "musica": {
+    "som": "silencio",
+    "volume_db": -22
+   },
+   "enfase": [
+    {
+     "em": "She",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Throughout this entire video… she was in every single scene. Right in front of you.",
+   "enfase": [
+    {
+     "em": "Throughout",
+     "pose": "c_sussurrando",
+     "segurar": 2.4
+    }
+   ]
+  },
+  {
+   "fala": "And neither you… nor Rafael… ever noticed.",
+   "enfase": [
+    {
+     "em": "noticed.",
+     "pose": "s_encarando",
+     "segurar": 1.8
+    }
+   ],
+   "sons": [
+    {
+     "em": "noticed.",
+     "som": "riser_tensao",
+     "volume_db": -8,
+     "depois": true,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "On the street.",
+   "cena": {
+    "imagem": "imagens/H1.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.17,
+      0.46
+     ]
+    ],
+    "revelar": {
+     "x": 0.17,
+     "y": 0.46,
+     "r": 0.06,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H1_clara.png"
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "On",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "In the window.",
+   "cena": {
+    "imagem": "imagens/H2.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.77,
+      0.33
+     ]
+    ],
+    "revelar": {
+     "x": 0.77,
+     "y": 0.33,
+     "r": 0.09,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H2_clara.png"
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "In",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "At the end of the hallway.",
+   "cena": {
+    "imagem": "imagens/H3.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.59,
+      0.3
+     ]
+    ],
+    "revelar": {
+     "x": 0.59,
+     "y": 0.3,
+     "r": 0.09,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H3_clara.png"
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "At",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "In the kitchen doorway.",
+   "cena": {
+    "imagem": "imagens/H4.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.73,
+      0.38
+     ]
+    ],
+    "revelar": {
+     "x": 0.73,
+     "y": 0.38,
+     "r": 0.11,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H4_clara.png"
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "In",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "In the corner of the bedroom.",
+   "cena": {
+    "imagem": "imagens/H5.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.27,
+      0.36
+     ]
+    ],
+    "revelar": {
+     "x": 0.27,
+     "y": 0.36,
+     "r": 0.17,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H5_clara.png"
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "In",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Behind the shower curtain.",
+   "cena": {
+    "imagem": "imagens/H6.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.61,
+      0.27
+     ]
+    ],
+    "revelar": {
+     "x": 0.61,
+     "y": 0.27,
+     "r": 0.1,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H6_clara.png"
+    },
+    "lado": "dir"
+   },
+   "sons": [
+    {
+     "em": "Behind",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "In the middle of the hallway.",
+   "cena": {
+    "imagem": "imagens/H7.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.51,
+      0.35
+     ]
+    ],
+    "revelar": {
+     "x": 0.51,
+     "y": 0.35,
+     "r": 0.17,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H7_clara.png"
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "In",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "Right behind him.",
+   "cena": {
+    "imagem": "imagens/H8.png",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.4,
+      0.28
+     ]
+    ],
+    "encaixe": "cobrir",
+    "revelar": {
+     "x": 0.4,
+     "y": 0.28,
+     "r": 0.12,
+     "atraso": 0.5,
+     "duracao": 1.6,
+     "clara": "imagens/H8_clara.png"
+    },
+    "lado": "esq"
+   },
+   "sons": [
+    {
+     "em": "Right",
+     "som": "sub_drop",
+     "volume_db": -12
+    }
+   ],
+   "pausa_antes_s": 1.6
+  },
+  {
+   "fala": "If you don't believe me… go back to the beginning. And look.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ]
+   },
+   "enfase": [
+    {
+     "em": "go",
+     "pose": "e_apontando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Now you know where to look.",
+   "enfase": [
+    {
+     "em": "look.",
+     "pose": "s_sorriso_sombrio",
+     "segurar": 2.2
+    }
+   ]
+  },
+  {
+   "fala": "Rafael didn't disappear because she got close.",
+   "musica": {
+    "som": "trilha_tensa_1",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "He disappeared because he found out.",
+   "enfase": [
+    {
+     "em": "found",
+     "pose": "s_encarando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "And you… just saw the same photos he did.",
+   "enfase": [
+    {
+     "em": "you…",
+     "pose": "e_apontando",
+     "segurar": 2.0
+    }
+   ]
+  },
+  {
+   "fala": "Good night."
+  },
+  {
+   "fala": "And when this video ends… don't look behind you.",
+   "sons": [
+    {
+     "em": "behind",
+     "som": "respiracao_nuca",
+     "volume_db": -2,
+     "depois": true,
+     "atraso": 0.6
+    }
+   ],
+   "enfase": [
+    {
+     "em": "look",
+     "pose": "s_silencio",
+     "segurar": 9
+    }
+   ]
+  }
+ ],
+ "idioma": "en"
+}

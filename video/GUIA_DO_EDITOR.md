@@ -598,3 +598,15 @@ NÃO trocar para relato em primeira pessoa. Do material de retenção, adotar s�
   depois da palavra (`pausa(i+1, 1.6)`) e pôr o efeito com `depois=True`. Nível do efeito-chave: −5 a −9 dB.
 - Efeitos-chave sempre gravados de verdade (ElevenLabs), nunca sintetizados em código: o usuário reprovou os
   sintetizados ("fraco e ruim"). Gerar 2–4 versões e escolher pela análise (ex.: batidas = exatamente 3 golpes).
+
+## 13. Versões em inglês (canal "The Last Shelter" / faixa de áudio) — 14/11/2026
+- **Narração em inglês NÃO usa o modelo principal** (`gemini-3.8-flash-tts`, reservado ao português): usa
+  `gemini-3.1-flash-tts-preview` (voz Algenib, só o texto) e, sem cota, o `gemini-2.5-flash-preview-tts`.
+- Pedidos longos dão **502** (resposta demora demais): usar **streaming** (`en/tts_stream.py`,
+  `streamGenerateContent?alt=sse`). O 3.1 **corta em ~2 min de áudio por pedido** (finishReason "SAFETY",
+  não é o conteúdo): `en/montar_voz_en.py` confere cada pedido pela transcrição (Whisper em inglês), aproveita
+  até a última frase inteira e pede o resto de novo.
+- Roteiro: `en/traducao_en.py` (fala, âncoras PT→EN das ênfases/efeitos, texto de tela, palavra vermelha) →
+  `en/montar_roteiro_en.py` → `roteiro_en.json` (`"idioma": "en"` faz o Whisper alinhar em inglês;
+  `cta.botao`/`botao_ok` = SUBSCRIBE/SUBSCRIBED). Mensagem do Rafael: voz Puck (2.5, sussurrada) + `voz_fx` telefone.
+- Nomes: canal **The Last Shelter**, narrador **The Watcher**. Títulos também terminam com **" | Creepypasta"**.

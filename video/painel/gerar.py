@@ -147,6 +147,9 @@ def narrar_batidas(batidas, voz: dict, destino: Path, paralelo=4) -> Path:
 
 
 # ---------------------------------------------------------------- tempo das palavras (Whisper)
+IDIOMA = {"whisper": "pt"}  # "en" nas versões em inglês (roteiro com "idioma": "en")
+
+
 def transcrever(wav: Path, roteiro_txt: str):
     from faster_whisper import WhisperModel
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
@@ -154,7 +157,7 @@ def transcrever(wav: Path, roteiro_txt: str):
     audio = np.frombuffer(raw, np.float32)
     modelo = WhisperModel("small", device="cpu", compute_type="int8")
     # sem initial_prompt: com o roteiro como dica o Whisper tende a "pular" a primeira frase
-    segs, _ = modelo.transcribe(audio, language="pt", word_timestamps=True)
+    segs, _ = modelo.transcribe(audio, language=IDIOMA["whisper"], word_timestamps=True)
     return [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words]
 
 
@@ -913,7 +916,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         k_cta = next((k for k, b in enumerate(roteiro["batidas"]) if b.get("cta_inicio")), None)
         if k_cta is not None:  # vinheta falada: a tela final começa junto da fala de inscrição
             t_cta = max(0.0, rel.inicio(k_cta) - cta.get("antes", 0.8))
-        D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo")}
+        D["cta"] = {"t0": t_cta, "titulo": cta.get("titulo"), "canal": cta.get("canal"), "subtitulo": cta.get("subtitulo"),
+                    "botao": cta.get("botao", "INSCREVER-SE"), "botao_ok": cta.get("botao_ok", "INSCRITO")}
         if k_cta is not None and cta.get("clique_em"):  # o botão é clicado quando o Vigia diz a palavra
             D["cta"]["clique"] = round(rel.em(k_cta, cta["clique_em"]) - t_cta, 2)
         if cta.get("fundo"):  # chamada final no cenário do Vigia, com ele em destaque
@@ -1300,6 +1304,7 @@ def voz_simulada(batidas, destino, ppm=128):
 def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     roteiro = json.load(open(caminho_roteiro, encoding="utf-8"))
     roteiro["_pasta"] = str(Path(caminho_roteiro).resolve().parent)
+    IDIOMA["whisper"] = roteiro.get("idioma", "pt")
     batidas = roteiro["batidas"]
     texto = "\n".join(b["fala"] for b in batidas)
     print("1/5 narração (Gemini)…")
