@@ -10,10 +10,11 @@ fl = F.ler()[0] + [F.VINHETA]
 wav = AQUI / "audio" / (sys.argv[1] if len(sys.argv) > 1 else "voz_com_vinheta_limpa.wav")
 pal = [w for f in fl for w in tokens(f)]
 ouv = transcrever(wav, "", pedacos=75)   # em pedaços: no arquivo inteiro o Whisper pulava frases
-json.dump(ouv, open(AQUI / "audio" / "ouvidas.json", "w"))
+SUF = "" if len(sys.argv) < 2 else "_" + Path(sys.argv[1]).stem   # voz final (com personagens): arquivo à parte
+json.dump(ouv, open(AQUI / "audio" / f"ouvidas{SUF}.json", "w"))
 tempos, casadas = alinhar(pal, ouv)
 tempos = ajustar_inicios(wav, tempos)
-json.dump(tempos, open(AQUI / "audio" / "alinhamento.json", "w"))
+json.dump(tempos, open(AQUI / "audio" / f"alinhamento{SUF}.json", "w"))
 print(f"{casadas:.0%} reconhecidas; {len(pal)} palavras; fim {tempos[-1][1]:.1f}s")
 k = 0
 for i, f in enumerate(fl):

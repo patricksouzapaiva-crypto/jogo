@@ -24,7 +24,9 @@ for i, s in PAUSAS.items():
 I, IV2, CL, FP = "imagens_v3/", "imagens/", "clipes_v3/", "filmes_prontos/"
 VIGIA = {"imagem": "../../painel/cenarios/abrigo_16x9.png", "vigia": True}
 C3D = AQUI / "camera3d"; C3D.mkdir(exist_ok=True)
-ALI = Path(__import__("os").environ.get("ALINHAMENTO") or AQUI / "audio" / "alinhamento.json")   # teste: ALINHAMENTO=estimado.json
+# 14/11: os tempos vêm da VOZ FINAL (com os personagens, que são mais longos): senão a câmera 3D sai curta e o motor desacelera
+ALI = Path(__import__("os").environ.get("ALINHAMENTO") or next(p for p in (AQUI / "audio" / "alinhamento_voz_personagens.json",
+                                                                           AQUI / "audio" / "alinhamento.json") if p.exists()))   # teste: ALINHAMENTO=estimado.json
 
 
 # ------------------------------------------------------------------ ajudantes
@@ -175,6 +177,7 @@ pausa(5, 0.4)
 # ================================================================ TEMA — Vigia (título ao lado dele, sem corte)
 C(6, vigia((1.0, 1.04)))
 saida_lenta(6, 5.4, dur=2.2)
+batidas[6]["cena"].update({"antecipar": 7.2, "antecipar_fixo": True})   # o título nunca aparece em cima da mata
 fx(6, None, "ep09_jing", -17, atraso=-6.2)
 C(7, vigia((1.0, 1.05)))
 C(8, c3("M01_B", "lado", (0.45, 0.45), 0.8, 0.0))                       # Busan, o mar e a montanha
@@ -217,10 +220,10 @@ C(29, vid("V01_B", (1.0, 1.03)))
 C(30, ficha("장산범 · Jangsan-beom\n\"o tigre do Jangsan\"\nrelatos desde 2012–2013 · Busan", "\"o tigre do Jangsan\""))
 C(31, c3("M02_A", "entrar", (0.45, 0.5), 0.9, 0.3))
 C(32, img("M07_A", (1.0, 1.06), ((0.55, 0.45), (0.57, 0.42))))
-C(33, img("M07_C", (1.0, 1.06), ((0.6, 0.4), (0.62, 0.38)), kanji=K("장산범", 0.2, 0.5, "luz", "Jangsan-beom", em="Jangsan")))
+C(33, img("M07_C", (1.16, 1.2), ((0.55, 0.45), (0.56, 0.44)), kanji=K("장산범", 0.2, 0.5, "luz", "Jangsan-beom", em="Jangsan")))
 pincel(33, "Jangsan")
 C(34, img("M01_A", (1.0, 1.06), ((0.6, 0.45), (0.62, 0.45))))
-C(35, img("M07_A", (1.0, 1.05), ((0.55, 0.45), (0.56, 0.43))), (filme("mimic_menina"), "menina"),
+C(35, img("M07_A", (1.0, 1.05), ((0.55, 0.45), (0.56, 0.43))), (filme("mimic_menina"), "mulher"),
       (c3("M07_B", "entrar", (0.47, 0.4), 0.7, 0.0), "começa"))
 C(36, img("M02_B", (1.0, 1.06), ((0.5, 0.5), (0.55, 0.45))))
 C(37, img("M03_A", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5)), kanji=K("목소리", 0.8, 0.5, "luz", "moksori · a voz", em="voz")))
@@ -311,7 +314,7 @@ batidas[88]["musica"] = {"som": "ep09_m05_a_parede", "volume_db": -33}
 pausa(80, 0.8); pausa(82, 0.8); pausa(85, 0.6); pausa(87, 1.6); pausa(88, 2.4)
 
 # ================================================================ PARTE 3 — o elevador
-capitulo(89, 3, "O jogo do elevador", "엘리베이터 게임", I + "H04_A.jpg",
+capitulo(89, 3, "O elevador", "엘리베이터 게임 · o jogo", I + "H04_A.jpg",
          img("H04_A", (1.0, 1.06), ((0.5, 0.5), (0.52, 0.45))), "Existe")
 C(90, ficha("엘리베이터 게임 · o Jogo do Elevador\nritual da internet\norigem disputada entre Coreia e Japão", "o Jogo do Elevador"))
 C(91, img("H03_B", (1.0, 1.06), ((0.45, 0.5), (0.45, 0.45))))
@@ -346,13 +349,13 @@ C(107, ficha("곤지암 정신병원 · Gonjiam\nGwangju, Gyeonggi · abandonado
 C(108, c3("H01_B", "entrar", (0.45, 0.45), 0.9, 0.2))
 C(109, img("H02_A", (1.0, 1.06), ((0.5, 0.5), (0.55, 0.45))))
 C(110, c3("H01_C", "lado", (0.4, 0.45), 0.8, 0.0))
-C(111, c3("H01_A", "entrar", (0.45, 0.6), 0.8, 0.0), (filme("gonjiam_mato"), "filmar"))
-C(112, filme("gonjiam_lanterna"), (c3("H02_B", "entrar", (0.5, 0.4), 0.8, 0.2), "grupo"),
+C(111, c3("H01_A", "entrar", (0.45, 0.6), 0.8, 0.0))
+C(112, filme("gonjiam_mato"), (c3("H02_B", "entrar", (0.5, 0.4), 0.8, 0.2), "grupo"),   # a lanterna ficou quase preta na moldura
       (c3("H07_B", "entrar", (0.5, 0.5), 0.9, 0.3), "porta"))
 C(113, img("H07_C", (1.0, 1.08), ((0.5, 0.45), (0.5, 0.42)), kanji=K("402", 0.82, 0.45, "luz", None, tam=0.24, em="402")))
 C(114, c3("C05_B", "entrar", (0.45, 0.55), 0.8, 0.2))
 C(115, img("H01_C", (1.0, 1.05), ((0.5, 0.5), (0.5, 0.48))))
-amb(105, "nenhum"); amb(106, "ep09_hospital", -28); amb(111, "nenhum", em="filmar"); amb(113, "ep09_hospital", -28)
+amb(105, "nenhum"); amb(106, "ep09_hospital", -28); amb(112, "nenhum"); amb(113, "ep09_hospital", -28)
 musica(105, "06_moca_de_branco", -31)
 pausa(106, 0.6); pausa(109, 0.6); pausa(110, 0.6); pausa(113, 0.8); pausa(115, 1.4)
 
@@ -395,8 +398,10 @@ C(140, img("H07_B", (1.15, 1.22), ((0.5, 0.45), (0.5, 0.45))))
 C(141, img("H07_C", (1.1, 1.16), ((0.5, 0.45), (0.5, 0.45))))
 C(143, img("H07_B", (1.22, 1.28), ((0.5, 0.45), (0.5, 0.45))))
 # SUSTO 2: 3 s de silêncio (só a porta rangendo); a sala vazia (a cama, à esquerda) → CORTE para ela no canto
-C(144, img("H08_A", (1.25, 1.3), ((0.3, 0.5), (0.3, 0.5))), (img("H08_B", (1.0, 1.04), ((0.6, 0.6), (0.6, 0.6))), "canto"))
+# 144: a sala vazia = só a cama (ela começa em x 0,65 da H08_A)
+C(144, img("H08_A", (1.7, 1.72), ((0.29, 0.5), (0.29, 0.5))), (img("H08_B", (1.0, 1.04), ((0.6, 0.6), (0.6, 0.6))), "canto"))
 batidas[144]["cenas"][1]["entrada"] = "corte"
+batidas[144]["cenas"][0].update({"entrada": "corte", "antecipar": 1.4})   # a sala aparece no fim do silêncio, depois do rangido
 C(145, img("H08_C", (1.0, 1.05), ((0.6, 0.5), (0.6, 0.5))))
 C(147, img("H09_A", (1.15, 1.2), ((0.62, 0.72), (0.62, 0.72))))           # as mãos
 C(148, vid("V04_A", (1.0, 1.03)), (img("H03_C", (1.0, 1.05), ((0.45, 0.45), (0.45, 0.42))), "elevador"))
@@ -464,7 +469,7 @@ roteiro = {
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
     # 13/11: trilha mais presente que no Ep. 08 (+4 dB), mas o rascunho 1 abafava a voz: -3 dB nas faixas e -9 sob a voz
-    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
+    "mix": {"musica_ganho_db": 10.5, "fundo_sob_voz": -9, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
             "efeitos_pico_max": -3},
     "legendas": {"destaques": ["Coreia", "Jangsan", "Oppa", "óleo", "gergelim", "quatro", "402", "Gonjiam", "não olha"]},
     "ambiente_inicial": [{"som": "ep09_motor_elevador", "volume_db": -24}],
@@ -607,7 +612,7 @@ def ritmo():
         if not cs:
             continue
         c = cs[0]
-        if c.get("tipo") == "capitulo" or c.get("entrada") == "corte":
+        if c.get("tipo") == "capitulo" or c.get("entrada") == "corte" or c.pop("antecipar_fixo", False):
             continue
         ant = next((cenas_de(batidas[j]) for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), [{}])[-1]
         if c.get("tipo") == "chat" and ant.get("tipo") == "chat":
