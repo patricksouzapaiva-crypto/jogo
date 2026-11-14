@@ -49,3 +49,8 @@ if __name__ == "__main__":
         s = f"{AQUI}/brutas/lote_livia_t{k}.wav"
         if not os.path.exists(s):
             gerar(s)
+
+# 15/11: o usuário escolheu a AMOSTRA A = brutas/lote_livia_t2.wav ("amostra A melhor").
+# Na t2 o "Ôppa." sozinho e o "Ôppa, vocês voltaram" saíram juntos, e o "Rafa." (livia3) não saiu:
+# cortar a raposa1 inteira e usar o primeiro "Ôppa" dela como livia_oppa; livia3 fica com a tomada antiga.
+ESCOLHIDA = "brutas/lote_livia_t2.wav"
