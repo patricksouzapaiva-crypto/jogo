@@ -656,7 +656,7 @@ def camera_3d():
         p = c.pop("_c3d")
         if __import__("os").environ.get("SEM_3D"):        # teste rápido: fica a imagem parada com zoom leve
             c["zoom"] = [1.0, 1.06]; continue
-        fim = inicios[k + 1][0] if k + 1 < len(inicios) else t + 13   # a última cena fica até a vinheta
+        fim = inicios[k + 1][0] if k + 1 < len(inicios) else t + 20   # a última cena segue por baixo da vinheta falada
         dur = round(max(4.0, fim - t) + 2.5, 1)
         chave = hashlib.md5(json.dumps([c["imagem"], p], sort_keys=True).encode()).hexdigest()[:10]
         # reaproveita um vídeo do mesmo movimento se a duração for parecida (até 3 s mais longo): o motor usa só o começo
