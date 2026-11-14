@@ -130,10 +130,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.4,
+    "antecipar": 0.25,
     "video": "camera3d/H03_A_fed958efd8_12.8.mp4"
-   },
-   "pausa_antes_s": 0.15
+   }
   },
   {
    "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
@@ -178,7 +177,7 @@
     "video": "camera3d/M06_C_e0074b361a_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
+    "som": "ep09_amanhecer_tenso",
     "volume_db": -26
    }
   },
@@ -194,7 +193,11 @@
     "antecipar": 0.6,
     "video": "camera3d/M03_B_35be001e88_10.7.mp4"
    },
-   "pausa_antes_s": 0.4
+   "pausa_antes_s": 0.4,
+   "ambiente": {
+    "som": "ep09_mata_tensa",
+    "volume_db": -22
+   }
   },
   {
    "fala": "Boa noite. Eu sou o Vigia.",
@@ -408,8 +411,8 @@
     "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -30
+    "som": "ep09_mata_tensa",
+    "volume_db": -32
    },
    "musica": {
     "som": "ep09_m11_a_montanha",
@@ -463,6 +466,10 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
     "video": "camera3d/M02_B_a6bebb6e71_8.5.mp4"
+   },
+   "ambiente": {
+    "som": "ep09_mata_tensa",
+    "volume_db": -25
    }
   },
   {
@@ -515,10 +522,19 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/M03_B_31aadcfb5d_7.3.mp4"
    },
-   "pausa_antes_s": 1.08
+   "sons": [
+    {
+     "em": "voz",
+     "som": "ep06_estalo",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "pan": -0.6
+    }
+   ]
   },
   {
    "fala": "\"Rafa! Aqui! Vem ver isso!\"",
@@ -596,8 +612,8 @@
   {
    "fala": "\"Rafa! Aqui! Vem ver isso!\"",
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -20
+    "som": "ep09_mata_tensa",
+    "volume_db": -19
    }
   },
   {
@@ -656,7 +672,31 @@
      "em": "Do"
     }
    ],
-   "pausa_antes_s": 1.43
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": "chamar",
+     "som": "voz_livia_longe",
+     "volume_db": -31,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "pan": -0.8,
+     "eco": 2.0,
+     "saida": 0.6
+    },
+    {
+     "em": "minutos",
+     "som": "voz_livia_longe",
+     "volume_db": -33,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "pan": -0.85,
+     "eco": 2.5,
+     "saida": 0.6
+    }
+   ]
   },
   {
    "fala": "Até que a voz parou. No meio de uma palavra.",
@@ -680,7 +720,20 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.6
+   "pausa_antes_s": 1.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "voz_cortada",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": -1.3,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "pan": -0.7,
+     "eco": 1.5,
+     "ate": 0.55
+    }
+   ]
   },
   {
    "fala": "Em dois mil e treze, começaram a aparecer relatos num fórum coreano. Todos sobre a mesma montanha. O Jangsan.",
@@ -734,6 +787,13 @@
      "volume_db": -17,
      "depois": false,
      "atraso": -3.4
+    },
+    {
+     "em": null,
+     "som": "whoosh",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -4.9
     }
    ],
    "ambiente": {
@@ -742,7 +802,8 @@
    },
    "musica": {
     "som": "ep09_m12_jangsan",
-    "volume_db": -31
+    "volume_db": -30,
+    "atraso": -5.4
    }
   },
   {
@@ -782,18 +843,18 @@
     "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -26
+    "som": "ep09_mata_tensa",
+    "volume_db": -25
    }
   },
   {
    "fala": "Segundo os relatos, ele imita vozes. O choro de uma mulher. Um cachorro. O seu nome.",
    "cena": {
     "tipo": "texto",
-    "texto": "장산범 · Jangsan-beom\n\"o tigre do Jangsan\"\nrelatos desde 2012–2013 · Busan",
+    "texto": "장산범 · Jangsan-beom\n\"o tigre do Jangsan\"",
     "estilo": "maquina",
     "vermelho": "\"o tigre do Jangsan\"",
-    "cps": 26,
+    "cps": 40,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -811,8 +872,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
     "video": "camera3d/M02_A_1450b322de_8.1.mp4"
-   },
-   "pausa_antes_s": 1.63
+   }
   },
   {
    "fala": "Quem segue a voz… não volta.",
@@ -836,7 +896,16 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.0
+   "pausa_antes_s": 1.0,
+   "sons": [
+    {
+     "em": "não",
+     "som": "sub_drop",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Os coreanos deram um nome: Jangsan-beom. O tigre do Jangsan.",
@@ -866,7 +935,7 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -876,8 +945,7 @@
      "depois": false,
      "atraso": 0.0
     }
-   ],
-   "pausa_antes_s": 0.72
+   ]
   },
   {
    "fala": "Ninguém nunca provou que ele existe. Nenhuma foto, nenhum corpo.",
@@ -951,8 +1019,8 @@
     "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -26
+    "som": "ep09_mata_tensa",
+    "volume_db": -25
    }
   },
   {
@@ -1005,18 +1073,17 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/M05_A_a9b09a2427_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -26
+    "som": "ep09_mata_tensa",
+    "volume_db": -24
    },
    "musica": {
     "som": "ep09_m13_os_tenis",
     "volume_db": -31
-   },
-   "pausa_antes_s": 0.64
+   }
   },
   {
    "fala": "A polícia de Busan procurou com cães, drones e mais de cinquenta voluntários.",
@@ -1027,10 +1094,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/M05_B_ef9704608c_7.6.mp4"
-   },
-   "pausa_antes_s": 0.58
+   }
   },
   {
    "fala": "No segundo dia, acharam os tênis dela. No meio da trilha. Lado a lado. Com os cadarços amarrados.",
@@ -1046,7 +1112,16 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
     "video": "camera3d/M04_A_3b4cbcb2bb_12.2.mp4"
-   }
+   },
+   "sons": [
+    {
+     "em": "tênis",
+     "som": "ep09_buk",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Como se alguém tivesse tirado com cuidado… e seguido descalço.",
@@ -1174,8 +1249,8 @@
     "video": "camera3d/M06_B_2db81403ec_12.0.mp4"
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -30
+    "som": "ep09_amanhecer_tenso",
+    "volume_db": -26
    }
   },
   {
@@ -1267,10 +1342,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.25
    },
-   "sem_legenda": true,
-   "pausa_antes_s": 1.06
+   "sem_legenda": true
   },
   {
    "fala": "Só o Rafa não mandou nada.",
@@ -1282,7 +1356,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/C05_B_d4b252c09f_9.1.mp4"
+    "video": "camera3d/C05_B_d4b252c09f_9.2.mp4"
    },
    "pausa_antes_s": 0.8
   },
@@ -1327,6 +1401,14 @@
      "volume_db": -16,
      "depois": false,
      "atraso": -0.2
+    },
+    {
+     "em": null,
+     "som": "ep09_jing",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -6.0,
+     "reverso": true
     }
    ],
    "pausa_antes_s": 0.6
@@ -1356,7 +1438,16 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.6
+   "pausa_antes_s": 1.6,
+   "sons": [
+    {
+     "em": "coreano",
+     "som": "sub_drop",
+     "volume_db": -23,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Existe um conto que as avós coreanas contam há séculos. Tem mais de setenta versões. Chama-se Yeou Nui. A Irmã Raposa.",
@@ -1410,6 +1501,13 @@
      "volume_db": -17,
      "depois": false,
      "atraso": -3.4
+    },
+    {
+     "em": null,
+     "som": "whoosh",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -4.9
     }
    ],
    "ambiente": {
@@ -1418,17 +1516,18 @@
    },
    "musica": {
     "som": "ep09_m04_joseon_irmas",
-    "volume_db": -30
+    "volume_db": -30,
+    "atraso": -5.4
    }
   },
   {
    "fala": "Um homem rico tinha três filhos, e nenhuma filha. Ele rezou tanto por uma menina que disse:",
    "cena": {
     "tipo": "texto",
-    "texto": "여우누이 · A Irmã Raposa\nconto popular coreano\nmais de 75 versões registradas",
+    "texto": "여우누이 · A Irmã Raposa\nmais de 75 versões",
     "estilo": "maquina",
     "vermelho": "75 versões",
-    "cps": 26,
+    "cps": 40,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -1456,8 +1555,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
-   },
-   "pausa_antes_s": 2.4
+   }
   },
   {
    "fala": "A filha nasceu.",
@@ -1485,14 +1583,13 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/J01_C_9645d12b76_12.6.mp4"
    },
    "ambiente": {
     "som": "ep09_lago",
     "volume_db": -30
-   },
-   "pausa_antes_s": 1.72
+   }
   },
   {
    "fala": "O pai mandou o filho mais velho vigiar.",
@@ -1529,10 +1626,19 @@
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/J02_B_2a097ccfc4_17.1.mp4"
    },
-   "pausa_antes_s": 1.2
+   "sons": [
+    {
+     "em": "puxou",
+     "som": "ep05_raspar",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "tom": -3
+    }
+   ]
   },
   {
    "fala": "E comeu. Ali mesmo. Quente.",
@@ -1656,7 +1762,27 @@
    "pausa_antes_s": 0.8
   },
   {
-   "fala": "Anos depois, os dois irmãos expulsos voltaram."
+   "fala": "Anos depois, os dois irmãos expulsos voltaram.",
+   "cena": {
+    "imagem": "imagens_v3/J04_B.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.75,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "A vila estava vazia. Nenhum cachorro, nenhuma galinha. Nenhuma pessoa.",
@@ -1676,7 +1802,17 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
-   }
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep06_vento_capacete",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "saida": 2.0
+    }
+   ]
   },
   {
    "fala": "Na porta da casa, a irmã esperava eles. Sorrindo.",
@@ -1726,7 +1862,7 @@
   },
   {
    "fala": "Ela tinha comido os pais. O irmão mais novo. A vila inteira.",
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.3
   },
   {
    "fala": "E disse, com toda a calma, que só faltavam mais dois.",
@@ -1750,7 +1886,16 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": "dois",
+     "som": "sub_drop",
+     "volume_db": -23,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Repara: no conto, o monstro não vem de fora. Ele nasceu dentro de casa. Usa o rosto de quem você ama.",
@@ -1885,7 +2030,7 @@
     "video": "camera3d/C02_C_6ceb88e3c2_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_corredor",
+    "som": "ep09_cozinha",
     "volume_db": -28
    }
   },
@@ -1898,10 +2043,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.38,
+    "antecipar": 0.25,
     "video": "camera3d/C04_B_f900ce5b60_8.2.mp4"
-   },
-   "pausa_antes_s": 0.13
+   }
   },
   {
    "fala": "O Rafa contou no grupo. O pai respondeu:",
@@ -2064,8 +2208,8 @@
     "video": "camera3d/C05_A_7aaa60f443_6.5.mp4"
    },
    "ambiente": {
-    "som": "geladeira",
-    "volume_db": -30
+    "som": "ep09_cozinha",
+    "volume_db": -25
    }
   },
   {
@@ -2077,10 +2221,18 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/C03_B_046affb985_6.5.mp4"
    },
-   "pausa_antes_s": 0.75
+   "sons": [
+    {
+     "em": "acesa",
+     "som": "tecla",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "A Lívia estava de costas, na frente da pia. Parada.",
@@ -2094,7 +2246,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.56
+   "pausa_antes_s": 0.8
   },
   {
    "fala": "Ele ouviu um barulho baixo, molhado. De mão esfregando mão.",
@@ -2121,10 +2273,12 @@
    "sons": [
     {
      "em": "molhado",
-     "som": "ep09_papel",
-     "volume_db": -30,
+     "som": "ep05_raspar",
+     "volume_db": -31,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "tom": 4,
+     "saida": 1.0
     }
    ]
   },
@@ -2140,7 +2294,16 @@
     "antecipar": 0.6,
     "video": "camera3d/C02_B_2e0888da2f_7.5.mp4"
    },
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": "vidro",
+     "som": "ep08_bate_vidro",
+     "volume_db": -28,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Ela estava passando óleo no braço. Devagar. Até o ombro.",
@@ -2199,6 +2362,13 @@
      "volume_db": -26,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "passo",
+     "som": "ep06_estalo",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.0
     }
    ]
   },
@@ -2214,7 +2384,7 @@
     "antecipar": 0.6,
     "video": "camera3d/C03_B_333fdbff43_8.0.mp4"
    },
-   "pausa_antes_s": 2.1
+   "pausa_antes_s": 0.6
   },
   {
    "fala": "\"Oppa? Não consegue dormir?\"",
@@ -2243,6 +2413,13 @@
      "volume_db": -10,
      "depois": false,
      "atraso": -0.05
+    },
+    {
+     "em": null,
+     "som": "sub_drop",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.05
     }
    ]
   },
@@ -2269,8 +2446,8 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "geladeira",
-    "volume_db": -32
+    "som": "ep09_cozinha",
+    "volume_db": -28
    },
    "sons": [
     {
@@ -2279,9 +2456,20 @@
      "volume_db": -24,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "apagada",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 0.42
+   "musica": {
+    "som": "ep09_m05_a_parede",
+    "volume_db": -32
+   },
+   "pausa_antes_s": 1.41
   },
   {
    "fala": "De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.",
@@ -2308,10 +2496,6 @@
    "ambiente": {
     "som": "ep09_sala_bh",
     "volume_db": -28
-   },
-   "musica": {
-    "som": "ep09_m05_a_parede",
-    "volume_db": -33
    },
    "pausa_antes_s": 2.4
   },
@@ -2367,6 +2551,13 @@
      "volume_db": -17,
      "depois": false,
      "atraso": -3.4
+    },
+    {
+     "em": null,
+     "som": "whoosh",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -4.9
     }
    ],
    "ambiente": {
@@ -2375,17 +2566,18 @@
    },
    "musica": {
     "som": "ep09_m03_as_regras",
-    "volume_db": -30
+    "volume_db": -30,
+    "atraso": -5.4
    }
   },
   {
    "fala": "Chama-se o Jogo do Elevador. E promete levar você para outro mundo.",
    "cena": {
     "tipo": "texto",
-    "texto": "엘리베이터 게임 · o Jogo do Elevador\nritual da internet\norigem disputada entre Coreia e Japão",
+    "texto": "엘리베이터 게임\no Jogo do Elevador",
     "estilo": "maquina",
     "vermelho": "o Jogo do Elevador",
-    "cps": 26,
+    "cps": 40,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -2395,10 +2587,10 @@
   {
    "fala": "As regras são sempre as mesmas.",
    "ambiente": {
-    "som": "ep09_motor_elevador",
+    "som": "ep09_elevador_tenso",
     "volume_db": -28
    },
-   "pausa_antes_s": 6.28
+   "pausa_antes_s": 0.65
   },
   {
    "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
@@ -2462,6 +2654,41 @@
      "volume_db": -26,
      "depois": false,
      "atraso": 0.4
+    },
+    {
+     "em": "quatro",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dois",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dez",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.62
     }
    ],
    "pausa_antes_s": 0.6
@@ -2498,14 +2725,32 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/H05_C_e7794129a0_11.2.mp4"
    },
-   "pausa_antes_s": 0.75
+   "sons": [
+    {
+     "em": "entrar",
+     "som": "ep09_elevador",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Não olha para ela. Não fala com ela. Não responde, aconteça o que acontecer.",
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": "olha",
+     "som": "ep07_respiracao_nuca",
+     "volume_db": -29,
+     "depois": false,
+     "atraso": 0.0,
+     "pan": -0.8
+    }
+   ]
   },
   {
    "fala": "Aí você aperta o um. Se o elevador descer, acabou: o ritual falhou, e você está salvo.",
@@ -2558,6 +2803,15 @@
     "antecipar": 0.6
    },
    "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": null,
+     "som": "braam_horror",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
    "sem_legenda": true
   },
   {
@@ -2569,10 +2823,10 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/H06_B_05ad7571e9_9.4.mp4"
    },
-   "pausa_antes_s": 2.98
+   "pausa_antes_s": 1.2
   },
   {
    "fala": "é a mulher do quinto andar.",
@@ -2607,14 +2861,13 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/C05_C_aa58f1206f_8.2.mp4"
    },
    "ambiente": {
-    "som": "geladeira",
-    "volume_db": -32
-   },
-   "pausa_antes_s": 1.43
+    "som": "ep09_cozinha",
+    "volume_db": -30
+   }
   },
   {
    "fala": "E embaixo do post, tinha um comentário.",
@@ -2743,6 +2996,13 @@
      "volume_db": -16,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": null,
+     "som": "whoosh",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -4.9
     }
    ],
    "ambiente": {
@@ -2751,7 +3011,8 @@
    },
    "musica": {
     "som": "ep09_m06_moca_de_branco",
-    "volume_db": -31
+    "volume_db": -30,
+    "atraso": -5.4
    }
   },
   {
@@ -2767,25 +3028,24 @@
     "video": "camera3d/H01_A_5ca19631cf_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_hospital",
-    "volume_db": -28
+    "som": "ep09_hospital_tenso",
+    "volume_db": -26
    },
-   "pausa_antes_s": 3.06
+   "pausa_antes_s": 0.6
   },
   {
    "fala": "O hospital psiquiátrico de Gonjiam, a uma hora de Seul. Fechado nos anos noventa. Abandonado no meio do mato.",
    "cena": {
     "tipo": "texto",
-    "texto": "곤지암 정신병원 · Gonjiam\nGwangju, Gyeonggi · abandonado nos anos 90\nCNN, 2012: \"um dos 7 lugares mais assustadores do planeta\"",
+    "texto": "곤지암 · Gonjiam\nabandonado nos anos 90",
     "estilo": "maquina",
-    "vermelho": "\"um dos 7 lugares mais assustadores do planeta\"",
-    "cps": 26,
+    "vermelho": "abandonado",
+    "cps": 40,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.25
    },
-   "sem_legenda": true,
-   "pausa_antes_s": 0.96
+   "sem_legenda": true
   },
   {
    "fala": "A internet coreana diz que os pacientes morriam lá dentro. Que o diretor desapareceu. Que de noite as janelas acendem.",
@@ -2798,8 +3058,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
     "video": "camera3d/H01_B_a220ef512a_10.3.mp4"
-   },
-   "pausa_antes_s": 5.27
+   }
   },
   {
    "fala": "Nada disso foi provado. O hospital fechou por dívidas.",
@@ -2835,9 +3094,19 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H01_C_35050b6638_8.9.mp4"
+    "video": "camera3d/H01_C_35050b6638_9.0.mp4"
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": "CNN",
+     "som": "estatica_cctv",
+     "volume_db": -30,
+     "depois": false,
+     "atraso": 0.0,
+     "saida": 1.5
+    }
+   ]
   },
   {
    "fala": "E desde então, todo fim de semana, gente pulava o muro para passar a noite lá dentro. E filmar.",
@@ -2871,7 +3140,7 @@
       1.0
      ],
      "em": "grupo",
-     "video": "camera3d/H02_B_f6dd088d21_8.9.mp4"
+     "video": "camera3d/H02_B_f6dd088d21_9.0.mp4"
     },
     {
      "zoom": [
@@ -2918,8 +3187,8 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "ep09_hospital",
-    "volume_db": -28
+    "som": "ep09_hospital_tenso",
+    "volume_db": -26
    },
    "pausa_antes_s": 0.8
   },
@@ -2969,18 +3238,26 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/H01_B_149a44c77f_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_hospital",
-    "volume_db": -26
+    "som": "ep09_hospital_tenso",
+    "volume_db": -24
    },
    "musica": {
     "som": "ep09_m08_gut_mudang",
     "volume_db": -31
    },
-   "pausa_antes_s": 1.7
+   "sons": [
+    {
+     "em": "muro",
+     "som": "metal_parada",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "O hospital tinha só quatro andares. O elevador estava parado havia mais de vinte anos. Sem porta, sem luz, sem nada.",
@@ -2994,7 +3271,17 @@
     "antecipar": 0.6,
     "video": "camera3d/H02_C_9219085947_11.3.mp4"
    },
-   "pausa_antes_s": 1.76
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": "parado",
+     "som": "ep07_corrente_longe",
+     "volume_db": -29,
+     "depois": false,
+     "atraso": 0.0,
+     "saida": 2.0
+    }
+   ]
   },
   {
    "fala": "O Rafa entrou mesmo assim. Encostou na parede de metal. E esperou dar três horas.",
@@ -3034,8 +3321,8 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "ep09_motor_elevador",
-    "volume_db": -26
+    "som": "ep09_elevador_tenso",
+    "volume_db": -22
    },
    "sons": [
     {
@@ -3091,10 +3378,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "antecipar": 0.25,
     "video": "camera3d/H03_C_88ca612f51_11.7.mp4"
-   },
-   "pausa_antes_s": 1.51
+   }
   },
   {
    "fala": "Quatro. Dois. Seis. Dois. Dez.",
@@ -3118,7 +3404,44 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
-   }
+   },
+   "sons": [
+    {
+     "em": "Quatro",
+     "som": "tecla",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dois",
+     "som": "tecla",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dez",
+     "som": "tecla",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.62
+    }
+   ]
   },
   {
    "fala": "Ninguém entrou.",
@@ -3146,7 +3469,16 @@
   },
   {
    "fala": "Cinco.",
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": null,
+     "som": "tecla",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "A porta abriu no quinto andar. De um prédio de quatro.",
@@ -3168,7 +3500,7 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.25
    },
    "sons": [
     {
@@ -3178,8 +3510,7 @@
      "depois": false,
      "atraso": 0.0
     }
-   ],
-   "pausa_antes_s": 0.38
+   ]
   },
   {
    "fala": "Entrou alguém. Ele ouviu os passos. Descalços. Sentiu o cheiro: óleo de gergelim.",
@@ -3190,8 +3521,8 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6,
-    "video": "camera3d/H05_A_9fe5d203fc_10.9.mp4"
+    "antecipar": 0.25,
+    "video": "camera3d/H05_A_9fe5d203fc_10.8.mp4"
    },
    "sons": [
     {
@@ -3199,10 +3530,10 @@
      "som": "passos_atrasados",
      "volume_db": -24,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "pan": -0.5
     }
-   ],
-   "pausa_antes_s": 0.35
+   ]
   },
   {
    "fala": "Não olhou.",
@@ -3236,7 +3567,8 @@
      "som": "ep07_respiracao_nuca",
      "volume_db": -20,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "pan": -0.85
     }
    ]
   },
@@ -3314,7 +3646,16 @@
     "antecipar": 0.6,
     "video": "camera3d/H03_C_f9629b95cb_6.5.mp4"
    },
-   "pausa_antes_s": 2.44
+   "pausa_antes_s": 1.2,
+   "sons": [
+    {
+     "em": null,
+     "som": "riser_tensao",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Quando a porta abriu, era o hospital. O mesmo corredor.",
@@ -3326,17 +3667,25 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_fluorescente",
+    "som": "ep09_fluorescente_tenso",
     "volume_db": -24
    },
    "musica": {
     "som": "ep09_m07_o_chamado",
     "volume_db": -30
    },
-   "pausa_antes_s": 0.61
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_elevador",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -0.4
+    }
+   ]
   },
   {
    "fala": "Só que inteiro. Pintado. Com as lâmpadas acesas. Como se tivesse sido abandonado ontem.",
@@ -3375,7 +3724,7 @@
      ],
      "entrada": "fundir",
      "duracao_entrada": 0.6,
-     "antecipar": 0.6
+     "antecipar": 0.25
     },
     {
      "imagem": "imagens_v3/H07_A.jpg",
@@ -3403,8 +3752,7 @@
      ],
      "em": "quatrocentos"
     }
-   ],
-   "pausa_antes_s": 1.32
+   ]
   },
   {
    "fala": "Ele foi andando. O chão estava frio. E tinha pegadas de pé descalço, oleosas, indo até a porta.",
@@ -3418,7 +3766,16 @@
     "antecipar": 0.6,
     "video": "camera3d/H07_A_3efcb1cc1f_10.0.mp4"
    },
-   "pausa_antes_s": 3.1
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": "andando",
+     "som": "passos_atrasados",
+     "volume_db": -28,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "Encostou o ouvido.",
@@ -3485,7 +3842,7 @@
     "som": "nenhum"
    },
    "ambiente": {
-    "som": "ep09_fluorescente",
+    "som": "ep09_fluorescente_tenso",
     "volume_db": -30
    }
   },
@@ -3546,6 +3903,13 @@
      "volume_db": -12,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "canto",
+     "som": "sub_drop",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
     }
    ]
   },
@@ -3570,6 +3934,10 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
+   },
+   "musica": {
+    "som": "ep09_m07_o_chamado",
+    "volume_db": -31
    },
    "pausa_antes_s": 0.6
   },
@@ -3631,6 +3999,15 @@
      ],
      "em": "elevador"
     }
+   ],
+   "sons": [
+    {
+     "em": "Voltaram",
+     "som": "passos_atrasados",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.0
+    }
    ]
   },
   {
@@ -3656,10 +4033,19 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "ep09_motor_elevador",
-    "volume_db": -28
+    "som": "ep09_elevador_tenso",
+    "volume_db": -26
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": "um",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "E, enquanto a porta fechava, lá do fim do corredor, a voz dele mesmo, chamando:"
@@ -3677,7 +4063,7 @@
     "video": "camera3d/H06_B_afa5143214_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_fluorescente",
+    "som": "ep09_fluorescente_tenso",
     "volume_db": -26
    },
    "sons": [
@@ -3699,18 +4085,17 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.27,
+    "antecipar": 0.25,
     "video": "camera3d/H02_B_e0db0d04ce_10.0.mp4"
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
-    "volume_db": -30
+    "som": "ep09_amanhecer_tenso",
+    "volume_db": -28
    },
    "musica": {
     "som": "ep09_m09_o_quarto",
     "volume_db": -31
-   },
-   "pausa_antes_s": 0.3
+   }
   },
   {
    "fala": "A Lívia estava do lado dele. Segurando a mão dele. Em silêncio.",
@@ -3803,7 +4188,16 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.3
+   "pausa_antes_s": 0.3,
+   "sons": [
+    {
+     "em": "virou",
+     "som": "whoosh",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "No sofá da sala, em Belo Horizonte, sentada de costas para a câmera, estava a irmã dele.",
@@ -3825,9 +4219,8 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
-   "pausa_antes_s": 1.8
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Ela virou só o rosto. Devagar.",
@@ -3877,6 +4270,21 @@
      "volume_db": -12,
      "depois": false,
      "atraso": -0.05
+    },
+    {
+     "em": null,
+     "som": "ep09_jing",
+     "volume_db": -23,
+     "depois": false,
+     "atraso": -6.0,
+     "reverso": true
+    },
+    {
+     "em": null,
+     "som": "sub_drop",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.05
     }
    ]
   },
@@ -3903,10 +4311,14 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
+    "som": "ep09_amanhecer_tenso",
+    "volume_db": -30
+   },
+   "musica": {
+    "som": "ep09_m07_o_chamado",
     "volume_db": -32
    },
-   "pausa_antes_s": 1.12
+   "pausa_antes_s": 1.64
   },
   {
    "fala": "Ela continuava em silêncio. Segurando a mão dele.",
@@ -3959,6 +4371,13 @@
      "em": "escorregadia",
      "som": "ep09_jing",
      "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "escorregadia",
+     "som": "sub_drop",
+     "volume_db": -22,
      "depois": false,
      "atraso": 0.0
     }
@@ -4092,9 +4511,8 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
-   "pausa_antes_s": 2.5
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Se alguém da sua família te chamar de longe… de outro cômodo, da rua, de um número estranho…",
@@ -4162,10 +4580,20 @@
     "video": "camera3d/H08_C_8386bb246b_22.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_mata_noite",
+    "som": "ep09_mata_tensa",
     "volume_db": -28
    },
-   "pausa_antes_s": 0.8
+   "pausa_antes_s": 0.8,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep07_respiracao_nuca",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.3,
+     "pan": -0.85
+    }
+   ]
   },
   {
    "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
