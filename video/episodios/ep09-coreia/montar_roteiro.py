@@ -69,7 +69,7 @@ def texto(t, vermelho=None, estilo="maquina", **kw):
 
 def ficha(t, vermelho=None):
     """FICHA de documentário (dado real, com fonte): máquina de escrever, devagar o bastante para ler."""
-    return texto(t, vermelho, cps=26)
+    return texto(t, vermelho, cps=40)
 
 
 def K(texto_k, x=0.82, y=0.5, modo="luz", legenda=None, **kw):
@@ -118,8 +118,8 @@ def fx(i, em, som, db, depois=False, atraso=0.0):
     batidas[i].setdefault("sons", []).append({"em": em, "som": som, "volume_db": db, "depois": depois, "atraso": atraso})
 
 
-def musica(i, faixa, db, em=None):
-    batidas[i]["musica"] = {"som": f"ep09_m{faixa}", "volume_db": db, **({"em": em} if em else {})}
+def musica(i, faixa, db, em=None, atraso=0.0):
+    batidas[i]["musica"] = {"som": f"ep09_m{faixa}", "volume_db": db, **({"em": em} if em else {}), **({"atraso": atraso} if atraso else {})}
 
 
 def capitulo(i, n, titulo, sub, imagem, cena, em):
@@ -217,7 +217,7 @@ capitulo(27, 1, "O que mora no monte Jangsan", "장산범 · Busan", I + "M07_A.
          img("M01_C", (1.0, 1.06), ((0.6, 0.45), (0.62, 0.42))), "Em")
 C(28, img("M07_B", (1.0, 1.08), ((0.45, 0.4), (0.48, 0.38))))             # o bicho branco entre as árvores (foto borrada)
 C(29, vid("V01_B", (1.0, 1.03)))
-C(30, ficha("장산범 · Jangsan-beom\n\"o tigre do Jangsan\"\nrelatos desde 2012–2013 · Busan", "\"o tigre do Jangsan\""))
+C(30, ficha("장산범 · Jangsan-beom\n\"o tigre do Jangsan\"", "\"o tigre do Jangsan\""))
 C(31, c3("M02_A", "entrar", (0.45, 0.5), 0.9, 0.3))
 C(32, img("M07_A", (1.0, 1.06), ((0.55, 0.45), (0.57, 0.42))))
 C(33, img("M07_C", (1.16, 1.2), ((0.55, 0.45), (0.56, 0.44)), kanji=K("장산범", 0.2, 0.5, "luz", "Jangsan-beom", em="Jangsan")))
@@ -229,7 +229,7 @@ C(36, img("M02_B", (1.0, 1.06), ((0.5, 0.5), (0.55, 0.45))))
 C(37, img("M03_A", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5)), kanji=K("목소리", 0.8, 0.5, "luz", "moksori · a voz", em="voz")))
 pincel(37, "voz")
 amb(27, "nenhum"); amb(29, "ep09_mata_noite", -26); amb(35, "nenhum"); amb(36, "ep09_mata_noite", -26)
-musica(27, "12_jangsan", -31)
+musica(27, "12_jangsan", -30, atraso=-5.4)            # entra com o cartão do capítulo
 pausa(28, 0.6); pausa(32, 1.0); pausa(34, 0.6); pausa(37, 1.2)
 
 # ================================================================ O RAFA — 2: os tênis
@@ -258,7 +258,7 @@ pausa(41, 0.8); pausa(45, 0.6); pausa(49, 0.8); pausa(51, 0.6); pausa(53, 1.6)
 # ================================================================ PARTE 2 — a irmã raposa (era Joseon)
 capitulo(54, 2, "A irmã raposa", "여우누이 · Yeou Nui", I + "J01_A.jpg",
          img("J01_A", (1.0, 1.06), ((0.4, 0.55), (0.42, 0.55))), "Existe")
-C(55, ficha("여우누이 · A Irmã Raposa\nconto popular coreano\nmais de 75 versões registradas", "75 versões"))
+C(55, ficha("여우누이 · A Irmã Raposa\nmais de 75 versões", "75 versões"))
 C(56, img("J01_B", (1.0, 1.06), ((0.4, 0.55), (0.42, 0.5))))
 C(57, c3("J02_A", "entrar", (0.55, 0.55), 0.8, 0.0))                     # a menina de hanbok, de costas
 C(58, c3("J01_C", "entrar", (0.45, 0.6), 0.9, 0.3, atmos={"neblina": 0.4}))   # o estábulo à noite
@@ -278,7 +278,7 @@ C(70, img("J04_B", (1.05, 1.1), ((0.72, 0.55), (0.72, 0.55))))             # os 
 C(71, c3("J02_C", "entrar", (0.45, 0.45), 0.9, 0.3))
 C(72, img("J03_C", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45)), atmos={"neblina": 0.5}))
 amb(54, "nenhum"); amb(58, "ep09_lago", -30); amb(66, "nenhum")
-musica(54, "04_joseon_irmas", -30)
+musica(54, "04_joseon_irmas", -30, atraso=-5.4)
 fx(61, None, "ep09_buk", -20, atraso=-0.4)
 pausa(57, 0.8); pausa(61, 1.0); pausa(64, 0.8); pausa(67, 0.6); pausa(69, 0.8); pausa(70, 0.8); pausa(72, 1.6)
 
@@ -310,13 +310,13 @@ fx(81, "molhado", "ep09_papel", -30)                                      # (mã
 fx(84, "trás", "ep07_respiracao_nuca", -26)
 fx(86, None, "stinger_cordas", -10, atraso=-0.05)
 fx(87, "apagada", "ep09_jing", -24)
-batidas[88]["musica"] = {"som": "ep09_m05_a_parede", "volume_db": -33}
+batidas[87]["musica"] = {"som": "ep09_m05_a_parede", "volume_db": -32}   # volta logo depois do susto 1
 pausa(80, 0.8); pausa(82, 0.8); pausa(85, 0.6); pausa(87, 1.6); pausa(88, 2.4)
 
 # ================================================================ PARTE 3 — o elevador
 capitulo(89, 3, "O elevador", "엘리베이터 게임 · o jogo", I + "H04_A.jpg",
          img("H04_A", (1.0, 1.06), ((0.5, 0.5), (0.52, 0.45))), "Existe")
-C(90, ficha("엘리베이터 게임 · o Jogo do Elevador\nritual da internet\norigem disputada entre Coreia e Japão", "o Jogo do Elevador"))
+C(90, ficha("엘리베이터 게임\no Jogo do Elevador", "o Jogo do Elevador"))
 C(91, img("H03_B", (1.0, 1.06), ((0.45, 0.5), (0.45, 0.45))))
 C(92, c3("H03_C", "entrar", (0.45, 0.45), 0.8, 0.0))
 C(93, img("H03_B", (1.0, 1.05), ((0.45, 0.5), (0.45, 0.47))), (vid("V02_B", (1.4, 1.42), foco=[[0.62, 0.5], [0.62, 0.5]]), "nesta"))                       # 4 → 2 → 6 → 2 → 10 (a placa de hangul inventado fica fora)
@@ -333,7 +333,7 @@ C(103, img("C05_A", (1.05, 1.12), ((0.62, 0.5), (0.64, 0.5))))
 C(104, texto("\"Quem volta da montanha nunca é quem subiu.\nO de verdade fica do outro lado.\"",
              "nunca é quem subiu.\"", cps=22, tamanho=64))   # o texto fica a frase inteira (tempo de leitura)
 amb(89, "nenhum"); amb(91, "ep09_motor_elevador", -28); amb(102, "geladeira", -32)
-musica(89, "03_as_regras", -30)
+musica(89, "03_as_regras", -30, atraso=-5.4)
 fx(93, None, "ep09_elevador", -26, atraso=0.4)
 pausa(93, 0.6); pausa(96, 0.8); pausa(98, 0.6); pausa(99, 0.8); pausa(101, 1.0); pausa(103, 0.6); pausa(104, 0.8)
 
@@ -344,8 +344,7 @@ capitulo(105, 4, "O hospital", "사 · 4 · morte", I + "H01_B.jpg",
                     K("死", 0.8, 0.45, "sangue", "sa · morte", tam=0.26, em="morte", glitch=True)]), "Na")
 pincel(105, "sa"); pincel(105, "morte")
 C(106, c3("H01_A", "entrar", (0.5, 0.45), 0.8, 0.0))
-C(107, ficha("곤지암 정신병원 · Gonjiam\nGwangju, Gyeonggi · abandonado nos anos 90\nCNN, 2012: \"um dos 7 lugares mais assustadores do planeta\"",
-             "\"um dos 7 lugares mais assustadores do planeta\""))
+C(107, ficha("곤지암 · Gonjiam\nabandonado nos anos 90", "abandonado"))
 C(108, c3("H01_B", "entrar", (0.45, 0.45), 0.9, 0.2))
 C(109, img("H02_A", (1.0, 1.06), ((0.5, 0.5), (0.55, 0.45))))
 C(110, c3("H01_C", "lado", (0.4, 0.45), 0.8, 0.0))
@@ -356,7 +355,7 @@ C(113, img("H07_C", (1.0, 1.08), ((0.5, 0.45), (0.5, 0.42)), kanji=K("402", 0.82
 C(114, c3("C05_B", "entrar", (0.45, 0.55), 0.8, 0.2))
 C(115, img("H01_C", (1.0, 1.05), ((0.5, 0.5), (0.5, 0.48))))
 amb(105, "nenhum"); amb(106, "ep09_hospital", -28); amb(112, "nenhum"); amb(113, "ep09_hospital", -28)
-musica(105, "06_moca_de_branco", -31)
+musica(105, "06_moca_de_branco", -30, atraso=-5.4)
 pausa(106, 0.6); pausa(109, 0.6); pausa(110, 0.6); pausa(113, 0.8); pausa(115, 1.4)
 
 # ================================================================ O RAFA — 4: o ritual
@@ -411,6 +410,7 @@ C(151, c3("H06_B", "sair", (0.5, 0.45), 0.9, 0.3))
 amb(135, "ep09_fluorescente", -24); amb(149, "ep09_motor_elevador", -28); amb(151, "ep09_fluorescente", -26)
 musica(135, "07_o_chamado", -30)
 batidas[143]["musica"] = {"som": "nenhum"}
+batidas[145]["musica"] = {"som": "ep09_m07_o_chamado", "volume_db": -31}   # volta logo depois do susto 2
 batidas[143]["ambiente"] = {"som": "ep09_fluorescente", "volume_db": -30}
 pausa(144, 3.0)                                                           # os 3 s de silêncio antes da sala
 fx(144, None, "ep06_porta_range", -22, atraso=-2.8)
@@ -437,6 +437,7 @@ amb(152, "ep09_mata_noite", -30); amb(156, "ep09_sala_bh", -28); amb(161, "nenhu
 musica(152, "09_o_quarto", -31)
 batidas[160]["musica"] = {"som": "nenhum", "em": "rosto"}
 fx(161, None, "stinger_cordas", -12, atraso=-0.05)
+batidas[162]["musica"] = {"som": "ep09_m07_o_chamado", "volume_db": -32}   # volta depois do susto 3 (o óleo na mão)
 fx(164, "escorregadia", "ep09_jing", -24)
 pausa(158, 0.6); pausa(160, 0.6); pausa(162, 2.0); pausa(163, 0.8); pausa(164, 0.6)
 
@@ -537,8 +538,8 @@ def garantir_leitura():
         t1 = ini[i + 1] + prox.get("pausa_antes_s", 0) - (cenas_de(prox)[0].get("antecipar", 0) if cenas_de(prox) else 0)
         sobra = (t1 - ini[i]) - len(c["texto"]) / c.get("cps", 40)
         falta = 1.5 + 0.3 * len(c["texto"].split()) - sobra
-        if falta > -0.45:
-            prox["pausa_antes_s"] = round(prox.get("pausa_antes_s", 0) + falta + 0.6, 2); mudou.append((i, round(falta, 1)))
+        if falta > -0.45:   # 15/11: no máximo 1,2 s a mais (a narração continua por cima do texto)
+            prox["pausa_antes_s"] = round(prox.get("pausa_antes_s", 0) + min(1.2, falta + 0.6), 2); mudou.append((i, round(falta, 1)))
     print("pausas aumentadas para dar tempo de leitura (fala, s):", mudou)
 
 
@@ -575,7 +576,7 @@ def ritmo():
             ks = ks if isinstance(ks, list) else [ks]
             for K in ks:
                 off = t_palavra(i, K["em"]) if K.get("em") else K.get("atraso", 0.5)
-                n = max(n, off + (6.5 if K.get("legenda") or len(K.get("texto", "")) > 1 else 3.5))
+                n = max(n, off + (5.0 if K.get("legenda") or len(K.get("texto", "")) > 1 else 3.5))
             if c.get("linha"):
                 n = max(n, 6.5)
             if c.get("tipo") == "texto":
@@ -604,7 +605,7 @@ def ritmo():
         if acc < falta and comum(b) and i not in PROTEGE:
             b.pop("cena", None); b.pop("cenas", None); continuadas.append(i); acc += dur(i); continue
         if acc < falta:
-            extra = round(min(2.5, falta - acc), 2); b["pausa_antes_s"] = round(b.get("pausa_antes_s", 0) + extra, 2); alongadas.append((i, extra))
+            extra = round(min(1.2, falta - acc), 2)   # 15/11: pausa longa sem nada acontecendo parece erro; b["pausa_antes_s"] = round(b.get("pausa_antes_s", 0) + extra, 2); alongadas.append((i, extra))
         acc, falta = dur(i), precisa(b, i)
     # fusões que terminam antes da voz
     for i, b in enumerate(batidas[1:len(falas)], 1):

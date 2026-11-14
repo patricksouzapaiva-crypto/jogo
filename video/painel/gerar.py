@@ -851,7 +851,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             if not plano["trilhas"] and roteiro.get("musica"):
                 plano["trilhas"].append({"t": 0.0, **roteiro["musica"]})
             mu = b["musica"]
-            plano["trilhas"].append({"t": rel.em(k, mu.get("em")), "som": mu["som"], "volume_db": mu.get("volume_db", -12)})
+            plano["trilhas"].append({"t": rel.em(k, mu.get("em")) + mu.get("atraso", 0), "som": mu["som"], "volume_db": mu.get("volume_db", -12)})   # atraso < 0: entra antes da fala (ex.: junto com o cartão do capítulo)
         if b.get("ambiente"):
             a = b["ambiente"]
             plano["ambientes"].append({"t": rel.em(k, a.get("em")), "som": a["som"], "volume_db": a.get("volume_db", -6)})

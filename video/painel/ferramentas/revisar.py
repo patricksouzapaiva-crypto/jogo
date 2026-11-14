@@ -105,6 +105,22 @@ def video(mp4, log=None):
             sh.paste(im, ((j % 2) * 810, (j // 2) * h))
         sh.save(pasta / f"folha_{k // 8:02d}.jpg", quality=85)
     print(f"{len(cenas)} cenas → folhas em {pasta} (olhar TODAS antes de mandar)")
+    # 15/11 (usuário): "silêncio sem motivo parece erro, a pessoa sai do vídeo" — procura trechos > 3 s quase mudos
+    import numpy as np
+    x = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp4), "-ac", "1", "-ar", "8000", "-f", "f32le", "-"],
+                                     capture_output=True).stdout, np.float32)
+    j = x[:len(x) // 4000 * 4000].reshape(-1, 4000)                     # janelas de 0,5 s
+    db = 20 * np.log10(np.sqrt((j ** 2).mean(1)) + 1e-7)
+    mudo, ini = db < -31, None      # sem voz e só um fundo muito baixo (o rascunho do Ep. 09 tinha -35 a -40)
+    for k, m in enumerate(list(mudo) + [False]):
+        if m and ini is None:
+            ini = k
+        elif not m and ini is not None:
+            if (k - ini) * 0.5 >= 3.5 and ini * 0.5 < dur - 25:           # o fim (tela de inscrição) não conta
+                AVISOS.append(f"quase silêncio de {(k - ini) * 0.5:.1f}s em {int(ini * 0.5 // 60)}:{ini * 0.5 % 60:04.1f} — só pode se for o silêncio de um susto")
+            ini = None
+    longos = sum(1 for k in range(len(db)) if db[k] < -38)
+    print(f"trechos de 0,5 s muito baixos (< -38 dB): {longos}")
     if log and Path(log).exists():
         txt = Path(log).read_text()
         for m in re.findall(r"vídeo (\S+): desacelerado para ([0-9.]+)", txt):
