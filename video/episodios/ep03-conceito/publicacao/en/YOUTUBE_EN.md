@@ -70,4 +70,5 @@ Go back to the start and tell me which image you saw her in first.
 - Audience: not made for kids · Altered or synthetic content: **Yes**.
 - Language: English · Category: Entertainment · Playlist: **The Watcher — Cases**.
 - Captions: upload `captions_en.srt` (English) — option A.
+- Thumbnails: `thumbnail_C_behind_you.jpg`, `thumbnail_A_every_one.jpg`, `thumbnail_B_find_her.jpg` — upload all 3 in "Test & compare".
 - End screen: Subscribe + next video. Upload time: 7–10 PM US Eastern (8 PM–11 PM BRT is fine).
