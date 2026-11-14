@@ -26,16 +26,18 @@ ESCOLHA = {
     23: ("livia1_Despina", LONGE_MATA, 0.7),  # "a mesma frase. Igualzinha. Com a mesma risada": a MESMA gravação
     43: ("mae1_Sulafat", CEL, 0.9),
     77: ("pai1_Orus", CEL, 0.9),
-    86: ("livia2_Despina", QUARTO, 0.75),
+    51: ("livia_oppa_Despina_oppa", PERTO, 0.6),   # 15/11: o Vigia lia "Oppa" — agora é ela (pronúncia "Ôppa", escolhida)
+    68: ("raposa1_Despina_oppa", QUARTO, 0.6),     # a irmã raposa na porta
+    86: ("livia2_Despina_oppa", QUARTO, 0.75),
     122: ("rafa1_Umbriel", ELEVADOR, 0.85),   # o áudio do gancho, agora ouvido de dentro do elevador
     130: ("falsa1_Despina", PERTO, 0.7),
-    132: ("falsa2_Despina", PERTO, 0.7),
+    132: ("falsa2_Despina_oppa", PERTO, 0.7),
     142: ("livia3_Despina", PORTA, 0.65),
     146: ("livia4_Despina", PERTO, 0.6),
     151: ("rafa_falso1_Umbriel", CORREDOR, 0.65),
     155: ("rafa2_Umbriel", CEL, 0.9),
     157: ("mae2_Sulafat", CEL, 0.9),        # a ligação (Sulafat no Gemini 3.8 Flash Lite, escolhida pelo usuário 14/11)
-    161: ("falsa3_Despina", CEL, 0.85),       # pela chamada de vídeo
+    161: ("falsa3_Despina_oppa", CEL, 0.85),       # pela chamada de vídeo
 }
 FIM = {}
 
@@ -51,7 +53,7 @@ def rms(x):
 
 
 fl, pers, _, _, _ = F.ler(); fl = fl + [F.VINHETA]
-TROCAS = {i: k for i, k in pers.items() if i in ESCOLHA}
+TROCAS = {i: pers.get(i, "narracao") for i in ESCOLHA}
 
 tempos = json.load(open(AQUI / "audio" / "alinhamento.json"))
 voz = ler(AQUI / "audio" / "voz_com_vinheta_limpa.wav")
