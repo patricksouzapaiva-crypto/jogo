@@ -60,7 +60,8 @@
     "tipo": "texto",
     "texto": "VOICE MESSAGE · 3:40 AM\nLucas… it's me. Sorry, I know it's late.",
     "estilo": "maquina",
-    "tamanho": 60
+    "tamanho": 60,
+    "cps": 34
    },
    "sem_legenda": true,
    "voz_fx": "telefone"
@@ -72,10 +73,12 @@
     "texto": "VOICE MESSAGE · 3:40 AM\nI found her. She's in every single photo.",
     "vermelho": "photo.",
     "estilo": "maquina",
-    "tamanho": 60
+    "tamanho": 60,
+    "cps": 34
    },
    "sem_legenda": true,
-   "voz_fx": "telefone"
+   "voz_fx": "telefone",
+   "pausa_antes_s": 3.0
   },
   {
    "fala": "\"And she knows… that I know.\"",
@@ -84,10 +87,12 @@
     "texto": "VOICE MESSAGE · 3:40 AM\nAnd she knows… that I know.",
     "vermelho": "know.",
     "estilo": "maquina",
-    "tamanho": 60
+    "tamanho": 60,
+    "cps": 34
    },
    "sem_legenda": true,
-   "voz_fx": "telefone"
+   "voz_fx": "telefone",
+   "pausa_antes_s": 3.0
   },
   {
    "fala": "That was the last message Rafael left on his brother's phone. At three forty in the morning.",
@@ -95,22 +100,26 @@
     "tipo": "texto",
     "texto": "That was the last message Rafael left on his brother's phone. At three forty in the morning.",
     "estilo": "maquina",
-    "vermelho": "morning."
+    "vermelho": "morning.",
+    "cps": 28
    },
    "musica": {
     "som": "drone_tensao",
     "volume_db": -26
    },
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 3.0
   },
   {
    "fala": "When Lucas got there the next morning, the apartment door was locked from the inside.",
    "cena": {
     "tipo": "texto",
     "texto": "When Lucas got there the next morning, the apartment door was locked from the inside.",
-    "estilo": "maquina"
+    "estilo": "maquina",
+    "cps": 28
    },
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 2.4
   },
   {
    "fala": "And Rafael was gone.",
@@ -129,7 +138,8 @@
      "atraso": 0.0
     }
    ],
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 3.0
   },
   {
    "fala": "Good evening. Welcome back to The Last Shelter.",
@@ -161,7 +171,8 @@
      "pose": "c_cafe_convite",
      "segurar": 2.2
     }
-   ]
+   ],
+   "pausa_antes_s": 5.5
   },
   {
    "fala": "Tell me something. And be honest."
@@ -293,7 +304,8 @@
      ]
     ],
     "lado": "esq"
-   }
+   },
+   "pausa_antes_s": 1.5
   },
   {
    "fala": "And ever since he was a child, he had felt it.",
@@ -543,7 +555,8 @@
       0.6
      ]
     ]
-   }
+   },
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "Over time, the feeling stopped being rare.",
@@ -623,7 +636,8 @@
      ]
     ],
     "lado": "esq"
-   }
+   },
+   "pausa_antes_s": 1.3
   },
   {
    "fala": "Being a sound engineer, he did what he knew how to do. He left a professional microphone recording in the hallway all night long.",
@@ -1087,7 +1101,8 @@
     "tipo": "texto",
     "texto": "After that, the account never replied again.",
     "estilo": "maquina",
-    "vermelho": "again."
+    "vermelho": "again.",
+    "cps": 28
    },
    "sem_legenda": true
   },
@@ -1121,7 +1136,8 @@
      "pose": "c_cafe_indicador",
      "segurar": 2.0
     }
-   ]
+   ],
+   "pausa_antes_s": 2.27
   },
   {
    "fala": "Each of your eyes has a blind spot. A place where the optic nerve leaves the eye, and where you, quite literally, can't see anything.",
@@ -1439,7 +1455,8 @@
    "musica": {
     "som": "trilha_tensa_2",
     "volume_db": -24
-   }
+   },
+   "pausa_antes_s": 1.0
   },
   {
    "fala": "When he was done, he understood the most terrifying thing of all.",
@@ -1522,7 +1539,7 @@
     "tipo": "texto",
     "texto": "Three forty in the morning.",
     "estilo": "impacto",
-    "cps": 12,
+    "cps": 28,
     "vermelho": "morning."
    },
    "musica": {
@@ -1536,9 +1553,11 @@
    "cena": {
     "tipo": "texto",
     "texto": "That's when he recorded the message for his brother.",
-    "estilo": "maquina"
+    "estilo": "maquina",
+    "cps": 28
    },
-   "sem_legenda": true
+   "sem_legenda": true,
+   "pausa_antes_s": 2.31
   },
   {
    "fala": "\"I found her. She's in every single photo. And she knows that I know.\"",
@@ -1547,7 +1566,8 @@
     "texto": "VOICE MESSAGE · 3:40 AM\nI found her. She's in every single photo. And she knows that I know.",
     "vermelho": "know.",
     "estilo": "maquina",
-    "tamanho": 60
+    "tamanho": 60,
+    "cps": 34
    },
    "sem_legenda": true,
    "voz_fx": "telefone"
@@ -1572,7 +1592,8 @@
     ],
     "encaixe": "cobrir",
     "lado": "esq"
-   }
+   },
+   "pausa_antes_s": 0.42
   },
   {
    "fala": "He opened the front camera on his phone. And, without turning his body, he looked at the hallway behind him on the screen.",

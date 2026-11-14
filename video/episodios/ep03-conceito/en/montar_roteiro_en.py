@@ -47,6 +47,22 @@ for i, b in enumerate(en["batidas"]):
     if i in (0, 1, 2, 96):
         b["voz_fx"] = "telefone"
 
+# 14/11: em inglês a narração é mais rápida e as telas de texto sumiam antes de dar para ler (aviso leitura do
+# 1º render). Deficit medido (s) por batida de texto: digita mais rápido e ganha uma pausa antes da próxima fala.
+DEFICIT = {0: 5.5, 1: 6.2, 2: 5.6, 3: 3.0, 4: 4.6, 5: 2.2, 16: 1.2, 30: 1.3, 35: 1.0, 66: 2.4, 87: 0.7,
+           94: 3.3, 95: 0.4, 96: 1.6}
+for i, d in DEFICIT.items():
+    c = en["batidas"][i]["cena"]
+    n = len(c["texto"])
+    cps_velho = c.get("cps") or 22
+    cps = 34 if i in (0, 1, 2, 96) else max(cps_velho, 28 if n > 25 else cps_velho)
+    c["cps"] = cps
+    falta = d - (n / cps_velho - n / cps)
+    if falta > 0 and i + 1 < len(en["batidas"]):
+        prox = en["batidas"][i + 1]
+        prox["pausa_antes_s"] = round(prox.get("pausa_antes_s", 0) + min(3.0, falta + 0.3), 2)
+
+en["batidas"][6]["pausa_antes_s"] = round(en["abertura"]["duracao"] + en["abertura"].get("segurar", 0) + 0.8 + 1.5, 2)  # abertura + leitura de "And Rafael was gone."
 en["idioma"] = "en"
 en["voz_arquivo"] = "en/voz_completa_en.wav"
 en["abertura"]["texto"] = GERAL["abertura"]
