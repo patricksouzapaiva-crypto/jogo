@@ -8,9 +8,13 @@ CORRECAO = {"08_gut_mudang": "volume='if(between(t,149.9,153.5),(t-149.9)/3.6,1)
             # 14/11: o 12 entra com um tambor 14 dB acima a cada 4 s (pancada sob a voz): compressor achata as batidas
             "12_jangsan": "acompressor=threshold=0.03:ratio=20:attack=1:release=600:makeup=1,"}
 fs = sorted(glob.glob(str(AQUI / "faixas" / "*.mp3")))
+# 15/11 (aprovado: "agora sim excelente"): usa a versão ORIENTAL de cada faixa quando existe (orientalizar.py v3 —
+# leito oriental suave e constante, gongo a cada ~20 s, flauta de vez em quando). O 08 já é o próprio ritual: fica igual.
+ORI = AQUI / "faixas_orientais"
+fs = [str(ORI / f"{Path(f).stem}_oriental.mp3") if (ORI / f"{Path(f).stem}_oriental.mp3").exists() else f for f in fs]
 prontas = []
 for f in fs:
-    n = Path(f).stem; out = AQUI / "faixas_prontas" / f"{n}.wav"
+    n = Path(f).stem.replace("_oriental", ""); out = AQUI / "faixas_prontas" / f"{n}.wav"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-af", CORRECAO.get(n, "") + "loudnorm=I=-18:TP=-2:LRA=14",
                     "-ar", "44100", str(out)], check=True)
     prontas.append(out)
