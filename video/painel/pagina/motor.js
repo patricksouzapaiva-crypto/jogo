@@ -37,7 +37,8 @@ window.preparar = async function (dados) {
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);
   for (const p of D.paineis || []) if (p.imagem) lista.push(["img:" + p.imagem, p.imagem]);
   for (const c of D.cenas || []) for (const x of [...(c.mensagens || []), ...(c.lados || [])]) if (x.imagem) lista.push(["img:" + x.imagem, x.imagem]);
-  for (const c of D.cenas || []) { if (c.imagem) lista.push(["img:" + c.imagem, c.imagem]); if (c.revelar && c.revelar.clara) lista.push(["img:" + c.revelar.clara, c.revelar.clara]); }
+  for (const c of D.cenas || []) { if (c.imagem) lista.push(["img:" + c.imagem, c.imagem]); if (c.revelar && c.revelar.clara) lista.push(["img:" + c.revelar.clara, c.revelar.clara]);
+    if (c.efeitos && c.efeitos.flash && c.efeitos.flash.imagem) lista.push(["img:" + c.efeitos.flash.imagem, c.efeitos.flash.imagem]); }
   for (const [k, src] of lista) IMG[k] = await carregarImg(src);
   D._estrelas = (() => { const r = rng(7); return Array.from({ length: 16 }, () => ({ x: r(), y: r(), f: 0.3 + r() * 0.8, fase: r() * 6.28, s: 0.6 + r() * 0.8 })); })();
   D._poeira = (() => { const r = rng(11); return Array.from({ length: 40 }, () => ({ x: r(), y: r(), v: 0.004 + r() * 0.01, s: 1 + r() * 2.5, fase: r() * 6.28 })); })();
@@ -860,6 +861,7 @@ function camadaCena(c, t, alvo) {
   else if (c.tipo === "mapa") telaMapa(c, t);
   else if (c.tipo === "capitulo") telaCapitulo(c, t);
   else if (c.tipo === "relogios") telaRelogios(c, t);
+  else if (window.KR && KR.cenas[c.tipo]) KR.cenas[c.tipo](c, t);   // 15/11: cenas exclusivas do Ep. 09 v4 (coreia.js)
   else {
     ctx.save();
     if (c.mao) {   // celular na mão: deriva + micro-tremor + leve giro
@@ -872,6 +874,7 @@ function camadaCena(c, t, alvo) {
     if (c.dof) profundidade(c, t);
   }
   if (c.atmos) atmosfera(c, t);
+  if (window.KR && c.efeitos) for (const [n, cfg] of Object.entries(c.efeitos)) if (KR.efeitos[n]) KR.efeitos[n](c, t, cfg);
   if (c.celular) interfaceCelular(c, t);
   if (c.kanji) kanjiSobre(c, t);
   if (c.linha) linhaTempo(c, t);
@@ -948,6 +951,7 @@ function transicao(tipo, A, B, k, t) {
       ctx.restore();
     }
   } else if (tipo === "fundir") { ctx.drawImage(A, 0, 0); ctx.globalAlpha = easeInOut(k); ctx.drawImage(B, 0, 0); ctx.globalAlpha = 1; }
+  else if (window.KR && KR.trans[tipo]) KR.trans[tipo](A, B, k, t);
   else if (tipo === "preto") { ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = easeInOut(k); ctx.drawImage(B, 0, 0); ctx.globalAlpha = 1; }
   else ctx.drawImage(B, 0, 0);
 }
@@ -1263,7 +1267,7 @@ function cenas(t) {
   const i = cenaAtual(t);
   if (i < 0) return;
   const c = D.cenas[i], ant = D.cenas[i - 1];
-  const padrao = { nanquim: 1.3, shoji: 0.9, vela: 1.6 }[c.entrada] || 0.5;
+  const padrao = { nanquim: 1.3, shoji: 0.9, vela: 1.6, queimar: 1.5, rasgo: 0.9, hanji: 1.2 }[c.entrada] || 0.5;
   const dt = c.duracao_entrada || padrao;
   const A = _canvas("camA", W, H), B = _canvas("camB", W, H);
   if (c.entrada && c.entrada !== "corte" && t < c.t0 + dt && (ant || c.entrada === "preto")) {
