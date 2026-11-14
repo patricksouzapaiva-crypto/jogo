@@ -799,17 +799,17 @@
     },
     {
      "em": null,
-     "som": "ep09_sn_horror_whoosh",
-     "volume_db": -25,
+     "som": "ep09_ah_buk_jing_1",
+     "volume_db": -22,
      "depois": false,
-     "atraso": -5.0,
-     "ate": 3.5,
-     "saida": 1.5
+     "atraso": -4.9,
+     "ate": 5.0,
+     "saida": 2.0
     }
    ],
    "ambiente": {
-    "som": "nenhum",
-    "volume_db": -20
+    "som": "ep09_lenda_mata",
+    "volume_db": -27
    },
    "musica": {
     "som": "ep09_m12_jangsan",
@@ -865,8 +865,8 @@
     "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_mata_tensa",
-    "volume_db": -25
+    "som": "ep09_lenda_mata",
+    "volume_db": -26
    }
   },
   {
@@ -971,7 +971,18 @@
   },
   {
    "fala": "Ninguém nunca provou que ele existe. Nenhuma foto, nenhum corpo.",
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_ah_ajaeng_drone_1",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 9.0,
+     "saida": 3.0
+    }
+   ]
   },
   {
    "fala": "Mesmo assim, a lenda se espalhou tão rápido que, em dois mil e dezessete, virou filme. Uma mulher que acolhe uma menina perdida perto de uma caverna. E a menina começa a falar com a voz da filha dela.",
@@ -1041,8 +1052,8 @@
     "antecipar": 0.25
    },
    "ambiente": {
-    "som": "ep09_mata_tensa",
-    "volume_db": -25
+    "som": "ep09_lenda_mata",
+    "volume_db": -26
    }
   },
   {
@@ -1468,6 +1479,15 @@
      "volume_db": -23,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "coreano",
+     "som": "ep09_ah_gayageum_golpe_1",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.5,
+     "saida": 2.0
     }
    ]
   },
@@ -1526,17 +1546,17 @@
     },
     {
      "em": null,
-     "som": "ep09_sn_horror_whoosh",
-     "volume_db": -25,
+     "som": "ep09_ah_buk_jing_1",
+     "volume_db": -22,
      "depois": false,
-     "atraso": -5.0,
-     "ate": 3.5,
-     "saida": 1.5
+     "atraso": -4.9,
+     "ate": 5.0,
+     "saida": 2.0
     }
    ],
    "ambiente": {
-    "som": "nenhum",
-    "volume_db": -20
+    "som": "ep09_lenda_joseon",
+    "volume_db": -27
    },
    "musica": {
     "som": "ep09_m04_joseon_irmas",
@@ -1611,8 +1631,8 @@
     "video": "camera3d/J01_C_9645d12b76_12.6.mp4"
    },
    "ambiente": {
-    "som": "ep09_lago",
-    "volume_db": -30
+    "som": "ep09_lenda_joseon",
+    "volume_db": -26
    }
   },
   {
@@ -1824,8 +1844,8 @@
     "video": "camera3d/J03_A_c678d24542_8.5.mp4"
    },
    "ambiente": {
-    "som": "nenhum",
-    "volume_db": -20
+    "som": "ep09_lenda_joseon",
+    "volume_db": -26
    },
    "sons": [
     {
@@ -1886,7 +1906,18 @@
   },
   {
    "fala": "Ela tinha comido os pais. O irmão mais novo. A vila inteira.",
-   "pausa_antes_s": 0.3
+   "pausa_antes_s": 0.3,
+   "sons": [
+    {
+     "em": "pais",
+     "som": "ep09_ah_gayageum_golpe_2",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.5,
+     "saida": 2.0
+    }
+   ]
   },
   {
    "fala": "E disse, com toda a calma, que só faltavam mais dois.",
@@ -2496,6 +2527,15 @@
      "volume_db": -20,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "apagada",
+     "som": "ep09_ah_daegeum_sopro_1",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.5
     }
    ],
    "musica": {
@@ -2587,17 +2627,17 @@
     },
     {
      "em": null,
-     "som": "ep09_sn_horror_whoosh",
-     "volume_db": -25,
+     "som": "ep09_ah_buk_jing_1",
+     "volume_db": -22,
      "depois": false,
-     "atraso": -5.0,
-     "ate": 3.5,
-     "saida": 1.5
+     "atraso": -4.9,
+     "ate": 5.0,
+     "saida": 2.0
     }
    ],
    "ambiente": {
-    "som": "nenhum",
-    "volume_db": -20
+    "som": "ep09_lenda_elevador",
+    "volume_db": -27
    },
    "musica": {
     "som": "ep09_m03_as_regras",
@@ -2622,8 +2662,8 @@
   {
    "fala": "As regras são sempre as mesmas.",
    "ambiente": {
-    "som": "ep09_elevador_tenso",
-    "volume_db": -28
+    "som": "ep09_lenda_elevador",
+    "volume_db": -26
    },
    "pausa_antes_s": 0.65
   },
@@ -2724,6 +2764,15 @@
      "volume_db": -22,
      "depois": false,
      "atraso": 0.62
+    },
+    {
+     "em": "nesta",
+     "som": "ep09_ah_janggu_ritual_2",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 8.0,
+     "saida": 2.5
     }
    ],
    "pausa_antes_s": 0.6
@@ -3036,17 +3085,26 @@
     },
     {
      "em": null,
-     "som": "ep09_sn_horror_whoosh",
-     "volume_db": -25,
+     "som": "ep09_ah_buk_jing_1",
+     "volume_db": -22,
      "depois": false,
-     "atraso": -5.0,
-     "ate": 3.5,
+     "atraso": -4.9,
+     "ate": 5.0,
+     "saida": 2.0
+    },
+    {
+     "em": "morte",
+     "som": "ep09_ah_geomungo_grave_1",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
      "saida": 1.5
     }
    ],
    "ambiente": {
-    "som": "nenhum",
-    "volume_db": -20
+    "som": "ep09_lenda_hospital",
+    "volume_db": -27
    },
    "musica": {
     "som": "ep09_m06_moca_de_branco",
@@ -3067,7 +3125,7 @@
     "video": "camera3d/H01_A_5ca19631cf_6.5.mp4"
    },
    "ambiente": {
-    "som": "ep09_hospital_tenso",
+    "som": "ep09_lenda_hospital",
     "volume_db": -26
    },
    "pausa_antes_s": 0.6
@@ -3226,7 +3284,7 @@
     "antecipar": 0.6
    },
    "ambiente": {
-    "som": "ep09_hospital_tenso",
+    "som": "ep09_lenda_hospital",
     "volume_db": -26
    },
    "pausa_antes_s": 0.8
@@ -3488,6 +3546,15 @@
      "atraso": 0.0,
      "ate": 14,
      "saida": 3.0
+    },
+    {
+     "em": null,
+     "som": "ep09_ah_janggu_ritual_1",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": -0.8,
+     "ate": 9.0,
+     "saida": 2.5
     }
    ]
   },
@@ -3559,6 +3626,15 @@
      "atraso": 0.0,
      "ate": 3.5,
      "saida": 0.8
+    },
+    {
+     "em": "quatro",
+     "som": "ep09_ah_gayageum_golpe_1",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.5,
+     "saida": 2.0
     }
    ]
   },
@@ -3606,6 +3682,15 @@
      "depois": false,
      "atraso": 1.9,
      "pan": -0.31000000000000005
+    },
+    {
+     "em": null,
+     "som": "ep09_ah_piri_lamento_1",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.5
     }
    ]
   },
@@ -3993,6 +4078,15 @@
      "em": "canto",
      "som": "ep09_sn_horror_boom",
      "volume_db": -9,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.5
+    },
+    {
+     "em": "canto",
+     "som": "ep09_ah_haegeum_grito_1",
+     "volume_db": -20,
      "depois": false,
      "atraso": 0.0,
      "ate": 4.0,
@@ -4423,7 +4517,18 @@
     "som": "ep09_m07_o_chamado",
     "volume_db": -32
    },
-   "pausa_antes_s": 1.64
+   "pausa_antes_s": 1.64,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_ah_daegeum_sopro_2",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.5
+    }
+   ]
   },
   {
    "fala": "Ela continuava em silêncio. Segurando a mão dele.",
