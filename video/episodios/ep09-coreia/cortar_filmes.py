@@ -15,11 +15,21 @@ SAI = AQUI / "filmes_prontos"; SAI.mkdir(exist_ok=True)
 FONTE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 IRMAS = "A TALE OF TWO SISTERS (2003) · DIR. KIM JEE-WOON · B.O.M. FILM PRODUCTIONS"
 EXHUMA = "EXHUMA (2024) · DIR. JANG JAE-HYUN · SHOWBOX"
+MIMIC = "THE MIMIC (2017) · DIR. HUH JUNG"
+GONJIAM = "GONJIAM: HAUNTED ASYLUM (2018) · DIR. JUNG BUM-SHIK · SHOWBOX"
 R = {"114623": (1920, 1030, 240, 25), "142451": (1920, 1040, 240, 20), "143012": (1920, 1040, 240, 20),
-     "112939": (1636, 920, 382, 140)}   # 112939 (Netflix): só a parte de baixo, sem o logo e sem a marca do título
+     "112939": (1636, 920, 382, 140),
+     "222951": (1314, 1020, 570, 30), "223327": (1820, 1010, 340, 35)}   # v3: trailers de The Mimic e Gonjiam   # 112939 (Netflix): só a parte de baixo, sem o logo e sem a marca do título
 FUNDIR = {"exhuma_tambor"}
 ALVO = 6.0                                                     # duração mínima depois da câmera lenta (s)
 TRECHOS = {
+    # v3 (14/11): só planos sem legenda gravada e sem letreiro do trailer
+    "mimic_menina": ("222951", 20.4, 22.3, MIMIC),            # a menina perdida espiando na porta da casa
+    "mimic_mulher": ("222951", 10.2, 11.0, MIMIC),            # reserva: a mãe olhando para fora
+    "gonjiam_lanterna": ("223327", 78.3, 81.5, GONJIAM),      # a lanterna varrendo a parede no escuro do hospital
+    "gonjiam_mato": ("223327", 29.6, 30.5, GONJIAM),          # o grupo com lanternas no mato, chegando ao hospital
+}
+V2 = {
     "irmas_deque": ("114623", 98.2, 101.3, IRMAS),           # a menina sozinha no deque do lago
     "irmas_casa": ("114623", 62.6, 65.2, IRMAS),             # a casa no capim seco (61,6–62,4 tem o ícone de carregando da gravação; 66+ ela vira o rosto)
     "exhuma_danca": ("112939", 124.8, 127.6, EXHUMA),        # a mudang Hwa-rim dançando no ritual
@@ -29,7 +39,8 @@ TRECHOS = {
     "exhuma_montanha": ("142451", 29.9, 30.7, EXHUMA),       # as montanhas
 }
 
-pedidos = sys.argv[1:] or list(TRECHOS)
+TRECHOS.update(V2)
+pedidos = sys.argv[1:] or [k for k in TRECHOS if k not in V2]
 for nome in pedidos:
     vid, a, b, credito = TRECHOS[nome]
     w, h, x, y = R[vid]
