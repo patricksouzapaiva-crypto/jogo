@@ -545,8 +545,8 @@ SN = "ep09_sn_"
 for i in (27, 54, 89, 105):                                              # o sopro do cartão de capítulo
     tira(i, "whoosh"); fx(i, None, SN + "horror_whoosh", -25, atraso=-5.0, ate=3.5, saida=1.5)
 fx(3, None, SN + "elevador_shepard", -27, atraso=-4.0, ate=4.5, saida=1.0)   # "ele tá subindo": o som que nunca para de subir
-fx(28, None, SN + "respiracao_pulsante", -31, ate=24, saida=4.0)          # a criatura: uma respiração grande, pulsando, na mata
-tira(86, "stinger_cordas"); fx(86, None, SN + "stinger_cello", -11, atraso=-0.05, ate=4.0, saida=2.0)
+fx(28, None, SN + "respiracao_pulsante", -27, ate=24, saida=4.0)          # a criatura: uma respiração grande, pulsando, na mata
+tira(86, "stinger_cordas"); fx(86, None, SN + "stinger_cello", -9, atraso=-0.05, ate=4.0, saida=2.0)
 tira(79, "tecla"); fx(79, "acesa", SN + "interruptor", -22)
 tira(87, "tecla"); fx(87, "apagada", SN + "interruptor", -20)
 tira(99, "braam_horror"); fx(99, None, SN + "horror_momento", -19, ate=6.0, saida=2.5)
@@ -559,9 +559,9 @@ tira(129, "ep07_respiracao_nuca"); fx(129, "orelha", SN + "sussurro_fantasma", -
 tira(134, "riser_tensao"); fx(134, None, SN + "elevador_shepard", -21, ate=9.0, saida=2.5)
 fx(135, None, SN + "elevador_mecanismo", -26, atraso=-1.0)
 tira(144, "ep06_porta_range"); fx(144, None, SN + "porta_rangido_lento", -21, atraso=-2.9, ate=3.2, saida=0.4)
-tira(144, "stinger_cordas"); fx(144, "canto", SN + "horror_boom", -13, ate=4.0, saida=1.5)
+tira(144, "stinger_cordas"); fx(144, "canto", SN + "horror_boom", -9, ate=4.0, saida=1.5)
 fx(150, "fechava", SN + "elevador_porta_fecha", -24)
-tira(161, "stinger_cordas"); fx(161, None, SN + "stinger_swell", -12, atraso=-0.05, ate=5.0, saida=2.5)
+tira(161, "stinger_cordas"); fx(161, None, SN + "stinger_swell", -9, atraso=-0.05, ate=5.0, saida=2.5)
 fx(161, None, SN + "piano_horror_reverso", -24, atraso=-11.0)              # o piano ao contrário cresce até ela virar o rosto
 fx(84, "passo", SN + "respiracao_medo", -26)
 

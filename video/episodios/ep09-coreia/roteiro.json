@@ -158,6 +158,15 @@
      "volume_db": -20,
      "depois": false,
      "atraso": -0.9
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_elevador_shepard",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": -4.0,
+     "ate": 4.5,
+     "saida": 1.0
     }
    ]
   },
@@ -790,10 +799,12 @@
     },
     {
      "em": null,
-     "som": "whoosh",
-     "volume_db": -24,
+     "som": "ep09_sn_horror_whoosh",
+     "volume_db": -25,
      "depois": false,
-     "atraso": -4.9
+     "atraso": -5.0,
+     "ate": 3.5,
+     "saida": 1.5
     }
    ],
    "ambiente": {
@@ -828,7 +839,18 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_respiracao_pulsante",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 24,
+     "saida": 4.0
+    }
+   ]
   },
   {
    "fala": "Mas o que assustava não era a aparência. Era o som.",
@@ -1504,10 +1526,12 @@
     },
     {
      "em": null,
-     "som": "whoosh",
-     "volume_db": -24,
+     "som": "ep09_sn_horror_whoosh",
+     "volume_db": -25,
      "depois": false,
-     "atraso": -4.9
+     "atraso": -5.0,
+     "ate": 3.5,
+     "saida": 1.5
     }
    ],
    "ambiente": {
@@ -2227,8 +2251,8 @@
    "sons": [
     {
      "em": "acesa",
-     "som": "tecla",
-     "volume_db": -26,
+     "som": "ep09_sn_interruptor",
+     "volume_db": -22,
      "depois": false,
      "atraso": 0.0
     }
@@ -2369,6 +2393,13 @@
      "volume_db": -25,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": "passo",
+     "som": "ep09_sn_respiracao_medo",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
     }
    ]
   },
@@ -2409,17 +2440,19 @@
    "sons": [
     {
      "em": null,
-     "som": "stinger_cordas",
-     "volume_db": -10,
+     "som": "sub_drop",
+     "volume_db": -15,
      "depois": false,
      "atraso": -0.05
     },
     {
      "em": null,
-     "som": "sub_drop",
-     "volume_db": -15,
+     "som": "ep09_sn_stinger_cello",
+     "volume_db": -9,
      "depois": false,
-     "atraso": -0.05
+     "atraso": -0.05,
+     "ate": 4.0,
+     "saida": 2.0
     }
    ]
   },
@@ -2459,8 +2492,8 @@
     },
     {
      "em": "apagada",
-     "som": "tecla",
-     "volume_db": -22,
+     "som": "ep09_sn_interruptor",
+     "volume_db": -20,
      "depois": false,
      "atraso": 0.0
     }
@@ -2554,10 +2587,12 @@
     },
     {
      "em": null,
-     "som": "whoosh",
-     "volume_db": -24,
+     "som": "ep09_sn_horror_whoosh",
+     "volume_db": -25,
      "depois": false,
-     "atraso": -4.9
+     "atraso": -5.0,
+     "ate": 3.5,
+     "saida": 1.5
     }
    ],
    "ambiente": {
@@ -2806,10 +2841,12 @@
    "sons": [
     {
      "em": null,
-     "som": "braam_horror",
-     "volume_db": -20,
+     "som": "ep09_sn_horror_momento",
+     "volume_db": -19,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.5
     }
    ],
    "sem_legenda": true
@@ -2999,10 +3036,12 @@
     },
     {
      "em": null,
-     "som": "whoosh",
-     "volume_db": -24,
+     "som": "ep09_sn_horror_whoosh",
+     "volume_db": -25,
      "depois": false,
-     "atraso": -4.9
+     "atraso": -5.0,
+     "ate": 3.5,
+     "saida": 1.5
     }
    ],
    "ambiente": {
@@ -3440,6 +3479,15 @@
      "volume_db": -20,
      "depois": false,
      "atraso": 0.62
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_coracao_panico",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 14,
+     "saida": 3.0
     }
    ]
   },
@@ -3505,10 +3553,12 @@
    "sons": [
     {
      "em": "abriu",
-     "som": "ep09_elevador",
-     "volume_db": -22,
+     "som": "ep09_sn_elevador_porta_sobe",
+     "volume_db": -24,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "ate": 3.5,
+     "saida": 0.8
     }
    ]
   },
@@ -3527,11 +3577,35 @@
    "sons": [
     {
      "em": "passos",
-     "som": "passos_atrasados",
-     "volume_db": -24,
+     "som": "ep09_sn_descalco_metal_1",
+     "volume_db": -24.0,
      "depois": false,
      "atraso": 0.0,
-     "pan": -0.5
+     "pan": -0.55
+    },
+    {
+     "em": "passos",
+     "som": "ep09_sn_descalco_metal_2",
+     "volume_db": -22.5,
+     "depois": false,
+     "atraso": 0.62,
+     "pan": -0.47000000000000003
+    },
+    {
+     "em": "passos",
+     "som": "ep09_sn_descalco_metal_3",
+     "volume_db": -21.0,
+     "depois": false,
+     "atraso": 1.25,
+     "pan": -0.39
+    },
+    {
+     "em": "passos",
+     "som": "ep09_sn_descalco_metal_1",
+     "volume_db": -19.5,
+     "depois": false,
+     "atraso": 1.9,
+     "pan": -0.31000000000000005
     }
    ]
   },
@@ -3564,11 +3638,11 @@
    "sons": [
     {
      "em": "orelha",
-     "som": "ep07_respiracao_nuca",
-     "volume_db": -20,
+     "som": "ep09_sn_sussurro_fantasma",
+     "volume_db": -21,
      "depois": false,
      "atraso": 0.0,
-     "pan": -0.85
+     "pan": -0.9
     }
    ]
   },
@@ -3650,10 +3724,12 @@
    "sons": [
     {
      "em": null,
-     "som": "riser_tensao",
-     "volume_db": -22,
+     "som": "ep09_sn_elevador_shepard",
+     "volume_db": -21,
      "depois": false,
-     "atraso": 0.0
+     "atraso": 0.0,
+     "ate": 9.0,
+     "saida": 2.5
     }
    ]
   },
@@ -3684,6 +3760,13 @@
      "volume_db": -24,
      "depois": false,
      "atraso": -0.4
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_elevador_mecanismo",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": -1.0
     }
    ]
   },
@@ -3891,25 +3974,29 @@
    "pausa_antes_s": 3.0,
    "sons": [
     {
-     "em": null,
-     "som": "ep06_porta_range",
-     "volume_db": -22,
-     "depois": false,
-     "atraso": -2.8
-    },
-    {
-     "em": "canto",
-     "som": "stinger_cordas",
-     "volume_db": -12,
-     "depois": false,
-     "atraso": 0.0
-    },
-    {
      "em": "canto",
      "som": "sub_drop",
      "volume_db": -16,
      "depois": false,
      "atraso": 0.0
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_porta_rangido_lento",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": -2.9,
+     "ate": 3.2,
+     "saida": 0.4
+    },
+    {
+     "em": "canto",
+     "som": "ep09_sn_horror_boom",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.5
     }
    ]
   },
@@ -4048,7 +4135,16 @@
    ]
   },
   {
-   "fala": "E, enquanto a porta fechava, lá do fim do corredor, a voz dele mesmo, chamando:"
+   "fala": "E, enquanto a porta fechava, lá do fim do corredor, a voz dele mesmo, chamando:",
+   "sons": [
+    {
+     "em": "fechava",
+     "som": "ep09_sn_elevador_porta_fecha",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
   },
   {
    "fala": "\"Lívia! Aqui! Vem ver isso!\"",
@@ -4266,13 +4362,6 @@
    "sons": [
     {
      "em": null,
-     "som": "stinger_cordas",
-     "volume_db": -12,
-     "depois": false,
-     "atraso": -0.05
-    },
-    {
-     "em": null,
      "som": "ep09_jing",
      "volume_db": -23,
      "depois": false,
@@ -4285,6 +4374,22 @@
      "volume_db": -15,
      "depois": false,
      "atraso": -0.05
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_stinger_swell",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -0.05,
+     "ate": 5.0,
+     "saida": 2.5
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_piano_horror_reverso",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": -11.0
     }
    ]
   },
