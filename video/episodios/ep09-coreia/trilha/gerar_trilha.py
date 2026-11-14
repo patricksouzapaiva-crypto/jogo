@@ -71,6 +71,51 @@ FAIXAS = {
                  "in the room. Fades into near silence. " + TEMA),
 }
 
+# ===== v3 "O que voltou da montanha" (14/11): faixas novas; as aprovadas 01, 02, 04, 05, 07 e 10 voltam =====
+# Sustos liberados pelo usuário, mas o susto é da montagem (silêncio + som), não da música: a trilha continua
+# sem pancada; ela SOME antes do susto.
+FAIXAS.update({
+    # O RAFA 1: a trilha ao entardecer, a voz da irmã vindo da mata
+    "11_a_montanha": (100, "Continuous from the first second, never silent. A Korean mountain forest at dusk turning "
+                      "into night: a cold low wind-like drone, very sparse breathy daegeum notes far away, a single "
+                      "gayageum string bent slowly. Halfway through, everything thins out to a high fragile string "
+                      "harmonic and a low pulse, as if listening to something in the trees. Ends on a held, "
+                      "unresolved dissonant note fading slowly."),
+    # PARTE 1: o Jangsan-beom, a criatura que imita vozes
+    "12_jangsan": (100, "A legend of a creature in the mountain that imitates human voices. Low, organic, "
+                   "breathing textures; a haegeum that slides and almost sounds like a crying woman, answered by "
+                   "itself, slightly wrong, like an echo that copies. Slow sub-bass pulses, scraped gayageum "
+                   "strings, distant low buk drum heartbeat. Mysterious, primal and threatening, slowly growing, "
+                   "then fading out on a long low drone."),
+    # O RAFA 2: a busca, os tênis, a volta da Lívia e o "Oppa"
+    "13_os_tenis": (85, "A missing person search in the forest: a slow anxious pulse of low strings and a soft "
+                    "janggu heartbeat for the first half. Then a warm moment of relief: the gayageum plays the main "
+                    "theme gently, almost tender. In the last 20 seconds the warmth drains away, the theme stops "
+                    "mid-phrase and only a cold high harmonic and a low drone remain. " + TEMA),
+    # PARTE 3: o Jogo do Elevador, as regras
+    "14_elevador": (110, "An internet ritual that opens a door to another world. Hypnotic and mechanical: a slow "
+                    "ticking janggu pattern like a clock, a repeating 5-note gayageum ostinato that counts, a deep "
+                    "low hum like an old elevator motor, metallic resonances. Slowly the ostinato detunes and the "
+                    "hum rises in pitch, more and more tense, controlled, never a sudden hit. Ends suspended on a "
+                    "high held note."),
+    # PARTE 4: Gonjiam, o hospital abandonado
+    "15_gonjiam": (100, "An abandoned psychiatric hospital at night. Cold, decayed, empty: a detuned old piano "
+                   "playing a few broken notes in a big reverberant hall, distant metallic creaks rendered as "
+                   "music, low cello clusters, a breathing piri far away. Lonely, ominous, the weight of something "
+                   "that happened there. Slowly darker, then a long fade."),
+    # O RAFA 5: o outro lado (o hospital limpo, as lâmpadas acesas, a porta 402)
+    "16_outro_lado": (90, "The other world: the same hospital but clean, bright and wrong. A steady high "
+                      "fluorescent-like shimmer of glass harmonics and soft synth pad, perfectly still, a slow "
+                      "music-box version of the main theme played on gayageum harmonics, too calm, uncanny. A low "
+                      "dissonant drone slowly creeps under it. In the last 15 seconds everything thins to a single "
+                      "thin high note and near silence. " + TEMA),
+    # O RAFA 6: o amanhecer, a ligação para a mãe
+    "17_a_ligacao": (80, "Dawn after a terrible night. Starts fragile and hopeful: a soft warm low string chord "
+                     "and the gayageum main theme played slowly, like relief. Midway the harmony turns, a dissonant "
+                     "note stays under the theme, the haegeum enters cold and thin, dread slowly rising. Ends "
+                     "unresolved on a low drone that fades out. " + TEMA),
+})
+
 pedidas = sys.argv[1:] or list(FAIXAS)
 for nome in pedidas:
     seg, desc = FAIXAS[nome]

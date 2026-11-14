@@ -4,7 +4,9 @@ Saída: Trilha_O_Vigia_Ep09.mp3 (e faixas_prontas/*.wav para a montagem)."""
 import glob, subprocess
 from pathlib import Path
 AQUI = Path(__file__).parent; (AQUI / "faixas_prontas").mkdir(exist_ok=True)
-CORRECAO = {"08_gut_mudang": "volume='if(between(t,149.9,153.5),(t-149.9)/3.6,1)':eval=frame,"}
+CORRECAO = {"08_gut_mudang": "volume='if(between(t,149.9,153.5),(t-149.9)/3.6,1)':eval=frame,",
+            # 14/11: o 12 entra com um tambor 14 dB acima a cada 4 s (pancada sob a voz): compressor achata as batidas
+            "12_jangsan": "acompressor=threshold=0.03:ratio=20:attack=1:release=600:makeup=1,"}
 fs = sorted(glob.glob(str(AQUI / "faixas" / "*.mp3")))
 prontas = []
 for f in fs:

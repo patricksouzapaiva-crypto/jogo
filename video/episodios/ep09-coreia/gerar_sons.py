@@ -17,6 +17,21 @@ P = {
  "E_papel": (3.0, "Old wallpaper slowly peeling off a wall, dry paper tearing softly, close, no music", False),
  "E_ventilador_liga": (4.0, "Click of an old electric fan switch being turned on and the blades slowly spinning up, close, quiet room, no music", False),
  "T_buk": (5.0, "One single soft deep distant Korean buk barrel drum hit with a long low reverberating tail in a large wooden hall, no music", False),
+ # v3 (14/11)
+ "L_mata_noite": (20.0, "A Korean mountain pine forest at dusk turning to night, cold wind in the pine needles, a few distant insects, a branch creaking, very quiet, no birds, no voices, no music", True),
+ "L_motor_elevador": (20.0, "Inside an old elevator moving slowly upward, low steady motor hum and cable whine, faint rattling of the metal cabin, no music, no voices", True),
+ "L_hospital": (20.0, "Inside an empty abandoned concrete building at night, cold hollow room tone, distant dripping water, wind through broken windows, faint creaks, no voices, no music", True),
+ "L_fluorescente": (20.0, "A clean empty hospital corridor, steady buzzing of fluorescent tube lights, perfectly still, faint ventilation hum, no voices, no music", True),
+ "L_cozinha": (20.0, "A small apartment kitchen at 3 a.m., refrigerator hum, a faint buzzing light over the sink, total stillness, no voices, no music", True),
+ "E_sino_andar": (3.0, "A single soft old elevator floor chime, one clear ding, close, no music", False),
+ "E_porta_elevador": (5.0, "Old heavy elevator doors sliding open slowly with a metallic scrape and stopping, no music", False),
+ "E_passos_descalcos": (6.0, "Slow bare footsteps on a smooth hard floor, soft wet slapping steps coming closer, close and quiet, no music", False),
+ "E_oleo_mao": (6.0, "Close soft wet sound of oily hands slowly rubbing along skin, slippery and slow, quiet room, no music", False),
+ "E_vidro_balcao": (3.0, "A glass bottle being put down gently on a kitchen counter, quiet room, no music", False),
+ "E_porta_abre": (5.0, "A hospital room door handle turning and a door opening slowly with a long low creak, no music", False),
+ "E_interruptor": (3.0, "A light switch clicking off in a silent room, close, no music", False),
+ "E_lanterna": (3.0, "A small flashlight being clicked on, close, quiet forest at night, no music", False),
+ "T_subgrave": (5.0, "A deep soft sub-bass swell rising slowly and fading, cinematic low rumble, no hit, no music", False),
  "T_jing": (6.0, "One soft distant Korean jing gong struck gently, long shimmering low decay, no music", False),
 }
 so = set(sys.argv[1:])
@@ -40,6 +55,9 @@ ESCOLHA = {
  "choro_parede": ("E_choro_parede_a", "", -24), "elevador": ("E_elevador_a", "", -20), "chave": ("E_chave_a", "", -20),
  "papel": ("E_papel_a", "", -22), "ventilador_liga": ("E_ventilador_liga_a", "", -22),
  "buk": ("T_buk_b", "", -17), "jing": ("T_jing_b", "", -18),
+ # v3 (14/11) — os créditos do ElevenLabs acabaram no meio: o resto vem da biblioteca dos episódios anteriores
+ "mata_noite": ("L_mata_noite_a", "", -26), "motor_elevador": ("L_motor_elevador_a", "", -24),
+ "hospital": ("L_hospital_a", "", -26), "fluorescente": ("L_fluorescente_a", "", -26),
 }
 if "--instalar" in sys.argv or not so:
     for nome, (cod, filtro, lufs) in ESCOLHA.items():
