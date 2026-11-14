@@ -224,7 +224,7 @@ C(33, img("M07_C", (1.16, 1.2), ((0.55, 0.45), (0.56, 0.44)), kanji=K("장산범
 pincel(33, "Jangsan")
 C(34, img("M01_A", (1.0, 1.06), ((0.6, 0.45), (0.62, 0.45))))
 C(35, img("M07_A", (1.0, 1.05), ((0.55, 0.45), (0.56, 0.43))), (filme("mimic_menina"), "mulher"),
-      (c3("M07_B", "entrar", (0.47, 0.4), 0.7, 0.0), "começa"))
+      (c3("M07_B", "entrar", (0.47, 0.4), 0.7, 0.0), "caverna"))
 C(36, img("M02_B", (1.0, 1.06), ((0.5, 0.5), (0.55, 0.45))))
 C(37, img("M03_A", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.5)), kanji=K("목소리", 0.8, 0.5, "luz", "moksori · a voz", em="voz")))
 pincel(37, "voz")
@@ -331,7 +331,7 @@ C(101, img("H05_B", (1.0, 1.06), ((0.6, 0.45), (0.6, 0.5))))
 C(102, c3("C05_C", "entrar", (0.4, 0.55), 0.8, 0.3))                      # o Rafa às 4h, a tela do celular
 C(103, img("C05_A", (1.05, 1.12), ((0.62, 0.5), (0.64, 0.5))))
 C(104, texto("\"Quem volta da montanha nunca é quem subiu.\nO de verdade fica do outro lado.\"",
-             "nunca é quem subiu.\"", cps=22, tamanho=64), (img("H01_C", (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))), "Para"))
+             "nunca é quem subiu.\"", cps=22, tamanho=64))   # o texto fica a frase inteira (tempo de leitura)
 amb(89, "nenhum"); amb(91, "ep09_motor_elevador", -28); amb(102, "geladeira", -32)
 musica(89, "03_as_regras", -30)
 fx(93, None, "ep09_elevador", -26, atraso=0.4)
@@ -656,7 +656,7 @@ def camera_3d():
         p = c.pop("_c3d")
         if __import__("os").environ.get("SEM_3D"):        # teste rápido: fica a imagem parada com zoom leve
             c["zoom"] = [1.0, 1.06]; continue
-        fim = inicios[k + 1][0] if k + 1 < len(inicios) else t + 6
+        fim = inicios[k + 1][0] if k + 1 < len(inicios) else t + 13   # a última cena fica até a vinheta
         dur = round(max(4.0, fim - t) + 2.5, 1)
         chave = hashlib.md5(json.dumps([c["imagem"], p], sort_keys=True).encode()).hexdigest()[:10]
         # reaproveita um vídeo do mesmo movimento se a duração for parecida (até 3 s mais longo): o motor usa só o começo
