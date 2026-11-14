@@ -22,6 +22,7 @@ Comparei as 115 imagens novas (lote do Drive "Nov 14 - 18_31") com as do v3. As 
 | I07 | nova A | As sandálias e a lanterna caída. |
 | I08 | nova B | As duas irmãs molhadas, com a poça no chão e a vela. |
 | I09 | nova A | O vulto de branco no caminho, maior na tela. |
+| T01 | nova B | A cabeça lisa como ovo, centralizada no fim do beco, e tudo mais escuro. A A tem mais detalhe, mas o rosto lê menos "ovo". |
 | T02 | nova B | A TV de frente e a família de costas; serve de base para o clipe tocar dentro da tela. |
 | T03 | nova B | O luar e o fantasma pequeno, ao longe. |
 | T04 | nova B | Preto e branco, com a lua (combina com *Wol-ha*, de 1967). |
