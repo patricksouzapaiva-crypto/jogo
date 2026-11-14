@@ -20,3 +20,8 @@ Todos 1280×720, 7,9 s. "Usar" = o trecho seguro (sem rosto de IA, sem deformaç
 | V21 | o corredor limpo do outro lado | inteiro | ótimo |
 | V22 | a Lívia no canto | inteiro | o cabelo cobre o rosto |
 | V23 | a chamada de vídeo | **0–5 s** | aos 6 s o **rosto aparece** — corta no movimento (era a ideia: tela preta antes do rosto) |
+
+## A TV (Parte 3) — com o vídeo B do Hailuo (aprovado pelo usuário: "usa o que já funciona do Hailuo")
+`tv/TV_deokdaegol.mp4` (10 s, o "내 다리야" do 전설의 고향, KBS 1996, com o som) e `tv/TV_wolha.mp4` (10 s, a abertura
+de *Wol-ha*, 1967: o cabelo azul e a caveira vermelha). Feitos com `painel/ferramentas/tv_encaixe.py`; os cantos da tela
+no quadro 0 do Hailuo B são "548,297 737,297 735,433 551,433" e o rastreio segue a câmera.
