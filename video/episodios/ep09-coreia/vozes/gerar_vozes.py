@@ -39,7 +39,7 @@ FALAS = {
 CANDIDATAS = {"rafa": ["Puck", "Iapetus", "Umbriel"], "livia": ["Zephyr", "Laomedeia", "Despina"],
               "pai": ["Charon", "Orus", "Rasalgethi"]}
 AMOSTRA = {"rafa": "rafa1", "livia": "livia1", "pai": "pai1"}
-ESCOLHA = {}          # preencher depois da escolha: {"rafa": "...", "livia": "...", "pai": "..."}; mãe = Sulafat
+ESCOLHA = {"rafa": "Umbriel", "livia": "Despina", "pai": "Orus"}   # escolhidas pelo usuário (14/11); mãe = Sulafat
 
 
 def dono(chave):
