@@ -261,6 +261,18 @@ O monte Jangsan continua lá, atrás dos prédios de Haeundae. Com trilha sinali
 sair dela depois que escurece.
 O Rafa nunca mais mandou áudio no grupo.
 A mãe diz que os dois filhos estão bem. Que a Lívia está ótima. Que come muito. Só de noite.
+O terror japonês tem regras. O coreano tem dívida.
+Os coreanos têm uma palavra para isso: han. A mágoa de quem morreu com uma injustiça engasgada.
+E quem morre com han não descansa. Fica. E não assombra quem fez o mal. Assombra quem está perto.
+Por isso, na Coreia, os mortos não se escondem. Eles chamam. Com a voz de quem você ama.
+E essa não é a única história assim.
+Em Miryang, no tempo dos reis, todo magistrado novo que chegava à cidade aparecia morto depois da primeira noite.
+Ninguém mais aceitava o cargo. Até que um ficou acordado. E viu quem entrava no quarto.
+Tem o fantasma do ovo. Um rosto liso, branco, sem olhos e sem boca. Dizem que quem vê… não vive para contar.
+Tem o afogado que pede socorro no rio. E que só solta a sua perna quando você ficar no lugar dele.
+E tem o bunshinsaba. Um ritual de sala de aula que nunca pode terminar sem mandar o espírito embora.
+Porque, se não mandar… ele fica. Com quem chamou.
+Me conta aqui nos comentários: qual dessas você quer que eu abra aqui no canal?
 No conto da Irmã Raposa, ela precisava de mais dois.
 Então, hoje, antes de dormir, uma coisa só.
 Se alguém da sua família te chamar de longe… de outro cômodo, da rua, de um número estranho…
