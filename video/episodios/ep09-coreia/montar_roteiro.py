@@ -114,8 +114,10 @@ def amb(i, som, db=-20, em=None):
     batidas[i]["ambiente"] = {"som": som, "volume_db": db, **({"em": em} if em else {})}
 
 
-def fx(i, em, som, db, depois=False, atraso=0.0):
-    batidas[i].setdefault("sons", []).append({"em": em, "som": som, "volume_db": db, "depois": depois, "atraso": atraso})
+def fx(i, em, som, db, depois=False, atraso=0.0, **kw):
+    """kw (15/11, desenho de som): pan (-1 esq … +1 dir), reverso, eco, tom (semitons), ate (corta em s), saida (fade s),
+    arquivo (um wav nosso no lugar de painel/sons)."""
+    batidas[i].setdefault("sons", []).append({"em": em, "som": som, "volume_db": db, "depois": depois, "atraso": atraso, **kw})
 
 
 def musica(i, faixa, db, em=None, atraso=0.0):
@@ -306,7 +308,6 @@ C(88, {"imagem": IV2 + "F01_B.jpg", "zoom": [1.0, 1.06], "foco": [[0.6, 0.6], [0
 amb(74, "ep09_corredor", -28); amb(78, "geladeira", -30); amb(87, "geladeira", -32); amb(88, "ep09_sala_bh", -28)
 musica(73, "05_a_parede", -31)
 batidas[83]["musica"] = {"som": "nenhum", "em": "ombro"}                  # silêncio total ANTES do susto
-fx(81, "molhado", "ep09_papel", -30)                                      # (mão esfregando: textura baixa)
 fx(84, "trás", "ep07_respiracao_nuca", -26)
 fx(86, None, "stinger_cordas", -10, atraso=-0.05)
 fx(87, "apagada", "ep09_jing", -24)
@@ -457,6 +458,83 @@ musica(165, "10_fecho", -31)
 pausa(166, 0.6); pausa(168, 0.8); pausa(169, 0.8); pausa(171, 0.6); pausa(173, 0.6); pausa(174, 0.8)
 
 
+
+# ================================================================ DESENHO DE SOM (15/11)
+# Pedido do usuário: "áudio é extremamente importante em terror, música e efeitos fazem grande diferença".
+# - ambientes em CAMADAS (desenho_som.py): o lugar + um grave de tensão por baixo — nunca fica "vazio";
+# - som no ESPAÇO (fone de ouvido): o que vem da esquerda/de trás/de perto é posicionado (pan);
+# - efeitos no tempo da palavra; gongo AO CONTRÁRIO crescendo até o momento ruim; sub grave dando peso aos sustos.
+LIVIA1 = str(AQUI / "vozes" / "limpas_escolhidas" / "livia1_Despina.wav")
+for i, som, db in [(4, "ep09_amanhecer_tenso", -26), (5, "ep09_mata_tensa", -22), (12, "ep09_mata_tensa", -32),
+                   (15, "ep09_mata_tensa", -25), (29, "ep09_mata_tensa", -25), (36, "ep09_mata_tensa", -25),
+                   (38, "ep09_mata_tensa", -24), (44, "ep09_amanhecer_tenso", -26), (74, "ep09_cozinha", -28),
+                   (78, "ep09_cozinha", -25), (87, "ep09_cozinha", -28), (91, "ep09_elevador_tenso", -28),
+                   (102, "ep09_cozinha", -30), (106, "ep09_hospital_tenso", -26), (113, "ep09_hospital_tenso", -26),
+                   (116, "ep09_hospital_tenso", -24), (119, "ep09_elevador_tenso", -22), (135, "ep09_fluorescente_tenso", -24),
+                   (143, "ep09_fluorescente_tenso", -30), (149, "ep09_elevador_tenso", -26), (151, "ep09_fluorescente_tenso", -26),
+                   (152, "ep09_amanhecer_tenso", -28), (162, "ep09_amanhecer_tenso", -30), (174, "ep09_mata_tensa", -28)]:
+    batidas[i]["ambiente"] = {"som": som, "volume_db": db}
+batidas[23]["ambiente"] = {"som": "ep09_mata_tensa", "volume_db": -19}          # a segunda chamada: a mata "chega perto"
+# capítulos: um sopro quando o cartão entra (a música nova já entra junto)
+for i in (27, 54, 89, 105):
+    fx(i, None, "whoosh", -24, atraso=-4.9)
+# O RAFA — 1: um galho estala do lado da voz; a voz dela repete longe enquanto ele espera; e PARA no meio da palavra
+fx(18, "voz", "ep06_estalo", -27, pan=-0.6)
+fx(25, "chamar", "voz_livia_longe", -31, arquivo=LIVIA1, pan=-0.8, eco=2.0, saida=0.6)
+fx(25, "minutos", "voz_livia_longe", -33, arquivo=LIVIA1, pan=-0.85, eco=2.5, saida=0.6)
+fx(26, None, "voz_cortada", -25, arquivo=LIVIA1, pan=-0.7, eco=1.5, ate=0.55, atraso=-1.3)   # "no meio de uma palavra"
+# PARTE 1
+fx(32, "não", "sub_drop", -24)
+# O RAFA — 2: o gongo ao contrário cresce até o "Oppa" (ela, calma demais); o grave quando cai a ficha
+fx(40, "tênis", "ep09_buk", -24)
+fx(51, None, "ep09_jing", -24, reverso=True, atraso=-6.0)
+fx(53, "coreano", "sub_drop", -23)
+# PARTE 2: o fígado; a vila vazia; "mais dois"
+fx(60, "puxou", "ep05_raspar", -26, tom=-3)
+fx(66, None, "ep06_vento_capacete", -27, saida=2.0)
+fx(70, "dois", "sub_drop", -23)
+# O RAFA — 3: a cozinha (luz, mão molhada, o vidro, o assoalho) e o SUSTO 1 com peso grave
+fx(79, "acesa", "tecla", -26)
+fx(81, "molhado", "ep05_raspar", -31, tom=4, saida=1.0)
+fx(82, "vidro", "ep08_bate_vidro", -28)
+fx(84, "passo", "ep06_estalo", -25)
+fx(86, None, "sub_drop", -15, atraso=-0.05)
+fx(87, "apagada", "tecla", -22)
+# PARTE 3: cada botão apertado no tempo do número
+for w in ("quatro", "Dois", "Seis", "Dez"):
+    fx(93, w, "tecla", -22)
+fx(93, "Seis", "tecla", -22, atraso=0.62)                               # o segundo "dois"
+fx(95, "entrar", "ep09_elevador", -26)
+fx(96, "olha", "ep07_respiracao_nuca", -29, pan=-0.8)
+fx(99, None, "braam_horror", -20)
+# PARTE 4
+fx(110, "CNN", "estatica_cctv", -30, saida=1.5)
+# O RAFA — 4: o ritual — o muro, o elevador morto, cada botão, a porta, os passos e a respiração À ESQUERDA dele
+fx(116, "muro", "metal_parada", -26)
+fx(117, "parado", "ep07_corrente_longe", -29, saida=2.0)
+for w in ("Quatro", "Dois", "Seis", "Dez"):
+    fx(123, w, "tecla", -20)
+fx(123, "Seis", "tecla", -20, atraso=0.62)
+fx(125, None, "tecla", -18)
+batidas[127]["sons"] = [s_ for s_ in batidas[127].get("sons", []) if s_["som"] != "passos_atrasados"]
+fx(127, "passos", "passos_atrasados", -24, pan=-0.5)
+batidas[129]["sons"] = [s_ for s_ in batidas[129].get("sons", []) if s_["som"] != "ep07_respiracao_nuca"]
+fx(129, "orelha", "ep07_respiracao_nuca", -20, pan=-0.85)
+fx(134, None, "riser_tensao", -22)
+# O RAFA — 5: a porta abre no outro lado; os passos dele; SUSTO 2 com o grave
+fx(135, None, "ep09_elevador", -24, atraso=-0.4)
+fx(139, "andando", "passos_atrasados", -28)
+fx(144, "canto", "sub_drop", -16)
+fx(148, "Voltaram", "passos_atrasados", -25)
+fx(149, "um", "tecla", -22)
+# O RAFA — 6: a câmera virando; o gongo ao contrário cresce até ela virar o rosto → corte, cordas e o grave
+fx(158, "virou", "whoosh", -26)
+fx(161, None, "ep09_jing", -23, reverso=True, atraso=-6.0)
+fx(161, None, "sub_drop", -15, atraso=-0.05)
+fx(164, "escorregadia", "sub_drop", -22)
+# FECHO: a última frase com uma respiração colada no ouvido
+fx(174, None, "ep07_respiracao_nuca", -27, pan=-0.85, atraso=0.3)
+
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
                 "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
@@ -515,7 +593,7 @@ faltando = sorted(a for a in arqs if not (AQUI / a).exists())
 if faltando:
     raise SystemExit("arquivos faltando: " + ", ".join(faltando))
 sons_dir = AQUI.parents[1] / "painel" / "sons"
-sons = {s["som"] for b in batidas for s in b.get("sons", [])} | {b[k]["som"] for b in batidas for k in ("ambiente", "musica") if b.get(k)}
+sons = {s["som"] for b in batidas for s in b.get("sons", []) if not s.get("arquivo")} | {b[k]["som"] for b in batidas for k in ("ambiente", "musica") if b.get(k)}
 sem_som = sorted(s for s in sons if s != "nenhum" and not list(sons_dir.glob(s + ".*")))
 if sem_som:
     raise SystemExit("sons faltando: " + ", ".join(sem_som))

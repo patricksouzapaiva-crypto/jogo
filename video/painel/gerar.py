@@ -846,7 +846,9 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             D["poses"].append({"t": rel.em(k, po["em"]) - 0.06, "pose": po["pose"]})
         for so in b.get("sons", []):
             plano["efeitos"].append({"t": rel.em(k, so.get("em"), fim=so.get("depois", False)) + so.get("atraso", 0),
-                                     "som": so["som"], "volume_db": so.get("volume_db", -10), "grave": so.get("grave", False)})
+                                     "som": so["som"], "volume_db": so.get("volume_db", -10), "grave": so.get("grave", False),
+                                     **{x: so[x] for x in ("pan", "reverso", "eco", "tom", "ate", "saida", "arquivo", "entrada")
+                                        if x in so}})
         if b.get("musica"):
             if not plano["trilhas"] and roteiro.get("musica"):
                 plano["trilhas"].append({"t": 0.0, **roteiro["musica"]})
@@ -1205,6 +1207,24 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
             continue
         ent += ["-i", str(arq)]
         extra = "lowpass=f=900,bass=g=4:f=70," if e.get("grave") else ""
+        # 15/11 (desenho de som): "ate" corta o som (ex.: a voz que para no meio da palavra), "reverso" vira o som ao
+        # contrário (o gongo que CRESCE até o susto), "tom" muda a afinação em semitons (mais grave = maior/mais longe),
+        # "eco" põe o som num lugar grande, "pan" (-1 esquerda … +1 direita) põe o som de um lado (fone de ouvido),
+        # "saida" (s) apaga devagar no fim
+        if e.get("ate"):
+            extra += f"atrim=0:{e['ate']},"
+        if e.get("tom"):
+            r = 2 ** (e["tom"] / 12)
+            extra += f"asetrate=48000*{r:.4f},aresample=48000,"
+        if e.get("reverso"):
+            extra += "areverse,"
+        if e.get("eco"):
+            extra += f"aecho=0.8:0.7:{int(60 * e['eco'])}|{int(140 * e['eco'])}:0.35|0.22,"
+        if e.get("saida"):
+            extra += f"areverse,afade=t=in:d={e['saida']},areverse,"
+        if e.get("pan"):
+            p_ = max(-1.0, min(1.0, float(e["pan"])))
+            extra += f"pan=stereo|c0={min(1, 1 - p_):.2f}*c0|c1={min(1, 1 + p_):.2f}*c1,"
         ent_s = e.get("entrada", mix.get("entrada_efeitos", 0))  # subida suave do efeito (s): sem estalo de susto
         if ent_s:
             extra += f"afade=t=in:d={ent_s},"

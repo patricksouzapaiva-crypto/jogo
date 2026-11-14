@@ -22,19 +22,19 @@ CORREDOR = "highpass=f=220,lowpass=f=3200,aecho=0.8:0.75:220|420:0.35|0.22"     
 ELEVADOR = "highpass=f=120,lowpass=f=6000,aecho=0.8:0.4:18|33:0.2|0.12"                        # dentro da caixa de metal
 ESCOLHA = {
     2: ("rafa1_Umbriel", CEL, 0.85),          # o áudio no grupo (celular)
-    19: ("livia1_Despina", LONGE_MATA, 0.7),
-    23: ("livia1_Despina", LONGE_MATA, 0.7),  # "a mesma frase. Igualzinha. Com a mesma risada": a MESMA gravação
+    19: ("livia1_Despina", LONGE_MATA, 0.7, -0.7),   # "da mata, do lado ESQUERDO da trilha"
+    23: ("livia1_Despina", LONGE_MATA, 0.7, -0.7),  # "a mesma frase. Igualzinha. Com a mesma risada": a MESMA gravação
     43: ("mae1_Sulafat", CEL, 0.9),
     77: ("pai1_Orus", CEL, 0.9),
     51: ("livia_oppa_Despina_oppa", PERTO, 0.6),   # 15/11: o Vigia lia "Oppa" — agora é ela (pronúncia "Ôppa", escolhida)
     68: ("raposa1_Despina_oppa", QUARTO, 0.6),     # a irmã raposa na porta
-    86: ("livia2_Despina_oppa", QUARTO, 0.75),
+    86: ("livia2_Despina_oppa", QUARTO, 0.75, 0.55),  # do quarto, atrás dele (o susto vem do outro lado)
     122: ("rafa1_Umbriel", ELEVADOR, 0.85),   # o áudio do gancho, agora ouvido de dentro do elevador
-    130: ("falsa1_Despina", PERTO, 0.7),
-    132: ("falsa2_Despina_oppa", PERTO, 0.7),
+    130: ("falsa1_Despina", PERTO, 0.7, -0.85),     # "tão perto que ele sentiu o ar na orelha"
+    132: ("falsa2_Despina_oppa", PERTO, 0.7, -0.85),
     142: ("livia3_Despina", PORTA, 0.65),
     146: ("livia4_Despina", PERTO, 0.6),
-    151: ("rafa_falso1_Umbriel", CORREDOR, 0.65),
+    151: ("rafa_falso1_Umbriel", CORREDOR, 0.65, 0.3),
     155: ("rafa2_Umbriel", CEL, 0.9),
     157: ("mae2_Sulafat", CEL, 0.9),        # a ligação (Sulafat no Gemini 3.8 Flash Lite, escolhida pelo usuário 14/11)
     161: ("falsa3_Despina_oppa", CEL, 0.85),       # pela chamada de vídeo
@@ -64,9 +64,10 @@ LIMPA = ("highpass=f=70,"   # sem afftdn: o sussurro é quase só ar e o redutor
          
          "silenceremove=start_periods=1:start_threshold=-42dB:start_silence=0.03,"
          "areverse,silenceremove=start_periods=1:start_threshold=-42dB:start_silence=0.08,areverse")
-pedacos, cursor, ajuste = [], 0, {}
+pedacos, cursor, ajuste, lugar = [], 0, {}, []
 for i, chave in sorted(TROCAS.items()):
-    nome, filtro, ganho = ESCOLHA[i]
+    nome, filtro, ganho, *resto = ESCOLHA[i]
+    pan = resto[0] if resto else 0.0
     t0 = tempos[ini[i]][0] - 0.06
     t1 = FIM.get(i, tempos[ini[i + 1]][0] - 0.10)         # começo da fala seguinte
     fim_ant = min(tempos[ini[i + 1] - 1][1], t1)
@@ -82,6 +83,7 @@ for i, chave in sorted(TROCAS.items()):
     extra = max(0, sobra)
     bloco = np.zeros(espaco + extra, np.float32); bloco[:len(nova)] = nova
     antes = voz[cursor:x0].copy(); antes[-f:] *= np.linspace(1, 0, f)
+    lugar.append((sum(len(p) for p in pedacos) + len(antes), len(bloco), pan))
     pedacos += [antes, bloco]; cursor = x1
     if extra:
         ajuste[str(i + 1)] = round(-extra / SR, 3)
@@ -90,6 +92,12 @@ for i, chave in sorted(TROCAS.items()):
 resto = voz[cursor:].copy(); resto[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))
 voz = np.concatenate(pedacos + [resto])
 json.dump(ajuste, open(AQUI / "audio" / "ajuste_pausas.json", "w"))
-subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-",
-                str(AQUI / "audio" / "voz_personagens.wav")], input=np.clip(voz, -1, 1).tobytes(), check=True)
+# 15/11: estéreo — o narrador no centro, cada personagem do lado de onde a voz vem (feito para fone de ouvido)
+L, R = voz.copy(), voz.copy()
+for a0, n_, pan in lugar:
+    if pan:
+        L[a0:a0 + n_] *= min(1.0, 1 - pan); R[a0:a0 + n_] *= min(1.0, 1 + pan)
+est = np.stack([L, R], 1)
+subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
+                str(AQUI / "audio" / "voz_personagens.wav")], input=np.clip(est, -1, 1).tobytes(), check=True)
 print("duração nova:", round(len(voz) / SR, 2), "s · pausas a compensar:", ajuste)
