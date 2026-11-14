@@ -70,3 +70,11 @@ H08_B.jpg  ← Woman_huddled_on_hospital_floor_d27a532c.jpg
 H08_C.jpg  ← Woman_huddled_on_hospital_floor_dbd7d6fa.jpg
 H09_A.jpg  ← Man_and_woman_holding_hands_9666afe6.jpg
 H09_B.jpg  ← Man_and_woman_holding_hands_0b9036fd.jpg
+M04_A.jpg <- Sneakers_on_forest_trail_dca74db5.jpg
+M04_B.jpg <- White_sneakers_on_forest_trail_3391147f.jpg
+M04_C.jpg <- White_sneakers_on_forest_trail_5bd8fc1b.jpg
+M04_D.jpg <- White_sneakers_on_forest_trail_b45eaea0.jpg
+H10_A.jpg <- Phone_showing_video_call_woman_891d87ee.jpg
+H10_B.jpg <- Phone_showing_video_call_woman_bbd153dc.jpg
+H10_C.jpg <- Phone_showing_video_call_woman_b58c324c.jpg
+H10_D.jpg <- Phone_showing_video_call_c0adc985.jpg
