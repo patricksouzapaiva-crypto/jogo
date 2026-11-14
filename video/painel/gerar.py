@@ -150,15 +150,31 @@ def narrar_batidas(batidas, voz: dict, destino: Path, paralelo=4) -> Path:
 IDIOMA = {"whisper": "pt"}  # "en" nas versões em inglês (roteiro com "idioma": "en")
 
 
-def transcrever(wav: Path, roteiro_txt: str):
+def transcrever(wav: Path, roteiro_txt: str, pedacos: float = 0):
     from faster_whisper import WhisperModel
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
                          capture_output=True, check=True).stdout
     audio = np.frombuffer(raw, np.float32)
     modelo = WhisperModel("small", device="cpu", compute_type="int8")
     # sem initial_prompt: com o roteiro como dica o Whisper tende a "pular" a primeira frase
-    segs, _ = modelo.transcribe(audio, language=IDIOMA["whisper"], word_timestamps=True)
-    return [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words]
+    if not pedacos:
+        segs, _ = modelo.transcribe(audio, language=IDIOMA["whisper"], word_timestamps=True)
+        return [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words]
+    # 14/11 (Ep. 09 v3): no arquivo inteiro (14 min) o Whisper "pulou" frases inteiras (o fecho, "avós coreanas…") e o
+    # alinhamento do fim desandou. Em pedaços de ~`pedacos` s, cortados num silêncio, ele ouve tudo.
+    sr, n = 16000, len(audio)
+    en = np.sqrt(np.convolve(audio ** 2, np.ones(1600) / 1600, mode="same"))       # energia em janelas de 0,1 s
+    cortes, t = [0], pedacos
+    while t * sr < n - 20 * sr:
+        a0, a1 = int((t - 8) * sr), int((t + 8) * sr)
+        k = a0 + int(np.argmin(en[a0:a1:160])) * 160                               # o ponto mais quieto perto de t
+        cortes.append(k); t = k / sr + pedacos
+    cortes.append(n)
+    out = []
+    for c0, c1 in zip(cortes, cortes[1:]):
+        segs, _ = modelo.transcribe(audio[c0:c1], language=IDIOMA["whisper"], word_timestamps=True)
+        out += [(w.word.strip(), float(w.start) + c0 / sr, float(w.end) + c0 / sr) for s in segs for w in s.words]
+    return out
 
 
 def ajustar_inicios(wav, tempos, janela=(0.8, 1.2)):
@@ -1332,7 +1348,7 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
         # 13/11: VOZ_TEMPOS=<wav> tira os tempos de outra gravação de MESMA duração (ex.: a narração antes de uma
         # emenda de uma palavra) — o Whisper re-transcreve diferente e mexeria nas cenas de um vídeo já aprovado
         wav_t = Path(os.environ["VOZ_TEMPOS"]) if os.environ.get("VOZ_TEMPOS") else wav
-        ouvidas = transcrever(wav_t, texto)
+        ouvidas = transcrever(wav_t, texto, pedacos=roteiro.get("transcrever_pedacos", 0))   # 14/11: ver transcrever()
         tempos, casadas = alinhar(palavras, ouvidas)
         tempos = ajustar_inicios(wav_t, tempos)
     print(f"    {casadas:.0%} das palavras reconhecidas")

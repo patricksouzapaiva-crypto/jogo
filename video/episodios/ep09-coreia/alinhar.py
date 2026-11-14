@@ -9,7 +9,7 @@ AQUI = Path(__file__).parent
 fl = F.ler()[0] + [F.VINHETA]
 wav = AQUI / "audio" / (sys.argv[1] if len(sys.argv) > 1 else "voz_com_vinheta_limpa.wav")
 pal = [w for f in fl for w in tokens(f)]
-ouv = transcrever(wav, "")
+ouv = transcrever(wav, "", pedacos=75)   # em pedaços: no arquivo inteiro o Whisper pulava frases
 json.dump(ouv, open(AQUI / "audio" / "ouvidas.json", "w"))
 tempos, casadas = alinhar(pal, ouv)
 tempos = ajustar_inicios(wav, tempos)

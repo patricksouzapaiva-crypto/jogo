@@ -459,6 +459,7 @@ voz = "audio/voz_personagens.wav" if (AQUI / "audio" / "voz_personagens.wav").ex
 roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
     "voz_arquivo": voz,
+    "transcrever_pedacos": 75,                # no arquivo inteiro o Whisper pulava o fecho
     "cintilar": 0.03, "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,

@@ -8,7 +8,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__)); os.makedirs(f"{AQUI}/limpas",
 norm = lambda s: re.sub(r"[^a-z0-9 ]", "", unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode())
 m = WhisperModel("small", compute_type="int8"); cortes = {}
 for f in sorted(glob.glob(f"{AQUI}/brutas/*.wav")):
-    nome = os.path.basename(f)[:-4]; chave = nome.split("_")[0]
+    nome = os.path.basename(f)[:-4]; chave = nome.rsplit("_", 1)[0]
     alvo = norm(FALAS[chave][1]).split()[:3]
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", f, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout
     ws = [(norm(w.word).strip(), w.start, w.end) for s in m.transcribe(np.frombuffer(raw, np.float32), language="pt", word_timestamps=True)[0] for w in s.words]
