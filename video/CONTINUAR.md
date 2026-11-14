@@ -211,6 +211,17 @@ as pausas da narração. Vigia em alta resolução, troca de lado às vezes. CTA
 - Vídeo 1,5 GB entregue em 4 partes (juntou com sucesso). `publicacao/`: YOUTUBE.md (título, capas E/A/F, descrição com
   20 capítulos, créditos, tags, comentário fixado), SHORTS.md + `shorts_final/` (3 Shorts, ordem 1 → 3 → 2), capas.
 
+## 14/11 — Ep. 09 v3 "O que voltou da montanha" — EM PRODUÇÃO (a v2 "O quarto do andar F" foi PAUSADA: "lamento, não terror")
+- Roteiro aprovado: ep09-coreia/ROTEIRO.md (175 falas; Rafa/Lívia; Jangsan-beom + Irmã Raposa + Jogo do Elevador + Gonjiam; 3 sustos).
+- Vozes: Rafa Umbriel, Lívia Despina, pai Orus, mãe Sulafat (vozes/gerar_vozes.py). Narração: blocos 1, 2, 4 prontos; 3 e 5
+  esperam a cota do Gemini (retomada agendada 14/11 08:20 UTC faz narração → vozes → alinhar → montar → rascunho.sh).
+- Imagens: imagens_v3/ (76, conferidas; carimbos de data refeitos por carimbos.py numa linha do tempo só: subida 21/10,
+  volta 24/10 06:15, cozinha 27/10 03:12, fotos do bicho 2013). Clipes Flow: clipes_v3/ (fora do git; notas em CLIPES_V3.md).
+- Trailers: cortar_filmes.py → mimic_menina, gonjiam_lanterna, gonjiam_mato (+ mimic_mulher reserva), com crédito.
+- Trilha: aprovadas 01–10 + novas 11_a_montanha, 12_jangsan (compressor nas batidas), 13_os_tenis. **ElevenLabs sem créditos até
+  12/12**: o resto vem da biblioteca (painel/sons). Montagem: montar_roteiro.py (v3; o da v2 está em montar_roteiro_v2_bia.py).
+- Qualidade: QUALIDADE.md + painel/ferramentas/revisar.py (rascunho.sh não renderiza se o roteiro tiver erro).
+
 ## 13/11 — Ep. 09 "O terror coreano é pior do que você imagina" (história: "O quarto do andar F") — EM PRODUÇÃO
 - `episodios/ep09-coreia/`: ROTEIRO.md v2 APROVADO; vozes Bia = Leda, mãe = Sulafat, voz falsa no corredor = Sulafat
   sussurrada (`vozes/`). Imagens/clipes do Flow em `imagens/` e `clipes/` (B04 refeita: `regras_folha.py`).
