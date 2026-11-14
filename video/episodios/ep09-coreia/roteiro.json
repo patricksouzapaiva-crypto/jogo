@@ -3803,7 +3803,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.3
   },
   {
    "fala": "No sofá da sala, em Belo Horizonte, sentada de costas para a câmera, estava a irmã dele.",
@@ -3827,7 +3827,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.7
+   "pausa_antes_s": 1.8
   },
   {
    "fala": "Ela virou só o rosto. Devagar.",
