@@ -9,7 +9,7 @@ FERR = AQUI.parents[1] / "painel" / "ferramentas" / "narrar_fluxo.py"
 SONS = AQUI.parents[1] / "painel" / "sons"
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 fl, pers, sec, pausas, _ = F.ler()
-cortes = [0, sec["O RAFA — 2"], sec["O RAFA — 3"], sec["PARTE 4"], sec["O RAFA — 5"], len(fl)]
+cortes = [0, sec["O RAFA — 2"], sec["O RAFA — 3"], sec["CAPÍTULO 7"], sec["O RAFA — 5"], len(fl)]
 quebras = set(sec.values()) | set(pausas)
 for b in range(5):
     saida = AQUI / "audio" / f"bloco{b + 1}.wav"

@@ -54,3 +54,6 @@ if __name__ == "__main__":
 # Na t2 o "Ôppa." sozinho e o "Ôppa, vocês voltaram" saíram juntos, e o "Rafa." (livia3) não saiu:
 # cortar a raposa1 inteira e usar o primeiro "Ôppa" dela como livia_oppa; livia3 fica com a tomada antiga.
 ESCOLHIDA = "brutas/lote_livia_t2.wav"
+# Cortes (Whisper, 15/11) em limpas_escolhidas/<fala>_Despina_lote.wav — o "Rafa." (livia3) SAIU na t2 (41,2 s):
+T_CORTES = {"livia1": (23.9, 27.4), "livia_oppa": (27.7, 29.2), "raposa1": (29.5, 32.3), "livia2": (32.6, 35.15),
+            "falsa1": (35.4, 38.45), "falsa2": (38.75, 40.7), "livia3": (41.0, 42.3), "livia4": (42.7, 45.3), "falsa3": (45.6, 47.8)}

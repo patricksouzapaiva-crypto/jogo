@@ -22,24 +22,31 @@ CORREDOR = "highpass=f=220,lowpass=f=3200,aecho=0.8:0.75:220|420:0.35|0.22"     
 ELEVADOR = "highpass=f=120,lowpass=f=6000,aecho=0.8:0.4:18|33:0.2|0.12"                        # dentro da caixa de metal
 ESCOLHA = {
     2: ("rafa1_Umbriel", CEL, 0.85),          # o áudio no grupo (celular)
-    19: ("livia1_Despina", LONGE_MATA, 0.7, -0.7),   # "da mata, do lado ESQUERDO da trilha"
-    23: ("livia1_Despina", LONGE_MATA, 0.7, -0.7),  # "a mesma frase. Igualzinha. Com a mesma risada": a MESMA gravação
+    19: ("livia1_Despina_lote", LONGE_MATA, 0.7, -0.7),   # "da mata, do lado ESQUERDO da trilha"
+    23: ("livia1_Despina_lote", LONGE_MATA, 0.7, -0.7),  # "a mesma frase. Igualzinha. Com a mesma risada": a MESMA gravação
     43: ("mae1_Sulafat", CEL, 0.9),
     77: ("pai1_Orus", CEL, 0.9),
-    51: ("livia_oppa_Despina_oppa", PERTO, 0.6),   # 15/11: o Vigia lia "Oppa" — agora é ela (pronúncia "Ôppa", escolhida)
-    68: ("raposa1_Despina_oppa", QUARTO, 0.6),     # a irmã raposa na porta
-    86: ("livia2_Despina_oppa", QUARTO, 0.75, 0.55),  # do quarto, atrás dele (o susto vem do outro lado)
+    51: ("livia_oppa_Despina_lote", PERTO, 0.6),   # 15/11: o Vigia lia "Oppa" — agora é ela (pronúncia "Ôppa", escolhida)
+    68: ("raposa1_Despina_lote", QUARTO, 0.6),     # a irmã raposa na porta
+    86: ("livia2_Despina_lote", QUARTO, 0.75, 0.55),  # do quarto, atrás dele (o susto vem do outro lado)
     122: ("rafa1_Umbriel", ELEVADOR, 0.85),   # o áudio do gancho, agora ouvido de dentro do elevador
-    130: ("falsa1_Despina", PERTO, 0.7, -0.85),     # "tão perto que ele sentiu o ar na orelha"
-    132: ("falsa2_Despina_oppa", PERTO, 0.7, -0.85),
-    142: ("livia3_Despina", PORTA, 0.65),
-    146: ("livia4_Despina", PERTO, 0.6),
+    130: ("falsa1_Despina_lote", PERTO, 0.7, -0.85),     # "tão perto que ele sentiu o ar na orelha"
+    132: ("falsa2_Despina_lote", PERTO, 0.7, -0.85),
+    142: ("livia3_Despina_lote", PORTA, 0.65),
+    146: ("livia4_Despina_lote", PERTO, 0.6),
     151: ("rafa_falso1_Umbriel", CORREDOR, 0.65, 0.3),
     155: ("rafa2_Umbriel", CEL, 0.9),
     157: ("mae2_Sulafat", CEL, 0.9),        # a ligação (Sulafat no Gemini 3.8 Flash Lite, escolhida pelo usuário 14/11)
-    161: ("falsa3_Despina_oppa", CEL, 0.85),       # pela chamada de vídeo
+    161: ("falsa3_Despina_lote", CEL, 0.85),       # pela chamada de vídeo
 }
 FIM = {}
+# 15/11 v4: as falas da Lívia/voz falsa saem TODAS do mesmo lote (vozes/gerar_lote.py, amostra A escolhida pelo usuário):
+# cada fala inteira, sem emenda, mesmo "Ôppa" em todas.
+# v4: o roteiro ganhou TEMA novo + 3 capítulos antes do "O RAFA — 1": os números acima são os do v3 (O RAFA — 1 = 12);
+# daqui para a frente valem deslocados pelo que entrou antes.
+import falas as _F
+_DELTA = _F.ler()[2]["O RAFA — 1"] - 12
+ESCOLHA = {(k + _DELTA if k > 2 else k): v for k, v in ESCOLHA.items()}
 
 
 def ler(arq, filtro="anull"):

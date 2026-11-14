@@ -1,4 +1,4 @@
-# O Vigia — Ep. 09 "O que voltou da montanha" (v3 — história aprovada 13/11; roteiro aguardando aprovação)
+# O Vigia — Ep. 09 "O que voltou da montanha" (v4 — história aprovada 13/11; roteiro aguardando aprovação)
 
 **Pedido do usuário (13/11):** a v2 (a Bia) era "mais lamento do que terror". Juntar os 4 contos — a Irmã Raposa, o
 Jangsan-beom, o Jogo do Elevador e o hospital de Gonjiam — numa história só. **Sustos liberados, desde que bem
@@ -28,14 +28,111 @@ não vai.
 ## TEMA — Vigia
 
 Boa noite. Eu sou o Vigia.
-Na última vez, a gente foi ao Japão. Hoje, a gente atravessa o mar. Para a Coreia do Sul.
-O país do K-pop e das novelas. E de um tipo de terror que o ocidente quase não conhece.
-No terror coreano, o monstro raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que
-você ama.
-Hoje eu vou te contar quatro histórias que todo coreano conhece. Um conto que as avós contavam pras crianças não
-saírem de noite. Uma criatura que imita vozes, numa montanha de Busan. Um ritual que a internet jura que leva para
-outro mundo. E o hospital abandonado mais famoso da Ásia.
-E vou te contar como essas quatro histórias aconteceram com uma família de Belo Horizonte. Na mesma semana.
+Na última vez, a gente foi ao Japão. E viu que, lá, o terror é uma regra. Você olhou, está amaldiçoado. Não importa
+por quê.
+Hoje, a gente atravessa o mar. Para a Coreia do Sul.
+E na Coreia é diferente. Lá, o terror não é uma regra.
+É uma dívida.
+O fantasma coreano não aparece por acaso. Ele volta porque alguém deve alguma coisa pra ele. E ele não vai embora
+enquanto não receber.
+E ele raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que você ama.
+Hoje eu vou te mostrar de onde vem esse medo. Quinhentos anos de mortos que voltam para cobrar: de um quarto de
+magistrado no século dezesseis até um hospital abandonado que a internet transformou em lenda.
+E no fim… eu vou te contar o que aconteceu com uma família de Belo Horizonte. Na mesma semana.
+
+## CAPÍTULO 1 — o quarto do magistrado (séc. XVI)
+*(placa: 제1장; Miryang à noite; o pavilhão sobre o rio; um quarto de papel de arroz com uma vela; vulto de branco
+atrás do papel — IA, sem rosto)*
+
+Miryang, sul da Coreia. Século dezesseis. Tempo dos reis.
+O magistrado da cidade tinha uma filha. Chamava-se Arang.
+Uma noite, ela sumiu. Ninguém achou o corpo. O pai, de vergonha, deixou o cargo e foi embora.
+E aí começou.
+O novo magistrado chegou à cidade. Dormiu a primeira noite no quarto oficial.
+De manhã, estava morto. Sem marca nenhuma. Com os olhos abertos.
+O seguinte também. E o seguinte.
+Em pouco tempo, ninguém no reino aceitava ir para Miryang.
+*(FICHA 01 — "아랑 · Arang · Miryang · lenda do período Joseon · o santuário Aranggak existe até hoje")*
+Até que apareceu um homem que aceitou. E, na primeira noite, ele fez o que nenhum outro tinha feito.
+Ficou acordado.
+De madrugada, a vela tremeu. A porta de papel abriu sozinha.
+E entrou uma moça. De branco. O cabelo solto, molhado. Sangue na roupa.
+Os outros tinham morrido de medo só de ver.
+Esse ficou. E perguntou o que ela queria.
+Ela contou. Tinha sido atacada e morta por um empregado da casa. O corpo estava escondido num bambuzal, perto do
+rio. E ninguém nunca tinha procurado.
+No dia seguinte, ele mandou cavar. O corpo estava lá.
+O assassino foi punido. E a Arang nunca mais apareceu.
+Repara: ela não queria matar ninguém. Ela queria ser ouvida. Quem morreu foi quem não aguentou ouvir.
+O santuário da Arang existe até hoje. Fica em Miryang, na beira do rio. E todo ano, na primavera, a cidade ainda faz
+uma cerimônia para ela.
+
+## CAPÍTULO 2 — as irmãs do lago (séc. XVII)
+*(placa: 제2장; casa Joseon; um lago escuro com névoa; duas meninas de branco de costas; um rato na esteira — IA,
+sem rosto)*
+
+Cem anos depois, no norte, numa cidade chamada Cheolsan, a mesma história voltou a acontecer. Só que pior.
+Duas irmãs. Janghwa e Hongryeon. A mãe delas morreu, e o pai casou de novo.
+A madrasta odiava as meninas.
+Uma noite, ela pegou um rato. Tirou a pele. E deixou, ensanguentado, debaixo do cobertor da Janghwa, a mais velha.
+De manhã, mostrou para o pai. Disse que a filha tinha perdido um bebê. Que tinha desonrado a família.
+O pai acreditou.
+A Janghwa foi mandada embora de noite. E o filho da madrasta foi junto. Para garantir que ela chegasse ao lago.
+Ela entrou no lago. E não saiu.
+A irmã mais nova, a Hongryeon, foi procurar. Achou o lugar. E entrou no mesmo lago.
+*(FICHA 02 — "장화홍련전 · Janghwa e Hongryeon · conto da era Joseon · segundo estudiosos, baseado num caso de um
+magistrado de Cheolsan")*
+E aí, de novo: todo magistrado que chegava em Cheolsan morria na primeira noite.
+Até que um ficou. E as duas apareceram juntas, molhadas, pingando no chão do quarto, e contaram tudo.
+Ele mandou abrir a barriga do "bebê". Era um rato.
+Os estudiosos dizem que essa história é muito parecida com um caso real, registrado por um magistrado de Cheolsan no
+século dezessete.
+E repara na roupa delas. Branca. A roupa de luto. O cabelo solto e comprido. Na Coreia antiga, a moça solteira
+usava o cabelo numa trança; solto, só de morta.
+Os coreanos têm um nome para ela: *cheonyeo gwishin*. O fantasma da moça que morreu antes de casar. É o fantasma
+mais temido do país. Porque ela morreu antes de viver. E quem morre antes de viver… volta para cobrar.
+
+## CAPÍTULO 3 — o que não tem rosto (1977 → 2024)
+*(placa: 제3장; uma TV de tubo numa sala de piso aquecido; um corredor de escola feminina à noite; um rosto liso como
+casca de ovo, desfocado ao fundo — IA)*
+
+E tem os que nem rosto têm.
+O *dalgyal gwishin*. O fantasma do ovo.
+Uma cabeça lisa, branca, sem olhos, sem nariz, sem boca. Liso como um ovo.
+Ele não ataca. Não persegue. Não fala.
+Dizem que quem vê… morre.
+*(pausa)*
+Essas histórias atravessaram séculos de boca em boca. Até que, em mil novecentos e setenta e sete, a televisão
+coreana colocou todas elas na sala de casa.
+Chamava-se *Jeonseol-ui Gohyang*. A Terra das Lendas. Um conto de fantasma por semana, de noite, para o país
+inteiro.
+Uma geração inteira de coreanos cresceu com medo dela. E tem uma fala que até hoje todo coreano conhece: o morto que
+volta, no meio da noite, gritando:
+"Me devolve a minha perna!"
+*(pausa)*
+Depois, veio o cinema.
+Em mil novecentos e sessenta e sete, *O Cemitério de Wol-ha*, a história de uma mulher morta por uma armação da
+família do marido, que volta da cova para se vingar, foi um sucesso que a Coreia nunca tinha visto.
+Em mil novecentos e noventa e oito, *Whispering Corridors*: um fantasma numa escola só de meninas. Um filme barato,
+que virou o segundo maior sucesso coreano do ano. E abriu a porta para tudo o que veio depois.
+Em dois mil e três, a história da Janghwa e da Hongryeon virou filme: *A Tale of Two Sisters*. Hollywood
+refez.
+E em dois mil e vinte e quatro, *Exhuma*, um filme sobre xamãs e uma cova que nunca devia ter sido aberta, foi o
+primeiro filme de terror oculto da Coreia a passar de dez milhões de espectadores. O filme mais visto do país naquele
+ano.
+
+## APARTE — Vigia: o han
+
+Repara o que todas essas histórias têm em comum.
+A Arang. As irmãs do lago. A moça de Wol-ha.
+Todas morreram com uma injustiça engasgada. E os coreanos têm uma palavra para isso: *han*.
+É a mágoa que não passa. A raiva que não teve onde ir.
+E quem morre com *han* não descansa. Fica.
+E não assombra quem fez o mal. Assombra quem está perto. A casa. A família. Quem ficou.
+Por isso, na Coreia, os mortos não se escondem. Eles chamam. Com a voz de quem você ama.
+E nos últimos anos… o *han* ganhou um endereço novo.
+A internet.
+
 
 ## O RAFA — 1: a montanha
 *(fotos de celular: Busan, praia de Haeundae, prédios, a montanha atrás)*
@@ -59,14 +156,14 @@ O Rafa não foi.
 Ficou parado no meio da trilha, ouvindo a irmã chamar ele da mata. Do mesmo jeito. Por mais de dez minutos.
 Até que a voz parou. No meio de uma palavra.
 
-## PARTE 1 — o que mora no monte Jangsan
-*(placa: 제1장; Busan à noite; mata; fotos e relatos de fóruns; o filme The Mimic)*
+## CAPÍTULO 4 — o que mora no monte Jangsan
+*(placa: 제4장; Busan à noite; mata; fotos e relatos de fóruns; o filme The Mimic)*
 
 Em dois mil e treze, começaram a aparecer relatos num fórum coreano. Todos sobre a mesma montanha. O Jangsan.
 Moradores de Busan diziam ter visto um bicho grande, de quatro patas, coberto de um pelo branco e comprido. Que se
 movia rápido demais entre as árvores.
 Mas o que assustava não era a aparência. Era o som.
-*(FICHA 01 — "장산범 · Jangsan-beom · 'o tigre do Jangsan' · relatos desde 2012–2013 · Busan")*
+*(FICHA 04 — "장산범 · Jangsan-beom · 'o tigre do Jangsan' · relatos desde 2012–2013 · Busan")*
 Segundo os relatos, ele imita vozes. O choro de uma mulher. Um cachorro. O seu nome.
 E, principalmente, a voz de alguém da sua família, chamando de dentro da mata.
 Quem segue a voz… não volta.
@@ -99,14 +196,14 @@ Porque a primeira coisa que a Lívia disse quando viu ele foi:
 É como as irmãs coreanas chamam o irmão mais velho.
 A Lívia não falava coreano.
 
-## PARTE 2 — a irmã raposa
-*(placa: 제2장; pinturas da era Joseon; uma casa de madeira; estábulo; lua)*
+## CAPÍTULO 5 — a irmã raposa
+*(placa: 제5장; pinturas da era Joseon; uma casa de madeira; estábulo; lua)*
 
 Existe um conto que as avós coreanas contam há séculos. Tem mais de setenta versões. Chama-se *Yeou Nui*. A Irmã Raposa.
 Um homem rico tinha três filhos, e nenhuma filha. Ele rezou tanto por uma menina que disse:
 "Me dá uma filha. Nem que seja uma raposa."
 A filha nasceu.
-*(FICHA 02 — "여우누이 · A Irmã Raposa · conto popular coreano · mais de 75 versões registradas")*
+*(FICHA 05 — "여우누이 · A Irmã Raposa · conto popular coreano · mais de 75 versões registradas")*
 Quando ela fez seis anos, começou a morrer uma vaca por noite no estábulo. Sem marca nenhuma no corpo. Só sem o fígado.
 O pai mandou o filho mais velho vigiar.
 De madrugada, ele viu a irmãzinha entrar no estábulo. Ela passou óleo de gergelim no braço, até o ombro. Enfiou o braço
@@ -147,12 +244,12 @@ E, do quarto, atrás dele, a voz da Lívia, sonolenta:
 Quando ele olhou de novo para a cozinha… a luz estava apagada. E não tinha ninguém.
 De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.
 
-## PARTE 3 — o elevador
-*(placa: 제3장; painéis de elevador; corredores de prédio; telas de fórum)*
+## CAPÍTULO 6 — o elevador
+*(placa: 제6장; painéis de elevador; corredores de prédio; telas de fórum)*
 
 Existe um ritual que se espalhou pela internet da Coreia e do Japão. Ninguém sabe ao certo onde nasceu.
 Chama-se o Jogo do Elevador. E promete levar você para outro mundo.
-*(FICHA 03 — "엘리베이터 게임 · o Jogo do Elevador · ritual da internet · origem disputada entre Coreia e Japão")*
+*(FICHA 06 — "엘리베이터 게임 · o Jogo do Elevador · ritual da internet · origem disputada entre Coreia e Japão")*
 As regras são sempre as mesmas.
 Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.
 Entra no elevador e aperta, nesta ordem: quatro. Dois. Seis. Dois. Dez.
@@ -170,12 +267,12 @@ E embaixo do post, tinha um comentário.
 "Quem volta da montanha nunca é quem subiu. O de verdade fica do outro lado. Para buscar, tem que fazer o jogo onde
 muita gente morreu sofrendo. Num prédio que tenha o quarto andar."
 
-## PARTE 4 — o hospital
-*(placa: 제4장; fotos reais do hospital abandonado; corredores; janelas quebradas; o filme Gonjiam)*
+## CAPÍTULO 7 — o hospital
+*(placa: 제7장; fotos reais do hospital abandonado; corredores; janelas quebradas; o filme Gonjiam)*
 
 Na Coreia, o número quatro se fala *sa*. Igual à palavra "morte". Muitos prédios pulam o quarto andar.
 E existe um prédio que nunca pulou.
-*(FICHA 04 — "곤지암 정신병원 · Gonjiam · Gwangju, Gyeonggi · abandonado nos anos 90 · CNN 2012: 'um dos 7 lugares mais assustadores do planeta'")*
+*(FICHA 07 — "곤지암 정신병원 · Gonjiam · Gwangju, Gyeonggi · abandonado nos anos 90 · CNN 2012: 'um dos 7 lugares mais assustadores do planeta'")*
 O hospital psiquiátrico de Gonjiam, a uma hora de Seul. Fechado nos anos noventa. Abandonado no meio do mato.
 A internet coreana diz que os pacientes morriam lá dentro. Que o diretor desapareceu. Que de noite as janelas acendem.
 Nada disso foi provado. O hospital fechou por dívidas.
@@ -261,17 +358,13 @@ O monte Jangsan continua lá, atrás dos prédios de Haeundae. Com trilha sinali
 sair dela depois que escurece.
 O Rafa nunca mais mandou áudio no grupo.
 A mãe diz que os dois filhos estão bem. Que a Lívia está ótima. Que come muito. Só de noite.
-O terror japonês tem regras. O coreano tem dívida.
-Os coreanos têm uma palavra para isso: han. A mágoa de quem morreu com uma injustiça engasgada.
-E quem morre com han não descansa. Fica. E não assombra quem fez o mal. Assombra quem está perto.
-Por isso, na Coreia, os mortos não se escondem. Eles chamam. Com a voz de quem você ama.
-E essa não é a única história assim.
-Em Miryang, no tempo dos reis, todo magistrado novo que chegava à cidade aparecia morto depois da primeira noite.
-Ninguém mais aceitava o cargo. Até que um ficou acordado. E viu quem entrava no quarto.
-Tem o fantasma do ovo. Um rosto liso, branco, sem olhos e sem boca. Dizem que quem vê… não vive para contar.
+No Japão, a maldição é uma regra. Na Coreia, é uma dívida. E dívida… alguém sempre paga.
+E essas não são as únicas.
 Tem o afogado que pede socorro no rio. E que só solta a sua perna quando você ficar no lugar dele.
-E tem o bunshinsaba. Um ritual de sala de aula que nunca pode terminar sem mandar o espírito embora.
+Tem o bunshinsaba. Um ritual que as alunas faziam escondidas na sala de aula, para chamar um espírito. E que nunca
+pode terminar sem mandar ele embora.
 Porque, se não mandar… ele fica. Com quem chamou.
+E tem as famílias que, para um filho morto parar de voltar, fazem o casamento dele. Com outro morto.
 Me conta aqui nos comentários: qual dessas você quer que eu abra aqui no canal?
 No conto da Irmã Raposa, ela precisava de mais dois.
 Então, hoje, antes de dormir, uma coisa só.
@@ -279,4 +372,5 @@ Se alguém da sua família te chamar de longe… de outro cômodo, da rua, de um
 manda uma mensagem antes de ir.
 E se a resposta chegar da pessoa que está do seu lado…
 não olha pra ela.
+
 *(vinheta do Vigia)*
