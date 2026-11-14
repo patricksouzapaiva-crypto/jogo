@@ -57,7 +57,7 @@ def ler():
             if buf:
                 falas.append(buf); buf = ""
             nome = l[3:].split(" (")[0]
-            secoes[nome.split(":")[0] if nome.startswith("A BIA") else nome.split(" — ")[0]] = len(falas)
+            secoes[nome.split(":")[0] if nome.startswith(("A BIA", "O RAFA")) else nome.split(" — ")[0]] = len(falas)
             continue
         if not l:
             continue
@@ -76,7 +76,7 @@ def ler():
 
 
 def para_tts(t):
-    t = t.replace("*", "").replace("비아.", "Bi-a.")
+    t = t.replace("*", "").replace("Yeou Nui", "Iêu Nui")
     return t
 
 

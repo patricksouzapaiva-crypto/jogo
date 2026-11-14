@@ -1,63 +1,76 @@
-# Ep. 09 "O quarto do andar F" — imagens e clipes para gerar (Nano Banana Pro / Flow)
+# Ep. 09 v3 "O que voltou da montanha" — imagens e clipes para gerar (Nano Banana Pro / Flow)
 
-**O que eu mesmo busco (real, com crédito):** pinturas da era Joseon, fotos antigas de rituais *gut* e de mudangs,
-botões de elevador com "F", o santuário de Arang em Miryang, ventiladores coreanos com timer. **Os trechos de filme**
-(*Exhuma*, *A Tale of Two Sisters*) já estão escolhidos. Aqui vai só o que não existe em foto real.
+**Como gerar:** **16:9**, na maior resolução. **2 variações** de cada (A e B). Não precisa renomear: mande os zips como
+da outra vez que eu organizo.
+**Regra da casa:** ninguém de frente. Só costas, silhueta, mãos, pés ou pedaços. A "Lívia falsa" e a criatura NUNCA
+mostram o rosto. Nada de sangue nem de animal morto à mostra.
+**Sem marcas:** nada de logo, marca ou texto, a não ser onde o prompt pede.
+**Já tenho (do Ep. 09 antigo):** a mãe no sofá em BH (F01) e as mãos com o terço (F02), o celular aceso na cama.
 
-**Como gerar:** **16:9**, na maior resolução. **2 variações** de cada (A e B). Não precisa renomear.
-**Regra da casa:** ninguém de frente. Só costas, silhueta, mãos ou pedaços; a moça de branco SEMPRE com o cabelo
-cobrindo o rosto inteiro. Nada de sangue.
-**Sem marcas:** nada de logo de app, de marca de ventilador ou de empresa. Texto coreano só onde o prompt pede.
+## Estilo A — "foto de celular" (a história do Rafa). Cole no FIM do prompt:
+```
+Shot on a smartphone, handheld, Busan South Korea 2017, realistic amateur photo, slight motion blur, digital noise, no faces, no text, no watermark.
+```
+## Estilo B — "cinema de terror" (o ritual e o outro lado). Cole no FIM do prompt:
+```
+Cinematic horror film still, anamorphic, 35mm, deep shadows, cold practical light, subtle film grain, South Korea, no faces, no text, no watermark.
+```
+## Estilo C — "conto antigo" (a Irmã Raposa). Cole no FIM do prompt:
+```
+Joseon-era Korea, cinematic period film still, moonlight and oil lamp, muted earthy colors, mist, film grain, no faces, no text, no watermark.
+```
 
-## Estilo A — "foto de celular" (a história da Bia). Cole no FIM do prompt:
-```
-Shot on a smartphone, handheld, Seoul, realistic amateur photo, slight motion blur, digital noise, cold fluorescent light, no faces, no text except where described, no watermark.
-```
-## Estilo B — "documental". Cole no FIM do prompt:
-```
-Realistic documentary photograph, 35mm film, South Korea, cold desaturated palette, slight grain, dim light, no faces, no logos, no watermark.
-```
-
-## O goshiwon da Bia (estilo A)
+## A montanha (estilo A)
 | Código | Prompt |
 |---|---|
-| **B01** | A very narrow corridor inside a Seoul goshiwon at night: a long line of identical small doors very close together, cheap laminate floor, one flickering fluorescent tube, shoes left outside some doors. |
-| **B02** | Inside a tiny 7-square-meter goshiwon room: a narrow single bed against the wall, a small desk with books, an old white electric fan on the desk, no window, one small lamp. Seen from the doorway. |
-| **B03** | Close-up of an old elevator button panel in a Korean building: buttons 1, 2, 3, F, 5, 6 — the letter "F" where the 4 should be. Fluorescent light, finger smudges. |
-| **B04** | A sheet of A4 paper taped on a small apartment door with four numbered rules handwritten in Korean (Hangul), slightly wrinkled, taped with yellowing tape. |
-| **B05** | A small name plate on a goshiwon door, the name "비아" written in Korean, and someone has written over it in thick red ink. Dim hallway light. |
-| **B06** | At night in the dark tiny room, an old electric fan on a desk spinning, turned to face a bare wall; faint blue light from a phone; the bed empty and messy. |
-| **B07** | Close-up of a cheap wallpaper on a thin wall, peeling at the corner, revealing dark wooden boards behind it, and the edge of an old yellowed notebook stuck between the boards. |
-| **B08** | Top-down view of an old yellowed notebook open on a desk: pages completely filled with the same Korean word "합격" handwritten hundreds of times in pencil, the paper torn in places from pressure. |
-| **B09** | Top-down view of a new spiral notebook open on a bed, one Portuguese sentence handwritten over and over filling the page: "Ela não queria ir sozinha". Blue pen. Phone flash. |
-| **B10** | The goshiwon corridor at 3 a.m., seen through a door left slightly open: the long dark hallway, and at the far end, barely visible, a figure in a white dress with long black hair covering the face completely, standing still. Grainy, phone night mode. |
-| **B11** | Door "F04" in the same corridor, closed, with a red name written on its name plate; a small plate of rice and fruit placed on the floor in front of it as an offering. Morning light. |
-| **B12** | An old woman (a Korean landlady, "ajumma") seen from behind in a cardigan, holding a ring of keys, standing in front of a closed door in the narrow corridor. |
-| **B13** | Mail and flyers piled up on the floor in front of a closed small apartment door, dust, a dead plant. Cold light. |
-| **B14** | Seen from behind, a young Brazilian woman with a backpack in a crowded Seoul street at night (Sinchon/Hongdae vibe), neon signs in Korean, rain on the ground. |
+| **M01** | Busan at dusk seen from a hillside: the tall apartment towers of Haeundae by the sea, and a dark forested mountain rising right behind them. |
+| **M02** | A forest hiking trail on a Korean mountain at dusk, wooden steps and rope railing; far ahead, seen from behind, a young woman with a backpack walking and filming with her phone. |
+| **M03** | The dense dark forest beside a mountain trail at nightfall, seen from the trail: tree trunks and pure darkness between them, nothing visible, faint blue last light. |
+| **M04** | A pair of white sneakers placed neatly side by side in the middle of a forest trail, laces tied, morning fog, dry leaves. |
+| **M05** | A night search in the forest: several people seen from behind in reflective vests with flashlights spread between the trees, beams crossing in the mist. |
+| **M06** | At dawn, a young woman with long dark hair sitting barefoot on the first stone step at the bottom of a mountain trail, seen from behind, mist, cold blue light. |
+| **M07** | Deep in a dark forest at night, between the trees, a large pale shape covered in long white hair, barely visible and blurred, as if caught by accident in a phone photo. No face, no eyes. |
 
-## A família em Belo Horizonte (estilo A)
+## O apartamento (estilo A)
 | Código | Prompt |
 |---|---|
-| **F01** | A middle-aged Brazilian woman seen from behind sitting on a living room sofa in Belo Horizonte at 3 p.m., holding a phone with both hands, afternoon sun through the window, a family photo on the wall turned out of focus. |
-| **F02** | Close-up of hands of a middle-aged woman holding a smartphone; the screen glow on her fingers; a rosary wrapped around one wrist. (Screen content not visible.) |
+| **C01** | A small Korean apartment kitchen at 3 a.m., only the light above the sink on: a young woman with long dark hair standing still at the sink with her back to the camera, seen from the dark hallway. |
+| **C02** | Close-up of a kitchen counter at night: an open glass bottle of dark sesame oil, half empty, oily drips running down the side, a single warm light. |
+| **C03** | The same small apartment at night seen from the kitchen: a narrow hallway, a bedroom door half open with total darkness inside. |
+| **C04** | A quiet residential street in Busan at dawn: an empty dog leash and a toppled water bowl on the sidewalk, police tape in the background, wet ground. |
+| **C05** | A young man seen from behind sitting on a bed in a small dark room at 4 a.m., his face lit only by the phone screen in his hands. |
 
-## Documental (estilo B)
+## O conto (estilo C)
 | Código | Prompt |
 |---|---|
-| **S01** | A dense Seoul residential alley at night with small buildings, tangled electric wires, a goshiwon sign in Korean, a single lit window high up. |
-| **S02** | A crime-scene special cleaning crew seen from behind in white protective suits and masks, carrying sealed bags out of a narrow building corridor. No blood visible. |
-| **S03** | A traditional Korean wooden house (hanok) at night by a still black lake, mist on the water, a full moon. Joseon era, no people. |
-| **S04** | A white Korean mourning hanbok (sobok) hanging alone on a wooden frame in an empty dark traditional room, faint candlelight. |
-| **S05** | A Korean "soul wedding" ritual table: two small wooden spirit tablets side by side, a miniature bride and groom dolls in traditional wedding clothes, offerings of fruit and rice cakes, candles. Dim, solemn. |
-| **S06** | The edge of a cliff with a small traditional Korean shrine pavilion at dusk over a river (Miryang style), wind, empty. |
+| **J01** | A Joseon-era wooden stable at night under a full moon, cows inside, an oil lamp on a post, a farmhouse behind it. |
+| **J02** | A little girl in a Joseon-era hanbok seen from behind, walking alone into a dark stable at night holding a small oil lamp. |
+| **J03** | A Joseon-era village in daylight completely empty: open doors, dry leaves in the yards, no animals, no people, an eerie stillness. |
+| **J04** | A Joseon-era farmhouse doorway at dusk: a young woman in a hanbok standing in the doorway seen from behind, two travelers with bundles at the gate in front of her, also from behind. |
 
-## Clipes do Flow (8 s cada; mesma regra: ninguém de frente)
+## O hospital e o ritual (estilo B)
 | Código | Prompt |
 |---|---|
-| **V01** | Slow push-in down the narrow goshiwon corridor at 3 a.m., fluorescent light flickering, all doors closed, silence. |
-| **V02** | An old electric fan on a desk slowly turning its head to stop facing a bare wall, in a dark tiny room. |
-| **V03** | Static shot of the thin wall of the tiny room at night; very subtle vibration as if knocked from the other side, dust falling from the top of the wall. |
-| **V04** | Phone camera slowly approaching a door name plate with a name written in red ink, flashlight, handheld. |
-| **V05** | At the far end of the dark corridor, a figure in white with long black hair covering the face stands still; the camera slowly backs away. (Keep the figure small and blurry.) |
-| **V06** | A smartphone lying face up on an empty bed, lighting up in the dark with an incoming notification, the fan spinning next to it. |
+| **H01** | An abandoned four-story psychiatric hospital in the Korean countryside at night, overgrown with weeds, broken windows, a high wall in front. |
+| **H02** | A corridor inside an abandoned hospital: peeling green paint, debris, overturned wheelchairs, a single phone flashlight beam. |
+| **H03** | An old abandoned elevator inside a ruined hospital, metal walls rusted and scratched, no light, a young man seen from behind standing inside it with a phone. |
+| **H04** | Close-up of an old elevator button panel glowing in the dark: round buttons numbered 1 to 10, the button "4" lit red. |
+| **H05** | Inside the elevator with the lights on: the camera looks down at the floor; next to the young man's shoes, a pair of dirty bare feet standing very close, oily footprints. Only feet visible. |
+| **H06** | "The other side": the same hospital corridor but clean, freshly painted, every fluorescent light on, every door wide open, the corridor stretching endlessly. |
+| **H07** | At the end of that clean corridor, one closed door with a metal plate "402", and oily bare footprints on the floor leading to it. |
+| **H08** | Inside a small bare hospital room in dim light: a thin young woman huddled on the floor in the corner, seen from behind, dirty bare feet, the same hiking clothes. |
+| **H09** | Dawn outside the abandoned hospital wall: a young man seen from behind sitting in tall grass with a phone to his ear, a young woman standing silently next to him, also from behind, holding his hand. |
+| **H10** | A phone held in a hand showing a video call: on the screen, a Brazilian living room in daylight and a young woman with long dark hair sitting on the sofa with her back to the camera. |
+
+## Clipes (Flow, 8 s cada, estilo do grupo)
+| Código | Prompt |
+|---|---|
+| **V01** | Slow push into the dark forest beside a trail at night, a flashlight beam shaking slightly, nothing visible between the trees. |
+| **V02** | Elevator button panel in the dark: the buttons 4, 2, 6, 2 and 10 light up one by one. |
+| **V03** | The elevator doors slowly open onto a pitch-black floor; nothing there; the doors stay open. |
+| **V04** | Slow walk down the clean, brightly lit endless hospital corridor with all doors open, toward the single closed door at the end. |
+| **V05** | The kitchen at 3 a.m.: a young woman seen from behind at the sink slowly rubbing oil along her arm up to the shoulder. Back to camera the whole time. |
+| **V06** | Dawn fog at the bottom of a mountain trail, a young woman sitting barefoot on the first step, seen from behind, completely still. |
+
+**Trechos de filme (se quiser):** gravar a tela dos trailers oficiais de *The Mimic* (장산범, 2017) e de *Gonjiam: Haunted
+Asylum* (2018) e subir no mesmo Drive. Eu escolho os planos e coloco com crédito, como em *Exhuma*.
