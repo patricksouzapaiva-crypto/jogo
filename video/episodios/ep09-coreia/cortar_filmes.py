@@ -20,6 +20,11 @@ GONJIAM = "GONJIAM: HAUNTED ASYLUM (2018) · DIR. JUNG BUM-SHIK · SHOWBOX"
 R = {"114623": (1920, 1030, 240, 25), "142451": (1920, 1040, 240, 20), "143012": (1920, 1040, 240, 20),
      "112939": (1636, 920, 382, 140),
      "222951": (1314, 1020, 570, 30), "223327": (1820, 1010, 340, 35)}   # v3: trailers de The Mimic e Gonjiam   # 112939 (Netflix): só a parte de baixo, sem o logo e sem a marca do título
+R.update({"yt/exhuma": (1700, 800, 110, 60), "yt/tale_two_sisters": (1280, 686, 0, 18), "yt/the_wailing": (1600, 700, 160, 150),
+          "yt/whispering_corridors": (520, 420, 36, 32), "yt/bunshinsaba": (1280, 700, 0, 10)})   # v4: trailers do Drive (15/11)
+WHISPER = "WHISPERING CORRIDORS (1998) · DIR. PARK KI-HYUNG · CINE 2000"
+WAILING = "THE WAILING (2016) · DIR. NA HONG-JIN · 20TH CENTURY FOX KOREA"
+BUNSHIN = "BUNSHINSABA (2004) · DIR. AHN BYEONG-KI"
 FUNDIR = {"exhuma_tambor"}
 ALVO = 6.0                                                     # duração mínima depois da câmera lenta (s)
 TRECHOS = {
@@ -39,8 +44,19 @@ V2 = {
     "exhuma_montanha": ("142451", 29.9, 30.7, EXHUMA),       # as montanhas
 }
 
-TRECHOS.update(V2)
-pedidos = sys.argv[1:] or [k for k in TRECHOS if k not in V2]
+V4 = {   # 15/11: planos sem rosto em close, sem legenda gravada e sem letreiro (conferidos nas folhas)
+    "wc_corredor": ("yt/whispering_corridors", 5.0, 21.0, WHISPER),       # janelas e corredor da escola à noite, azul
+    "wc_corredor2": ("yt/whispering_corridors", 70.0, 77.0, WHISPER),     # o corredor comprido de madeira
+    "irmas_casa2": ("yt/tale_two_sisters", 26.4, 30.6, IRMAS),            # a casa vista pelo para-brisa
+    "irmas_escuro": ("yt/tale_two_sisters", 68.6, 72.2, IRMAS),           # a cortina e a casa no escuro
+    "exhuma_cova2": ("yt/exhuma", 2.8, 8.3, EXHUMA),                      # o morro, a família de preto, a cova
+    "exhuma_ritual": ("yt/exhuma", 44.9, 49.6, EXHUMA),                   # os tambores do ritual
+    "exhuma_noite": ("yt/exhuma", 89.4, 94.4, EXHUMA),                    # a mata de noite com o vulto
+    "wailing_vila": ("yt/the_wailing", 2.8, 10.6, WAILING),               # montanhas e a vila na neblina
+    "bunshin_caneta": ("yt/bunshinsaba", 8.0, 11.4, BUNSHIN),             # a caneta vermelha no papel do ritual
+}
+TRECHOS.update(V2); TRECHOS.update(V4)
+pedidos = sys.argv[1:] or [k for k in TRECHOS if k not in V2 and k not in V4]
 for nome in pedidos:
     vid, a, b, credito = TRECHOS[nome]
     w, h, x, y = R[vid]
@@ -65,7 +81,7 @@ for nome in pedidos:
     )
     saida = SAI / f"{nome}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.2f}", "-t", f"{b - a:.2f}",
-                    "-i", str(AQUI / "filmes" / f"screen-20261113-{vid}.mp4"), "-filter_complex", filtro, "-map", "[v]",
+                    "-i", str(AQUI / "filmes" / (f"{vid}.mp4" if vid.startswith("yt/") else f"screen-20261113-{vid}.mp4")), "-filter_complex", filtro, "-map", "[v]",
                     "-an", "-c:v", "libx264", "-crf", "16", "-preset", "medium", str(saida)], check=True)
     d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(saida)],
                              capture_output=True, text=True).stdout)
