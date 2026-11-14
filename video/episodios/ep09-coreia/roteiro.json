@@ -136,7 +136,7 @@
   },
   {
    "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
-   "pausa_antes_s": 2.6,
+   "pausa_antes_s": 2.59,
    "cena": {
     "zoom": [
      1.0,
@@ -145,7 +145,7 @@
     "entrada": "fundir",
     "duracao_entrada": 2.0,
     "antecipar": 2.0,
-    "video": "camera3d/H04_B_536d24fa07_11.0.mp4"
+    "video": "camera3d/H04_B_536d24fa07_10.7.mp4"
    },
    "ambiente": {
     "som": "ep09_motor_elevador",
@@ -200,7 +200,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M03_B_35be001e88_11.1.mp4"
+    "video": "camera3d/M03_B_35be001e88_11.2.mp4"
    },
    "pausa_antes_s": 0.4,
    "ambiente": {
@@ -284,7 +284,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M01_B_4fc7dfebac_8.8.mp4"
+    "video": "camera3d/M01_B_4fc7dfebac_8.9.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -569,27 +569,7 @@
   },
   {
    "fala": "Ele foi abrir a localização dela no celular, pra achar o caminho.",
-   "pausa_antes_s": 0.41,
-   "cena": {
-    "imagem": "imagens_v3/M02_A.jpg",
-    "zoom": [
-     1.0,
-     1.06
-    ],
-    "foco": [
-     [
-      0.55,
-      0.5
-     ],
-     [
-      0.58,
-      0.45
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   }
+   "pausa_antes_s": 0.38
   },
   {
    "fala": "O pontinho azul da Lívia estava do lado direito da trilha. Do lado oposto da voz.",
@@ -627,7 +607,7 @@
   },
   {
    "fala": "O Rafa não foi.",
-   "pausa_antes_s": 1.18,
+   "pausa_antes_s": 1.15,
    "cena": {
     "imagem": "imagens_v3/M03_B.jpg",
     "zoom": [
@@ -1389,7 +1369,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/C05_B_d4b252c09f_9.4.mp4"
+    "video": "camera3d/C05_B_d4b252c09f_9.1.mp4"
    },
    "pausa_antes_s": 0.8
   },
@@ -1841,7 +1821,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/J03_A_c678d24542_8.5.mp4"
+    "video": "camera3d/J03_A_c678d24542_8.6.mp4"
    },
    "ambiente": {
     "som": "ep09_lenda_joseon",
@@ -2542,7 +2522,7 @@
     "som": "ep09_m05_a_parede",
     "volume_db": -32
    },
-   "pausa_antes_s": 0.43
+   "pausa_antes_s": 0.49
   },
   {
    "fala": "De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.",
@@ -2665,7 +2645,7 @@
     "som": "ep09_lenda_elevador",
     "volume_db": -26
    },
-   "pausa_antes_s": 0.69
+   "pausa_antes_s": 0.7
   },
   {
    "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
@@ -3191,7 +3171,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H01_C_35050b6638_8.9.mp4"
+    "video": "camera3d/H01_C_35050b6638_9.0.mp4"
    },
    "pausa_antes_s": 0.6,
    "sons": [
@@ -3215,7 +3195,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H01_A_67d2a01050_9.4.mp4"
+    "video": "camera3d/H01_A_67d2a01050_9.3.mp4"
    }
   },
   {
@@ -3476,7 +3456,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H03_C_88ca612f51_11.7.mp4"
+    "video": "camera3d/H03_C_88ca612f51_12.2.mp4"
    }
   },
   {
@@ -4517,7 +4497,7 @@
     "som": "ep09_m07_o_chamado",
     "volume_db": -32
    },
-   "pausa_antes_s": 0.93,
+   "pausa_antes_s": 0.91,
    "sons": [
     {
      "em": null,
@@ -4532,26 +4512,6 @@
   },
   {
    "fala": "Ela continuava em silêncio. Segurando a mão dele.",
-   "cena": {
-    "imagem": "imagens_v3/H09_B.jpg",
-    "zoom": [
-     1.05,
-     1.1
-    ],
-    "foco": [
-     [
-      0.72,
-      0.55
-     ],
-     [
-      0.72,
-      0.55
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
    "pausa_antes_s": 0.8
   },
   {
