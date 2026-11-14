@@ -27,7 +27,7 @@ t = cena(6.5, tipo="sumuk", entrada="hanji", imagem=im("J02_A"), pintar=4.2, ver
 som(t + 0.3, "ep08_pincel", -13); som(t + 2.2, "ep08_pincel", -15)
 t = cena(5.0, imagem=im("M04_A"), zoom=[1.0, 1.04], efeitos={"flash": {"em": 1.4, "imagem": im("M07_A")}})
 som(t + 1.4, "impacto", -10, grave=True)
-t = cena(6.0, tipo="elevador", entrada="fundir", sequencia=[[4, 0.5], [2, 1.1], [6, 1.7], [2, 2.3], [10, 2.9], [5, 4.3]])
+t = cena(6.0, tipo="elevador", entrada="fundir", sequencia=[[4, 0.5], [2, 1.1], [6, 1.7], [2, 2.3], [10, 2.9], [5, 4.3]], andar=[[2, 1.4], [3, 1.9], [4, 2.4], [5, 2.9], [6, 3.4], [7, 3.8], [8, 4.2], [9, 4.6], [10, 5.0]])
 som(t, "ep09_elevador_tenso", -20)
 t = cena(6.0, entrada="rasgo", imagem=im("H02_A"), zoom=[1.0, 1.1], efeitos={"aovivo": {"espectadores": [1203, 4870], "travar": [3.4]}})
 som(t, "estatica_cctv", -22)

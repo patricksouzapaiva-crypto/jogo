@@ -287,43 +287,101 @@ KR.cenas.agua = function (c, t) {
 // linhas, chuvisco, a imagem rolando e o "liga/desliga" que colapsa numa linha. {tipo:"crt", imagem, liga:0.2,
 // desliga:(s antes do fim) ou null, rolar:[t...]}
 KR.cenas.crt = function (c, t) {
-  const { W, H } = D, u = t - c.t0, im = krImg(c);
-  ctx.fillStyle = "#060403"; ctx.fillRect(0, 0, W, H);
-  const z = 1 + 0.06 * easeInOut(lin(u, 0, Math.max(1, c.t1 - c.t0)));
-  ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.translate(-W / 2, -H / 2);
-  const tw = W * 0.56, th = tw * 0.75, tx = (W - tw) / 2, ty = H * 0.11;
-  // gabinete de madeira
-  const mg = ctx.createLinearGradient(tx, 0, tx + tw, 0); mg.addColorStop(0, "#2a170b"); mg.addColorStop(0.5, "#4a2a14"); mg.addColorStop(1, "#24130a");
-  ctx.fillStyle = mg; rr(tx - tw * 0.08, ty - th * 0.09, tw * 1.36, th * 1.18, tw * 0.03); ctx.fill();
-  for (let i = 0; i < 4; i++) { ctx.fillStyle = "#151008"; ctx.beginPath(); ctx.arc(tx + tw * 1.14, ty + th * (0.15 + i * 0.2), tw * 0.03, 0, 6.29); ctx.fill(); }
-  // a tela
-  const sc = _canvas("crtTela", 640, 480), g = sc.getContext("2d");
-  g.fillStyle = "#000"; g.fillRect(0, 0, 640, 480);
-  const lg = c.liga ?? 0.2, dl = c.desliga != null ? (c.t1 - c.t0) - c.desliga : 1e9;
-  if (im) {
-    let rol = 0; for (const rt of c.rolar || []) { const ur = u - rt; if (ur > 0 && ur < 0.8) rol = (easeInOut(ur / 0.8) * 480) % 480; }
-    g.filter = "grayscale(1) contrast(1.25) brightness(1.05)";
-    const s = Math.max(640 / im.width, 480 / im.height), iw = im.width * s, ih = im.height * s;
-    g.drawImage(im, (640 - iw) / 2, (480 - ih) / 2 - rol, iw, ih); if (rol) g.drawImage(im, (640 - iw) / 2, (480 - ih) / 2 - rol + 480, iw, ih);
-    g.filter = "none";
-  }
-  const r = rng(Math.floor(t * 30) + 3), img = g.getImageData(0, 0, 640, 480), d = img.data, ch = 0.18;
-  for (let i = 0; i < d.length; i += 4) { const n = (r() - 0.5) * 255 * ch; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
-  g.putImageData(img, 0, 0);
-  g.fillStyle = "rgba(0,0,0,.35)"; for (let y = 0; y < 480; y += 3) g.fillRect(0, y, 640, 1);
-  // liga (cresce do centro) / desliga (colapsa numa linha e num ponto)
+  // 15/11 v2 ("melhorar a TV"): uma SALA coreana dos anos 70 de verdade — parede de papel, a TV de madeira com
+  // antena de coelho e paninho de crochê, a família de costas no chão (silhuetas), a luz da tela tremendo nas
+  // costas deles e na parede; na tela: fósforo esverdeado, vidro curvo (barril), faixa de interferência rolando,
+  // perda de sincronia horizontal, chuvisco, e o liga/desliga que colapsa numa linha e num ponto.
+  const { W, H } = D, u = t - c.t0, im = krImg(c), dur = Math.max(1, c.t1 - c.t0);
+  const lg = c.liga ?? 0.2, dl = c.desliga != null ? dur - c.desliga : 1e9;
   let ky = 1, kx = 1;
   if (u < lg + 0.35) { const k = lin(u, lg, 0.35); ky = easeOut(k); kx = Math.min(1, k * 3); }
-  if (u > dl) { const k = lin(u, dl, 0.4); ky = Math.max(0.004, 1 - easeInOut(k * 1.6)); kx = 1 - easeInOut(Math.max(0, k - 0.6) / 0.4); }
-  ctx.save(); rr(tx, ty, tw, th, tw * 0.06); ctx.clip(); ctx.fillStyle = "#0a0a0a"; ctx.fillRect(tx, ty, tw, th);
-  if (kx > 0.001) ctx.drawImage(sc, tx + tw * (1 - kx) / 2, ty + th * (1 - ky) / 2, tw * kx, th * ky);
-  const bz = ctx.createRadialGradient(tx + tw / 2, ty + th / 2, th * 0.3, tx + tw / 2, ty + th / 2, tw * 0.62);   // vidro curvo
-  bz.addColorStop(0, "rgba(255,255,255,.04)"); bz.addColorStop(1, "rgba(0,0,0,.75)"); ctx.fillStyle = bz; ctx.fillRect(tx, ty, tw, th);
+  if (u > dl) { const k = lin(u, dl, 0.45); ky = Math.max(0.004, 1 - easeInOut(k * 1.6)); kx = 1 - easeInOut(Math.max(0, k - 0.6) / 0.4); }
+  const brilho = ky * kx, osc = 0.82 + 0.18 * Math.sin(t * 23) * Math.sin(t * 7.7 + 1);   // a tela pisca
+  // câmera: entra devagar, de trás da família, e se aproxima da tela
+  const z = 1 + 0.12 * easeInOut(lin(u, 0, dur));
+  ctx.save(); ctx.translate(W / 2, H * 0.42); ctx.scale(z, z); ctx.translate(-W / 2, -H * 0.42);
+  // sala: parede de hanji escura, rodapé de madeira, piso de ondol (papel oleado amarelado)
+  const pw0 = ctx.createLinearGradient(0, 0, 0, H * 0.66); pw0.addColorStop(0, "#2a2219"); pw0.addColorStop(1, "#3b3022");
+  ctx.fillStyle = pw0; ctx.fillRect(0, 0, W, H * 0.66);
+  ctx.save(); ctx.globalAlpha = 0.18; ctx.globalCompositeOperation = "overlay"; ctx.drawImage(krHanji(1920, 1080, [128, 128, 128], "parede70b"), 0, 0, W, H * 0.66); ctx.restore();
+  const pg = ctx.createLinearGradient(0, H * 0.66, 0, H); pg.addColorStop(0, "#3a2614"); pg.addColorStop(1, "#1d1209");
+  ctx.fillStyle = pg; ctx.fillRect(0, H * 0.66, W, H * 0.34);
+  ctx.strokeStyle = "rgba(0,0,0,.35)"; ctx.lineWidth = 2; for (let i = 0; i < 9; i++) { const y = H * 0.66 + (H * 0.34) * (i / 9) ** 1.6; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  ctx.fillStyle = "#24160b"; ctx.fillRect(0, H * 0.64, W, H * 0.025);
+  // a TV: gabinete de madeira com pés, alto-falante de tecido, dois botões grandes, antena de coelho, paninho
+  const tw = W * 0.34, th = tw * 0.76, tx = W * 0.5 - tw * 0.62, ty = H * 0.2, cw = tw * 1.42, ch = th * 1.22, cx0 = tx - tw * 0.07, cy0 = ty - th * 0.11;
+  ctx.fillStyle = "#120b05"; ctx.fillRect(cx0 + cw * 0.08, cy0 + ch, cw * 0.05, H * 0.12); ctx.fillRect(cx0 + cw * 0.87, cy0 + ch, cw * 0.05, H * 0.12);
+  const mg = ctx.createLinearGradient(cx0, 0, cx0 + cw, 0); mg.addColorStop(0, "#2e1a0c"); mg.addColorStop(0.45, "#5b351a"); mg.addColorStop(1, "#26150a");
+  ctx.fillStyle = mg; rr(cx0, cy0, cw, ch, tw * 0.03); ctx.fill();
+  ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.lineWidth = 1; for (let i = 0; i < 40; i++) { const y = cy0 + ch * i / 40; ctx.beginPath(); ctx.moveTo(cx0, y + Math.sin(i) * 2); ctx.lineTo(cx0 + cw, y + Math.cos(i) * 2); ctx.stroke(); }   // veio da madeira
+  const ax = tx + tw * 1.08, aw = cw - (ax - cx0) - tw * 0.05;
+  ctx.fillStyle = "#1a120b"; rr(ax, ty + th * 0.08, aw, th * 0.5, 6); ctx.fill();
+  ctx.strokeStyle = "rgba(120,90,60,.35)"; for (let y = ty + th * 0.1; y < ty + th * 0.56; y += 5) { ctx.beginPath(); ctx.moveTo(ax + 4, y); ctx.lineTo(ax + aw - 4, y); ctx.stroke(); }
+  for (let i = 0; i < 2; i++) { const bx = ax + aw / 2, by = ty + th * (0.7 + i * 0.17), br = aw * 0.24;
+    const gb = ctx.createRadialGradient(bx - br * 0.3, by - br * 0.3, 0, bx, by, br); gb.addColorStop(0, "#c9c2b2"); gb.addColorStop(1, "#4a443a");
+    ctx.fillStyle = gb; ctx.beginPath(); ctx.arc(bx, by, br, 0, 6.29); ctx.fill(); ctx.strokeStyle = "#222"; ctx.beginPath(); ctx.moveTo(bx, by); ctx.lineTo(bx + br * Math.cos(1 + i), by + br * Math.sin(1 + i)); ctx.stroke(); }
+  ctx.fillStyle = "rgba(225,218,200,.85)"; ctx.beginPath();   // paninho de crochê
+  for (let i = 0; i <= 24; i++) { const x = cx0 + cw * 0.2 + cw * 0.6 * i / 24; ctx.lineTo(x, cy0 + 6 + (i % 2 ? 10 : 0)); }
+  ctx.lineTo(cx0 + cw * 0.8, cy0 - 2); ctx.lineTo(cx0 + cw * 0.2, cy0 - 2); ctx.fill();
+  ctx.strokeStyle = "#8a8f94"; ctx.lineWidth = 3; ctx.lineCap = "round";   // antena de coelho
+  const ab = [cx0 + cw * 0.5, cy0 - 4];
+  ctx.fillStyle = "#1b1b1b"; ctx.beginPath(); ctx.ellipse(ab[0], ab[1], cw * 0.05, cw * 0.018, 0, 0, 6.29); ctx.fill();
+  for (const a of [-2.05, -1.12]) { ctx.beginPath(); ctx.moveTo(ab[0], ab[1]); ctx.lineTo(ab[0] + Math.cos(a) * H * 0.33, ab[1] + Math.sin(a) * H * 0.33); ctx.stroke(); }
+  // a imagem da tela (640×480), com sinal ruim
+  const sc = _canvas("crtTela", 640, 480), g = sc.getContext("2d");
+  g.fillStyle = "#000"; g.fillRect(0, 0, 640, 480);
+  if (im) {
+    let rol = 0; for (const rt of c.rolar || []) { const ur = u - rt; if (ur > 0 && ur < 0.9) rol = (easeInOut(ur / 0.9) * 480) % 480; }
+    g.filter = "grayscale(1) contrast(1.35) brightness(1.08) blur(0.7px)";
+    const s = Math.max(640 / im.width, 480 / im.height) * 1.04, iw = im.width * s, ih = im.height * s;
+    for (let y = 0; y < 480; y += 4) {   // perda de sincronia horizontal: as linhas escorregam
+      const jit = (Math.sin(y * 0.09 + t * 40) * (Math.sin(t * 2.3) > 0.85 ? 18 : 1.5));
+      g.drawImage(im, 0, ((y + rol) % 480 - (480 - ih) / 2) / s, im.width, 4 / s, (640 - iw) / 2 + jit, y, iw, 4);
+    }
+    g.filter = "none";
+  }
+  const r = rng(Math.floor(t * 30) + 3), img = g.getImageData(0, 0, 640, 480), d = img.data;
+  const banda = ((t * 0.35) % 1.3 - 0.15) * 480;   // a faixa de interferência que sobe
+  for (let i = 0; i < d.length; i += 4) {
+    const y = (i / 4 / 640) | 0, nb = Math.max(0, 1 - Math.abs(y - banda) / 26), n = (r() - 0.5) * 255 * (0.16 + 0.35 * nb);
+    d[i] = (d[i] + n) * 0.86; d[i + 1] = (d[i + 1] + n) * 1.0; d[i + 2] = (d[i + 2] + n) * 0.9;   // fósforo levemente verde
+  }
+  g.putImageData(img, 0, 0);
+  g.fillStyle = "rgba(0,0,0,.33)"; for (let y = 0; y < 480; y += 3) g.fillRect(0, y, 640, 1);
+  // vidro curvo: desenha a tela em faixas com largura variando (barril) + brilho que vaza
+  ctx.save(); rr(tx, ty, tw, th, tw * 0.07); ctx.clip(); ctx.fillStyle = "#070807"; ctx.fillRect(tx, ty, tw, th);
+  if (kx > 0.001) {
+    const N = 48, ah = th * ky, a0 = ty + (th - ah) / 2;
+    for (let i = 0; i < N; i++) { const fy = i / N, curv = 1 - 0.06 * Math.pow(2 * fy - 1, 2), w = tw * kx * curv;
+      ctx.globalAlpha = osc; ctx.drawImage(sc, 0, fy * 480, 640, 480 / N, tx + (tw - w) / 2, a0 + fy * ah, w, ah / N + 1); }
+    ctx.globalAlpha = 1;
+  }
+  const vz = ctx.createRadialGradient(tx + tw * 0.38, ty + th * 0.3, 0, tx + tw / 2, ty + th / 2, tw * 0.62);
+  vz.addColorStop(0, "rgba(255,255,255,.07)"); vz.addColorStop(0.6, "rgba(0,0,0,0)"); vz.addColorStop(1, "rgba(0,0,0,.8)");
+  ctx.fillStyle = vz; ctx.fillRect(tx, ty, tw, th); ctx.restore();
+  // a luz da tela na sala (brilho que vaza do vidro + parede)
+  ctx.save(); ctx.globalCompositeOperation = "screen";
+  const lz = ctx.createRadialGradient(tx + tw / 2, ty + th / 2, 0, tx + tw / 2, ty + th / 2, W * 0.75);
+  lz.addColorStop(0, `rgba(150,185,175,${0.32 * brilho * osc})`); lz.addColorStop(1, "rgba(0,0,0,0)"); ctx.fillStyle = lz; ctx.fillRect(0, 0, W, H);
   ctx.restore();
-  // a luz da TV na sala
-  const brilho = ky * kx; const lz = ctx.createRadialGradient(W / 2, ty + th / 2, 0, W / 2, ty + th / 2, W * 0.7);
-  lz.addColorStop(0, `rgba(170,190,220,${0.16 * brilho})`); lz.addColorStop(1, "rgba(0,0,0,0)"); ctx.fillStyle = lz; ctx.fillRect(0, 0, W, H);
+  // a família de costas no chão (silhuetas), com a borda acesa pela TV
+  // silhuetas desfocadas (perto da câmera = fora de foco), cabelo e ombros orgânicos, borda acesa pela TV
+  const fam = [[0.16, 1.08, 0.36, -0.08], [0.43, 1.16, 0.44, 0.03], [0.7, 1.1, 0.32, 0.06], [0.9, 1.18, 0.4, -0.05]];
+  for (const [fx, fy, fs, inc] of fam) {
+    const X = W * fx, Y = H * fy, s = H * fs;
+    ctx.save(); ctx.translate(X, Y); ctx.rotate(inc); ctx.filter = "blur(7px)"; ctx.fillStyle = "#040302";
+    ctx.beginPath();
+    ctx.moveTo(-s * 0.75, s * 0.5); ctx.bezierCurveTo(-s * 0.72, -s * 0.35, -s * 0.38, -s * 0.52, -s * 0.2, -s * 0.6);   // ombro esq.
+    ctx.bezierCurveTo(-s * 0.3, -s * 0.9, -s * 0.26, -s * 1.28, 0, -s * 1.3);                                          // cabeça (com cabelo)
+    ctx.bezierCurveTo(s * 0.26, -s * 1.28, s * 0.3, -s * 0.9, s * 0.2, -s * 0.6);
+    ctx.bezierCurveTo(s * 0.38, -s * 0.52, s * 0.72, -s * 0.35, s * 0.75, s * 0.5); ctx.closePath(); ctx.fill();
+    ctx.globalCompositeOperation = "screen"; ctx.filter = "blur(5px)"; ctx.strokeStyle = `rgba(150,190,180,${0.28 * brilho * osc})`; ctx.lineWidth = s * 0.025;
+    ctx.beginPath(); ctx.moveTo(-s * 0.26, -s * 1.0); ctx.bezierCurveTo(-s * 0.26, -s * 1.28, s * 0.26, -s * 1.28, s * 0.26, -s * 1.0); ctx.stroke();
+    ctx.restore();
+  }
   ctx.restore();
+  const v = ctx.createRadialGradient(W / 2, H * 0.45, H * 0.25, W / 2, H * 0.45, H * 0.9); v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.75)");
+  ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
 };
 // IRMÃ RAPOSA — pintura em nanquim (sumuk-hwa) se pintando: a imagem vira tinta sobre hanji e aparece pincelada a
 // pincelada; um toque de vermelho no fim (os olhos / o fígado). {tipo:"sumuk", imagem, pintar:4.5}
@@ -356,31 +414,68 @@ KR.cenas.sumuk = function (c, t) {
 // ELEVADOR — o painel de botões desenhado (nada de IA inventando número): acende na ordem do ritual.
 // {tipo:"elevador", sequencia:[[botao, t], ...], andares:10}
 KR.cenas.elevador = function (c, t) {
-  const { W, H } = D, u = t - c.t0, n = c.andares || 10;
-  const g0 = ctx.createLinearGradient(0, 0, W, H); g0.addColorStop(0, "#1b1d1f"); g0.addColorStop(0.5, "#2c2f32"); g0.addColorStop(1, "#141516");
-  ctx.fillStyle = g0; ctx.fillRect(0, 0, W, H);
-  const r = _semente("aco"); ctx.strokeStyle = "rgba(255,255,255,.035)"; for (let i = 0; i < 300; i++) { const y = r() * H; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y + (r() - 0.5) * 6); ctx.stroke(); }   // aço escovado
-  const z = 1 + 0.08 * easeInOut(lin(u, 0, Math.max(1, c.t1 - c.t0)));
-  ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.translate(-W / 2, -H / 2);
-  const pw = H * 0.36, ph = H * 0.86, px = (W - pw) / 2, py = (H - ph) / 2;
-  ctx.fillStyle = "#0d0e0f"; rr(px, py, pw, ph, 14); ctx.fill(); ctx.strokeStyle = "#45494d"; ctx.lineWidth = 3; ctx.stroke();
+  // 15/11 v2 ("melhorar o elevador"): dentro da cabine, em perspectiva — parede de aço escovado com reflexo, o
+  // painel de botões redondos com número gravado e pontos em braile, o mostrador de andar em LED vermelho em cima
+  // (sobe de verdade: 1, 2, 3… e o ▲ piscando), câmera na mão chegando perto, lâmpada fluorescente piscando e a luz
+  // do botão aceso respingando no metal. {sequencia:[[botão, t], ...], andar:[[andar, t], ...], andares:10}
+  const { W, H } = D, u = t - c.t0, n = c.andares || 10, dur = Math.max(1, c.t1 - c.t0);
+  const fl = Math.sin(t * 41) > 0.9 || (Math.sin(t * 3.1) > 0.97) ? 0.55 : 1;   // fluorescente falhando
+  const mx = W * 0.004 * _ruido1(t * 0.8, 2), my = H * 0.004 * _ruido1(t * 0.7, 5);    // câmera na mão
+  const z = 1.0 + 0.22 * easeInOut(lin(u, 0, dur));
+  ctx.save(); ctx.translate(W / 2 + mx, H / 2 + my); ctx.scale(z, z); ctx.rotate(0.004 * _ruido1(t * 0.5, 9)); ctx.translate(-W / 2, -H / 2);
+  // as duas paredes em perspectiva (canto da cabine) + teto
+  const aco = (x0, y0, x1, y1, x2, y2, x3, y3, tom) => {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.lineTo(x2, y2); ctx.lineTo(x3, y3); ctx.closePath(); ctx.clip();
+    const g = ctx.createLinearGradient(x0, 0, x1, 0); g.addColorStop(0, `rgb(${tom * 0.55},${tom * 0.57},${tom * 0.6})`); g.addColorStop(0.5, `rgb(${tom},${tom * 1.02},${tom * 1.05})`); g.addColorStop(1, `rgb(${tom * 0.45},${tom * 0.47},${tom * 0.5})`);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    const r = _semente("escovado" + tom); ctx.globalAlpha = 0.06; ctx.strokeStyle = "#fff";
+    for (let i = 0; i < 260; i++) { const y = r() * H; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y + (r() - 0.5) * 4); ctx.stroke(); }
+    ctx.restore();
+  };
+  aco(-W * 0.1, -H * 0.1, W * 0.72, H * 0.06, W * 0.72, H * 0.98, -W * 0.1, H * 1.1, 92 * fl);       // parede do painel
+  aco(W * 0.72, H * 0.06, W * 1.1, -H * 0.2, W * 1.1, H * 1.25, W * 0.72, H * 0.98, 60 * fl);         // parede lateral (mais escura)
+  ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(W * 0.72, H * 0.06); ctx.lineTo(W * 0.72, H * 0.98); ctx.stroke();
+  // reflexo borrado de uma figura na parede lateral (aparece depois do 5)
+  const t5 = (c.sequencia || []).find(([b]) => b === 5); const rf = t5 ? easeInOut(lin(u, t5[1] + 0.4, 1.2)) : 0;
+  if (rf > 0) { ctx.save(); ctx.globalAlpha = 0.28 * rf; ctx.filter = "blur(14px)"; ctx.fillStyle = "#0a0806";
+    ctx.beginPath(); ctx.ellipse(W * 0.86, H * 0.32, W * 0.03, H * 0.07, 0, 0, 6.29); ctx.fill(); ctx.fillRect(W * 0.825, H * 0.38, W * 0.07, H * 0.5); ctx.restore(); }
+  // mostrador do andar (LED vermelho de 7 segmentos) — segue c.andar ou acompanha os botões
+  let andar = 1; for (const [a, ta] of c.andar || []) if (u >= ta) andar = a;
+  const dx = W * 0.25, dy = H * 0.1, dw = W * 0.22, dh = H * 0.13;
+  ctx.fillStyle = "#050404"; rr(dx, dy, dw, dh, 8); ctx.fill(); ctx.strokeStyle = "#555a5f"; ctx.lineWidth = 3; ctx.stroke();
+  ctx.save(); ctx.font = `700 ${dh * 0.78}px "Special Elite"`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillStyle = "rgba(90,10,10,.35)"; ctx.fillText(andar >= 10 ? "88" : "8", dx + dw * 0.6, dy + dh * 0.54);   // segmentos apagados
+  ctx.fillStyle = "#ff3322"; ctx.shadowColor = "#ff2010"; ctx.shadowBlur = 18; ctx.fillText(String(andar), dx + dw * 0.6, dy + dh * 0.54);
+  if (Math.floor(t * 2.5) % 2 && u > 0.3) { ctx.beginPath(); ctx.moveTo(dx + dw * 0.14, dy + dh * 0.68); ctx.lineTo(dx + dw * 0.24, dy + dh * 0.68); ctx.lineTo(dx + dw * 0.19, dy + dh * 0.32); ctx.fill(); }
+  ctx.restore();
+  // o painel: placa de aço mais clara, parafusos, botões em 2 colunas, braile ao lado
+  const px = W * 0.27, py = H * 0.3, pw = W * 0.2, ph = H * 0.64;
+  const gp = ctx.createLinearGradient(px, py, px + pw, py + ph); gp.addColorStop(0, `rgb(${150 * fl},${153 * fl},${158 * fl})`); gp.addColorStop(1, `rgb(${85 * fl},${88 * fl},${92 * fl})`);
+  ctx.save(); ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 20; ctx.fillStyle = gp; rr(px, py, pw, ph, 10); ctx.fill(); ctx.restore();
+  for (const [sx, sy] of [[0.08, 0.04], [0.92, 0.04], [0.08, 0.96], [0.92, 0.96]]) { ctx.fillStyle = "#3c3f42"; ctx.beginPath(); ctx.arc(px + pw * sx, py + ph * sy, 5, 0, 6.29); ctx.fill(); }
   const acesos = {}; for (const [b, tb] of c.sequencia || []) if (u >= tb) acesos[b] = u - tb;
-  const cols = 2, linhas = Math.ceil(n / cols), R = pw * 0.16;
+  const linhas = Math.ceil(n / 2), R = pw * 0.15;
   for (let i = 0; i < n; i++) {
-    const num = i + 1, col = i % cols, lin_ = linhas - 1 - Math.floor(i / cols);
-    const x = px + pw * (0.3 + col * 0.4), y = py + ph * 0.12 + lin_ * (ph * 0.8 / linhas);
-    const ac = acesos[num] != null, f = ac ? Math.min(1, acesos[num] / 0.08) : 0;
-    ctx.save(); ctx.beginPath(); ctx.arc(x, y, R, 0, 6.29);
-    const gb = ctx.createRadialGradient(x - R * 0.3, y - R * 0.3, 0, x, y, R); gb.addColorStop(0, "#5a5f63"); gb.addColorStop(1, "#1d1f21"); ctx.fillStyle = gb; ctx.fill();
-    ctx.lineWidth = R * 0.12; ctx.strokeStyle = ac ? `rgba(255,60,50,${0.6 + 0.4 * f})` : "#2b2e31"; if (ac) { ctx.shadowColor = "rgba(255,40,30,.9)"; ctx.shadowBlur = R * 0.9 * f; } ctx.stroke();
-    ctx.shadowBlur = 0; ctx.fillStyle = ac ? "#ffd2c8" : "#9ba1a6"; ctx.font = `700 ${R * 0.9}px "Inter"`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(String(num), x, y + R * 0.04);
+    const num = i + 1, col = i % 2, ln = linhas - 1 - Math.floor(i / 2);
+    const x = px + pw * (0.3 + col * 0.42), y = py + ph * 0.1 + ln * (ph * 0.82 / linhas) + R;
+    const ac = acesos[num] != null, f = ac ? Math.min(1, acesos[num] / 0.06) : 0, ap = ac ? Math.max(0, 1 - acesos[num] / 0.18) : 0;
+    ctx.save();
+    // anel e botão (afunda um pouco quando aperta)
+    ctx.fillStyle = "#2a2c2e"; ctx.beginPath(); ctx.arc(x, y, R * 1.12, 0, 6.29); ctx.fill();
+    const gb = ctx.createRadialGradient(x - R * 0.35, y - R * 0.35, 0, x, y, R); gb.addColorStop(0, "#e9ecee"); gb.addColorStop(0.7, "#a3a8ad"); gb.addColorStop(1, "#6c7176");
+    ctx.fillStyle = gb; ctx.beginPath(); ctx.arc(x, y + ap * 2, R * (1 - 0.05 * ap), 0, 6.29); ctx.fill();
+    if (ac) { ctx.lineWidth = R * 0.16; ctx.strokeStyle = `rgba(255,70,50,${0.7 + 0.3 * f})`; ctx.shadowColor = "rgba(255,40,20,1)"; ctx.shadowBlur = R * 1.4 * f; ctx.beginPath(); ctx.arc(x, y, R * 1.04, 0, 6.29); ctx.stroke(); ctx.shadowBlur = 0;
+      const sp = ctx.createRadialGradient(x, y, 0, x, y, R * 4); sp.addColorStop(0, `rgba(255,50,30,${0.22 * f})`); sp.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.globalCompositeOperation = "screen"; ctx.fillStyle = sp; ctx.fillRect(x - R * 4, y - R * 4, R * 8, R * 8); ctx.globalCompositeOperation = "source-over"; }
+    ctx.fillStyle = ac ? "#7a1a12" : "#3a3d40"; ctx.font = `700 ${R * 0.95}px "Inter"`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(String(num), x, y + ap * 2 + R * 0.04);
+    ctx.fillStyle = "rgba(40,42,44,.8)"; for (let b = 0; b < 3; b++) { ctx.beginPath(); ctx.arc(x + R * 1.45, y - R * 0.4 + b * R * 0.4, R * 0.07, 0, 6.29); ctx.fill(); }   // braile
     ctx.restore();
   }
   ctx.restore();
-  // a luz do elevador piscando (fluorescente velha)
-  const pisca = Math.sin(t * 37) > 0.93 ? 0.35 : 0; if (pisca) { ctx.fillStyle = `rgba(0,0,0,${pisca})`; ctx.fillRect(0, 0, W, H); }
+  // luz fria do teto + vinheta + leve desfoque nas bordas (lente)
+  const lt = ctx.createLinearGradient(0, 0, 0, H); lt.addColorStop(0, `rgba(210,230,255,${0.12 * fl})`); lt.addColorStop(0.5, "rgba(0,0,0,0)"); ctx.fillStyle = lt; ctx.fillRect(0, 0, W, H);
+  const v = ctx.createRadialGradient(W * 0.42, H * 0.55, H * 0.3, W * 0.42, H * 0.55, H); v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.8)"); ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
 };
-
 // ---------------------------------------------------------------- 4) TRANSIÇÕES
 // queimar: a cena velha (ou o talismã) queima de baixo para cima com borda incandescente e brasas, revelando a nova
 KR.trans.queimar = function (A, B, k, t) {
