@@ -4,7 +4,8 @@ Não repete a narração (Algenib) nem as vozes do Ep. 08 (Aoede, Gacrux). Mãe 
 O TTS lê a instrução de estilo em voz alta: cortar.py tira esse pedaço (Whisper).
 Uso: python3 gerar_vozes.py amostras   |   python3 gerar_vozes.py todas  (com ESCOLHA preenchida)"""
 import base64, os, sys, time, wave, requests
-URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash-tts:generateContent"
+MODELO = os.environ.get("MODELO", "gemini-3.8-flash-tts")   # 14/11: outros modelos TTS do Gemini têm cota própria
+URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODELO}:generateContent"
 AQUI = os.path.dirname(os.path.abspath(__file__)); os.makedirs(f"{AQUI}/brutas", exist_ok=True)
 BR = "Fale em português do Brasil, com sotaque mineiro leve, "
 FALAS = {
@@ -47,7 +48,7 @@ def dono(chave):
 
 
 def gerar(chave, voz):
-    saida = f"{AQUI}/brutas/{chave}_{voz}.wav"
+    saida = f"{AQUI}/brutas/{chave}_{voz}" + ("" if MODELO == "gemini-3.8-flash-tts" else "-" + MODELO.replace("gemini-", "")) + ".wav"
     if os.path.exists(saida):
         return
     estilo, fala = FALAS[chave]
