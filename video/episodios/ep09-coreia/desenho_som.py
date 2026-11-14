@@ -31,6 +31,11 @@ CAMADAS = {
     # o "outro lado": a lâmpada fluorescente zumbindo + um agudo fino errado
     "fluorescente_tenso": [("ep09_fluorescente", 0), ("drone_tensao", -16, "highpass=f=200,lowpass=f=2500")],
     # a madrugada no mato, na frente do hospital: vento e o grave sumindo
+    # 15/11: o ambiente de terror asiático em loop (montar_loop.py) por baixo das LENDAS, junto com o som do lugar
+    "lenda_mata": [("ep09_loop_terror_asiatico", -3), ("ep09_sn_mata_noite_corujas", -9)],
+    "lenda_joseon": [("ep09_loop_terror_asiatico", -3), ("ep09_lago", -10)],
+    "lenda_elevador": [("ep09_loop_terror_asiatico", -3), ("ep09_motor_elevador", -11)],
+    "lenda_hospital": [("ep09_loop_terror_asiatico", -3), ("ep09_hospital", -9)],
     "amanhecer_tenso": [("ep09_mata_noite", -3), ("ep06_vento_capacete", -10), ("drone_tensao", -19, "lowpass=f=300")],
 }
 

@@ -565,6 +565,33 @@ tira(161, "stinger_cordas"); fx(161, None, SN + "stinger_swell", -9, atraso=-0.0
 fx(161, None, SN + "piano_horror_reverso", -24, atraso=-11.0)              # o piano ao contrário cresce até ela virar o rosto
 fx(84, "passo", SN + "respiracao_medo", -26)
 
+
+# ---------------------------------------------------------------- TERROR ASIÁTICO (15/11)
+# O loop ambiente (montar_loop.py) é a cama das LENDAS; a paleta de ataques (gayageum, haegeum, piri, janggu, buk+jing)
+# fica para os momentos marcados: revelação, susto e ritual. Nada foi descartado (pedido do usuário).
+AH = "ep09_ah_"
+for i, som, db in [(27, "ep09_lenda_mata", -27), (29, "ep09_lenda_mata", -26), (36, "ep09_lenda_mata", -26),
+                   (54, "ep09_lenda_joseon", -27), (58, "ep09_lenda_joseon", -26), (66, "ep09_lenda_joseon", -26),
+                   (89, "ep09_lenda_elevador", -27), (91, "ep09_lenda_elevador", -26),
+                   (105, "ep09_lenda_hospital", -27), (106, "ep09_lenda_hospital", -26), (113, "ep09_lenda_hospital", -26)]:
+    batidas[i]["ambiente"] = {"som": som, "volume_db": db}
+for i in (27, 54, 89, 105):                                   # o cartão de capítulo: buk + jing no lugar do sopro
+    tira(i, SN + "horror_whoosh"); fx(i, None, AH + "buk_jing_1", -22, atraso=-4.9, ate=5.0, saida=2.0)
+# revelações: o golpe dissonante do gayageum
+fx(53, "coreano", AH + "gayageum_golpe_1", -17, ate=4.5, saida=2.0)
+fx(69, "pais", AH + "gayageum_golpe_2", -18, ate=4.5, saida=2.0)
+fx(126, "quatro", AH + "gayageum_golpe_1", -17, ate=4.5, saida=2.0)
+fx(105, "morte", AH + "geomungo_grave_1", -19, ate=4.0, saida=1.5)
+# o ritual: o janggu acelerando enquanto ele aperta os botões; o piri chorando quando a porta abre no 5º andar
+fx(123, None, AH + "janggu_ritual_1", -21, atraso=-0.8, ate=9.0, saida=2.5)
+fx(93, "nesta", AH + "janggu_ritual_2", -25, ate=8.0, saida=2.5)
+fx(127, None, AH + "piri_lamento_1", -27, ate=6.0, saida=2.5)
+# sustos: o grito do haegeum junto do impacto; a flauta soprando depois (a saída lenta)
+fx(144, "canto", AH + "haegeum_grito_1", -20, ate=4.0, saida=1.5)
+fx(87, "apagada", AH + "daegeum_sopro_1", -26, ate=6.0, saida=2.5)
+fx(162, None, AH + "daegeum_sopro_2", -27, ate=6.0, saida=2.5)
+fx(34, None, AH + "ajaeng_drone_1", -27, ate=9.0, saida=3.0)            # "Ninguém nunca provou que ele existe."
+
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
                 "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
