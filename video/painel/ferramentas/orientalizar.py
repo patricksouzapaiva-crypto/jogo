@@ -1,16 +1,16 @@
-"""Dá "cara oriental" a uma faixa já composta (ElevenLabs): acrescenta, POR BAIXO da música, a pulsação do buk, o janggu,
-frases de daegeum e dedilhados de gayageum (trechos do Stable Audio, ataques amaciados), sem mexer na faixa original.
-15/11 (pedido do usuário): "pegar o último fundo do ElevenLabs e colocar tambores, flautas, cara mais oriental".
-Uso: python3 orientalizar.py <faixa.mp3|wav> <saída.mp3>"""
+"""Trilha de terror ORIENTAL a partir de uma faixa composta (ElevenLabs).
+15/11 — v1 (camada baixa por baixo da música) foi reprovada: "está igual". Pesquisa (The Wailing, Exhuma, sinawi, J-horror):
+no terror coreano o CONJUNTO XAMÂNICO é o protagonista — um ciclo rítmico (jangdan, 12/8) que nunca para no janggu/buk, o
+gongo jing marcando as voltas, os sininhos bangul, e piri/haegeum improvisando por cima (sinawi, heterofonia), crescendo
+até o transe; no japonês, um rangido metálico sustentado avisa o fantasma. Então aqui a faixa original vai para o FUNDO
+(-7 dB) e o conjunto vem para a frente, com volumes MEDIDOS em relação à música (não "a gosto").
+Uso: python3 orientalizar.py <faixa> <saída.mp3>"""
 import subprocess, sys
 import numpy as np
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from montar_loop import ler, corrente, por, db, SR  # noqa: E402
-
-MAC = "lowpass=f=5000,acompressor=threshold=-28dB:ratio=4:attack=30:release=400"
-ECO = "aecho=0.8:0.6:180|340:0.3|0.18," + MAC
+from montar_loop import ler, corrente, SR  # noqa: E402
 
 
 def ler_arq(arq):
@@ -19,42 +19,50 @@ def ler_arq(arq):
     return np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
 
 
-def env(x, jan=0.5):
-    n = int(jan * SR); m = len(x) // n
-    return 20 * np.log10(np.sqrt((x[: m * n].mean(1).reshape(m, n) ** 2).mean(1)) + 1e-7)
+def nivel(x):
+    """dB RMS só das partes que soam (ignora silêncios), para comparar camadas."""
+    n = SR // 2; m = len(x) // n
+    e = 20 * np.log10(np.sqrt((x[: m * n].mean(1).reshape(m, n) ** 2).mean(1)) + 1e-7)
+    return float(np.median(e[e > e.max() - 30]))
+
+
+def colocar(cam, x, t, alvo_db, ref_db):
+    """Põe x em t com o nível `alvo_db` RELATIVO à música (ref_db)."""
+    g = 10 ** ((ref_db + alvo_db - nivel(x)) / 20)
+    a = int(t * SR); n = min(len(x), len(cam) - a)
+    if n > 0:
+        cam[a:a + n] += x[:n] * g
 
 
 def orientalizar(arq, saida):
-    mus = ler_arq(arq); dur = len(mus) / SR
-    e = env(mus)
-    vivo = np.where(e > e.max() - 22)[0]                       # onde a música está tocando de fato (sem o fade final)
-    t0, t1 = vivo[0] * 0.5, min(dur, (vivo[-1] + 1) * 0.5)
+    mus = ler_arq(arq); dur = len(mus) / SR; ref = nivel(mus)
     cam = np.zeros_like(mus)
-    tam = corrente(["ep09_amb_tambor_lento_2", "ep09_amb_tambor_lento_1"], t1 - t0, 1.5, "lowpass=f=1800," + MAC)
-    f_in, f_out = int(4 * SR), int(6 * SR)
-    tam[:f_in] *= np.linspace(0, 1, f_in)[:, None]; tam[-f_out:] *= np.linspace(1, 0, f_out)[:, None]
-    por(cam, tam, t0, -13)
-    meio = (t1 - t0) / 2 + t0
-    jan = corrente(["ep09_amb_janggu_suave_1", "ep09_amb_janggu_suave_2"], min(30, (t1 - t0) * 0.45), 1.5, "lowpass=f=2500," + MAC)
-    jan[:f_in] *= np.linspace(0, 1, f_in)[:, None]; jan[-f_out:] *= np.linspace(1, 0, f_out)[:, None]
-    por(cam, jan, meio - len(jan) / SR / 2, -17)
-    passo = (t1 - t0) / 4
-    for k in range(4):                                        # flauta e gayageum se revezando, longe
-        t = t0 + 3 + k * passo
-        if k % 2 == 0:
-            por(cam, ler(f"ep09_amb_daegeum_longe_{k // 2 + 1}", "lowpass=f=6000," + ECO), t, -12)
-        else:
-            por(cam, ler(f"ep09_amb_gayageum_suave_{(k // 2) % 2 + 1}", ECO), t, -11)
-    por(cam, ler("ep09_ah_buk_jing_1", "lowpass=f=2500,afade=t=in:d=0.4," + MAC), max(0, t0 - 0.3), -20)   # o gongo de entrada
-    # a camada se abaixa onde a música cresce (não disputa), e sobe um pouco onde a música respira
-    em = np.repeat(env(mus, 0.5), int(0.5 * SR))[:, None]
-    em = np.pad(em, ((0, max(0, len(cam) - len(em))), (0, 0)), constant_values=em[-1, 0])[: len(cam)]
-    g = np.clip(1.0 - (em - np.median(em)) / 18.0, 0.45, 1.25)
-    out = mus + cam * g
+    seco = "acompressor=threshold=-22dB:ratio=3:attack=10:release=200"
+    eco = "aecho=0.8:0.55:120|260:0.28|0.15," + seco
+    # 1) o ciclo do ritual, do começo ao fim: calmo nos primeiros 2/3, transe no último terço
+    a = corrente(["ep09_gut_jangdan_1", "ep09_gut_jangdan_2"], dur * 0.7, 1.0, seco)
+    b = corrente(["ep09_gut_jangdan_forte_1", "ep09_gut_jangdan_forte_2"], dur * 0.38, 1.0, seco)
+    f = int(3 * SR); a[:f] *= np.linspace(0, 1, f)[:, None]; a[-f:] *= np.linspace(1, 0, f)[:, None]
+    b[:f] *= np.linspace(0, 1, f)[:, None]; b[-int(5 * SR):] *= np.linspace(1, 0, int(5 * SR))[:, None]
+    colocar(cam, a, 0, -3, ref); colocar(cam, b, dur * 0.62, -1, ref)
+    # 2) o gongo jing marcando as voltas do ciclo (a cada ~7 s), e os sininhos bangul nas viradas
+    for k, t in enumerate(np.arange(0.2, dur - 4, 7.0)):
+        colocar(cam, ler(f"ep09_gut_jing_{k % 2 + 1}", "afade=t=out:st=5:d=2"), t, -5, ref)
+    for t, v in ((dur * 0.3, 1), (dur * 0.62, 2), (dur * 0.85, 1)):
+        colocar(cam, ler(f"ep09_gut_bangul_{v}", seco), t, -7, ref)
+    # 3) a voz do ritual: piri e haegeum chorando, e o sinawi (os dois juntos, improvisando) nas partes fortes
+    for t, nome, alvo in ((dur * 0.08, "ep09_gut_piri_1", -1), (dur * 0.25, "ep09_gut_haegeum_1", -1),
+                          (dur * 0.42, "ep09_gut_sinawi_1", 0), (dur * 0.6, "ep09_gut_piri_2", -1),
+                          (dur * 0.74, "ep09_gut_sinawi_2", 1), (dur * 0.88, "ep09_gut_haegeum_2", -2)):
+        colocar(cam, ler(nome, "afade=t=in:d=0.3,afade=t=out:st=9:d=2," + eco), t, alvo, ref)
+    # 4) o rangido metálico do terror japonês, uma vez só, baixo, quando o ritual vira transe
+    colocar(cam, ler("ep09_jh_rangido_1", "afade=t=in:d=2,afade=t=out:st=8:d=3"), dur * 0.6, -9, ref)
+    out = mus * 10 ** (-7 / 20) + cam
+    print(f"música {ref:.1f} dB · conjunto coreano {nivel(cam):.1f} dB (antes: só a música)")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", "-af",
-                    "alimiter=limit=0.89,loudnorm=I=-18:TP=-2:LRA=14", "-b:a", "192k", str(saida)],
+                    "alimiter=limit=0.89,loudnorm=I=-16:TP=-1.5:LRA=12", "-b:a", "192k", str(saida)],
                    input=np.clip(out, -1, 1).astype(np.float32).tobytes(), check=True)
-    print("ok", saida, f"(música {t0:.0f}–{t1:.0f} s)")
+    print("ok", saida)
 
 
 if __name__ == "__main__":
