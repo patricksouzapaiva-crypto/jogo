@@ -34,7 +34,8 @@ async function trabalhador(browser, porta, i0, i1, arq) {
   await page.evaluate((d) => window.preparar(d), D);
   const ff = spawn("ffmpeg", ["-y", "-v", "error", "-f", "image2pipe", "-c:v", "mjpeg", "-r", String(D.fps), "-i", "-",
     ...(RASCUNHO ? ["-vf", `scale=${D.W / 2}:${D.H / 2}`] : []),
-    "-c:v", "libx264", "-preset", RASCUNHO ? "veryfast" : "medium", "-crf", "17", "-pix_fmt", "yuv420p", arq], { stdio: ["pipe", "inherit", "inherit"] });
+    "-c:v", "libx264", ...(RASCUNHO ? ["-preset", "veryfast", "-crf", "17"] : ["-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M"]),
+    "-pix_fmt", "yuv420p", arq], { stdio: ["pipe", "inherit", "inherit"] });
   for (let i = i0; i < i1; i++) {
     const b64 = await page.evaluate(async (t) => { await window.quadro(t); return document.getElementById("tela").toDataURL("image/jpeg", 0.95).split(",")[1]; }, i / D.fps);
     const buf = Buffer.from(b64, "base64");

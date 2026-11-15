@@ -1340,13 +1340,15 @@ def extrair_quadros(c, fps):
     n = int(round(precisa * fps)) + 1
     # 15/11: no rascunho (metade da resolução) os quadros extraídos saem em 960 px — o cache cabia 4× mais pesado no disco
     leve = os.environ.get("PAINEL_RASCUNHO") == "1"
-    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}{'|960' if leve else ''}".encode()).hexdigest()[:16]
+    # 15/11 (final do Ep09): no render final os quadros saem com no máx. 1600 px e -q:v 4 — o cache em 1080p cheio
+    # não cabia no disco da sessão (o vídeo final ainda tem 1920: o motor amplia com zoom suave)
+    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}{'|960' if leve else '|1600q4'}".encode()).hexdigest()[:16]
     pasta = AQUI / ".cache_quadros" / chave
     if not (pasta / f"{n:05d}.jpg").exists():
         pasta.mkdir(parents=True, exist_ok=True)
-        filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}" + (",scale=960:-2" if leve else "")
+        filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}" + (",scale=960:-2" if leve else ",scale='min(iw,1600)':-2")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini:.3f}", "-i", c["video"], "-an", "-vf", filtro,
-                        "-frames:v", str(n), "-q:v", "3", str(pasta / "%05d.jpg")], check=True)
+                        "-frames:v", str(n), "-q:v", "3" if leve else "4", str(pasta / "%05d.jpg")], check=True)
     c["quadros"] = {"dir": str(pasta), "n": n, "fps": fps}
     c["imagem"] = str(pasta / "00001.jpg")
     if vel < 0.999:
@@ -1479,6 +1481,10 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
         if rascunho:
             cmd.append("--rascunho")
         subprocess.run(cmd, check=True)
+        if not rascunho:   # 15/11: os quadros extraídos já viraram vídeo — libera o disco antes da mixagem
+            for c in D.get("cenas", []):
+                if c.get("quadros"):
+                    shutil.rmtree(c["quadros"]["dir"], ignore_errors=True)
     print("4/5 mixagem…")
     if roteiro.get("modo") == "cenas":
         mixar_cenas(voz_cortada, roteiro["_inicio_voz"], duracao, plano, str(tmp / "audio.wav"), roteiro.get("mix"),
@@ -1486,7 +1492,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")
-    venc = ["-c:v", "copy"] if so_audio else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
+    # 15/11: no final o render.js já codifica na qualidade de entrega (crf 19, slow) — aqui só junta o áudio
+    venc = ["-c:v", "copy"] if so_audio or not rascunho else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
                                               "-bufsize", "20M", "-pix_fmt", "yuv420p"]
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", *venc,
                     "-c:a", "aac", "-b:a", "256k", "-aac_is", "0", "-aac_ms", "0", "-aac_pns", "0",  # 10/11: o estéreo de intensidade do AAC distorcia o canal direito (+6 dB)
