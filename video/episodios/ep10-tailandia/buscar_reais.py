@@ -19,7 +19,7 @@ BUSCAS = {
     "C2_krasue": ("Krasue", 6), "C2_phipop": ("Phi Pop ghost", 4), "C2_palafita": ("Isan stilt house wooden", 5),
     "C3_saisin": ("sai sin white thread ceremony", 5), "C3_baisri": ("Bai Sri ceremony Isan", 5), "C3_medium": ("Thai spirit medium ritual", 6),
     "C3_sakyant": ("Sak Yant", 6), "C3_yantra": ("Thai yantra cloth Pha Yant", 6), "C3_amuleto": ("Thai amulets", 5), "C3_kumanthong": ("Kuman Thong", 4),
-    "C4_phitakhon": ("Phi Ta Khon", 10), "C4_dansai": ("Dan Sai Loei", 5),
+    "C4_phitakhon": ("Phi Ta Khon mask festival", 6), "C4_dansai": ("Dan Sai Loei", 5),
     "F_maenak": ("Mae Nak shrine Phra Khanong", 6), "F_pret": ("Preta Thai statue", 6), "F_watphairongwua": ("Wat Phai Rong Wua", 4),
     "M_khaen": ("Khaen player", 4), "M_morlam": ("Mor lam", 4),
     "V_phitakhon": ("Phi Ta Khon filetype:video", 5), "V_isan": ("Isan Thailand filetype:video", 4),
