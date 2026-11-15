@@ -1305,24 +1305,20 @@ def respirar_cenas(D, minimo, duracao):
             if t1 - c["t0"] >= minimo or fixa(c):
                 i += 1; continue
             fim_prox = cs[i + 2]["t0"] if i + 2 < len(cs) else duracao
-            # cena com kanji (a palavra precisa ser lida): ela fica, e a seguinte entra mais tarde
-            if c.get("kanji") and not fixa(prox) and fim_prox - (c["t0"] + minimo) >= minimo and cabe(c, c["t0"], c["t0"] + minimo):
-                prox["t0"] = c["t0"] + minimo; mudou = True; i += 1; continue
-            if not fixa(prox) and cabe(prox, c["t0"], fim_prox):
-                prox["t0"] = c["t0"]                          # a seguinte entra no lugar desta
-                if c.get("entrada") and not prox.get("entrada") == "corte":
+            # 15/11 (rascunho 2: "aparece um pouco de legenda e troca de cena, como um corte rápido"): NUNCA empurrar a
+            # troca para o meio da frase. A cena curta sai e uma vizinha cobre o tempo dela — se o vídeo da vizinha for
+            # curto, o fim dele fica parado (congela) em vez de desacelerar
+            if not fixa(prox):
+                prox["t0"] = c["t0"]
+                if c.get("entrada") and prox.get("entrada") != "corte":
                     prox["entrada"] = c["entrada"]; prox["duracao_entrada"] = c.get("duracao_entrada", 0.6)
+                if not cabe(prox, c["t0"], fim_prox):
+                    prox["congelar"] = True
                 cs.pop(i); tirou += 1; mudou = True; continue
-            if not fixa(ant) and cabe(ant, ant["t0"], t1):
-                cs.pop(i); tirou += 1; mudou = True; continue  # a anterior continua até a seguinte
-            # nenhuma vizinha pode cobrir: a cena GANHA tempo das vizinhas que têm folga (a do Vigia pode entrar depois)
-            falta = minimo - (t1 - c["t0"])
-            pode_prox = not (prox.get("tipo") in ("talisma", "capitulo", "texto") or prox.get("entrada") == "corte") and \
-                (fim_prox - t1) - falta >= minimo and cabe(c, c["t0"], t1 + falta)
-            if pode_prox:
-                prox["t0"] = t1 + falta; mudou = True; i += 1; continue
-            if not fixa(ant) and (c["t0"] - ant["t0"]) - falta >= minimo and cabe(c, c["t0"] - falta, t1):
-                c["t0"] -= falta; mudou = True; i += 1; continue
+            if not fixa(ant):
+                if not cabe(ant, ant["t0"], t1):
+                    ant["congelar"] = True
+                cs.pop(i); tirou += 1; mudou = True; continue
             i += 1
         if not mudou:
             break
@@ -1339,7 +1335,7 @@ def extrair_quadros(c, fps):
     precisa = (c["t1"] - c["t0"]) + 1.2  # margem para a transição de saída
     disp = max(0.1, _duracao_midia(c["video"]) - ini)
     vel = float(c.get("velocidade", 1.0))
-    if disp / vel < precisa:
+    if disp / vel < precisa and not c.get("congelar"):
         vel = max(0.6, min(vel, disp / precisa))
     n = int(round(precisa * fps)) + 1
     # 15/11: no rascunho (metade da resolução) os quadros extraídos saem em 960 px — o cache cabia 4× mais pesado no disco

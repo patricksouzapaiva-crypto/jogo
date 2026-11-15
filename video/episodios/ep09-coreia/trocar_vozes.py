@@ -74,27 +74,39 @@ LIMPA = ("highpass=f=70,"   # sem afftdn: o sussurro é quase só ar e o redutor
 
 
 def inicio_real(t0, tp):
-    """15/11: o Whisper marcou o "Oppa" do Vigia no "-ppa" — o "Ô" vem 0,1–0,3 s antes, separado por um silêncio
-    curtinho (o fechamento do "pp"). A troca cortava ali: "parece que o Vigia vai falar e corta de uma vez".
-    Volta de t0 até achar um silêncio DE VERDADE (180 ms seguidos abaixo de -50 dB, mais que a pausa de um "pp"),
-    sem passar do fim da palavra anterior."""
-    def quieto(t):
-        x = voz[int((t - 0.18) * SR):int(t * SR)]
-        return max(20 * np.log10(np.sqrt((x[k:k + 960] ** 2).mean()) + 1e-9) for k in range(0, len(x) - 959, 480)) < -50
-    # fim da palavra anterior (+120 ms de folga para não comer o fim dela); se o alinhamento colou as duas, até 0,3 s
-    lim = max(min(tp + 0.12, t0), t0 - 1.5) if t0 - tp > 0.05 else t0 - 0.3; t = t0
-    while t - 0.18 > lim:
-        if quieto(t):
-            return t
-        t -= 0.01
-    return lim
+    """Onde a fala do personagem começa a substituir a narração. 15/11 (rascunho 2: "o Vigia fala algo, corta e a mãe
+    fala por cima" / "o Vigia fala O e corta pra ela"): o alinhamento às vezes marca o começo da fala DEPOIS de onde o
+    Vigia começa a dizer. Aqui o corte vai para o MEIO do maior silêncio real entre o fim da frase anterior e o começo
+    desta (janela de 10 ms, abaixo de -45 dB) — o que vem antes do silêncio é a frase anterior; o que vem depois é a fala
+    que sai inteira."""
+    ini, fim = max(tp - 0.6, t0 - 1.2), t0 + 0.15
+    passo = int(0.01 * SR)
+    x = voz[int(ini * SR):int(fim * SR)]
+    n = len(x) // passo
+    if n < 5:
+        return t0 - 0.05
+    e = 20 * np.log10(np.sqrt((x[: n * passo].reshape(n, passo) ** 2).mean(1)) + 1e-9)
+    quieto = e < -45
+    melhor, atual, ini_atual, ini_melhor = 0, 0, 0, 0
+    for k, q in enumerate(quieto):
+        if q:
+            if atual == 0:
+                ini_atual = k
+            atual += 1
+            if atual > melhor:
+                melhor, ini_melhor = atual, ini_atual
+        else:
+            atual = 0
+    if melhor < 6:                       # menos de 60 ms de silêncio: fica no alinhamento
+        return t0 - 0.05
+    return ini + (ini_melhor + melhor / 2) * 0.01
 
 
 pedacos, cursor, ajuste, lugar = [], 0, {}, []
 for i, chave in sorted(TROCAS.items()):
     nome, filtro, ganho, *resto = ESCOLHA[i]
     pan = resto[0] if resto else 0.0
-    t0 = inicio_real(tempos[ini[i]][0], tempos[ini[i] - 1][1]) - 0.03
+    t0 = inicio_real(tempos[ini[i]][0], tempos[ini[i] - 1][1])
     t1 = FIM.get(i, tempos[ini[i + 1]][0] - 0.10)         # começo da fala seguinte
     fim_ant = min(tempos[ini[i + 1] - 1][1], t1)
     x0, x1 = int(t0 * SR), int(t1 * SR)

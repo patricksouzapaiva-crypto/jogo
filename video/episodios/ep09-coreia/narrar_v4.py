@@ -85,38 +85,39 @@ def gravar(x, arq):
 
 rms = lambda y: float(np.sqrt((y[np.abs(y) > 0.01] ** 2).mean()))
 pausa = lambda s: np.zeros(int(s * SR), np.float32)
-fl, pers, sec, pausas, _ = F.ler()
-for b in (1, 5):
-    if not (V3 / f"bloco{b}.wav").exists():
-        shutil.copy(A / (f"bloco{b}_antes_fecho.wav" if b == 5 and (A / "bloco5_antes_fecho.wav").exists() else f"bloco{b}.wav"), V3 / f"bloco{b}.wav")
+if __name__ == "__main__":
+    fl, pers, sec, pausas, _ = F.ler()
+    for b in (1, 5):
+        if not (V3 / f"bloco{b}.wav").exists():
+            shutil.copy(A / (f"bloco{b}_antes_fecho.wav" if b == 5 and (A / "bloco5_antes_fecho.wav").exists() else f"bloco{b}.wav"), V3 / f"bloco{b}.wav")
 
-# 1) bloco 1: GANCHO (v3) + história nova (2 pedaços) + do "O Rafa tinha vinte e sete anos" em diante (v3)
-b1 = ler(V3 / "bloco1.wav"); w1 = palavras(V3 / "bloco1.wav")
-k_tema, k_rafa = achar(w1, "Boa noite. Eu sou o Vigia"), achar(w1, "O Rafa tinha vinte e sete anos")
-if k_tema is None or k_rafa is None:
-    sys.exit("bloco1 v3: não achei o começo do TEMA ou do RAFA 1")
-corte_tema = int((w1[k_tema - 1][2] + (w1[k_tema][1] - w1[k_tema - 1][2]) * 0.5) * SR)
-corte_rafa = int((w1[k_rafa - 1][2] + (w1[k_rafa][1] - w1[k_rafa - 1][2]) * 0.5) * SR)
-gancho = fl[sec["GANCHO"]:sec["TEMA"]]
-h1 = fl[sec["TEMA"]:sec["CAPÍTULO 2"]]
-h2 = fl[sec["CAPÍTULO 2"]:sec["O RAFA — 1"]]
-p1 = gerar("historia1", tts_texto(gancho[-3:]), tts_texto(h1))
-p2 = gerar("historia2", tts_texto(h1[-3:]), tts_texto(h2))
-ref = rms(b1[:corte_tema]); p1 *= ref / rms(p1); p2 *= ref / rms(p2)
-novo1 = np.concatenate([b1[:corte_tema], p1, pausa(1.2), p2, pausa(1.2), b1[corte_rafa:]])
-gravar(novo1, A / "bloco1.wav")
-print(f"bloco1 v4: {len(novo1) / SR:.1f}s (v3: {len(b1) / SR:.1f}s)")
+    # 1) bloco 1: GANCHO (v3) + história nova (2 pedaços) + do "O Rafa tinha vinte e sete anos" em diante (v3)
+    b1 = ler(V3 / "bloco1.wav"); w1 = palavras(V3 / "bloco1.wav")
+    k_tema, k_rafa = achar(w1, "Boa noite. Eu sou o Vigia"), achar(w1, "O Rafa tinha vinte e sete anos")
+    if k_tema is None or k_rafa is None:
+        sys.exit("bloco1 v3: não achei o começo do TEMA ou do RAFA 1")
+    corte_tema = int((w1[k_tema - 1][2] + (w1[k_tema][1] - w1[k_tema - 1][2]) * 0.5) * SR)
+    corte_rafa = int((w1[k_rafa - 1][2] + (w1[k_rafa][1] - w1[k_rafa - 1][2]) * 0.5) * SR)
+    gancho = fl[sec["GANCHO"]:sec["TEMA"]]
+    h1 = fl[sec["TEMA"]:sec["CAPÍTULO 2"]]
+    h2 = fl[sec["CAPÍTULO 2"]:sec["O RAFA — 1"]]
+    p1 = gerar("historia1", tts_texto(gancho[-3:]), tts_texto(h1))
+    p2 = gerar("historia2", tts_texto(h1[-3:]), tts_texto(h2))
+    ref = rms(b1[:corte_tema]); p1 *= ref / rms(p1); p2 *= ref / rms(p2)
+    novo1 = np.concatenate([b1[:corte_tema], p1, pausa(1.2), p2, pausa(1.2), b1[corte_rafa:]])
+    gravar(novo1, A / "bloco1.wav")
+    print(f"bloco1 v4: {len(novo1) / SR:.1f}s (v3: {len(b1) / SR:.1f}s)")
 
-# 2) bloco 5: FECHO novo entre "Só de noite." e "No conto da Irmã Raposa" (o resto do bloco é o v3)
-b5 = ler(V3 / "bloco5.wav"); w5 = palavras(V3 / "bloco5.wav")
-k_conto = achar(w5, "No conto da Irmã Raposa")
-if k_conto is None:
-    sys.exit("bloco5 v3: não achei 'No conto da Irmã Raposa'")
-corte5 = int((w5[k_conto - 1][2] + (w5[k_conto][1] - w5[k_conto - 1][2]) * 0.5) * SR)
-i0 = next(i for i, f in enumerate(fl) if f.startswith("No Japão, a maldição é uma regra"))
-i1 = next(i for i, f in enumerate(fl) if f.startswith("No conto da Irmã Raposa"))
-fe = gerar("fecho", tts_texto(fl[i0 - 3:i0]), tts_texto(fl[i0:i1]))
-fe *= rms(b5) / rms(fe)
-novo5 = np.concatenate([b5[:corte5], fe, pausa(0.6), b5[corte5:]])
-gravar(novo5, A / "bloco5.wav")
-print(f"bloco5 v4: {len(novo5) / SR:.1f}s (v3: {len(b5) / SR:.1f}s)")
+    # 2) bloco 5: FECHO novo entre "Só de noite." e "No conto da Irmã Raposa" (o resto do bloco é o v3)
+    b5 = ler(V3 / "bloco5.wav"); w5 = palavras(V3 / "bloco5.wav")
+    k_conto = achar(w5, "No conto da Irmã Raposa")
+    if k_conto is None:
+        sys.exit("bloco5 v3: não achei 'No conto da Irmã Raposa'")
+    corte5 = int((w5[k_conto - 1][2] + (w5[k_conto][1] - w5[k_conto - 1][2]) * 0.5) * SR)
+    i0 = next(i for i, f in enumerate(fl) if f.startswith("No Japão, a maldição é uma regra"))
+    i1 = next(i for i, f in enumerate(fl) if f.startswith("No conto da Irmã Raposa"))
+    fe = gerar("fecho", tts_texto(fl[i0 - 3:i0]), tts_texto(fl[i0:i1]))
+    fe *= rms(b5) / rms(fe)
+    novo5 = np.concatenate([b5[:corte5], fe, pausa(0.6), b5[corte5:]])
+    gravar(novo5, A / "bloco5.wav")
+    print(f"bloco5 v4: {len(novo5) / SR:.1f}s (v3: {len(b5) / SR:.1f}s)")
