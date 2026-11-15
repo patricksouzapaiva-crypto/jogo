@@ -201,11 +201,11 @@ def HAN(tam, x=0.5, **kw):                                                  # o 
 C(0, {"tipo": "relogios", "lados": [{"nome": "Busan", "hora": "03:00", "imagem": E + "H03.jpg", "brilho": 0.6},
                                      {"nome": "Belo Horizonte", "hora": "15:00", "imagem": IV2 + "F01_A.jpg", "brilho": 0.75}]})
 chat(1, {"de": "Rafa", "tipo": "audio", "duracao": "0:06", "hora": "15:00", "em": "áudio", "digitando": 0.6})
-C(2, vid4("V20"))                                                        # o Rafa encostado no elevador; a luz acende
+C(2, vid4("V20"), (c3(E + "H04.jpg", "entrar", (0.6, 0.45), 0.8, 0.2), "prédio"))                                                        # o Rafa encostado no elevador; a luz acende
 C(3, {"tipo": "elevador", "sequencia": [[4, 0.4], [2, 0.9], [6, 1.4], [2, 1.9], [10, 2.4]],
       "andar": [[2, 1.2], [3, 1.8], [4, 2.4], [5, 3.0], [6, 3.6], [7, 4.2], [8, 4.8], [9, 5.4], [10, 6.0], [11, 6.6], [12, 7.2]]})
 T(3, "fundir", 1.2)
-C(4, vid4("V17", video_inicio=4.0, atmos={"neblina": 0.3}))              # a irmã no degrau, de costas
+C(4, vid4("V17", video_inicio=4.0, atmos={"neblina": 0.3}), (img(E + "M08.jpg", (1.0, 1.06), ((0.4, 0.5), (0.42, 0.48))), "voltou"))              # a irmã no degrau, de costas
 C(5, c3(E + "M04.jpg", "entrar", (0.5, 0.5), 1.0, 0.3))                  # a mata escura
 amb(0, "ep09_motor_elevador", -24)
 batidas[3]["ambiente"] = {"som": "ep09_motor_elevador", "volume_db": -14}   # o motor SOZINHO nos 4 s
@@ -223,8 +223,8 @@ C(8, c3(E + "M01.jpg", "lado", (0.45, 0.45), 0.8, 0.0))                  # Busan
 C(9, vigia((1.0, 1.06)))
 C(10, img(E + "T07.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45)), kanji=K("빚", 0.8, 0.45, "sangue", "bit · dívida", tam=0.3, atraso=0.2)))
 pincel(10, None, atraso=0.1)
-C(11, vid4("V15"))                                                        # o altar da xamã: o que se deve aos mortos
-C(12, vid4("V08"))                                                        # ela na porta
+C(11, vid4("V15"), (img(E + "T06.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "embora"))                                                        # o altar da xamã: o que se deve aos mortos
+C(12, vid4("V08"), (img(E + "A06.jpg", (1.06, 1.12), ((0.5, 0.4), (0.5, 0.36))), "voz"))                                                        # ela na porta
 C(13, c3(E + "A01.jpg", "entrar", (0.3, 0.3), 0.8, 0.0), (c3(E + "H01.jpg", "entrar", (0.5, 0.45), 0.8, 0.0), "hospital"))
 C(14, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
 amb(6, "nenhum"); amb(11, "ep09_lenda_joseon", -27); amb(13, "nenhum")
@@ -277,9 +277,9 @@ C(45, img(E + "I04.jpg", (1.1, 1.18), ((0.5, 0.65), (0.5, 0.68)), kanji=K("쥐",
 pincel(45, "rato")
 C(46, ficha("장화홍련전 · Janghwa e Hongryeon\nconto da era Joseon · Cheolsan", "Janghwa e Hongryeon"))
 C(47, img(E + "I08.jpg", (1.06, 1.14), ((0.4, 0.4), (0.4, 0.35))))
-C(48, vid4("V12", dur_max=4.5), (img(E + "I09.jpg", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45)), kanji=K("처녀귀신", 0.8, 0.45, "luz", "cheonyeo gwishin", tam=0.16, atraso=0.2)), "fantasma"),
+C(48, vid4("V12", dur_max=4.5), (img(E + "I09.jpg", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45)), kanji=K("처녀귀신", 0.8, 0.45, "luz", "cheonyeo gwishin", tam=0.16, atraso=0.2)), "cheonyeo"),
       (img(E + "A06.jpg", (1.0, 1.08), ((0.5, 0.4), (0.5, 0.36))), "Porque"))
-pincel(48, "fantasma")
+pincel(48, "cheonyeo")
 amb(34, "nenhum"); amb(35, "ep09_lenda_joseon", -26); amb(40, "ep09_lago", -24); amb(43, "ep09_lenda_joseon", -27); amb(47, "ep09_lenda_mata", -27)
 fx(41, None, "ep09_lago", -22, saida=2.0)
 fx(44, "pingando", "ep09_sn_respiracao_medo", -30)
@@ -301,7 +301,7 @@ C(58, filme("exhuma_noite"))
 C(59, {"video": "tv/TV_wolha.mp4", "zoom": [1.0, 1.0]}, (img(E + "T04.jpg", (1.05, 1.15), ((0.6, 0.5), (0.62, 0.48))), "cova"))
 C(60, filme("wc_noite"), (img(E + "T05.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.48))), "abriu"))
 C(61, filme("irmas_chegada"))
-C(62, filme("exhuma_cova"), (vid4("V14"), "primeiro"))
+C(62, filme("exhuma_cova"), (vid4("V14"), "primeiro"), (img(E + "T06.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "visto"))
 amb(49, "nenhum"); amb(50, "ep09_lenda_hospital", -27); amb(54, "nenhum"); amb(58, "ep09_lenda_mata", -28)
 fx(53, "morre", "sub_drop", -18); fx(53, "morre", "ep09_jing", -24)
 fx(54, None, "ep08_tv_chiado", -24, ate=3.0, saida=1.0)
@@ -397,7 +397,7 @@ C(116, img("J01_B", (1.0, 1.06), ((0.4, 0.55), (0.42, 0.5))))
 C(117, c3("J02_A", "entrar", (0.55, 0.55), 0.8, 0.0))                     # a menina de hanbok, de costas
 C(118, c3("J01_C", "entrar", (0.45, 0.6), 0.9, 0.3, atmos={"neblina": 0.4}))   # o estábulo à noite
 C(119, img("J01_A", (1.0, 1.08), ((0.3, 0.6), (0.25, 0.6))))
-C(120, vid4("V19", video_inicio=3.0), (c3("J02_B", "entrar", (0.5, 0.5), 1.0, 0.3, atmos={"poeira": 0.3}), "passou"))
+C(120, vid4("V19", video_inicio=3.0), (c3("J02_B", "entrar", (0.5, 0.5), 1.0, 0.3, atmos={"poeira": 0.3}), "Ela"))
 C(121, img("J01_B", (1.1, 1.18), ((0.3, 0.75), (0.28, 0.78))))
 C(122, img("J04_B", (1.0, 1.06), ((0.45, 0.55), (0.5, 0.55))))
 C(123, img("J03_C", (1.0, 1.06), ((0.5, 0.55), (0.5, 0.5))))
