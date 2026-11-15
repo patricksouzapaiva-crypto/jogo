@@ -500,7 +500,7 @@ function telaTexto(c, t, a) {
   const tam = c.tamanho || est.tam || Math.round(Math.min(W, H) * 0.055);
   const fam0 = c.fonte || est.fonte || T.fonte_texto;
   const peso0 = c.peso || est.peso || 500;
-  ctx.font = `${peso0} ${tam}px "${fam0}"`;
+  ctx.font = `${peso0} ${tam}px "${fam0}", "Noto Serif Thai", "Noto Serif Khmer"`;
   const linhas = [];
   for (const par of (c.texto || "").split("\n")) {   // quebra para caber em 78% da largura
     let atual = "";
@@ -521,7 +521,7 @@ function telaTexto(c, t, a) {
     const y = H / 2 + (k - (linhas.length - 1) / 2) * tam * 1.5;
     const palavras = ln.split(" ");
     const verm = c.vermelho ? c.vermelho.split(" ") : [palavras[palavras.length - 1]];
-    ctx.font = `${peso0} ${tam}px "${fam}"`;
+    ctx.font = `${peso0} ${tam}px "${fam}", "Noto Serif Thai", "Noto Serif Khmer"`;
     const larg = ctx.measureText(ln).width; let x = W / 2 - larg / 2;
     for (const p of palavras) {
       const n = Math.max(0, Math.min(p.length, mostrados));

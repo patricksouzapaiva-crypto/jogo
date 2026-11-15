@@ -1,12 +1,16 @@
 """Vozes dos personagens do Ep. 10 (16/11): os áudios de WhatsApp do Mateus e da Camila, no Gemini TTS.
 Cada fala sai INTEIRA numa chamada só (lição do Ep. 09: fala emendada soa como erro), com a direção de atuação do roteiro
 na instrução. Amostra de vozes: python3 gerar_vozes.py --amostra  (a 1ª fala do Mateus e a da Camila em várias vozes).
-Uso: python3 gerar_vozes.py [voz_mateus] [voz_camila]  → brutas/<id>_<voz>_t<n>.wav (2 tomadas)"""
-import base64, os, sys, time, wave
+Uso: python3 gerar_vozes.py [voz_mateus] [voz_camila]  → brutas/f<id>_<pers>_<voz>.wav (1 tomada: a cota é 10/dia)
+e limpas_escolhidas/f<id>.wav (16/11: vozes escolhidas pelo usuário: Mateus = Iapetus, Camila = Aoede).
+O TTS às vezes LÊ a instrução em voz alta: a direção vai no formato curto "Diga …: <fala>" e, de qualquer jeito, o Whisper
+acha onde a fala começa (última ocorrência das 3 primeiras palavras) e o que vem antes é cortado."""
+import base64, os, subprocess, sys, time, wave
+import numpy as np
 from pathlib import Path
 import requests
 
-AQUI = Path(__file__).parent; B = AQUI / "brutas"; B.mkdir(exist_ok=True)
+AQUI = Path(__file__).parent; B = AQUI / "brutas"; B.mkdir(exist_ok=True); L = AQUI / "limpas_escolhidas"; L.mkdir(exist_ok=True)
 URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash-tts:generateContent"
 sys.path.insert(0, str(AQUI.parent)); import falas as F   # noqa: E402
 fl, pers, *_ = F.ler()
@@ -34,16 +38,39 @@ def gerar(texto, voz, saida):
 
 
 fala = lambda i: fl[i].strip('"“”')
+
+
+def cortar(bruto, texto, saida):
+    """corta o que vem antes da fala (instrução lida em voz alta), pelo Whisper"""
+    from faster_whisper import WhisperModel
+    import unicodedata, re
+    nz = lambda t: re.sub(r"[^a-z0-9 ]", "", unicodedata.normalize("NFKD", t.lower()).encode("ascii", "ignore").decode()).strip()
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(bruto), "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True, check=True).stdout
+    seg, _ = WhisperModel("small", compute_type="int8").transcribe(np.frombuffer(raw, np.float32), language="pt", word_timestamps=True)
+    ws = [(nz(w.word), w.start) for s_ in seg for w in s_.words]
+    alvo = nz(texto).split()
+    c0 = 0.0
+    for n in (3, 2, 1):
+        achou = [k for k in range(len(ws) - n + 1) if [w[0] for w in ws[k:k + n]] == alvo[:n]]
+        if achou:
+            k = achou[-1]; c0 = max(0.0, ws[k][1] - 0.12) if k > 0 else 0.0; break
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c0:.3f}", "-i", str(bruto), "-af", "afade=t=in:d=0.02", str(saida)], check=True)
+    print(f"  {saida.name}: cortado em {c0:.2f}s; ouvido: {' '.join(w[0] for w in ws)[:140]}", flush=True)
+
+
 if "--amostra" in sys.argv:
     for v in ["Achird", "Puck", "Iapetus", "Zubenelgenubi"]:
         gerar(BASE + JEITO[79] + "\n\n" + fala(79), v, B / f"amostra_mateus_{v}.wav")
     for v in ["Leda", "Aoede", "Kore"]:
         gerar(BASE + JEITO[90] + "\n\n" + fala(90), v, B / f"amostra_camila_{v}.wav")
     sys.exit()
-vm, vc = (sys.argv[1:3] + ["Achird", "Leda"][len(sys.argv) - 1:])[:2]
+vm, vc = (sys.argv[1:3] + ["Iapetus", "Aoede"][len(sys.argv) - 1:])[:2]
 for i, j in JEITO.items():
     voz = vc if pers[i] == "camila" else vm
-    for t in (1, 2):
-        arq = B / f"f{i}_{pers[i]}_{voz}_t{t}.wav"
-        if not arq.exists():
-            gerar(BASE + j + "\n\n" + fala(i), voz, arq)
+    arq = B / f"f{i}_{pers[i]}_{voz}.wav"
+    if not arq.exists():
+        gerar(f"{BASE}{j} Diga: {fala(i)}", voz, arq)
+    if arq.exists():
+        cortar(arq, fala(i), L / f"f{i}.wav")
+    else:
+        sys.exit(f"sem a fala {i} (cota?)")
