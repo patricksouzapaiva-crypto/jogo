@@ -126,9 +126,9 @@ function yantra(g, u, tinta, lw) {
   const gs = TX * 0.52, cel = gs / 3, gx = (TX - gs) / 2, gy = y0 + TY * 0.5, pg = lin(u, 1.85, 0.65); g.lineWidth = lw * 5;
   for (let k = 0; k <= 3; k++) { traco(g, [[gx, gy + k * cel], [gx + gs, gy + k * cel]], clamp(pg * 2 - k * 0.25)); traco(g, [[gx + k * cel, gy], [gx + k * cel, gy + gs]], clamp(pg * 2 - 0.5 - k * 0.25)); }
   const rk = semente("khom" + (C.numero || 1)), sil = Array.from({ length: 9 }, () => KHOM[Math.floor(rk() * KHOM.length)]);
-  g.textAlign = "center"; g.textBaseline = "middle"; g.font = `400 ${Math.round(cel * 0.5)}px "Moul", "Noto Serif Khmer"`;
+  g.textAlign = "center"; g.textBaseline = "middle"; g.font = `400 ${Math.round(cel * 0.64)}px "Moul", "Noto Serif Khmer"`;
   sil.forEach((s, i) => { const p = clamp(lin(u, 2.1, 1.0) * 9 - i); if (p <= 0) return; g.globalAlpha = p; g.fillText(s, gx + (i % 3 + 0.5) * cel, gy + (Math.floor(i / 3) + 0.5) * cel); });
-  g.globalAlpha = 1; g.font = `400 ${Math.round(TX * 0.042)}px "Moul", "Noto Serif Khmer"`; g.textAlign = "left";
+  g.globalAlpha = 1; g.font = `400 ${Math.round(TX * 0.05)}px "Moul", "Noto Serif Khmer"`; g.textAlign = "left";
   for (let L = 0; L < 3; L++) { const yy = gy + gs + TY * 0.04 + L * TX * 0.062, p = lin(u, 2.5 + L * 0.25, 0.6); if (p <= 0) continue;
     const txt = Array.from({ length: 12 }, () => KHOM[Math.floor(rk() * KHOM.length)]).join("");
     g.save(); g.beginPath(); g.rect(x0 + m * 0.7, yy - TX * 0.05, (x1 - x0 - m * 1.4) * p, TX * 0.1); g.clip(); g.fillText(txt, x0 + m * 0.8, yy, x1 - x0 - m * 1.6); g.restore(); }
@@ -137,15 +137,15 @@ function yantra(g, u, tinta, lw) {
   g.restore();
 }
 function pintarPano(u) {
-  const tinta = C.cor === "branco" ? "#6a0b08" : "#0c0201";
+  const tinta = C.cor === "branco" ? "#7a0906" : "#e7bd5a";   // 16/11: tinta dourada no vermelho (a escrita é a marca do episódio)
   texCtx.drawImage(base, 0, 0);
-  texCtx.save(); texCtx.filter = "blur(6px)"; texCtx.globalAlpha = 0.55; yantra(texCtx, u, tinta, 2.8); texCtx.restore();   // a tinta que espalha na fibra
-  texCtx.globalAlpha = 1; yantra(texCtx, u, tinta, 2.0); yantra(texCtx, u, tinta, 2.0);
+  texCtx.save(); texCtx.filter = "blur(7px)"; texCtx.globalAlpha = 0.5; yantra(texCtx, u, C.cor === "branco" ? "#3a0302" : "#2a0602", 3.6); texCtx.restore();   // sombra/sangrado escuro por baixo: o ouro salta   // a tinta que espalha na fibra
+  texCtx.globalAlpha = 1; yantra(texCtx, u, tinta, 2.8);
   tex.needsUpdate = true;
   // brasa: depois do tambor as linhas acendem e esfriam devagar (mapa emissivo)
   glowCtx.fillStyle = "#000"; glowCtx.fillRect(0, 0, TX, TY);
-  glowCtx.save(); glowCtx.filter = "blur(3px)"; yantra(glowCtx, u, "#fff", 1.6); glowCtx.restore(); glowTex.needsUpdate = true;
-  const ub = u - TB; mat.emissiveIntensity = ub > 0 ? 0.9 * Math.exp(-ub / 0.9) + 0.05 * (1 - Math.exp(-ub / 0.3)) : 0;
+  glowCtx.save(); glowCtx.filter = "blur(4px)"; yantra(glowCtx, u, "#fff", 2.6); glowCtx.restore(); yantra(glowCtx, u, "#fff", 2.2); glowTex.needsUpdate = true;
+  const ub = u - TB; mat.emissiveIntensity = ub > 0 ? 1.4 * Math.exp(-ub / 0.8) + 0.32 * (1 - Math.exp(-ub / 0.4)) * (0.9 + 0.1 * Math.sin(u * 5.3)) : 0.18;   // acende no tambor e fica aceso (brasa viva)
 }
 
 // ------------------------------------------------------------ o pano desenrolando (geometria por quadro)
@@ -189,7 +189,7 @@ window.preparar = async function (cfg) {
   glowCan = canvas(TX, TY); glowCtx = glowCan.getContext("2d"); glowTex = new THREE.CanvasTexture(glowCan);
   mat = new THREE.MeshPhysicalMaterial({ map: tex, normalMap: trama(), normalScale: new THREE.Vector2(0.55, 0.55), roughness: 0.88,
     sheen: 1.0, sheenRoughness: 0.55, sheenColor: new THREE.Color(C.cor === "branco" ? 0xfff4e0 : 0xff5a40),
-    emissive: new THREE.Color(0xc2380a), emissiveMap: glowTex, emissiveIntensity: 0, side: THREE.DoubleSide });
+    emissive: new THREE.Color(C.cor === "branco" ? 0xd0200c : 0xffa53a), emissiveMap: glowTex, emissiveIntensity: 0, side: THREE.DoubleSide });
   geo = new THREE.PlaneGeometry(PW, PH, 60, 110); pano = new THREE.Mesh(geo, mat); pano.castShadow = true; pano.receiveShadow = true;
   pano.position.set(PX, 0, 0); scene.add(pano);
   // vara de madeira, ponteiras de latão e o cordão
