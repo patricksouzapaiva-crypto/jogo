@@ -137,3 +137,25 @@
   font-weight: 800;
   src: url(NanumMyeongjo-ExtraBold.ttf) format('truetype');
 }
+
+/* tailandesas (Ep. 10): a escrita KHOM dos panos Pha Yant é a escrita khmer antiga — Moul (khmer decorativa, de
+   pincel largo) e Noto Serif Khmer. SIL OFL 1.1. Só aparecem como textura no pano e nas fichas. */
+@font-face {
+  font-family: 'Moul';
+  font-style: normal;
+  font-weight: 400;
+  src: url(Moul-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif Khmer';
+  font-style: normal;
+  font-weight: 700;
+  src: url(NotoSerifKhmer-700.ttf) format('truetype');
+}
+/* Noto Serif Thai (SIL OFL 1.1): o tailandês das FICHAS (ศาสนาผี …) — reserva das latinas, só nas letras tailandesas */
+@font-face {
+  font-family: 'Noto Serif Thai';
+  font-style: normal;
+  font-weight: 700;
+  src: url(NotoSerifThai-700.ttf) format('truetype');
+}

@@ -1,0 +1,15 @@
+filmes/*
+filmes_prontos/
+camera3d/
+clipes/
+recebidos/
+trilha/faixas/
+audio/*.wav
+audio/*.log
+previas/*.mp4
+previas/*.log
+previas/partes/
+sons/*.wav
+publicacao/shorts_final/*.mp4
+publicacao/shorts_final/*.log
+!filmes/baixar_drive.py

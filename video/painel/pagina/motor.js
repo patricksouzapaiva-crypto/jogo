@@ -31,7 +31,7 @@ function carregarImg(src) {
 window.preparar = async function (dados) {
   D = dados;
   cv.width = D.W; cv.height = D.H;
-  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho", "Nanum Brush Script", "Nanum Myeongjo"];
+  const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho", "Nanum Brush Script", "Nanum Myeongjo", "Moul", "Noto Serif Khmer", "Noto Serif Thai"];
   for (const f of fams) for (const p of ["400", "500", "700", "800"]) { try { await document.fonts.load(`${p} 40px "${f}"`); } catch (e) {} }
   const lista = [];
   for (const nome of Object.keys(D.avatar.poses)) lista.push(["pose:" + nome, D.avatar.base + nome + ".png"]);

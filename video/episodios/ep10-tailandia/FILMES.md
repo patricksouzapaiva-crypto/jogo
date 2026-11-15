@@ -1,0 +1,4 @@
+| Onde entra no roteiro | Título (Inglês / Original) | Ano | Link do Trailer Oficial | O que mostrar (8 a 15 s, sem áudio, sem legenda/close de rosto) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Capítulo 4** (logo após `FICHA 07`) | *The Medium* / *ร่างทรง* (*Rang Song*) | 2021 | https://www.youtube.com/watch?v=LsB7jtWFDHE | **Sequência de 12 s:** planos contínuos das montanhas cobertas de neblina em Loei, a casa de madeira isolada, velas acesas num altar ritual com cordões brancos e o corredor escuro visto por câmera de mão. Evitar closes de rosto ou legendas na tela. |
+| **Capítulo 2** (apoio visual opcional em `C2_03`) | *Inhuman Kiss* / *แสงกระสือ* (*Saeng Krasue*) | 2019 | https://www.youtube.com/watch?v=OGaA1U53ocI | **Sequência de 8 s:** planos atmosféricos da floresta tailandesa à noite, varal de roupas ao luar e a luz vermelha pulsante flutuando entre as árvores ao longe (sem mostrar rosto em close). |
