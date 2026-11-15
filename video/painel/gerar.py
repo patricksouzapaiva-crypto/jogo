@@ -1291,11 +1291,13 @@ def extrair_quadros(c, fps):
     if disp / vel < precisa:
         vel = max(0.6, min(vel, disp / precisa))
     n = int(round(precisa * fps)) + 1
-    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}".encode()).hexdigest()[:16]
+    # 15/11: no rascunho (metade da resolução) os quadros extraídos saem em 960 px — o cache cabia 4× mais pesado no disco
+    leve = os.environ.get("PAINEL_RASCUNHO") == "1"
+    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}{'|960' if leve else ''}".encode()).hexdigest()[:16]
     pasta = AQUI / ".cache_quadros" / chave
     if not (pasta / f"{n:05d}.jpg").exists():
         pasta.mkdir(parents=True, exist_ok=True)
-        filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}"
+        filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}" + (",scale=960:-2" if leve else "")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini:.3f}", "-i", c["video"], "-an", "-vf", filtro,
                         "-frames:v", str(n), "-q:v", "3", str(pasta / "%05d.jpg")], check=True)
     c["quadros"] = {"dir": str(pasta), "n": n, "fps": fps}
@@ -1458,4 +1460,6 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
 if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
     so = next((x.split("=", 1)[1] for x in sys.argv if x.startswith("--so-audio=")), None)
+    if "--rascunho" in sys.argv:
+        os.environ["PAINEL_RASCUNHO"] = "1"
     gerar(a[0], a[1], rascunho="--rascunho" in sys.argv, so_audio=so, sem_voz="--sem-voz" in sys.argv)
