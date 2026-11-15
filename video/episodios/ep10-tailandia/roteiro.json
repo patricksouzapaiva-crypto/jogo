@@ -1,0 +1,3804 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 3.0,
+ "vigia_padrao": false,
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Isan",
+   "Tailândia",
+   "Satsana Phi",
+   "San Phra Phum",
+   "Phi Tai Hong",
+   "Krasue",
+   "Phi Pop",
+   "Rang Song",
+   "Saiyasat",
+   "Pha Yant",
+   "Nam Man Phrai",
+   "Loei",
+   "Mateus",
+   "Niran",
+   "Mo Tham",
+   "hospedagem",
+   "casa"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep10_mata_noite",
+   "volume_db": -24
+  }
+ ],
+ "musica": {
+  "som": "ep10_trilha",
+  "volume_db": -30
+ },
+ "titulo_ep": {
+  "antes_da_batida": 5,
+  "linhas": [
+   "O VIGIA · EPISÓDIO 10",
+   "POR QUE O TERROR TAILANDÊS",
+   "NUNCA DEIXA VOCÊ EM PAZ?"
+  ],
+  "vermelho": "EM PAZ?",
+  "duracao": 5.2,
+  "folga": 1.0,
+  "x": 0.55
+ },
+ "cta": {
+  "titulo": "Não pergunte quem é.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "antes": 0.6,
+  "clique_em": "Inscreva-se",
+  "duracao": 2.5
+ },
+ "batidas": [
+  {
+   "fala": "Você não entra na floresta de Isan depois que o sol cai.",
+   "cena": {
+    "imagem": "imagens/recebidas/G01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -22
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_respiracao",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": -0.4
+    }
+   ]
+  },
+  {
+   "fala": "Não pelo medo de se perder no escuro.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "imagens/recebidas/G01_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.48,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Mas porque naquela região da Tailândia, o corpo humano não pertence só a quem nasceu nele.",
+   "cena": {
+    "imagem": "imagens/recebidas/G02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.42,
+      0.5
+     ],
+     [
+      0.42,
+      0.45
+     ]
+    ],
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "Se você recusar o espírito que te protege, a sua casa fica vazia.",
+   "cena": {
+    "video": "clipes/V01_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "03:17:40",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 1.2,
+     "saida": 0.5
+    }
+   ]
+  },
+  {
+   "fala": "E na floresta tailandesa, uma casa vazia nunca fica desocupada por muito tempo.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/G04a_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "antecipar": 0.55
+    },
+    {
+     "imagem": "imagens/recebidas/G04b_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.4,
+       0.55
+      ],
+      [
+       0.4,
+       0.6
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "vazia"
+    },
+    {
+     "imagem": "imagens/recebidas/G04c_variacao_1.jpg",
+     "zoom": [
+      1.02,
+      1.1
+     ],
+     "foco": [
+      [
+       0.45,
+       0.5
+      ],
+      [
+       0.42,
+       0.5
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "tempo"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": "vazia",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    },
+    {
+     "em": "tempo",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    }
+   ],
+   "pausa_antes_s": 0.5
+  },
+  {
+   "fala": "Bem-vindo de volta ao Último Abrigo.",
+   "pausa_antes_s": 10.0,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 2.2,
+    "antecipar": 7.2
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_gongo",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -6.2
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Nos últimos episódios, nós viajamos pelo terror do Japão, onde o horror nasce quando você quebra uma regra.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E pela Coreia, onde os mortos voltam para cobrar uma dívida.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.03,
+     1.07
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Hoje nós descemos para o sudeste asiático, para o nordeste rural da Tailândia.",
+   "cena": {
+    "imagem": "imagens/recebidas/T01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_arrozal_noite",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Uma região chamada Isan.",
+   "cena": {
+    "video": "filmes_prontos/medium_isan.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Lá, o budismo oficial divide espaço com uma crença muito mais antiga e sufocante.",
+   "cena": {
+    "video": "filmes_prontos/arq_templo.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O animismo ancestral, conhecido como Satsana Phi.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ศาสนาผี · Satsana Phi\nReligião animista dos espíritos da Tailândia",
+    "estilo": "maquina",
+    "vermelho": "Satsana Phi",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Para quem vive ali, cada árvore, cada rio e cada pedaço de terra tem um dono invisível.",
+   "cena": {
+    "imagem": "imagens/recebidas/C1_02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   },
+   "pausa_antes_s": 1.8
+  },
+  {
+   "fala": "E se você quebra o acordo com eles, nenhum templo vai conseguir fechar a porta que você abriu.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Se você caminhar por qualquer rua da Tailândia hoje, vai notar pequenas casas de madeira ou concreto erguidas em pedestais diante de residências, lojas e até arranha-céus.",
+   "pausa_antes_s": 8.2,
+   "cenas": [
+    {
+     "video": "cartoes/cap1.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true
+    },
+    {
+     "imagem": "reais_prontos/C1_01_real.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.9,
+     "em": "Se"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "cartao1",
+     "volume_db": -7,
+     "depois": false,
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap1_som.wav"
+    }
+   ],
+   "musica": {
+    "som": "nenhum",
+    "atraso": -8.2
+   }
+  },
+  {
+   "fala": "Elas se chamam San Phra Phum.",
+   "musica": {
+    "som": "ep10_trilha",
+    "volume_db": -30,
+    "continuar": true
+   },
+   "cena": {
+    "imagem": "reais_prontos/C1_sanphraphum_07.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    }
+   ],
+   "ambiente": {
+    "som": "ep10_arrozal_noite",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Não são enfeites para turistas.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ศาลพระภูมิ · San Phra Phum\nCasa dos espíritos guardiões da terra",
+    "estilo": "maquina",
+    "vermelho": "San Phra Phum",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "São contratos de aluguel espiritual.",
+   "pausa_antes_s": 1.7
+  },
+  {
+   "fala": "Antes de construir qualquer parede, os moradores erguem uma casa para o espírito dono daquele terreno, oferecendo água, frutas e incenso todos os dias para que ele não invada a casa dos vivos.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C1_03_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "reais_prontos/C1_oferenda_01.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "oferecendo"
+    }
+   ]
+  },
+  {
+   "fala": "Mas o terror verdadeiro nasce daqueles que não têm casa nenhuma.",
+   "pausa_antes_s": 2.0,
+   "cena": {
+    "imagem": "imagens/recebidas/C1_02_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.55,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Na tradição tailandesa, existem dezenas de classes de espíritos chamados Phi.",
+   "cena": {
+    "imagem": "imagens/recebidas/C1_04_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.65,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "E os mais temidos de todos são os Phi Tai Hong.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C1_04_variacao_2.jpg",
+     "zoom": [
+      1.05,
+      1.12
+     ],
+     "foco": [
+      [
+       0.6,
+       0.55
+      ],
+      [
+       0.62,
+       0.6
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "tipo": "texto",
+     "texto": "ผีตายโหง · Phi Tai Hong\nEspíritos de morte violenta ou súbita",
+     "estilo": "maquina",
+     "vermelho": "Phi Tai Hong",
+     "cps": 40,
+     "em": "Phi"
+    }
+   ]
+  },
+  {
+   "fala": "São as almas de pessoas que morreram de forma violenta, repentina ou injusta.",
+   "cena": {
+    "video": "clipes/V03_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -26
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Um acidente na estrada, um assassinato, um afogamento sem rito fúnebre completo.",
+   "cena": {
+    "video": "clipes/V03_B.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Como não tiveram tempo de aceitar a própria morte, eles ficam presos no exato lugar onde caíram.",
+   "cena": {
+    "imagem": "imagens/recebidas/C1_05_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Cegos de raiva e de fome.",
+   "cena": {
+    "imagem": "imagens/recebidas/C1_04_variacao_1.jpg",
+    "zoom": [
+     1.15,
+     1.25
+    ],
+    "foco": [
+     [
+      0.7,
+      0.35
+     ],
+     [
+      0.72,
+      0.33
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "fome",
+     "som": "sub_drop",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Eles não querem apenas assustar quem passa."
+  },
+  {
+   "fala": "Eles procuram um corpo vivo desprotegido para entrar e continuar existindo.",
+   "cena": {
+    "imagem": "imagens/recebidas/C1_04_variacao_2.jpg",
+    "zoom": [
+     1.1,
+     1.22
+    ],
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.4,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Quando a noite cai sobre as vilas isoladas de Isan, os moradores recolhem todas as roupas do varal antes de trancar as janelas.",
+   "pausa_antes_s": 8.2,
+   "cenas": [
+    {
+     "video": "cartoes/cap2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true
+    },
+    {
+     "video": "filmes_prontos/arq_vila.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.9,
+     "em": "Quando"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "cartao2",
+     "volume_db": -7,
+     "depois": false,
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap2_som.wav"
+    }
+   ],
+   "musica": {
+    "som": "nenhum",
+    "atraso": -8.2
+   }
+  },
+  {
+   "fala": "O motivo tem nome.",
+   "musica": {
+    "som": "ep10_trilha",
+    "volume_db": -30,
+    "continuar": true
+   },
+   "ambiente": {
+    "som": "ep10_vila_caes",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Krasue.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.6,
+      0.4
+     ],
+     [
+      0.58,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_caes_uivando_2",
+     "volume_db": -28,
+     "depois": false,
+     "atraso": 0.2,
+     "ate": 4.0,
+     "saida": 1.5
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Segundo as lendas mais antigas do folclore tailandês, a Krasue é uma mulher comum durante o dia, muitas vezes amaldiçoada por praticar magia negra ou quebrar um voto sagrado.",
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "กระสือ · Krasue\nEspírito noturno da cabeça flutuante",
+     "estilo": "maquina",
+     "vermelho": "Krasue",
+     "cps": 40,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens/recebidas/C2_02_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "mulher"
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Mas depois da meia-noite, a cabeça dela se descola do pescoço.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_02_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.25,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "descola",
+     "som": "sub_drop",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ela sai voando pela escuridão arrastando o coração, o estômago e os intestinos expostos, emitindo um brilho fraco e pulsante no meio da mata.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C2_03_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.7,
+       0.4
+      ],
+      [
+       0.72,
+       0.38
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "video": "filmes_prontos/kiss_krasue.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "arrastando"
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Ela caça animais pequenos, sangue fresco e carniça.",
+   "cena": {
+    "imagem": "reais_prontos/C2_01_real.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    }
+   ]
+  },
+  {
+   "fala": "E antes do amanhecer, usa as roupas deixadas nos varais das casas para limpar o sangue da boca antes de voltar para o próprio corpo.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_04_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -27
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Mas se a Krasue ataca por fora, existe um espírito ainda pior que destrói por dentro.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "imagens/recebidas/C2_02_variacao_1.jpg",
+    "zoom": [
+     1.06,
+     1.12
+    ],
+    "foco": [
+     [
+      0.7,
+      0.45
+     ],
+     [
+      0.72,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "O Phi Pop.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ผีปอบ · Phi Pop\nEspírito parasita devorador de órgãos",
+    "estilo": "maquina",
+    "vermelho": "Phi Pop",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Diferente de um fantasma que aparece no corredor, o Phi Pop é um espírito parasita ligado à feitiçaria antiga do nordeste.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_05_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Ele entra no corpo de um morador da vila sem que ninguém perceba.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_05_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.6,
+      0.55
+     ],
+     [
+      0.62,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A pessoa continua andando, conversando e sorrindo durante o dia.",
+   "cena": {
+    "video": "filmes_prontos/arq_canais.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Mas à noite, o espírito assume o controle para devorar os órgãos internos do próprio hospedeiro e de quem dormir por perto.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_05_variacao_3.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -27
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Por séculos, vilas inteiras em Isan expulsaram famílias suspeitas de carregar um Phi Pop, chamando exorcistas locais para caçar o parasita antes que a aldeia inteira apodrecesse por dentro.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C2_05_variacao_4.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.4,
+       0.6
+      ],
+      [
+       0.42,
+       0.6
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "reais_prontos/C2_palafita_01.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "expulsaram"
+    }
+   ]
+  },
+  {
+   "fala": "Para enfrentar esses espíritos, os moradores de Isan não recorrem apenas aos monges dos grandes templos.",
+   "pausa_antes_s": 8.2,
+   "cenas": [
+    {
+     "video": "cartoes/cap3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true
+    },
+    {
+     "imagem": "imagens/recebidas/C3_01_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.9,
+     "em": "Para"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "cartao3",
+     "volume_db": -7,
+     "depois": false,
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap3_som.wav"
+    }
+   ],
+   "musica": {
+    "som": "nenhum",
+    "atraso": -8.2
+   }
+  },
+  {
+   "fala": "Eles procuram os Rang Song.",
+   "musica": {
+    "som": "ep10_trilha",
+    "volume_db": -30,
+    "continuar": true
+   },
+   "cena": {
+    "video": "filmes_prontos/arq_velas.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Na tradição real do nordeste tailandês, um Rang Song é uma pessoa escolhida por uma divindade ancestral ou espírito protetor da família para emprestar o próprio corpo em rituais de cura e proteção.",
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "ร่างทรง · Rang Song\nLiteralmente “corpo receptor”: o médium ancestral",
+     "estilo": "maquina",
+     "vermelho": "Rang Song",
+     "cps": 40,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens/recebidas/C3_02_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "escolhida"
+    }
+   ],
+   "sons": [
+    {
+     "em": "escolhida",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Essa escolha quase sempre passa pela linhagem materna.",
+   "cena": {
+    "imagem": "imagens/recebidas/C3_02_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "E aqui mora uma das crenças mais cruéis daquela região.",
+   "cena": {
+    "video": "filmes_prontos/arq_oferendas.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Você não pede para ser um médium.",
+   "cena": {
+    "imagem": "imagens/recebidas/C3_03_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.4,
+      0.55
+     ],
+     [
+      0.38,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Se a entidade escolhe você e você recusa o chamado por medo ou vergonha, o espírito não vai embora.",
+   "cena": {
+    "video": "clipes/V04_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_tambor_ritual_1",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 8.0,
+     "saida": 2.5
+    }
+   ]
+  },
+  {
+   "fala": "Ele passa a punir você e toda a sua família com doenças inexplicáveis, acidentes e ruína financeira até que o escolhido ceda e entregue o corpo.",
+   "cenas": [
+    {
+     "video": "clipes/V04_B_ate5.0.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens/recebidas/C3_03_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "punir"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E do outro lado dessa moeda existe o Saiyasat.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "imagens/recebidas/C3_04_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "A magia negra tailandesa."
+  },
+  {
+   "fala": "Um sistema de feitiços escritos no antigo alfabeto sagrado Khom, selados em panos chamados Pha Yant e cordões brancos chamados Sai Sin.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C3_04_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.6,
+       0.45
+      ],
+      [
+       0.6,
+       0.4
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "reais_prontos/C3_02_real.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "Pha"
+    }
+   ]
+  },
+  {
+   "fala": "Os praticantes mais sombrios dessa magia fabricam o Nam Man Phrai.",
+   "cena": {
+    "imagem": "reais_prontos/C3_kumanthong_01.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um óleo ritual extraído da gordura do queixo de cadáveres de mulheres que morreram grávidas, usado para amarrar espíritos famintos e obrigá-los a obedecer.",
+   "cena": {
+    "imagem": "imagens/recebidas/C3_04_variacao_1.jpg",
+    "zoom": [
+     1.1,
+     1.35
+    ],
+    "foco": [
+     [
+      0.25,
+      0.35
+     ],
+     [
+      0.22,
+      0.3
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "queixo",
+     "som": "sub_drop",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Mas os antigos mestres deixam um aviso claro.",
+   "pausa_antes_s": 2.4,
+   "cena": {
+    "imagem": "imagens/recebidas/C3_03_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Quando você usa um corpo ou um quarto para prender um espírito, você traça um círculo sagrado e sela a porta."
+  },
+  {
+   "fala": "E não importa quem chore, grite ou peça ajuda do lado de fora.",
+   "cena": {
+    "imagem": "imagens/recebidas/G04a_variacao_1.jpg",
+    "zoom": [
+     1.06,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.52,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Você nunca quebra o selo antes do amanhecer.",
+   "cena": {
+    "imagem": "imagens/recebidas/G04a_variacao_2.jpg",
+    "zoom": [
+     1.08,
+     1.22
+    ],
+    "foco": [
+     [
+      0.48,
+      0.4
+     ],
+     [
+      0.48,
+      0.38
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "selo",
+     "som": "ep10_tambor",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Em dois mil e vinte e um, todo esse universo real e sufocante ganhou forma no cinema com um impacto que o terror asiático não via há décadas.",
+   "pausa_antes_s": 8.4,
+   "cenas": [
+    {
+     "video": "cartoes/cap4.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true
+    },
+    {
+     "imagem": "imagens/recebidas/C4_01_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "neblina": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.9,
+     "em": "Em"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "cartao4",
+     "volume_db": -7,
+     "depois": false,
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap4_som.wav"
+    }
+   ],
+   "musica": {
+    "som": "nenhum",
+    "atraso": -8.2
+   }
+  },
+  {
+   "fala": "O filme se chama A Médium.",
+   "musica": {
+    "som": "ep10_trilha",
+    "volume_db": -30,
+    "continuar": true
+   },
+   "cena": {
+    "tipo": "texto",
+    "texto": "ร่างทรง · Rang Song (The Medium)\n2021 · Dir. Banjong Pisanthanakun",
+    "estilo": "maquina",
+    "vermelho": "The Medium",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Dirigido pelo tailandês Banjong Pisanthanakun e produzido pelo sul-coreano Na Hong-jin, o longa foi filmado na província montanhosa de Loei, no coração de Isan.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/medium_isan.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais_prontos/T_phuhinrongkla_02.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "coração"
+    }
+   ],
+   "pausa_antes_s": 1.8
+  },
+  {
+   "fala": "Em vez de monstros digitais ou sustos fáceis, o filme tratou o folclore de Isan como um registro antropológico frio.",
+   "cena": {
+    "imagem": "reais_prontos/C4_phitakhon_03.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mostrando exatamente o que acontece quando uma jovem recusa uma herança espiritual e deixa o próprio corpo aberto para dezenas de Phi Tai Hong famintos.",
+   "cenas": [
+    {
+     "video": "clipes/V05_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 03 - QUARTO",
+       "hora": "03:02:11",
+       "data": "18-09-2025"
+      }
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens/recebidas/C4_02_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.6,
+       0.55
+      ],
+      [
+       0.62,
+       0.55
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 03 - QUARTO",
+       "hora": "03:02:19",
+       "data": "18-09-2025"
+      }
+     },
+     "em": "corpo"
+    }
+   ],
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 1.0,
+     "saida": 0.5
+    }
+   ]
+  },
+  {
+   "fala": "O realismo das cerimônias foi tão pesado que a própria equipe de filmagem realizou rituais reais de bênção com monges e xamãs locais antes de gravar cada cena noturna.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/arq_oferendas.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "video_inicio": 2.0,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "video": "filmes_prontos/arq_velas.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "monges"
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Porque em Isan, todo mundo sabe que imitar um chamado pode atrair quem realmente está ouvindo no escuro.",
+   "pausa_antes_s": 2.2,
+   "cena": {
+    "video": "clipes/V05_B.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 03 - QUARTO",
+      "hora": "03:41:56",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Percebe a diferença?",
+   "pausa_antes_s": 1.2,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "No Japão, você sobrevive se seguir a regra."
+  },
+  {
+   "fala": "Na Coreia, você escapa se pagar a dívida."
+  },
+  {
+   "fala": "Mas no nordeste da Tailândia, o terror é uma questão de hospedagem.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.03,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.48,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O seu corpo é uma casa.",
+   "cena": {
+    "imagem": "imagens/recebidas/G02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Se você rompe o acordo com os espíritos da terra ou recusa a proteção que deveria guardar a sua porta, você deixa a chave na fechadura.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E o que entra não quer apenas matar você.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_03_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.6,
+      0.45
+     ],
+     [
+      0.6,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Quer morar dentro da sua pele.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.08,
+     1.14
+    ],
+    "foco": [
+     [
+      0.42,
+      0.45
+     ],
+     [
+      0.4,
+      0.43
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "pele",
+     "som": "sub_drop",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Em setembro do ano passado, um estudante brasileiro de vinte e três anos chamado Mateus embarcou para a Tailândia.",
+   "pausa_antes_s": 2.4,
+   "cena": {
+    "imagem": "imagens/recebidas/H01_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.35,
+      0.5
+     ],
+     [
+      0.4,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Ele estava no último semestre de Antropologia e Cinema Documental em São Paulo.",
+   "cena": {
+    "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O projeto de conclusão de curso dele era registrar as religiões animistas rurais na província de Loei, no nordeste do país.",
+   "cena": {
+    "imagem": "reais_prontos/T01_real.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Para organizar a pesquisa à distância, Mateus mandava todo o material bruto, áudios e fotos num grupo de WhatsApp com a dupla dele, Camila, e o orientador, Professor Henrique.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.4
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 1.4
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+      "hora": "09:12",
+      "apos": 0.4
+     },
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": 1.4
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "\"Galera, cheguei na vila. Fica a duas horas de carro da cidade mais próxima, cercada de mata e arrozal. A família que me recebeu tem uma casa de madeira antiga, e amanhã já vou acompanhar um ritual de Rang Song com a tia mais velha deles.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": 0.2
+     }
+    ],
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "Nos três primeiros dias, tudo parecia um documentário acadêmico perfeito.",
+   "cena": {
+    "imagem": "imagens/recebidas/H03_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.62,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_arrozal_noite",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Mateus filmou as oferendas nas casas dos espíritos e entrevistou os moradores mais velhos sobre os panos sagrados Pha Yant.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/H03_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.6,
+       0.45
+      ],
+      [
+       0.6,
+       0.42
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais_prontos/C3_amuleto_02.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "panos"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Até a quarta noite.",
+   "cena": {
+    "imagem": "imagens/recebidas/H04_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.4,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -24
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Naquela tarde, um jovem da vila vizinha havia morrido num acidente brutal de moto numa curva da estrada de terra, sem nenhum parente por perto para fazer os ritos imediatos.",
+   "cena": {
+    "imagem": "imagens/recebidas/H04_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Naquela mesma madrugada, Mateus mandou uma foto no grupo às três e dezessete da manhã.",
+   "sons": [
+    {
+     "em": "foto",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": 0.5,
+      "em": "foto"
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "\"Gente, olha o varal aqui fora. Eu acordei com os cachorros da vila inteira uivando pro alto das árvores, mas não tinha vento nenhum. Quando saí na varanda com a lanterna, o lençol tava manchado de sangue fresco. A dona da casa queimou o pano na hora sem falar uma palavra.\"",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.6
+      ],
+      [
+       0.5,
+       0.68
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens/recebidas/H05_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.6,
+       0.5
+      ],
+      [
+       0.65,
+       0.5
+      ]
+     ],
+     "em": "lençol"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": "cachorros",
+     "som": "ep10_caes_uivando_1",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.0
+    }
+   ],
+   "ambiente": {
+    "som": "ep10_vila_caes",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Como parte do equipamento do TCC, Mateus tinha levado quatro câmeras compactas de monitoramento infravermelho para registrar o movimento noturno dos rituais sem precisar ficar com a lanterna ligada na cara das pessoas.",
+   "pausa_antes_s": 1.4,
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/H06_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens/recebidas/H06_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.35,
+       0.45
+      ],
+      [
+       0.3,
+       0.42
+      ]
+     ],
+     "em": "registrar"
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "No quinto dia, o clima dentro da casa mudou completamente.",
+   "cena": {
+    "imagem": "imagens/recebidas/H09_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "14:22:10",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Niran, a filha de dezenove anos da família anfitriã, parou de sair do quarto durante o dia.",
+   "cena": {
+    "imagem": "imagens/recebidas/H07_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.55,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "A mãe dela, que antes recusava o papel de médium da família havia anos, começou a rezar em voz alta todas as noites diante do altar, amarrando cordões brancos Sai Sin nos batentes de todas as portas.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/C3_02_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens/recebidas/C3_01_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.3
+      ],
+      [
+       0.5,
+       0.25
+      ]
+     ],
+     "em": "cordões"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "\"Mateus, sério, fala com o Henrique. Você disse que ela tá emagrecendo rápido e que ontem à noite você ouviu barulho na cozinha de madrugada. Pega tuas coisas e volta pra cidade.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 1.6
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": 0.2
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": 1.6
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "\"Eu não posso sair agora, a estrada alagou com a chuva e amanhã vem um Mo Tham, um exorcista tradicional da região, fazer um ritual aqui. Eles me deixaram instalar duas câmeras no corredor pra registrar pra pesquisa, com uma condição: depois que o círculo for fechado, eu não posso sair do meu quarto por motivo nenhum.\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H01_variacao_2.jpg",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:21",
+      "hora": "22:47",
+      "apos": 0.2
+     }
+    ],
+    "entrada": "corte"
+   },
+   "ambiente": {
+    "som": "ep10_chuva_mata",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Às onze da noite, o ritual começou.",
+   "cena": {
+    "video": "clipes/V07_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "23:00:04",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -26
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_tambor_ritual_2",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 2.5
+    }
+   ]
+  },
+  {
+   "fala": "Mateus ficou trancado no quarto ao lado, acompanhando o corredor pelo aplicativo das câmeras no notebook e mandando recortes no grupo.",
+   "cena": {
+    "imagem": "imagens/recebidas/H06_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "foco": [
+     [
+      0.35,
+      0.45
+     ],
+     [
+      0.3,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Por quase três horas, não houve nenhum som na casa além do zumbido das cigarras lá fora.",
+   "cena": {
+    "imagem": "imagens/recebidas/H10_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.02
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "01:12:33",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "corte"
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -24
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 0.8,
+     "saida": 0.3
+    }
+   ]
+  },
+  {
+   "fala": "Até que às duas e quarenta da manhã, o sensor de movimento do corredor disparou no notebook de Mateus.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/H11_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.02
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:40:07",
+       "data": "18-09-2025"
+      }
+     },
+     "entrada": "corte"
+    },
+    {
+     "video": "clipes/V07x_B.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:40:09",
+       "data": "18-09-2025"
+      }
+     },
+     "em": "disparou"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 0.8,
+     "saida": 0.3
+    },
+    {
+     "em": "disparou",
+     "som": "ep10_fogo_pano",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 3.0,
+     "saida": 1.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Mateus abriu o áudio da câmera de segurança.",
+   "pausa_antes_s": 1.4,
+   "cena": {
+    "video": "clipes/V08_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:40:31",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 0.8,
+     "saida": 0.3
+    }
+   ]
+  },
+  {
+   "fala": "No corredor, não havia ninguém andando.",
+   "cena": {
+    "video": "clipes/V08_B.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:40:44",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Mas do lado de fora da porta do quarto dele, começou um som baixo.",
+   "cena": {
+    "imagem": "imagens/recebidas/H12_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 02 - PORTA",
+      "hora": "02:41:02",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_mata_quieta",
+    "volume_db": -28
+   },
+   "sons": [
+    {
+     "em": "som",
+     "som": "ep09_choro_parede",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 2.0
+    },
+    {
+     "em": "som",
+     "som": "ep10_batida_madeira",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 1.2
+    }
+   ]
+  },
+  {
+   "fala": "Era a voz de Niran, chorando e pedindo ajuda em inglês quebrado, dizendo que estava passando mal e que a mãe tinha trancado ela no escuro.",
+   "cena": {
+    "imagem": "imagens/recebidas/H07_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.75,
+      0.5
+     ],
+     [
+      0.76,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "chorando",
+     "som": "ep09_choro_parede",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Mateus pegou o celular para gravar um áudio rápido para o grupo antes de fazer qualquer coisa.",
+   "cena": {
+    "imagem": "imagens/recebidas/H13_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.65,
+      0.55
+     ],
+     [
+      0.66,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "\"Ela tá aqui na minha porta chorando, falando normal de novo. Acho que o ritual funcionou e deixaram ela trancada sem ar, eu vou só abrir uma fresta pra ver se ela tá bem...\"",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "texto": "material bruto do dia 1 tá na pasta 📁",
+      "hora": "09:12",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:21",
+      "hora": "22:47",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "02:43",
+      "apos": 0.2
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas Mateus já tinha guardado o celular no bolso.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.3
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:19",
+      "hora": "16:40",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:21",
+      "hora": "22:47",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "02:43",
+      "apos": -30
+     },
+     {
+      "de": "Prof. Henrique",
+      "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG",
+      "hora": "02:44",
+      "apos": 0.3,
+      "cor": "#ff6b5e"
+     }
+    ],
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "Na câmera de segurança do corredor, a porta de Mateus se abriu.",
+   "cena": {
+    "video": "clipes/V09_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:44:52",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_porta_madeira",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.4
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "O corredor estava completamente vazio.",
+   "cena": {
+    "imagem": "imagens/recebidas/H10_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:45:03",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Não havia ninguém chorando ali fora.",
+   "cena": {
+    "imagem": "imagens/recebidas/H10_variacao_2.jpg",
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:45:09",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Quando Mateus apontou a lanterna para o final do corredor, a câmera registrou o exato instante em que algo desceu do vigamento do teto sem fazer um único ruído.",
+   "pausa_antes_s": 2.4,
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/H16_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:45:20",
+       "data": "18-09-2025"
+      }
+     },
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "antecipar": 0.55
+    },
+    {
+     "imagem": "imagens/recebidas/H16_variacao_2.jpg",
+     "zoom": [
+      1.12,
+      1.3
+     ],
+     "foco": [
+      [
+       0.55,
+       0.15
+      ],
+      [
+       0.55,
+       0.1
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:45:23",
+       "data": "18-09-2025"
+      }
+     },
+     "em": "desceu"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": "desceu",
+     "som": "ep10_rangido_viga",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "A conexão do Wi-Fi da casa caiu três segundos depois.",
+   "cena": {
+    "imagem": "imagens/recebidas/H16_variacao_2.jpg",
+    "zoom": [
+     1.3,
+     1.34
+    ],
+    "foco": [
+     [
+      0.55,
+      0.15
+     ],
+     [
+      0.55,
+      0.12
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:45:26",
+      "data": "18-09-2025",
+      "queda": 1.6
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "caiu",
+     "som": "ep10_queda_wifi",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Na manhã seguinte, às seis e doze, o celular de Mateus reconectou sozinho à rede móvel por alguns segundos e enviou o último arquivo automático que havia ficado na fila de upload.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.6
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 2.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H05_variacao_1.jpg",
+      "hora": "03:17",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:21",
+      "hora": "22:47",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "02:43",
+      "apos": -30
+     },
+     {
+      "de": "Prof. Henrique",
+      "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG",
+      "hora": "02:44",
+      "cor": "#ff6b5e",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "imagens/recebidas/H17_variacao_1.jpg",
+      "hora": "06:12",
+      "apos": 0.6
+     },
+     {
+      "de": "Mateus",
+      "tipo": "video",
+      "imagem": "imagens/recebidas/H18_variacao_4.jpg",
+      "hora": "06:12",
+      "apos": 2.2
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_arrozal_noite",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "Era um clipe de cinco segundos da câmera de segurança do quarto dele.",
+   "cena": {
+    "imagem": "imagens/recebidas/H17_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.4,
+      0.55
+     ],
+     [
+      0.38,
+      0.55
+     ]
+    ],
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    }
+   ]
+  },
+  {
+   "fala": "Nele, Mateus aparece sentado na beira da cama, com um prato de carne crua no colo.",
+   "cena": {
+    "video": "clipes/V10_B_ate3.2.mp4",
+    "zoom": [
+     1.0,
+     1.02
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 04 - QUARTO",
+      "hora": "06:12:01",
+      "data": "18-09-2025",
+      "queda": 3.0
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 2.9,
+     "ate": 2.5,
+     "saida": 1.0
+    },
+    {
+     "em": null,
+     "som": "sub_drop",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 3.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A polícia tailandesa registrou o caso como desaparecimento em área de mata fechada.",
+   "pausa_antes_s": 3.2,
+   "cena": {
+    "imagem": "imagens/recebidas/T01_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep10_mata_noite",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "O corpo de Mateus nunca foi encontrado na província de Loei.",
+   "cena": {
+    "imagem": "imagens/recebidas/G01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas os moradores da vila vizinha dizem que, nas noites sem lua, uma luz fraca e pulsante costuma flutuar entre as árvores perto da estrada.",
+   "cena": {
+    "imagem": "imagens/recebidas/C2_02_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Os equipamentos de Mateus foram devolvidos à família no Brasil meses depois, dentro de uma caixa lacrada.",
+   "pausa_antes_s": 1.4,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "O cartão de memória da câmera principal estava vazio.",
+   "cena": {
+    "imagem": "imagens/recebidas/H17_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.38,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Porque na terra dos Satsana Phi, quando você abre a porta para uma voz que não deveria estar lá fora, você não perde apenas a vida.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.07
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Você entrega a sua casa.",
+   "cena": {
+    "imagem": "imagens/recebidas/G02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "casa",
+     "som": "ep10_tambor",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "E a Tailândia guarda horrores ainda mais antigos que não couberam nesta noite.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Como a lenda real de Mae Nak Phra Khanong, a noiva que morreu no parto mas continuou cozinhando e esperando o marido voltar da guerra como se nada tivesse acontecido.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/F01_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.35,
+       0.5
+      ],
+      [
+       0.35,
+       0.45
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "reais_prontos/F01_real.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "noiva"
+    }
+   ],
+   "ambiente": {
+    "som": "ep10_arrozal_noite",
+    "volume_db": -30
+   }
+  },
+  {
+   "fala": "O Phi Am, o espírito noturno que se senta sobre o seu peito durante o sono e tira a sua voz enquanto você tenta gritar.",
+   "cena": {
+    "imagem": "imagens/recebidas/F02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.3,
+      0.45
+     ],
+     [
+      0.32,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ou os Pret, os gigantes famintos condenados a vagar eternamente sem conseguir engolir uma única gota de água.",
+   "cenas": [
+    {
+     "imagem": "imagens/recebidas/F03_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.55,
+       0.45
+      ],
+      [
+       0.55,
+       0.4
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais_prontos/F_pret_02.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "gigantes"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Qual dessas lendas você quer que eu abra aqui no canal?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Deixa nos comentários."
+  },
+  {
+   "fala": "E hoje à noite, se você ouvir alguém chamar o seu nome do outro lado da porta... não pergunte quem é.",
+   "pausa_antes_s": 2.0,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.08,
+     1.14
+    ],
+    "foco": [
+     [
+      0.42,
+      0.45
+     ],
+     [
+      0.4,
+      0.43
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "nome",
+     "som": "ep10_batida_madeira",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
+   "cta_inicio": true,
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "nenhum"
+   },
+   "musica": {
+    "som": "vinheta_ultimo_abrigo",
+    "volume_db": -20
+   }
+  }
+ ]
+}
