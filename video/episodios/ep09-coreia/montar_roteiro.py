@@ -442,7 +442,8 @@ fx(144, "trás", "ep07_respiracao_nuca", -26)
 fx(146, None, "stinger_cordas", -10, atraso=-0.05)
 fx(147, "apagada", "ep09_jing", -24)
 batidas[147]["musica"] = dict(TRILHA, continuar=True)   # volta logo depois do susto 1
-pausa(140, 0.8); pausa(142, 0.8); pausa(145, 0.6); pausa(147, 1.6); pausa(148, 2.4)
+pausa(140, 0.8); pausa(142, 0.8); pausa(145, 0.6); pausa(147, 0.8); pausa(148, 1.0)
+batidas[144]["pausa_antes_s"] = 1.2      # 15/11: o "silêncio total" da cozinha era 2,4 s ("demora gigante") — 1,2 s
 
 # ================================================================ PARTE 3 — o elevador
 capitulo(149, 6, "O elevador", "엘리베이터 게임 · o jogo", P("H04_A"),
@@ -529,8 +530,7 @@ C(203, img("H07_B", (1.22, 1.28), ((0.5, 0.45), (0.5, 0.45))))
 C(204, img(E + "H10.jpg", (1.0, 1.04), ((0.5, 0.5), (0.5, 0.5))), (img("H08_B", (1.0, 1.04), ((0.55, 0.6), (0.55, 0.6))), "canto"))
 batidas[204]["cenas"][1]["entrada"] = "corte"
 batidas[204]["cenas"][0].update({"entrada": "corte", "antecipar": 1.4})   # a sala aparece no fim do silêncio, depois do rangido
-C(205, vid4("V22"))
-C(206, img(E + "H09.jpg", (1.08, 1.14), ((0.55, 0.5), (0.55, 0.48))))
+C(205, vid4("V22"), (img(E + "H09.jpg", (1.08, 1.14), ((0.55, 0.5), (0.55, 0.48))), "disse"))
 C(207, img("H09_A", (1.15, 1.2), ((0.62, 0.72), (0.62, 0.72))))           # as mãos
 C(208, vid("V04_A", (1.0, 1.03)), (img("H03_C", (1.0, 1.05), ((0.45, 0.45), (0.45, 0.42))), "elevador"))
 C(209, img("H04_B", (1.1, 1.16), ((0.4, 0.75), (0.4, 0.78))))
@@ -729,7 +729,8 @@ roteiro = {
     "modo": "cenas", "formato": "16:9", "tema": "vigia", "avatar": "vigia_hd",
     "voz_arquivo": voz,
     "transcrever_pedacos": 75,                # no arquivo inteiro o Whisper pulava o fecho
-    "cintilar": 0.03, "apertar_pausas": False,   # REGRA: nunca encurtar as pausas da narração
+    "cintilar": 0.03, "apertar_pausas": False,
+    "cena_minima": 3.0,                       # 15/11: nenhuma cena curta demais (gerar.respirar_cenas)   # REGRA: nunca encurtar as pausas da narração
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
     # 13/11: trilha mais presente que no Ep. 08 (+4 dB), mas o rascunho 1 abafava a voz: -3 dB nas faixas e -9 sob a voz

@@ -898,6 +898,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         D["cenas"] += novas
         print(f"    pausas preenchidas com novo enquadramento: {len(novas)}")
     D["cenas"].sort(key=lambda c: c["t0"])
+    if roteiro.get("cena_minima"):
+        respirar_cenas(D, float(roteiro["cena_minima"]), duracao)
     for i, c in enumerate(D["cenas"]):
         c["t1"] = D["cenas"][i + 1]["t0"] if i + 1 < len(D["cenas"]) else duracao
     for c in D["cenas"]:
@@ -1276,6 +1278,47 @@ def _duracao_midia(arq):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(arq)],
                        capture_output=True, text=True)
     return float(r.stdout.strip() or 0)
+
+
+def respirar_cenas(D, minimo, duracao):
+    """15/11 (Ep. 09: "nenhuma cena curta demais, tudo com o seu tempo, dinâmico"): nenhuma cena fica menos que
+    `minimo` s na tela. Uma cena curta some e a VIZINHA cobre o tempo dela — a seguinte entra mais cedo (se for imagem
+    ou se o vídeo dela tiver duração para isso) ou a anterior continua. Ficam de fora: o Vigia, cartões de capítulo/
+    talismã, telas de texto e cortes secos (os sustos: ali a cena curta é de propósito)."""
+    def fixa(c):
+        return c.get("vigia") or c.get("tipo") in ("talisma", "capitulo", "texto", "chat", "relogios") or \
+            c.get("entrada") == "corte" or c.get("abertura")
+
+    def cabe(c, t0, t1):     # o vídeo da cena aguenta ficar de t0 a t1 sem desacelerar?
+        if not c.get("video"):
+            return True
+        disp = _duracao_midia(c["video"]) - float(c.get("video_inicio", 0))
+        return disp / float(c.get("velocidade", 1.0)) >= (t1 - t0) + 1.2
+
+    cs = D["cenas"]; tirou = 0
+    for _ in range(4):
+        mudou = False
+        i = 1
+        while i < len(cs) - 1:
+            c, ant, prox = cs[i], cs[i - 1], cs[i + 1]
+            t1 = prox["t0"]
+            if t1 - c["t0"] >= minimo or fixa(c):
+                i += 1; continue
+            fim_prox = cs[i + 2]["t0"] if i + 2 < len(cs) else duracao
+            # cena com kanji (a palavra precisa ser lida): ela fica, e a seguinte entra mais tarde
+            if c.get("kanji") and not fixa(prox) and fim_prox - (c["t0"] + minimo) >= minimo and cabe(c, c["t0"], c["t0"] + minimo):
+                prox["t0"] = c["t0"] + minimo; mudou = True; i += 1; continue
+            if not fixa(prox) and cabe(prox, c["t0"], fim_prox):
+                prox["t0"] = c["t0"]                          # a seguinte entra no lugar desta
+                if c.get("entrada") and not prox.get("entrada") == "corte":
+                    prox["entrada"] = c["entrada"]; prox["duracao_entrada"] = c.get("duracao_entrada", 0.6)
+                cs.pop(i); tirou += 1; mudou = True; continue
+            if not fixa(ant) and cabe(ant, ant["t0"], t1):
+                cs.pop(i); tirou += 1; mudou = True; continue  # a anterior continua até a seguinte
+            i += 1
+        if not mudou:
+            break
+    print(f"    cenas curtas (< {minimo:.1f}s) absorvidas pelas vizinhas: {tirou}")
 
 
 def extrair_quadros(c, fps):
