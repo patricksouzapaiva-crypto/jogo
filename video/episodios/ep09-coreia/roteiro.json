@@ -12,7 +12,7 @@
  "chuva": 0,
  "grao": 0.14,
  "mix": {
-  "musica_ganho_db": 10.5,
+  "musica_ganho_db": 12,
   "fundo_sob_voz": -9,
   "efeitos_sob_voz": -4,
   "voz_pro": true,
@@ -22,6 +22,12 @@
  "legendas": {
   "destaques": [
    "Coreia",
+   "dívida",
+   "han",
+   "Arang",
+   "Miryang",
+   "Janghwa",
+   "ovo",
    "Jangsan",
    "Oppa",
    "óleo",
@@ -39,8 +45,8 @@
   }
  ],
  "musica": {
-  "som": "ep09_m01_tres_da_tarde",
-  "volume_db": -28
+  "som": "ep08_japones_longa",
+  "volume_db": -30
  },
  "titulo_ep": {
   "antes_da_batida": 6,
@@ -73,7 +79,7 @@
      {
       "nome": "Busan",
       "hora": "03:00",
-      "imagem": "imagens_v3/H03_C.jpg",
+      "imagem": "imagens_v4/escolhidas/H03.jpg",
       "brilho": 0.6
      },
      {
@@ -124,28 +130,92 @@
   {
    "fala": "\"Mãe… eu tô no elevador. Ele tá subindo. E esse prédio não tem dez andares.\"",
    "cena": {
+    "video": "clipes_v4/V20_A.mp4",
     "zoom": [
      1.0,
-     1.0
+     1.03
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/H03_A_fed958efd8_12.8.mp4"
+    "antecipar": 0.25
    }
   },
   {
    "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
    "pausa_antes_s": 2.59,
    "cena": {
-    "zoom": [
-     1.0,
-     1.0
+    "tipo": "elevador",
+    "sequencia": [
+     [
+      4,
+      0.4
+     ],
+     [
+      2,
+      0.9
+     ],
+     [
+      6,
+      1.4
+     ],
+     [
+      2,
+      1.9
+     ],
+     [
+      10,
+      2.4
+     ]
+    ],
+    "andar": [
+     [
+      2,
+      1.2
+     ],
+     [
+      3,
+      1.8
+     ],
+     [
+      4,
+      2.4
+     ],
+     [
+      5,
+      3.0
+     ],
+     [
+      6,
+      3.6
+     ],
+     [
+      7,
+      4.2
+     ],
+     [
+      8,
+      4.8
+     ],
+     [
+      9,
+      5.4
+     ],
+     [
+      10,
+      6.0
+     ],
+     [
+      11,
+      6.6
+     ],
+     [
+      12,
+      7.2
+     ]
     ],
     "entrada": "fundir",
-    "duracao_entrada": 2.0,
-    "antecipar": 2.0,
-    "video": "camera3d/H04_B_536d24fa07_10.7.mp4"
+    "duracao_entrada": 1.2,
+    "antecipar": 1.2
    },
    "ambiente": {
     "som": "ep09_motor_elevador",
@@ -173,17 +243,18 @@
   {
    "fala": "Desde o dia em que a irmã dele voltou da montanha.",
    "cena": {
+    "video": "clipes_v4/V17_A.mp4",
     "zoom": [
      1.0,
-     1.0
+     1.03
     ],
+    "video_inicio": 4.0,
     "atmos": {
-     "neblina": 0.4
+     "neblina": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/M06_C_e0074b361a_6.5.mp4"
+    "antecipar": 0.25
    },
    "ambiente": {
     "som": "ep09_amanhecer_tenso",
@@ -200,7 +271,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M03_B_35be001e88_11.2.mp4"
+    "video": "camera3d/M04_c25915dcb2_10.9.mp4"
    },
    "pausa_antes_s": 0.4,
    "ambiente": {
@@ -244,38 +315,44 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
-   },
-   "musica": {
-    "som": "ep09_m02_han",
-    "volume_db": -30
    }
   },
   {
-   "fala": "Na última vez, a gente foi ao Japão. Hoje, a gente atravessa o mar. Para a Coreia do Sul.",
-   "cena": {
-    "imagem": "../../painel/cenarios/abrigo_16x9.png",
-    "vigia": true,
-    "zoom": [
-     1.0,
-     1.05
-    ],
-    "foco": [
-     [
-      0.55,
-      0.5
+   "fala": "Na última vez, a gente foi ao Japão. E viu que, lá, o terror é uma regra. Você olhou, está amaldiçoado. Não importa por quê.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
      ],
-     [
-      0.57,
-      0.48
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "video": "filmes_prontos/wailing_vila.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "lá"
+    }
+   ]
   },
   {
-   "fala": "O país do K-pop e das novelas. E de um tipo de terror que o ocidente quase não conhece.",
+   "fala": "Hoje, a gente atravessa o mar. Para a Coreia do Sul.",
    "cena": {
     "zoom": [
      1.0,
@@ -284,12 +361,12 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M01_B_4fc7dfebac_8.9.mp4"
+    "video": "camera3d/M01_18074471a6_7.1.mp4"
    },
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.5
   },
   {
-   "fala": "No terror coreano, o monstro raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que você ama.",
+   "fala": "E na Coreia é diferente. Lá, o terror não é uma regra.",
    "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
@@ -313,53 +390,90 @@
    }
   },
   {
-   "fala": "Hoje eu vou te contar quatro histórias que todo coreano conhece. Um conto que as avós contavam pras crianças não saírem de noite. Uma criatura que imita vozes, numa montanha de Busan. Um ritual que a internet jura que leva para outro mundo. E o hospital abandonado mais famoso da Ásia.",
+   "fala": "É uma dívida.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/T07.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "빚",
+     "x": 0.8,
+     "y": 0.45,
+     "modo": "sangue",
+     "legenda": "bit · dívida",
+     "tam": 0.3,
+     "atraso": 0.2
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.1
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "O fantasma coreano não aparece por acaso. Ele volta porque alguém deve alguma coisa pra ele. E ele não vai embora enquanto não receber.",
+   "cena": {
+    "video": "clipes_v4/V15_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "E ele raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que você ama.",
+   "cena": {
+    "video": "clipes_v4/V08_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.5
+  },
+  {
+   "fala": "Hoje eu vou te mostrar de onde vem esse medo. Quinhentos anos de mortos que voltam para cobrar: de um quarto de magistrado no século dezesseis até um hospital abandonado que a internet transformou em lenda.",
    "cenas": [
     {
-     "imagem": "imagens_v3/J01_A.jpg",
      "zoom": [
       1.0,
-      1.06
-     ],
-     "foco": [
-      [
-       0.4,
-       0.55
-      ],
-      [
-       0.42,
-       0.55
-      ]
+      1.0
      ],
      "entrada": "fundir",
      "duracao_entrada": 0.6,
-     "antecipar": 0.6
-    },
-    {
-     "imagem": "imagens_v3/M07_B.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "foco": [
-      [
-       0.45,
-       0.4
-      ],
-      [
-       0.47,
-       0.4
-      ]
-     ],
-     "em": "criatura"
-    },
-    {
-     "video": "clipes_v3/V02_A.mp4",
-     "zoom": [
-      1.0,
-      1.03
-     ],
-     "em": "ritual"
+     "antecipar": 0.25,
+     "video": "camera3d/A01_7cd99845fb_12.8.mp4"
     },
     {
      "zoom": [
@@ -367,13 +481,16 @@
       1.0
      ],
      "em": "hospital",
-     "video": "camera3d/H01_A_dadea51cd3_6.5.mp4"
+     "video": "camera3d/H01_21a2506ac4_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 0.6
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
   },
   {
-   "fala": "E vou te contar como essas quatro histórias aconteceram com uma família de Belo Horizonte. Na mesma semana.",
+   "fala": "E no fim… eu vou te contar o que aconteceu com uma família de Belo Horizonte. Na mesma semana.",
    "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
@@ -398,9 +515,1698 @@
    "pausa_antes_s": 0.6
   },
   {
-   "fala": "O Rafa tinha vinte e sete anos e morava em Busan fazia dois. Dava aula de português para coreanos.",
+   "fala": "Miryang, sul da Coreia. Século dezesseis. Tempo dos reis.",
+   "cenas": [
+    {
+     "tipo": "talisma",
+     "numero": "제1장",
+     "numero_pt": "Capítulo 1",
+     "titulo": "O quarto do magistrado",
+     "ano": "Miryang · séc. XVI",
+     "selo": "恨",
+     "imagem": "imagens_v4/escolhidas/A02.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
+    },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
+     "em": "Miryang",
+     "video": "camera3d/A01_9a0ba3b015_7.0.mp4"
+    }
+   ],
+   "pausa_antes_s": 5.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -3.1
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "O magistrado da cidade tinha uma filha. Chamava-se Arang.",
    "cena": {
-    "imagem": "imagens_v3/M01_A.jpg",
+    "imagem": "imagens_v4/escolhidas/A02.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Uma noite, ela sumiu. Ninguém achou o corpo. O pai, de vergonha, deixou o cargo e foi embora.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/A01_1e3e8ca2ea_10.0.mp4"
+   }
+  },
+  {
+   "fala": "E aí começou.",
+   "cena": {
+    "imagem": "imagens_v4/extras/A03_A.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "O novo magistrado chegou à cidade. Dormiu a primeira noite no quarto oficial.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/A02_1167f2344f_7.0.mp4"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "De manhã, estava morto. Sem marca nenhuma. Com os olhos abertos.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A03.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "死",
+     "x": 0.18,
+     "y": 0.45,
+     "modo": "sangue",
+     "legenda": "sa · morte",
+     "tam": 0.26,
+     "atraso": 0.6
+    },
+    "foco": [
+     [
+      0.5,
+      0.65
+     ],
+     [
+      0.6,
+      0.72
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.5
+    }
+   ]
+  },
+  {
+   "fala": "O seguinte também. E o seguinte.",
+   "cena": {
+    "imagem": "imagens_v4/extras/A03_A.jpg",
+    "zoom": [
+     1.08,
+     1.14
+    ],
+    "foco": [
+     [
+      0.4,
+      0.7
+     ],
+     [
+      0.38,
+      0.72
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Em pouco tempo, ninguém no reino aceitava ir para Miryang.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/A01_978b280811_6.5.mp4"
+   }
+  },
+  {
+   "fala": "Até que apareceu um homem que aceitou. E, na primeira noite, ele fez o que nenhum outro tinha feito.",
+   "cena": {
+    "video": "clipes_v4/V09_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ficou acordado.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A04.jpg",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.4
+  },
+  {
+   "fala": "De madrugada, a vela tremeu. A porta de papel abriu sozinha.",
+   "cena": {
+    "tipo": "sombra",
+    "chega": [
+     0.6,
+     4.6
+    ],
+    "vela": [
+     0.1,
+     0.8
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": "vela",
+     "som": "ep08_vela",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "papel",
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "papel",
+     "som": "ep09_sn_porta_rangido_lento",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 2.5,
+     "saida": 0.5
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "E entrou uma moça. De branco. O cabelo solto, molhado. Sangue na roupa.",
+   "cena": {
+    "video": "clipes_v4/V08_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -26
+   },
+   "sons": [
+    {
+     "em": "Sangue",
+     "som": "sub_drop",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Os outros tinham morrido de medo só de ver.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A06.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Esse ficou. E perguntou o que ela queria.",
+   "cena": {
+    "video": "clipes_v4/V07_A_ate4.0.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela contou. Tinha sido atacada e morta por um empregado da casa. O corpo estava escondido num bambuzal, perto do rio. E ninguém nunca tinha procurado.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/A07_8efbc13705_12.5.mp4"
+   }
+  },
+  {
+   "fala": "No dia seguinte, ele mandou cavar. O corpo estava lá.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A07.jpg",
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "foco": [
+     [
+      0.6,
+      0.7
+     ],
+     [
+      0.62,
+      0.72
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": "cavar",
+     "som": "ep05_raspar",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "tom": -4
+    }
+   ]
+  },
+  {
+   "fala": "O assassino foi punido. E a Arang nunca mais apareceu.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A04.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Repara: ela não queria matar ninguém. Ela queria ser ouvida. Quem morreu foi quem não aguentou ouvir.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A05.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "kanji": {
+     "texto": "원한",
+     "x": 0.18,
+     "y": 0.45,
+     "modo": "luz",
+     "legenda": "wonhan · a mágoa",
+     "tam": 0.22,
+     "em": "ouvida"
+    },
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "ouvida",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "O santuário da Arang existe até hoje. Fica em Miryang, na beira do rio. E todo ano, na primavera, a cidade ainda faz uma cerimônia para ela.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "camera3d/A08_03c706e745_14.2.mp4"
+   },
+   "ambiente": {
+    "som": "ep09_lago",
+    "volume_db": -30
+   },
+   "pausa_antes_s": 1.4
+  },
+  {
+   "fala": "Cem anos depois, no norte, numa cidade chamada Cheolsan, a mesma história voltou a acontecer. Só que pior.",
+   "cenas": [
+    {
+     "tipo": "talisma",
+     "numero": "제2장",
+     "numero_pt": "Capítulo 2",
+     "titulo": "As irmãs do lago",
+     "ano": "Cheolsan · séc. XVII",
+     "selo": "怨",
+     "imagem": "imagens_v4/escolhidas/I05.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
+    },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
+     "em": "Cem",
+     "video": "camera3d/I01_e6c1e683a6_11.9.mp4"
+    }
+   ],
+   "pausa_antes_s": 5.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -3.1
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "Duas irmãs. Janghwa e Hongryeon. A mãe delas morreu, e o pai casou de novo.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/I02_7e351f4d4c_9.1.mp4"
+   },
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "A madrasta odiava as meninas.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/I03.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.55,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Uma noite, ela pegou um rato. Tirou a pele. E deixou, ensanguentado, debaixo do cobertor da Janghwa, a mais velha.",
+   "cenas": [
+    {
+     "imagem": "imagens_v4/extras/I03_A.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.6
+      ],
+      [
+       0.45,
+       0.65
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/I04.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.65
+      ],
+      [
+       0.5,
+       0.7
+      ]
+     ],
+     "em": "ensanguentado"
+    }
+   ]
+  },
+  {
+   "fala": "De manhã, mostrou para o pai. Disse que a filha tinha perdido um bebê. Que tinha desonrado a família.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/I01.jpg",
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O pai acreditou.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/I03.jpg",
+    "zoom": [
+     1.08,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "A Janghwa foi mandada embora de noite. E o filho da madrasta foi junto. Para garantir que ela chegasse ao lago.",
+   "cena": {
+    "tipo": "agua",
+    "imagem": "imagens_v4/escolhidas/I05.jpg",
+    "horizonte": 0.55,
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lago",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Ela entrou no lago. E não saiu.",
+   "cena": {
+    "video": "clipes_v4/V10_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_lago",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0,
+     "saida": 2.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A irmã mais nova, a Hongryeon, foi procurar. Achou o lugar. E entrou no mesmo lago.",
+   "cena": {
+    "tipo": "agua",
+    "imagem": "imagens_v4/escolhidas/I07.jpg",
+    "horizonte": 0.45,
+    "afunda": [
+     0.5,
+     0.42,
+     2.2
+    ],
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "E aí, de novo: todo magistrado que chegava em Cheolsan morria na primeira noite.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/A02.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Até que um ficou. E as duas apareceram juntas, molhadas, pingando no chão do quarto, e contaram tudo.",
+   "cenas": [
+    {
+     "video": "clipes_v4/V11_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/I08.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.45,
+       0.4
+      ],
+      [
+       0.45,
+       0.36
+      ]
+     ],
+     "em": "contaram"
+    }
+   ],
+   "sons": [
+    {
+     "em": "pingando",
+     "som": "ep09_sn_respiracao_medo",
+     "volume_db": -30,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele mandou abrir a barriga do \"bebê\". Era um rato.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/I04.jpg",
+    "zoom": [
+     1.1,
+     1.18
+    ],
+    "kanji": {
+     "texto": "쥐",
+     "x": 0.82,
+     "y": 0.45,
+     "modo": "sangue",
+     "legenda": "jwi · rato",
+     "tam": 0.26,
+     "em": "rato"
+    },
+    "foco": [
+     [
+      0.5,
+      0.65
+     ],
+     [
+      0.5,
+      0.68
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "rato",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "rato",
+     "som": "sub_drop",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Os estudiosos dizem que essa história é muito parecida com um caso real, registrado por um magistrado de Cheolsan no século dezessete.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "장화홍련전 · Janghwa e Hongryeon\nconto da era Joseon · Cheolsan",
+    "estilo": "maquina",
+    "vermelho": "Janghwa e Hongryeon",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E repara na roupa delas. Branca. A roupa de luto. O cabelo solto e comprido. Na Coreia antiga, a moça solteira usava o cabelo numa trança; solto, só de morta.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/I08.jpg",
+    "zoom": [
+     1.06,
+     1.14
+    ],
+    "foco": [
+     [
+      0.4,
+      0.4
+     ],
+     [
+      0.4,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lenda_mata",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Os coreanos têm um nome para ela: cheonyeo gwishin. O fantasma da moça que morreu antes de casar. É o fantasma mais temido do país. Porque ela morreu antes de viver. E quem morre antes de viver… volta para cobrar.",
+   "cenas": [
+    {
+     "video": "clipes_v4/V12_A_ate4.5.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/I09.jpg",
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "kanji": {
+      "texto": "처녀귀신",
+      "x": 0.8,
+      "y": 0.45,
+      "modo": "luz",
+      "legenda": "cheonyeo gwishin",
+      "tam": 0.16,
+      "atraso": 0.2
+     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "fantasma"
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A06.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.4
+      ],
+      [
+       0.5,
+       0.36
+      ]
+     ],
+     "em": "Porque"
+    }
+   ],
+   "sons": [
+    {
+     "em": "fantasma",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "E tem os que nem rosto têm.",
+   "cenas": [
+    {
+     "tipo": "talisma",
+     "numero": "제3장",
+     "numero_pt": "Capítulo 3",
+     "titulo": "O que não tem rosto",
+     "ano": "1977 → 2024",
+     "selo": "無",
+     "imagem": "imagens_v4/escolhidas/T01.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
+    },
+    {
+     "video": "clipes_v4/V13_A_ate5.0.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
+     "em": "E"
+    }
+   ],
+   "pausa_antes_s": 5.6,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": -3.1
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "O dalgyal gwishin. O fantasma do ovo.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/T01.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "kanji": {
+     "texto": "달걀귀신",
+     "x": 0.2,
+     "y": 0.45,
+     "modo": "luz",
+     "legenda": "dalgyal gwishin · o fantasma do ovo",
+     "tam": 0.15,
+     "atraso": 0.4
+    },
+    "foco": [
+     [
+      0.57,
+      0.48
+     ],
+     [
+      0.57,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.3
+    }
+   ],
+   "ambiente": {
+    "som": "ep09_lenda_hospital",
+    "volume_db": -27
+   }
+  },
+  {
+   "fala": "Uma cabeça lisa, branca, sem olhos, sem nariz, sem boca. Liso como um ovo."
+  },
+  {
+   "fala": "Ele não ataca. Não persegue. Não fala."
+  },
+  {
+   "fala": "Dizem que quem vê… morre.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/T01.jpg",
+    "zoom": [
+     1.6,
+     1.9
+    ],
+    "foco": [
+     [
+      0.57,
+      0.48
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "morre",
+     "som": "sub_drop",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "morre",
+     "som": "ep09_jing",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Essas histórias atravessaram séculos de boca em boca. Até que, em mil novecentos e setenta e sete, a televisão coreana colocou todas elas na sala de casa.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "tipo": "crt",
+    "imagem": "imagens_v4/escolhidas/T03.jpg",
+    "liga": 0.3,
+    "rolar": [
+     3.5
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tv_chiado",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 3.0,
+     "saida": 1.0
+    }
+   ]
+  },
+  {
+   "fala": "Chamava-se Jeonseol-ui Gohyang. A Terra das Lendas. Um conto de fantasma por semana, de noite, para o país inteiro.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/T02.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.52,
+      0.4
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Uma geração inteira de coreanos cresceu com medo dela. E tem uma fala que até hoje todo coreano conhece: o morto que volta, no meio da noite, gritando:",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "camera3d/T02_f603bde3d1_11.9.mp4"
+   }
+  },
+  {
+   "fala": "\"Me devolve a minha perna!\"",
+   "cena": {
+    "video": "tv/TV_deokdaegol.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "tv_deokdaegol",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/tv/TV_deokdaegol_som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Depois, veio o cinema.",
+   "pausa_antes_s": 4.4,
+   "cena": {
+    "video": "filmes_prontos/exhuma_noite.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep09_lenda_mata",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Em mil novecentos e sessenta e sete, O Cemitério de Wol-ha, a história de uma mulher morta por uma armação da família do marido, que volta da cova para se vingar, foi um sucesso que a Coreia nunca tinha visto.",
+   "cenas": [
+    {
+     "video": "tv/TV_wolha.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T04.jpg",
+     "zoom": [
+      1.05,
+      1.15
+     ],
+     "foco": [
+      [
+       0.6,
+       0.5
+      ],
+      [
+       0.62,
+       0.48
+      ]
+     ],
+     "em": "cova"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "tv_wolha",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/tv/TV_wolha_som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Em mil novecentos e noventa e oito, Whispering Corridors: um fantasma numa escola só de meninas. Um filme barato, que virou o segundo maior sucesso coreano do ano. E abriu a porta para tudo o que veio depois.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/wc_noite.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T05.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "em": "abriu"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "som_wc_noite",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/filmes_prontos/wc_noite_som.wav"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Em dois mil e três, a história da Janghwa e da Hongryeon virou filme: A Tale of Two Sisters. Hollywood refez.",
+   "cena": {
+    "video": "filmes_prontos/irmas_chegada.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "som_irmas_chegada",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/filmes_prontos/irmas_chegada_som.wav"
+    }
+   ],
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "E em dois mil e vinte e quatro, Exhuma, um filme sobre xamãs e uma cova que nunca devia ter sido aberta, foi o primeiro filme de terror oculto da Coreia a passar de dez milhões de espectadores. O filme mais visto do país naquele ano.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/exhuma_cova.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "video": "clipes_v4/V14_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "em": "primeiro"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "som_exhuma_cova",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/filmes_prontos/exhuma_cova_som.wav"
+    }
+   ],
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Repara o que todas essas histórias têm em comum.",
+   "pausa_antes_s": 1.0,
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "A Arang. As irmãs do lago. A moça de Wol-ha.",
+   "cenas": [
+    {
+     "imagem": "imagens_v4/escolhidas/A06.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/I08.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.45,
+       0.45
+      ],
+      [
+       0.45,
+       0.42
+      ]
+     ],
+     "em": "irmãs"
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T04.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "em": "Wol"
+    }
+   ]
+  },
+  {
+   "fala": "Todas morreram com uma injustiça engasgada. E os coreanos têm uma palavra para isso: han.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.48,
+       0.48
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T07.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "kanji": {
+      "texto": "한",
+      "x": 0.5,
+      "y": 0.5,
+      "modo": "luz",
+      "legenda": "han",
+      "tam": 0.34
+     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "han"
+    }
+   ],
+   "sons": [
+    {
+     "em": "han",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "han",
+     "som": "ep09_jing",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "É a mágoa que não passa. A raiva que não teve onde ir.",
+   "ambiente": {
+    "som": "ep09_lenda_joseon",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "E quem morre com han não descansa. Fica.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.03,
+     1.08
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E não assombra quem fez o mal. Assombra quem está perto. A casa. A família. Quem ficou.",
+   "cenas": [
+    {
+     "video": "clipes_v4/V11_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/extras/I03_A.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "família"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Por isso, na Coreia, os mortos não se escondem. Eles chamam. Com a voz de quem você ama.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "foco": [
+     [
+      0.42,
+      0.45
+     ],
+     [
+      0.38,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   }
+  },
+  {
+   "fala": "E nos últimos anos… o han ganhou um endereço novo.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "camera3d/H01_8eb454e49c_6.5.mp4"
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "A internet.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "A internet.",
+    "estilo": "impacto",
+    "vermelho": "internet.",
+    "cps": 14,
+    "tamanho": 120,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "estatica_cctv",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 1.5,
+     "saida": 0.6
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "O Rafa tinha vinte e sete anos e morava em Busan fazia dois. Dava aula de português para coreanos.",
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/M01.jpg",
     "zoom": [
      1.0,
      1.06
@@ -417,39 +2223,45 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep09_mata_tensa",
     "volume_db": -32
-   },
-   "musica": {
-    "som": "ep09_m11_a_montanha",
-    "volume_db": -31
    }
   },
   {
    "fala": "Em outubro de dois mil e dezessete, a irmã caçula, a Lívia, de dezenove, foi passar duas semanas com ele.",
-   "cena": {
-    "imagem": "imagens_v3/M02_C.jpg",
-    "zoom": [
-     1.0,
-     1.06
-    ],
-    "foco": [
-     [
-      0.55,
-      0.5
+   "cenas": [
+    {
+     "video": "clipes_v4/V16_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
      ],
-     [
-      0.65,
-      0.45
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/M02.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "passar"
+    }
+   ]
   },
   {
    "fala": "No penúltimo dia, eles subiram o monte Jangsan. Uma montanha de seiscentos metros, bem atrás dos prédios de Haeundae.",
@@ -461,7 +2273,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M01_C_d9d88abaec_9.6.mp4"
+    "video": "camera3d/M01_88fba13b8e_10.1.mp4"
    }
   },
   {
@@ -474,7 +2286,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M02_B_a6bebb6e71_8.5.mp4"
+    "video": "camera3d/M02_d6e6fc4099_7.9.mp4"
    },
    "ambiente": {
     "som": "ep09_mata_tensa",
@@ -501,7 +2313,7 @@
   {
    "fala": "Ele chamou. Nada.",
    "cena": {
-    "imagem": "imagens_v3/M03_A.jpg",
+    "imagem": "imagens_v4/escolhidas/M04.jpg",
     "zoom": [
      1.0,
      1.05
@@ -532,7 +2344,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M03_B_31aadcfb5d_7.3.mp4"
+    "video": "camera3d/M04_B_950b82fbf5_6.9.mp4"
    },
    "sons": [
     {
@@ -569,7 +2381,27 @@
   },
   {
    "fala": "Ele foi abrir a localização dela no celular, pra achar o caminho.",
-   "pausa_antes_s": 0.38
+   "pausa_antes_s": 1.6,
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/M03.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.58,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
   },
   {
    "fala": "O pontinho azul da Lívia estava do lado direito da trilha. Do lado oposto da voz.",
@@ -594,7 +2426,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M03_B_837a6aa2c3_14.5.mp4"
+    "video": "camera3d/M04_B_2d8eeab803_14.8.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -607,9 +2439,9 @@
   },
   {
    "fala": "O Rafa não foi.",
-   "pausa_antes_s": 1.15,
+   "pausa_antes_s": 2.4,
    "cena": {
-    "imagem": "imagens_v3/M03_B.jpg",
+    "imagem": "imagens_v4/extras/M04_B.jpg",
     "zoom": [
      1.0,
      1.04
@@ -669,7 +2501,7 @@
      "volume_db": -31,
      "depois": false,
      "atraso": 0.0,
-     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina_lote.wav",
      "pan": -0.8,
      "eco": 2.0,
      "saida": 0.6
@@ -680,7 +2512,7 @@
      "volume_db": -33,
      "depois": false,
      "atraso": 0.0,
-     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina_lote.wav",
      "pan": -0.85,
      "eco": 2.5,
      "saida": 0.6
@@ -690,7 +2522,7 @@
   {
    "fala": "Até que a voz parou. No meio de uma palavra.",
    "cena": {
-    "imagem": "imagens_v3/M03_A.jpg",
+    "imagem": "imagens_v4/escolhidas/M04.jpg",
     "zoom": [
      1.05,
      1.1
@@ -717,7 +2549,7 @@
      "volume_db": -25,
      "depois": false,
      "atraso": -1.3,
-     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina.wav",
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/vozes/limpas_escolhidas/livia1_Despina_lote.wav",
      "pan": -0.7,
      "eco": 1.5,
      "ate": 0.55
@@ -728,20 +2560,19 @@
    "fala": "Em dois mil e treze, começaram a aparecer relatos num fórum coreano. Todos sobre a mesma montanha. O Jangsan.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "제1장",
-     "numero_pt": "Capítulo 1",
+     "tipo": "talisma",
+     "numero": "제4장",
+     "numero_pt": "Capítulo 4",
      "titulo": "O que mora no monte Jangsan",
      "ano": "장산범 · Busan",
+     "selo": "虎",
      "imagem": "imagens_v3/M07_A.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.5
-     }
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
     },
     {
-     "imagem": "imagens_v3/M01_C.jpg",
+     "imagem": "imagens_v4/escolhidas/M01.jpg",
      "zoom": [
       1.0,
       1.06
@@ -756,69 +2587,79 @@
        0.42
       ]
      ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
      "em": "Em"
     }
    ],
-   "pausa_antes_s": 5.2,
+   "pausa_antes_s": 5.6,
    "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -18,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep09_buk",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
-    },
-    {
-     "em": null,
-     "som": "ep09_ah_buk_jing_1",
-     "volume_db": -22,
-     "depois": false,
-     "atraso": -4.9,
-     "ate": 5.0,
-     "saida": 2.0
+     "atraso": -3.1
     }
    ],
    "ambiente": {
     "som": "ep09_lenda_mata",
     "volume_db": -27
-   },
-   "musica": {
-    "som": "ep09_m12_jangsan",
-    "volume_db": -30,
-    "atraso": -5.4
    }
   },
   {
    "fala": "Moradores de Busan diziam ter visto um bicho grande, de quatro patas, coberto de um pelo branco e comprido. Que se movia rápido demais entre as árvores.",
-   "cena": {
-    "imagem": "imagens_v3/M07_B.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.45,
-      0.4
+   "cenas": [
+    {
+     "video": "clipes_v4/V18_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
      ],
-     [
-      0.48,
-      0.38
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v3/M07_A.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.55,
+       0.45
+      ],
+      [
+       0.56,
+       0.43
+      ]
+     ],
+     "em": "Que"
+    }
+   ],
    "pausa_antes_s": 0.6,
    "sons": [
     {
@@ -873,7 +2714,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M02_A_1450b322de_8.3.mp4"
+    "video": "camera3d/M03_01ed9237ce_8.1.mp4"
    }
   },
   {
@@ -1012,7 +2853,7 @@
   {
    "fala": "E no fórum, a regra que todo mundo repetia era uma só:",
    "cena": {
-    "imagem": "imagens_v3/M02_B.jpg",
+    "imagem": "imagens_v4/escolhidas/M02.jpg",
     "zoom": [
      1.0,
      1.06
@@ -1039,7 +2880,7 @@
   {
    "fala": "Se uma voz conhecida te chamar da mata à noite, confirma por mensagem antes de ir.",
    "cena": {
-    "imagem": "imagens_v3/M03_A.jpg",
+    "imagem": "imagens_v4/escolhidas/M04.jpg",
     "zoom": [
      1.0,
      1.06
@@ -1087,15 +2928,11 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M05_A_a9b09a2427_6.5.mp4"
+    "video": "camera3d/M07_e884bb091d_6.5.mp4"
    },
    "ambiente": {
     "som": "ep09_mata_tensa",
     "volume_db": -24
-   },
-   "musica": {
-    "som": "ep09_m13_os_tenis",
-    "volume_db": -31
    }
   },
   {
@@ -1108,7 +2945,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M05_B_ef9704608c_7.6.mp4"
+    "video": "camera3d/M07_B_76d384b25b_8.3.mp4"
    }
   },
   {
@@ -1124,7 +2961,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M04_A_3b4cbcb2bb_12.1.mp4"
+    "video": "camera3d/M06_1fbb920510_12.2.mp4"
    },
    "sons": [
     {
@@ -1139,7 +2976,7 @@
   {
    "fala": "Como se alguém tivesse tirado com cuidado… e seguido descalço.",
    "cena": {
-    "imagem": "imagens_v3/M04_D.jpg",
+    "imagem": "imagens_v4/extras/M06_B.jpg",
     "zoom": [
      1.05,
      1.12
@@ -1259,7 +3096,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M06_B_2db81403ec_12.0.mp4"
+    "video": "camera3d/M08_af87144c2b_12.0.mp4"
    },
    "ambiente": {
     "som": "ep09_amanhecer_tenso",
@@ -1369,7 +3206,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/C05_B_d4b252c09f_9.1.mp4"
+    "video": "camera3d/C07_A_bec432e8bb_9.6.mp4"
    },
    "pausa_antes_s": 0.8
   },
@@ -1379,7 +3216,7 @@
   {
    "fala": "\"Oppa.\"",
    "cena": {
-    "imagem": "imagens_v3/M06_B.jpg",
+    "imagem": "imagens_v4/escolhidas/M08.jpg",
     "zoom": [
      1.12,
      1.18
@@ -1432,7 +3269,7 @@
   {
    "fala": "A Lívia não falava coreano.",
    "cena": {
-    "imagem": "imagens_v3/M06_C.jpg",
+    "imagem": "imagens_v4/extras/M08_A.jpg",
     "zoom": [
      1.08,
      1.14
@@ -1475,20 +3312,19 @@
    "fala": "Existe um conto que as avós coreanas contam há séculos. Tem mais de setenta versões. Chama-se Yeou Nui. A Irmã Raposa.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "제2장",
-     "numero_pt": "Capítulo 2",
+     "tipo": "talisma",
+     "numero": "제5장",
+     "numero_pt": "Capítulo 5",
      "titulo": "A irmã raposa",
      "ano": "여우누이 · Yeou Nui",
-     "imagem": "imagens_v3/J01_A.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.5
-     }
+     "selo": "狐",
+     "imagem": "imagens_v4/escolhidas/J01.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
     },
     {
-     "imagem": "imagens_v3/J01_A.jpg",
+     "imagem": "imagens_v4/escolhidas/J01.jpg",
      "zoom": [
       1.0,
       1.06
@@ -1503,45 +3339,45 @@
        0.55
       ]
      ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
      "em": "Existe"
     }
    ],
-   "pausa_antes_s": 5.2,
+   "pausa_antes_s": 5.6,
    "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -18,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep09_buk",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
-    },
-    {
-     "em": null,
-     "som": "ep09_ah_buk_jing_1",
-     "volume_db": -22,
-     "depois": false,
-     "atraso": -4.9,
-     "ate": 5.0,
-     "saida": 2.0
+     "atraso": -3.1
     }
    ],
    "ambiente": {
     "som": "ep09_lenda_joseon",
     "volume_db": -27
-   },
-   "musica": {
-    "som": "ep09_m04_joseon_irmas",
-    "volume_db": -30,
-    "atraso": -5.4
    }
   },
   {
@@ -1561,7 +3397,7 @@
   {
    "fala": "\"Me dá uma filha. Nem que seja uma raposa.\"",
    "cena": {
-    "imagem": "imagens_v3/J01_B.jpg",
+    "imagem": "imagens_v4/extras/J01_B.jpg",
     "zoom": [
      1.0,
      1.06
@@ -1618,7 +3454,7 @@
   {
    "fala": "O pai mandou o filho mais velho vigiar.",
    "cena": {
-    "imagem": "imagens_v3/J01_A.jpg",
+    "imagem": "imagens_v4/escolhidas/J01.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1640,19 +3476,30 @@
   },
   {
    "fala": "De madrugada, ele viu a irmãzinha entrar no estábulo. Ela passou óleo de gergelim no braço, até o ombro. Enfiou o braço dentro da vaca. E puxou o fígado.",
-   "cena": {
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "atmos": {
-     "poeira": 0.3
+   "cenas": [
+    {
+     "video": "clipes_v4/V19_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "video_inicio": 3.0,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
     },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/J02_B_2a097ccfc4_17.1.mp4"
-   },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "passou",
+     "video": "camera3d/J02_B_2a097ccfc4_11.6.mp4"
+    }
+   ],
    "sons": [
     {
      "em": "puxou",
@@ -1667,7 +3514,7 @@
   {
    "fala": "E comeu. Ali mesmo. Quente.",
    "cena": {
-    "imagem": "imagens_v3/J01_B.jpg",
+    "imagem": "imagens_v4/extras/J01_B.jpg",
     "zoom": [
      1.1,
      1.18
@@ -1700,7 +3547,7 @@
   {
    "fala": "De manhã, ele contou para o pai. E o pai, que tinha rezado tanto por aquela menina, expulsou o filho de casa.",
    "cena": {
-    "imagem": "imagens_v3/J04_B.jpg",
+    "imagem": "imagens_v4/extras/J05_A.jpg",
     "zoom": [
      1.0,
      1.06
@@ -1788,7 +3635,7 @@
   {
    "fala": "Anos depois, os dois irmãos expulsos voltaram.",
    "cena": {
-    "imagem": "imagens_v3/J04_B.jpg",
+    "imagem": "imagens_v4/extras/J05_A.jpg",
     "zoom": [
      1.0,
      1.06
@@ -1821,7 +3668,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/J03_A_c678d24542_8.6.mp4"
+    "video": "camera3d/J04_8a6ffc0ea9_8.5.mp4"
    },
    "ambiente": {
     "som": "ep09_lenda_joseon",
@@ -1848,14 +3695,14 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/J04_A_78cb65fb04_8.5.mp4"
+    "video": "camera3d/J05_56ba418677_7.6.mp4"
    },
    "pausa_antes_s": 0.6
   },
   {
    "fala": "\"Oppa. Vocês voltaram.\"",
    "cena": {
-    "imagem": "imagens_v3/J04_A.jpg",
+    "imagem": "imagens_v4/escolhidas/J05.jpg",
     "zoom": [
      1.12,
      1.18
@@ -1886,7 +3733,7 @@
   },
   {
    "fala": "Ela tinha comido os pais. O irmão mais novo. A vila inteira.",
-   "pausa_antes_s": 0.3,
+   "pausa_antes_s": 0.8,
    "sons": [
     {
      "em": "pais",
@@ -1902,7 +3749,7 @@
   {
    "fala": "E disse, com toda a calma, que só faltavam mais dois.",
    "cena": {
-    "imagem": "imagens_v3/J04_B.jpg",
+    "imagem": "imagens_v4/extras/J05_A.jpg",
     "zoom": [
      1.05,
      1.1
@@ -2031,7 +3878,7 @@
      {
       "de": "Lívia",
       "tipo": "foto",
-      "imagem": "imagens_v3/M01_B.jpg",
+      "imagem": "imagens_v4/extras/M01_B.jpg",
       "hora": "21:10",
       "apos": 0.3
      },
@@ -2046,11 +3893,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    },
-   "sem_legenda": true,
-   "musica": {
-    "som": "ep09_m05_a_parede",
-    "volume_db": -31
-   }
+   "sem_legenda": true
   },
   {
    "fala": "Mas comia muito. E só de noite.",
@@ -2062,7 +3905,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C02_C_6ceb88e3c2_6.5.mp4"
+    "video": "camera3d/C03_B_575c996119_6.5.mp4"
    },
    "ambiente": {
     "som": "ep09_cozinha",
@@ -2079,7 +3922,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C04_B_f900ce5b60_8.2.mp4"
+    "video": "camera3d/C06_ea30f23545_7.8.mp4"
    }
   },
   {
@@ -2134,7 +3977,7 @@
      {
       "de": "Lívia",
       "tipo": "foto",
-      "imagem": "imagens_v3/M01_B.jpg",
+      "imagem": "imagens_v4/extras/M01_B.jpg",
       "hora": "21:10",
       "apos": -30
      },
@@ -2147,7 +3990,7 @@
      {
       "de": "Rafa",
       "tipo": "foto",
-      "imagem": "imagens_v3/C04_A.jpg",
+      "imagem": "imagens_v4/extras/C06_A.jpg",
       "hora": "07:40",
       "apos": 0.2
      },
@@ -2195,7 +4038,7 @@
      {
       "de": "Lívia",
       "tipo": "foto",
-      "imagem": "imagens_v3/M01_B.jpg",
+      "imagem": "imagens_v4/extras/M01_B.jpg",
       "hora": "21:10",
       "apos": -30
      },
@@ -2208,7 +4051,7 @@
      {
       "de": "Rafa",
       "tipo": "foto",
-      "imagem": "imagens_v3/C04_A.jpg",
+      "imagem": "imagens_v4/extras/C06_A.jpg",
       "hora": "07:40",
       "apos": -30
      },
@@ -2240,7 +4083,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C05_A_7aaa60f443_6.5.mp4"
+    "video": "camera3d/C07_155681f135_6.5.mp4"
    },
    "ambiente": {
     "som": "ep09_cozinha",
@@ -2327,7 +4170,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/C02_B_2e0888da2f_7.5.mp4"
+    "video": "camera3d/C03_350978f4a7_7.4.mp4"
    },
    "pausa_antes_s": 0.8,
    "sons": [
@@ -2519,10 +4362,11 @@
     }
    ],
    "musica": {
-    "som": "ep09_m05_a_parede",
-    "volume_db": -32
+    "som": "ep08_japones_longa",
+    "volume_db": -30,
+    "continuar": true
    },
-   "pausa_antes_s": 0.49
+   "pausa_antes_s": 1.6
   },
   {
    "fala": "De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.",
@@ -2556,20 +4400,19 @@
    "fala": "Existe um ritual que se espalhou pela internet da Coreia e do Japão. Ninguém sabe ao certo onde nasceu.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "제3장",
-     "numero_pt": "Capítulo 3",
+     "tipo": "talisma",
+     "numero": "제6장",
+     "numero_pt": "Capítulo 6",
      "titulo": "O elevador",
      "ano": "엘리베이터 게임 · o jogo",
-     "imagem": "imagens_v3/H04_A.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.5
-     }
+     "selo": "四",
+     "imagem": "imagens_v4/escolhidas/H05.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
     },
     {
-     "imagem": "imagens_v3/H04_A.jpg",
+     "imagem": "imagens_v4/escolhidas/H05.jpg",
      "zoom": [
       1.0,
       1.06
@@ -2584,45 +4427,45 @@
        0.45
       ]
      ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
      "em": "Existe"
     }
    ],
-   "pausa_antes_s": 5.2,
+   "pausa_antes_s": 5.6,
    "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -18,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep09_buk",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
-    },
-    {
-     "em": null,
-     "som": "ep09_ah_buk_jing_1",
-     "volume_db": -22,
-     "depois": false,
-     "atraso": -4.9,
-     "ate": 5.0,
-     "saida": 2.0
+     "atraso": -3.1
     }
    ],
    "ambiente": {
     "som": "ep09_lenda_elevador",
     "volume_db": -27
-   },
-   "musica": {
-    "som": "ep09_m03_as_regras",
-    "volume_db": -30,
-    "atraso": -5.4
    }
   },
   {
@@ -2645,7 +4488,7 @@
     "som": "ep09_lenda_elevador",
     "volume_db": -26
    },
-   "pausa_antes_s": 0.7
+   "pausa_antes_s": 0.66
   },
   {
    "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
@@ -2657,14 +4500,14 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H03_C_ab7dd821f7_7.3.mp4"
+    "video": "camera3d/H04_7f287e42a3_7.2.mp4"
    }
   },
   {
    "fala": "Entra no elevador e aperta, nesta ordem: quatro. Dois. Seis. Dois. Dez.",
    "cenas": [
     {
-     "imagem": "imagens_v3/H03_B.jpg",
+     "imagem": "imagens_v4/extras/H04_A.jpg",
      "zoom": [
       1.0,
       1.05
@@ -2790,7 +4633,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H05_C_e7794129a0_11.2.mp4"
+    "video": "camera3d/H06_ec29b94c33_10.9.mp4"
    },
    "sons": [
     {
@@ -2819,7 +4662,7 @@
   {
    "fala": "Aí você aperta o um. Se o elevador descer, acabou: o ritual falhou, e você está salvo.",
    "cena": {
-    "imagem": "imagens_v3/H04_B.jpg",
+    "imagem": "imagens_v4/extras/H05_B.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2849,7 +4692,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H03_A_a07dabe9ea_6.5.mp4"
+    "video": "camera3d/H04_1bc311803b_6.5.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -2890,14 +4733,14 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H06_B_05ad7571e9_9.4.mp4"
+    "video": "camera3d/H07_5d34cea4ab_9.1.mp4"
    },
    "pausa_antes_s": 1.2
   },
   {
    "fala": "é a mulher do quinto andar.",
    "cena": {
-    "imagem": "imagens_v3/H05_B.jpg",
+    "imagem": "imagens_v4/extras/H06_B.jpg",
     "zoom": [
      1.0,
      1.06
@@ -2928,7 +4771,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C05_C_aa58f1206f_8.2.mp4"
+    "video": "camera3d/C07_00b37e3640_7.8.mp4"
    },
    "ambiente": {
     "som": "ep09_cozinha",
@@ -2938,7 +4781,7 @@
   {
    "fala": "E embaixo do post, tinha um comentário.",
    "cena": {
-    "imagem": "imagens_v3/C05_A.jpg",
+    "imagem": "imagens_v4/escolhidas/C07.jpg",
     "zoom": [
      1.05,
      1.12
@@ -2979,20 +4822,19 @@
    "fala": "Na Coreia, o número quatro se fala sa. Igual à palavra \"morte\". Muitos prédios pulam o quarto andar.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "제4장",
-     "numero_pt": "Capítulo 4",
+     "tipo": "talisma",
+     "numero": "제7장",
+     "numero_pt": "Capítulo 7",
      "titulo": "O hospital",
      "ano": "사 · 4 · morte",
-     "imagem": "imagens_v3/H01_B.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.5
-     }
+     "selo": "死",
+     "imagem": "imagens_v4/extras/H01_B.jpg",
+     "antecipar": 5.4,
+     "entrada": "hanji",
+     "duracao_entrada": 1.0
     },
     {
-     "imagem": "imagens_v3/H04_A.jpg",
+     "imagem": "imagens_v4/escolhidas/H05.jpg",
      "zoom": [
       1.0,
       1.08
@@ -3028,26 +4870,40 @@
        0.48
       ]
      ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "entrada": "queimar",
+     "duracao_entrada": 1.5,
      "em": "Na"
     }
    ],
-   "pausa_antes_s": 5.2,
+   "pausa_antes_s": 5.6,
    "sons": [
+    {
+     "em": null,
+     "som": "ep09_papel",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -5.35
+    },
+    {
+     "em": null,
+     "som": "ep08_pincel",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": -4.85
+    },
+    {
+     "em": null,
+     "som": "ep09_gut_jing_1",
+     "volume_db": -12,
+     "depois": false,
+     "atraso": -3.5
+    },
     {
      "em": null,
      "som": "ep08_tinta",
      "volume_db": -18,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep09_buk",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -3.1
     },
     {
      "em": "sa",
@@ -3064,15 +4920,6 @@
      "atraso": 0.0
     },
     {
-     "em": null,
-     "som": "ep09_ah_buk_jing_1",
-     "volume_db": -22,
-     "depois": false,
-     "atraso": -4.9,
-     "ate": 5.0,
-     "saida": 2.0
-    },
-    {
      "em": "morte",
      "som": "ep09_ah_geomungo_grave_1",
      "volume_db": -19,
@@ -3085,11 +4932,6 @@
    "ambiente": {
     "som": "ep09_lenda_hospital",
     "volume_db": -27
-   },
-   "musica": {
-    "som": "ep09_m06_moca_de_branco",
-    "volume_db": -30,
-    "atraso": -5.4
    }
   },
   {
@@ -3102,7 +4944,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H01_A_5ca19631cf_6.5.mp4"
+    "video": "camera3d/H01_21a2506ac4_6.5.mp4"
    },
    "ambiente": {
     "som": "ep09_lenda_hospital",
@@ -3134,13 +4976,13 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H01_B_a220ef512a_10.3.mp4"
+    "video": "camera3d/H01_B_e1a5c4ff6a_10.3.mp4"
    }
   },
   {
    "fala": "Nada disso foi provado. O hospital fechou por dívidas.",
    "cena": {
-    "imagem": "imagens_v3/H02_A.jpg",
+    "imagem": "imagens_v4/escolhidas/H03.jpg",
     "zoom": [
      1.0,
      1.06
@@ -3171,7 +5013,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H01_C_35050b6638_9.0.mp4"
+    "video": "camera3d/H01_C_35050b6638_8.9.mp4"
    },
    "pausa_antes_s": 0.6,
    "sons": [
@@ -3195,7 +5037,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H01_A_67d2a01050_9.3.mp4"
+    "video": "camera3d/H01_d9503a9f66_9.3.mp4"
    }
   },
   {
@@ -3217,7 +5059,7 @@
       1.0
      ],
      "em": "grupo",
-     "video": "camera3d/H02_B_f6dd088d21_9.0.mp4"
+     "video": "camera3d/H03_B_beb5d7a07e_8.9.mp4"
     },
     {
      "zoom": [
@@ -3225,7 +5067,7 @@
       1.0
      ],
      "em": "porta",
-     "video": "camera3d/H07_B_f024c56eb6_6.5.mp4"
+     "video": "camera3d/H08_B_d77fd9a893_6.5.mp4"
     }
    ],
    "ambiente": {
@@ -3279,7 +5121,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C05_B_bf0d076ad0_6.9.mp4"
+    "video": "camera3d/C07_A_481f25eefe_6.7.mp4"
    }
   },
   {
@@ -3316,15 +5158,11 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H01_B_149a44c77f_6.5.mp4"
+    "video": "camera3d/H01_B_9dc19d8057_6.5.mp4"
    },
    "ambiente": {
     "som": "ep09_hospital_tenso",
     "volume_db": -24
-   },
-   "musica": {
-    "som": "ep09_m08_gut_mudang",
-    "volume_db": -31
    },
    "sons": [
     {
@@ -3370,7 +5208,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H03_B_4e119a2029_10.9.mp4"
+    "video": "camera3d/H04_A_f73f91c9b8_10.9.mp4"
    },
    "pausa_antes_s": 1.2
   },
@@ -3378,20 +5216,10 @@
    "fala": "Às três em ponto, a luz do elevador acendeu.",
    "pausa_antes_s": 2.4,
    "cena": {
-    "video": "clipes_v3/V03_A.mp4",
+    "video": "clipes_v4/V20_A.mp4",
     "zoom": [
-     1.3,
-     1.32
-    ],
-    "foco": [
-     [
-      0.58,
-      0.5
-     ],
-     [
-      0.58,
-      0.5
-     ]
+     1.0,
+     1.03
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -3456,7 +5284,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H03_C_88ca612f51_12.2.mp4"
+    "video": "camera3d/H04_5f2a0064d2_11.2.mp4"
    }
   },
   {
@@ -3541,7 +5369,7 @@
   {
    "fala": "Ninguém entrou.",
    "cena": {
-    "imagem": "imagens_v3/H03_A.jpg",
+    "imagem": "imagens_v4/escolhidas/H04.jpg",
     "zoom": [
      1.0,
      1.04
@@ -3628,7 +5456,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H05_A_9fe5d203fc_10.8.mp4"
+    "video": "camera3d/H06_d692a76881_10.6.mp4"
    },
    "sons": [
     {
@@ -3677,7 +5505,7 @@
   {
    "fala": "Não olhou.",
    "cena": {
-    "imagem": "imagens_v3/H03_B.jpg",
+    "imagem": "imagens_v4/extras/H04_A.jpg",
     "zoom": [
      1.0,
      1.03
@@ -3717,7 +5545,7 @@
   {
    "fala": "Ele não olhou.",
    "cena": {
-    "imagem": "imagens_v3/H03_A.jpg",
+    "imagem": "imagens_v4/escolhidas/H04.jpg",
     "zoom": [
      1.08,
      1.12
@@ -3736,7 +5564,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.3
+   "pausa_antes_s": 1.0
   },
   {
    "fala": "\"Oppa. Olha pra mim.\""
@@ -3744,7 +5572,7 @@
   {
    "fala": "Apertou o um.",
    "cena": {
-    "imagem": "imagens_v3/H04_B.jpg",
+    "imagem": "imagens_v4/extras/H05_B.jpg",
     "zoom": [
      1.1,
      1.18
@@ -3783,7 +5611,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H03_C_f9629b95cb_6.5.mp4"
+    "video": "camera3d/H04_ee88ec0b40_6.5.mp4"
    },
    "pausa_antes_s": 1.2,
    "sons": [
@@ -3814,10 +5642,6 @@
     "som": "ep09_fluorescente_tenso",
     "volume_db": -24
    },
-   "musica": {
-    "som": "ep09_m07_o_chamado",
-    "volume_db": -30
-   },
    "sons": [
     {
      "em": null,
@@ -3845,20 +5669,20 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H06_A_dedc261ece_9.0.mp4"
+    "video": "camera3d/H07_A_abc4302198_9.0.mp4"
    }
   },
   {
    "fala": "E todas as portas estavam abertas.",
    "cena": {
+    "video": "clipes_v4/V21_A.mp4",
     "zoom": [
      1.0,
-     1.0
+     1.03
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/H06_C_3c724c0658_6.5.mp4"
+    "antecipar": 0.25
    }
   },
   {
@@ -3875,7 +5699,7 @@
      "antecipar": 0.25
     },
     {
-     "imagem": "imagens_v3/H07_A.jpg",
+     "imagem": "imagens_v4/escolhidas/H08.jpg",
      "zoom": [
       1.0,
       1.08
@@ -3912,7 +5736,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H07_A_3efcb1cc1f_10.0.mp4"
+    "video": "camera3d/H08_60c91549fb_10.2.mp4"
    },
    "pausa_antes_s": 0.6,
    "sons": [
@@ -3928,7 +5752,7 @@
   {
    "fala": "Encostou o ouvido.",
    "cena": {
-    "imagem": "imagens_v3/H07_B.jpg",
+    "imagem": "imagens_v4/extras/H08_B.jpg",
     "zoom": [
      1.15,
      1.22
@@ -3967,7 +5791,7 @@
   {
    "fala": "Ele abriu.",
    "cena": {
-    "imagem": "imagens_v3/H07_B.jpg",
+    "imagem": "imagens_v4/extras/H08_B.jpg",
     "zoom": [
      1.22,
      1.28
@@ -3998,18 +5822,18 @@
    "fala": "A Lívia estava no canto, no chão. Magra. De costas. Com a mesma roupa da montanha. Os pés pretos de terra.",
    "cenas": [
     {
-     "imagem": "imagens_v3/H08_A.jpg",
+     "imagem": "imagens_v4/escolhidas/H10.jpg",
      "zoom": [
-      1.7,
-      1.72
+      1.0,
+      1.04
      ],
      "foco": [
       [
-       0.29,
+       0.5,
        0.5
       ],
       [
-       0.29,
+       0.5,
        0.5
       ]
      ],
@@ -4017,18 +5841,18 @@
      "antecipar": 1.4
     },
     {
-     "imagem": "imagens_v3/H08_B.jpg",
+     "imagem": "imagens_v4/escolhidas/H09.jpg",
      "zoom": [
       1.0,
       1.04
      ],
      "foco": [
       [
-       0.6,
+       0.55,
        0.6
       ],
       [
-       0.6,
+       0.55,
        0.6
       ]
      ],
@@ -4077,28 +5901,19 @@
   {
    "fala": "Ela não virou. Só disse, sem voz:",
    "cena": {
-    "imagem": "imagens_v3/H08_C.jpg",
+    "video": "clipes_v4/V22_A.mp4",
     "zoom": [
      1.0,
-     1.05
-    ],
-    "foco": [
-     [
-      0.6,
-      0.5
-     ],
-     [
-      0.6,
-      0.5
-     ]
+     1.03
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
    "musica": {
-    "som": "ep09_m07_o_chamado",
-    "volume_db": -31
+    "som": "ep08_japones_longa",
+    "volume_db": -30,
+    "continuar": true
    },
    "pausa_antes_s": 0.6
   },
@@ -4108,7 +5923,7 @@
   {
    "fala": "Ele pegou a mão dela. Estava gelada.",
    "cena": {
-    "imagem": "imagens_v3/H09_A.jpg",
+    "imagem": "imagens_v4/escolhidas/H11.jpg",
     "zoom": [
      1.15,
      1.2
@@ -4127,7 +5942,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.3
+   "pausa_antes_s": 0.8
   },
   {
    "fala": "Voltaram pelo corredor sem olhar para trás. O elevador estava esperando, de porta aberta.",
@@ -4143,7 +5958,7 @@
      "antecipar": 0.25
     },
     {
-     "imagem": "imagens_v3/H03_C.jpg",
+     "imagem": "imagens_v4/escolhidas/H04.jpg",
      "zoom": [
       1.0,
       1.05
@@ -4174,7 +5989,7 @@
   {
    "fala": "Ele apertou o um.",
    "cena": {
-    "imagem": "imagens_v3/H04_B.jpg",
+    "imagem": "imagens_v4/extras/H05_B.jpg",
     "zoom": [
      1.1,
      1.16
@@ -4230,7 +6045,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H06_B_afa5143214_6.5.mp4"
+    "video": "camera3d/H07_4611dd5b50_7.3.mp4"
    },
    "ambiente": {
     "som": "ep09_fluorescente_tenso",
@@ -4256,15 +6071,11 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H02_B_e0db0d04ce_10.0.mp4"
+    "video": "camera3d/H03_B_95d1cfbcee_9.9.mp4"
    },
    "ambiente": {
     "som": "ep09_amanhecer_tenso",
     "volume_db": -28
-   },
-   "musica": {
-    "som": "ep09_m09_o_quarto",
-    "volume_db": -31
    }
   },
   {
@@ -4277,13 +6088,13 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/H09_A_7eb41739bd_7.6.mp4"
+    "video": "camera3d/H11_d58df675eb_7.5.mp4"
    }
   },
   {
    "fala": "O Rafa saiu, sentou no mato e ligou para a mãe.",
    "cena": {
-    "imagem": "imagens_v3/H09_B.jpg",
+    "imagem": "imagens_v4/extras/H11_B.jpg",
     "zoom": [
      1.0,
      1.06
@@ -4339,7 +6150,7 @@
   {
    "fala": "A mãe virou a câmera.",
    "cena": {
-    "imagem": "imagens_v3/H10_C.jpg",
+    "imagem": "imagens_v4/escolhidas/H12.jpg",
     "zoom": [
      1.0,
      1.08
@@ -4372,10 +6183,10 @@
   {
    "fala": "No sofá da sala, em Belo Horizonte, sentada de costas para a câmera, estava a irmã dele.",
    "cena": {
-    "imagem": "imagens_v3/H10_C.jpg",
+    "imagem": "imagens_v4/escolhidas/H12.jpg",
     "zoom": [
-     1.1,
-     1.6
+     1.0,
+     1.12
     ],
     "foco": [
      [
@@ -4384,7 +6195,7 @@
      ],
      [
       0.5,
-      0.5
+      0.48
      ]
     ],
     "entrada": "fundir",
@@ -4395,20 +6206,10 @@
   {
    "fala": "Ela virou só o rosto. Devagar.",
    "cena": {
-    "imagem": "imagens_v3/H10_C.jpg",
+    "video": "clipes_v4/V23_A_ate5.6.mp4",
     "zoom": [
-     1.6,
-     1.85
-    ],
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.5,
-      0.49
-     ]
+     1.0,
+     1.03
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -4470,7 +6271,7 @@
   {
    "fala": "O Rafa olhou para a Lívia do lado dele.",
    "cena": {
-    "imagem": "imagens_v3/H09_B.jpg",
+    "imagem": "imagens_v4/extras/H11_B.jpg",
     "zoom": [
      1.0,
      1.04
@@ -4494,10 +6295,11 @@
     "volume_db": -30
    },
    "musica": {
-    "som": "ep09_m07_o_chamado",
-    "volume_db": -32
+    "som": "ep08_japones_longa",
+    "volume_db": -30,
+    "continuar": true
    },
-   "pausa_antes_s": 0.91,
+   "pausa_antes_s": 2.0,
    "sons": [
     {
      "em": null,
@@ -4512,12 +6314,32 @@
   },
   {
    "fala": "Ela continuava em silêncio. Segurando a mão dele.",
+   "cena": {
+    "imagem": "imagens_v4/extras/H11_B.jpg",
+    "zoom": [
+     1.05,
+     1.1
+    ],
+    "foco": [
+     [
+      0.72,
+      0.55
+     ],
+     [
+      0.72,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.8
   },
   {
    "fala": "E a mão dela… estava escorregadia. Com cheiro de óleo de gergelim.",
    "cena": {
-    "imagem": "imagens_v3/H09_A.jpg",
+    "imagem": "imagens_v4/escolhidas/H11.jpg",
     "zoom": [
      1.2,
      1.3
@@ -4558,31 +6380,16 @@
    "fala": "O hospital de Gonjiam foi demolido em dois mil e dezoito. Não existe mais.",
    "pausa_antes_s": 2.4,
    "cena": {
-    "imagem": "../../painel/cenarios/abrigo_16x9.png",
-    "vigia": true,
     "zoom": [
      1.0,
-     1.04
+     1.0
     ],
-    "foco": [
-     [
-      0.55,
-      0.5
-     ],
-     [
-      0.57,
-      0.48
-     ]
-    ],
-    "entrada": "corte"
+    "entrada": "corte",
+    "video": "camera3d/H01_6f70d545fc_7.1.mp4"
    },
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
-   },
-   "musica": {
-    "som": "ep09_m10_fecho",
-    "volume_db": -31
    }
   },
   {
@@ -4595,7 +6402,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M01_C_d9d88abaec_13.9.mp4"
+    "video": "camera3d/M01_88fba13b8e_13.2.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -4606,7 +6413,7 @@
     "vigia": true,
     "zoom": [
      1.0,
-     1.05
+     1.04
     ],
     "foco": [
      [
@@ -4628,9 +6435,254 @@
    "pausa_antes_s": 0.8
   },
   {
+   "fala": "No Japão, a maldição é uma regra. Na Coreia, é uma dívida. E dívida… alguém sempre paga.",
+   "cenas": [
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T07.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "kanji": {
+      "texto": "빚",
+      "x": 0.8,
+      "y": 0.45,
+      "modo": "sangue",
+      "legenda": "bit · dívida",
+      "tam": 0.3,
+      "em": "dívida"
+     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "Coreia"
+    }
+   ],
+   "sons": [
+    {
+     "em": "dívida",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "E essas não são as únicas.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Tem o afogado que pede socorro no rio. E que só solta a sua perna quando você ficar no lugar dele.",
+   "cena": {
+    "tipo": "agua",
+    "imagem": "imagens_v4/escolhidas/I05.jpg",
+    "horizonte": 0.55,
+    "afunda": [
+     0.42,
+     0.62,
+     2.6
+    ],
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep09_lago",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Tem o bunshinsaba. Um ritual que as alunas faziam escondidas na sala de aula, para chamar um espírito. E que nunca pode terminar sem mandar ele embora.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/bunshin_ritual.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T05.jpg",
+     "zoom": [
+      1.05,
+      1.12
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "em": "nunca"
+    }
+   ],
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "som_bunshin",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/ep09-coreia/filmes_prontos/bunshin_ritual_som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Porque, se não mandar… ele fica. Com quem chamou.",
+   "cena": {
+    "imagem": "imagens_v4/escolhidas/T05.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "E tem as famílias que, para um filho morto parar de voltar, fazem o casamento dele. Com outro morto.",
+   "cenas": [
+    {
+     "video": "clipes_v4/V15_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A06.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.4
+      ],
+      [
+       0.5,
+       0.36
+      ]
+     ],
+     "em": "Com"
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Me conta aqui nos comentários: qual dessas você quer que eu abra aqui no canal?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "nenhum",
+    "volume_db": -20
+   },
+   "pausa_antes_s": 0.8
+  },
+  {
    "fala": "No conto da Irmã Raposa, ela precisava de mais dois.",
    "cena": {
-    "imagem": "imagens_v3/J04_A.jpg",
+    "imagem": "imagens_v4/escolhidas/J05.jpg",
     "zoom": [
      1.0,
      1.06
@@ -4646,11 +6698,11 @@
     },
     "foco": [
      [
-      0.4,
+      0.3,
       0.5
      ],
      [
-      0.42,
+      0.32,
       0.5
      ]
     ],
@@ -4747,7 +6799,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/H08_C_8386bb246b_22.5.mp4"
+    "video": "camera3d/H09_20d728000a_22.5.mp4"
    },
    "ambiente": {
     "som": "ep09_mata_tensa",
