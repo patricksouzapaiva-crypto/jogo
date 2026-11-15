@@ -9,7 +9,7 @@ const { spawn, spawnSync } = require("child_process");
 const a = process.argv.slice(2);
 const cfg = JSON.parse(a[0]), saida = path.resolve(a[1]);
 const opt = (n, d) => { const i = a.indexOf(n); return i >= 0 ? a[i + 1] : d; };
-const WORKERS = +opt("--workers", 4), FPS = 30, DUR = cfg.dur || 7.6, N = Math.round(DUR * FPS);
+const WORKERS = +opt("--workers", 2), FPS = 30, DUR = cfg.dur || 7.6, N = Math.round(DUR * FPS);
 cfg.dur = DUR; cfg.W = cfg.W || 1920; cfg.H = cfg.H || 1080;
 const TIPOS = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".ttf": "font/ttf", ".woff2": "font/woff2", ".json": "application/json" };
 const srv = http.createServer((req, res) => {
@@ -29,14 +29,16 @@ async function pagina(browser, porta) {
 
 (async () => {
   await new Promise((r) => srv.listen(0, "127.0.0.1", r)); const porta = srv.address().port;
-  const browser = await chromium.launch({ args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
+  // 16/11: "--use-angle=swiftshader" levava ~19 s por quadro; "swiftshader-webgl" ~3.5 s
+  const browser = await chromium.launch({ args: ["--use-gl=angle", "--use-angle=swiftshader-webgl", "--enable-unsafe-swiftshader"] });
   const prev = opt("--previa", null);
   if (prev) {   // só alguns quadros soltos em JPEG (para conferir)
     const p = await pagina(browser, porta);
     for (const t of prev.split(",").map(Number)) {
-      const b64 = await p.evaluate((tt) => window.quadro(tt).split(",")[1], t);
-      fs.writeFileSync(saida.replace(/\.\w+$/, "") + `_${t}.jpg`, Buffer.from(b64, "base64"));
+      await p.evaluate((tt) => window.quadro(tt), t);
+      fs.writeFileSync(saida.replace(/\.\w+$/, "") + `_${t}.jpg`, await p.screenshot({ type: "jpeg", quality: 93 }));
     }
+    console.log("tempos (ms, soma):", JSON.stringify(await p.evaluate(() => window.tempos)));
     await browser.close(); srv.close(); return;
   }
   const [q0, q1] = (opt("--quadros", `0:${N}`)).split(":").map(Number);
@@ -49,8 +51,9 @@ async function pagina(browser, porta) {
     const ff = spawn("ffmpeg", ["-y", "-v", "error", "-f", "image2pipe", "-c:v", "mjpeg", "-r", String(FPS), "-i", "-",
       "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-pix_fmt", "yuv420p", arq], { stdio: ["pipe", "inherit", "inherit"] });
     for (let i = i0; i < i1; i++) {
-      const b64 = await p.evaluate((tt) => window.quadro(tt).split(",")[1], i / FPS);
-      if (!ff.stdin.write(Buffer.from(b64, "base64"))) await new Promise((r) => ff.stdin.once("drain", r));
+      await p.evaluate((tt) => window.quadro(tt), i / FPS);
+      const jpg = await p.screenshot({ type: "jpeg", quality: 93 });
+      if (!ff.stdin.write(jpg)) await new Promise((r) => ff.stdin.once("drain", r));
       if (k === 0 && (i - i0) % 10 === 0) console.log(`  quadro ${i - i0}/${i1 - i0} (${((Date.now() - t0) / 1000).toFixed(0)} s)`);
     }
     ff.stdin.end(); await new Promise((r) => ff.on("close", r));

@@ -174,7 +174,7 @@ window.preparar = async function (cfg) {
   C = cfg; W = cfg.W || 1920; H = cfg.H || 1080;
   await document.fonts.load('400 40px "Moul"'); await document.fonts.load('700 40px "Cinzel"'); await document.fonts.load('700 40px "Inter"');
   const gl = document.getElementById("gl"); gl.width = W; gl.height = H;
-  renderer = new THREE.WebGLRenderer({ canvas: gl, antialias: true, preserveDrawingBuffer: true });
+  renderer = new THREE.WebGLRenderer({ canvas: gl, antialias: !cfg.sem_aa, preserveDrawingBuffer: true });
   renderer.setSize(W, H, false); renderer.setPixelRatio(1);
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05; renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -210,7 +210,7 @@ window.preparar = async function (cfg) {
     const ch = new THREE.Sprite(new THREE.SpriteMaterial({ map: chamaTex, blending: THREE.AdditiveBlending, depthWrite: false, color: 0xffd9a0 }));
     ch.position.set(x, y + h + 0.06, z); ch.scale.set(0.06, 0.15, 1); scene.add(ch); velas.push(ch);
   }
-  const vela = new THREE.PointLight(0xff9a48, 34, 10, 1.5); vela.position.set(-2.9, -1.0, 0.55); vela.castShadow = true; vela.shadow.mapSize.set(1024, 1024); vela.shadow.radius = 6; vela.shadow.bias = -0.002; scene.add(vela); luzes.push(vela);
+  const vela = new THREE.PointLight(0xff9a48, 34, 10, 1.5); vela.position.set(-2.9, -1.0, 0.55); vela.castShadow = !cfg.sem_sombra; vela.shadow.mapSize.set(1024, 1024); vela.shadow.radius = 6; vela.shadow.bias = -0.002; scene.add(vela); luzes.push(vela);
   const vela2 = new THREE.PointLight(0xff8a38, 6, 8, 1.5); vela2.position.set(0.6, -1.3, 1.0); scene.add(vela2); luzes.push(vela2);
   const lua = new THREE.DirectionalLight(0x7d9cff, 0.35); lua.position.set(3, 3, -2); scene.add(lua);
   const amb = new THREE.HemisphereLight(0x5a4030, 0x080504, 0.45); scene.add(amb);
@@ -226,8 +226,8 @@ window.preparar = async function (cfg) {
   // pós: render → bloom (chamas e brasa) → profundidade de campo → grão + vinheta + aberração → saída
   composer = new EffectComposer(renderer); composer.setPixelRatio(1); composer.setSize(W, H);
   composer.addPass(new RenderPass(scene, camera));
-  composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.55, 0.65, 0.72));
-  bokeh = new BokehPass(scene, camera, { focus: 5.6, aperture: 0.0016, maxblur: 0.008 }); composer.addPass(bokeh);
+  if (!cfg.sem_bloom) composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.55, 0.65, 0.72));
+  bokeh = new BokehPass(scene, camera, { focus: 5.6, aperture: 0.0016, maxblur: 0.008 }); if (!cfg.sem_bokeh) composer.addPass(bokeh);
   grain = new ShaderPass({ uniforms: { tDiffuse: { value: null }, t: { value: 0 } }, vertexShader: "varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}",
     fragmentShader: `uniform sampler2D tDiffuse;uniform float t;varying vec2 vUv;
       float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233))+t*61.7)*43758.5453);}
@@ -235,7 +235,9 @@ window.preparar = async function (cfg) {
       c*=1.-smoothstep(.35,.95,length(d*vec2(1.05,1.25)));c+=(h(vUv*vec2(1920.,1080.))-.5)*.05;gl_FragColor=vec4(c,1.);}` });
   composer.addPass(grain); composer.addPass(new OutputPass());
   // composição final: o quadro 3D + o título em 2D por cima
-  final = canvas(W, H); fctx = final.getContext("2d"); overlay = canvas(W, H); octx = overlay.getContext("2d");
+  // 16/11: o título vai num canvas 2D POR CIMA do WebGL e o quadro é capturado pela tela (page.screenshot): copiar o
+  // WebGL para um canvas 2D e gerar o JPEG no navegador custava ~13 s por quadro no SwiftShader
+  overlay = document.getElementById("titulo"); overlay.width = W; overlay.height = H; octx = overlay.getContext("2d");
 };
 
 // ------------------------------------------------------------ título em português (2D, nítido)
@@ -263,9 +265,11 @@ function titulo(u) {
   octx.restore();
 }
 
+window.tempos = {};
+const _m = (k, f) => { const a = performance.now(); f(); window.tempos[k] = (window.tempos[k] || 0) + performance.now() - a; };
 window.quadro = function (t) {
   const u = t;
-  pintarPano(u); moldarPano(u, t);
+  _m("pintar", () => pintarPano(u)); _m("moldar", () => moldarPano(u, t));
   // velas: chama e luz tremendo juntas
   velas.forEach((v, i) => { const f = tremor(t, i); v.scale.set(0.05 + 0.02 * f, 0.12 + 0.06 * f, 1); v.material.opacity = 0.75 + 0.25 * f; });
   luzes.forEach((l, i) => { l.intensity = (i ? 6 : 34) * (0.8 + 0.3 * tremor(t, i + 7)); });
@@ -282,12 +286,10 @@ window.quadro = function (t) {
     -0.05 + (ruido1(t * 0.6 + 9) - 0.5) * 0.025 + (ruido1(t * 43 + 3) - 0.5) * 0.03 * tr, 6.2 - 0.6 * k);
   camera.lookAt(-0.05 + 0.05 * k, 0.0, 0); bokeh.uniforms.focus.value = camera.position.z - 0.02;
   grain.uniforms.t.value = t;
-  composer.render();
-  titulo(u);
-  fctx.drawImage(renderer.domElement, 0, 0); fctx.drawImage(overlay, 0, 0);
-  // fade de entrada e de saída (o corte para a narração é feito na montagem)
+  _m("render", () => { composer.render(); renderer.getContext().finish(); });
+  _m("titulo", () => titulo(u));
   const fade = Math.min(lin(t, 0, 0.35), 1 - lin(t, (C.dur || 7.6) - 0.4, 0.4));
-  if (fade < 1) { fctx.fillStyle = `rgba(0,0,0,${1 - fade})`; fctx.fillRect(0, 0, W, H); }
-  return final.toDataURL("image/jpeg", 0.93);
+  document.getElementById("veu").style.opacity = String(1 - fade);
+  return true;
 };
 window.pronto = true;
