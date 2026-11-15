@@ -129,16 +129,26 @@
   },
   {
    "fala": "\"Mãe… eu tô no elevador. Ele tá subindo. E esse prédio não tem dez andares.\"",
-   "cena": {
-    "video": "clipes_v4/V20_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "cenas": [
+    {
+     "video": "clipes_v4/V20_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "prédio",
+     "video": "camera3d/H04_68ba4eddd9_6.5.mp4"
+    }
+   ]
   },
   {
    "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
@@ -242,20 +252,40 @@
   },
   {
    "fala": "Desde o dia em que a irmã dele voltou da montanha.",
-   "cena": {
-    "video": "clipes_v4/V17_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "video_inicio": 4.0,
-    "atmos": {
-     "neblina": 0.3
+   "cenas": [
+    {
+     "video": "clipes_v4/V17_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "video_inicio": 4.0,
+     "atmos": {
+      "neblina": 0.3
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
     },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   },
+    {
+     "imagem": "imagens_v4/escolhidas/M08.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.4,
+       0.5
+      ],
+      [
+       0.42,
+       0.48
+      ]
+     ],
+     "em": "voltou"
+    }
+   ],
    "ambiente": {
     "som": "ep09_amanhecer_tenso",
     "volume_db": -26
@@ -433,16 +463,36 @@
   },
   {
    "fala": "O fantasma coreano não aparece por acaso. Ele volta porque alguém deve alguma coisa pra ele. E ele não vai embora enquanto não receber.",
-   "cena": {
-    "video": "clipes_v4/V15_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   },
+   "cenas": [
+    {
+     "video": "clipes_v4/V15_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T06.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "embora"
+    }
+   ],
    "ambiente": {
     "som": "ep09_lenda_joseon",
     "volume_db": -27
@@ -450,16 +500,36 @@
   },
   {
    "fala": "E ele raramente arromba a porta. Ele bate. E chama você pelo nome. Com a voz de alguém que você ama.",
-   "cena": {
-    "video": "clipes_v4/V08_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
+   "cenas": [
+    {
+     "video": "clipes_v4/V08_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A06.jpg",
+     "zoom": [
+      1.06,
+      1.12
+     ],
+     "foco": [
+      [
+       0.5,
+       0.4
+      ],
+      [
+       0.5,
+       0.36
+      ]
+     ],
+     "em": "voz"
+    }
+   ],
    "pausa_antes_s": 0.5
   },
   {
@@ -1473,7 +1543,7 @@
        0.45
       ]
      ],
-     "em": "fantasma"
+     "em": "cheonyeo"
     },
     {
      "imagem": "imagens_v4/escolhidas/A06.jpg",
@@ -1496,7 +1566,7 @@
    ],
    "sons": [
     {
-     "em": "fantasma",
+     "em": "cheonyeo",
      "som": "ep08_kanji",
      "volume_db": -16,
      "depois": false,
@@ -1896,6 +1966,24 @@
       1.03
      ],
      "em": "primeiro"
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/T06.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "em": "visto"
     }
    ],
    "sons": [
@@ -3496,8 +3584,8 @@
      "atmos": {
       "poeira": 0.3
      },
-     "em": "passou",
-     "video": "camera3d/J02_B_2a097ccfc4_11.6.mp4"
+     "em": "Ela",
+     "video": "camera3d/J02_B_2a097ccfc4_11.8.mp4"
     }
    ],
    "sons": [
