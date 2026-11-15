@@ -7,6 +7,7 @@
 | C1_sanphraphum_06.jpg | DZ3 0946 Nighttime street shrine and offerings beside a lit shopfront  | PattayaPatrol | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:DZ3_0946_Nighttime_street_shrine_and_offerings_beside_a_lit_shopfront_in_Nong_Pla_Lai_Pattaya_City.jpg |
 | C1_sanphraphum_07.jpg | ThaiProvinzLampang1.jpg | Ziegler175 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:ThaiProvinzLampang1.jpg |
 | C1_sanphraphum_08.jpg | ThaiProvinzLampang2.jpg | Ziegler175 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:ThaiProvinzLampang2.jpg |
+| C2_01_real.jpg | XRF-krasue.jpg | Xavier Romero-Frias | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:XRF-krasue.jpg |
 | C2_palafita_01.jpg | จิม ทอมป์สัน ฟาร์ม - panoramio (6).jpg | Charin ninsu | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:%E0%B8%88%E0%B8%B4%E0%B8%A1_%E0%B8%97%E0%B8%AD%E0%B8%A1%E0%B8%9B%E0%B9%8C%E0%B8%AA%E0%B8%B1%E0%B8%99_%E0%B8%9F%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%A1_-_panoramio_(6).jpg |
 | C3_02_real.jpg | Sak Yant Tattoo performed in thailand.jpg | Ryaninuk | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Sak_Yant_Tattoo_performed_in_thailand.jpg |
 | C3_amuleto_01.jpg | Amulets showing buddha.JPG | User:Mattes | Public domain | https://commons.wikimedia.org/wiki/File:Amulets_showing_buddha.JPG |
