@@ -1,0 +1,103 @@
+1
+00:00:00,580 --> 00:00:01,790
+Chama-se o Jogo do Elevador.
+
+2
+00:00:01,840 --> 00:00:04,260
+E promete levar você para outro mundo.
+
+3
+00:00:05,040 --> 00:00:06,720
+As regras são sempre as mesmas.
+
+4
+00:00:06,950 --> 00:00:08,050
+Você precisa de um prédio de pelo
+
+5
+00:00:08,100 --> 00:00:08,910
+menos dez andares.
+
+6
+00:00:08,960 --> 00:00:11,000
+E precisa estar sozinho.
+
+7
+00:00:11,980 --> 00:00:13,430
+Entra no elevador e aperta,
+
+8
+00:00:13,480 --> 00:00:15,690
+nesta ordem: quatro.
+
+9
+00:00:15,740 --> 00:00:16,520
+Dois.
+
+10
+00:00:16,570 --> 00:00:17,480
+Seis.
+
+11
+00:00:17,540 --> 00:00:18,340
+Dois.
+
+12
+00:00:18,450 --> 00:00:19,250
+Dez.
+
+13
+00:00:19,580 --> 00:00:20,840
+Se ninguém entrar no caminho,
+
+14
+00:00:20,900 --> 00:00:22,240
+aperta o cinco.
+
+15
+00:00:22,430 --> 00:00:23,420
+No quinto andar,
+
+16
+00:00:23,520 --> 00:00:24,560
+vai entrar uma mulher.
+
+17
+00:00:25,480 --> 00:00:26,600
+Não olha para ela.
+
+18
+00:00:26,650 --> 00:00:27,980
+Não fala com ela.
+
+19
+00:00:28,070 --> 00:00:30,260
+Não responde, aconteça o que acontecer.
+
+20
+00:00:30,740 --> 00:00:32,370
+Aí você aperta o um.
+
+21
+00:00:32,420 --> 00:00:33,640
+Se o elevador descer,
+
+22
+00:00:33,690 --> 00:00:35,290
+acabou: o ritual falhou,
+
+23
+00:00:35,340 --> 00:00:36,440
+e você está salvo.
+
+24
+00:00:37,380 --> 00:00:38,460
+Mas se ele subir…
+
+25
+00:00:38,660 --> 00:00:39,970
+até o dez…
+
+26
+00:00:41,070 --> 00:00:41,870
+Você chegou.
