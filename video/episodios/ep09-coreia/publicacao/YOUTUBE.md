@@ -1,7 +1,7 @@
 # Publicação no YouTube — O Vigia, Ep. 09 (canal Último Abrigo)
 
-Vídeo: o render final do v4 (~21 min). Formato documentário + história, no molde do Ep. 08.
-Os tempos dos CAPÍTULOS saem do render final: eu preencho quando o vídeo estiver pronto.
+Vídeo: `../previas/O_Vigia_Ep09_Por_que_o_terror_coreano_1080p.mp4` (23:16, 1080p). Formato documentário + história, no molde do Ep. 08.
+Os tempos dos CAPÍTULOS são os do render final (15/11).
 
 ## Título (escolhido pelo usuário 15/11)
 `Por que o terror coreano é tão cruel?` (37 car.)
@@ -18,7 +18,23 @@ Três da manhã, em Busan. No grupo da família, em Belo Horizonte, chega um áu
 💬 Qual dessas lendas você quer que o Vigia abra aqui no canal: o afogado do rio, o bunshinsaba ou o casamento dos mortos? Conta nos comentários.
 
 CAPÍTULOS
-(preenchido depois do render final)
+00:00 Três da manhã, em Busan
+00:45 Por que o terror coreano é tão cruel?
+01:50 Arang: o quarto do magistrado (séc. XVI)
+03:37 Janghwa e Hongryeon: as irmãs do lago (séc. XVII)
+05:35 O que não tem rosto (1977 → 2024)
+07:21 Han: a dívida dos mortos
+08:02 O Rafa, parte 1: a montanha
+09:27 Jangsan-beom: o que mora no monte
+10:35 O Rafa, parte 2: os tênis
+11:50 A Irmã Raposa
+13:53 O Rafa, parte 3: o óleo
+15:08 O Jogo do Elevador
+16:36 Gonjiam: o hospital
+17:47 O Rafa, parte 4: o ritual
+19:03 O Rafa, parte 5: o outro lado
+20:17 O Rafa, parte 6: a ligação
+21:24 O que veio depois e as lendas que faltam
 
 Fatos reais citados: a lenda de Arang, de Miryang (período Joseon), e o santuário Aranggak; o conto Janghwa Hongryeon jeon e o caso registrado por um magistrado de Cheolsan; o cheonyeo gwishin e o casamento dos mortos (yeonghon gyeolhon); o dalgyal gwishin; a série Jeonseol-ui Gohyang (KBS, desde 1977) e o episódio Deokdaegol; os filmes A Public Cemetery of Wol-ha (1967), Whispering Corridors (1998), A Tale of Two Sisters (2003), Bunshinsaba (2004), The Mimic (2017), Gonjiam: Haunted Asylum (2018) e Exhuma (2024); a lenda do Jangsan-beom, de Busan; o Jogo do Elevador; e o hospital psiquiátrico de Gonjiam, citado pela CNN em 2012 e demolido em 2018. A história do Rafa, da Lívia e da família é ficção.
 Imagens, vozes e trilha produzidas com auxílio de inteligência artificial, além dos trechos reais listados abaixo.
@@ -52,4 +68,4 @@ terror coreano, lendas coreanas, terror, história de terror, histórias de terr
 (403 caracteres — o limite do YouTube é 500)
 
 ## Legendas
-`legendas_pt-BR.srt` — só português (gero junto com o render final).
+`legendas_pt-BR.srt` — só português (719 legendas, sincronizadas com o render final).
