@@ -1,0 +1,13 @@
+ÚLTIMO ABRIGO — EPISÓDIO 10: O TERROR TAILANDÊS (O VIGIA)
+
+Imagens aprovadas da conversa, agrupadas em partes ZIP (cada uma menor que 30 MB).
+
+- 84 arquivos PNG selecionados, cada imagem preservada sem recompressão com perda.
+- G04c: duas imagens de filmadora portátil corrigida, extraídas como quadros individuais dos originais em montagem, em recorte 16:9 sem alteração dos pixels. As imagens antigas de câmera fixa foram excluídas.
+- C4_01: somente Mateus filmando, sem a equipe de produção rejeitada.
+- C4_02: quatro variações aprovadas (as 2 originais e mais 2 adicionais).
+- H02_H08_H14: quatro imagens de celular com tela neutra aprovadas, reutilizáveis nas três cenas. As imagens com notebook/cadernos geradas por engano foram excluídas.
+- H10 e H11: preservar pares por número de variação (1 com 1; 2 com 2).
+- Arquivos de teste, montagens descartadas e versões rejeitadas não estão nos pacotes.
+
+ATENÇÃO: 'INDICE_IMAGENS.csv' relaciona os arquivos com seus originais, para auditoria.
