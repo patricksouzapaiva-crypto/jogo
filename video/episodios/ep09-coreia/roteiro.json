@@ -147,13 +147,13 @@
       1.0
      ],
      "em": "subindo",
-     "video": "camera3d/H04_68ba4eddd9_8.9.mp4"
+     "video": "camera3d/H04_68ba4eddd9_9.2.mp4"
     }
    ]
   },
   {
    "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
-   "pausa_antes_s": 2.59,
+   "pausa_antes_s": 2.9,
    "cena": {
     "tipo": "elevador",
     "sequencia": [
@@ -703,7 +703,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/A01_1e3e8ca2ea_10.0.mp4"
+    "video": "camera3d/A01_1e3e8ca2ea_10.7.mp4"
    }
   },
   {
@@ -1365,16 +1365,17 @@
   {
    "fala": "A Janghwa foi mandada embora de noite. E o filho da madrasta foi junto. Para garantir que ela chegasse ao lago.",
    "cena": {
-    "tipo": "agua",
-    "imagem": "imagens_v4/escolhidas/I05.jpg",
-    "horizonte": 0.55,
     "zoom": [
      1.0,
      1.0
     ],
+    "atmos": {
+     "neblina": 0.4
+    },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/I05_683527f306_9.8.mp4"
    },
    "ambiente": {
     "som": "ep09_lago",
@@ -1408,17 +1409,23 @@
   {
    "fala": "A irmã mais nova, a Hongryeon, foi procurar. Achou o lugar. E entrou no mesmo lago.",
    "cena": {
-    "tipo": "agua",
     "imagem": "imagens_v4/escolhidas/I07.jpg",
-    "horizonte": 0.45,
-    "afunda": [
-     0.5,
-     0.42,
-     2.2
-    ],
     "zoom": [
      1.0,
-     1.0
+     1.08
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.65
+     ]
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -2454,7 +2461,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/M02_d6e6fc4099_7.9.mp4"
+    "video": "camera3d/M02_d6e6fc4099_8.4.mp4"
    },
    "ambiente": {
     "som": "ep09_mata_tensa",
@@ -2594,7 +2601,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/M04_B_2d8eeab803_14.8.mp4"
+    "video": "camera3d/M04_B_2d8eeab803_16.4.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -3836,7 +3843,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/J04_8a6ffc0ea9_8.5.mp4"
+    "video": "camera3d/J04_8a6ffc0ea9_8.6.mp4"
    },
    "ambiente": {
     "som": "ep09_lenda_joseon",
@@ -4656,7 +4663,7 @@
     "som": "ep09_lenda_elevador",
     "volume_db": -26
    },
-   "pausa_antes_s": 0.66
+   "pausa_antes_s": 0.64
   },
   {
    "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
@@ -5227,7 +5234,7 @@
       1.0
      ],
      "em": "grupo",
-     "video": "camera3d/H03_B_beb5d7a07e_8.9.mp4"
+     "video": "camera3d/H03_B_beb5d7a07e_9.0.mp4"
     },
     {
      "zoom": [
@@ -5289,7 +5296,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/C07_A_481f25eefe_6.7.mp4"
+    "video": "camera3d/C07_A_481f25eefe_6.9.mp4"
    }
   },
   {
@@ -6712,17 +6719,23 @@
   {
    "fala": "Tem o afogado que pede socorro no rio. E que só solta a sua perna quando você ficar no lugar dele.",
    "cena": {
-    "tipo": "agua",
     "imagem": "imagens_v4/escolhidas/I05.jpg",
-    "horizonte": 0.55,
-    "afunda": [
-     0.42,
-     0.62,
-     2.6
-    ],
     "zoom": [
      1.0,
-     1.0
+     1.08
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "foco": [
+     [
+      0.45,
+      0.5
+     ],
+     [
+      0.4,
+      0.55
+     ]
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -6984,9 +6997,7 @@
      1.0,
      1.0
     ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6,
+    "entrada": "corte",
     "video": "camera3d/H09_20d728000a_22.5.mp4"
    },
    "ambiente": {
