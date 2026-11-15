@@ -24,3 +24,5 @@ filmes/arquivo/
 reais/creditos.json
 imagens/recebidas/
 imagens/para_flow/
+vozes/brutas/
+audio/*.txt

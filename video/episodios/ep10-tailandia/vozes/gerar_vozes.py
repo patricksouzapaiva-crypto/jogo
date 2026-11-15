@@ -1,0 +1,49 @@
+"""Vozes dos personagens do Ep. 10 (16/11): os áudios de WhatsApp do Mateus e da Camila, no Gemini TTS.
+Cada fala sai INTEIRA numa chamada só (lição do Ep. 09: fala emendada soa como erro), com a direção de atuação do roteiro
+na instrução. Amostra de vozes: python3 gerar_vozes.py --amostra  (a 1ª fala do Mateus e a da Camila em várias vozes).
+Uso: python3 gerar_vozes.py [voz_mateus] [voz_camila]  → brutas/<id>_<voz>_t<n>.wav (2 tomadas)"""
+import base64, os, sys, time, wave
+from pathlib import Path
+import requests
+
+AQUI = Path(__file__).parent; B = AQUI / "brutas"; B.mkdir(exist_ok=True)
+URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash-tts:generateContent"
+sys.path.insert(0, str(AQUI.parent)); import falas as F   # noqa: E402
+fl, pers, *_ = F.ler()
+BASE = "Leia em português do Brasil, sotaque paulista, como um áudio de WhatsApp gravado no celular, natural e sem teatro. "
+JEITO = {   # fala do roteiro → como dizer (a direção do roteiro, em instrução)
+    79: "Rapaz de 23 anos, animado e cansado de viagem, ao ar livre, falando rápido como quem conta uma novidade para os amigos.",
+    85: "Rapaz de 23 anos, voz baixa, dentro de um quarto escuro de madrugada, assustado mas tentando parecer calmo, quase cochichando.",
+    90: "Moça de 22 anos, preocupada de verdade, firme, falando de casa para um amigo que está longe; um pouco de bronca e de medo.",
+    91: "Rapaz de 23 anos, tenso, sussurrando no corredor para ninguém ouvir, falando rápido, a respiração curta.",
+    101: "Rapaz de 23 anos, ofegante, voz trêmula, sussurrando dentro do quarto escuro, com medo e com pena, decidido a abrir a porta.",
+}
+
+
+def gerar(texto, voz, saida):
+    corpo = {"contents": [{"parts": [{"text": texto}]}],
+             "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voz}}}}}
+    for k in range(5):
+        r = requests.post(URL, headers={"x-goog-api-key": "proxy"}, json=corpo, timeout=300)
+        if r.status_code == 200:
+            p = r.json()["candidates"][0]["content"]["parts"][0]["inlineData"]
+            with wave.open(str(saida), "wb") as w:
+                w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(base64.b64decode(p["data"]))
+            print("ok", saida.name, flush=True); return
+        print(r.status_code, r.text[:160], flush=True); time.sleep(20 * (k + 1))
+
+
+fala = lambda i: fl[i].strip('"“”')
+if "--amostra" in sys.argv:
+    for v in ["Achird", "Puck", "Iapetus", "Zubenelgenubi"]:
+        gerar(BASE + JEITO[79] + "\n\n" + fala(79), v, B / f"amostra_mateus_{v}.wav")
+    for v in ["Leda", "Aoede", "Kore"]:
+        gerar(BASE + JEITO[90] + "\n\n" + fala(90), v, B / f"amostra_camila_{v}.wav")
+    sys.exit()
+vm, vc = (sys.argv[1:3] + ["Achird", "Leda"][len(sys.argv) - 1:])[:2]
+for i, j in JEITO.items():
+    voz = vc if pers[i] == "camila" else vm
+    for t in (1, 2):
+        arq = B / f"f{i}_{pers[i]}_{voz}_t{t}.wav"
+        if not arq.exists():
+            gerar(BASE + j + "\n\n" + fala(i), voz, arq)
