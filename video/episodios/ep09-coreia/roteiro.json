@@ -145,8 +145,8 @@
       1.0,
       1.0
      ],
-     "em": "prédio",
-     "video": "camera3d/H04_68ba4eddd9_6.5.mp4"
+     "em": "subindo",
+     "video": "camera3d/H04_68ba4eddd9_8.9.mp4"
     }
    ]
   },
@@ -378,6 +378,25 @@
       1.0
      ],
      "em": "lá"
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.03,
+      1.07
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "em": "Não"
     }
    ]
   },
@@ -490,7 +509,7 @@
        0.45
       ]
      ],
-     "em": "embora"
+     "em": "deve"
     }
    ],
    "ambiente": {
@@ -812,16 +831,36 @@
   },
   {
    "fala": "Até que apareceu um homem que aceitou. E, na primeira noite, ele fez o que nenhum outro tinha feito.",
-   "cena": {
-    "video": "clipes_v4/V09_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "cenas": [
+    {
+     "video": "clipes_v4/V09_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A04.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.47
+      ]
+     ],
+     "em": "nenhum"
+    }
+   ]
   },
   {
    "fala": "Ficou acordado.",
@@ -896,16 +935,36 @@
   },
   {
    "fala": "E entrou uma moça. De branco. O cabelo solto, molhado. Sangue na roupa.",
-   "cena": {
-    "video": "clipes_v4/V08_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   },
+   "cenas": [
+    {
+     "video": "clipes_v4/V08_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A06.jpg",
+     "zoom": [
+      1.1,
+      1.18
+     ],
+     "foco": [
+      [
+       0.5,
+       0.55
+      ],
+      [
+       0.5,
+       0.6
+      ]
+     ],
+     "em": "Sangue"
+    }
+   ],
    "ambiente": {
     "som": "ep09_lenda_joseon",
     "volume_db": -26
@@ -946,16 +1005,36 @@
   },
   {
    "fala": "Esse ficou. E perguntou o que ela queria.",
-   "cena": {
-    "video": "clipes_v4/V07_A_ate4.0.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "cenas": [
+    {
+     "video": "clipes_v4/V07_A_ate4.0.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/A04.jpg",
+     "zoom": [
+      1.05,
+      1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.42
+      ]
+     ],
+     "em": "perguntou"
+    }
+   ]
   },
   {
    "fala": "Ela contou. Tinha sido atacada e morta por um empregado da casa. O corpo estava escondido num bambuzal, perto do rio. E ninguém nunca tinha procurado.",
@@ -1402,7 +1481,7 @@
        0.36
       ]
      ],
-     "em": "contaram"
+     "em": "pingando"
     }
    ],
    "sons": [
@@ -3584,8 +3663,8 @@
      "atmos": {
       "poeira": 0.3
      },
-     "em": "Ela",
-     "video": "camera3d/J02_B_2a097ccfc4_11.8.mp4"
+     "em": "entrar",
+     "video": "camera3d/J02_B_2a097ccfc4_13.8.mp4"
     }
    ],
    "sons": [
