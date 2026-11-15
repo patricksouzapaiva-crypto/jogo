@@ -14,3 +14,10 @@ publicacao/shorts_final/*.mp4
 publicacao/shorts_final/*.log
 !filmes/baixar_drive.py
 cartoes/*.mp4
+reais/*.jpg
+reais/*.jpeg
+reais/*.png
+reais/*.webm
+reais/*.ogv
+reais/*.JPG
+filmes/arquivo/

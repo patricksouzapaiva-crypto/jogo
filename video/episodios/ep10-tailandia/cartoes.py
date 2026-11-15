@@ -17,7 +17,7 @@ CAPS = {
 pedidos = [int(a) for a in sys.argv[1:] if a.isdigit()] or list(CAPS)
 if "--previa" not in sys.argv:
     for n in pedidos:
-        mudo, final = AQUI / "cartoes" / f"cap{n}_mudo.mp4", AQUI / "cartoes" / f"cap{n}.mp4"
+        mudo, final = Path("/tmp") / f"ep10_cap{n}_mudo.mp4", AQUI / "cartoes" / f"cap{n}.mp4"   # o mudo é temporário (disco)
         if not mudo.exists() or str(n) in sys.argv[1:]:
             cfg = {"numero": n, "numero_pt": f"Capítulo {n}", "dur": DUR, **CAPS[n]}
             subprocess.run(["node", str(PAINEL / "cartao3d" / "render_cartao.js"), json.dumps(cfg, ensure_ascii=False), str(mudo)], check=True)
