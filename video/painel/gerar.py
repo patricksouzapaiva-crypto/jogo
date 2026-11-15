@@ -1315,6 +1315,14 @@ def respirar_cenas(D, minimo, duracao):
                 cs.pop(i); tirou += 1; mudou = True; continue
             if not fixa(ant) and cabe(ant, ant["t0"], t1):
                 cs.pop(i); tirou += 1; mudou = True; continue  # a anterior continua até a seguinte
+            # nenhuma vizinha pode cobrir: a cena GANHA tempo das vizinhas que têm folga (a do Vigia pode entrar depois)
+            falta = minimo - (t1 - c["t0"])
+            pode_prox = not (prox.get("tipo") in ("talisma", "capitulo", "texto") or prox.get("entrada") == "corte") and \
+                (fim_prox - t1) - falta >= minimo and cabe(c, c["t0"], t1 + falta)
+            if pode_prox:
+                prox["t0"] = t1 + falta; mudou = True; i += 1; continue
+            if not fixa(ant) and (c["t0"] - ant["t0"]) - falta >= minimo and cabe(c, c["t0"] - falta, t1):
+                c["t0"] -= falta; mudou = True; i += 1; continue
             i += 1
         if not mudou:
             break
