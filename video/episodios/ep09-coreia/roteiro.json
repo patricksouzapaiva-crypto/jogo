@@ -7,6 +7,7 @@
  "transcrever_pedacos": 75,
  "cintilar": 0.03,
  "apertar_pausas": false,
+ "cena_minima": 3.0,
  "vigia_padrao": false,
  "cauda": 1.6,
  "chuva": 0,
@@ -4379,7 +4380,7 @@
   },
   {
    "fala": "O Rafa deu um passo para trás.",
-   "pausa_antes_s": 2.4,
+   "pausa_antes_s": 1.2,
    "cena": {
     "imagem": "imagens_v3/C01_B.jpg",
     "zoom": [
@@ -4533,7 +4534,7 @@
     "volume_db": -30,
     "continuar": true
    },
-   "pausa_antes_s": 1.6
+   "pausa_antes_s": 0.8
   },
   {
    "fala": "De manhã, ele contou tudo para a mãe. A mãe chorou. E pediu para ele procurar um médico.",
@@ -4561,7 +4562,7 @@
     "som": "ep09_sala_bh",
     "volume_db": -28
    },
-   "pausa_antes_s": 2.4
+   "pausa_antes_s": 1.0
   },
   {
    "fala": "Existe um ritual que se espalhou pela internet da Coreia e do Japão. Ninguém sabe ao certo onde nasceu.",
@@ -6067,16 +6068,36 @@
   },
   {
    "fala": "Ela não virou. Só disse, sem voz:",
-   "cena": {
-    "video": "clipes_v4/V22_A.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
+   "cenas": [
+    {
+     "video": "clipes_v4/V22_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "imagens_v4/escolhidas/H09.jpg",
+     "zoom": [
+      1.08,
+      1.14
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.55,
+       0.48
+      ]
+     ],
+     "em": "disse"
+    }
+   ],
    "musica": {
     "som": "ep08_japones_longa",
     "volume_db": -30,
