@@ -50,6 +50,10 @@ def achar(ws, alvo, depois=0.0):
         for i in range(len(ws) - n):
             if ws[i][1] >= depois and [w[0] for w in ws[i:i + n]] == alvo[:n]:
                 return i
+    # o Whisper troca número por algarismo ("cem" → "100"): procura a 2ª–4ª palavras e volta uma
+    for i in range(1, len(ws) - 3):
+        if ws[i][1] >= depois and [w[0] for w in ws[i:i + 3]] == alvo[1:4]:
+            return i - 1
     return None
 
 
