@@ -201,7 +201,7 @@ def HAN(tam, x=0.5, **kw):                                                  # o 
 C(0, {"tipo": "relogios", "lados": [{"nome": "Busan", "hora": "03:00", "imagem": E + "H03.jpg", "brilho": 0.6},
                                      {"nome": "Belo Horizonte", "hora": "15:00", "imagem": IV2 + "F01_A.jpg", "brilho": 0.75}]})
 chat(1, {"de": "Rafa", "tipo": "audio", "duracao": "0:06", "hora": "15:00", "em": "áudio", "digitando": 0.6})
-C(2, vid4("V20"), (c3(E + "H04.jpg", "entrar", (0.6, 0.45), 0.8, 0.2), "prédio"))                                                        # o Rafa encostado no elevador; a luz acende
+C(2, vid4("V20"), (c3(E + "H04.jpg", "entrar", (0.6, 0.45), 0.8, 0.2), "subindo"))                                                        # o Rafa encostado no elevador; a luz acende
 C(3, {"tipo": "elevador", "sequencia": [[4, 0.4], [2, 0.9], [6, 1.4], [2, 1.9], [10, 2.4]],
       "andar": [[2, 1.2], [3, 1.8], [4, 2.4], [5, 3.0], [6, 3.6], [7, 4.2], [8, 4.8], [9, 5.4], [10, 6.0], [11, 6.6], [12, 7.2]]})
 T(3, "fundir", 1.2)
@@ -218,12 +218,12 @@ C(6, vigia((1.0, 1.04)))
 saida_lenta(6, 5.4, dur=2.2)
 batidas[6]["cena"].update({"antecipar": 7.2, "antecipar_fixo": True})   # o título nunca aparece em cima da mata
 fx(6, None, "ep09_jing", -17, atraso=-6.2)
-C(7, vigia((1.0, 1.05)), (filme("wailing_vila"), "lá"))                  # "no Japão… regra" → o Vigia; a Coreia entra
+C(7, vigia((1.0, 1.05)), (filme("wailing_vila"), "lá"), (vigia((1.03, 1.07)), "Não"))                  # "no Japão… regra" → o Vigia; a Coreia entra
 C(8, c3(E + "M01.jpg", "lado", (0.45, 0.45), 0.8, 0.0))                  # Busan, o mar e a montanha
 C(9, vigia((1.0, 1.06)))
 C(10, img(E + "T07.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45)), kanji=K("빚", 0.8, 0.45, "sangue", "bit · dívida", tam=0.3, atraso=0.2)))
 pincel(10, None, atraso=0.1)
-C(11, vid4("V15"), (img(E + "T06.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "embora"))                                                        # o altar da xamã: o que se deve aos mortos
+C(11, vid4("V15"), (img(E + "T06.jpg", (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "deve"))                                                        # o altar da xamã: o que se deve aos mortos
 C(12, vid4("V08"), (img(E + "A06.jpg", (1.06, 1.12), ((0.5, 0.4), (0.5, 0.36))), "voz"))                                                        # ela na porta
 C(13, c3(E + "A01.jpg", "entrar", (0.3, 0.3), 0.8, 0.0), (c3(E + "H01.jpg", "entrar", (0.5, 0.45), 0.8, 0.0), "hospital"))
 C(14, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
@@ -241,12 +241,12 @@ C(20, img(E + "A03.jpg", (1.0, 1.08), ((0.5, 0.65), (0.6, 0.72)), kanji=K("死",
 pincel(20, None, atraso=0.5)
 C(21, img(X + "A03_A.jpg", (1.08, 1.14), ((0.4, 0.7), (0.38, 0.72))))
 C(22, c3(E + "A01.jpg", "sair", (0.3, 0.35), 0.8, 0.0))
-C(23, vid4("V09"))                                                        # o magistrado que aceitou
+C(23, vid4("V09"), (img(E + "A04.jpg", (1.0, 1.05), ((0.5, 0.5), (0.5, 0.47))), "nenhum"))                                                        # o magistrado que aceitou
 C(24, img(E + "A04.jpg", (1.0, 1.03), ((0.5, 0.5), (0.5, 0.5))))         # "Ficou acordado." — quase parado
 C(25, {"tipo": "sombra", "chega": [0.6, 4.6], "vela": [0.1, 0.8]})       # a vela treme; a sombra dela cresce no papel
-C(26, vid4("V08"))
+C(26, vid4("V08"), (img(E + "A06.jpg", (1.1, 1.18), ((0.5, 0.55), (0.5, 0.6))), "Sangue"))
 C(27, img(E + "A06.jpg", (1.0, 1.08), ((0.5, 0.4), (0.5, 0.35))))
-C(28, vid4("V07", dur_max=4.0))
+C(28, vid4("V07", dur_max=4.0), (img(E + "A04.jpg", (1.05, 1.1), ((0.5, 0.45), (0.5, 0.42))), "perguntou"))
 C(29, c3(E + "A07.jpg", "entrar", (0.6, 0.65), 0.9, 0.3, atmos={"neblina": 0.4}))   # o bambuzal, a pá
 C(30, img(E + "A07.jpg", (1.05, 1.12), ((0.6, 0.7), (0.62, 0.72))))
 C(31, img(E + "A04.jpg", (1.0, 1.06), ((0.5, 0.45), (0.5, 0.42))))
@@ -272,7 +272,7 @@ C(40, {"tipo": "agua", "imagem": E + "I05.jpg", "horizonte": 0.55, "zoom": [1.0,
 C(41, vid4("V10"))                                                        # ela entra no lago
 C(42, {"tipo": "agua", "imagem": E + "I07.jpg", "horizonte": 0.45, "afunda": [0.5, 0.42, 2.2], "zoom": [1.0, 1.0]})
 C(43, img(E + "A02.jpg", (1.0, 1.06), ((0.5, 0.6), (0.5, 0.62))))
-C(44, vid4("V11"), (img(E + "I08.jpg", (1.0, 1.08), ((0.45, 0.4), (0.45, 0.36))), "contaram"))                                                        # as duas, pingando
+C(44, vid4("V11"), (img(E + "I08.jpg", (1.0, 1.08), ((0.45, 0.4), (0.45, 0.36))), "pingando"))                                                        # as duas, pingando
 C(45, img(E + "I04.jpg", (1.1, 1.18), ((0.5, 0.65), (0.5, 0.68)), kanji=K("쥐", 0.82, 0.45, "sangue", "jwi · rato", tam=0.26, em="rato")))
 pincel(45, "rato")
 C(46, ficha("장화홍련전 · Janghwa e Hongryeon\nconto da era Joseon · Cheolsan", "Janghwa e Hongryeon"))
@@ -397,7 +397,7 @@ C(116, img("J01_B", (1.0, 1.06), ((0.4, 0.55), (0.42, 0.5))))
 C(117, c3("J02_A", "entrar", (0.55, 0.55), 0.8, 0.0))                     # a menina de hanbok, de costas
 C(118, c3("J01_C", "entrar", (0.45, 0.6), 0.9, 0.3, atmos={"neblina": 0.4}))   # o estábulo à noite
 C(119, img("J01_A", (1.0, 1.08), ((0.3, 0.6), (0.25, 0.6))))
-C(120, vid4("V19", video_inicio=3.0), (c3("J02_B", "entrar", (0.5, 0.5), 1.0, 0.3, atmos={"poeira": 0.3}), "Ela"))
+C(120, vid4("V19", video_inicio=3.0), (c3("J02_B", "entrar", (0.5, 0.5), 1.0, 0.3, atmos={"poeira": 0.3}), "entrar"))
 C(121, img("J01_B", (1.1, 1.18), ((0.3, 0.75), (0.28, 0.78))))
 C(122, img("J04_B", (1.0, 1.06), ((0.45, 0.55), (0.5, 0.55))))
 C(123, img("J03_C", (1.0, 1.06), ((0.5, 0.55), (0.5, 0.5))))
@@ -530,6 +530,7 @@ C(204, img(E + "H10.jpg", (1.0, 1.04), ((0.5, 0.5), (0.5, 0.5))), (img("H08_B", 
 batidas[204]["cenas"][1]["entrada"] = "corte"
 batidas[204]["cenas"][0].update({"entrada": "corte", "antecipar": 1.4})   # a sala aparece no fim do silêncio, depois do rangido
 C(205, vid4("V22"))
+C(206, img(E + "H09.jpg", (1.08, 1.14), ((0.55, 0.5), (0.55, 0.48))))
 C(207, img("H09_A", (1.15, 1.2), ((0.62, 0.72), (0.62, 0.72))))           # as mãos
 C(208, vid("V04_A", (1.0, 1.03)), (img("H03_C", (1.0, 1.05), ((0.45, 0.45), (0.45, 0.42))), "elevador"))
 C(209, img("H04_B", (1.1, 1.16), ((0.4, 0.75), (0.4, 0.78))))
