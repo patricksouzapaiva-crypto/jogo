@@ -13,3 +13,4 @@ sons/*.wav
 publicacao/shorts_final/*.mp4
 publicacao/shorts_final/*.log
 !filmes/baixar_drive.py
+cartoes/*.mp4

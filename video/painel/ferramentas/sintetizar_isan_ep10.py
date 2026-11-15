@@ -4,7 +4,9 @@ de Isan (desacelerados, -4 semitons, reverb longo); 2ª metade (o Mateus / CCTV)
 cigarras da mata de Isan e o zumbido elétrico baixo das câmeras. Os links do YouTube do pacote não dá para baixar daqui
 (bloqueio de robô) e a licença deles é incerta: a trilha é composta aqui, no mesmo espírito.
 Modo: "lai" de Isan, pentatônica menor em Lá (A C D E G) com o Si♭ entrando de vez em quando (a 2ª menor = ameaça).
-Uso: python3 sintetizar_isan_ep10.py cordas|drone saida.mp3 [segundos]"""
+Uso: python3 sintetizar_isan_ep10.py cordas|ritual|drone saida.mp3 [segundos]
+     python3 sintetizar_isan_ep10.py unida saida.mp3 cordas:600,ritual:240,drone:540   (as três como uma só)
+     python3 sintetizar_isan_ep10.py cap <pasta>   (a música de cada cartão de capítulo)"""
 import subprocess, sys
 import numpy as np
 from sintetizar_trilha import SR, cordas, hz
@@ -107,6 +109,54 @@ def compor_drone(dur):
     return M.sair(0.35)
 
 
+def coro_monge(f, dur, vel=0.05):
+    """Canto grave e fechado (o 'o' de uma reza de monges ao longe): harmônicos com formantes de ~400 e ~750 Hz."""
+    n = int(dur * SR); t = np.arange(n) / SR; s = np.zeros(n)
+    for d in (-0.12, 0.0, 0.11):
+        vib = 1 + 0.003 * np.sin(2 * np.pi * 4.3 * t + rng.random() * 6)
+        ph = 2 * np.pi * np.cumsum(f * DESCE * (1 + d / 100) * vib) / SR
+        for k in range(1, 18):
+            fk = f * DESCE * k; peso = np.exp(-((fk - 400) / 130) ** 2) + 0.5 * np.exp(-((fk - 750) / 180) ** 2) + 0.3 / k
+            s += np.sin(k * ph) * peso
+    env = np.minimum(1, t / 3) * np.minimum(1, (dur - t) / 3).clip(0)
+    return s / 6 * env * vel
+
+
+def compor_ritual(dur):
+    """3ª trilha (16/11): a do meio (capítulo 3, aparte, começo do Mateus). O ritual ao longe: um tambor de moldura
+    bem baixo marcando o tempo devagar (como um coração), o khaen respirando, a reza grave dos monges e o phin raro."""
+    M = Mesa(dur); t = 0.5; k = 0
+    while t < dur:
+        M.por(khaen([hz("A2"), hz("E3")], 21.0, vel=0.03, respira=4.2), t)
+        if k % 2 == 0: M.por(coro_monge(hz("A2"), 18.0, vel=0.05), t + 2.0)
+        else: M.por(coro_monge(hz("E2"), 18.0, vel=0.04), t + 2.0)
+        if k % 3 == 1: M.por(phin(hz("D4"), vel=0.08, dur=4.0), t + 9.0); M.por(phin(hz("C4"), vel=0.07, dur=4.0), t + 10.2)
+        t += 20.0; k += 1
+    tb = 1.0
+    while tb < dur:   # o pulso: duas batidas (forte-fraca) a cada 2.6 s, abafadas
+        M.por(tambor(vel=0.16, grave=0.9), tb); M.por(tambor(vel=0.09, grave=1.05), tb + 0.42); tb += 2.6
+    return M.sair(0.45)
+
+
+def compor_unida(partes):
+    """As três trilhas como UMA só: cada parte entra por baixo da anterior numa fusão longa (18 s), e um pedal grave
+    em Lá (-4 st) atravessa o episódio inteiro, por baixo de tudo — é ele que 'cola' as três.
+    partes: [("cordas"|"ritual"|"drone", segundos), ...]"""
+    F = 18.0; tot = sum(d for _, d in partes) - F * (len(partes) - 1)
+    out = np.zeros(int(tot * SR) + SR); t0 = 0.0
+    for i, (nome, d) in enumerate(partes):
+        x = {"cordas": compor_cordas, "ritual": compor_ritual, "drone": compor_drone}[nome](d)
+        x /= np.sqrt(np.mean(x ** 2)) + 1e-9; x *= 0.12 if nome != "drone" else 0.10   # mesmo volume percebido
+        n = len(x); k = np.arange(n) / SR; env = np.ones(n)
+        if i > 0: env *= np.clip(k / F, 0, 1) ** 0.5
+        if i < len(partes) - 1: env *= np.clip((d - k) / F, 0, 1) ** 0.5
+        a = int(t0 * SR); out[a:a + n] += (x * env)[: len(out) - a]
+        t0 += d - F
+    t = np.arange(len(out)) / SR; f = hz("A1") * DESCE
+    out += (np.sin(2 * np.pi * f * t) + 0.5 * np.sin(2 * np.pi * f * 2.003 * t)) * 0.02 * (0.8 + 0.2 * np.sin(2 * np.pi * t / 29))
+    return out / (np.abs(out).max() + 1e-9) * 0.8
+
+
 def tambor(vel=0.6, grave=1.0):
     """Tambor ritual seco: pele grande, o tom cai (90 → 48 Hz) e morre rápido; o golpe da mão por cima."""
     n = int(1.6 * SR); t = np.arange(n) / SR
@@ -143,6 +193,30 @@ def capitulo(n, dur=8.0):
     return M.sair(0.4)
 
 
+def desenrolar(dur=1.9):
+    """O pano desenrolando (16/11: substitui a gravação de pano amassado, que 'parecia alguém mastigando'): o toque
+    seco da vara de madeira, o tecido batendo no ar (ruído de banda média, tremulando cada vez mais devagar) e o
+    baque macio do rolo no fim."""
+    n = int(dur * SR); t = np.arange(n) / SR
+    N = 1 << (n - 1).bit_length(); fr = np.fft.rfftfreq(N, 1 / SR)
+    x = np.fft.irfft(np.fft.rfft(rng.standard_normal(N)) * (np.exp(-((fr - 900) / 700) ** 2) + 0.3 * np.exp(-((fr - 2600) / 1200) ** 2)), N)[:n]
+    x /= np.abs(x).max() + 1e-9
+    trem = 0.55 + 0.45 * np.sin(2 * np.pi * np.cumsum(26 * np.exp(-t / 0.9) + 6) / SR) ** 2
+    env = np.minimum(1, t / 0.25) * np.exp(-np.clip(t - 1.1, 0, None) / 0.25)
+    s = x * trem * env * 0.35
+    tok = np.sin(2 * np.pi * 420 * t) * np.exp(-t / 0.03) * 0.25 + np.sin(2 * np.pi * 760 * t) * np.exp(-t / 0.015) * 0.12
+    s += tok
+    i = int(1.45 * SR); m = n - i; tt = t[:m]
+    s[i:] += np.sin(2 * np.pi * (70 + 40 * np.exp(-tt / 0.04)) * tt) * np.exp(-tt / 0.12) * 0.3
+    return s
+
+
+if __name__ == "__main__" and sys.argv[1] == "desenrolar":
+    m = desenrolar().astype(np.float32); est = np.stack([m, np.roll(m, int(0.008 * SR))], 1)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", "-af", "highpass=f=60,loudnorm=I=-20:TP=-3",
+                    "-ar", "44100", "-b:a", "192k", sys.argv[2]], input=est.tobytes(), check=True)
+    print("ok", sys.argv[2]); sys.exit()
+
 if __name__ == "__main__" and sys.argv[1] == "cap":
     for n in CAPS:
         m = capitulo(n).astype(np.float32); est = np.stack([m, np.roll(m, int(0.011 * SR))], 1)
@@ -153,8 +227,11 @@ if __name__ == "__main__" and sys.argv[1] == "cap":
     sys.exit()
 
 if __name__ == "__main__":
-    modo, saida = sys.argv[1], sys.argv[2]; dur = float(sys.argv[3]) if len(sys.argv) > 3 else 600.0
-    m = (compor_cordas if modo == "cordas" else compor_drone)(dur).astype(np.float32)
+    modo, saida = sys.argv[1], sys.argv[2]; dur = float(sys.argv[3]) if len(sys.argv) > 3 and modo != "unida" else 600.0
+    if modo == "unida":   # unida saida.mp3 cordas:70,ritual:70,drone:70
+        m = compor_unida([(p.split(":")[0], float(p.split(":")[1])) for p in sys.argv[3].split(",")]).astype(np.float32); dur = len(m) / SR
+    else:
+        m = {"cordas": compor_cordas, "ritual": compor_ritual, "drone": compor_drone}[modo](dur).astype(np.float32)
     est = np.stack([m, np.roll(m, int(0.013 * SR))], 1)
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", "-af",
                     "highpass=f=35,acompressor=threshold=-30dB:ratio=2.5:attack=300:release=2500:makeup=2,loudnorm=I=-20:TP=-3:LRA=7",
