@@ -1,0 +1,177 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Coreia",
+   "dívida",
+   "han",
+   "Arang",
+   "Miryang",
+   "Janghwa",
+   "ovo",
+   "Jangsan",
+   "Oppa",
+   "óleo",
+   "gergelim",
+   "quatro",
+   "402",
+   "Gonjiam",
+   "não olha"
+  ]
+ },
+ "voz_arquivo": "s2_jangsan_beom_voz.wav",
+ "batidas": [
+  {
+   "fala": "Moradores de Busan diziam ter visto um bicho grande, de quatro patas, coberto de um pelo branco e comprido. Que se movia rápido demais entre as árvores.",
+   "cenas": [
+    {
+     "video": "../clipes_v4/V18_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "corte",
+     "duracao_entrada": 0.6,
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens_v3/M07_A.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.43
+      ]
+     ],
+     "em": "Que",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_respiracao_pulsante",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 24,
+     "saida": 4.0
+    }
+   ]
+  },
+  {
+   "fala": "Mas o que assustava não era a aparência. Era o som.",
+   "cena": {
+    "video": "../clipes_v3/V01_B.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Segundo os relatos, ele imita vozes. O choro de uma mulher. Um cachorro. O seu nome.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "장산범 · Jangsan-beom\n\"o tigre do Jangsan\"",
+    "estilo": "maquina",
+    "vermelho": "\"o tigre do Jangsan\"",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E, principalmente, a voz de alguém da sua família, chamando de dentro da mata.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "../camera3d/M03_01ed9237ce_8.1.mp4",
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Quem segue a voz… não volta.",
+   "cena": {
+    "imagem": "../imagens_v3/M07_A.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "não",
+     "som": "sub_drop",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.0
+  }
+ ],
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "Confirma por mensagem antes de ir.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

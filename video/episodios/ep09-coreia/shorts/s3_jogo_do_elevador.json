@@ -1,0 +1,324 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Coreia",
+   "dívida",
+   "han",
+   "Arang",
+   "Miryang",
+   "Janghwa",
+   "ovo",
+   "Jangsan",
+   "Oppa",
+   "óleo",
+   "gergelim",
+   "quatro",
+   "402",
+   "Gonjiam",
+   "não olha"
+  ]
+ },
+ "voz_arquivo": "s3_jogo_do_elevador_voz.wav",
+ "batidas": [
+  {
+   "fala": "Chama-se o Jogo do Elevador. E promete levar você para outro mundo.",
+   "cena": {
+    "imagem": "../imagens_v4/extras/H04_A.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.47
+     ]
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "As regras são sempre as mesmas.",
+   "pausa_antes_s": 0.64
+  },
+  {
+   "fala": "Você precisa de um prédio de pelo menos dez andares. E precisa estar sozinho.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "../camera3d/H04_7f287e42a3_7.2.mp4",
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Entra no elevador e aperta, nesta ordem: quatro. Dois. Seis. Dois. Dez.",
+   "cenas": [
+    {
+     "imagem": "../imagens_v4/extras/H04_A.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.47
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6,
+     "encaixe": "cobrir"
+    },
+    {
+     "video": "../clipes_v3/V02_B.mp4",
+     "zoom": [
+      1.4,
+      1.42
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ],
+     "em": "nesta",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_elevador",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.4
+    },
+    {
+     "em": "quatro",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dois",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Dez",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.0
+    },
+    {
+     "em": "Seis",
+     "som": "tecla",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 0.62
+    },
+    {
+     "em": "nesta",
+     "som": "ep09_ah_janggu_ritual_2",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 8.0,
+     "saida": 2.5
+    }
+   ],
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Se ninguém entrar no caminho, aperta o cinco.",
+   "cena": {
+    "imagem": "../imagens_v3/H04_C.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "No quinto andar, vai entrar uma mulher.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "video": "../camera3d/H06_ec29b94c33_10.9.mp4",
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "entrar",
+     "som": "ep09_elevador",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Não olha para ela. Não fala com ela. Não responde, aconteça o que acontecer.",
+   "sons": [
+    {
+     "em": "olha",
+     "som": "ep07_respiracao_nuca",
+     "volume_db": -29,
+     "depois": false,
+     "atraso": 0.0,
+     "pan": -0.8
+    }
+   ],
+   "pausa_antes_s": 0.8
+  },
+  {
+   "fala": "Aí você aperta o um. Se o elevador descer, acabou: o ritual falhou, e você está salvo.",
+   "cena": {
+    "imagem": "../imagens_v4/extras/H05_B.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Mas se ele subir… até o dez…",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "../camera3d/H04_1bc311803b_6.5.mp4",
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.6
+  },
+  {
+   "fala": "Você chegou.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "Você chegou.",
+    "estilo": "impacto",
+    "vermelho": "chegou.",
+    "cps": 10,
+    "tamanho": 130,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_horror_momento",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 2.5
+    }
+   ],
+   "sem_legenda": true,
+   "pausa_antes_s": 0.8
+  }
+ ],
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "E do outro lado?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

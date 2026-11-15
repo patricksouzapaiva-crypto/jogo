@@ -1,0 +1,275 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Coreia",
+   "dívida",
+   "han",
+   "Arang",
+   "Miryang",
+   "Janghwa",
+   "ovo",
+   "Jangsan",
+   "Oppa",
+   "óleo",
+   "gergelim",
+   "quatro",
+   "402",
+   "Gonjiam",
+   "não olha"
+  ]
+ },
+ "voz_arquivo": "s1_elevador_rafa_voz.wav",
+ "batidas": [
+  {
+   "fala": "Três da manhã, em Busan, na Coreia do Sul.",
+   "cena": {
+    "tipo": "relogios",
+    "lados": [
+     {
+      "nome": "Busan",
+      "hora": "03:00",
+      "imagem": "../imagens_v4/escolhidas/H03.jpg",
+      "brilho": 0.6
+     },
+     {
+      "nome": "Belo Horizonte",
+      "hora": "15:00",
+      "imagem": "../imagens/F01_A.jpg",
+      "brilho": 0.75
+     }
+    ],
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "No grupo da família, chega um áudio do Rafa.",
+   "sons": [
+    {
+     "em": "áudio",
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Família 🏠",
+    "membros": "Mãe, Pai, Rafa, Lívia",
+    "mensagens": [
+     {
+      "de": "Rafa",
+      "tipo": "audio",
+      "duracao": "0:06",
+      "hora": "15:00",
+      "em": "áudio",
+      "digitando": 0.6,
+      "apos": 0.3
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "\"Mãe… eu tô no elevador. Ele tá subindo. E esse prédio não tem dez andares.\"",
+   "cenas": [
+    {
+     "video": "../clipes_v4/V20_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25,
+     "encaixe": "cobrir"
+    },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "subindo",
+     "video": "../camera3d/H04_68ba4eddd9_9.2.mp4",
+     "encaixe": "cobrir"
+    }
+   ]
+  },
+  {
+   "fala": "Ninguém respondeu esse áudio. Porque, três semanas antes, a família inteira tinha parado de acreditar no Rafa.",
+   "cena": {
+    "tipo": "elevador",
+    "sequencia": [
+     [
+      4,
+      0.4
+     ],
+     [
+      2,
+      0.9
+     ],
+     [
+      6,
+      1.4
+     ],
+     [
+      2,
+      1.9
+     ],
+     [
+      10,
+      2.4
+     ]
+    ],
+    "andar": [
+     [
+      2,
+      1.2
+     ],
+     [
+      3,
+      1.8
+     ],
+     [
+      4,
+      2.4
+     ],
+     [
+      5,
+      3.0
+     ],
+     [
+      6,
+      3.6
+     ],
+     [
+      7,
+      4.2
+     ],
+     [
+      8,
+      4.8
+     ],
+     [
+      9,
+      5.4
+     ],
+     [
+      10,
+      6.0
+     ],
+     [
+      11,
+      6.6
+     ],
+     [
+      12,
+      7.2
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 1.2,
+    "antecipar": 1.2
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_elevador",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": -0.9
+    },
+    {
+     "em": null,
+     "som": "ep09_sn_elevador_shepard",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": -4.0,
+     "ate": 4.5,
+     "saida": 1.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Desde o dia em que a irmã dele voltou da montanha.",
+   "cenas": [
+    {
+     "video": "../clipes_v4/V17_A.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "video_inicio": 4.0,
+     "atmos": {
+      "neblina": 0.3
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25,
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens_v4/escolhidas/M08.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "em": "voltou",
+     "encaixe": "cobrir"
+    }
+   ]
+  }
+ ],
+ "musica": {
+  "som": "ep08_japones_longa",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "O que voltou da montanha?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep09_mata_noite",
+   "volume_db": -20
+  }
+ ]
+}
