@@ -3,10 +3,8 @@
 Vídeo: o render final do v4 (~21 min). Formato documentário + história, no molde do Ep. 08.
 Os tempos dos CAPÍTULOS saem do render final: eu preencho quando o vídeo estiver pronto.
 
-## Título — opções (o 1º é o recomendado)
-1. `Por que o terror coreano é ainda mais cruel que o japonês` (57 car.) — continua o Ep. 08 (quem viu clica) e promete comparação
-2. `Na Coreia, os mortos chamam você pelo nome` (42 car.)
-3. `O terror coreano não perdoa: os mortos voltam para cobrar` (57 car.)
+## Título (escolhido pelo usuário 15/11)
+`Por que o terror coreano é tão cruel?` (37 car.)
 
 ## Capas (teste A/B — escolhidas 15/11)
 `../capa/capa_D_cobrar.jpg` · `../capa/capa_E_ovo.jpg` · `../capa/capa_F_irma.jpg`
