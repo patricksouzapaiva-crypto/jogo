@@ -51,7 +51,7 @@ E me conta: qual lenda o Vigia abre no próximo episódio?
 ```
 terror coreano, lendas coreanas, terror, história de terror, histórias de terror, creepypasta, creepypasta coreana, lendas urbanas coreanas, fantasmas coreanos, gwishin, han, arang, janghwa hongryeon, a tale of two sisters, jangsan beom, the mimic, jogo do elevador, gonjiam, exhuma, the wailing, whispering corridors, bunshinsaba, gumiho, terror asiático, documentário de terror, o vigia, último abrigo
 ```
-(468 caracteres — o limite do YouTube é 500)
+(403 caracteres — o limite do YouTube é 500)
 
 ## Legendas
 `legendas_pt-BR.srt` — só português (gero junto com o render final).
