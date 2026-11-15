@@ -36,6 +36,15 @@ def achar(ws, alvo):
         for i in range(1, len(ws) - n):
             if [w[0] for w in ws[i:i + n]] == alvo[:n]:
                 return i
+    # o Whisper escreve número por extenso como algarismo ("dois mil e vinte e um" → "2021"): acha a 1ª palavra do
+    # texto seguida de um número e, logo depois, das palavras que vêm após o número no roteiro
+    num = {"um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "mil", "e", "vinte", "cem", "cento"}
+    k = 1
+    while k < len(alvo) and alvo[k] in num: k += 1
+    resto = alvo[k:k + 1]   # só a 1ª palavra depois do número (o Whisper troca "esse" por "este")
+    for i in range(1, len(ws) - 4):
+        if ws[i][0] == alvo[0] and ws[i + 1][0].isdigit() and [w[0] for w in ws[i + 2:i + 2 + len(resto)]] == resto:
+            return i
     return None
 
 
@@ -68,7 +77,9 @@ for b in range(5):
         (A / "bloco1.txt").write_text(texto(i0, i1) + "\n"); tts(A / "bloco1.txt", saida); continue
     ctx = " ".join(EMOJI.sub("", F.para_tts(f)).strip() for f in fl[i0 - 3:i0])
     (A / f"bloco{b + 1}.txt").write_text(ctx + "\n\n" + texto(i0, i1) + "\n")
-    bruto = A / f"bloco{b + 1}_bruto.wav"; tts(A / f"bloco{b + 1}.txt", bruto)
+    bruto = A / f"bloco{b + 1}_bruto.wav"
+    if not bruto.exists():   # cota do TTS é curta (10/dia): o bruto já gerado é reaproveitado
+        tts(A / f"bloco{b + 1}.txt", bruto)
     ws = palavras(bruto); k = achar(ws, F.para_tts(fl[i0]))
     if k is None:
         sys.exit(f"bloco {b + 1}: não achei o começo em: {' '.join(w[0] for w in ws[:50])}")
