@@ -853,7 +853,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
             if not plano["trilhas"] and roteiro.get("musica"):
                 plano["trilhas"].append({"t": 0.0, **roteiro["musica"]})
             mu = b["musica"]
-            plano["trilhas"].append({"t": rel.em(k, mu.get("em")) + mu.get("atraso", 0), "som": mu["som"], "volume_db": mu.get("volume_db", -12)})   # atraso < 0: entra antes da fala (ex.: junto com o cartão do capítulo)
+            plano["trilhas"].append({"t": rel.em(k, mu.get("em")) + mu.get("atraso", 0), "som": mu["som"], "volume_db": mu.get("volume_db", -12),
+                                    **({"continuar": True} if mu.get("continuar") else {})})   # atraso < 0: entra antes da fala (ex.: junto com o cartão do capítulo)
         if b.get("ambiente"):
             a = b["ambiente"]
             plano["ambientes"].append({"t": rel.em(k, a.get("em")), "som": a["som"], "volume_db": a.get("volume_db", -6)})
@@ -1174,7 +1175,9 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
         fim = min(fim_m, trilhas[i + 1]["t"] + 1.0) if i + 1 < len(trilhas) else fim_m
         if fim <= ini or m["som"] in (None, "nenhum", "silencio"):  # silêncio: nenhuma trilha nesse trecho
             continue
-        ent += ["-stream_loop", "-1", "-i", str(sons / f"{m['som']}.mp3")]
+        # "continuar" (15/11, Ep. 09 v4: uma trilha só no episódio inteiro): depois de um silêncio de susto a música
+        # VOLTA de onde estaria se nunca tivesse parado (não recomeça do início)
+        ent += ["-stream_loop", "-1", *(["-ss", f"{ini:.3f}"] if m.get("continuar") else []), "-i", str(sons / f"{m['som']}.mp3")]
         fi = 2.5 if i == 0 else 2.0
         fo = 2.0
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{fim - ini:.3f},asetpts=PTS-STARTPTS,"
