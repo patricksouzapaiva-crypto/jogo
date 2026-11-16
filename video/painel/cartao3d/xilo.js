@@ -495,7 +495,7 @@ function cartela(t) {   // a legenda impressa: caixa de papel limpo com fio dupl
     for (let k = 1; k < ps.length; k++) { const l2 = [ps.slice(0, k).join(" "), ps.slice(k).join(" ")], m = Math.max(...l2.map((l) => octx.measureText(l).width)); if (!best || m < best[0]) best = [m, l2]; }
     ls = best[1]; }
   while (Math.max(...ls.map((l) => octx.measureText(l).width)) > maxW && fs > 20) { fs -= 2; octx.font = `400 ${fs}px "IM Fell English SC"`; }
-  octx.textAlign = "left"; let k0 = 0; const yT = y0 + ch * 0.47 - (ls.length - 1) * fs * 0.55;
+  octx.textAlign = "left"; let k0 = 0; const yT = Math.max(y0 + ch * 0.47 - (ls.length - 1) * fs * 0.55, y0 + ch * 0.27 + fs * 1.05);   // a 1ª linha nunca encosta no divisor
   ls.forEach((l, li) => { let x = xc - octx.measureText(l).width / 2; const y = yT + li * fs * 1.12;
     for (const chh of l) { const p = easeOut(lin(t, 2.95 + k0 * 0.022, 0.35)); k0++;
       if (p > 0) { octx.globalAlpha = a * p; octx.fillStyle = "#24160c"; octx.fillText(chh, x, y + (1 - p) * 3); }
