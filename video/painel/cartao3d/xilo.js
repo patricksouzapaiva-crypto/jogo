@@ -119,7 +119,7 @@ function linha(g, pts, ate = 2, esc = 1) {   // linha poligonal até o parâmetr
 async function montarPedra(serp) {
   const rocha = await img(PH + "lichen_rock/Diffuse.jpg"), desl = await img(PH + "lichen_rock/Displacement.jpg");
   // pedra cinza (granito com líquen): a textura dessaturada
-  const lado = canvas(1024, 1024), lg = lado.getContext("2d"); lg.filter = "saturate(0.2) brightness(1.15) contrast(1.1)"; lg.drawImage(rocha, 0, 0, 1024, 1024);
+  const lado = canvas(1024, 1024), lg = lado.getContext("2d"); lg.filter = "saturate(0.2) brightness(1.15) contrast(0.75) blur(1.5px)"; lg.drawImage(rocha, 0, 0, 1024, 1024); lg.filter = "none"; lg.globalAlpha = 0.35; lg.fillStyle = "#8d8d90"; lg.fillRect(0, 0, 1024, 1024); lg.globalAlpha = 1;
   const tLado = new THREE.CanvasTexture(lado); tLado.wrapS = tLado.wrapT = THREE.RepeatWrapping; tLado.repeat.set(1.4, 2.2); tLado.colorSpace = THREE.SRGBColorSpace;
   // a face: cor (com a tinta ocre gasta nos sulcos), altura (sulcos em V) → mapa de normais
   const cor = canvas(FW, FH), cg = cor.getContext("2d"), tile = FW / (SX * 2);
@@ -195,37 +195,50 @@ function poeNeve(geo, f) { const p = geo.attributes.position, n = geo.attributes
   for (let i = 0; i < p.count; i++) v[i] = f(p.getX(i), p.getY(i), p.getZ(i), n.getY(i)); geo.setAttribute("neve", new THREE.BufferAttribute(v, 1)); return geo; }
 
 // ---------- a mata ----------
-function pinheiros() {
-  const r = semente("mata"), gs = [];
-  for (let k = 0; k < 80; k++) {
+function pinheiros() {   // abetos de verdade: cada andar é um leque de RAMOS serrilhados caídos (silhueta espinhosa da gravura)
+  const r = semente("mata"), P = [], N = [], troncos = [];
+  const tri = (a, b, c, nv) => { P.push(...a, ...b, ...c); N.push(nv, nv, nv); };
+  for (let k = 0; k < 90; k++) {
     const x = -24 + r() * 48, z = -5 - r() * 26; if (Math.abs(x - PX) < 3.2 && z > -16) continue;
-    const h = 5 + r() * 7, base = CHAO - 0.1;
-    const tr = new THREE.CylinderGeometry(0.05 * h / 6, 0.12 * h / 6, h * 0.9, 6, 1, true); tr.translate(x, base + h * 0.45, z); gs.push(poeNeve(tr, () => 0));
-    const n = 14 + Math.floor(r() * 5);
-    for (let j = 0; j < n; j++) { const q = j / n, raio = (1 - q) * h * 0.21 + 0.12, alt = h * 0.2, y = base + h * (0.16 + 0.84 * q);
-      const c = new THREE.ConeGeometry(raio, alt, 26, 1, true), p = c.attributes.position, rc = semente("cone" + k + "_" + j);
-      for (let i = 0; i < p.count; i++) if (p.getY(i) < 0) { const s = (i % 2 ? 0.55 : 1.05) * (0.8 + 0.4 * rc()); p.setXYZ(i, p.getX(i) * s, p.getY(i) - rc() * alt * 0.25, p.getZ(i) * s); }
-      c.computeVertexNormals(); c.rotateY(r() * 6); c.translate(x, y, z);
-      gs.push(poeNeve(c, (X, Y, Z, ny) => sstep(0.6, 0.85, fbm3(X * 3, Y * 3, Z * 3) + 0.2 * ny) * 0.55)); }
+    const h = 5 + r() * 8, base = CHAO - 0.1, inc = (r() - 0.5) * 0.06;
+    const tr = new THREE.CylinderGeometry(0.04 * h / 6, 0.13 * h / 6, h, 6, 1, true); tr.translate(x, base + h * 0.5, z); troncos.push(tr);
+    const andares = 16 + Math.floor(r() * 6);
+    for (let j = 0; j < andares; j++) {
+      const q = j / andares, y0 = base + h * (0.12 + 0.86 * q), raio = Math.pow(1 - q, 0.95) * h * 0.24 + 0.08, nr = 9 + Math.floor(raio * 9);
+      for (let b = 0; b < nr; b++) {
+        const th = (b / nr) * Math.PI * 2 + r() * 0.5 + j * 0.9, dx = Math.cos(th), dz = Math.sin(th), L = raio * (0.75 + 0.45 * r());
+        const queda = 0.35 + 0.35 * r(), wb = L * 0.32, sx = -dz, sz = dx, nv = r() < 0.5 ? 1 : 0;   // nv: o ramo pega neve?
+        const ponto = (u, lado) => { const w = (wb * (1 - u) + 0.015) * (Math.floor(u * 7) % 2 ? 0.55 : 1) * lado;
+          return [x + inc * (y0 - base) + dx * L * u + sx * w, y0 + L * (0.12 * u - queda * u * u), z + dz * L * u + sz * w]; };
+        for (let m = 0; m < 7; m++) { const u0 = m / 7, u1 = (m + 1) / 7;
+          const a = ponto(u0, 1), b2 = ponto(u0, -1), c = ponto(u1, 1), d = ponto(u1, -1), nn = nv * sstep(0.45, 0.7, fbm3(a[0] * 2, a[1] * 2, a[2] * 2)) * 0.85;
+          tri(a, b2, c, nn); tri(b2, d, c, nn); }
+      }
+    }
   }
-  const m = new THREE.Mesh(mergeGeometries(gs), comNeve(new THREE.MeshStandardMaterial({ color: 0x0b0f0c, roughness: 1, side: THREE.DoubleSide })));
-  m.receiveShadow = true; scene.add(m);
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(P, 3)); g.setAttribute("neve", new THREE.Float32BufferAttribute(N, 1)); g.computeVertexNormals();
+  const m = new THREE.Mesh(g, comNeve(new THREE.MeshStandardMaterial({ color: 0x0a0d0b, roughness: 1, side: THREE.DoubleSide }))); m.receiveShadow = true; scene.add(m);
+  const t = new THREE.Mesh(mergeGeometries(troncos.map((x) => poeNeve(x, () => 0))), comNeve(new THREE.MeshStandardMaterial({ color: 0x15100c, roughness: 1 }))); scene.add(t);
 }
 function arvoreSeca() {   // árvore retorcida em primeiro plano (esquerda), galhos por cima do quadro
   const r = semente("arvore"), gs = [];
   const galho = (a, d, len, rad, nivel) => {
-    const b = a.clone().addScaledVector(d, len), geo = new THREE.CylinderGeometry(rad * 0.68, rad, len, 7, 1, true);
-    geo.translate(0, len / 2, 0); geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d)); geo.translate(a.x, a.y, a.z);
-    gs.push(poeNeve(geo, (X, Y, Z, ny) => sstep(0.3, 0.7, ny) * (0.5 + 0.6 * fbm3(X * 6, Y * 6, Z * 6))));
-    if (nivel >= 6) return;
-    const filhos = nivel < 2 ? 2 : 2 + (r() < 0.5 ? 1 : 0);
+    let p = a.clone(), dir = d.clone(), rr = rad;
+    for (let k = 0; k < 3; k++) {   // cada galho em 3 trechos que entortam: madeira retorcida
+      const l = len / 3, b = p.clone().addScaledVector(dir, l), r1 = rr * 0.86, geo = new THREE.CylinderGeometry(r1, rr, l * 1.04, nivel < 3 ? 9 : 5, 1, true);
+      geo.translate(0, l / 2, 0); geo.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir)); geo.translate(p.x, p.y, p.z);
+      gs.push(poeNeve(geo, (X, Y, Z, ny) => sstep(0.35, 0.75, ny) * (0.4 + 0.7 * fbm3(X * 6, Y * 6, Z * 6))));
+      p = b; rr = r1; dir.add(new THREE.Vector3((r() - 0.5) * 0.55, (r() - 0.5) * 0.4, (r() - 0.5) * 0.4)).normalize();
+    }
+    if (nivel >= 7 || rr < 0.006) return;
+    const filhos = nivel < 2 ? 2 : 2 + (r() < 0.6 ? 1 : 0);
     for (let k = 0; k < filhos; k++) {
-      const nd = d.clone().add(new THREE.Vector3((r() - 0.35) * 1.1, (r() - 0.45) * 0.8, (r() - 0.5) * 0.7)).normalize();
-      if (nivel < 2) nd.add(new THREE.Vector3(0.5, 0.15, 0)).normalize();   // o tronco tomba para a direita, por cima da pedra
-      galho(b, nd, len * (0.62 + r() * 0.2), rad * 0.62, nivel + 1);
+      const nd = dir.clone().add(new THREE.Vector3((r() - 0.35) * 1.2, (r() - 0.4) * 0.9, (r() - 0.5) * 0.8)).normalize();
+      if (nivel < 3) nd.add(new THREE.Vector3(1.1, -0.15, 0.1)).normalize();   // o tronco tomba para a direita, por cima da pedra
+      galho(p, nd, len * (0.6 + r() * 0.22), rr * 0.66, nivel + 1);
     }
   };
-  galho(new THREE.Vector3(-4.9, CHAO - 0.2, 0.6), new THREE.Vector3(0.28, 1, 0.05).normalize(), 2.6, 0.24, 0);
+  galho(new THREE.Vector3(-4.9, CHAO - 0.2, 0.6), new THREE.Vector3(0.22, 1, 0.05).normalize(), 3.0, 0.26, 0);
   const m = new THREE.Mesh(mergeGeometries(gs), comNeve(new THREE.MeshStandardMaterial({ color: 0x241b14, roughness: 1 })));
   m.castShadow = true; scene.add(m);
 }
@@ -250,6 +263,35 @@ function chao() {
   const mo = new THREE.MeshStandardMaterial({ color: 0x5a6068, roughness: 1 });
   for (const [x, z, sx, sy] of []) { const s = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 16), mo); s.scale.set(sx, sy, 10); s.position.set(x, CHAO - 1, z); scene.add(s); }
 }
+function encapuzados() {   // vultos de manto e capuz na beira da mata — SEM rosto (o capuz é um buraco escuro)
+  const gs = [], escuros = [], r = semente("vultos");
+  const perfil = [[0, 0], [0.46, 0], [0.44, 0.06], [0.36, 0.35], [0.28, 0.75], [0.26, 1.05], [0.25, 1.22], [0.2, 1.36], [0.11, 1.44], [0, 1.47]].map(([a, b]) => new THREE.Vector2(a, b));
+  for (const [x, z, s, lanca] of [[-4.4, -4.2, 1.0, 1], [-3.1, -5.6, 0.95, 0], [0.3, -5.2, 1.0, 0], [1.6, -4.0, 1.05, 1]]) {
+    const manto = new THREE.LatheGeometry(perfil, 22), q = manto.attributes.position;
+    for (let i = 0; i < q.count; i++) { const X = q.getX(i), Y = q.getY(i), Z = q.getZ(i), k = (1 + (fbm3(X * 5 + x, Y * 3, Z * 5) - 0.5) * 0.3 * (1 - Y / 1.5)) * (1 + 0.09 * Math.sin(Math.atan2(Z, X) * 7) * (1 - Y / 1.6)); q.setXYZ(i, X * k, Y, Z * k * 0.75); }
+    manto.computeVertexNormals();
+    const capuz = new THREE.SphereGeometry(0.2, 18, 14); capuz.scale(1, 1.25, 1.2); capuz.rotateX(0.25); capuz.translate(0, 1.55, 0.05);
+    const ponta = new THREE.ConeGeometry(0.13, 0.3, 10); ponta.rotateX(-0.7); ponta.translate(0, 1.78, -0.12);
+    const ext = (g) => { g.scale(s, s, s); g.rotateY((r() - 0.5) * 0.3); g.translate(x, CHAO - 0.05, z); gs.push(poeNeve(g, (X, Y, Z, ny) => sstep(0.6, 0.9, ny) * 0.6)); };
+    ext(manto); ext(capuz); ext(ponta);
+    if (lanca) { const l = new THREE.CylinderGeometry(0.018, 0.022, 2.6, 6, 1, true), c = new THREE.ConeGeometry(0.05, 0.28, 6); l.translate(0.36, 1.3, 0.08); c.translate(0.36, 2.72, 0.08); ext(l); ext(c); }
+    const vazio = new THREE.SphereGeometry(0.12, 12, 10); vazio.scale(0.85, 1.05, 0.5); vazio.rotateX(0.25); vazio.translate(0, 1.52, 0.22); vazio.scale(s, s, s); vazio.translate(x, CHAO - 0.05, z); escuros.push(poeNeve(vazio, () => 0));
+  }
+  const m = new THREE.Mesh(mergeGeometries(gs), comNeve(new THREE.MeshStandardMaterial({ color: 0x1a1612, roughness: 1 }))); m.castShadow = true; scene.add(m);
+  scene.add(new THREE.Mesh(mergeGeometries(escuros), new THREE.MeshBasicMaterial({ color: 0x000000 })));
+}
+function capim() {   // tufos de capim seco furando a neve (traços de tinta no chão, como na gravura)
+  const r = semente("capim"), P = [];
+  for (let k = 0; k < 140; k++) {
+    const x = -6 + r() * 11.5, z = -3 + r() * 8; if (Math.hypot(x - PX, z - PZ) < 0.9) continue;
+    const y0 = CHAO + (fbm3(x * 0.35, 0, z * 0.35) - 0.5) * 0.5 - 0.02, n = 5 + Math.floor(r() * 9), alto = 0.12 + r() * 0.3;
+    for (let b = 0; b < n; b++) { const a = r() * 6.28, inc = 0.2 + r() * 0.6, hh = alto * (0.5 + r() * 0.6), w = 0.006 + r() * 0.006;
+      const tx = x + Math.cos(a) * hh * inc, tz = z + Math.sin(a) * hh * inc, bx = x + (r() - 0.5) * 0.08, bz = z + (r() - 0.5) * 0.08;
+      P.push(bx - w, y0, bz, bx + w, y0, bz, tx, y0 + hh, tz, bx, y0, bz - w, bx, y0, bz + w, tx, y0 + hh, tz); }
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(P, 3)); g.computeVertexNormals();
+  scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: 0x1b140d, roughness: 1, side: THREE.DoubleSide })));
+}
 function ceu() {
   const mat = new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: { lua: { value: luaDir }, t: { value: 0 } },
@@ -265,8 +307,8 @@ function ceu() {
         float halo=exp(-ang*12.)*.18+exp(-ang*40.)*.5;
         c=mix(c,vec3(.16,.17,.19)*(.4+halo*2.2),nu*.9);
         c+=vec3(.75,.78,.85)*halo*.22*(1.-nu*.6);
-        float disco=1.-smoothstep(.047,.052,ang);float cr=fbm(vec2(d.x,d.y)*60.);
-        float anel=smoothstep(.044,.049,ang)*(1.-smoothstep(.052,.057,ang));c=mix(c,vec3(3.,2.95,2.8)*(.3+.7*smoothstep(.3,.7,cr)),disco*(1.-nu*.45));c*=1.-anel*.9;
+        float disco=1.-smoothstep(.047,.052,ang);float cr=fbm(vec2(d.x,d.y)*28.+3.);
+        float anel=smoothstep(.044,.049,ang)*(1.-smoothstep(.052,.057,ang));c=mix(c,vec3(1.25,1.22,1.15)*(.2+.8*smoothstep(.38,.62,cr)),disco*(1.-nu*.45));c*=1.-anel*.9;
         gl_FragColor=vec4(c,1.);}` });
   const s = new THREE.Mesh(new THREE.SphereGeometry(90, 48, 24), mat); scene.add(s); return mat;
 }
@@ -326,7 +368,7 @@ function passeGravura(tPapel) {
         float rubro=clamp((c.r-max(c.g,c.b)*1.15)*2.4,0.,1.)*smoothstep(.3,.65,c.r);
         float L=smoothstep(.07,.56,l);
         vec2 w=vec2(vn(px*.006+tremido),vn(px*.006+17.+tremido))*9.;   // linhas levemente onduladas (talho à mão)
-        vec2 q=px+w;
+        vec2 q=px+w+tremido;
         // a goiva segue a forma: as linhas correm ao longo dos contornos de luz (gradiente borrado), senão a 24°
         vec2 E=18./res;vec2 gdir=vec2(0.);
         for(int i=-1;i<=1;i++)for(int j=-1;j<=1;j++){vec2 o=uv+vec2(float(i),float(j))*14./res;
@@ -355,7 +397,7 @@ function passeGravura(tPapel) {
 
 window.preparar = async function (cfg) {
   C = cfg; W = cfg.W || 1920; H = cfg.H || 1080;
-  await document.fonts.load('700 40px "Cinzel"'); await document.fonts.load('500 40px "Inter"'); await document.fonts.load('700 40px "Inter"');
+  await document.fonts.load('400 40px "IM Fell English SC"'); await document.fonts.load('italic 400 40px "IM Fell English"'); await document.fonts.load('700 40px "Cinzel"'); await document.fonts.load('500 40px "Inter"'); await document.fonts.load('700 40px "Inter"');
   const gl = document.getElementById("gl"); gl.width = W; gl.height = H;
   renderer = new THREE.WebGLRenderer({ canvas: gl, antialias: false, preserveDrawingBuffer: true });
   renderer.setSize(W, H, false); renderer.setPixelRatio(1);
@@ -365,7 +407,7 @@ window.preparar = async function (cfg) {
   posCamera(0); camera.updateMatrixWorld();
   luaDir = new THREE.Vector3(-0.02, 0.62, 0.5).unproject(camera).sub(camera.position).normalize();
   const ceuMat = ceu(); scene.userData.ceu = ceuMat;
-  pinheiros(); arvoreSeca(); chao();
+  pinheiros(); arvoreSeca(); chao(); encapuzados(); capim();
   const serp = montarSerpente(); await montarPedra(serp); scene.userData.olho = serp.olho; scene.userData.sulcos = serp.sulcos;
   // luzes: a lua atrás (contraluz e sombras longas vindo para a câmera), luar rasante pela esquerda (mostra os sulcos)
   const lua = new THREE.DirectionalLight(0xc8d6ff, 1.8); lua.position.copy(luaDir).multiplyScalar(25).add(new THREE.Vector3(PX, 0, 0));
@@ -440,26 +482,26 @@ function cartela(t) {   // a legenda impressa: caixa de papel limpo com fio dupl
   if (fio > 0.95) for (const [x, y] of [[x0 + 10, y0 + 10], [x0 + cw - 10, y0 + 10], [x0 + 10, y0 + ch - 10], [x0 + cw - 10, y0 + ch - 10]]) {
     octx.fillStyle = "#2a190c"; octx.beginPath(); octx.moveTo(x, y - 7); octx.lineTo(x + 7, y); octx.lineTo(x, y + 7); octx.lineTo(x - 7, y); octx.closePath(); octx.fill(); }
   octx.textAlign = "center"; const xc = x0 + cw / 2;
-  const cap = easeOut(lin(t, 2.75, 0.5)); octx.globalAlpha = a * cap; octx.fillStyle = "#8e1a10"; octx.font = `700 ${Math.round(H * 0.024)}px "Inter"`;
+  const cap = easeOut(lin(t, 2.75, 0.5)); octx.globalAlpha = a * cap; octx.fillStyle = "#8e1a10"; octx.font = `400 ${Math.round(H * 0.034)}px "IM Fell English SC"`;
   octx.fillText((C.numero_pt || `Capítulo ${C.numero}`).toUpperCase().split("").join(" "), xc, y0 + ch * 0.2);
   // divisor
   const dv = easeInOut(lin(t, 2.85, 0.5)) * cw * 0.22; octx.globalAlpha = a; octx.strokeStyle = "#2a190c"; octx.lineWidth = 1.5;
   octx.beginPath(); octx.moveTo(xc - dv, y0 + ch * 0.27); octx.lineTo(xc + dv, y0 + ch * 0.27); octx.stroke();
   if (dv > 1) { octx.fillStyle = "#8e1a10"; octx.beginPath(); octx.moveTo(xc, y0 + ch * 0.27 - 6); octx.lineTo(xc + 6, y0 + ch * 0.27); octx.lineTo(xc, y0 + ch * 0.27 + 6); octx.lineTo(xc - 6, y0 + ch * 0.27); octx.closePath(); octx.fill(); }
   // título em Cinzel, letra a letra
-  let fs = Math.round(H * 0.058); octx.font = `700 ${fs}px "Cinzel"`;
+  let fs = Math.round(H * 0.07); octx.font = `400 ${fs}px "IM Fell English SC"`;
   const tit = C.titulo || "", maxW = cw * 0.84; let ls = [tit];
   if (octx.measureText(tit).width > maxW) { const ps = tit.split(" "); let best = null;
     for (let k = 1; k < ps.length; k++) { const l2 = [ps.slice(0, k).join(" "), ps.slice(k).join(" ")], m = Math.max(...l2.map((l) => octx.measureText(l).width)); if (!best || m < best[0]) best = [m, l2]; }
     ls = best[1]; }
-  while (Math.max(...ls.map((l) => octx.measureText(l).width)) > maxW && fs > 20) { fs -= 2; octx.font = `700 ${fs}px "Cinzel"`; }
+  while (Math.max(...ls.map((l) => octx.measureText(l).width)) > maxW && fs > 20) { fs -= 2; octx.font = `400 ${fs}px "IM Fell English SC"`; }
   octx.textAlign = "left"; let k0 = 0; const yT = y0 + ch * 0.47 - (ls.length - 1) * fs * 0.55;
   ls.forEach((l, li) => { let x = xc - octx.measureText(l).width / 2; const y = yT + li * fs * 1.12;
     for (const chh of l) { const p = easeOut(lin(t, 2.95 + k0 * 0.022, 0.35)); k0++;
       if (p > 0) { octx.globalAlpha = a * p; octx.fillStyle = "#24160c"; octx.fillText(chh, x, y + (1 - p) * 3); }
       x += octx.measureText(chh).width; } });
   // ano / fonte
-  octx.textAlign = "center"; octx.globalAlpha = a * easeOut(lin(t, 3.6, 0.6)); octx.fillStyle = "#4a3220"; octx.font = `500 ${Math.round(H * 0.026)}px "Inter"`;
+  octx.textAlign = "center"; octx.globalAlpha = a * easeOut(lin(t, 3.6, 0.6)); octx.fillStyle = "#4a3220"; octx.font = `italic 400 ${Math.round(H * 0.036)}px "IM Fell English"`;
   octx.fillText(C.ano || "", xc, y0 + ch * 0.86);
   // tinta irregular: falhas de impressão nas letras
   octx.globalCompositeOperation = "destination-out"; const rf = semente("falha");
@@ -490,7 +532,7 @@ window.quadro = function (t) {
   bp.needsUpdate = true; brasas.material.opacity = clamp(ub * 3);
   scene.userData.ceu.uniforms.t.value = t;
   posCamera(t);
-  grava.uniforms.t.value = t; grava.uniforms.tremido.value.set(0, 0);
+  grava.uniforms.t.value = t; { const rq = semente("tr" + Math.floor(t * 12)); grava.uniforms.tremido.value.set((rq() - 0.5) * 2.4, (rq() - 0.5) * 2.4); }
   composer.render(); renderer.getContext().finish();
   cartela(t);
   const dur = C.dur || 7.6, fade = Math.min(lin(t, 0, 0.35), 1 - lin(t, dur - 0.4, 0.4));

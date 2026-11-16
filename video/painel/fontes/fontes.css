@@ -159,3 +159,7 @@
   font-weight: 700;
   src: url(NotoSerifThai-700.ttf) format('truetype');
 }
+/* IM Fell English (OFL, tipos de Fell do séc. XVII) — cartela do Ep. 11 em xilogravura */
+@font-face{font-family:'IM Fell English';font-style:normal;font-weight:400;src:url(IMFellEnglish-400.woff2) format('woff2')}
+@font-face{font-family:'IM Fell English';font-style:italic;font-weight:400;src:url(IMFellEnglish-400-italic.woff2) format('woff2')}
+@font-face{font-family:'IM Fell English SC';font-style:normal;font-weight:400;src:url(IMFellEnglishSC-400.woff2) format('woff2')}
