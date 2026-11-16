@@ -82,7 +82,7 @@ for i, chave in sorted(TROCAS.items()):
     t0 = inicio_real(tempos[ini[i]][0], tempos[ini[i] - 1][1])
     t1 = FIM.get(i, tempos[ini[i + 1]][0] - 0.10)         # começo da fala seguinte
     fim_ant = min(tempos[ini[i + 1] - 1][1], t1)
-    x0, x1 = int(t0 * SR), int(t1 * SR)
+    x0, x1 = max(int(t0 * SR), cursor), int(t1 * SR)   # fala colada na anterior (90 → 91): começa onde a outra acabou
     nova = ler(AQUI / "vozes" / "limpas_escolhidas" / f"{nome}.wav", LIMPA + "," + filtro)
     nova *= rms(voz[x0:int(fim_ant * SR)]) / rms(nova) * ganho     # mesmo volume da fala que sai
     f = int(0.02 * SR)
@@ -93,7 +93,9 @@ for i, chave in sorted(TROCAS.items()):
     sobra = len(nova) + int(0.25 * SR) - espaco
     extra = max(0, sobra)
     bloco = np.zeros(espaco + extra, np.float32); bloco[:len(nova)] = nova
-    antes = voz[cursor:x0].copy(); antes[-f:] *= np.linspace(1, 0, f)
+    antes = voz[cursor:x0].copy()
+    if len(antes) >= f:
+        antes[-f:] *= np.linspace(1, 0, f)
     lugar.append((sum(len(p) for p in pedacos) + len(antes), len(bloco), pan))
     pedacos += [antes, bloco]; cursor = x1
     if extra:

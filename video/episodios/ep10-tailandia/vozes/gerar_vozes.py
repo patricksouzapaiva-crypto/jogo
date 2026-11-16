@@ -50,10 +50,17 @@ def cortar(bruto, texto, saida):
     ws = [(nz(w.word), w.start) for s_ in seg for w in s_.words]
     alvo = nz(texto).split()
     c0 = 0.0
-    for n in (3, 2, 1):
-        achou = [k for k in range(len(ws) - n + 1) if [w[0] for w in ws[k:k + n]] == alvo[:n]]
-        if achou:
-            k = achou[-1]; c0 = max(0.0, ws[k][1] - 0.12) if k > 0 else 0.0; break
+    # a instrução termina em "Diga:" — a fala começa na palavra seguinte; sem o "diga", a 1ª ocorrência do começo da fala
+    # depois da instrução (a ÚLTIMA ocorrência falhava quando a fala repete o próprio começo: "eu não posso sair…")
+    dg = [k for k, w in enumerate(ws) if w[0] == "diga"]
+    if dg and dg[-1] + 1 < len(ws):
+        c0 = max(0.0, ws[dg[-1] + 1][1] - 0.12)
+    else:
+        ini = next((k for k, w in enumerate(ws) if w[0] in ("rapaz", "moca", "moça")), 0)
+        for n in (3, 2, 1):
+            achou = [k for k in range(ini, len(ws) - n + 1) if [w[0] for w in ws[k:k + n]] == alvo[:n]]
+            if achou:
+                k = achou[0]; c0 = max(0.0, ws[k][1] - 0.12) if k > 0 else 0.0; break
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c0:.3f}", "-i", str(bruto), "-af", "afade=t=in:d=0.02", str(saida)], check=True)
     print(f"  {saida.name}: cortado em {c0:.2f}s; ouvido: {' '.join(w[0] for w in ws)[:140]}", flush=True)
 

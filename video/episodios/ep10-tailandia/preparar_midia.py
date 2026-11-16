@@ -51,7 +51,7 @@ def filmes(pedidos):
                f"format=yuv420p[v]")
         saida = FP / f"{nome}.mp4"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(AQUI / src), "-filter_complex", fc, "-map", "[v]", "-an",
-                        "-c:v", "libx264", "-crf", "17", "-preset", "medium", str(saida)], check=True)
+                        "-c:v", "libx264", "-crf", "22", "-preset", "medium", str(saida)], check=True)
         tem_som = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0",
                                   str(AQUI / src)], capture_output=True, text=True).stdout.strip()
         if not arquivo and tem_som:   # o som do trailer, para os respiros (os cortes do usuário vieram mudos)
