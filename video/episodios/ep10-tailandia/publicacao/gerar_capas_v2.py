@@ -162,3 +162,27 @@ im = grade(escuro_lado(img, "dir", 0.92, 0.45), "sangue").convert("RGBA")
 texto(im, ["NUNCA", "QUEBRE", "O SELO"], 690, 70, [BRANCO, BRANCO, VERM], [130, 130, 170], ang=2)
 selo(im, 700, 620); bandeira(im)
 salvar(im, "capa_G_selo.jpg")
+
+# ---- 16/11 (usuário: "gostei da D, quero outras nesse estilo: ela sentada no canto no escuro e ela parada em frente
+# à porta, na câmera") ----
+def capa_cctv(cod, cx, cy, zoom, alvo, r, de, linhas, cores, tam, txy, cam, hora, nome, lado_escuro="esq", luz=1.0):
+    img, geo = abrir(cod, cx, cy, zoom)
+    img = ImageEnhance.Brightness(img).enhance(luz)
+    im = falha_cctv(grade(escuro_lado(img, lado_escuro, 0.75, 0.42), "ir")).convert("RGBA")
+    ax, ay = para_tela(alvo[0] * 1672, alvo[1] * 941, geo)
+    circulo_seta(im, ax, ay, r, (ax + de[0], ay + de[1]))
+    texto(im, linhas, txy[0], txy[1], cores, tam, ang=3)
+    hud(im, cam, hora); bandeira(im)
+    salvar(im, nome)
+
+
+# H — sentada no canto escuro do quarto (C4_02)
+capa_cctv("C4_02_variacao_1", 0.42, 0.5, 1.35, (0.665, 0.47), 88, (230, 190), ["NÃO OLHE", "PRO CANTO"], [BRANCO, VERM],
+          [132, 150], (36, 150), "CAM 03 - QUARTO", "03:02:11", "capa_H_canto.jpg")
+capa_cctv("C4_02_variacao_2", 0.5, 0.42, 1.35, (0.76, 0.27), 76, (250, 190), ["ELA VIU", "VOCÊ ENTRAR"], [BRANCO, VERM],
+          [132, 140], (36, 150), "CAM 03 - QUARTO", "03:41:56", "capa_H2_canto.jpg", luz=1.2)
+# I — parada de costas diante da porta, no corredor (G03)
+capa_cctv("G03_variacao_2", 0.38, 0.5, 1.35, (0.47, 0.37), 80, (230, 230), ["NÃO ABRA", "A PORTA"], [BRANCO, VERM],
+          [140, 160], (36, 150), "CAM 01 - CORREDOR", "03:17:40", "capa_I_porta.jpg")
+capa_cctv("G03_variacao_1", 0.5, 0.45, 1.35, (0.63, 0.33), 80, (220, 230), ["ELA ESTÁ", "ESPERANDO"], [BRANCO, VERM],
+          [132, 150], (36, 150), "CAM 01 - CORREDOR", "02:40:18", "capa_I2_espera.jpg", luz=1.4)
