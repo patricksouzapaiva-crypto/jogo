@@ -18,6 +18,7 @@ VERM = (230, 20, 28)
 BRANCO = (255, 248, 236)
 rng = np.random.default_rng(10)
 COM_CIRCULO = False
+COM_SETA = False   # 16/11: o usuário pediu para tirar a seta também
 
 
 def abrir(cod, cx, cy, zoom):
@@ -79,6 +80,8 @@ def brilho_vermelho(img, cx, cy, r, forca=0.9):
 
 
 def circulo_seta(base, cx, cy, r, de):
+    if not (COM_CIRCULO or COM_SETA):
+        return
     cam = Image.new("RGBA", base.size, (0, 0, 0, 0)); d = ImageDraw.Draw(cam)
     if not COM_CIRCULO:
         r = min(r, 34)   # sem círculo, a seta chega quase encostando no alvo
