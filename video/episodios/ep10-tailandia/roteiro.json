@@ -447,7 +447,7 @@
     {
      "em": null,
      "som": "cartao1",
-     "volume_db": -7,
+     "volume_db": -11,
      "depois": false,
      "atraso": -7.55,
      "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap1_som.wav"
@@ -717,7 +717,7 @@
     {
      "em": null,
      "som": "cartao2",
-     "volume_db": -7,
+     "volume_db": -11,
      "depois": false,
      "atraso": -7.55,
      "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap2_som.wav"
@@ -1108,7 +1108,7 @@
     {
      "em": null,
      "som": "cartao3",
-     "volume_db": -7,
+     "volume_db": -11,
      "depois": false,
      "atraso": -7.55,
      "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap3_som.wav"
@@ -1511,7 +1511,7 @@
     {
      "em": null,
      "som": "cartao4",
-     "volume_db": -7,
+     "volume_db": -11,
      "depois": false,
      "atraso": -7.55,
      "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/cartoes/cap4_som.wav"

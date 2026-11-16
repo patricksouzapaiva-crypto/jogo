@@ -203,7 +203,7 @@ def capitulo(i, n, cena, em):
     if not som.exists():
         __import__("subprocess").run(["ffmpeg", "-v", "error", "-y", "-i", str(AQUI / "cartoes" / f"cap{n}.mp4"), "-vn", "-ac", "2",
                                       "-ar", "48000", str(som)], check=True)
-    fx(i, None, f"cartao{n}", -7, atraso=-CARTAO + 0.05, arquivo=str(som))
+    fx(i, None, f"cartao{n}", -11, atraso=-CARTAO + 0.05, arquivo=str(som))
     batidas[i]["musica"] = {"som": "nenhum", "atraso": -CARTAO - 0.6}
     batidas[i + 1]["musica"] = {**TRILHA, "continuar": True}
 

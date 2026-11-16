@@ -92,7 +92,9 @@ for i, chave in sorted(TROCAS.items()):
     espaco = x1 - x0
     sobra = len(nova) + int(0.6 * SR) - espaco   # 16/11: respiro claro entre o áudio e a narração seguinte
     extra = max(0, sobra)
-    bloco = np.zeros(espaco + extra, np.float32); bloco[:len(nova)] = nova
+    # 16/11 (rascunho 2: "uma pausa grande demais"): fala nova mais CURTA que a antiga não deixa o buraco — o bloco
+    # termina 0,6 s depois dela
+    bloco = np.zeros(len(nova) + int(0.6 * SR), np.float32); bloco[:len(nova)] = nova
     antes = voz[cursor:x0].copy()
     if len(antes) >= f:
         antes[-f:] *= np.linspace(1, 0, f)
