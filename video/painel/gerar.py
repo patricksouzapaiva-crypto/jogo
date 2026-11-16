@@ -1505,7 +1505,7 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     else:
         mixar(voz_cortada, VOZ0, duracao, eventos, roteiro.get("trilha"), str(tmp / "audio.wav"))
     print("5/5 finalizando…")
-    # 15/11: no final o render.js já codifica na qualidade de entrega (crf 19, slow) — aqui só junta o áudio
+    # 15/11: no final o render.js já codifica na qualidade de entrega (crf 19; preset medium desde 16/11, 22% mais rápido) — aqui só junta o áudio
     venc = ["-c:v", "copy"] if so_audio or not rascunho else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
                                               "-bufsize", "20M", "-pix_fmt", "yuv420p"]
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", *venc,

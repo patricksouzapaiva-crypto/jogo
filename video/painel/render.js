@@ -11,7 +11,7 @@ const { spawn, spawnSync } = require("child_process");
 const args = process.argv.slice(2);
 const entrada = path.resolve(args[0]), saida = path.resolve(args[1]);
 const W_ARG = args.indexOf("--workers");
-const WORKERS = W_ARG >= 0 ? +args[W_ARG + 1] : 4;
+const WORKERS = W_ARG >= 0 ? +args[W_ARG + 1] : +(process.env.WORKERS || 4);
 const RASCUNHO = args.includes("--rascunho");
 const Q_ARG = args.indexOf("--quadros");
 const D = JSON.parse(fs.readFileSync(entrada, "utf8"));
@@ -26,6 +26,8 @@ const servidor = http.createServer((req, res) => {
   });
 });
 
+const MED = { q: 0, e: 0, n: 0 };
+const JPEG_Q = +(process.env.JPEG_Q || 0.95), PRESET = process.env.RENDER_PRESET || "medium";
 async function trabalhador(browser, porta, i0, i1, arq) {
   const escala = RASCUNHO ? 0.5 : 1;
   const page = await browser.newPage({ viewport: { width: Math.round(D.W * escala), height: Math.round(D.H * escala) } });
@@ -34,10 +36,12 @@ async function trabalhador(browser, porta, i0, i1, arq) {
   await page.evaluate((d) => window.preparar(d), D);
   const ff = spawn("ffmpeg", ["-y", "-v", "error", "-f", "image2pipe", "-c:v", "mjpeg", "-r", String(D.fps), "-i", "-",
     ...(RASCUNHO ? ["-vf", `scale=${D.W / 2}:${D.H / 2}`] : []),
-    "-c:v", "libx264", ...(RASCUNHO ? ["-preset", "veryfast", "-crf", "17"] : ["-preset", "slow", "-crf", "19", "-maxrate", "10M", "-bufsize", "20M"]),
+    "-c:v", "libx264", ...(RASCUNHO ? ["-preset", "veryfast", "-crf", "17"] : ["-preset", PRESET, "-crf", "19", "-maxrate", "10M", "-bufsize", "20M"]),
     "-pix_fmt", "yuv420p", arq], { stdio: ["pipe", "inherit", "inherit"] });
   for (let i = i0; i < i1; i++) {
-    const b64 = await page.evaluate(async (t) => { await window.quadro(t); return document.getElementById("tela").toDataURL("image/jpeg", 0.95).split(",")[1]; }, i / D.fps);
+    const r = await page.evaluate(async ([t, JPEG_Q]) => { const a = performance.now(); await window.quadro(t); const b = performance.now();
+      const u = document.getElementById("tela").toDataURL("image/jpeg", JPEG_Q); return [u.slice(u.indexOf(",") + 1), b - a, performance.now() - b]; }, [i / D.fps, JPEG_Q]);
+    const b64 = r[0]; MED.q += r[1]; MED.e += r[2]; MED.n++;
     const buf = Buffer.from(b64, "base64");
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once("drain", r));
   }
@@ -67,4 +71,5 @@ async function trabalhador(browser, porta, i0, i1, arq) {
   fs.writeFileSync(lista, partes.filter(Boolean).map((p) => `file '${p}'`).join("\n"));
   spawnSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", saida], { stdio: "inherit" });
   console.log(`vídeo: ${saida} (${n} quadros em ${((Date.now() - t0) / 1000).toFixed(0)} s)`);
+  if (MED.n) console.log(`  por quadro: desenho ${(MED.q / MED.n).toFixed(1)} ms · JPEG ${(MED.e / MED.n).toFixed(1)} ms`);
 })();
