@@ -9,10 +9,10 @@ AQUI = Path(__file__).parent; PAINEL = AQUI.parents[1] / "painel"; SONS = PAINEL
 (AQUI / "cartoes").mkdir(exist_ok=True); (AQUI / "previas").mkdir(exist_ok=True)
 DUR = 7.6
 CAPS = {
-    1: {"titulo": "Os corpos do pântano e a árvore de Uppsala", "ano": "Século IV a.C. → Século XI", "runa": "othala"},
-    2: {"titulo": "A Águia de Sangue e o inverno sem fim", "ano": "Sagas nórdicas", "runa": "ansuz"},
-    3: {"titulo": "As criaturas da mata e o filho bastardo", "ano": "Folclore escandinavo", "runa": "algiz"},
-    4: {"titulo": "Quando o culto voltou para a tela", "ano": "2017 · 2019", "runa": "ligada"},
+    1: {"titulo": "Os corpos do pântano e a árvore de Uppsala", "ano": "Século IV a.C. → Século XI", "runa": "othala", "motivo": "arvore"},
+    2: {"titulo": "A Águia de Sangue e o inverno sem fim", "ano": "Sagas nórdicas", "runa": "ansuz", "motivo": "aguia"},
+    3: {"titulo": "As criaturas da mata e o filho bastardo", "ano": "Folclore escandinavo", "runa": "algiz", "motivo": "alce"},
+    4: {"titulo": "Quando o culto voltou para a tela", "ano": "2017 · 2019", "runa": "ligada", "motivo": "sol"},
 }
 pedidos = [int(a) for a in sys.argv[1:] if a.isdigit()] or list(CAPS)
 if "--previa" not in sys.argv:
