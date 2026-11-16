@@ -20,11 +20,11 @@ Static high-angle monochrome infrared CCTV security camera footage inside the da
 Frantic handheld POV camera movement stumbling forward through deep snow in a pitch-black Scandinavian forest during a blizzard. The erratic flashlight beam bounces wildly across snow-laden pine trunks and swirling frost. No face visible, no text.
 ```
 
-## V06 ← V06_H11.png (História — confronto com a criatura) — v2: a luz vem da câmera, a criatura não segura nada
+## V06 ← V06_H11.png ou a frontal do monstro (C3_03_01) — v3: NÃO falar de luz (a imagem já vem iluminada)
 ```
-Shaky first-person handheld footage at night in a snowy pine forest clearing. The only light comes from the camera itself: a harsh white beam shining forward from the viewer's position, lighting the snow and the creature from the front, with the edges of the frame falling into darkness. Heavy digital grain, falling snow. Standing directly ahead, a towering four-meter-tall grotesque pagan forest deity with exposed ribs, dozens of thin dangling empty-handed arms, and massive antlers draped in rotting cloth slowly lowers its colossal antlers forward toward the camera. The creature holds nothing and carries no light; its long bony fingers are open and empty. It remains completely faceless, a pitch-black void under its skull. Nobody else in frame, no visible lamp or device, no text.
+The creature stands still in the snowy forest at night, then slowly lowers its huge antlers forward and takes one heavy step toward the camera. Its long thin arms hang limp and sway slightly. Snow keeps falling. The camera trembles slightly as if held by a frightened person, but does not move closer. Keep the lighting exactly as in the image. Faceless, no text.
 ```
-Se ainda aparecer lanterna: trocar "a harsh white beam shining forward from the viewer's position" por "bright white light falls on it from the front, as if from the viewer's eyes".
+Se ainda aparecer luz no bicho: usar a imagem frontal (C3_03_01) e trocar a frase da câmera por "Locked-off static camera."
 
 ## V03 ← C4_01 (ainda falta a imagem)
 ```
