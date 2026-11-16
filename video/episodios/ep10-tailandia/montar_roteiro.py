@@ -395,9 +395,13 @@ C(98, cctv(zoom(IA("H12", 2), (1.0, 1.04)), "CAM 02 - PORTA", "02:41:02"))
 C(99, zoom(IA("H07", 2), (1.0, 1.06), ((0.75, 0.5), (0.76, 0.48))))
 C(100, zoom(IA("H13", 1), (1.0, 1.08), ((0.65, 0.55), (0.66, 0.55))))
 chat(101, {"de": "Mateus", "tipo": "audio", "duracao": "0:11", "hora": "02:43", "apos": 0.2})
-chat(102, {"de": "Prof. Henrique", "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG", "hora": "02:44",
-           "apos": -2.6, "cor": "#ff6b5e"})
-pausa(102, 3.2)   # 16/11: a mensagem do professor chega e dá tempo de ler ANTES de "Mas Mateus já tinha guardado o celular"
+# 16/11 (rascunho 2, usuário: "a fala do professor não entra… fica sem sentido"): o Prof. Henrique responde com um
+# ÁUDIO (vozes/gerar_professor.py, voz Orus, filtro de celular) na pausa, e a mensagem escrita chega logo depois
+chat(102, {"de": "Prof. Henrique", "tipo": "audio", "duracao": "0:06", "hora": "02:44", "apos": -7.6, "cor": "#ff6b5e"},
+     {"de": "Prof. Henrique", "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG", "hora": "02:44",
+      "apos": -1.4, "cor": "#ff6b5e"})
+pausa(102, 8.0)
+fx(102, None, "prof_henrique", 2, atraso=-7.2, arquivo=str(AQUI / "vozes" / "limpas_escolhidas" / "prof_cel.wav"))   # 16/11: a mensagem do professor chega e dá tempo de ler ANTES de "Mas Mateus já tinha guardado o celular"
 C(103, clipe("V09_A", cam="CAM 01 - CORREDOR", hora="02:44:52"))
 C(104, cctv(zoom(IA("H10", 2), (1.0, 1.03)), "CAM 01 - CORREDOR", "02:45:03"))
 C(105, cctv(zoom(IA("H10", 2), (1.04, 1.1), ((0.5, 0.45), (0.5, 0.4))), "CAM 01 - CORREDOR", "02:45:09"))
