@@ -29,6 +29,7 @@ function carregarImg(src) {
 
 // ------------------------------------------------------------------ preparação
 window.preparar = async function (dados) {
+  if (dados.look) prepararLook(dados.look);
   D = dados;
   cv.width = D.W; cv.height = D.H;
   const fams = [D.tema.fonte_titulo, D.tema.fonte_ui, D.tema.fonte_papel, D.tema.fonte_texto, "Cinzel", "Special Elite", "Anton", "Yuji Syuku", "Shippori Mincho", "Nanum Brush Script", "Nanum Myeongjo", "Moul", "Noto Serif Khmer", "Noto Serif Thai"];
@@ -1614,6 +1615,7 @@ function quadroSinc(t) {
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
     cenas(t);
+    aplicarLook();
     const J = D.abertura_janela || (D.abertura_fim ? [0, D.abertura_fim] : null);
     if (!(J && t >= J[0] && t < J[1])) {
       if (!(D.cta && t >= D.cta.t0)) legendas(t);
@@ -1658,3 +1660,42 @@ function quadroSinc(t) {
   const f = Math.min(lin(t, 0, 0.35), 1 - lin(t, D.duracao - 0.6, 0.6));
   if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
 };
+
+// ------------------------------------------------------------------ LOOK DE CINEMA (16/11, pesquisa do motor)
+// Cor de filme por episódio, aplicada no quadro ANTES das legendas/título (eles não são tingidos nem brilham):
+// curvas por canal (split toning: sombras frias, luzes quentes…), saturação, e HALAÇÃO (o brilho avermelhado em volta
+// das luzes fortes do filme), feita numa cópia 1/8 desfocada — barato. D.look = {preset, forca, halacao, curvas?, sat?}
+const LOOKS = {   // tabelas 0→1 por canal (feComponentTransfer "table"), 5 pontos
+  noite_fria: { r: "0 0.20 0.46 0.73 0.98", g: "0.02 0.24 0.50 0.76 0.98", b: "0.07 0.31 0.56 0.78 0.95", sat: 0.86 },
+  vela: { r: "0.01 0.26 0.54 0.80 1", g: "0.01 0.23 0.49 0.74 0.95", b: "0.04 0.22 0.43 0.65 0.85", sat: 0.92 },
+  isan: { r: "0.01 0.24 0.52 0.79 1", g: "0.03 0.26 0.51 0.75 0.96", b: "0.06 0.27 0.48 0.69 0.88", sat: 0.9 },
+  arquivo: { r: "0.04 0.30 0.56 0.80 0.97", g: "0.03 0.27 0.51 0.74 0.92", b: "0.02 0.21 0.43 0.64 0.82", sat: 0.6 },
+};
+function prepararLook(L) {
+  const P = Object.assign({}, LOOKS[L.preset || "noite_fria"] || {}, L.curvas || {}, L.sat != null ? { sat: L.sat } : {});
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg"); svg.setAttribute("width", 0); svg.setAttribute("height", 0);
+  svg.style.position = "absolute";
+  svg.innerHTML = `<filter id="look_grade" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="${P.sat ?? 0.9}"/>
+      <feComponentTransfer><feFuncR type="table" tableValues="${P.r}"/><feFuncG type="table" tableValues="${P.g}"/>
+      <feFuncB type="table" tableValues="${P.b}"/></feComponentTransfer></filter>
+    <filter id="look_lim" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.4 0.4 0.2 0 0  0.4 0.4 0.2 0 0  0.4 0.4 0.2 0 0  0 0 0 1 0"/>
+      <feComponentTransfer><feFuncR type="table" tableValues="0 0 0 0 0.15 1"/><feFuncG type="table" tableValues="0 0 0 0 0.05 0.35"/>
+      <feFuncB type="table" tableValues="0 0 0 0 0.02 0.12"/></feComponentTransfer></filter>`;
+  document.body.appendChild(svg);
+}
+function aplicarLook() {
+  const L = D.look; if (!L) return;
+  const { W, H } = D, f = L.forca ?? 0.8;
+  const c = _canvas("lookTmp", W, H), g = c.getContext("2d");
+  g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
+  ctx.save(); ctx.filter = "url(#look_grade)"; ctx.globalAlpha = f; ctx.drawImage(c, 0, 0); ctx.restore();
+  if (L.halacao) {
+    const w = Math.max(8, W >> 3), h = Math.max(8, H >> 3), s = _canvas("lookHal", w, h), gs = s.getContext("2d");
+    gs.clearRect(0, 0, w, h); gs.filter = "url(#look_lim) blur(5px)"; gs.drawImage(c, 0, 0, w, h); gs.filter = "none";
+    ctx.save(); ctx.globalCompositeOperation = "screen"; ctx.globalAlpha = L.halacao; ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(s, 0, 0, W, H); ctx.restore();
+  }
+}

@@ -72,6 +72,46 @@ def roteiro():
         ERROS.append("cartão de abertura no meio do Vigia (corta e volta) — use titulo_ep (título ao lado do Vigia)")
 
 
+def transicoes(mp4, t):
+    """16/11 (rascunho 1 do Ep. 10: "fica uma palavra da fala do Vigia junto na legenda do personagem e falta quando ele
+    volta a falar"): em cada volta da fala de personagem para a narração, o Whisper ouve os 7 s em volta e confere se a
+    1ª palavra da narração seguinte está NO ÁUDIO no instante em que a legenda dela entra (±0,6 s)."""
+    sys.path.insert(0, str(AQUI))
+    try:
+        import falas as F
+    except ImportError:
+        return
+    from gerar import tokens
+    import numpy as np
+    from faster_whisper import WhisperModel
+    fl, pers = F.ler()[0], F.ler()[1]
+    pal = t.get("palavras") or []
+    ini, k = [], 0
+    for f in fl:
+        ini.append(k); k += len(tokens(f))
+    if k > len(pal):
+        return
+    modelo = None
+    for i in sorted(pers):
+        if i + 1 >= len(fl) or (i + 1) in pers:
+            continue
+        w = pal[ini[i + 1]]; alvo = norm(w[0]); t0 = w[1]
+        a = max(0.0, t0 - 4.0)
+        x = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{a:.2f}", "-t", "7", "-i", str(mp4), "-vn", "-ac", "1",
+                                          "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout, np.float32)
+        modelo = modelo or WhisperModel("small", compute_type="int8")
+        seg, _ = modelo.transcribe(x, language="pt", word_timestamps=True)
+        ouv = [(norm(o.word).strip(), a + o.start) for s_ in seg for o in s_.words]
+        perto = [tt for ww, tt in ouv if ww == alvo or (len(alvo) > 3 and ww.startswith(alvo[:4]))]
+        if not perto:
+            AVISOS.append(f"fala {i + 1} (depois do personagem): não ouvi \"{w[0]}\" perto de {int(t0 // 60)}:{t0 % 60:04.1f} — conferir de ouvido")
+            continue
+        h = min(perto, key=lambda tt: abs(tt - t0))
+        if abs(h - t0) > 0.6:
+            ERROS.append(f"fala {i + 1}: \"{w[0]}\" soa em {h:.1f}s mas a legenda entra em {t0:.1f}s — palavra presa na fala anterior?")
+    print(f"transições personagem → narração conferidas: {sum(1 for i in pers if i + 1 < len(fl) and (i + 1) not in pers)}")
+
+
 def video(mp4, log=None):
     from PIL import Image, ImageDraw
     t = json.load(open(str(mp4) + ".tempos.json"))
@@ -134,6 +174,7 @@ def video(mp4, log=None):
             if any(abs(tt - o) < 1.2 for o in obt):
                 continue
             ERROS.append(f"piscada em {int(tt // 60)}:{tt % 60:04.1f} (quadro diferente dos vizinhos) — olhar quadro a quadro")
+    transicoes(mp4, t)
     longos = sum(1 for k in range(len(db)) if db[k] < -38)
     print(f"trechos de 0,5 s muito baixos (< -38 dB): {longos}")
     if log and Path(log).exists():

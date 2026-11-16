@@ -763,6 +763,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
          "legenda_y": leg.get("y", 1190 if H > W else H - 92), "legenda_tam": leg.get("tamanho", 56 if H > W else 50),
          "chuva": roteiro.get("chuva", 0), "grao": roteiro.get("grao", 0.16), "cintilar": roteiro.get("cintilar", 0),
          "vigia_padrao": roteiro.get("vigia_padrao", True),  # False: Vigia só nas cenas com "com_vigia"/"vigia"
+         "look": roteiro.get("look"),   # 16/11: cor de cinema (motor.js aplicarLook)
          "cenas": [], "poses": [], "legendas": [], "escuros": []}
     plano = {"ambientes": [], "musica": roteiro.get("musica"), "trilhas": [], "efeitos": [], "abafar": [], "quedas": [],
              # com vinheta final, a música-assinatura toca até o último quadro (some junto com a imagem)
