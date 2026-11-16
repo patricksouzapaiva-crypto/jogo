@@ -248,10 +248,8 @@ C(5, vigia((1.0, 1.04)))
 saida_lenta(5, 5.4, dur=2.2)
 batidas[5]["cena"].update({"antecipar": 7.2, "antecipar_fixo": True})   # o título aparece sobre o Vigia
 fx(5, None, "ep10_gongo", -18, atraso=-6.2)
-C(6, vigia((1.0, 1.05)))
-C(7, vigia((1.03, 1.07)))
+# 6–7 continuam na cena do Vigia (16/11: troca Vigia→Vigia fazia um "fantasma" dele)
 C(8, c3(IA("T01", 2), "entrar", (0.5, 0.55), 0.9, 0.2))
-C(9, filme("medium_isan"))
 C(10, filme("arq_templo"))
 C(11, ficha("ศาสนาผี · Satsana Phi\nReligião animista dos espíritos da Tailândia", "Satsana Phi"))
 C(12, c3(IA("C1_02", 1), "entrar", (0.6, 0.45), 0.9, 0.2, atmos={"neblina": 0.3}))
@@ -344,7 +342,6 @@ pausa(62, 0.6); pausa(66, 0.6); pausa(67, 1.2)
 
 # ================================================================ APARTE — Vigia: a hospedagem
 C(67, vigia((1.0, 1.04)))
-C(70, vigia((1.03, 1.08), ((0.5, 0.5), (0.48, 0.48))))
 C(71, c3(IA("G02", 1), "entrar", (0.42, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
 C(72, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
 C(73, zoom(IA("C2_03", 2), (1.0, 1.06), ((0.6, 0.45), (0.6, 0.42))))
@@ -399,7 +396,8 @@ C(99, zoom(IA("H07", 2), (1.0, 1.06), ((0.75, 0.5), (0.76, 0.48))))
 C(100, zoom(IA("H13", 1), (1.0, 1.08), ((0.65, 0.55), (0.66, 0.55))))
 chat(101, {"de": "Mateus", "tipo": "audio", "duracao": "0:11", "hora": "02:43", "apos": 0.2})
 chat(102, {"de": "Prof. Henrique", "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG", "hora": "02:44",
-           "apos": 0.3, "cor": "#ff6b5e"})
+           "apos": -2.6, "cor": "#ff6b5e"})
+pausa(102, 3.2)   # 16/11: a mensagem do professor chega e dá tempo de ler ANTES de "Mas Mateus já tinha guardado o celular"
 C(103, clipe("V09_A", cam="CAM 01 - CORREDOR", hora="02:44:52"))
 C(104, cctv(zoom(IA("H10", 2), (1.0, 1.03)), "CAM 01 - CORREDOR", "02:45:03"))
 C(105, cctv(zoom(IA("H10", 2), (1.04, 1.1), ((0.5, 0.45), (0.5, 0.4))), "CAM 01 - CORREDOR", "02:45:09"))
@@ -464,7 +462,7 @@ roteiro = {
     "ambiente_inicial": [{"som": "ep10_mata_noite", "volume_db": -24}],
     "musica": TRILHA,
     "titulo_ep": {"antes_da_batida": 5, "linhas": ["O VIGIA · EPISÓDIO 10", "POR QUE O TERROR TAILANDÊS", "NUNCA DEIXA", "VOCÊ EM PAZ?"],
-                  "vermelho": "EM PAZ?", "duracao": 5.6, "folga": 1.0, "x": 0.52},
+                  "vermelho": "EM PAZ?", "duracao": 5.6, "folga": 1.0, "centro": True},
     "cta": {"titulo": "Não pergunte quem é.", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
             "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite",
@@ -533,6 +531,8 @@ def garantir_leitura():
 def aplicar_ajuste_pausas():
     arq = AQUI / "audio" / "ajuste_pausas.json"
     for k, d in (json.load(open(arq)) if arq.exists() else {}).items():
+        if int(k) in (102,):   # 16/11: a pausa da mensagem do professor é de leitura, não é compensação
+            continue
         b = batidas[int(k)]
         if b.get("pausa_antes_s"):
             b["pausa_antes_s"] = round(max(0.3, b["pausa_antes_s"] + d), 2)

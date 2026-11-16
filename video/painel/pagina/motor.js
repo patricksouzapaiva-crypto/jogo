@@ -1458,7 +1458,11 @@ function legendas(t) {
     L.linhas.forEach((linha, k) => {
       const pal = linha.split(" ");
       const larg = ctx.measureText(linha).width;
-      const ciL = cenaAtual(t), cxL = (ciL >= 0 && D.cenas[ciL].vigia && D.W > D.H) ? D.W * 0.64 : D.W / 2;
+      // 16/11: a legenda só sai do lado do Vigia quando a cena seguinte já terminou de entrar (antes ela pulava de
+      // lugar no instante do corte e a 1ª letra ficava cortada)
+      const ciL = cenaAtual(t), cL = ciL >= 0 ? D.cenas[ciL] : {}, aL = ciL > 0 ? D.cenas[ciL - 1] : null;
+      const vL = cL.vigia || (aL && aL.vigia && cL.entrada && cL.entrada !== "corte" && t < cL.t0 + (cL.duracao_entrada || 0.5));
+      const cxL = (vL && D.W > D.H) ? D.W * 0.64 : D.W / 2;
       let x = cxL - larg / 2;
       for (const p of pal) {
         const dest = L.destaques.includes(norm(p));
@@ -1563,25 +1567,40 @@ function tituloEpisodio(t) {
   const T = D.titulo_ep; if (t < T.t0 || t > T.t1 + 1.2) return;
   const { W, H } = D, a = Math.min(easeOut(lin(t, T.t0, 1.4)), 1 - easeInOut(lin(t, T.t1, 1.2)));
   if (a <= 0) return;
-  const x = W * (T.x ?? 0.56);
+  // 16/11 (Ep. 10: "palavras cortadas, tem que centralizar"): T.centro = título no meio da tela; e SEMPRE o tamanho
+  // da letra diminui até a linha mais larga caber (nunca mais palavra saindo da tela)
+  const centro = !!T.centro, x = centro ? W / 2 : W * (T.x ?? 0.56);
   ctx.save(); ctx.globalAlpha = a;
-  const g = ctx.createLinearGradient(x - W * 0.08, 0, W, 0);      // escurece só atrás do texto
-  g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(0.25, "rgba(0,0,0,.55)"); g.addColorStop(1, "rgba(0,0,0,.7)");
-  ctx.fillStyle = g; ctx.fillRect(x - W * 0.08, 0, W, H);
-  const [l0, ...grandes] = T.linhas, tam = Math.round(H * 0.105);
-  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  if (centro) { ctx.fillStyle = "rgba(0,0,0,.62)"; ctx.fillRect(0, 0, W, H); }
+  else {
+    const g = ctx.createLinearGradient(x - W * 0.08, 0, W, 0);      // escurece só atrás do texto
+    g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(0.25, "rgba(0,0,0,.55)"); g.addColorStop(1, "rgba(0,0,0,.7)");
+    ctx.fillStyle = g; ctx.fillRect(x - W * 0.08, 0, W, H);
+  }
+  const [l0, ...grandes] = T.linhas;
+  const cabe = centro ? W * 0.86 : W * 0.96 - x;
+  let tam = Math.round(H * 0.105);
+  ctx.font = `400 ${tam}px "Anton", sans-serif`;
+  const larg = Math.max(...grandes.map((l) => ctx.measureText(l).width));
+  if (larg > cabe) tam = Math.floor(tam * cabe / larg);
+  const y0 = centro ? H * 0.5 - (grandes.length * tam * 1.05) / 2 + tam * 0.75 : H * 0.52;
+  ctx.textAlign = centro ? "center" : "left"; ctx.textBaseline = "alphabetic";
   ctx.font = `700 ${Math.round(H * 0.026)}px "Inter", sans-serif`; ctx.fillStyle = "#c9b9a0";
-  ctx.fillText(l0.split("").join(" "), x, H * 0.38);
-  ctx.fillStyle = "#b51b1b"; ctx.fillRect(x, H * 0.405, W * 0.3 * easeOut(lin(t, T.t0 + 0.4, 1.2)), Math.max(2, H * 0.004));
+  const yl = centro ? y0 - tam * 1.15 : H * 0.38;
+  ctx.fillText(l0.split("").join(" "), x, yl);
+  const lb = W * 0.3 * easeOut(lin(t, T.t0 + 0.4, 1.2));
+  ctx.fillStyle = "#b51b1b"; ctx.fillRect(centro ? x - lb / 2 : x, yl + H * 0.025, lb, Math.max(2, H * 0.004));
   ctx.font = `400 ${tam}px "Anton", sans-serif`; ctx.shadowColor = "rgba(0,0,0,.9)"; ctx.shadowBlur = 24;
+  ctx.textAlign = "left";
   grandes.forEach((l, k) => {
-    const y = H * 0.52 + k * tam * 1.05, ent = easeOut(lin(t, T.t0 + 0.6 + k * 0.5, 1.0));
+    const y = y0 + k * tam * 1.05, ent = easeOut(lin(t, T.t0 + 0.6 + k * 0.5, 1.0));
     ctx.globalAlpha = a * ent;
+    const x0 = centro ? x - ctx.measureText(l).width / 2 : x;
     const v = T.vermelho && l.includes(T.vermelho) ? T.vermelho : null;
     if (v) {
-      const antes = l.slice(0, l.indexOf(v)); ctx.fillStyle = "#f2ead8"; ctx.fillText(antes, x, y);
-      ctx.fillStyle = "#d4302a"; ctx.fillText(v, x + ctx.measureText(antes).width, y);
-    } else { ctx.fillStyle = "#f2ead8"; ctx.fillText(l, x, y); }
+      const antes = l.slice(0, l.indexOf(v)); ctx.fillStyle = "#f2ead8"; ctx.fillText(antes, x0, y);
+      ctx.fillStyle = "#d4302a"; ctx.fillText(v, x0 + ctx.measureText(antes).width, y);
+    } else { ctx.fillStyle = "#f2ead8"; ctx.fillText(l, x0, y); }
   });
   ctx.restore();
 }
@@ -1613,12 +1632,15 @@ function quadroSinc(t) {
       const saindo = semV && ehV(cA) && pF < 1;                          // saindo do Vigia para outra cena
       if (saindo) aV = 1 - easeInOut(pF);
       if ((!semV || saindo) || (D.cta && t >= D.cta.t0)) {
-        const desenhaV = () => (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+        // 16/11 (Ep. 10, "o Vigia aparece pequeno no canto numa piscada"): no começo da saída (aV ainda ~1) ele era
+        // desenhado SEM a troca de cena abaixo — a cena atual já não é a do abrigo, e ele ia para o canto pequeno
+        const desenhaV0 = () => (D.avatar.tipo === "corpo" ? vigiaCorpo : vigiaCanto)(t);
+        const desenhaV = () => { if (!saindo) return desenhaV0(); const sv = D.cenas[ciT]; D.cenas[ciT] = cA; desenhaV0(); D.cenas[ciT] = sv; };
         if (aV >= 0.999 || (D.cta && t >= D.cta.t0)) desenhaV();
         else if (aV > 0.001) {
           const VC = _canvas("camV", D.W, D.H), sC = ctx; VC.getContext("2d").clearRect(0, 0, D.W, D.H);
           ctx = VC.getContext("2d"); ctx.save();
-          if (saindo) { const sv = D.cenas[ciT]; D.cenas[ciT] = cA; desenhaV(); D.cenas[ciT] = sv; } else desenhaV();
+          desenhaV();
           ctx.restore(); ctx = sC;
           ctx.save(); ctx.globalAlpha = aV; ctx.drawImage(VC, 0, 0); ctx.restore();
         }

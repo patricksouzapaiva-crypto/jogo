@@ -248,6 +248,14 @@ def inserir_silencios(wav, tempos, insercoes, destino):
         cand = [(s0, s1) for s0, s1 in runs if s1 - s0 >= 0.06 and s1 > t_ant - 0.1 and s0 < t_prox + 0.6]
         if cand:
             s0, s1 = min(cand, key=lambda r: abs(min(r[1], t_prox + 0.6) - t_prox))
+            # 16/11 (Ep. 10, depois das falas de personagem): o início marcado da frase seguinte veio ~0,2 s tarde e o
+            # silêncio "mais perto" era o respiro entre a 1ª e a 2ª palavra ("Mas | Mateus já…") — a pausa entrava no
+            # meio da frase: a 1ª palavra ficava grudada na fala anterior e sumia da seguinte. Se existe uma pausa de
+            # verdade (bem mais longa) na janela, é ela.
+            dur = lambda r: min(r[1], t_prox + 0.6) - max(r[0], t_ant - 0.1)
+            longa = max(cand, key=dur)
+            if dur(longa) >= 0.25 and dur(longa) > 2 * dur((s0, s1)):
+                s0, s1 = longa
             t = (max(s0, t_ant - 0.1) + min(s1, t_prox + 0.6)) / 2
         else:  # sem silêncio: o trecho de 30 ms mais quieto entre as duas palavras
             j0, j1 = int((t_ant - 0.1) * sr), int((t_prox + 0.3) * sr)
@@ -764,7 +772,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
     if te:   # 13/11 (Ep. 09): título do episódio escrito ao lado do Vigia, na pausa antes da batida (sem corte)
         t1 = rel.inicio(te["antes_da_batida"]) - te.get("folga", 1.4)
         D["titulo_ep"] = {"t0": t1 - te.get("duracao", 5.0), "t1": t1, "linhas": te["linhas"],
-                          "vermelho": te.get("vermelho"), "x": te.get("x", 0.56)}
+                          "vermelho": te.get("vermelho"), "x": te.get("x", 0.56), "centro": te.get("centro", False)}
     if ab and ab.get("antes_da_batida"):
         kb = ab["antes_da_batida"]
         t_a0, t_a1 = rel.fim(kb - 1) + 0.3 + ab.get("segurar", 0), rel.inicio(kb) - 0.3  # "segurar": a cena anterior fica

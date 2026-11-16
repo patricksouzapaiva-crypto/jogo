@@ -19,7 +19,7 @@ ARQ = "RICE FARMER IN THAILAND (1969) · PUBLIC MEDIA INC. · INTERNET ARCHIVE"
 # nome: (arquivo, [(ini, fim) ...], crédito, rótulo, recorte w:h:x:y)
 TRECHOS = {
     "kiss_krasue": ("filmes/CAP2_InhumanKiss_corte8s.mp4", [(0.0, 8.0)], KISS, "TRECHO DE FILME", None),
-    "medium_isan": ("filmes/CAP4_TheMedium_corte12s.mp4", [(0.0, 1.0), (5.2, 12.0)], MEDIUM, "TRECHO DE FILME", None),  # sem o letreiro "Isan"
+    "medium_isan": ("filmes/CAP4_TheMedium_corte12s.mp4", [(5.2, 12.0)], MEDIUM, "TRECHO DE FILME", None),  # sem o letreiro "Isan"
     "arq_canais": ("filmes/arquivo/rice_farmer_thailand_1969.mp4", [(31.0, 39.0)], ARQ, "FILME DE ARQUIVO", "480:360:80:0"),
     "arq_vila": ("filmes/arquivo/rice_farmer_thailand_1969.mp4", [(346.0, 356.0)], ARQ, "FILME DE ARQUIVO", "480:360:80:0"),
     "arq_templo": ("filmes/arquivo/rice_farmer_thailand_1969.mp4", [(421.0, 429.0)], ARQ, "FILME DE ARQUIVO", "480:360:80:0"),

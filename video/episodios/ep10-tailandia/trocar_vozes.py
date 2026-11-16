@@ -90,7 +90,7 @@ for i, chave in sorted(TROCAS.items()):
     # a fala nova NUNCA é acelerada. Se for mais longa que o espaço da antiga, o arquivo cresce — e a pausa
     # que o roteiro põe depois dela diminui o mesmo tanto (ajuste_pausas.json): o tempo do vídeo não muda.
     espaco = x1 - x0
-    sobra = len(nova) + int(0.25 * SR) - espaco
+    sobra = len(nova) + int(0.6 * SR) - espaco   # 16/11: respiro claro entre o áudio e a narração seguinte
     extra = max(0, sobra)
     bloco = np.zeros(espaco + extra, np.float32); bloco[:len(nova)] = nova
     antes = voz[cursor:x0].copy()
