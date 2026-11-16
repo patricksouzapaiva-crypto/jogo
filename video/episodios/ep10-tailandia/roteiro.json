@@ -438,7 +438,7 @@
     "som": "ep10_mata_quieta",
     "volume_db": -28
    },
-   "pausa_antes_s": 1.8
+   "pausa_antes_s": 2.8
   },
   {
    "fala": "E se você quebra o acordo com eles, nenhum templo vai conseguir fechar a porta que você abriu.",
@@ -481,7 +481,8 @@
      "antecipar": 7.6,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "tipo_cartao": true
+     "tipo_cartao": true,
+     "congelar": true
     },
     {
      "imagem": "reais_prontos/C1_01_real.jpg",
@@ -614,39 +615,21 @@
   },
   {
    "fala": "E os mais temidos de todos são os Phi Tai Hong.",
-   "cenas": [
-    {
-     "imagem": "imagens/recebidas/C1_04_variacao_2.jpg",
-     "zoom": [
-      1.05,
-      1.12
-     ],
-     "foco": [
-      [
-       0.6,
-       0.55
-      ],
-      [
-       0.62,
-       0.6
-      ]
-     ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.6,
-     "antecipar": 0.25
-    },
-    {
-     "tipo": "texto",
-     "texto": "ผีตายโหง · Phi Tai Hong\nEspíritos de morte violenta ou súbita",
-     "estilo": "maquina",
-     "vermelho": "Phi Tai Hong",
-     "cps": 40,
-     "em": "Phi"
-    }
-   ]
+   "cena": {
+    "tipo": "texto",
+    "texto": "ผีตายโหง · Phi Tai Hong\nEspíritos de morte violenta ou súbita",
+    "estilo": "maquina",
+    "vermelho": "Phi Tai Hong",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
    "fala": "São as almas de pessoas que morreram de forma violenta, repentina ou injusta.",
+   "pausa_antes_s": 3.14,
    "cena": {
     "video": "clipes/V03_A.mp4",
     "zoom": [
@@ -655,13 +638,12 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.6
    },
    "ambiente": {
     "som": "ep10_mata_noite",
     "volume_db": -26
-   },
-   "pausa_antes_s": 1.2
+   }
   },
   {
    "fala": "Um acidente na estrada, um assassinato, um afogamento sem rito fúnebre completo.",
@@ -769,7 +751,8 @@
      "antecipar": 7.6,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "tipo_cartao": true
+     "tipo_cartao": true,
+     "congelar": true
     },
     {
      "video": "filmes_prontos/arq_vila.mp4",
@@ -804,13 +787,6 @@
     "volume_db": -30,
     "continuar": true
    },
-   "ambiente": {
-    "som": "ep10_vila_caes",
-    "volume_db": -28
-   }
-  },
-  {
-   "fala": "Krasue.",
    "cena": {
     "imagem": "imagens/recebidas/C2_01_variacao_2.jpg",
     "zoom": [
@@ -829,6 +805,23 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "ambiente": {
+    "som": "ep10_vila_caes",
+    "volume_db": -28
+   }
+  },
+  {
+   "fala": "Krasue.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "กระสือ · Krasue\nEspírito noturno da cabeça flutuante",
+    "estilo": "maquina",
+    "vermelho": "Krasue",
+    "cps": 40,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
    "sons": [
@@ -842,31 +835,22 @@
      "saida": 1.5
     }
    ],
-   "pausa_antes_s": 0.6
+   "pausa_antes_s": 0.6,
+   "sem_legenda": true
   },
   {
    "fala": "Segundo as lendas mais antigas do folclore tailandês, a Krasue é uma mulher comum durante o dia, muitas vezes amaldiçoada por praticar magia negra ou quebrar um voto sagrado.",
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "กระสือ · Krasue\nEspírito noturno da cabeça flutuante",
-     "estilo": "maquina",
-     "vermelho": "Krasue",
-     "cps": 40,
-     "entrada": "fundir",
-     "duracao_entrada": 0.6,
-     "antecipar": 0.25
-    },
-    {
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "em": "mulher",
-     "video": "camera3d/C2_02_variacao_1_40f5475097_9.3.mp4"
-    }
-   ],
-   "sem_legenda": true
+   "pausa_antes_s": 3.8,
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "camera3d/C2_02_variacao_1_40f5475097_14.0.mp4"
+   }
   },
   {
    "fala": "Mas depois da meia-noite, a cabeça dela se descola do pescoço.",
@@ -1029,6 +1013,7 @@
   },
   {
    "fala": "Diferente de um fantasma que aparece no corredor, o Phi Pop é um espírito parasita ligado à feitiçaria antiga do nordeste.",
+   "pausa_antes_s": 3.8,
    "cena": {
     "zoom": [
      1.0,
@@ -1036,10 +1021,9 @@
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/C2_05_variacao_1_ffd8ca2cc0_10.3.mp4"
-   },
-   "pausa_antes_s": 1.2
+    "antecipar": 0.6,
+    "video": "camera3d/C2_05_variacao_1_ffd8ca2cc0_10.6.mp4"
+   }
   },
   {
    "fala": "Ele entra no corpo de um morador da vila sem que ninguém perceba.",
@@ -1155,7 +1139,8 @@
      "antecipar": 7.6,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "tipo_cartao": true
+     "tipo_cartao": true,
+     "congelar": true
     },
     {
      "zoom": [
@@ -1194,11 +1179,11 @@
     "continuar": true
    },
    "cena": {
-    "video": "filmes_prontos/arq_velas.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
+    "tipo": "texto",
+    "texto": "ร่างทรง · Rang Song\nLiteralmente “corpo receptor”: o médium ancestral",
+    "estilo": "maquina",
+    "vermelho": "Rang Song",
+    "cps": 40,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -1206,21 +1191,13 @@
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
-   }
+   },
+   "sem_legenda": true
   },
   {
    "fala": "Na tradição real do nordeste tailandês, um Rang Song é uma pessoa escolhida por uma divindade ancestral ou espírito protetor da família para emprestar o próprio corpo em rituais de cura e proteção.",
+   "pausa_antes_s": 3.8,
    "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "ร่างทรง · Rang Song\nLiteralmente “corpo receptor”: o médium ancestral",
-     "estilo": "maquina",
-     "vermelho": "Rang Song",
-     "cps": 40,
-     "entrada": "fundir",
-     "duracao_entrada": 0.6,
-     "antecipar": 0.25
-    },
     {
      "zoom": [
       1.0,
@@ -1228,20 +1205,27 @@
      ],
      "entrada": "obturador",
      "duracao_entrada": 0.55,
-     "em": "escolhida",
-     "video": "camera3d/C3_02_variacao_1_6a13270748_11.5.mp4"
+     "antecipar": 0.55,
+     "video": "camera3d/C3_02_variacao_1_6a13270748_14.1.mp4"
+    },
+    {
+     "video": "filmes_prontos/arq_velas.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "rituais"
     }
    ],
    "sons": [
     {
-     "em": "escolhida",
+     "em": null,
      "som": "ep10_obturador",
      "volume_db": -15,
      "depois": false,
-     "atraso": -0.15
+     "atraso": -0.3
     }
-   ],
-   "sem_legenda": true
+   ]
   },
   {
    "fala": "Essa escolha quase sempre passa pela linhagem materna.",
@@ -1558,7 +1542,8 @@
      "antecipar": 7.6,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "tipo_cartao": true
+     "tipo_cartao": true,
+     "congelar": true
     },
     {
      "zoom": [
@@ -1614,27 +1599,27 @@
   },
   {
    "fala": "Dirigido pelo tailandês Banjong Pisanthanakun e produzido pelo sul-coreano Na Hong-jin, o longa foi filmado na província montanhosa de Loei, no coração de Isan.",
+   "pausa_antes_s": 4.4,
    "cenas": [
-    {
-     "video": "filmes_prontos/medium_isan.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "entrada": "fundir",
-     "duracao_entrada": 0.6,
-     "antecipar": 0.6
-    },
     {
      "imagem": "reais_prontos/T_phuhinrongkla_02.jpg",
      "zoom": [
       1.0,
       1.035
      ],
-     "em": "coração"
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "video": "filmes_prontos/medium_isan.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "longa"
     }
-   ],
-   "pausa_antes_s": 1.8
+   ]
   },
   {
    "fala": "Em vez de monstros digitais ou sustos fáceis, o filme tratou o folclore de Isan como um registro antropológico frio.",
@@ -1748,6 +1733,7 @@
      1.0,
      1.03
     ],
+    "congelar": true,
     "efeitos": {
      "cctv": {
       "cam": "CAM 03 - QUARTO",
@@ -3386,6 +3372,7 @@
      1.0,
      1.02
     ],
+    "congelar": true,
     "efeitos": {
      "cctv": {
       "cam": "CAM 04 - QUARTO",

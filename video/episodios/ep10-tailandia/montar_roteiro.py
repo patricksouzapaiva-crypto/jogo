@@ -195,7 +195,7 @@ def capitulo(i, n, cena, em):
     """Cartão do capítulo = o PHA YANT 3D (cartoes.py): vídeo pronto de 7,6 s, com a música do capítulo e o pano.
     A trilha de fundo sai durante o cartão e VOLTA de onde estaria (continuar) na fala seguinte."""
     cap = {"video": f"cartoes/cap{n}.mp4", "zoom": [1.0, 1.0], "antecipar": CARTAO, "antecipar_fixo": True,
-           "entrada": "corte", "tipo_cartao": True}
+           "entrada": "corte", "tipo_cartao": True, "congelar": True}   # nunca desacelerar: o som do cartão é separado
     cena = dict(cena); cena["entrada"] = "fundir"; cena["duracao_entrada"] = 0.9
     C(i, cap, (cena, em))
     pausa(i, CARTAO - 0.2)
@@ -257,7 +257,7 @@ C(11, ficha("ศาสนาผี · Satsana Phi\nReligião animista dos espír
 C(12, c3(IA("C1_02", 1), "entrar", (0.6, 0.45), 0.9, 0.2, atmos={"neblina": 0.3}))
 C(13, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
 amb(5, "nenhum"); amb(8, "ep10_arrozal_noite", -28); amb(11, "nenhum"); amb(12, "ep10_mata_quieta", -28); amb(13, "nenhum")
-pausa(9, 0.4); pausa(11, 0.6); pausa(12, 0.6); pausa(14, 0.8)
+pausa(9, 0.4); pausa(11, 0.6); pausa(12, 1.0); pausa(12, 0.6); pausa(14, 0.8)
 
 # ================================================================ CAPÍTULO 1 — o aluguel da terra e os famintos
 capitulo(14, 1, real("C1_01_real"), "Se")
@@ -268,7 +268,8 @@ C(17, real("C1_sanphraphum_08"))
 C(18, c3(IA("C1_03", 1), "entrar", (0.55, 0.5), 0.8, 0.2), (real("C1_oferenda_01"), "oferecendo"))
 C(19, zoom(IA("C1_02", 2), (1.0, 1.07), ((0.5, 0.5), (0.55, 0.45))))
 C(20, zoom(IA("C1_04", 1), (1.0, 1.08), ((0.5, 0.5), (0.65, 0.4))))
-C(21, zoom(IA("C1_04", 2), (1.05, 1.12), ((0.6, 0.55), (0.62, 0.6))), (ficha("ผีตายโหง · Phi Tai Hong\nEspíritos de morte violenta ou súbita", "Phi Tai Hong"), "Phi"))
+C(21, ficha("ผีตายโหง · Phi Tai Hong\nEspíritos de morte violenta ou súbita", "Phi Tai Hong"))
+pausa(22, 2.4)
 C(22, clipe("V03_A"))
 C(23, clipe("V03_B"))
 C(24, c3(IA("C1_05", 2), "entrar", (0.6, 0.55), 1.0, 0.3, atmos={"neblina": 0.4}))
@@ -281,8 +282,10 @@ pausa(17, 0.5); pausa(19, 0.4); pausa(25, 0.6); pausa(27, 0.8); pausa(28, 0.8)
 
 # ================================================================ CAPÍTULO 2 — as criaturas da noite
 capitulo(28, 2, filme("arq_vila"), "Quando")
-C(30, zoom(IA("C2_01", 2), (1.0, 1.1), ((0.6, 0.4), (0.58, 0.35))))
-C(31, ficha("กระสือ · Krasue\nEspírito noturno da cabeça flutuante", "Krasue"), (c3(IA("C2_02", 1), "entrar", (0.5, 0.45), 0.8, 0.2), "mulher"))
+C(29, zoom(IA("C2_01", 2), (1.0, 1.1), ((0.6, 0.4), (0.58, 0.35))))
+C(30, ficha("กระสือ · Krasue\nEspírito noturno da cabeça flutuante", "Krasue"))
+pausa(31, 2.6)
+C(31, c3(IA("C2_02", 1), "entrar", (0.5, 0.45), 0.8, 0.2))
 C(32, zoom(IA("C2_02", 2), (1.0, 1.1), ((0.5, 0.5), (0.25, 0.55))))
 C(33, zoom(IA("C2_03", 1), (1.0, 1.06), ((0.7, 0.4), (0.72, 0.38))), (filme("kiss_krasue"), "arrastando"))
 C(34, obt(real("C2_01_real")))
@@ -290,6 +293,7 @@ obt_som(34)
 C(35, zoom(IA("C2_04", 1), (1.0, 1.08), ((0.5, 0.5), (0.52, 0.55))))
 C(36, zoom(IA("C2_02", 1), (1.06, 1.12), ((0.7, 0.45), (0.72, 0.42))))
 C(37, ficha("ผีปอบ · Phi Pop\nEspírito parasita devorador de órgãos", "Phi Pop"))
+pausa(38, 2.6)
 C(38, c3(IA("C2_05", 1), "entrar", (0.5, 0.6), 0.9, 0.2))
 C(39, zoom(IA("C2_05", 2), (1.0, 1.06), ((0.6, 0.55), (0.62, 0.55))))
 C(40, filme("arq_canais"))
@@ -302,10 +306,10 @@ pausa(30, 0.6); pausa(33, 0.4); pausa(35, 0.8); pausa(37, 0.6); pausa(41, 0.6); 
 
 # ================================================================ CAPÍTULO 3 — os corpos emprestados e a magia proibida
 capitulo(43, 3, c3(IA("C3_01", 1), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"poeira": 0.3}), "Para")
-C(44, filme("arq_velas"))
-C(45, ficha("ร่างทรง · Rang Song\nLiteralmente “corpo receptor”: o médium ancestral", "Rang Song"),
-  (obt(c3(IA("C3_02", 1), "entrar", (0.5, 0.45), 0.8, 0.2)), "escolhida"))
-obt_som(45, "escolhida")
+C(44, ficha("ร่างทรง · Rang Song\nLiteralmente “corpo receptor”: o médium ancestral", "Rang Song"))
+pausa(45, 2.6)
+C(45, obt(c3(IA("C3_02", 1), "entrar", (0.5, 0.45), 0.8, 0.2)), (filme("arq_velas"), "rituais"))
+obt_som(45)
 C(46, zoom(IA("C3_02", 2), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))))
 C(47, filme("arq_oferendas"))
 C(48, zoom(IA("C3_03", 1), (1.0, 1.1), ((0.4, 0.55), (0.38, 0.55))))
@@ -328,11 +332,12 @@ pausa(48, 0.6); pausa(50, 0.6); pausa(55, 0.8); pausa(59, 0.4); pausa(60, 1.0)
 # ================================================================ CAPÍTULO 4 — quando a câmera entrou na floresta
 capitulo(60, 4, c3(IA("C4_01", 1), "entrar", (0.45, 0.45), 0.9, 0.3, atmos={"neblina": 0.4}), "Em")
 C(61, ficha("ร่างทรง · Rang Song (The Medium)\n2021 · Dir. Banjong Pisanthanakun", "The Medium"))
-C(62, filme("medium_isan"), (real("T_phuhinrongkla_02"), "coração"))
+pausa(62, 2.6)
+C(62, real("T_phuhinrongkla_02"), (filme("medium_isan"), "longa"))
 C(63, real("C4_phitakhon_03"))
 C(64, clipe("V05_A", cam="CAM 03 - QUARTO", hora="03:02:11"), (cctv(zoom(IA("C4_02", 1), (1.0, 1.08), ((0.6, 0.55), (0.62, 0.55))), "CAM 03 - QUARTO", "03:02:19"), "corpo"))
 C(65, filme("arq_oferendas", video_inicio=2.0), (filme("arq_velas"), "monges"))
-C(66, clipe("V05_B", cam="CAM 03 - QUARTO", hora="03:41:56"))
+C(66, clipe("V05_B", cam="CAM 03 - QUARTO", hora="03:41:56", congelar=True))
 amb(61, "nenhum"); amb(64, "ep10_mata_quieta", -28); amb(65, "nenhum"); amb(66, "ep10_mata_quieta", -28)
 fx(64, None, "ep10_cctv_estatica", -26, ate=1.0, saida=0.5)
 pausa(62, 0.6); pausa(66, 0.6); pausa(67, 1.2)
@@ -406,7 +411,7 @@ chat(108, {"de": "Mateus", "tipo": "foto", "imagem": IA("H17", 1), "hora": "06:1
      {"de": "Mateus", "tipo": "video", "imagem": IA("H18", 4), "hora": "06:12", "apos": 2.2})
 C(109, obt(zoom(IA("H17", 1), (1.0, 1.06), ((0.4, 0.55), (0.38, 0.55)))))
 obt_som(109)
-C(110, clipe("V10_B", ate=3.2, cam="CAM 04 - QUARTO", hora="06:12:01", queda=3.0, z=(1.0, 1.02)))
+C(110, clipe("V10_B", ate=3.2, cam="CAM 04 - QUARTO", hora="06:12:01", queda=3.0, z=(1.0, 1.02), congelar=True))
 C(111, c3(IA("T01", 1), "entrar", (0.5, 0.5), 0.8, 0.2, atmos={"neblina": 0.4}))
 C(112, zoom(IA("G01", 2), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.48))))
 C(113, c3(IA("C2_02", 2), "entrar", (0.12, 0.55), 0.9, 0.3, atmos={"neblina": 0.4}))
