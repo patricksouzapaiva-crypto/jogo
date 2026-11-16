@@ -1438,6 +1438,21 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
         ouvidas = transcrever(wav_t, texto, pedacos=roteiro.get("transcrever_pedacos", 0))   # 14/11: ver transcrever()
         tempos, casadas = alinhar(palavras, ouvidas)
         tempos = ajustar_inicios(wav_t, tempos)
+        if roteiro.get("alinhamento_forcado"):
+            # 16/11 (pesquisa do motor): as palavras encaixadas no TEXTO do roteiro (wav2vec2 PT, Viterbi CTC) — no
+            # meio das frases acerta onde o Whisper errava (17 × 4 nos casos de discordância do Ep. 10); o início de
+            # cada frase fica com o ajuste pelo silêncio real (que já acerta ~35 ms em média)
+            sys.path.insert(0, str(AQUI / "ferramentas"))
+            import alinhar_forcado
+            grupos, k = [], 0
+            for b in batidas:
+                n = len(tokens(b["fala"])); grupos.append((k, k + n)); k += n
+            novos = alinhar_forcado.forcar(wav_t, palavras, tempos, grupos)
+            for i0, i1 in grupos:
+                if i1 > i0:
+                    novos[i0] = (tempos[i0][0], max(tempos[i0][0] + 0.05, novos[i0][1]))
+            tempos = novos
+            print("    alinhamento forçado ao texto: ok")
     print(f"    {casadas:.0%} das palavras reconhecidas")
     if casadas < 0.7:
         print("    aviso: narração muito diferente do roteiro (a voz pode ter lido instruções ou pulado trechos)")
