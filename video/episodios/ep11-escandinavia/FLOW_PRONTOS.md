@@ -20,10 +20,11 @@ Static high-angle monochrome infrared CCTV security camera footage inside the da
 Frantic handheld POV camera movement stumbling forward through deep snow in a pitch-black Scandinavian forest during a blizzard. The erratic flashlight beam bounces wildly across snow-laden pine trunks and swirling frost. No face visible, no text.
 ```
 
-## V06 ← V06_H11.png (História — confronto com a criatura)
+## V06 ← V06_H11.png (História — confronto com a criatura) — v2: a luz vem da câmera, a criatura não segura nada
 ```
-Trembling handheld smartphone flashlight footage in the snowy pine forest clearing at night. Heavy digital grain and falling snow. Standing directly ahead in the harsh flashlight beam, the towering four-meter-tall grotesque pagan forest deity with exposed ribs, dozens of thin dangling arms, and massive antlers draped in rotting cloth slowly lowers its colossal antlers forward while remaining completely faceless with a pitch-black void under its skull. No face visible, no text.
+Shaky first-person handheld footage at night in a snowy pine forest clearing. The only light comes from the camera itself: a harsh white beam shining forward from the viewer's position, lighting the snow and the creature from the front, with the edges of the frame falling into darkness. Heavy digital grain, falling snow. Standing directly ahead, a towering four-meter-tall grotesque pagan forest deity with exposed ribs, dozens of thin dangling empty-handed arms, and massive antlers draped in rotting cloth slowly lowers its colossal antlers forward toward the camera. The creature holds nothing and carries no light; its long bony fingers are open and empty. It remains completely faceless, a pitch-black void under its skull. Nobody else in frame, no visible lamp or device, no text.
 ```
+Se ainda aparecer lanterna: trocar "a harsh white beam shining forward from the viewer's position" por "bright white light falls on it from the front, as if from the viewer's eyes".
 
 ## V03 ← C4_01 (ainda falta a imagem)
 ```
