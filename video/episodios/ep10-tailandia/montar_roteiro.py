@@ -401,7 +401,8 @@ chat(102, {"de": "Prof. Henrique", "tipo": "audio", "duracao": "0:06", "hora": "
      {"de": "Prof. Henrique", "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG", "hora": "02:44",
       "apos": -1.4, "cor": "#ff6b5e"})
 pausa(102, 8.0)
-fx(102, None, "prof_henrique", 2, atraso=-7.2, arquivo=str(AQUI / "vozes" / "limpas_escolhidas" / "prof_cel.wav"))   # 16/11: a mensagem do professor chega e dá tempo de ler ANTES de "Mas Mateus já tinha guardado o celular"
+(batidas[102].get("cena") or batidas[102]["cenas"][0]).update({"antecipar": 8.0, "antecipar_fixo": True, "entrada": "corte"})   # a tela do grupo já está lá quando o áudio do professor chega
+fx(102, None, "prof_henrique", 0, atraso=-7.2, arquivo=str(AQUI / "vozes" / "limpas_escolhidas" / "prof_cel.wav"))   # 16/11: a mensagem do professor chega e dá tempo de ler ANTES de "Mas Mateus já tinha guardado o celular"
 C(103, clipe("V09_A", cam="CAM 01 - CORREDOR", hora="02:44:52"))
 C(104, cctv(zoom(IA("H10", 2), (1.0, 1.03)), "CAM 01 - CORREDOR", "02:45:03"))
 C(105, cctv(zoom(IA("H10", 2), (1.04, 1.1), ((0.5, 0.45), (0.5, 0.4))), "CAM 01 - CORREDOR", "02:45:09"))

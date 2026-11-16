@@ -562,10 +562,14 @@ def blocos_legenda(rel: Relogio, max_chars=26):
         atual.append(i)
         txt = " ".join(rel.palavras[j] for j in atual)
         prox = rel.palavras[i + 1] if i + 1 < len(rel.palavras) else None
-        fim_frase = w[-1] in ".!?" or w.endswith("…")
-        pausa = w[-1] in ",;:" or w.endswith("...")
+        # 16/11 (Ep. 10): fala entre aspas termina em ' bem…" ' — a aspa escondia o fim da frase e a legenda do
+        # personagem grudava no começo da narração seguinte; e um silêncio longo (> 1 s) sempre quebra a legenda
+        wl = w.rstrip('"”’)\'')
+        fim_frase = bool(wl) and (wl[-1] in ".!?" or wl.endswith("…"))
+        pausa = bool(wl) and (wl[-1] in ",;:" or wl.endswith("..."))
         cabe_prox = prox is not None and len(txt) + 1 + len(prox) <= lim
-        if fim_frase or prox is None or not cabe_prox or (pausa and len(txt) > max_chars * 0.9):
+        silencio = prox is not None and rel.t[i + 1][0] - rel.t[i][1] > 1.0
+        if fim_frase or silencio or prox is None or not cabe_prox or (pausa and len(txt) > max_chars * 0.9):
             blocos.append(atual)
             atual = []
     saida = []

@@ -2909,7 +2909,7 @@
     {
      "em": null,
      "som": "prof_henrique",
-     "volume_db": 2,
+     "volume_db": 0,
      "depois": false,
      "atraso": -7.2,
      "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/vozes/limpas_escolhidas/prof_cel.wav"
@@ -2977,6 +2977,8 @@
       "cor": "#ff6b5e"
      }
     ],
+    "antecipar": 8.0,
+    "antecipar_fixo": true,
     "entrada": "corte"
    },
    "pausa_antes_s": 8.0
