@@ -21,7 +21,7 @@ async function pagina(browser, porta) {
   const p = await browser.newPage({ viewport: { width: cfg.W, height: cfg.H } });
   p.on("pageerror", (e) => console.error("erro na página:", e.message));
   p.on("console", (m) => { if (m.type() === "error") console.error("console:", m.text()); });
-  await p.goto(`http://127.0.0.1:${porta}${path.join(__dirname, "index.html")}`);
+  await p.goto(`http://127.0.0.1:${porta}${path.join(__dirname, cfg.pagina || "index.html")}`);   // 16/11: cfg.pagina = "index_runa.html" (Ep. 11)
   await p.waitForFunction(() => window.pronto === true, null, { timeout: 60000 });
   await p.evaluate((c) => window.preparar(c), cfg);
   return p;
