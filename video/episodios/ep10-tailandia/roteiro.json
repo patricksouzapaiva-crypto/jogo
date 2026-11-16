@@ -2891,30 +2891,6 @@
   },
   {
    "fala": "Mas Mateus já tinha guardado o celular no bolso.",
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_msg",
-     "volume_db": -19,
-     "depois": false,
-     "atraso": -7.6
-    },
-    {
-     "em": null,
-     "som": "ep08_msg",
-     "volume_db": -19,
-     "depois": false,
-     "atraso": -1.4
-    },
-    {
-     "em": null,
-     "som": "prof_henrique",
-     "volume_db": 0,
-     "depois": false,
-     "atraso": -7.2,
-     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/vozes/limpas_escolhidas/prof_cel.wav"
-    }
-   ],
    "cena": {
     "tipo": "chat",
     "grupo": "TCC - Documentário Isan 🎓",
@@ -2966,14 +2942,14 @@
       "tipo": "audio",
       "duracao": "0:06",
       "hora": "02:44",
-      "apos": -7.6,
+      "apos": 0.6,
       "cor": "#ff6b5e"
      },
      {
       "de": "Prof. Henrique",
       "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG",
       "hora": "02:44",
-      "apos": -1.4,
+      "apos": 6.6,
       "cor": "#ff6b5e"
      }
     ],
@@ -2981,6 +2957,30 @@
     "antecipar_fixo": true,
     "entrada": "corte"
    },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": -7.4
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": -1.4
+    },
+    {
+     "em": null,
+     "som": "prof_henrique",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -7.2,
+     "arquivo": "/home/user/jogo/video/episodios/ep10-tailandia/vozes/limpas_escolhidas/prof_cel.wav"
+    }
+   ],
    "pausa_antes_s": 8.0
   },
   {
