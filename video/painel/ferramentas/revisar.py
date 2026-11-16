@@ -119,6 +119,21 @@ def video(mp4, log=None):
             if (k - ini) * 0.5 >= 3.5 and ini * 0.5 < dur - 25:           # o fim (tela de inscrição) não conta
                 AVISOS.append(f"quase silêncio de {(k - ini) * 0.5:.1f}s em {int(ini * 0.5 // 60)}:{ini * 0.5 % 60:04.1f} — só pode se for o silêncio de um susto")
             ini = None
+    # 16/11 (rascunho 1 do Ep. 10: "o Vigia aparece numa piscada no canto", "legenda dando pulinhos"): varre o vídeo
+    # inteiro atrás de PISCADAS — um quadro que difere dos dois vizinhos enquanto os vizinhos são parecidos entre si.
+    # As do obturador (flash de propósito) são descontadas pelo tempo da cena.
+    PW, PH = 192, 108
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp4), "-vf", f"fps=15,scale={PW}:{PH},format=gray", "-f", "rawvideo", "-"],
+                         capture_output=True).stdout
+    fr = np.frombuffer(raw, np.uint8)[: len(raw) // (PW * PH) * PW * PH].reshape(-1, PH, PW).astype(np.float32)
+    if len(fr) > 3:
+        dp = np.abs(fr[1:-1] - fr[:-2]).mean((1, 2)); dn = np.abs(fr[1:-1] - fr[2:]).mean((1, 2)); ds = np.abs(fr[2:] - fr[:-2]).mean((1, 2))
+        obt = [c["t0"] for c in cenas if c.get("entrada") == "obturador"]
+        for k in np.nonzero(np.minimum(dp, dn) - ds > 2.0)[0]:
+            tt = (k + 1) / 15
+            if any(abs(tt - o) < 1.2 for o in obt):
+                continue
+            ERROS.append(f"piscada em {int(tt // 60)}:{tt % 60:04.1f} (quadro diferente dos vizinhos) — olhar quadro a quadro")
     longos = sum(1 for k in range(len(db)) if db[k] < -38)
     print(f"trechos de 0,5 s muito baixos (< -38 dB): {longos}")
     if log and Path(log).exists():
