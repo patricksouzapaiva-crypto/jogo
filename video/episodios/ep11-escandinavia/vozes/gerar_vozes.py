@@ -68,7 +68,7 @@ if "--amostra" in sys.argv:   # a amostra já é a fala 62 completa no formato f
         if not arq.exists(): gerar(f"{BASE}{JEITO[62]} Diga: {fala(62)}", v, arq)
         cortar(arq, fala(62), AQUI / "amostras" / f"lucas_{v}.wav")
     sys.exit()
-vm = vc = sys.argv[1] if len(sys.argv) > 1 else "Puck"
+vm = vc = sys.argv[1] if len(sys.argv) > 1 else "Achird"   # 16/11: voz escolhida pelo usuário
 for i, j in JEITO.items():
     voz = vc if pers[i] == "camila" else vm
     arq = B / f"f{i}_{pers[i]}_{voz}.wav"
