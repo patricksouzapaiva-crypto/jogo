@@ -1,0 +1,340 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Isan",
+   "Tailândia",
+   "Satsana Phi",
+   "San Phra Phum",
+   "Phi Tai Hong",
+   "Krasue",
+   "Phi Pop",
+   "Rang Song",
+   "Saiyasat",
+   "Pha Yant",
+   "Nam Man Phrai",
+   "Loei",
+   "Mateus",
+   "Niran",
+   "Mo Tham",
+   "hospedagem",
+   "casa"
+  ]
+ },
+ "voz_arquivo": "s3_carne_crua_voz.wav",
+ "batidas": [
+  {
+   "fala": "Quando Mateus apontou a lanterna para o final do corredor, a câmera registrou o exato instante em que algo desceu do vigamento do teto sem fazer um único ruído.",
+   "cenas": [
+    {
+     "imagem": "../imagens/recebidas/H16_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:45:20",
+       "data": "18-09-2025"
+      }
+     },
+     "entrada": "corte",
+     "duracao_entrada": 0.55,
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens/recebidas/H16_variacao_2.jpg",
+     "zoom": [
+      1.12,
+      1.3
+     ],
+     "foco": [
+      [
+       0.5,
+       0.15
+      ],
+      [
+       0.5,
+       0.1
+      ]
+     ],
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 01 - CORREDOR",
+       "hora": "02:45:23",
+       "data": "18-09-2025"
+      }
+     },
+     "em": "desceu",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": "desceu",
+     "som": "ep10_rangido_viga",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "A conexão do Wi-Fi da casa caiu três segundos depois.",
+   "cena": {
+    "imagem": "../imagens/recebidas/H16_variacao_2.jpg",
+    "zoom": [
+     1.3,
+     1.34
+    ],
+    "foco": [
+     [
+      0.5,
+      0.15
+     ],
+     [
+      0.5,
+      0.12
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "02:45:26",
+      "data": "18-09-2025",
+      "queda": 1.6
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "caiu",
+     "som": "ep10_queda_wifi",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.0
+  },
+  {
+   "fala": "Na manhã seguinte, às seis e doze, o celular de Mateus reconectou sozinho à rede móvel por alguns segundos e enviou o último arquivo automático que havia ficado na fila de upload.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.6
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 2.2
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "TCC - Documentário Isan 🎓",
+    "membros": "Mateus, Camila, Prof. Henrique",
+    "mensagens": [
+     {
+      "de": "eu",
+      "texto": "Mateus, isso ainda é seguro? Parece exatamente o que você descreveu sobre Phi Pop",
+      "hora": "22:31",
+      "apos": -30
+     },
+     {
+      "de": "eu",
+      "tipo": "audio",
+      "duracao": "0:14",
+      "hora": "22:32",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:21",
+      "hora": "22:47",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "audio",
+      "duracao": "0:11",
+      "hora": "02:43",
+      "apos": -30
+     },
+     {
+      "de": "Prof. Henrique",
+      "tipo": "audio",
+      "duracao": "0:06",
+      "hora": "02:44",
+      "cor": "#ff6b5e",
+      "apos": -30
+     },
+     {
+      "de": "Prof. Henrique",
+      "texto": "MATEUS NÃO ABRE ESSA PORTA. LEMBRE DO QUE VOCÊ PESQUISOU SOBRE OS RANG SONG",
+      "hora": "02:44",
+      "cor": "#ff6b5e",
+      "apos": -30
+     },
+     {
+      "de": "Mateus",
+      "tipo": "foto",
+      "imagem": "../imagens/recebidas/H17_variacao_1.jpg",
+      "hora": "06:12",
+      "apos": 0.6
+     },
+     {
+      "de": "Mateus",
+      "tipo": "video",
+      "imagem": "../imagens/recebidas/H18_variacao_4.jpg",
+      "hora": "06:12",
+      "apos": 2.2
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Era um clipe de cinco segundos da câmera de segurança do quarto dele.",
+   "cena": {
+    "imagem": "../imagens/recebidas/H17_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    }
+   ]
+  },
+  {
+   "fala": "Nele, Mateus aparece sentado na beira da cama, com um prato de carne crua no colo.",
+   "cena": {
+    "video": "../clipes/V10_B_ate3.2.mp4",
+    "zoom": [
+     1.0,
+     1.02
+    ],
+    "congelar": true,
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 04 - QUARTO",
+      "hora": "06:12:01",
+      "data": "18-09-2025",
+      "queda": 3.0
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 2.9,
+     "ate": 2.5,
+     "saida": 1.0
+    },
+    {
+     "em": null,
+     "som": "sub_drop",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 3.0
+    }
+   ],
+   "pausa_antes_s": 0.6
+  }
+ ],
+ "musica": {
+  "som": "ep10_trilha",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "Não abra a porta.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep10_mata_quieta",
+   "volume_db": -20
+  }
+ ]
+}

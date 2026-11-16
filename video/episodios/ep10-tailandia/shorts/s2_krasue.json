@@ -1,0 +1,231 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Isan",
+   "Tailândia",
+   "Satsana Phi",
+   "San Phra Phum",
+   "Phi Tai Hong",
+   "Krasue",
+   "Phi Pop",
+   "Rang Song",
+   "Saiyasat",
+   "Pha Yant",
+   "Nam Man Phrai",
+   "Loei",
+   "Mateus",
+   "Niran",
+   "Mo Tham",
+   "hospedagem",
+   "casa"
+  ]
+ },
+ "voz_arquivo": "s2_krasue_voz.wav",
+ "batidas": [
+  {
+   "fala": "Krasue.",
+   "cena": {
+    "imagem": "../imagens/recebidas/C2_01_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_caes_uivando_2",
+     "volume_db": -28,
+     "depois": false,
+     "atraso": 0.2,
+     "ate": 4.0,
+     "saida": 1.5
+    }
+   ],
+   "sem_legenda": true
+  },
+  {
+   "fala": "Segundo as lendas mais antigas do folclore tailandês, a Krasue é uma mulher comum durante o dia, muitas vezes amaldiçoada por praticar magia negra ou quebrar um voto sagrado.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "../camera3d/C2_02_variacao_1_40f5475097_14.0.mp4",
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Mas depois da meia-noite, a cabeça dela se descola do pescoço.",
+   "cena": {
+    "imagem": "../imagens/recebidas/C2_02_variacao_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "descola",
+     "som": "sub_drop",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Ela sai voando pela escuridão arrastando o coração, o estômago e os intestinos expostos, emitindo um brilho fraco e pulsante no meio da mata.",
+   "cenas": [
+    {
+     "imagem": "../imagens/recebidas/C2_03_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.4
+      ],
+      [
+       0.5,
+       0.38
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6,
+     "encaixe": "cobrir"
+    },
+    {
+     "video": "../filmes_prontos/kiss_krasue.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "arrastando",
+     "encaixe": "cobrir"
+    }
+   ],
+   "pausa_antes_s": 0.4
+  },
+  {
+   "fala": "Ela caça animais pequenos, sangue fresco e carniça.",
+   "cena": {
+    "imagem": "../reais_prontos/C2_01_real.jpg",
+    "zoom": [
+     1.0,
+     1.035
+    ],
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    }
+   ]
+  },
+  {
+   "fala": "E antes do amanhecer, usa as roupas deixadas nos varais das casas para limpar o sangue da boca antes de voltar para o próprio corpo.",
+   "cena": {
+    "imagem": "../imagens/recebidas/C2_04_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.8
+  }
+ ],
+ "musica": {
+  "som": "ep10_trilha",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "Recolha as roupas do varal.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep10_vila_caes",
+   "volume_db": -20
+  }
+ ]
+}

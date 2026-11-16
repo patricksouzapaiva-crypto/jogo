@@ -1,0 +1,263 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -9,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Isan",
+   "Tailândia",
+   "Satsana Phi",
+   "San Phra Phum",
+   "Phi Tai Hong",
+   "Krasue",
+   "Phi Pop",
+   "Rang Song",
+   "Saiyasat",
+   "Pha Yant",
+   "Nam Man Phrai",
+   "Loei",
+   "Mateus",
+   "Niran",
+   "Mo Tham",
+   "hospedagem",
+   "casa"
+  ]
+ },
+ "voz_arquivo": "s1_casa_vazia_voz.wav",
+ "batidas": [
+  {
+   "fala": "Você não entra na floresta de Isan depois que o sol cai.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "video": "../camera3d/G01_variacao_2_5f3bfe1a59_8.0.mp4",
+    "encaixe": "cobrir",
+    "entrada": "corte"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_respiracao",
+     "volume_db": -27,
+     "depois": false,
+     "atraso": -0.4
+    }
+   ]
+  },
+  {
+   "fala": "Não pelo medo de se perder no escuro.",
+   "cena": {
+    "imagem": "../imagens/recebidas/G01_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Mas porque naquela região da Tailândia, o corpo humano não pertence só a quem nasceu nele.",
+   "cena": {
+    "imagem": "../imagens/recebidas/G02_variacao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "entrada": "corte",
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Se você recusar o espírito que te protege, a sua casa fica vazia.",
+   "cena": {
+    "video": "../clipes/V01_A.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 01 - CORREDOR",
+      "hora": "03:17:40",
+      "data": "18-09-2025"
+     }
+    },
+    "entrada": "obturador",
+    "duracao_entrada": 0.55,
+    "antecipar": 0.25,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": null,
+     "som": "ep10_cctv_estatica",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 1.2,
+     "saida": 0.5
+    }
+   ]
+  },
+  {
+   "fala": "E na floresta tailandesa, uma casa vazia nunca fica desocupada por muito tempo.",
+   "cenas": [
+    {
+     "imagem": "../imagens/recebidas/G04a_variacao_1.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "antecipar": 0.55,
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens/recebidas/G04b_variacao_2.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.55
+      ],
+      [
+       0.5,
+       0.6
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "vazia",
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens/recebidas/G04c_variacao_1.jpg",
+     "zoom": [
+      1.02,
+      1.1
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "tempo",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.3
+    },
+    {
+     "em": "vazia",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    },
+    {
+     "em": "tempo",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    }
+   ],
+   "pausa_antes_s": 0.5
+  }
+ ],
+ "musica": {
+  "som": "ep10_trilha",
+  "volume_db": -29
+ },
+ "cta": {
+  "titulo": "Quem mora na casa vazia?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep10_mata_noite",
+   "volume_db": -20
+  }
+ ]
+}
