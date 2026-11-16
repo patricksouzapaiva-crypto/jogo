@@ -1,4 +1,4 @@
-"""Os 4 cartões de capítulo do Ep. 11 no motor 3D (painel/cartao3d/runa.js: a runa entalhada na madeira gelada), 16/11. Cada cartão sai como vídeo
+"""Os 4 cartões de capítulo do Ep. 11 no motor 3D (painel/cartao3d/xilo.js: xilogravura viva, a pedra rúnica com a serpente), 16/11. Cada cartão sai como vídeo
 pronto em cartoes/cap<N>.mp4 (com o som: a música do capítulo + o pano desenrolando), para entrar na montagem como cena
 de vídeo. Também monta a prévia com os 4 em sequência sobre a trilha unida.
 Uso: python3 cartoes.py [N ...]   (sem números: todos os que faltam) ; --previa só remonta a prévia"""
@@ -19,7 +19,7 @@ if "--previa" not in sys.argv:
     for n in pedidos:
         mudo, final = Path("/tmp") / f"ep11_cap{n}_mudo.mp4", AQUI / "cartoes" / f"cap{n}.mp4"   # o mudo é temporário (disco)
         if not mudo.exists() or str(n) in sys.argv[1:]:
-            cfg = {"numero": n, "numero_pt": f"Capítulo {n}", "dur": DUR, "pagina": "index_runa.html", **CAPS[n]}
+            cfg = {"numero": n, "numero_pt": f"Capítulo {n}", "dur": DUR, "pagina": "index_xilo.html", **CAPS[n]}
             subprocess.run(["node", str(PAINEL / "cartao3d" / "render_cartao.js"), json.dumps(cfg, ensure_ascii=False), str(mudo)], check=True)
         # som do cartão: música do capítulo (o tambor dela bate em 1.6 s, junto com o tranco) + o pano desenrolando
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(mudo), "-i", str(SONS / f"ep11_cap{n}.mp3"),
