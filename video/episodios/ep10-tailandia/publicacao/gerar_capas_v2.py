@@ -17,6 +17,7 @@ W, H = 1280, 720
 VERM = (230, 20, 28)
 BRANCO = (255, 248, 236)
 rng = np.random.default_rng(10)
+COM_CIRCULO = False
 
 
 def abrir(cod, cx, cy, zoom):
@@ -79,7 +80,10 @@ def brilho_vermelho(img, cx, cy, r, forca=0.9):
 
 def circulo_seta(base, cx, cy, r, de):
     cam = Image.new("RGBA", base.size, (0, 0, 0, 0)); d = ImageDraw.Draw(cam)
-    d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=VERM + (255,), width=10)
+    if not COM_CIRCULO:
+        r = min(r, 34)   # sem círculo, a seta chega quase encostando no alvo
+    if COM_CIRCULO:   # 16/11: o usuário pediu para tirar o círculo — fica só a seta apontando
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=VERM + (255,), width=10)
     # seta: do ponto "de" até a borda do círculo
     ang = math.atan2(cy - de[1], cx - de[0]); px, py = cx - math.cos(ang) * (r + 14), cy - math.sin(ang) * (r + 14)
     d.line((de[0], de[1], px, py), fill=VERM + (255,), width=14)
@@ -184,5 +188,5 @@ capa_cctv("C4_02_variacao_2", 0.5, 0.42, 1.35, (0.76, 0.27), 76, (250, 190), ["E
 # I — parada de costas diante da porta, no corredor (G03)
 capa_cctv("G03_variacao_2", 0.38, 0.5, 1.35, (0.47, 0.37), 80, (230, 230), ["NÃO ABRA", "A PORTA"], [BRANCO, VERM],
           [140, 160], (36, 150), "CAM 01 - CORREDOR", "03:17:40", "capa_I_porta.jpg")
-capa_cctv("G03_variacao_1", 0.5, 0.45, 1.35, (0.63, 0.33), 80, (220, 230), ["ELA ESTÁ", "ESPERANDO"], [BRANCO, VERM],
+capa_cctv("G03_variacao_1", 0.5, 0.45, 1.35, (0.575, 0.36), 80, (220, 230), ["ELA ESTÁ", "ESPERANDO"], [BRANCO, VERM],
           [132, 150], (36, 150), "CAM 01 - CORREDOR", "02:40:18", "capa_I2_espera.jpg", luz=1.4)
