@@ -3,7 +3,7 @@
  "formato": "16:9",
  "tema": "vigia",
  "avatar": "vigia_hd",
- "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "voz_arquivo": "audio/voz_personagens.wav",
  "transcrever_pedacos": 75,
  "cintilar": 0.03,
  "apertar_pausas": false,
@@ -56,12 +56,13 @@
   "linhas": [
    "O VIGIA · EPISÓDIO 10",
    "POR QUE O TERROR TAILANDÊS",
-   "NUNCA DEIXA VOCÊ EM PAZ?"
+   "NUNCA DEIXA",
+   "VOCÊ EM PAZ?"
   ],
   "vermelho": "EM PAZ?",
-  "duracao": 5.2,
+  "duracao": 5.6,
   "folga": 1.0,
-  "x": 0.55
+  "x": 0.52
  },
  "cta": {
   "titulo": "Não pergunte quem é.",
@@ -77,11 +78,11 @@
   {
    "fala": "Você não entra na floresta de Isan depois que o sol cai.",
    "cena": {
-    "imagem": "imagens/recebidas/G01_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
-    ]
+     1.0
+    ],
+    "video": "camera3d/G01_variacao_2_5f3bfe1a59_8.0.mp4"
    },
    "ambiente": {
     "som": "ep10_mata_noite",
@@ -358,14 +359,14 @@
   {
    "fala": "Hoje nós descemos para o sudeste asiático, para o nordeste rural da Tailândia.",
    "cena": {
-    "imagem": "imagens/recebidas/T01_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/T01_variacao_2_f5148ee8d4_8.3.mp4"
    },
    "ambiente": {
     "som": "ep10_arrozal_noite",
@@ -421,17 +422,17 @@
   {
    "fala": "Para quem vive ali, cada árvore, cada rio e cada pedaço de terra tem um dono invisível.",
    "cena": {
-    "imagem": "imagens/recebidas/C1_02_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/C1_02_variacao_1_5101fafd99_9.0.mp4"
    },
    "ambiente": {
     "som": "ep10_mata_quieta",
@@ -561,14 +562,14 @@
    "fala": "Antes de construir qualquer parede, os moradores erguem uma casa para o espírito dono daquele terreno, oferecendo água, frutas e incenso todos os dias para que ele não invada a casa dos vivos.",
    "cenas": [
     {
-     "imagem": "imagens/recebidas/C1_03_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "entrada": "fundir",
      "duracao_entrada": 0.6,
-     "antecipar": 0.25
+     "antecipar": 0.25,
+     "video": "camera3d/C1_03_variacao_1_3adec9096d_8.6.mp4"
     },
     {
      "imagem": "reais_prontos/C1_oferenda_01.jpg",
@@ -606,26 +607,6 @@
   },
   {
    "fala": "Na tradição tailandesa, existem dezenas de classes de espíritos chamados Phi.",
-   "cena": {
-    "imagem": "imagens/recebidas/C1_04_variacao_1.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.65,
-      0.4
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   },
    "ambiente": {
     "som": "nenhum",
     "volume_db": -20
@@ -698,17 +679,17 @@
   {
    "fala": "Como não tiveram tempo de aceitar a própria morte, eles ficam presos no exato lugar onde caíram.",
    "cena": {
-    "imagem": "imagens/recebidas/C1_05_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/C1_05_variacao_2_923fc95387_8.3.mp4"
    }
   },
   {
@@ -877,12 +858,12 @@
      "antecipar": 0.25
     },
     {
-     "imagem": "imagens/recebidas/C2_02_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
-     "em": "mulher"
+     "em": "mulher",
+     "video": "camera3d/C2_02_variacao_1_40f5475097_9.3.mp4"
     }
    ],
    "sem_legenda": true
@@ -1049,14 +1030,14 @@
   {
    "fala": "Diferente de um fantasma que aparece no corredor, o Phi Pop é um espírito parasita ligado à feitiçaria antiga do nordeste.",
    "cena": {
-    "imagem": "imagens/recebidas/C2_05_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/C2_05_variacao_1_ffd8ca2cc0_10.3.mp4"
    },
    "pausa_antes_s": 1.2
   },
@@ -1177,17 +1158,17 @@
      "tipo_cartao": true
     },
     {
-     "imagem": "imagens/recebidas/C3_01_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.3
      },
      "entrada": "fundir",
      "duracao_entrada": 0.9,
-     "em": "Para"
+     "em": "Para",
+     "video": "camera3d/C3_01_variacao_1_b575902d98_8.7.mp4"
     }
    ],
    "sons": [
@@ -1241,14 +1222,14 @@
      "antecipar": 0.25
     },
     {
-     "imagem": "imagens/recebidas/C3_02_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "entrada": "obturador",
      "duracao_entrada": 0.55,
-     "em": "escolhida"
+     "em": "escolhida",
+     "video": "camera3d/C3_02_variacao_1_6a13270748_11.5.mp4"
     }
    ],
    "sons": [
@@ -1388,14 +1369,14 @@
    "fala": "E do outro lado dessa moeda existe o Saiyasat.",
    "pausa_antes_s": 1.6,
    "cena": {
-    "imagem": "imagens/recebidas/C3_04_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/C3_04_variacao_1_b512a1cad4_8.5.mp4"
    },
    "ambiente": {
     "som": "nenhum",
@@ -1488,17 +1469,17 @@
    "fala": "Mas os antigos mestres deixam um aviso claro.",
    "pausa_antes_s": 2.4,
    "cena": {
-    "imagem": "imagens/recebidas/C3_03_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/C3_03_variacao_2_e496071cd8_12.7.mp4"
    },
    "ambiente": {
     "som": "ep10_mata_noite",
@@ -1580,17 +1561,17 @@
      "tipo_cartao": true
     },
     {
-     "imagem": "imagens/recebidas/C4_01_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "neblina": 0.4
      },
      "entrada": "fundir",
      "duracao_entrada": 0.9,
-     "em": "Em"
+     "em": "Em",
+     "video": "camera3d/C4_01_variacao_1_b93be344e3_11.2.mp4"
     }
    ],
    "sons": [
@@ -1845,17 +1826,17 @@
   {
    "fala": "O seu corpo é uma casa.",
    "cena": {
-    "imagem": "imagens/recebidas/G02_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/G02_variacao_1_48d5489714_6.5.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -2179,14 +2160,14 @@
   {
    "fala": "Naquela tarde, um jovem da vila vizinha havia morrido num acidente brutal de moto numa curva da estrada de terra, sem nenhum parente por perto para fazer os ritos imediatos.",
    "cena": {
-    "imagem": "imagens/recebidas/H04_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/H04_variacao_2_45e6ceff2b_13.1.mp4"
    }
   },
   {
@@ -2310,7 +2291,7 @@
   },
   {
    "fala": "Como parte do equipamento do TCC, Mateus tinha levado quatro câmeras compactas de monitoramento infravermelho para registrar o movimento noturno dos rituais sem precisar ficar com a lanterna ligada na cara das pessoas.",
-   "pausa_antes_s": 1.4,
+   "pausa_antes_s": 0.84,
    "cenas": [
     {
      "imagem": "imagens/recebidas/H06_variacao_2.jpg",
@@ -2417,14 +2398,14 @@
    "fala": "A mãe dela, que antes recusava o papel de médium da família havia anos, começou a rezar em voz alta todas as noites diante do altar, amarrando cordões brancos Sai Sin nos batentes de todas as portas.",
    "cenas": [
     {
-     "imagem": "imagens/recebidas/C3_02_variacao_1.jpg",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "entrada": "fundir",
      "duracao_entrada": 0.6,
-     "antecipar": 0.6
+     "antecipar": 0.6,
+     "video": "camera3d/C3_02_variacao_1_6a13270748_11.5.mp4"
     },
     {
      "imagem": "imagens/recebidas/C3_01_variacao_2.jpg",
@@ -3445,17 +3426,17 @@
    "fala": "A polícia tailandesa registrou o caso como desaparecimento em área de mata fechada.",
    "pausa_antes_s": 3.2,
    "cena": {
-    "imagem": "imagens/recebidas/T01_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/T01_variacao_1_562a16119e_7.5.mp4"
    },
    "ambiente": {
     "som": "ep10_mata_noite",
@@ -3488,17 +3469,17 @@
   {
    "fala": "Mas os moradores da vila vizinha dizem que, nas noites sem lua, uma luz fraca e pulsante costuma flutuar entre as árvores perto da estrada.",
    "cena": {
-    "imagem": "imagens/recebidas/C2_02_variacao_2.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/C2_02_variacao_2_2677c60f78_14.9.mp4"
    },
    "pausa_antes_s": 0.6
   },
@@ -3581,17 +3562,17 @@
   {
    "fala": "Você entrega a sua casa.",
    "cena": {
-    "imagem": "imagens/recebidas/G02_variacao_1.jpg",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/G02_variacao_1_1c37221c92_6.5.mp4"
    },
    "sons": [
     {
