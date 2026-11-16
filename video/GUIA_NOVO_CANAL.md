@@ -5,6 +5,12 @@
 > por IA, vozes de personagens, trilha e efeitos, montagem com motor próprio, revisão quadro a quadro, render final,
 > legendas, capas e publicação. O tema do canal novo é outro; o MÉTODO e as FERRAMENTAS são os mesmos.
 >
+> **ONDE ESTÁ O MOTOR:** no repositório público `patricksouzapaiva-crypto/jogo`, **ramo `ccr-7735dc2a-mbp99q`**
+> (o ramo `main` tem outro projeto — automação de Instagram — e NÃO tem a pasta `video/`). Para pegar:
+> `git clone -b ccr-7735dc2a-mbp99q https://github.com/patricksouzapaiva-crypto/jogo.git` (ou, num repo já clonado,
+> `git fetch origin ccr-7735dc2a-mbp99q && git checkout ccr-7735dc2a-mbp99q`). Num repositório NOVO do canal
+> secundário, copie só a pasta `video/` desse ramo (o resto não é necessário).
+>
 > **Como usar (resumo):** (1) faça um fork ou cópia do repositório `patricksouzapaiva-crypto/jogo` na conta GitHub
 > ligada à outra conta do Claude; (2) crie o ambiente de nuvem da seção 2; (3) copie este arquivo para a raiz do repo
 > novo com o nome **`CLAUDE.md`** (o Claude Code lê esse arquivo sozinho em toda sessão) e preencha a seção 0;
@@ -61,8 +67,9 @@ motor, confere o resultado e entrega o arquivo pronto. O usuário aprova e decid
 
 ## 2. Ambiente (fazer uma vez, na conta nova)
 
-1. **GitHub**: fork de `https://github.com/patricksouzapaiva-crypto/jogo` (ou "Use this template"/cópia) para a
-   conta nova. Ligue o GitHub em claude.ai → Configurações → Conectores, e abra o Claude Code com esse repo.
+1. **GitHub**: crie um repositório novo na conta nova e copie para ele a pasta `video/` do ramo
+   `ccr-7735dc2a-mbp99q` de `https://github.com/patricksouzapaiva-crypto/jogo` (ou faça um fork marcando "copiar
+   todos os ramos" e use esse ramo). Ligue o GitHub em claude.ai → Configurações → Conectores, e abra o Claude Code com esse repo.
 2. **Ambiente de nuvem** (Claude Code → ambiente): rede **limitada** com os hosts:
    `generativelanguage.googleapis.com` (Gemini: TTS, texto, música), `commons.wikimedia.org`,
    `upload.wikimedia.org`, `archive.org` (+ `ia*.us.archive.org`), `drive.google.com`, `drive.usercontent.google.com`
