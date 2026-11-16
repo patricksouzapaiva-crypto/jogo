@@ -197,6 +197,9 @@ Gerado pelo `montar_roteiro.py` (nunca à mão). Campos principais:
   áudio, foto, vídeo; horário; "digitando"); `kanji` (texto na tela em luz/sangue); `efeitos: {"cctv": {cam,
   hora, data, queda}}` (câmera de segurança com relógio correndo e "SEM SINAL"); `atmos` (neblina, poeira).
 - Transições (`entrada`): `fundir`, `corte`, `obturador`, `queimar`, `rasgo`, `hanji`, `nanquim`, `vela`…
+- Novos (16/11): `look` (cor de cinema por episódio: `{"preset": "isan"|"noite_fria"|"vela"|"arquivo", "forca", "halacao"}`),
+  `alinhamento_forcado: true` (palavras encaixadas no texto do roteiro — usar sempre), câmera 3D em camadas (padrão),
+  `ferramentas/interpolar.py` (câmera lenta RIFE). Detalhes e medições em `video/PESQUISA_MOTOR.md`.
 - Ritmo automático (`ritmo()` no montar): frase curta continua a imagem anterior, cena mínima, fusão que termina
   antes da voz. `PROTEGE = {…}` = falas que sempre trocam de cena (sustos, silêncios).
 - Novos efeitos do tema: criar `pagina/<tema>.js` registrando em `KR.cenas` / `KR.efeitos` / `KR.trans`

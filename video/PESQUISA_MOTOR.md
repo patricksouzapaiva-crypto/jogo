@@ -33,7 +33,18 @@ nosso) e MoneyPrinterTurbo (MoviePy, banco de imagens genérico) fariam menos do
 câmera de segurança, cartões 3D, Vigia com poses, legendas palavra a palavra, mix automático. O ganho está em
 trazer as PEÇAS acima para dentro do motor atual.
 
-## Ordem proposta
+## O que foi feito (16/11)
+| Item | Estado | Resultado medido |
+|---|---|---|
+| Piscadas no `revisar.py` | feito | o rascunho final do Ep. 10 passa limpo; o rascunho 1 teria sido pego |
+| Viradas personagem → narração no `revisar.py` | feito | Whisper confere a 1ª palavra da narração no instante da legenda (±0,6 s) |
+| Look de cinema (`"look": {"preset": "isan"/"noite_fria"/"vela"/"arquivo", "forca": 0.85, "halacao": 0.3}`) | feito | aplicado no quadro antes das legendas; custo ~0 (36 s × 35 s no teste) |
+| Câmera 3D em camadas (padrão de `camera3d.gerar`) | feito | primeiro plano recortado perto do foco + fundo reconstruído; cai para a de uma camada se não houver primeiro plano claro. Prévia: `episodios/ep10-tailandia/previas/comparar_camera3d.mp4` |
+| Render | feito | x264 `medium` no lugar de `slow` (mesmo crf 19): −22 % de tempo, mesmo tamanho. Log mostra ms por quadro (desenho ~62 ms, JPEG ~78 ms). Mais processos não ajudam (4 núcleos) |
+| Alinhamento forçado (`"alinhamento_forcado": true` no roteiro) | feito | wav2vec2 PT q4 (240 MB, ~/.cache/w2v_pt) + Viterbi CTC, ~2 min por episódio. Inícios de frase: o método antigo já acerta ~35 ms (fica ele); meio das frases: nas discordâncias o forçado acertou 17 × 4 |
+| RIFE (câmera lenta) | feito | `ferramentas/interpolar.py` (RIFE 4.25 lite ONNX, 22 MB, MIT); usado no filme de arquivo do `preparar_midia.py`; ~7 s de CPU por segundo de vídeo 480p |
+
+## Ordem proposta (original)
 1. (feito) piscadas no `revisar.py`.
 2. Revisão das transições personagem → narração no `revisar.py` (item 2).
 3. Look de cinema configurável no roteiro (`"look": {"lut": "...", "halacao": 0.2}`) aplicado no encode final (item 4).

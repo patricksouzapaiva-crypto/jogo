@@ -33,13 +33,24 @@ def filmes(pedidos):
     fx, fy = (1920 - fw) // 2, 120
     for nome in pedidos:
         src, segs, credito, rotulo, rec = TRECHOS[nome]
+        if rotulo == "FILME DE ARQUIVO":
+            # 16/11 (pesquisa do motor): a câmera lenta do arquivo agora é RIFE (quadros intermediários de verdade)
+            # no lugar do minterpolate "blend" (que deixava fantasma duplo nas pessoas andando)
+            sys.path.insert(0, str(AQUI.parents[1] / "painel" / "ferramentas"))
+            import interpolar
+            bruto, lento_arq = Path("/tmp") / f"_arq_{nome}.mp4", Path("/tmp") / f"_arq_{nome}_rife.mp4"
+            (a0, b0), = segs
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(a0), "-t", str(b0 - a0), "-i", str(AQUI / src), "-an",
+                            *(["-vf", f"crop={rec}"] if rec else []), "-c:v", "libx264", "-crf", "12", str(bruto)], check=True)
+            interpolar.interpolar(bruto, lento_arq, 1.25, 30)
+            src, segs, rec = str(lento_arq), [(0.0, (b0 - a0) * 1.25)], None
         fc = "".join(f"[0:v]trim={a}:{b},setpts=PTS-STARTPTS[v{k}];" for k, (a, b) in enumerate(segs))
         fc += "".join(f"[v{k}]" for k in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=0[c];"
         arquivo = rotulo == "FILME DE ARQUIVO"
         # o filme de 1969 é 4:3 dentro de 640×360: tira as faixas pretas; um pouco mais lento (é 25 q/s, com grão)
         cor = ("eq=saturation=0.75:contrast=1.05:brightness=-0.04,noise=alls=10:allf=t" if arquivo else
                "eq=saturation=0.82:contrast=1.06:brightness=-0.03,noise=alls=7:allf=t")
-        lento = "setpts=1.25*PTS,minterpolate=fps=30:mi_mode=blend," if arquivo else "fps=30,"
+        lento = "fps=30,"
         qw = round(fh * 4 / 3) if arquivo else fw
         qx = (1920 - qw) // 2
         fc += (f"[c]{f'crop={rec},' if rec else ''}scale={qw}:{fh}:flags=lanczos,{lento}{cor},split[a][b];"
@@ -50,7 +61,7 @@ def filmes(pedidos):
                f"drawtext=fontfile={FONTE}:text='{credito}':fontsize=22:fontcolor=0xd8d0c4:x={qx + (270 if arquivo else 230)}:y={fy - 46},"
                f"format=yuv420p[v]")
         saida = FP / f"{nome}.mp4"
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(AQUI / src), "-filter_complex", fc, "-map", "[v]", "-an",
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(AQUI / src) if not str(src).startswith("/") else str(src), "-filter_complex", fc, "-map", "[v]", "-an",
                         "-c:v", "libx264", "-crf", "22", "-preset", "medium", str(saida)], check=True)
         tem_som = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0",
                                   str(AQUI / src)], capture_output=True, text=True).stdout.strip()
