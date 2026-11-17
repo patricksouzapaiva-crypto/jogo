@@ -130,6 +130,12 @@ def episodio(plano, saida):
         while t + 8 < t1:
             ate = None if t + 16 * BAR <= t1 else max(4, int(len(TEMA) * (t1 - t) / (16 * BAR)))
             t = tema(o, t, vel, ate=ate, **kw) + 2 * BAR
+    # 17/11 (usuário: "não pode ficar em silêncio… tem que ter a música"): um PISO contínuo em todas as seções depois
+    # do gancho — o bordão ré–lá grave de cellos e contrabaixo — por baixo de tudo o que cada seção toca
+    for nome, a, b in plano["secoes"]:
+        if nome != "gancho":
+            o.cresc("cb", "D2", a, b - a + 1.5, 0.5, 0.5); o.cresc("vc", "A2", a + 0.3, b - a + 1.2, 0.38, 0.38, pan=0.3)
+            o.cresc("vla", "D3", a + 0.6, b - a + 0.9, 0.22, 0.22, pan=-0.3)
     for nome, a, b in plano["secoes"]:
         d = b - a
         if nome == "gancho":
@@ -165,7 +171,7 @@ def episodio(plano, saida):
                     o.nota("vla", nt[:-1] + str(int(nt[-1]) - 1), t, q * Q * 1.2 * 1.3, 0.45, ataque=0.12, solta=0.5, pan=0.2); t += q * Q * 1.3
                 t += 3 * BAR
         elif nome == "hist2":   # o celeiro: trêmulos crescendo e o coração
-            o.cresc("cb", "D2", a, d, 0.2, 0.7); o.cresc("vlns_trem", "D5", a + 2, d - 2, 0.02, 0.45, pan=-0.4)
+            o.cresc("cb", "D2", a, d, 0.5, 0.75); o.cresc("vlns_trem", "D5", a + 1, d - 1, 0.15, 0.45, pan=-0.4)
             o.cresc("vlns_trem", "Eb5", a + d * 0.4, d * 0.6, 0.02, 0.4, pan=0.4); o.cresc("vla_trem", "Ab3", a + d * 0.6, d * 0.4, 0.02, 0.45)
             t = a + d * 0.45
             while t < b - 1: o.golpe("bumbo", t, 0.3, int(t * 3)); t += 1.15

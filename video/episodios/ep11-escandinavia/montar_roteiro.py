@@ -189,7 +189,7 @@ def zoom(nome, z=(1.0, 1.08), foco=((0.5, 0.5), (0.5, 0.48)), **kw):
 
 
 TRILHA_SOM = "ep11_trilha"
-TRILHA = {"som": TRILHA_SOM, "volume_db": -27}
+TRILHA = {"som": TRILHA_SOM, "volume_db": -24}   # 17/11: música sempre presente nos respiros
 CARTAO = 7.6
 CARTOES_T = []
 
