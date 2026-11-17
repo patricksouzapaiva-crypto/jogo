@@ -199,4 +199,5 @@ def episodio(plano, saida):
 if __name__ == "__main__" and "episodio" in sys.argv:   # python3 compor_orquestra.py episodio plano.json saida.mp3
     import json
     w = AQUI / "_episodio.wav"; episodio(json.load(open(sys.argv[2])), w)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-b:a", "192k", sys.argv[3]], check=True); w.unlink(); print("ok", sys.argv[3])
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-af", "dynaudnorm=f=750:g=41:m=5:p=0.85:s=12",   # 17/11: as partes calmas sobem (nunca some)
+                    "-b:a", "192k", sys.argv[3]], check=True); w.unlink(); print("ok", sys.argv[3])
