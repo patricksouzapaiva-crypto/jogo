@@ -198,7 +198,7 @@ def capitulo(i, n, cena, em):
     """Cartão do capítulo = a XILOGRAVURA VIVA (cartoes.py): vídeo pronto de 7,6 s com a música do capítulo (orquestra).
     A trilha do episódio já tem um buraco no lugar do cartão (compor_orquestra.episodio)."""
     cap = {"video": f"cartoes/cap{n}.mp4", "zoom": [1.0, 1.0], "antecipar": CARTAO, "antecipar_fixo": True,
-           "entrada": "corte", "tipo_cartao": True, "congelar": True}
+           "entrada": "corte", "tipo_cartao": True, "congelar": True, "sem_look": True}
     cena = dict(cena); cena["entrada"] = "fundir"; cena["duracao_entrada"] = 0.9
     C(i, cap, (cena, em))
     pausa(i, CARTAO - 0.2)
@@ -206,7 +206,7 @@ def capitulo(i, n, cena, em):
     if not som.exists():
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(AQUI / "cartoes" / f"cap{n}.mp4"), "-vn", "-ac", "2",
                         "-ar", "48000", str(som)], check=True)
-    fx(i, None, f"cartao{n}", -9, atraso=-CARTAO + 0.05, arquivo=str(som))
+    fx(i, None, f"cartao{n}", -13, atraso=-CARTAO + 0.05, arquivo=str(som))
     CARTOES_T.append(i)
 
 
@@ -237,7 +237,7 @@ amb(0, "ep11_vento_pinheiros", -22)
 fx(0, None, "ep11_passos_neve", -24, atraso=0.2, ate=6.0, saida=1.5)
 fx(2, None, "ep11_kulning_longe", -24, atraso=-0.6, ate=7.0, saida=2.5)
 fx(3, "correr", "ep11_impacto_grave", -16)
-pausa(1, 0.4); pausa(4, 1.0)
+pausa(1, 0.4); pausa(3, 0.6); pausa(4, 1.0)
 
 # ================================================================ TEMA — Vigia
 C(4, vigia((1.0, 1.04)))
@@ -368,7 +368,7 @@ C(81, c3(IA("H11", 1), "entrar", (0.5, 0.5), 0.6, 0.2))
 C(82, obt(zoom(IA("H11", 2), (1.0, 1.05))), (clipe("V06_c"), "coisa"))
 obt_som(82)
 C(83, clipe("V06_b"))
-C(84, clipe("V06_d"), (clipe("V06_a", congelar=True), "altar"))
+C(84, clipe("V06_a"), (c3(IA("H11", 2), "entrar", (0.5, 0.4), 0.7, 0.2), "altar"))   # 17/11: V06_d saiu (lanterna presa na criatura)
 amb(73, "nenhum"); amb(75, "ep11_nevasca", -24); amb(77, "nenhum"); amb(78, "ep11_vento_pinheiros", -28); amb(80, "nenhum")
 fx(73, "galho", "ep11_galho_quebra", -14)
 fx(74, None, "ep10_cctv_estatica", -25, ate=0.6, saida=0.2)

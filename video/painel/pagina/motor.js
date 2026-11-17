@@ -1615,7 +1615,7 @@ function quadroSinc(t) {
   if (D.modo === "cenas") {
     if (!GRAO) prepararCenas();
     cenas(t);
-    aplicarLook();
+    aplicarLook(t);
     const J = D.abertura_janela || (D.abertura_fim ? [0, D.abertura_fim] : null);
     if (!(J && t >= J[0] && t < J[1])) {
       if (!(D.cta && t >= D.cta.t0)) legendas(t);
@@ -1686,8 +1686,9 @@ function prepararLook(L) {
       <feFuncB type="table" tableValues="0 0 0 0 0.02 0.12"/></feComponentTransfer></filter>`;
   document.body.appendChild(svg);
 }
-function aplicarLook() {
+function aplicarLook(t) {
   const L = D.look; if (!L) return;
+  const ciL = t === undefined ? -1 : cenaAtual(t); if (ciL >= 0 && D.cenas[ciL].sem_look) return;   // 17/11: cartões em xilogravura guardam o sépia e o vermelho
   const { W, H } = D, f = L.forca ?? 0.8;
   const c = _canvas("lookTmp", W, H), g = c.getContext("2d");
   g.clearRect(0, 0, W, H); g.drawImage(cv, 0, 0);
