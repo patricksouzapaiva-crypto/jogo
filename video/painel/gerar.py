@@ -1269,6 +1269,10 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
                     "-map", "[mix]", "-f", "null", "-",
                     "-map", "[vozstem]", stem["voz"], "-map", "[camaB]", stem["fundo"], "-map", "[fxB]", stem["efeitos"]],
                    check=True)
+    # 17/11 (disco curto): a voz de entrada (pausas/início) já virou a trilha "voz" — sai do disco antes da mixagem
+    for _p in (str(voz_wav), str(Path(str(voz_wav)).with_name("voz_inicio.wav"))):
+        if "/painel_" in _p and os.path.exists(_p):
+            os.remove(_p)
     automixar(stem, bruto, mix)
     relatorio_mix(stem, duracao)
     saltos([stem["fundo"], stem["efeitos"]])
