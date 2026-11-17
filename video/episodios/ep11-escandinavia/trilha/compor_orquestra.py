@@ -111,11 +111,6 @@ def cartao(n):
     return o
 
 
-if __name__ == "__main__" and "episodio" in sys.argv:   # python3 compor_orquestra.py episodio plano.json saida.mp3
-    import json
-    w = AQUI / "_episodio.wav"; episodio(json.load(open(sys.argv[2])), w)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-b:a", "192k", sys.argv[3]], check=True); w.unlink(); print("ok", sys.argv[3])
-
 if __name__ == "__main__" and "cartoes" in sys.argv:
     SONS = AQUI.parents[2] / "painel" / "sons"
     for n in (1, 2, 3, 4):
@@ -190,3 +185,9 @@ def episodio(plano, saida):
     for a, b in plano.get("cartoes", []):   # o cartão tem a música dele: a trilha some e volta
         SIL.append((a - 0.3, b - a + 0.3))
     o.salvar(saida, corte=fim, silencios=SIL)
+
+
+if __name__ == "__main__" and "episodio" in sys.argv:   # python3 compor_orquestra.py episodio plano.json saida.mp3
+    import json
+    w = AQUI / "_episodio.wav"; episodio(json.load(open(sys.argv[2])), w)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-b:a", "192k", sys.argv[3]], check=True); w.unlink(); print("ok", sys.argv[3])
