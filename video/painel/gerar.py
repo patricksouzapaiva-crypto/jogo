@@ -1065,6 +1065,11 @@ def automixar(stem, saida, mix):
     # 10/11: efeitos nos silêncios no máximo 8 dB abaixo da voz típica (com -3 os sub_drops do Ep. 04 ainda
     # "socavam" depois de um silêncio). O grave fica como vibração, não como pancada.
     ge = ge * teto(e, ge, mix.get("efeitos_pico_max", -8.0 if suave else 2.0))
+    if os.environ.get("DEPURAR_MIX"):   # tempos em s separados por vírgula: mostra o que a mixagem fez ali
+        for _t in map(float, os.environ["DEPURAR_MIX"].split(",")):
+            _i = int(_t / jan)
+            print(f"    [mix {_t}s] voz {ev[_i]:.1f} fala={fala[_i]} ativa={ativa[_i]} fundo_antes {_env_db(b.mean(1), janela=jan)[_i]:.1f} "
+                  f"ganho {20*np.log10(gb[int(_t*48000),0]+1e-9):.1f} dB voz_tipica {voz_tipica:.1f}", flush=True)
     b, e = b * gb, e * ge
     for k, a in (("fundo", b), ("efeitos", e)):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "f32le", "-ar", "48000", "-ac", "2", "-i", "-", stem[k]],
