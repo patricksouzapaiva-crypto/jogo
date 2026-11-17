@@ -1032,7 +1032,10 @@ def automixar(stem, saida, mix):
     jan = 0.05
     ev = _env_db(v.mean(1), janela=jan)
     # voz "ativa": nível suavizado com segurança de 0,35 s antes e 0,5 s depois
-    fala = ev > -42
+    # 17/11 (Ep. 11: a música sumia nas pausas): o limiar fixo de -42 dB pegava o ruído de fundo da voz (a cadeia de
+    # compressão sobe o chão) como "fala" e a trilha ficava abaixada nos respiros. Agora: 18 dB abaixo da fala típica.
+    _ref = float(np.median(ev[ev > -60])) if (ev > -60).any() else -20.0
+    fala = ev > max(-42.0, _ref - 18.0)
     pre, pos = int(0.35 / jan), int(0.5 / jan)
     ativa = fala.copy()
     for i in np.nonzero(fala)[0]:
