@@ -466,7 +466,7 @@ roteiro = {
     "transcrever_pedacos": 75,
     "alinhamento_forcado": True,
     "look": {"preset": "noite_fria", "forca": 0.8, "halacao": 0.25},
-    "cintilar": 0.03, "apertar_pausas": False,
+    "cintilar": 0.03, "apertar_pausas": False, "digitacao_db": -19,
     "cena_minima": 3.0,
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
@@ -498,7 +498,7 @@ def cenas_de(b):
 
 for b in batidas:  # tela de texto não leva legenda (o texto já está na tela)
     for c in cenas_de(b):
-        if c.get("tipo") == "texto" and "em" not in c:
+        if c.get("tipo") == "texto" and "em" not in c and not c.get("parada"):
             b["sem_legenda"] = True
 arqs = set()
 for b in batidas:
@@ -573,7 +573,7 @@ def ritmo():
         return _ali[_ini[i] + k][0] - t_ini[i]
 
     def precisa(b, i):
-        cs = cenas_de(b); n = 3.6
+        cs = cenas_de(b); n = 3.0   # 17/11: menos frases "continuando" a imagem anterior (imagem sempre no momento da frase)
         for c in cs:
             ks = c.get("kanji") or []
             ks = ks if isinstance(ks, list) else [ks]
@@ -631,6 +631,30 @@ def ritmo():
 for _b in batidas:                                   # rascunho 1: tira TODO foco redondo (dof) das imagens
     for _c in cenas_de(_b):
         _c.pop("dof", None)
+
+def fichas_paradas():
+    """17/11 (usuário: "quando aparece a tela com descrição, tem que estar parado… calcula o tempo que a pessoa vai
+    demorar para ler… com o barulho do teclado"): a FICHA entra numa pausa SÓ DELA — a narração para, a máquina de
+    escrever digita, a tela fica o tempo de leitura e só então a voz volta, já sobre a imagem da frase."""
+    from gerar import tokens as tk
+    feitas = []
+    for i, b in enumerate(batidas[:len(falas)]):
+        cs = cenas_de(b)
+        if len(cs) != 1 or cs[0].get("tipo") != "texto" or cs[0].get("em"):
+            continue
+        f = dict(cs[0]); txt = f["texto"]
+        L = round(0.3 + len(txt) / f.get("cps", 40) + 1.8 + 0.32 * len(txt.split()), 1)
+        f.update({"antecipar": L, "antecipar_fixo": True, "entrada": "corte", "parada": True})
+        ant = next((cenas_de(batidas[j])[-1] for j in range(i - 1, -1, -1) if cenas_de(batidas[j]) and
+                    cenas_de(batidas[j])[-1].get("tipo") != "texto"), None)
+        depois = {k: v for k, v in (ant or {}).items() if k not in ("em", "antecipar", "antecipar_fixo", "entrada", "duracao_entrada")}
+        depois["em"] = tk(falas[i])[0]; depois["entrada"] = "fundir"; depois["duracao_entrada"] = 0.6
+        b.pop("cena", None); b["cenas"] = [f, depois]
+        pausa(i, L); feitas.append((i, L))
+    print("fichas paradas (fala, s de leitura):", feitas)
+
+
+fichas_paradas()
 ritmo()
 garantir_leitura()
 aplicar_ajuste_pausas()
