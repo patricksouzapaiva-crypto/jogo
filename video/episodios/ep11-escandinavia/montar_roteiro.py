@@ -625,7 +625,7 @@ def trilha_por_secoes():
     marcos = [("gancho", 0), ("tema", SEC["TEMA"]), ("cap1", SEC["CAPÍTULO 1"]), ("cap2", SEC["CAPÍTULO 2"]), ("cap3", SEC["CAPÍTULO 3"]),
               ("cap4", SEC["CAPÍTULO 4"]), ("aparte", SEC["APARTE"]), ("hist1", SEC["LUCAS E RAFAEL — 1"]),
               ("hist2", SEC["LUCAS E RAFAEL — 2"]), ("hist3", SEC["LUCAS E RAFAEL — 3"]), ("fecho", SEC["FECHO"])]
-    ini = [0.0] + [T0[i] - (CARTAO if nome.startswith("cap") else 7.2 if nome == "tema" else 3.0 if nome == "hist1" else 0) for nome, i in marcos[1:]]
+    ini = [0.0] + [T0[i] - (CARTAO if nome.startswith("cap") else 7.2 if nome == "tema" else 4.0 if nome == "hist1" else 4.6 if nome == "fecho" else 0) for nome, i in marcos[1:]]
     secoes = [[nome, round(ini[k], 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)] for k, (nome, _) in enumerate(marcos)]
     secoes = [[n, a + (CARTAO if n.startswith("cap") else 0), b] for n, a, b in secoes]   # a parte do capítulo começa depois do cartão
     plano = {"secoes": secoes, "climax": climax, "fim": round(fim, 2), "cartoes": cartoes}
