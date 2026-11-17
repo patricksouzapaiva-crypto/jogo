@@ -1269,6 +1269,9 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
     automixar(stem, bruto, mix)
     relatorio_mix(stem, duracao)
     saltos([stem["fundo"], stem["efeitos"]])
+    if not sem_voz:   # 17/11: disco curto — as trilhas separadas já serviram (relatório e saltos); só o bruto segue
+        for kk in stem.values():
+            if os.path.exists(kk): os.remove(kk)
     med = subprocess.run(["ffmpeg", "-i", bruto, "-af", "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json",
                           "-f", "null", "-"], capture_output=True, text=True).stderr
     mm = json.loads(med[med.rfind("{"):med.rfind("}") + 1])
@@ -1502,7 +1505,10 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))
     if so_audio:  # reaproveita a imagem de um vídeo já pronto e refaz só a mixagem
         print("3/5 quadros: reaproveitando", so_audio)
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", so_audio, "-an", "-c:v", "copy", tmp / "video.mp4"], check=True)
+        try:   # 17/11: link em vez de cópia (o vídeo já pronto não ocupa o disco duas vezes)
+            os.link(so_audio, tmp / "video.mp4")
+        except OSError:
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", so_audio, "-an", "-c:v", "copy", tmp / "video.mp4"], check=True)
     else:
         print(f"3/5 quadros ({duracao:.1f} s)…")
         cmd = ["node", str(AQUI / "render.js"), str(tmp / "linha.json"), str(tmp / "video.mp4")]
