@@ -178,15 +178,15 @@ def episodio(plano, saida):
             o.cresc("cb", "D2", a, c - a, 0.2, 1.0); o.cresc("vlns_trem", "D5", a + (c - a) * 0.3, (c - a) * 0.7, 0.0, 0.7, pan=-0.5)
             o.cresc("vlns_trem", "Eb5", a + (c - a) * 0.5, (c - a) * 0.5, 0.0, 0.6, pan=0.5); o.cresc("vla_trem", "Ab3", a + (c - a) * 0.6, (c - a) * 0.4, 0.0, 0.6)
             o.golpe("rufo", max(a, c - 14), 0.9, 1)
-            o.golpe("timp", c, 1.6, 5); o.golpe("bumbo", c, 1.9, 13); SIL.append((c + 0.9, 1.8))
-            o.cresc("cb", "D2", c + 2.7, b - c - 2.7, 0.9, 0.7); o.cresc("vc", "D2", c + 2.9, b - c - 2.9, 0.8, 0.6)
-            o.cresc("vla_trem", "A3", c + 3.0, b - c - 3.0, 0.3, 0.1)
+            o.golpe("timp", c, 1.6, 5); o.golpe("bumbo", c, 1.9, 13)   # 17/11 (usuário: a música nunca pode parar): sem buraco depois do golpe
+            o.cresc("cb", "D2", c + 0.6, b - c - 0.6, 0.9, 0.7); o.cresc("vc", "D2", c + 0.9, b - c - 0.9, 0.8, 0.6)
+            o.cresc("vla_trem", "A3", c + 1.2, b - c - 1.2, 0.3, 0.1)
         elif nome == "fecho":   # o violino sozinho, longe, o tema parado no meio; no fim, só o bordão
             o.cresc("cb", "D2", a, d, 0.8, 0.5); o.cresc("vc", "A2", a, d, 0.5, 0.3, pan=0.3)
             tema(o, a + 0.3, 1.5, ate=9, pan=0.3); o.nota("vln", "C#5", a + 0.3 + 16 * Q, 3.5, 1.0, ataque=0.6, solta=2.0, pan=0.3)
             if d > 60: tema(o, b - 30, 0.45, ate=9, pan=-0.2)
     for a, b in plano.get("cartoes", []):   # o cartão tem a música dele: a trilha some e volta
-        SIL.append((a - 0.3, b - a + 0.3))
+        SIL.append((a - 0.3, b - a - 0.6))   # a trilha volta por baixo do fim do cartão: nunca um vão
     o.salvar(saida, corte=fim, silencios=SIL)
 
 
