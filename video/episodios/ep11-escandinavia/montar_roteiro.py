@@ -467,7 +467,7 @@ roteiro = {
     "alinhamento_forcado": True,
     "look": {"preset": "noite_fria", "forca": 0.8, "halacao": 0.25},
     "cintilar": 0.03, "apertar_pausas": False, "digitacao_db": -19,
-    "cena_minima": 3.0,
+    "cena_minima": 4.0,   # 17/11 (usuário): nada de pulo rápido de imagem
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.14,
     "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -8, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
@@ -573,7 +573,7 @@ def ritmo():
         return _ali[_ini[i] + k][0] - t_ini[i]
 
     def precisa(b, i):
-        cs = cenas_de(b); n = 3.0   # 17/11: menos frases "continuando" a imagem anterior (imagem sempre no momento da frase)
+        cs = cenas_de(b); n = 4.0   # 17/11: menos frases "continuando" a imagem anterior (imagem sempre no momento da frase)
         for c in cs:
             ks = c.get("kanji") or []
             ks = ks if isinstance(ks, list) else [ks]
