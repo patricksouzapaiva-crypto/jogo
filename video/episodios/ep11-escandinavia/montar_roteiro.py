@@ -16,7 +16,7 @@ import falas as F
 
 AQUI = Path(__file__).parent
 falas, PERS, SEC, PAUSAS, _ = F.ler()
-assert len(falas) == 96 and PERS.get(62) == "lucas" and PERS.get(72) == "lucas", "o ROTEIRO.md mudou: rever os índices"
+assert len(falas) == 136 and PERS.get(96) == "lucas" and PERS.get(110) == "lucas", "o ROTEIRO.md mudou: rever os índices"
 batidas = [{"fala": f} for f in falas]
 for i, s in PAUSAS.items():
     batidas[i]["pausa_antes_s"] = s
@@ -252,145 +252,208 @@ pausa(9, 0.4); pausa(11, 0.8)
 
 # ================================================================ CAPÍTULO 1 — os corpos do pântano e a árvore de Uppsala
 capitulo(11, 1, real("C1_tollund_01"), "Em")
-C(12, obt(real("C1_01_real")))
-obt_som(12)
-C(13, real("C1_tollund_04"))
-C(14, c3(IA("C1_01", 1), "entrar", (0.5, 0.55), 0.9, 0.2, atmos={"neblina": 0.4}))
-C(15, obt(real("C1_02_real")))
-obt_som(15)
-C(16, ficha("CORPOS DO PÂNTANO\nVítimas de sacrifícios pagãos preservadas na turfa gelada", "CORPOS DO PÂNTANO"))
-C(17, real("C1_04_real"))
-C(18, ficha("TEMPLO DE UPPSALA · SÉCULO XI\nRelato de Adam de Bremen", "TEMPLO DE UPPSALA"))
-C(19, c3(IA("C1_02", 2), "entrar", (0.5, 0.45), 0.9, 0.2, atmos={"neblina": 0.3}))
-C(20, zoom(IA("C1_02", 1), (1.0, 1.07), ((0.5, 0.55), (0.5, 0.5))))
-C(21, zoom(IA("C1_02", 2), (1.08, 1.2), ((0.25, 0.35), (0.22, 0.3))))
-amb(12, "nenhum"); amb(14, "ep11_vento_pinheiros", -28); amb(17, "nenhum"); amb(19, "ep11_mata_inverno_noite", -28)
-fx(21, "árvores", "sub_drop", -21)
-pausa(14, 0.4); pausa(16, 0.6); pausa(18, 0.6); pausa(21, 0.4); pausa(22, 0.8)
+C(16, obt(real("C1_01_real")))
+obt_som(16)
+C(17, real("C1_tollund_04"))
+C(18, c3(IA("C1_01", 1), "entrar", (0.5, 0.55), 0.9, 0.2, atmos={"neblina": 0.4}))
+C(19, obt(real("C1_02_real")))
+obt_som(19)
+C(20, ficha("CORPOS DO PÂNTANO\nVítimas de sacrifícios pagãos preservadas na turfa gelada", "CORPOS DO PÂNTANO"))
+C(21, real("C1_04_real"))
+C(22, ficha("TEMPLO DE UPPSALA · SÉCULO XI\nRelato de Adam de Bremen", "TEMPLO DE UPPSALA"))
+C(23, c3(IA("C1_02", 2), "entrar", (0.5, 0.45), 0.9, 0.2, atmos={"neblina": 0.3}))
+C(24, zoom(IA("C1_02", 1), (1.0, 1.07), ((0.5, 0.55), (0.5, 0.5))))
+C(31, zoom(IA("C1_02", 2), (1.08, 1.2), ((0.25, 0.35), (0.22, 0.3))))
+amb(16, "nenhum"); amb(18, "ep11_vento_pinheiros", -28); amb(21, "nenhum"); amb(23, "ep11_mata_inverno_noite", -28)
+fx(31, "árvores", "sub_drop", -21)
+pausa(18, 0.4); pausa(20, 0.6); pausa(22, 0.6); pausa(31, 0.4); pausa(32, 0.8)
 
 # ================================================================ CAPÍTULO 2 — a Águia de Sangue e o inverno sem fim
-capitulo(22, 2, zoom(IA("C2_01", 2), (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "Quando")
-C(23, ficha("FIMBULVETR\nO inverno de três anos seguidos sem verão", "FIMBULVETR"))
-C(24, c3(IA("T01", 5), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.4}))
-C(25, clipe("V02_a"))
-C(26, clipe("V02_b"), (c3(IA("C2_02", 1), "entrar", (0.4, 0.55), 0.9, 0.3, atmos={"neblina": 0.5}), "atiravam"))
-C(27, zoom(IA("C2_01", 1), (1.0, 1.08), ((0.3, 0.5), (0.45, 0.5))))
-C(28, ficha("BLÓÐÖRN · A ÁGUIA DE SANGUE\nExecução ritual das sagas nórdicas", "BLÓÐÖRN"))
-C(29, zoom(IA("C2_01", 1), (1.15, 1.3), ((0.5, 0.55), (0.5, 0.58))))
-C(30, zoom(IA("C2_01", 3), (1.0, 1.08), ((0.5, 0.5), (0.5, 0.58))))
-C(31, zoom(IA("C2_01", 3), (1.1, 1.22), ((0.5, 0.35), (0.5, 0.3))))
-amb(23, "nenhum"); amb(24, "ep11_nevasca", -28); amb(27, "nenhum")
-fx(25, None, "ep11_vento_pinheiros", -24, ate=12.0, saida=3.0)
-fx(30, "machado", "ep11_impacto_grave", -18)
-pausa(25, 0.4); pausa(28, 0.6); pausa(29, 0.8); pausa(31, 0.6); pausa(32, 0.8)
+capitulo(32, 2, zoom(IA("C2_01", 2), (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))), "Quando")
+C(33, ficha("FIMBULVETR\nO inverno de três anos seguidos sem verão", "FIMBULVETR"))
+C(34, c3(IA("T01", 5), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.4}))
+C(40, clipe("V02_a"))
+C(41, clipe("V02_b"), (c3(IA("C2_02", 1), "entrar", (0.4, 0.55), 0.9, 0.3, atmos={"neblina": 0.5}), "atiravam"))
+C(44, zoom(IA("C2_01", 1), (1.0, 1.08), ((0.3, 0.5), (0.45, 0.5))))
+C(45, ficha("BLÓÐÖRN · A ÁGUIA DE SANGUE\nExecução ritual das sagas nórdicas", "BLÓÐÖRN"))
+C(46, zoom(IA("C2_01", 1), (1.15, 1.3), ((0.5, 0.55), (0.5, 0.58))))
+C(47, zoom(IA("C2_01", 3), (1.0, 1.08), ((0.5, 0.5), (0.5, 0.58))))
+C(48, zoom(IA("C2_01", 3), (1.1, 1.22), ((0.5, 0.35), (0.5, 0.3))))
+amb(33, "nenhum"); amb(34, "ep11_nevasca", -28); amb(44, "nenhum")
+fx(40, None, "ep11_vento_pinheiros", -24, ate=12.0, saida=3.0)
+fx(47, "machado", "ep11_impacto_grave", -18)
+pausa(40, 0.4); pausa(45, 0.6); pausa(46, 0.8); pausa(48, 0.6); pausa(53, 0.8)
 
 # ================================================================ CAPÍTULO 3 — as criaturas da mata e o filho bastardo
-capitulo(32, 3, real("C3_01_real"), "Mas")
-C(33, real("C3_rok_03"))
-C(34, c3(IA("G01", 1), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
-C(35, c3(IA("C3_01", 1), "entrar", (0.5, 0.45), 0.9, 0.2, atmos={"neblina": 0.4}))
-C(36, c3(IA("C3_02", 1), "entrar", (0.55, 0.45), 0.9, 0.2), (zoom(IA("C3_02", 2), (1.0, 1.08), ((0.4, 0.6), (0.38, 0.62))), "guardam"))
-C(37, c3(IA("C3_03", 2), "entrar", (0.55, 0.4), 0.9, 0.2))
-C(38, zoom(IA("C3_03", 1), (1.0, 1.08), ((0.5, 0.35), (0.5, 0.3))))
-C(39, ficha("JÖTNAR\nOs gigantes primordiais e divindades sombrias da natureza", "JÖTNAR"))
-C(41, zoom(IA("T01", 1), (1.0, 1.07), ((0.4, 0.55), (0.38, 0.55))))
-C(42, c3(IA("G02b", 1), "entrar", (0.5, 0.5), 0.9, 0.3))
-amb(33, "nenhum"); amb(34, "ep11_mata_inverno_noite", -27); amb(39, "nenhum"); amb(41, "ep11_vento_pinheiros", -28)
-fx(37, None, "ep11_rosnado", -26, atraso=0.6, ate=4.0, saida=1.5)
-fx(42, "oferecido", "ep11_impacto_grave", -17)
-pausa(35, 0.4); pausa(37, 0.6); pausa(39, 0.6); pausa(42, 0.6); pausa(43, 0.8)
+capitulo(53, 3, real("C3_01_real"), "Mas")
+C(54, real("C3_rok_03"))
+C(55, c3(IA("G01", 1), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
+C(56, c3(IA("C3_01", 1), "entrar", (0.5, 0.45), 0.9, 0.2, atmos={"neblina": 0.4}))
+C(59, c3(IA("C3_02", 1), "entrar", (0.55, 0.45), 0.9, 0.2), (zoom(IA("C3_02", 2), (1.0, 1.08), ((0.4, 0.6), (0.38, 0.62))), "guardam"))
+C(63, c3(IA("C3_03", 2), "entrar", (0.55, 0.4), 0.9, 0.2))
+C(64, zoom(IA("C3_03", 1), (1.0, 1.08), ((0.5, 0.35), (0.5, 0.3))))
+C(65, ficha("JÖTNAR\nOs gigantes primordiais e divindades sombrias da natureza", "JÖTNAR"))
+C(67, zoom(IA("T01", 1), (1.0, 1.07), ((0.4, 0.55), (0.38, 0.55))))
+C(68, c3(IA("G02b", 1), "entrar", (0.5, 0.5), 0.9, 0.3))
+amb(54, "nenhum"); amb(55, "ep11_mata_inverno_noite", -27); amb(65, "nenhum"); amb(67, "ep11_vento_pinheiros", -28)
+fx(63, None, "ep11_rosnado", -26, atraso=0.6, ate=4.0, saida=1.5)
+fx(68, "oferecido", "ep11_impacto_grave", -17)
+pausa(56, 0.4); pausa(63, 0.6); pausa(65, 0.6); pausa(68, 0.6); pausa(69, 0.8)
 
 # ================================================================ CAPÍTULO 4 — quando o culto voltou para a tela
-capitulo(43, 4, c3(IA("C4_01", 1), "entrar", (0.5, 0.45), 0.9, 0.3, atmos={"neblina": 0.4}), "Nos")
-C(44, ficha("THE RITUAL (O RITUAL)\n2017 · Dir. David Bruckner", "THE RITUAL"))
-C(45, c3(IA("C4_01", 2), "entrar", (0.5, 0.4), 0.8, 0.1))
-C(46, ficha("MIDSOMMAR\n2019 · Dir. Ari Aster", "MIDSOMMAR"))
-C(47, zoom(IA("C4_01", 2), (1.08, 1.2), ((0.5, 0.45), (0.5, 0.4))))
-amb(44, "nenhum"); amb(45, "ep11_vento_pinheiros", -30); amb(46, "nenhum")
-pausa(45, 0.4); pausa(47, 0.6); pausa(48, 1.0)
+capitulo(69, 4, c3(IA("C4_01", 1), "entrar", (0.5, 0.45), 0.9, 0.3, atmos={"neblina": 0.4}), "Nos")
+C(70, ficha("THE RITUAL (O RITUAL)\n2017 · Dir. David Bruckner", "THE RITUAL"))
+C(73, c3(IA("C4_01", 2), "entrar", (0.5, 0.4), 0.8, 0.1))
+C(77, ficha("MIDSOMMAR\n2019 · Dir. Ari Aster", "MIDSOMMAR"))
+C(78, zoom(IA("C4_01", 2), (1.08, 1.2), ((0.5, 0.45), (0.5, 0.4))))
+amb(70, "nenhum"); amb(73, "ep11_vento_pinheiros", -30); amb(77, "nenhum")
+pausa(73, 0.4); pausa(78, 0.6); pausa(79, 1.0)
 
 # ================================================================ APARTE — Vigia: o tributo
-C(48, vigia((1.0, 1.04)))
-C(52, c3(IA("G02b", 2), "entrar", (0.5, 0.5), 0.9, 0.2))
-C(53, zoom(IA("H03", 1), (1.0, 1.06), ((0.5, 0.55), (0.52, 0.5))))
-C(54, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
-amb(48, "nenhum"); amb(52, "ep11_vento_pinheiros", -30); amb(54, "nenhum")
-fx(55, "sacrifício", "ep11_impacto_grave", -18)
-pausa(52, 0.6); pausa(54, 0.4)
-pausa(56, 3.2)   # respiro: a polska sobe sozinha antes da história (pedido do usuário: a trilha em destaque)
+C(79, vigia((1.0, 1.04)))
+C(83, c3(IA("G02b", 2), "entrar", (0.5, 0.5), 0.9, 0.2))
+C(84, zoom(IA("H03", 1), (1.0, 1.06), ((0.5, 0.55), (0.52, 0.5))))
+C(85, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
+amb(79, "nenhum"); amb(83, "ep11_vento_pinheiros", -30); amb(85, "nenhum")
+fx(86, "sacrifício", "ep11_impacto_grave", -18)
+pausa(83, 0.6); pausa(85, 0.4)
+pausa(87, 3.2)   # respiro: a polska sobe sozinha antes da história (pedido do usuário: a trilha em destaque)
 
 # ================================================================ LUCAS E RAFAEL — 1: a nevasca em Hälsingland
-C(56, zoom(IA("H01", 2), (1.0, 1.06), ((0.5, 0.55), (0.5, 0.5))))
-C(57, c3(IA("T01", 4), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
-chat(58, {"de": "Lucas", "tipo": "foto", "imagem": IA("H01", 7), "hora": "15:02", "apos": 0.4},
+C(87, zoom(IA("H01", 2), (1.0, 1.06), ((0.5, 0.55), (0.5, 0.5))))
+C(88, c3(IA("T01", 4), "entrar", (0.5, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
+chat(89, {"de": "Lucas", "tipo": "foto", "imagem": IA("H01", 7), "hora": "15:02", "apos": 0.4},
      {"de": "Lucas", "texto": "nevasca do nada aqui, a trilha sumiu 😬", "hora": "15:03", "apos": 1.6},
      {"de": "Lucas", "texto": "sem GPS. vamos andando até achar abrigo", "hora": "15:41", "apos": 3.2})
-C(59, zoom(IA("H01", 5), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))), (c3(IA("H03", 3), "entrar", (0.5, 0.5), 0.8, 0.2), "avistarem"))
-C(60, c3(IA("H03", 2), "entrar", (0.55, 0.5), 0.9, 0.2))
-C(61, zoom(IA("H04", 2), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.48))))
-chat(62, {"de": "Lucas", "tipo": "foto", "imagem": IA("H04", 1), "hora": "19:20", "apos": 0.3},
+C(90, zoom(IA("H01", 5), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))), (c3(IA("H03", 3), "entrar", (0.5, 0.5), 0.8, 0.2), "avistarem"))
+C(91, c3(IA("H03", 2), "entrar", (0.55, 0.5), 0.9, 0.2))
+C(92, zoom(IA("H04", 2), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.48))))
+chat(96, {"de": "Lucas", "tipo": "foto", "imagem": IA("H04", 1), "hora": "19:20", "apos": 0.3},
      {"de": "Lucas", "tipo": "audio", "duracao": "0:13", "hora": "19:21", "apos": 1.2})
-C(63, zoom(IA("H04", 1), (1.0, 1.08), ((0.5, 0.6), (0.5, 0.62))))
-C(64, zoom(IA("H04", 1), (1.1, 1.2), ((0.35, 0.55), (0.32, 0.55))))
-C(65, zoom(IA("H03", 4), (1.0, 1.06), ((0.55, 0.5), (0.55, 0.48))))
-amb(56, "ep11_vento_pinheiros", -26); amb(58, "ep11_nevasca", -28); amb(60, "ep11_vento_pinheiros", -28); amb(62, "nenhum"); amb(63, "nenhum")
-fx(56, None, "ep11_passos_neve", -24, ate=8.0, saida=2.0)
-pausa(57, 0.4); pausa(60, 0.6); pausa(63, 0.6); pausa(65, 0.4); pausa(66, 1.6)
+C(97, zoom(IA("H04", 1), (1.0, 1.08), ((0.5, 0.6), (0.5, 0.62))))
+C(98, zoom(IA("H04", 1), (1.1, 1.2), ((0.35, 0.55), (0.32, 0.55))))
+C(99, zoom(IA("H03", 4), (1.0, 1.06), ((0.55, 0.5), (0.55, 0.48))))
+amb(87, "ep11_vento_pinheiros", -26); amb(89, "ep11_nevasca", -28); amb(91, "ep11_vento_pinheiros", -28); amb(96, "nenhum"); amb(97, "nenhum")
+fx(87, None, "ep11_passos_neve", -24, ate=8.0, saida=2.0)
+pausa(88, 0.4); pausa(91, 0.6); pausa(97, 0.6); pausa(99, 0.4); pausa(100, 1.6)
 
 # ================================================================ LUCAS E RAFAEL — 2: o celeiro
-C(66, c3(IA("H03", 4), "entrar", (0.6, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
-C(67, zoom(IA("H03", 1), (1.06, 1.14), ((0.55, 0.5), (0.58, 0.48))))
-C(68, zoom(IA("H02_H07", 1), (1.0, 1.04)), (obt(zoom(IA("H05", 1), (1.0, 1.06), ((0.4, 0.45), (0.4, 0.42)))), "runa"))
-obt_som(68, "runa")
-C(69, c3(IA("H09", 1), "entrar", (0.5, 0.6), 0.8, 0.2))
-C(70, clipe("V04_c", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:51"), (clipe("V04_d", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:58"), "ajoelhados"))
-C(71, obt(zoom(IA("H08", 2), (1.0, 1.06), ((0.5, 0.45), (0.5, 0.4)))), (obt(zoom(IA("H08", 6), (1.0, 1.06))), "Rafael"))
-obt_som(71); obt_som(71, "Rafael")
-chat(72, {"de": "Lucas", "tipo": "video", "imagem": IA("H08", 3), "hora": "02:27", "apos": 0.2},
+C(100, c3(IA("H03", 4), "entrar", (0.6, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
+C(104, zoom(IA("H03", 1), (1.06, 1.14), ((0.55, 0.5), (0.58, 0.48))))
+C(105, zoom(IA("H02_H07", 1), (1.0, 1.04)), (obt(zoom(IA("H05", 1), (1.0, 1.06), ((0.4, 0.45), (0.4, 0.42)))), "runa"))
+obt_som(105, "runa")
+C(106, c3(IA("H09", 1), "entrar", (0.5, 0.6), 0.8, 0.2))
+C(107, clipe("V04_c", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:51"), (clipe("V04_d", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:58"), "ajoelhados"))
+C(108, obt(zoom(IA("H08", 2), (1.0, 1.06), ((0.5, 0.45), (0.5, 0.4)))), (obt(zoom(IA("H08", 6), (1.0, 1.06))), "Rafael"))
+obt_som(108); obt_som(108, "Rafael")
+chat(110, {"de": "Lucas", "tipo": "video", "imagem": IA("H08", 3), "hora": "02:27", "apos": 0.2},
      {"de": "Lucas", "tipo": "audio", "duracao": "0:08", "hora": "02:27", "apos": 1.0})
-amb(66, "ep11_mata_inverno_noite", -26); amb(70, "nenhum"); amb(71, "nenhum"); amb(72, "ep11_vento_pinheiros", -30)
-fx(66, None, "ep11_kulning_longe", -22, atraso=1.5, ate=9.0, saida=3.0)
-fx(67, None, "ep11_coracao", -26, ate=7.0, saida=2.0)
-fx(69, None, "ep11_passos_neve", -22, ate=6.0, saida=1.5)
-fx(70, None, "ep10_cctv_estatica", -27, ate=0.8, saida=0.3)
-pausa(68, 0.6); pausa(70, 0.6); pausa(72, 0.6); pausa(73, 1.2)
+amb(100, "ep11_mata_inverno_noite", -26); amb(107, "nenhum"); amb(108, "nenhum"); amb(110, "ep11_vento_pinheiros", -30)
+fx(100, None, "ep11_kulning_longe", -22, atraso=1.5, ate=9.0, saida=3.0)
+fx(104, None, "ep11_coracao", -26, ate=7.0, saida=2.0)
+fx(106, None, "ep11_passos_neve", -22, ate=6.0, saida=1.5)
+fx(107, None, "ep10_cctv_estatica", -27, ate=0.8, saida=0.3)
+pausa(105, 0.6); pausa(107, 0.6); pausa(110, 0.6); pausa(111, 1.2)
 
 # ================================================================ LUCAS E RAFAEL — 3: o que espera entre os pinheiros
-C(73, zoom(IA("H08", 5), (1.0, 1.05)))
-C(74, seco(cctv(zoom(IA("H06", 2), (1.0, 1.02)), "CAM 02 - CELEIRO // -18°C", "02:28:03")))
-C(75, clipe("V05_c"))
-C(76, clipe("V05_d"))
-C(77, seco(zoom(IA("H10", 2), (1.0, 1.04))))
-C(78, zoom(IA("H10", 1), (1.0, 1.08), ((0.45, 0.6), (0.4, 0.62))))
-C(79, clipe("V05_a"))
-C(80, zoom(IA("H09", 2), (1.0, 1.04)))
-C(81, c3(IA("H11", 1), "entrar", (0.5, 0.5), 0.6, 0.2))
-C(82, obt(zoom(IA("H11", 2), (1.0, 1.05))), (clipe("V06_c"), "coisa"))
-obt_som(82)
-C(83, clipe("V06_b"))
-C(84, clipe("V06_a"), (c3(IA("H11", 2), "entrar", (0.5, 0.4), 0.7, 0.2), "altar"))   # 17/11: V06_d saiu (lanterna presa na criatura)
-amb(73, "nenhum"); amb(75, "ep11_nevasca", -24); amb(77, "nenhum"); amb(78, "ep11_vento_pinheiros", -28); amb(80, "nenhum")
-fx(73, "galho", "ep11_galho_quebra", -14)
-fx(74, None, "ep10_cctv_estatica", -25, ate=0.6, saida=0.2)
-fx(75, None, "ep11_passos_neve_correndo", -18, ate=10.0, saida=2.0)
-fx(81, None, "ep11_lanterna_clique", -16, atraso=1.0)
-fx(82, "coisa", "ep11_rosnado", -20)
-pausa(74, 1.0); pausa(77, 0.6); pausa(79, 0.6); pausa(80, 1.6); pausa(82, 0.8); pausa(84, 0.4)
-pausa(85, 4.4)   # o golpe do clímax, o silêncio de 1,8 s e o grave voltando antes do resgate
+C(111, zoom(IA("H08", 5), (1.0, 1.05)))
+C(112, seco(cctv(zoom(IA("H06", 2), (1.0, 1.02)), "CAM 02 - CELEIRO // -18°C", "02:28:03")))
+C(113, clipe("V05_c"))
+C(114, clipe("V05_d"))
+C(115, seco(zoom(IA("H10", 2), (1.0, 1.04))))
+C(116, zoom(IA("H10", 1), (1.0, 1.08), ((0.45, 0.6), (0.4, 0.62))))
+C(117, clipe("V05_a"))
+C(118, zoom(IA("H09", 2), (1.0, 1.04)))
+C(119, c3(IA("H11", 1), "entrar", (0.5, 0.5), 0.6, 0.2))
+C(120, obt(zoom(IA("H11", 2), (1.0, 1.05))), (clipe("V06_c"), "coisa"))
+obt_som(120)
+C(121, clipe("V06_b"))
+C(122, clipe("V06_a"), (c3(IA("H11", 2), "entrar", (0.5, 0.4), 0.7, 0.2), "altar"))   # 17/11: V06_d saiu (lanterna presa na criatura)
+amb(111, "nenhum"); amb(113, "ep11_nevasca", -24); amb(115, "nenhum"); amb(116, "ep11_vento_pinheiros", -28); amb(118, "nenhum")
+fx(111, "galho", "ep11_galho_quebra", -14)
+fx(112, None, "ep10_cctv_estatica", -25, ate=0.6, saida=0.2)
+fx(113, None, "ep11_passos_neve_correndo", -18, ate=10.0, saida=2.0)
+fx(119, None, "ep11_lanterna_clique", -16, atraso=1.0)
+fx(120, "coisa", "ep11_rosnado", -20)
+pausa(112, 1.0); pausa(115, 0.6); pausa(117, 0.6); pausa(118, 1.6); pausa(120, 0.8); pausa(122, 0.4)
+pausa(123, 4.4)   # o golpe do clímax, o silêncio de 1,8 s e o grave voltando antes do resgate
 
 # ================================================================ FECHO — Vigia
-C(85, c3(IA("H09", 2), "sair", (0.5, 0.6), 0.8, 0.2, atmos={"neblina": 0.3}))
-C(86, c3(IA("T01", 6), "entrar", (0.5, 0.5), 0.8, 0.2, atmos={"neblina": 0.4}))
-C(87, zoom(IA("H02_H07", 2), (1.0, 1.06), ((0.55, 0.55), (0.6, 0.55))))
-C(88, vigia((1.0, 1.04)))
-C(90, zoom(IA("F01", 1), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))))
-C(91, zoom(IA("H03", 4), (1.06, 1.14), ((0.7, 0.5), (0.72, 0.5))))
-C(92, zoom(IA("F03", 1), (1.0, 1.07), ((0.5, 0.5), (0.5, 0.45))))
-C(93, vigia((1.02, 1.07)))
-C(95, vigia((1.08, 1.14), ((0.42, 0.45), (0.4, 0.43))))
-amb(85, "ep11_vento_pinheiros", -28); amb(88, "nenhum"); amb(90, "ep11_mata_inverno_noite", -30); amb(93, "nenhum")
-fx(95, "cantar", "ep11_kulning_longe", -26, ate=8.0, saida=3.0)
-pausa(87, 0.6); pausa(88, 0.8); pausa(92, 0.6); pausa(95, 0.4)
+C(123, c3(IA("H09", 2), "sair", (0.5, 0.6), 0.8, 0.2, atmos={"neblina": 0.3}))
+C(124, c3(IA("T01", 6), "entrar", (0.5, 0.5), 0.8, 0.2, atmos={"neblina": 0.4}))
+C(125, zoom(IA("H02_H07", 2), (1.0, 1.06), ((0.55, 0.55), (0.6, 0.55))))
+C(128, vigia((1.0, 1.04)))
+C(130, zoom(IA("F01", 1), (1.0, 1.06), ((0.5, 0.5), (0.5, 0.45))))
+C(131, zoom(IA("H03", 4), (1.06, 1.14), ((0.7, 0.5), (0.72, 0.5))))
+C(132, zoom(IA("F03", 1), (1.0, 1.07), ((0.5, 0.5), (0.5, 0.45))))
+C(133, vigia((1.02, 1.07)))
+C(135, vigia((1.08, 1.14), ((0.42, 0.45), (0.4, 0.43))))
+amb(123, "ep11_vento_pinheiros", -28); amb(128, "nenhum"); amb(130, "ep11_mata_inverno_noite", -30); amb(133, "nenhum")
+fx(135, "cantar", "ep11_kulning_longe", -26, ate=8.0, saida=3.0)
+pausa(125, 0.6); pausa(128, 0.8); pausa(132, 0.6); pausa(135, 0.4)
+
+
+# ================================================================ v2 (17/11) — os trechos novos (ROTEIRO_v2_NOVOS.md)
+def TENT(rel):
+    return "imagens/tentativas/" + rel
+
+
+C(12, real("C1_tollund_03"))
+C(13, real("C1_tollund_03", z=(1.05, 1.12)))
+C(14, ficha("A ÚLTIMA REFEIÇÃO\nMingau de cevada e sementes, horas antes da morte", "A ÚLTIMA REFEIÇÃO"))
+C(15, c3(IA("C1_01", 1), "entrar", (0.45, 0.55), 0.8, 0.2, atmos={"neblina": 0.5}))
+C(25, zoom(IA("C1_02", 2), (1.0, 1.08), ((0.5, 0.6), (0.5, 0.65))))
+C(26, c3(TENT("C2_02_pantano_ou_museu/C2_02_pantano_ou_museu_04.png"), "entrar", (0.5, 0.6), 0.9, 0.2, atmos={"neblina": 0.5}))
+C(27, zoom(IA("G01", 2), (1.0, 1.08), ((0.5, 0.45), (0.5, 0.4))))
+C(28, ficha("HÁVAMÁL\nO poema de Odin · estrofes 138 e 139", "HÁVAMÁL"))
+C(29, c3(IA("C2_01", 2), "entrar", (0.5, 0.35), 0.8, 0.2))
+C(30, zoom(IA("G01", 1), (1.0, 1.08), ((0.5, 0.5), (0.5, 0.45))))
+C(35, c3(IA("T01", 8), "entrar", (0.5, 0.55), 0.8, 0.2, atmos={"neblina": 0.4}))
+C(36, ficha("ANO 536\nO inverno vulcânico que escureceu o hemisfério norte", "ANO 536"))
+C(37, zoom(IA("T01", 2), (1.0, 1.08), ((0.5, 0.4), (0.5, 0.35))))
+C(38, zoom(IA("T01", 7), (1.05, 1.14), ((0.6, 0.55), (0.62, 0.55))))
+C(39, real("C3_rok_02"))
+C(42, zoom(IA("C2_02", 1), (1.0, 1.08), ((0.4, 0.5), (0.35, 0.55))))
+C(43, zoom(IA("C2_02", 2), (1.06, 1.14), ((0.3, 0.5), (0.3, 0.48))))
+C(49, zoom(IA("C2_01", 1), (1.0, 1.08), ((0.25, 0.5), (0.3, 0.5))))
+C(50, zoom(TENT("C2_01_composites/C2_01_composites_01.png"), (1.0, 1.08), ((0.35, 0.5), (0.3, 0.5))))
+C(51, ficha("A ÁGUIA DE SANGUE · 2022\nEstudo anatômico na revista Speculum: o ritual era possível", "2022"))
+C(52, zoom(IA("C2_01", 3), (1.12, 1.24), ((0.5, 0.55), (0.5, 0.6))))
+C(57, zoom(TENT("C3_02_repeticoes_da_Skogsra/C3_02_repeticoes_da_Skogsra_01.png"), (1.0, 1.08), ((0.5, 0.45), (0.5, 0.4))))
+C(58, zoom(TENT("C3_02_repeticoes_da_Skogsra/C3_02_repeticoes_da_Skogsra_02.png"), (1.0, 1.08), ((0.55, 0.45), (0.55, 0.4))))
+C(60, zoom(IA("C3_02", 2), (1.0, 1.08), ((0.4, 0.6), (0.38, 0.62))))
+C(61, c3(IA("F03", 2), "entrar", (0.6, 0.45), 0.8, 0.2))
+C(62, zoom(IA("C3_02", 1), (1.1, 1.22), ((0.5, 0.4), (0.5, 0.35))))
+C(71, zoom(IA("C4_01", 1), (1.06, 1.16), ((0.45, 0.45), (0.45, 0.4))))
+C(72, zoom(IA("C3_03", 2), (1.0, 1.1), ((0.55, 0.4), (0.55, 0.35))))
+C(74, zoom(TENT("F01_erros/F01_Erro_1_Mastro.png"), (1.0, 1.08)))
+C(75, zoom(IA("F01", 2), (1.0, 1.08), ((0.45, 0.5), (0.4, 0.5))))
+C(76, zoom(TENT("F01_erros/F01_Erro_3_Mastro.png"), (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45))))
+C(93, zoom(IA("H04", 2), (1.06, 1.14), ((0.5, 0.5), (0.5, 0.45))))
+C(94, c3(IA("H03", 3), "entrar", (0.5, 0.55), 0.8, 0.2))
+C(95, obt(zoom(TENT("H08_repeticoes_da_porta_H05/H08_repeticoes_da_porta_H05_08.png"), (1.0, 1.08), ((0.45, 0.4), (0.45, 0.6)))))
+obt_som(95)
+C(101, zoom(IA("H03", 1), (1.1, 1.2), ((0.5, 0.5), (0.52, 0.48))))
+C(102, ficha("KULNING\nO canto das pastoras suecas para chamar o gado", "KULNING"))
+C(103, zoom(IA("H03", 4), (1.08, 1.18), ((0.4, 0.5), (0.38, 0.5))))
+C(109, obt(zoom(IA("H08", 4), (1.0, 1.08), ((0.5, 0.35), (0.5, 0.25)))))
+obt_som(109)
+chat(126, {"de": "Lucas", "tipo": "audio", "duracao": "0:09", "hora": "04:51", "apos": 0.6})
+fx(127, "cantando", "ep11_kulning_longe", -22, ate=8.0, saida=3.0)
+amb(26, "ep11_vento_pinheiros", -30); amb(28, "nenhum"); amb(36, "nenhum"); amb(37, "ep11_nevasca", -30); amb(51, "nenhum")
+amb(52, "ep11_vento_pinheiros", -32); amb(102, "nenhum"); amb(103, "ep11_mata_inverno_noite", -28)
+fx(95, "oito", "ep11_gelo_estalo", -20); fx(109, "nona", "ep11_impacto_grave", -15)
+
+# 17/11 (usuário: "está muito rápido" / "pode respirar, mas não pode ficar em silêncio"): respiro entre as frases e
+# no fim de cada capítulo; a TRILHA e o AMBIENTE continuam por baixo de toda pausa (nunca "nenhum" num respiro).
+for _i in range(1, len(falas)):
+    if _i not in (96, 110):          # as falas do Lucas já têm o respiro delas
+        pausa(_i, 0.45)
+for _i in (SEC["CAPÍTULO 2"], SEC["CAPÍTULO 3"], SEC["CAPÍTULO 4"], SEC["APARTE"], SEC["LUCAS E RAFAEL — 2"], SEC["LUCAS E RAFAEL — 3"]):
+    pausa(_i, 2.0)
+for _b in batidas:                   # ambiente "nenhum" vira um vento bem baixo: nunca silêncio morto
+    if _b.get("ambiente", {}).get("som") == "nenhum":
+        _b["ambiente"] = {"som": "ep11_vento_pinheiros", "volume_db": -36}
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
@@ -484,7 +547,7 @@ def garantir_leitura():
 def aplicar_ajuste_pausas():
     arq = AQUI / "audio" / "ajuste_pausas.json"
     for k, d in (json.load(open(arq)) if arq.exists() else {}).items():
-        if int(k) in (56, 85):   # respiros da trilha: não são compensação
+        if int(k) in (87, 123):   # respiros da trilha: não são compensação
             continue
         b = batidas[int(k)]
         if b.get("pausa_antes_s"):
@@ -531,7 +594,7 @@ def ritmo():
         c = cenas_de(b)[0]
         return "vigia" if c.get("vigia") else c.get("tipo") or "imagem"
 
-    PROTEGE = {1, 2, 3, 4, 11, 22, 32, 43, 73, 74, 77, 80, 81, 82, 83, 84, 85}   # sustos e silêncios: nunca continuar a anterior
+    PROTEGE = {1, 2, 3, 4, 11, 32, 53, 69, 111, 112, 115, 118, 119, 120, 121, 122, 123}   # sustos e silêncios: nunca continuar a anterior
     continuadas, alongadas = [], []
     acc, falta = 0.0, 0.0
     for i, b in enumerate(batidas[:len(falas)]):
@@ -619,8 +682,8 @@ def trilha_por_secoes():
     for i in range(len(falas)):
         cum += batidas[i].get("pausa_antes_s", 0); T0.append(_ali[_ini[i]][0] + cum)
     fim = _ali[-1][1] + cum + 8
-    ws = [norm(w) for w in tk(falas[82])]; k = next(j for j, w in enumerate(ws) if w.startswith("coisa"))
-    climax = round(T0[82] + _ali[_ini[82] + k][0] - _ali[_ini[82]][0], 2)
+    ws = [norm(w) for w in tk(falas[120])]; k = next(j for j, w in enumerate(ws) if w.startswith("coisa"))
+    climax = round(T0[120] + _ali[_ini[120] + k][0] - _ali[_ini[120]][0], 2)
     cartoes = [[round(T0[i] - CARTAO, 2), round(T0[i] - 0.15, 2)] for i in CARTOES_T]
     marcos = [("gancho", 0), ("tema", SEC["TEMA"]), ("cap1", SEC["CAPÍTULO 1"]), ("cap2", SEC["CAPÍTULO 2"]), ("cap3", SEC["CAPÍTULO 3"]),
               ("cap4", SEC["CAPÍTULO 4"]), ("aparte", SEC["APARTE"]), ("hist1", SEC["LUCAS E RAFAEL — 1"]),

@@ -85,7 +85,11 @@ PRON = [("Blóðörn", "Blôd-érn"), ("Blót", "Blôt"), ("Uppsala", "Upsála")
         ("Fimbulvetr", "Fímbul-vétr"), ("Ättestupa", "Étestupa"), ("Odin", "Odím"), ("Jötnar", "Iótnar"),
         ("Skogsrå", "Scôgs-rô"), ("Ari Aster", "Ári Áster"), ("Midsommar", "Míd-sómar"), ("Hälsingland", "Hélsing-lãnd"),
         ("Kulning", "Cúl-ning"), ("Nøkken", "Néken"), ("Mare", "Máre"), ("Draugr", "Dráugur"), ("Tollund", "Tólund"),
-        ("Grauballe", "Grau-bále"), ("Rök", "Rêk"), ("David Bruckner", "Dêivid Brúkner")]
+        ("Grauballe", "Grau-bále"), ("Rök", "Rêk"), ("David Bruckner", "Dêivid Brúkner"),
+        # 17/11 (v2): nomes dos trechos novos
+        ("Viggo e Emil Højgaard", "Vígo e Êmil Rói-gór"), ("Hávamál", "Ráva-mául"), ("Ragnar Lothbrok", "Rágnar Lód-brók"),
+        ("Ælla", "Éla"), ("Nortúmbria", "Nortúmbria"), ("Grettir", "Grétir"), ("Glámr", "Gláu-mur"), ("Hårga", "Hór-ga"),
+        ("Adam Nevill", "Ádam Névil"), ("Jötunn", "Iótun"), ("Loki", "Lóki"), ("kulning", "cúl-ning")]
 
 
 def para_tts(t):

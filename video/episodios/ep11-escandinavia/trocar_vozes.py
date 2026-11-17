@@ -13,8 +13,8 @@ AQUI = Path(__file__).parent
 SR = 48000
 CEL = "highpass=f=300,lowpass=f=3600,acompressor=threshold=-24dB:ratio=4:attack=5:release=80"
 ESCOLHA = {
-    62: ("f62", CEL, 0.9),            # áudio do quarto de madeira, aliviado e com frio
-    72: ("f72", CEL, 0.85),           # vídeo escondido atrás do celeiro, sussurrando
+    96: ("f62", CEL, 0.9),            # áudio do quarto de madeira, aliviado e com frio
+    110: ("f72", CEL, 0.85),           # vídeo escondido atrás do celeiro, sussurrando
 }
 FIM = {}
 

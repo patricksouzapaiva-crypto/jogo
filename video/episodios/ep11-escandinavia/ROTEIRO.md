@@ -28,6 +28,10 @@ E onde os deuses antigos nunca deixaram de exigir carne viva para manter o inver
 *(Cartão de capítulo: uma runa antiga Elder Futhark é entalhada na madeira gelada ao som de vento e tambor grave, revelando o título do capítulo)*
 *(C1_01_real — foto real de arquivo do Homem de Tollund exibido no Museu de Silkeborg, Dinamarca)*
 Em maio de mil novecentos e cinquenta, dois irmãos cortando turfa num pântano da Dinamarca encontraram um cadáver tão bem preservado que chamaram a polícia achando que era um crime recente.
+Os irmãos Viggo e Emil Højgaard tinham encontrado o que hoje o mundo conhece como o Homem de Tollund.
+Os olhos estavam fechados. A expressão, serena. Como alguém que tinha aceitado o que ia acontecer.
+No estômago dele, os cientistas acharam a última refeição: um mingau de cevada e sementes, comido poucas horas antes da morte.
+Uma refeição de ritual. Preparada para quem ia ser entregue.
 *(corte seco estilo arquivo — C1_01: vitrine museológica e pântano congelado ao amanhecer + C1_02_real: foto real do Homem de Grauballe com o corte profundo na garganta visível)*
 Ele tinha sido morto há mais de dois mil e trezentos anos.
 *(FICHA 02 — "Corpos do Pântano · Vítimas de sacrifícios pagãos preservadas na turfa gelada")*
@@ -43,6 +47,12 @@ No século onze, o cronista alemão Adam de Bremen documentou o grande templo pa
 A cada nove anos, tribos inteiras se reuniam ali durante nove dias para celebrar o grande Blót.
 Segundo os relatos históricos, setenta e dois corpos — incluindo homens humanos, cavalos e cães — eram enforcados e pendurados lado a lado nos galhos do bosque sagrado ao redor do templo até apodrecerem.
 O sangue era recolhido em tigelas e espalhado sobre os altares e sobre o rosto dos participantes.
+Adam de Bremen escreveu que ao lado da árvore sagrada havia um poço.
+Ali, um homem vivo era afogado. Se o corpo não voltasse mais à superfície, o desejo do povo seria atendido.
+E o número nove não era por acaso.
+No poema nórdico Hávamál, o próprio Odin se enforca numa árvore varrida pelo vento, ferido por uma lança, durante nove noites.
+Ele se oferece em sacrifício a si mesmo. E é assim que ele aprende as runas.
+Para os povos do norte, as runas não eram um alfabeto. Eram um preço pago com sangue.
 Para aquela cultura, a vida só continuava se a morte fosse exibida nas árvores.
 
 ## CAPÍTULO 2 — A Águia de Sangue e o inverno sem fim (Sagas Nórdicas)
@@ -52,9 +62,16 @@ Quando o frio extremo atingia as aldeias isoladas, o terror deixava de ser apena
 Na mitologia nórdica, o fim do mundo não começa com fogo, mas com o Fimbulvetr.
 *(FICHA 04 — "FIMBULVETR · O inverno de três anos seguidos sem verão")*
 Três invernos seguidos sem sol, onde irmãos matam irmãos por um pedaço de carne.
+E o mais assustador é que esse inverno pode ter acontecido de verdade.
+No ano de quinhentos e trinta e seis, erupções vulcânicas cobriram o céu do hemisfério norte com uma névoa de cinzas.
+O sol ficou fraco como a lua durante mais de um ano. As colheitas morreram. No verão, nevou.
+Na Escandinávia, arqueólogos encontraram aldeias inteiras abandonadas nessa época. Estima-se que até metade da população tenha desaparecido.
+Em dois mil e vinte, pesquisadores releram a Pedra de Rök, a maior inscrição rúnica do mundo. E encontraram nela um medo antigo: o de que o frio voltasse.
 *(C2_02 — clipe V02: penhasco rochoso coberto de neve sobre um abismo enevoado na Noruega; figura idosa vestida de lã parada de costas na borda)*
 Desse medo nasceu o mito brutal do Ättestupa.
 O ritual em que os idosos de uma comunidade isolada subiam até o topo de um penhasco sagrado e se atiravam no abismo para não consumir a comida escassa dos mais jovens durante o inverno.
+Os historiadores acreditam que o Ättestupa seja mais lenda do que prática.
+Mas o simples fato de essa história ter atravessado mil anos mostra o que o inverno fazia com a cabeça daquelas pessoas.
 *(pausa)*
 E para os inimigos ou traidores da comunidade, as sagas descrevem a execução mais sádica da história europeia.
 A Águia de Sangue.
@@ -63,6 +80,10 @@ A Águia de Sangue.
 A vítima era amarrada de bruços.
 As costas eram abertas com um machado, cada costela era separada da coluna vertebral uma por uma e dobrada para fora, enquanto os pulmões ainda pulsando eram puxados pelas aberturas para formar um par de asas ensanguentadas.
 Uma oferenda viva dedicada diretamente a Odin.
+As sagas dizem que foi assim que os filhos de Ragnar Lothbrok vingaram o pai contra o rei Ælla da Nortúmbria.
+Durante décadas, estudiosos juraram que era invenção de poetas cristãos para pintar os vikings como monstros.
+Até que em dois mil e vinte e dois, médicos e historiadores testaram o ritual num estudo anatômico.
+A conclusão: era possível. E a vítima ficaria viva por tempo suficiente para sentir.
 
 ## CAPÍTULO 3 — As criaturas da mata e o filho bastardo (Folclore Escandinavo)
 *(Cartão de capítulo: runa antiga gravada na casca escura de um pinheiro, revelando o título do capítulo)*
@@ -72,8 +93,13 @@ Vinha do que morava fundo demais entre os pinheiros onde nenhum machado entrava.
 *(C3_01 — mulher esguia de costas na floresta sueca com as costas ocas como tronco podre de árvore)*
 Nas lendas rurais da Escandinávia, quem se afasta das trilhas marcadas entra no domínio de entidades que não têm nada de humanas.
 Algumas assumem a forma de mulheres perdidas na mata, como a Skogsrå, mas têm as costas ocas como madeira podre para atrair viajantes para o abismo.
+Os carvoeiros que passavam noites sozinhos na mata deixavam comida para ela, para que ela vigiasse o fogo.
+Mas quem se apaixonava pela Skogsrå nunca mais voltava a ser o mesmo. Voltava para casa vazio por dentro, como as costas dela.
 *(C3_02 — morto-vivo Draugr saindo de um túmulo de pedra coberto de gelo)*
 Outras são os Draugr, cadáveres inchados e escuros com força sobre-humana que guardam seus túmulos na neve.
+Na saga de Grettir, um pastor chamado Glámr morre no inverno e volta como Draugr.
+Ele sobe nos telhados à noite, quebra as vigas das casas e mata o gado com as próprias mãos.
+Quando o herói Grettir finalmente o derruba, Glámr o amaldiçoa com o pior castigo do norte: nunca mais conseguir ficar sozinho no escuro.
 *(C3_03 — criatura colossal de quatro metros com estrutura de alce decrépito, torso esquelético humanoide e dezenas de braços pendendo do peito sob galhadas enormes)*
 *(FICHA 06 — "JÖTNAR · Os gigantes primordiais e divindades sombrias da natureza")*
 E nas profundezas da mata habitam abominações colossais descritas como crias bastardas dos deuses antigos.
@@ -88,10 +114,15 @@ Ninguém que entra naquela floresta sai sem ser oferecido.
 *(C4_01 — clipe V03: quatro mochileiros vistos de costas iluminando uma cabana abandonada com símbolos rúnicos na floresta sueca)*
 Nos últimos anos, dois filmes pegaram exatamente essa ferida aberta do folclore escandinavo e jogaram o mundo inteiro dentro dela.
 O primeiro foi O Ritual, de dois mil e dezessete.
+Baseado no livro do britânico Adam Nevill, o filme acompanha quatro amigos que cortam caminho por uma floresta sueca.
+O que mora lá dentro é um Jötunn, apresentado no filme como filho bastardo de Loki. Uma aldeia inteira vive para servi-lo.
 *(FICHA 07 — "THE RITUAL (O Ritual) · Dois mil e dezessete · Dir. David Bruckner")*
 🎬 *(The Ritual, 2017 — sequência de 10 s mostrando os mochileiros perdidos na floresta sueca, os símbolos entalhados nos troncos e o vulto gigante espreitando entre as árvores; sem áudio)*
 *(C4_01 — variação 2: clareira verde cercada por floresta densa com templo de madeira e moradores vestidos de branco em círculo de costas)*
 Dois anos depois, em dois mil e dezenove, Ari Aster lançou Midsommar.
+O nome da comuna no filme, Hårga, vem de uma lenda real de Hälsingland. A mesma região onde Lucas e Rafael se perderam.
+Na lenda de Hårga, um violinista desconhecido aparece numa festa e toca tão bem que ninguém consegue parar de dançar.
+Os jovens dançam até a carne sair dos ossos. O violinista era o diabo.
 *(FICHA 08 — "MIDSOMMAR · Dois mil e dezenove · Dir. Ari Aster")*
 🎬 *(Midsommar, 2019 — sequência de 12 s mostrando a chegada à comuna isolada na Suécia, os trajes brancos bordados com runas, o templo triangular amarelo de madeira e o ritual coletivo; sem áudio)*
 O que torna esses dois filmes tão sufocantes é que eles não inventaram o horror.
@@ -121,6 +152,9 @@ Sem sinal de GPS e com a temperatura caindo para dezoito graus negativos, eles c
 *(H03 — foto de celular granulada ao entardecer mostrando casas antigas de madeira vermelha sueca cercadas por neve espessa e floresta fechada)*
 Era uma pequena comunidade rural completamente isolada da estrada principal.
 Cerca de vinte moradores, todos vestidos com túnicas longas de linho cru bordadas com runas geométricas nas mangas.
+Lucas reparou em três coisas naquela primeira noite.
+Não havia crianças na aldeia. Não havia cachorros.
+E em cima da porta do celeiro, alguém tinha entalhado oito marcas na madeira. Oito riscos iguais, e um espaço vazio do lado.
 *(H04 — foto discreta tirada por Lucas mostrando moradores vestidos de linho cru em círculo de costas ao redor de uma mesa iluminada por velas)*
 🎙lucas *(26 anos, voz aliviada e tremendo de frio, gravando áudio no celular dentro de um quarto de madeira)* "Cara, a gente deu muita sorte. O pessoal aqui não fala quase nada de inglês, mas abriram um quarto pra gente, deram sopa quente e deixaram secar as roupas perto do fogo. Amanhã cedo quando o tempo abrir a gente volta pra estrada."
 Naquela noite, os moradores insistiram para que os dois bebessem um chá escuro de ervas e raízes antes de dormir, dizendo que evitava a hipotermia.
@@ -130,6 +164,9 @@ Rafael bebeu a caneca inteira.
 ## LUCAS E RAFAEL — 2: O celeiro trancado
 *(H05 — foto de celular com flash mostrando uma runa nórdica pintada com sangue fresco na porta de madeira do quarto)*
 Lucas acordou às duas e dez da madrugada com um som grave vindo de fora da cabana.
+Ele demorou alguns segundos para entender o que estava ouvindo.
+Era kulning. O canto agudo que as pastoras suecas usavam há séculos para chamar o gado de volta das montanhas.
+Só que ninguém ali estava chamando gado.
 Era um tambor lento, acompanhado por um canto feminino agudo e metálico que parecia cortar a floresta inteira.
 Quando olhou para o lado, a cama de Rafael estava vazia — e na porta de madeira do quarto havia uma runa recém-pintada com sangue escuro.
 *(H06 — clipe V04: imagem de câmera de segurança CCTV infravermelha dentro do celeiro de madeira; quatro moradores de túnica de linho ajoelham-se em círculo de costas no chão)*
@@ -138,6 +175,7 @@ Lucas pegou o celular com a lanterna apagada e seguiu as pegadas na neve até o 
 Pela fresta das tábuas do celeiro, iluminado por tochas de resina, todos os moradores estavam ajoelhados em silêncio absoluto.
 *(H08 — foto de celular tremida e granulada através da fresta da madeira: Rafael inconsciente amarrado em pé a uma estrutura alta de madeira no centro do celeiro)*
 E amarrado com cordas grossas a uma estrutura alta de madeira no centro do círculo estava Rafael, completamente dopado pelo chá.
+Em cima dele, na viga mais alta, a madeira tinha uma marca nova. A nona.
 🎙lucas *(sussurro desesperado, respiração falhando de pavor e frio, gravando vídeo escondido atrás do celeiro)* "Eles vão matar ele... eles amarraram o Rafa no meio do galpão, eu preciso correr pra estrada e chamar a polícia antes que..."
 
 ## LUCAS E RAFAEL — 3: O que espera entre os pinheiros
@@ -166,6 +204,8 @@ As equipes de resgate suecas encontraram as mochilas de Lucas e Rafael abandonad
 Nenhuma aldeia foi localizada no raio de trinta quilômetros daquela coordenada.
 *(Vigia — troca para pose estática com o dossiê fechado sobre a mesa)*
 Apenas o celular de Lucas, caído dentro de uma pegada funda demais para pertencer a qualquer animal conhecido na Europa.
+A última mensagem enviada daquele celular chegou ao grupo três semanas depois, quando o aparelho foi religado pela polícia.
+Era só um áudio de nove segundos. E no áudio, ninguém falava. Só se ouvia, ao longe, alguém cantando.
 Porque na Escandinávia antiga, você não entra na floresta sem pagar o preço da travessia.
 *(pausa)*
 E o folclore do norte guarda outros horrores enterrados no gelo que não couberam nesta noite.
