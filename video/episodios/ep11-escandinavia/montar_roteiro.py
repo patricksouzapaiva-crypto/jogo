@@ -228,7 +228,7 @@ def chat(i, *novas, sons=True, legenda=True):
 
 
 # ================================================================ GANCHO — sem Vigia
-C(0, clipe("V01_b"))
+C(0, clipe("V01_b"), (clipe("V01_a"), "inverno"))
 C(1, seco(real("C1_01_real")))
 C(2, seco(zoom(IA("G02a", 2), (1.0, 1.06), ((0.4, 0.5), (0.38, 0.48)))))
 C(3, obt(zoom(IA("G02b", 2), (1.0, 1.06))), (obt(zoom(IA("G02c", 1), (1.0, 1.08), ((0.55, 0.45), (0.55, 0.38)))), "correr"))
