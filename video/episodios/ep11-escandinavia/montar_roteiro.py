@@ -421,7 +421,7 @@ C(52, zoom(IA("C2_01", 3), (1.12, 1.24), ((0.5, 0.55), (0.5, 0.6))))
 C(57, zoom(TENT("C3_02_repeticoes_da_Skogsra/C3_02_repeticoes_da_Skogsra_01.png"), (1.0, 1.08), ((0.5, 0.45), (0.5, 0.4))))
 C(58, zoom(TENT("C3_02_repeticoes_da_Skogsra/C3_02_repeticoes_da_Skogsra_02.png"), (1.0, 1.08), ((0.55, 0.45), (0.55, 0.4))))
 C(60, zoom(IA("C3_02", 2), (1.0, 1.08), ((0.4, 0.6), (0.38, 0.62))))
-C(61, c3(IA("F03", 2), "entrar", (0.6, 0.45), 0.8, 0.2))
+C(61, zoom(IA("T01", 1), (1.1, 1.22), ((0.35, 0.55), (0.32, 0.5))))   # 20/11: o Draugr F03_02 tinha chifres (parecia a criatura): os telhados da aldeia
 C(62, zoom(IA("C3_02", 1), (1.1, 1.22), ((0.5, 0.4), (0.5, 0.35))))
 C(71, filme("ritual_amigos"))   # 20/11: trailers do Drive
 C(72, filme("ritual_jotunn"))   # o Jötunn DO FILME, só em silhueta contra o fogo (a nossa criatura só aparece no clímax)
