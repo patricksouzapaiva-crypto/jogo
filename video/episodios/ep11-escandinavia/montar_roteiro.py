@@ -460,7 +460,9 @@ pausa(113, 1.4)   # 20/11: a câmera do celeiro ("o tambor parou") fica >= 4 s
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
-                "musica": {"som": "vinheta_ultimo_abrigo", "volume_db": -20}})
+                # 20/11 (usuário: "mude a música da chamada… o fundo nórdico com a voz e os tambores; a voz mais baixa
+                # enquanto o Vigia fala, depois aumenta, e a tela escurece aos poucos"): trilha/compor_fim.py
+                "musica": {"som": "ep11_fim_voz", "volume_db": -13}})
 
 voz = "audio/voz_personagens.wav" if (AQUI / "audio" / "voz_personagens.wav").exists() else "audio/voz_com_vinheta_limpa.wav"
 roteiro = {
@@ -485,7 +487,7 @@ roteiro = {
     "cta": {"titulo": "Não siga o canto.", "canal": "Último Abrigo",
             "subtitulo": "Inscreva-se para mais casos do Vigia",
             "fundo": "../../painel/cenarios/abrigo_16x9.png", "pose": "c_cafe_convite",
-            "antes": 0.6, "clique_em": "Inscreva-se", "duracao": 2.5},
+            "antes": 0.6, "clique_em": "Inscreva-se", "duracao": 20.0, "escurecer": 0.94},   # 20/11: fim longo no escuro, só a música
     "batidas": batidas,
 }
 

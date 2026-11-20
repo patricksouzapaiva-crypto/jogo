@@ -954,6 +954,8 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
                     "botao": cta.get("botao", "INSCREVER-SE"), "botao_ok": cta.get("botao_ok", "INSCRITO")}
         if k_cta is not None and cta.get("clique_em"):  # o botão é clicado quando o Vigia diz a palavra
             D["cta"]["clique"] = round(rel.em(k_cta, cta["clique_em"]) - t_cta, 2)
+        if cta.get("escurecer"):   # 20/11 (Ep11): depois da última fala a tela escurece aos poucos até o fim
+            D["cta"]["escurecer"] = [round(rel.t[-1][1] + 0.4, 2), round(duracao - 0.6, 2), float(cta["escurecer"])]
         if cta.get("fundo"):  # chamada final no cenário do Vigia, com ele em destaque
             D["cenas"].append({"t0": t_cta, "t1": duracao, "imagem": str((base / cta["fundo"]).resolve()),
                                "zoom": [1.0, 1.04], "foco": [[0.5, 0.5], [0.5, 0.5]], "vigia": True, "lado": "esq",

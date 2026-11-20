@@ -1649,6 +1649,9 @@ function quadroSinc(t) {
       }
     }
     if (D.titulo_ep) tituloEpisodio(t);
+    // 20/11 (Ep11): o fim escurece aos poucos (a música segue sozinha no escuro)
+    const E = D.cta && D.cta.escurecer;
+    if (E && t > E[0]) { ctx.fillStyle = `rgba(0,0,0,${E[2] * easeInOut(lin(t, E[0], E[1] - E[0]))})`; ctx.fillRect(0, 0, D.W, D.H); }
     const f = Math.min(lin(t, 0, 0.3), 1 - lin(t, D.duracao - 0.5, 0.5));
     if (f < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - f})`; ctx.fillRect(0, 0, D.W, D.H); }
     return;

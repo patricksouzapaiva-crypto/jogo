@@ -3,7 +3,9 @@ tambores"): depois do convite do Vigia a tela escurece e fica só o som. Por bai
 nórdico). Por cima, um tambor de ritual lento no compasso da polska (TUM . tum), que incha e depois some. O tema
 volta bem baixo nas violas. Em cima de tudo, o kulning (a voz da mata), afinado de dó menor para ré menor e com o
 reverb do salão de pedra.
-Uso: python3 compor_fim.py kulning.mp3 saida.wav [duracao=32]"""
+20/11 (usuário: "enquanto o Vigia fala a voz é mais baixa, mas depois aumenta, e a tela escurece aos poucos"): a
+trilha cobre a VINHETA de inscrição inteira; até o fim da fala (FALA s) o kulning fica baixo, depois cresce.
+Uso: python3 compor_fim.py kulning.mp3 saida.wav [duracao=32] [fim_da_fala=0]"""
 import subprocess, sys
 from pathlib import Path
 import numpy as np
@@ -11,6 +13,7 @@ import soundfile as sf
 from compor_orquestra import Orquestra, TEMA, Q, BAR, bordao
 
 voz, saida = sys.argv[1], Path(sys.argv[2]); D = float(sys.argv[3]) if len(sys.argv) > 3 else 32.0
+FALA = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
 o = Orquestra(D + 2)
 bordao(o, 0.0, D, 0.6); o.cresc("cb", "D2", 0.0, D, 0.5, 0.35)
 o.cresc("vla_trem", "A3", 8.0, D - 12, 0.02, 0.18, pan=0.3)
@@ -37,7 +40,10 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", voz, "-af",
                 f"atrim=0:{D},afade=t=out:st={D - 7}:d=6", "-ar", "44100", "-ac", "2", str(kul)], check=True)
 a, _ = sf.read(orq, dtype="float32"); b, _ = sf.read(kul, dtype="float32")
 n = int(D * 44100); a = np.pad(a, ((0, max(0, n - len(a))), (0, 0)))[:n]; b = np.pad(b, ((0, max(0, n - len(b))), (0, 0)))[:n]
-y = a * 0.85 + b * 0.62
+tt = np.arange(n) / 44100
+gk = np.where(tt < FALA, 0.32, 0.32 + 0.68 * np.clip((tt - FALA) / 4.0, 0, 1) ** 1.5)    # kulning: baixo sob a fala
+ga = np.where(tt < FALA, 0.75, 0.75 + 0.25 * np.clip((tt - FALA) / 4.0, 0, 1))           # orquestra sobe um pouco
+y = a * 0.85 * ga[:, None] + b * 0.62 * gk[:, None]
 f = int(3.0 * 44100); y[-f:] *= np.linspace(1, 0, f)[:, None] ** 1.5
 y /= np.abs(y).max() / 0.89
 sf.write(saida, y, 44100); orq.unlink(); kul.unlink()
