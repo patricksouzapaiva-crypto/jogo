@@ -1279,6 +1279,11 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
         if "/painel_" in _p and os.path.exists(_p):
             os.remove(_p)
     automixar(stem, bruto, mix)
+    if os.environ.get("DEPURAR_MIX_CORTE"):   # "ini,fim": guarda o bruto (antes do loudnorm) desse trecho
+        _a, _b = os.environ["DEPURAR_MIX_CORTE"].split(",")
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", _a, "-to", _b, "-i", bruto, "/tmp/depurar_bruto.wav"], check=True)
+        for kk in ("voz", "fundo", "efeitos"):
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", _a, "-to", _b, "-i", stem[kk], f"/tmp/depurar_{kk}.wav"], check=True)
     relatorio_mix(stem, duracao)
     saltos([stem["fundo"], stem["efeitos"]])
     if not sem_voz:   # 17/11: disco curto — as trilhas separadas já serviram (relatório e saltos); só o bruto segue
@@ -1294,10 +1299,12 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
                         "alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
         os.remove(bruto)
         return
+    # 20/11 (Ep. 11: a música "sumia" nas pausas): o loudnorm caía no modo dinâmico (o pico não deixava o modo linear)
+    # e achatava os respiros ~15 dB. Agora é um GANHO FIXO até -14 LUFS + limitador: o equilíbrio voz/trilha que a
+    # mixagem decidiu chega igual ao vídeo.
+    ganho = -14.0 - float(mm["input_i"])
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", bruto, "-af",
-                    f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={mm['input_i']}:measured_TP={mm['input_tp']}:"
-                    f"measured_LRA={mm['input_lra']}:measured_thresh={mm['input_thresh']}:offset={mm['target_offset']}:"
-                    "linear=true,aresample=48000,alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
+                    f"volume={ganho:.2f}dB,aresample=48000,alimiter=limit=0.70:attack=1:release=50:level=disabled", "-ac", "2", saida], check=True)
     os.remove(bruto)
 
 
