@@ -340,10 +340,10 @@ pausa(88, 0.4); pausa(91, 0.6); pausa(97, 0.6); pausa(99, 0.4); pausa(100, 1.6)
 # ================================================================ LUCAS E RAFAEL — 2: o celeiro
 C(100, c3(IA("H03", 4), "entrar", (0.6, 0.5), 0.9, 0.2, atmos={"neblina": 0.3}))
 C(104, zoom(IA("H03", 1), (1.06, 1.14), ((0.55, 0.5), (0.58, 0.48))))
-C(105, zoom(IA("H02_H07", 1), (1.0, 1.04)), (obt(zoom(IA("H05", 1), (1.0, 1.06), ((0.4, 0.45), (0.4, 0.42)))), "runa"))
-obt_som(105, "runa")
+C(105, obt(zoom(IA("H05", 1), (1.0, 1.08), ((0.4, 0.45), (0.4, 0.42)))))   # 20/11: a runa na porta a frase inteira (cortada no meio ela sumia)
+obt_som(105)
 C(106, c3(IA("H09", 1), "entrar", (0.5, 0.6), 0.8, 0.2))
-C(107, clipe("V04_c", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:51"), (clipe("V04_d", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:58"), "ajoelhados"))
+C(107, clipe("V04_c", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:51", congelar=True))   # 20/11: sem troca no meio da frase
 C(108, obt(zoom(IA("H08", 2), (1.0, 1.06), ((0.5, 0.45), (0.5, 0.4)))), (obt(zoom(IA("H08", 6), (1.0, 1.06))), "Rafael"))
 obt_som(108); obt_som(108, "Rafael")
 chat(110, {"de": "Lucas", "tipo": "video", "imagem": IA("H08", 3), "hora": "02:27", "apos": 0.2},
@@ -454,6 +454,8 @@ for _i in (SEC["CAPÍTULO 2"], SEC["CAPÍTULO 3"], SEC["CAPÍTULO 4"], SEC["APAR
 for _b in batidas:                   # ambiente "nenhum" vira um vento bem baixo: nunca silêncio morto
     if _b.get("ambiente", {}).get("som") == "nenhum":
         _b["ambiente"] = {"som": "ep11_vento_pinheiros", "volume_db": -36}
+
+pausa(113, 1.4)   # 20/11: a câmera do celeiro ("o tambor parou") fica >= 4 s
 
 # ================================================================ VINHETA FIXA DE INSCRIÇÃO
 batidas.append({"fala": F.VINHETA, "cta_inicio": True, "sem_legenda": True, "ambiente": {"som": "nenhum"},
