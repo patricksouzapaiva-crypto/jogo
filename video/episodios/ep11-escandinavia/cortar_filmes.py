@@ -22,12 +22,12 @@ R = {"ritual_trailer": (1600, 900, 40, 40), "ritual_criatura": (1920, 800, 0, 14
 # (início, fim[, lento]): os cortes caem nos cortes do próprio trailer (ffmpeg scene). lento > 1: plano curto do trailer
 # em câmera lenta pelo RIFE (usuário: "sem pulos de imagem rápido onde a pessoa nem entende que imagem é")
 TRECHOS = {
-    "ritual_floresta": ("ritual_trailer", [(29.0, 33.5), (34.6, 38.5)], RITUAL),            # a floresta de cima, o chão da mata
+    "ritual_floresta": ("ritual_trailer", [(31.0, 33.5), (34.7, 38.5)], RITUAL),            # a floresta de cima, o chão da mata
     "ritual_amigos": ("ritual_trailer", [(12.2, 14.2), (18.95, 19.8, 2.0), (23.95, 26.65)], RITUAL),   # os amigos de costas, a borda da floresta
     "ritual_jotunn": ("ritual_criatura", [(10.35, 13.0), (14.5, 17.4)], RITUAL),           # o Jötunn em silhueta contra o fogo, a cabana ardendo
     "mids_portal": ("midsommar_trailer", [(60.5, 62.4), (64.6, 67.5)], MIDS),               # o portal do sol, a chegada à comuna
     "mids_comuna": ("midsommar_trailer", [(72.6, 77.4), (80.4, 83.0)], MIDS),               # os campos de Hårga, gente de branco
-    "mids_danca": ("midsommar_trailer", [(95.3, 96.4, 2.5), (98.6, 99.6, 2.5), (135.5, 139.2)], MIDS),   # o violinista e a roda, as coroas de flores
+    "mids_danca": ("midsommar_trailer", [(95.3, 96.4, 2.5), (98.6, 99.6, 2.5), (136.6, 139.2)], MIDS),   # o violinista e a roda, as coroas de flores
     "mids_penhasco": ("midsommar_penhasco", [(58.0, 64.8)], MIDS),                          # o ancião no alto do penhasco (nunca a queda)
 }
 sys.path.insert(0, str(AQUI.parents[1] / "painel" / "ferramentas"))
