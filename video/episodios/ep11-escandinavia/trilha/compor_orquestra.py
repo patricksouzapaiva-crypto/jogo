@@ -93,7 +93,9 @@ def cartao(n):
     polska, com a cor de cada capítulo: 1 = viola grave (pântano), 2 = trêmulo e semitom (a águia), 3 = violino agudo e
     cluster (as criaturas), 4 = o tema inteiro mais claro, em ré dórico (o verão do Midsommar)."""
     o = Orquestra(10); TB = 1.6
-    o.cresc("cb", "D2", 0.0, 8.0, 0.05, 0.6); o.cresc("vc", "D2", 0.2, 7.8, 0.05, 0.5, pan=-0.3)
+    # 20/11: o bordão já começa audível (antes subia do nada: 1.5 s de quase silêncio antes do golpe)
+    o.cresc("cb", "D2", 0.0, 8.0, 0.75, 0.6); o.cresc("vc", "D2", 0.0, 8.0, 0.65, 0.5, pan=-0.3)
+    o.cresc("vc_trem", "A2", 0.0, TB + 0.2, 0.6, 0.8, pan=0.3)
     o.golpe("timp", TB, 1.3, 2 + n); o.golpe("bumbo", TB, 1.2, 4 + n)
     t = TB + 0.35
     if n == 1:
@@ -115,7 +117,7 @@ if __name__ == "__main__" and "cartoes" in sys.argv:
     SONS = AQUI.parents[2] / "painel" / "sons"
     for n in (1, 2, 3, 4):
         w = AQUI / f"_cap{n}.wav"; cartao(n).salvar(w, rev=0.38, corte=8.05)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-af", "afade=t=in:d=0.02,afade=t=out:st=7.0:d=1.05,volume=-1dB",
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(w), "-af", "afade=t=in:d=0.4,afade=t=out:st=7.0:d=1.05,volume=-1dB",
                         "-b:a", "192k", str(SONS / f"ep11_cap{n}.mp3")], check=True); w.unlink()
         print("ok", f"ep11_cap{n}.mp3")
 
@@ -192,7 +194,9 @@ def episodio(plano, saida):
             tema(o, a + 0.3, 1.5, ate=9, pan=0.3); o.nota("vln", "C#5", a + 0.3 + 16 * Q, 3.5, 1.0, ataque=0.6, solta=2.0, pan=0.3)
             if d > 60: tema(o, b - 30, 0.45, ate=9, pan=-0.2)
     for a, b in plano.get("cartoes", []):   # o cartão tem a música dele: a trilha some e volta
-        SIL.append((a - 0.3, b - a - 0.6))   # a trilha volta por baixo do fim do cartão: nunca um vão
+        # 20/11 (usuário: "a música corta bruscamente e tem um silêncio antes do cartão"): a trilha não corta mais —
+        # vai sumindo por 2.4 s, cruzando com o bordão do cartão, e só some de vez logo depois do golpe (1.6 s)
+        SIL.append((a - 0.6, b - a - 0.3, 2.4))   # a trilha volta por baixo do fim do cartão: nunca um vão
     o.salvar(saida, corte=fim, silencios=SIL)
 
 

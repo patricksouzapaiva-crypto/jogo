@@ -15,3 +15,6 @@ video/episodios/ep11-escandinavia/reais_prontos/
 video/episodios/ep11-escandinavia/camera3d/
 video/episodios/ep11-escandinavia/roteiro.json
 video/episodios/ep11-escandinavia/trilha/*.wav
+
+# Ep11: kulning gerado por IA (vidIQ) — fora do repo público
+video/painel/sons/ep11_kulning_voz*.mp3

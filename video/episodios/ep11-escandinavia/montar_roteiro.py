@@ -235,7 +235,7 @@ C(3, obt(zoom(IA("G02b", 2), (1.0, 1.06))), (obt(zoom(IA("G02c", 1), (1.0, 1.08)
 obt_som(3); obt_som(3, "correr")
 amb(0, "ep11_vento_pinheiros", -22)
 fx(0, None, "ep11_passos_neve", -24, atraso=0.2, ate=6.0, saida=1.5)
-fx(2, None, "ep11_kulning_longe", -24, atraso=-0.6, ate=7.0, saida=2.5)
+fx(2, None, "ep11_kulning_voz_longe", -24, atraso=-0.6, ate=7.0, saida=2.5)
 fx(3, "correr", "ep11_impacto_grave", -16)
 pausa(1, 0.4); pausa(3, 0.6); pausa(4, 1.0)
 
@@ -343,21 +343,20 @@ C(104, zoom(IA("H03", 1), (1.06, 1.14), ((0.55, 0.5), (0.58, 0.48))))
 C(105, obt(zoom(IA("H05", 1), (1.0, 1.08), ((0.4, 0.45), (0.4, 0.42)))))   # 20/11: a runa na porta a frase inteira (cortada no meio ela sumia)
 obt_som(105)
 C(106, c3(IA("H09", 1), "entrar", (0.5, 0.6), 0.8, 0.2))
-C(107, clipe("V04_c", cam="CAM 02 - CELEIRO // -18°C", hora="02:24:51", congelar=True))   # 20/11: sem troca no meio da frase
+C(107, clipe("V04_c", congelar=True))   # 20/11: sem troca no meio da frase; sem câmera de segurança (usuário: "não faz sentido ter câmera ali")
 C(108, obt(zoom(IA("H08", 2), (1.0, 1.06), ((0.5, 0.45), (0.5, 0.4)))), (obt(zoom(IA("H08", 6), (1.0, 1.06))), "Rafael"))
 obt_som(108); obt_som(108, "Rafael")
 chat(110, {"de": "Lucas", "tipo": "video", "imagem": IA("H08", 3), "hora": "02:27", "apos": 0.2},
      {"de": "Lucas", "tipo": "audio", "duracao": "0:08", "hora": "02:27", "apos": 1.0})
 amb(100, "ep11_mata_inverno_noite", -26); amb(107, "nenhum"); amb(108, "nenhum"); amb(110, "ep11_vento_pinheiros", -30)
-fx(100, None, "ep11_kulning_longe", -22, atraso=1.5, ate=9.0, saida=3.0)
+fx(100, None, "ep11_kulning_voz_longe", -22, atraso=1.5, ate=9.0, saida=3.0)
 fx(104, None, "ep11_coracao", -26, ate=7.0, saida=2.0)
 fx(106, None, "ep11_passos_neve", -22, ate=6.0, saida=1.5)
-fx(107, None, "ep10_cctv_estatica", -27, ate=0.8, saida=0.3)
 pausa(105, 0.6); pausa(107, 0.6); pausa(110, 0.6); pausa(111, 1.2)
 
 # ================================================================ LUCAS E RAFAEL — 3: o que espera entre os pinheiros
 C(111, zoom(IA("H08", 5), (1.0, 1.05)))
-C(112, seco(cctv(zoom(IA("H06", 2), (1.0, 1.02)), "CAM 02 - CELEIRO // -18°C", "02:28:03")))
+C(112, seco(zoom(IA("H06", 2), (1.0, 1.04))))   # 20/11: sem câmera de segurança no celeiro
 C(113, clipe("V05_c"))
 C(114, clipe("V05_d"))
 C(115, seco(zoom(IA("H10", 2), (1.0, 1.04))))
@@ -371,7 +370,6 @@ C(121, clipe("V06_b"))
 C(122, clipe("V06_a"), (c3(IA("H11", 2), "entrar", (0.5, 0.4), 0.7, 0.2), "altar"))   # 17/11: V06_d saiu (lanterna presa na criatura)
 amb(111, "nenhum"); amb(113, "ep11_nevasca", -24); amb(115, "nenhum"); amb(116, "ep11_vento_pinheiros", -28); amb(118, "nenhum")
 fx(111, "galho", "ep11_galho_quebra", -14)
-fx(112, None, "ep10_cctv_estatica", -25, ate=0.6, saida=0.2)
 fx(113, None, "ep11_passos_neve_correndo", -18, ate=10.0, saida=2.0)
 fx(119, None, "ep11_lanterna_clique", -16, atraso=1.0)
 fx(120, "coisa", "ep11_rosnado", -20)
@@ -389,7 +387,7 @@ C(132, zoom(IA("F03", 1), (1.0, 1.07), ((0.5, 0.5), (0.5, 0.45))))
 C(133, vigia((1.02, 1.07)))
 C(135, vigia((1.08, 1.14), ((0.42, 0.45), (0.4, 0.43))))
 amb(123, "ep11_vento_pinheiros", -28); amb(128, "nenhum"); amb(130, "ep11_mata_inverno_noite", -30); amb(133, "nenhum")
-fx(135, "cantar", "ep11_kulning_longe", -26, ate=8.0, saida=3.0)
+fx(135, "cantar", "ep11_kulning_voz_longe", -26, ate=8.0, saida=3.0)
 pausa(125, 0.6); pausa(128, 0.8); pausa(132, 0.6); pausa(135, 0.4)
 
 
@@ -439,7 +437,10 @@ C(103, zoom(IA("H03", 4), (1.08, 1.18), ((0.4, 0.5), (0.38, 0.5))))
 C(109, obt(zoom(IA("H08", 4), (1.0, 1.08), ((0.5, 0.35), (0.5, 0.25)))))
 obt_som(109)
 chat(126, {"de": "Lucas", "tipo": "audio", "duracao": "0:09", "hora": "04:51", "apos": 0.6})
-fx(127, "cantando", "ep11_kulning_longe", -22, ate=8.0, saida=3.0)
+fx(127, "cantando", "ep11_kulning_voz_longe", -22, ate=8.0, saida=3.0)
+# 20/11 (usuário: "vamos tentar produzir o canto kulning"): o kulning de verdade, em destaque, na ficha parada
+# (a voz para e o canto aparece limpo, perto) e de longe na frase seguinte
+fx(101, None, "ep11_kulning_voz_longe", -25, atraso=0.4, ate=6.0, saida=2.0)
 amb(26, "ep11_vento_pinheiros", -30); amb(28, "nenhum"); amb(36, "nenhum"); amb(37, "ep11_nevasca", -30); amb(51, "nenhum")
 amb(52, "ep11_vento_pinheiros", -32); amb(102, "nenhum"); amb(103, "ep11_mata_inverno_noite", -28)
 fx(95, "oito", "ep11_gelo_estalo", -20); fx(109, "nona", "ep11_impacto_grave", -15)
@@ -634,6 +635,9 @@ for _b in batidas:                                   # rascunho 1: tira TODO foc
     for _c in cenas_de(_b):
         _c.pop("dof", None)
 
+FICHA_L = {}
+
+
 def fichas_paradas():
     """17/11 (usuário: "quando aparece a tela com descrição, tem que estar parado… calcula o tempo que a pessoa vai
     demorar para ler… com o barulho do teclado"): a FICHA entra numa pausa SÓ DELA — a narração para, a máquina de
@@ -652,11 +656,13 @@ def fichas_paradas():
         depois = {k: v for k, v in (ant or {}).items() if k not in ("em", "antecipar", "antecipar_fixo", "entrada", "duracao_entrada")}
         depois["em"] = tk(falas[i])[0]; depois["entrada"] = "fundir"; depois["duracao_entrada"] = 0.6
         b.pop("cena", None); b["cenas"] = [f, depois]
-        pausa(i, L); feitas.append((i, L))
+        pausa(i, L); feitas.append((i, L)); FICHA_L[i] = L
     print("fichas paradas (fala, s de leitura):", feitas)
 
 
 fichas_paradas()
+# o kulning em destaque começa junto com a ficha KULNING (a voz parada) e segue por baixo da frase
+fx(102, None, "ep11_kulning_voz", -19, atraso=-FICHA_L[102] + 0.4, ate=FICHA_L[102] + 5.0, saida=3.0)
 ritmo()
 garantir_leitura()
 aplicar_ajuste_pausas()

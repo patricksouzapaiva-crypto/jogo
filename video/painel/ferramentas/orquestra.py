@@ -119,9 +119,11 @@ class Orquestra:
         ir /= np.sqrt((ir ** 2).sum(0)); mol = np.stack([fftconvolve(self.buf[:, c], ir[:, c])[: len(self.buf)] for c in range(2)], 1)
         y = self.seco + self.buf * (1 - rev) + mol * rev * 2.2
         y = sosfilt(butter(2, 30, "hp", fs=SR, output="sos"), y, axis=0)
-        for t, d in silencios:   # silêncio de verdade (o reverb também é cortado), com bordas de 25 ms / 0.6 s
-            i, j = int(t * SR), int((t + d) * SR); f = int(0.025 * SR)
-            y[i:i + f] *= np.linspace(1, 0, f)[:, None]; y[i + f:j] = 0; g = int(0.6 * SR); y[j:j + g] *= np.linspace(0, 1, g)[:, None] ** 2
+        for sil in silencios:   # silêncio de verdade (o reverb também é cortado); (t, d) = borda de 25 ms, (t, d, f) =
+            t, d = sil[:2]          # a música vai sumindo em f segundos (20/11: entrada dos cartões, nunca um corte seco)
+            f = int((sil[2] if len(sil) > 2 else 0.025) * SR); i, j = int(t * SR), int((t + d) * SR)
+            y[i:i + f] *= (0.5 + 0.5 * np.cos(np.linspace(0, np.pi, f)))[:, None]; y[i + f:j] = 0
+            g = int(0.6 * SR); y[j:j + g] *= np.linspace(0, 1, g)[:, None] ** 2
         if corte: y = y[: int(corte * SR)]
         y /= max(1e-9, np.abs(y).max()) / 0.89
         sf.write(arq, y, SR)

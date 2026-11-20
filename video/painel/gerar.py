@@ -1309,6 +1309,13 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
 
 
 # ---------------------------------------------------------------- principal
+def _fps_midia(arq):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
+                        "-of", "csv=p=0", str(arq)], capture_output=True, text=True).stdout.strip() or "30/1"
+    a, b = r.split("/") if "/" in r else (r, "1")
+    return float(a) / float(b or 1)
+
+
 def _duracao_midia(arq):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(arq)],
                        capture_output=True, text=True)
@@ -1377,12 +1384,26 @@ def extrair_quadros(c, fps):
     leve = os.environ.get("PAINEL_RASCUNHO") == "1"
     # 15/11 (final do Ep09): no render final os quadros saem com no máx. 1600 px e -q:v 4 — o cache em 1080p cheio
     # não cabia no disco da sessão (o vídeo final ainda tem 1920: o motor amplia com zoom suave)
-    chave = hashlib.md5(f"{c['video']}|{ini}|{vel:.3f}|{n}|{fps}{'|960' if leve else '|1600q4'}".encode()).hexdigest()[:16]
+    # 20/11 (Ep11, usuário: "travamentos de imagem e vídeo" no Ättestupa): clipe de 24 q/s num vídeo de 30 repete um
+    # quadro a cada cinco (tranco visível em todo movimento), e desacelerar com setpts repete ainda mais. Agora o clipe
+    # passa antes pelo RIFE (ferramentas/interpolar.py): quadros intermediários de verdade, já em 30 q/s e na
+    # velocidade da cena. Cache em painel/.cache_fluido.
+    fonte = c["video"]
+    if os.environ.get("PAINEL_SEM_RIFE") != "1" and (abs(_fps_midia(fonte) - fps) > 0.5 or vel < 0.999):
+        fl = AQUI / ".cache_fluido"; fl.mkdir(exist_ok=True)
+        st = Path(fonte).stat()
+        suave = fl / (hashlib.md5(f"{Path(fonte).resolve()}|{st.st_size}|{vel:.3f}|{fps}".encode()).hexdigest()[:16] + ".mp4")
+        if not suave.exists():
+            sys.path.insert(0, str(AQUI / "ferramentas")); from interpolar import interpolar
+            print(f"    RIFE: {Path(fonte).name} → {fps} q/s" + (f", {vel:.2f}×" if vel < 0.999 else ""), flush=True)
+            interpolar(fonte, suave.with_suffix(".tmp.mp4"), lento=1 / vel, fps=fps); suave.with_suffix(".tmp.mp4").rename(suave)
+        fonte = str(suave); ini = ini / vel; vel = 1.0
+    chave = hashlib.md5(f"{fonte}|{ini}|{vel:.3f}|{n}|{fps}{'|960' if leve else '|1600q4'}".encode()).hexdigest()[:16]
     pasta = AQUI / ".cache_quadros" / chave
     if not (pasta / f"{n:05d}.jpg").exists():
         pasta.mkdir(parents=True, exist_ok=True)
         filtro = f"setpts=PTS/{vel:.4f},fps={fps},tpad=stop_mode=clone:stop_duration={precisa + 1:.2f}" + (",scale=960:-2" if leve else ",scale='min(iw,1600)':-2")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini:.3f}", "-i", c["video"], "-an", "-vf", filtro,
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ini:.3f}", "-i", fonte, "-an", "-vf", filtro,
                         "-frames:v", str(n), "-q:v", "3" if leve else "4", str(pasta / "%05d.jpg")], check=True)
     c["quadros"] = {"dir": str(pasta), "n": n, "fps": fps}
     c["imagem"] = str(pasta / "00001.jpg")
