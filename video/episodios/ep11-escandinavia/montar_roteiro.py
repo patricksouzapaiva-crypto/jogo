@@ -134,6 +134,7 @@ def musica(i, faixa, db, em=None, atraso=0.0):
 # ================================================================ Ep. 11 — material
 RP = "reais_prontos/"
 CL = "clipes/flow/"
+FP = "filmes_prontos/"   # cortar_filmes.py (trailers do Drive, fora do git)
 DATA = "21-11-2025"
 
 
@@ -303,10 +304,10 @@ pausa(56, 0.4); pausa(63, 0.6); pausa(65, 0.6); pausa(68, 0.6); pausa(69, 0.8)
 # ================================================================ CAPÍTULO 4 — quando o culto voltou para a tela
 capitulo(69, 4, c3(IA("C4_01", 1), "entrar", (0.5, 0.45), 0.9, 0.3, atmos={"neblina": 0.4}), "Nos")
 C(70, ficha("THE RITUAL (O RITUAL)\n2017 · Dir. David Bruckner", "THE RITUAL"))
-C(73, c3(IA("C4_01", 2), "entrar", (0.5, 0.4), 0.8, 0.1))
-C(77, ficha("MIDSOMMAR\n2019 · Dir. Ari Aster", "MIDSOMMAR"))
+C(73, ficha("MIDSOMMAR\n2019 · Dir. Ari Aster", "MIDSOMMAR"))   # 20/11: a ficha no nome do filme (antes caía 4 frases depois)
+C(77, zoom(IA("C4_01", 2), (1.0, 1.08), ((0.5, 0.45), (0.5, 0.42))))
 C(78, zoom(IA("C4_01", 2), (1.08, 1.2), ((0.5, 0.45), (0.5, 0.4))))
-amb(70, "nenhum"); amb(73, "ep11_vento_pinheiros", -30); amb(77, "nenhum")
+amb(70, "nenhum"); amb(73, "nenhum"); amb(74, "ep11_vento_pinheiros", -32)
 pausa(73, 0.4); pausa(78, 0.6); pausa(79, 1.0)
 
 # ================================================================ APARTE — Vigia: o tributo
@@ -412,7 +413,7 @@ C(37, zoom(IA("T01", 2), (1.0, 1.08), ((0.5, 0.4), (0.5, 0.35))))
 C(38, zoom(IA("T01", 7), (1.05, 1.14), ((0.6, 0.55), (0.62, 0.55))))
 C(39, real("C3_rok_02"))
 C(42, zoom(IA("C2_02", 1), (1.0, 1.08), ((0.4, 0.5), (0.35, 0.55))))
-C(43, zoom(IA("C2_02", 2), (1.06, 1.14), ((0.3, 0.5), (0.3, 0.48))))
+C(43, filme("mids_penhasco"))   # 20/11: o Ättestupa no cinema (Midsommar) — só o ancião no alto, nunca a queda
 C(49, zoom(IA("C2_01", 1), (1.0, 1.08), ((0.25, 0.5), (0.3, 0.5))))
 C(50, zoom(TENT("C2_01_composites/C2_01_composites_01.png"), (1.0, 1.08), ((0.35, 0.5), (0.3, 0.5))))
 C(51, ficha("A ÁGUIA DE SANGUE · 2022\nEstudo anatômico na revista Speculum: o ritual era possível", "2022"))
@@ -422,10 +423,10 @@ C(58, zoom(TENT("C3_02_repeticoes_da_Skogsra/C3_02_repeticoes_da_Skogsra_02.png"
 C(60, zoom(IA("C3_02", 2), (1.0, 1.08), ((0.4, 0.6), (0.38, 0.62))))
 C(61, c3(IA("F03", 2), "entrar", (0.6, 0.45), 0.8, 0.2))
 C(62, zoom(IA("C3_02", 1), (1.1, 1.22), ((0.5, 0.4), (0.5, 0.35))))
-C(71, zoom(IA("C4_01", 1), (1.06, 1.16), ((0.45, 0.45), (0.45, 0.4))))
-C(72, c3(IA("T01", 3), "entrar", (0.5, 0.5), 0.8, 0.2, atmos={"neblina": 0.5}))   # 20/11 (usuário: a criatura aparece pouco e é SEMPRE a mesma): sem criatura aqui
-C(74, zoom(TENT("F01_erros/F01_Erro_1_Mastro.png"), (1.0, 1.08)))
-C(75, zoom(IA("F01", 2), (1.0, 1.08), ((0.45, 0.5), (0.4, 0.5))))
+C(71, filme("ritual_amigos"))   # 20/11: trailers do Drive
+C(72, filme("ritual_jotunn"))   # o Jötunn DO FILME, só em silhueta contra o fogo (a nossa criatura só aparece no clímax)
+C(74, filme("mids_comuna"))
+C(75, filme("mids_danca"))
 C(76, zoom(TENT("F01_erros/F01_Erro_3_Mastro.png"), (1.0, 1.1), ((0.5, 0.5), (0.5, 0.45))))
 C(93, zoom(IA("H04", 2), (1.06, 1.14), ((0.5, 0.5), (0.5, 0.45))))
 C(94, c3(IA("H03", 3), "entrar", (0.5, 0.55), 0.8, 0.2))
@@ -663,6 +664,10 @@ def fichas_paradas():
 
 
 fichas_paradas()
+# 20/11: depois das fichas dos filmes, a voz volta já sobre o trailer
+for _i, _n in ((70, "ritual_floresta"), (73, "mids_portal")):
+    _d = batidas[_i]["cenas"][1]
+    batidas[_i]["cenas"][1] = {**filme(_n), "em": _d["em"], "entrada": "fundir", "duracao_entrada": 0.6}
 # o kulning em destaque começa junto com a ficha KULNING (a voz parada) e segue por baixo da frase
 fx(102, None, "ep11_kulning_voz", -19, atraso=-FICHA_L[102] + 0.4, ate=FICHA_L[102] + 5.0, saida=3.0)
 ritmo()
