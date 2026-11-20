@@ -1548,7 +1548,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     # 15/11: no final o render.js já codifica na qualidade de entrega (crf 19; preset medium desde 16/11, 22% mais rápido) — aqui só junta o áudio
     venc = ["-c:v", "copy"] if so_audio or not rascunho else ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "10M",
                                               "-bufsize", "20M", "-pix_fmt", "yuv420p"]
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav", *venc,
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", tmp / "video.mp4", "-i", tmp / "audio.wav",
+                    "-map", "0:v:0", "-map", "1:a:0", *venc,   # 20/11: o vídeo reaproveitado tem o áudio velho — usar SEMPRE o novo
                     "-c:a", "aac", "-b:a", "256k", "-aac_is", "0", "-aac_ms", "0", "-aac_pns", "0",  # 10/11: o estéreo de intensidade do AAC distorcia o canal direito (+6 dB)
  "-shortest", "-movflags", "+faststart", saida], check=True)
     json.dump({"palavras": [(w, round(s, 2), round(e, 2)) for w, (s, e) in zip(palavras, rel.t)],
