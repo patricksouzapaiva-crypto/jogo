@@ -212,8 +212,11 @@ def acabamento(tela, L, t, fim):
 
 
 # ------------------------------------------------------------------ peça: abertura do formato
+LENTO = 1.4   # 21/11 (usuário: "um pouco menos rápido, pra que seja possível entender tudo"): tudo 40% mais lento
+
+
 def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
-    DUR = 10.2
+    DUR = 11.2    # tempo da animação (o vídeo dura DUR × LENTO); o último segundo é só o título parado
     mesa = carregar("ID01_mesa_1.png"); mesa_M = mat_obj(960, 540, 2300 / mesa.shape[1], 0, mesa.shape[1], mesa.shape[0])
     lupa = carregar("ID08_lupa_1.png"); filme_t = carregar("ID09_filme_1.png")
     fechada0 = Image.open(CAM / "ID04_pasta_fechada_1.png").convert("RGBA")
@@ -288,10 +291,10 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
     proc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS),
                              "-i", "-", "-c:v", "libx264", "-crf", "16", "-preset", "medium", "-pix_fmt", "yuv420p", str(saida) + ".v.mp4"],
                             stdin=subprocess.PIPE)
-    n_q = int(DUR * FPS)
-    so = [int(float(x) * FPS) for x in PREVIA] if PREVIA else None
+    n_q = int(DUR * LENTO * FPS)
+    so = [int(float(x) * FPS * LENTO) for x in PREVIA] if PREVIA else None
     for q in range(n_q):
-        t = q / FPS
+        t = q / FPS / LENTO
         if so is not None and q not in so:
             continue
         # câmera: começa perto da mesa vazia, aproxima da etiqueta, recua para a pasta aberta, treme no carimbo
@@ -313,8 +316,8 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
         if t < 3.05:
             n = int(np.clip((t - 1.45) / 1.35 * tt, 0, tt))
             por(tela, fechada_com(n), C @ mat_obj(px, py, esc_f, pa, fechada0.width, fechada0.height), sombra=1, z=0.6 * (1 - u))
-            if q == int(0.15 * FPS): sons.append((0.12, "ep09_papel", -6))
-            if q == int(0.98 * FPS): sons.append((0.98, "impacto", -16))
+            if q == int(LENTO * 0.15 * FPS): sons.append((0.12, "ep09_papel", -6))
+            if q == int(LENTO * 0.98 * FPS): sons.append((0.98, "impacto", -16))
             if 1.45 <= t < 2.8 and n > int(np.clip((t - 1.45 - 1 / FPS) / 1.35 * tt, 0, tt)): sons.append((t, "tecla", -9))
         else:
             # abre: a capa gira em 3D na lombada (0 → 180°, ~0,8 s), pousa e assenta; o verso vira a página da esquerda
@@ -324,8 +327,8 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
                 por(tela, pag_esq, C @ mat_obj(espinha - wf / 2, FY, esc_f, 0, fechada0.width, fechada0.height), sombra=1)
             else:
                 virar(tela, C, teta, fechada_com(tt), pag_esq, espinha, FY, wf, hf, (cx, cy))
-            if q == int(3.2 * FPS): sons.append((3.2, "ep09_papel", -5))
-            if q == int(4.03 * FPS): sons.append((4.03, "impacto", -22))
+            if q == int(LENTO * 3.2 * FPS): sons.append((3.2, "ep09_papel", -5))
+            if q == int(LENTO * 4.03 * FPS): sons.append((4.03, "impacto", -22))
             # as provas saem da pasta e se espalham
             for (img, alvo, t0, som) in ((polA, PA, tA, "ep10_obturador"), (jornal, PJ, tJ, "ep09_papel"), (polB, PB, tB, "ep10_obturador")):
                 w2 = eout(lin(t, t0, 0.7))
@@ -333,18 +336,18 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
                 x = AX + (alvo[0] - AX) * w2; y = FY + 40 + (alvo[1] - FY - 40) * w2
                 ang = alvo[3] + (1 - w2) * 25
                 por(tela, img, C @ mat_obj(x, y, alvo[2] * (0.85 + 0.15 * w2), ang, img.shape[1], img.shape[0]), sombra=1, z=0.5 * (1 - w2) + 0.05)
-                if q == int(t0 * FPS): sons.append((t0, som, -12))
+                if q == int(LENTO * t0 * FPS): sons.append((t0, som, -12))
             # tachinhas caem
             for k, (x, y) in enumerate(pinos):
                 t0 = 5.6 + k * 0.2; w3 = lin(t, t0, 0.18)
                 if w3 <= 0: continue
                 e = 0.11 * (1 + 1.4 * (1 - w3))
                 por(tela, pino, C @ mat_obj(x, y, e, 0, pino.shape[1], pino.shape[0]), alfa=min(1, w3 * 3), sombra=1, z=0.6 * (1 - w3) + 0.1)
-                if q == int((t0 + 0.17) * FPS): sons.append((t0 + 0.17, "ep11_lanterna_clique", -10))
+                if q == int(LENTO * (t0 + 0.17) * FPS): sons.append((t0 + 0.17, "ep11_lanterna_clique", -10))
             # a linha vermelha corre entre as pistas
             if t > 6.0:
                 fio(tela, pinos, ease(lin(t, 6.0, 0.7)), C)
-                if q == int(6.0 * FPS): sons.append((6.0, "ep09_sn_horror_whoosh", -18))
+                if q == int(LENTO * 6.0 * FPS): sons.append((6.0, "ep09_sn_horror_whoosh", -18))
             # o carimbo: desce, bate (7.0 s), sobe e sai; a tinta fica
             if t >= 7.0:
                 TX, TY = AX + 10, FY + 200
@@ -357,14 +360,14 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
                 ex = AX + 10 + (s * 700 if t >= 7.0 else s * 260); ey = FY + 200 - (s * 520 if t >= 7.0 else s * 380)
                 por(tela, carimbo, C @ mat_obj(ex, ey - 250 * 0.6, 0.6 * (1 + 0.35 * zc), -4, carimbo.shape[1], carimbo.shape[0]),
                     sombra=1, z=0.2 + zc)
-            if q == int(6.45 * FPS): sons.append((6.4, "riser_tensao", -14))
-            if q == int(7.0 * FPS): sons += [(6.98, "ep08_carimbo", -2), (6.98, "impacto", -6), (6.98, "braam_horror", -11)]
+            if q == int(LENTO * 6.45 * FPS): sons.append((6.4, "riser_tensao", -14))
+            if q == int(LENTO * 7.0 * FPS): sons += [(6.98, "ep08_carimbo", -2), (6.98, "impacto", -6), (6.98, "braam_horror", -11)]
             # a ficha do episódio entra e é datilografada
             if t >= 7.95:
                 w4 = eout(lin(t, 7.95, 0.6)); n = int(np.clip((t - 8.45) / 1.25 * tf, 0, tf))
                 fi = ficha_com(n)
                 por(tela, fi, C @ mat_obj(400 - (1 - w4) * 600, 245 - (1 - w4) * 200, 410 / fi.shape[1], -4, fi.shape[1], fi.shape[0]), sombra=1, z=0.3 * (1 - w4))
-                if q == int(7.95 * FPS): sons.append((7.95, "ep09_papel", -8))
+                if q == int(LENTO * 7.95 * FPS): sons.append((7.95, "ep09_papel", -8))
                 if 8.45 <= t < 9.75 and n > int(np.clip((t - 8.45 - 1 / FPS) / 1.25 * tf, 0, tf)): sons.append((t, "tecla", -11))
         L = luz(t, cx, cy, z, rot)
         quadro = acabamento(tela, L, t, DUR)
@@ -373,7 +376,7 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
         proc.stdin.write(quadro.tobytes())
     proc.stdin.close(); proc.wait()
     if so is None:
-        mixar(saida, sons, DUR)
+        mixar(saida, [(t0 * LENTO, nome, db) for t0, nome, db in sons], DUR * LENTO)
 
 
 def mixar(saida, sons, dur):
