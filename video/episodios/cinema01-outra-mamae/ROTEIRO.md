@@ -1,4 +1,6 @@
-# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v2, 21/11, para aprovação)
+# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v4, 21/11, para aprovação)
+
+v4 (usuário: "no final fala 3 coisas diferentes, temos que dar um veredito"): UM veredito — fada trocadora (changeling) — com placar de 9 provas; a tulpa vira a "quase", eliminada pela troca do livro.
 
 v2 (usuário: "quero que realmente seja um estudo… no final do filme a criança não fala sim, ela derrota a criatura"):
 o final do FILME corrigido (Bela vence; quem diz sim é a Bela do LIVRO), um capítulo novo LIVRO × FILME, pistas novas
@@ -67,10 +69,12 @@ O trocado tinha o rosto da criança. Mas chorava sem parar, comia sem nunca cres
 E para descobrir se o filho tinha sido trocado, os pais faziam testes.
 Deixavam o bebê de madrugada sobre um monte de esterco. Seguravam a criança numa pá, em cima do fogo.
 Porque se fosse mesmo uma fada, ela fugiria. E o filho verdadeiro seria devolvido.
-`FICHA: A FADA QUE TROCA — permissão ✗ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✗ · desejo ✗`
-O trocado explica muita coisa. Mas não tudo.
-Ninguém pede permissão para trocar um bebê.
-Guarda, porém, um detalhe do folclore: o trocado ia embora quando era DESMASCARADO. Quando alguém dizia em voz alta o que ele era.
+E tem um detalhe que quase ninguém conta. As fadas não conseguiam levar quem estava protegido.
+Ferro sobre o berço, sal na soleira, uma bênção dita em voz alta. Contra isso, elas não podiam nada.
+Então elas esperavam uma brecha. Uma porta deixada aberta. Uma bênção esquecida. Um presente aceito. Um sim.
+E quando faziam um acordo, as fadas cumpriam o desejo. Sempre cobrando um preço.
+`FICHA: A FADA QUE TROCA — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✓ · desejo ✓`
+Seis de seis. E guarda mais um detalhe do folclore: o trocado ia embora quando era desmascarado. Quando alguém dizia a verdade em voz alta.
 Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou num tribunal.
 
 ## O CASO REAL — BRIDGET CLEARY, 1895
@@ -179,17 +183,22 @@ O filme salvou a menina. O livro mostrou o que acontece quando ninguém salva.
 
 ## O VEREDITO
 `[VIGIA]`
-Agora junta tudo. As pistas do filme e as provas do livro.
-`FICHA: O PLACAR FINAL — fada que troca · duplo · demônio trapaceiro · tulpa`
-Ela pede permissão, e à força ela falha. No livro, mesmo depois de matar todo mundo, ela ainda espera o sim. Copia quem você ama. Obedece aos desejos da menina. E só aparece numa casa cheia de segredos.
-Ela não é um duplo. E não é só um demônio que rouba berços.
-A Outra Mamãe é uma tulpa com a regra de uma fada: uma coisa criada pela necessidade de uma criança sozinha, que só entra pela porta que a própria criança abre.
-E repara como cada final é uma lenda diferente.
-No livro, ela vence, e o que ela faz é uma troca: fica com o corpo, e a menina vai para o lugar vazio. Ninguém morre: alguém é substituído. É o changeling completo, só que dessa vez quem fica no berço é a fada.
-No filme, ela perde do jeito que o trocado sempre perdeu no folclore: quando a verdade é dita em voz alta. Quando a mãe confessa o segredo, a casa para de ter rachaduras para ela morar.
-Mas a cicatriz ficou. A mãe continua fingindo. A menina aprendeu a dizer que está tudo bem.
-E enquanto uma família tiver um segredo, a Outra Mamãe tem um armário para voltar. A cena pós-créditos diz exatamente isso.
-E você? O que acha que ela é? Deixa nos comentários. E me diz qual filme eu devo abrir no próximo arquivo.
+Agora junta tudo. As seis pistas do filme e as três provas do livro.
+`FICHA: O PLACAR FINAL (9 provas) — duplo 2 · demônio trapaceiro 6 · tulpa 8 · fada que troca 9`
+O duplo cai primeiro: ele é só um aviso, não quer nada.
+O demônio trapaceiro explica a permissão, mas não explica por que ela precisa de uma casa rachada.
+A tulpa chega muito perto. Empata com a fada em tudo o que o filme mostra. Mas uma tulpa não rouba o corpo de ninguém. E no livro, é exatamente isso que ela faz.
+Só uma teoria explica as nove provas.
+`CARTÃO: VEREDITO — A OUTRA MAMÃE É UMA FADA TROCADORA (CHANGELING)`
+O meu veredito: a Outra Mamãe é um changeling. Uma fada trocadora.
+A mesma criatura que, por mil anos, os pais da Irlanda e da Escandinávia temeram encontrar no berço.
+Só que moderna. Ela não arromba a casa: espera uma brecha, uma família cheia de segredos, uma criança sozinha que diga sim.
+E os dois finais confirmam isso. No livro, a troca acontece: a fada fica com o corpo, e a menina vai para o lugar vazio.
+No filme, ela perde do único jeito que um trocado sempre perdeu: quando a verdade é dita em voz alta.
+Mas a cicatriz ficou. E a cena pós-créditos avisa: enquanto uma família tiver um segredo, ela tem um armário para voltar.
+Esse é o meu veredito. Agora é a sua vez.
+Você concorda? Ou acha que ela é outra coisa? Um demônio, uma tulpa, alguma coisa que eu não pensei? Deixa nos comentários.
+E me diz qual filme eu devo abrir no próximo arquivo.
 `[CTA: "Não deixe ela entrar."]`
 
 ---
