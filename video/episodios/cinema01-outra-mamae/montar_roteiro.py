@@ -223,7 +223,7 @@ peca(98, f"{PC}checklist2.mp4")
 C(98, img(ID + "ID02_quadro_1.png", (1.0, 1.05)))
 # ================================================================ TEORIA 3 — o demônio trapaceiro
 peca(102, f"{PC}teoria3.mp4")
-C(102, real("lamashtu_met") if tem_real("lamashtu_met") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
+C(102, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
 C(105, real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
 fala_filme(107, "t3_ardiloso")
 C(111, filme("t3_ritual"))
