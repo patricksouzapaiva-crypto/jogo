@@ -350,15 +350,15 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
                 if q == int(LENTO * 6.0 * FPS): sons.append((6.0, "ep09_sn_horror_whoosh", -18))
             # o carimbo: desce, bate (7.0 s), sobe e sai; a tinta fica
             if t >= 7.0:
-                TX, TY = AX + 10, FY + 200
-                Mt = C @ mat_obj(TX, TY, 0.57, -3, tinta.shape[1], tinta.shape[0])
+                TX, TY = AX + 10, FY + 186
+                Mt = C @ mat_obj(TX, TY, 0.48, -2, tinta.shape[1], tinta.shape[0])
                 a = cv2.warpAffine(tinta, Mt[:2], (W, H)) * min(1, (t - 7.0) * 12)
                 tela[:] = tela * (1 - a[..., None] * (1 - TINTA))
             if 6.45 <= t < 7.9:
                 if t < 7.0: s = 1 - ein(lin(t, 6.45, 0.55)); zc = 1.6 * s
                 else: s = ein(lin(t, 7.15, 0.75)); zc = 1.6 * s
-                ex = AX + 10 + (s * 700 if t >= 7.0 else s * 260); ey = FY + 200 - (s * 520 if t >= 7.0 else s * 380)
-                por(tela, carimbo, C @ mat_obj(ex, ey - 250 * 0.6, 0.6 * (1 + 0.35 * zc), -4, carimbo.shape[1], carimbo.shape[0]),
+                ex = AX + 10 + (s * 700 if t >= 7.0 else s * 260); ey = FY + 186 - (s * 520 if t >= 7.0 else s * 380)
+                por(tela, carimbo, C @ mat_obj(ex, ey - 250 * 0.5, 0.5 * (1 + 0.35 * zc), -2, carimbo.shape[1], carimbo.shape[0]),
                     sombra=1, z=0.2 + zc)
             if q == int(LENTO * 6.45 * FPS): sons.append((6.4, "riser_tensao", -14))
             if q == int(LENTO * 7.0 * FPS): sons += [(6.98, "ep08_carimbo", -2), (6.98, "impacto", -6), (6.98, "braam_horror", -11)]
