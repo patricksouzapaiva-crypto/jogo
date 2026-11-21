@@ -5,3 +5,5 @@ identidade/brutas/
 identidade/camadas/
 filme/
 identidade/*.mp4
+identidade/pecas/
+identidade/__pycache__/
