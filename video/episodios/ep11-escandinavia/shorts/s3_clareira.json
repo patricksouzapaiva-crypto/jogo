@@ -1,0 +1,200 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.8,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Escandinávia",
+   "Blót",
+   "Uppsala",
+   "Tollund",
+   "Fimbulvetr",
+   "Ättestupa",
+   "Águia de Sangue",
+   "Odin",
+   "Skogsrå",
+   "Draugr",
+   "Jötnar",
+   "Midsommar",
+   "O Ritual",
+   "Hälsingland",
+   "Lucas",
+   "Rafael",
+   "Nøkken",
+   "Mare",
+   "pagamento",
+   "sacrifício"
+  ]
+ },
+ "voz_arquivo": "s3_clareira_voz.wav",
+ "batidas": [
+  {
+   "fala": "Foi então que o vento parou completamente.",
+   "cena": {
+    "video": "../clipes/flow/V05_a_0e5db876.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "O som da nevasca desapareceu.",
+   "cena": {
+    "imagem": "../imagens/cenas/H09/H09_02.png",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Lucas parou ofegante numa pequena clareira entre os pinheiros e apontou a lanterna do celular para frente.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "../camera3d/H09_01_b398fcc180_12.4.mp4",
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_lanterna_clique",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 1.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O feixe de luz acertou a coisa bem de frente.",
+   "cenas": [
+    {
+     "video": "../clipes/flow/V06_c_ac0a2085.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "obturador",
+     "duracao_entrada": 0.55,
+     "em": "coisa",
+     "antecipar": 0.55,
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": "coisa",
+     "som": "ep10_obturador",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": -0.15
+    },
+    {
+     "em": "coisa",
+     "som": "ep11_rosnado",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Os moradores da aldeia nunca precisaram caçar Lucas na floresta.",
+   "cena": {
+    "video": "../clipes/flow/V06_b_ed703cd0.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Porque eles sabiam que, depois da meia-noite, o deus para quem eles preparavam o altar já estava esperando do lado de fora.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "video": "../camera3d/G02b_02_b2c9bebd43_18.8.mp4",
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.85
+  }
+ ],
+ "musica": {
+  "som": "ep11_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "Você é o pagamento.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep11_vento_pinheiros",
+   "volume_db": -20
+  }
+ ]
+}

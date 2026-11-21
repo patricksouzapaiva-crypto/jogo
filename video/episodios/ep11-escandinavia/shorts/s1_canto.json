@@ -1,0 +1,227 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.8,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Escandinávia",
+   "Blót",
+   "Uppsala",
+   "Tollund",
+   "Fimbulvetr",
+   "Ättestupa",
+   "Águia de Sangue",
+   "Odin",
+   "Skogsrå",
+   "Draugr",
+   "Jötnar",
+   "Midsommar",
+   "O Ritual",
+   "Hälsingland",
+   "Lucas",
+   "Rafael",
+   "Nøkken",
+   "Mare",
+   "pagamento",
+   "sacrifício"
+  ]
+ },
+ "voz_arquivo": "s1_canto_voz.wav",
+ "batidas": [
+  {
+   "fala": "Lucas acordou às duas e dez da madrugada com um som grave vindo de fora da cabana.",
+   "cena": {
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "atmos": {
+     "neblina": 0.3
+    },
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "video": "../camera3d/H03_04_7fb7348781_7.7.mp4",
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_kulning_voz_longe",
+     "volume_db": -22,
+     "depois": false,
+     "atraso": 1.5,
+     "ate": 9.0,
+     "saida": 3.0
+    }
+   ]
+  },
+  {
+   "fala": "Ele demorou alguns segundos para entender o que estava ouvindo.",
+   "cena": {
+    "imagem": "../imagens/cenas/H03/H03_01.png",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_kulning_voz_longe",
+     "volume_db": -25,
+     "depois": false,
+     "atraso": 0.4,
+     "ate": 6.0,
+     "saida": 2.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Era kulning. O canto agudo que as pastoras suecas usavam há séculos para chamar o gado de volta das montanhas.",
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "KULNING\nO canto das pastoras suecas para chamar o gado",
+     "estilo": "maquina",
+     "vermelho": "KULNING",
+     "cps": 40,
+     "antecipar": 6.7,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "../imagens/cenas/H03/H03_01.png",
+     "zoom": [
+      1.1,
+      1.2
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.48
+      ]
+     ],
+     "em": "Era",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_kulning_voz",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": -6.3,
+     "ate": 11.7,
+     "saida": 3.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Só que ninguém ali estava chamando gado.",
+   "cena": {
+    "imagem": "../imagens/cenas/H03/H03_04.png",
+    "zoom": [
+     1.08,
+     1.18
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Era um tambor lento, acompanhado por um canto feminino agudo e metálico que parecia cortar a floresta inteira.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_coracao",
+     "volume_db": -26,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 2.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  }
+ ],
+ "musica": {
+  "som": "ep11_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "Não siga o canto.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep11_mata_inverno_noite",
+   "volume_db": -20
+  }
+ ]
+}

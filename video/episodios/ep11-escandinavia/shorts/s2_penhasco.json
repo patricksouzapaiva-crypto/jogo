@@ -1,0 +1,152 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.8,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.14,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Escandinávia",
+   "Blót",
+   "Uppsala",
+   "Tollund",
+   "Fimbulvetr",
+   "Ättestupa",
+   "Águia de Sangue",
+   "Odin",
+   "Skogsrå",
+   "Draugr",
+   "Jötnar",
+   "Midsommar",
+   "O Ritual",
+   "Hälsingland",
+   "Lucas",
+   "Rafael",
+   "Nøkken",
+   "Mare",
+   "pagamento",
+   "sacrifício"
+  ]
+ },
+ "voz_arquivo": "s2_penhasco_voz.wav",
+ "batidas": [
+  {
+   "fala": "Desse medo nasceu o mito brutal do Ättestupa.",
+   "cena": {
+    "video": "../clipes/flow/V02_a_1cf72235.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_vento_pinheiros",
+     "volume_db": -24,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 12.0,
+     "saida": 3.0
+    }
+   ]
+  },
+  {
+   "fala": "O ritual em que os idosos de uma comunidade isolada subiam até o topo de um penhasco sagrado e se atiravam no abismo para não consumir a comida escassa dos mais jovens durante o inverno.",
+   "cenas": [
+    {
+     "video": "../clipes/flow/V02_b_4b785657.mp4",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6,
+     "encaixe": "cobrir"
+    },
+    {
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "atmos": {
+      "neblina": 0.5
+     },
+     "em": "atiravam",
+     "video": "../camera3d/C2_02_01_49ffe48d86_7.1.mp4",
+     "encaixe": "cobrir"
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Os historiadores acreditam que o Ättestupa seja mais lenda do que prática.",
+   "cena": {
+    "imagem": "../imagens/cenas/C2_02/C2_02_01.png",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  }
+ ],
+ "musica": {
+  "som": "ep11_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "O inverno escolhe quem fica.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep11_vento_pinheiros",
+   "volume_db": -20
+  }
+ ]
+}
