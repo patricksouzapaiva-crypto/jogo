@@ -7,3 +7,5 @@ filme/
 identidade/*.mp4
 identidade/pecas/
 identidade/__pycache__/
+trilha/*.wav
+trilha/*.mp3

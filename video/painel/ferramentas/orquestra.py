@@ -31,6 +31,15 @@ GRUPOS = {   # nome → (padrão de arquivos, regex que tira a nota e a dinâmic
     "vc": ("Strings/Cello Section/susvib/*.wav", r"susvib_([A-G]#?\d)_"),
     "vc_trem": ("Strings/Cello Section/trem/*.wav", r"trem_([A-G]#?\d)_"),
     "cb": ("Strings/Solo Contrabass/SusNV/*.wav", r"SusNV_([A-G]#?\d)_"),
+    # 21/11 (O que é a criatura?): pizzicatos, harpa, glockenspiel (a caixinha de música), metais graves
+    "vc_pizz": ("Strings/Cello Section/pizzT/*.wav", r"pizzT_([A-G]#?\d)_"),
+    "vla_pizz": ("Strings/Viola Section/pizz/*.wav", r"pizz_([A-G]#?\d)_"),
+    "vlns_pizz": ("Strings/Violin Section/Pizz/*.wav", r"Pizz_([A-G]#?\d)_"),
+    "cb_pizz": ("Strings/Solo Contrabass/Pizz/*.wav", r"Pizz_([A-G]#?\d)_"),
+    "harpa": ("Strings/Harp/*.wav", r"KSHarp_([A-G]#?\d)_"),
+    "glock": ("Percussion/Glock/*.wav", r"glock_medium_([A-G]#?\d)"),
+    "tuba": ("Brass/Tuba/sus/*.wav", r"sus_([A-G]#?\d)_"),
+    "trombone": ("Brass/Tenor Trombone/sus/*.wav", r"sus_([A-G]#?\d)_"),
 }
 _cache = {}
 
@@ -59,6 +68,10 @@ class Orquestra:
             for f in glob.glob(str(BASE / pad)):
                 m = re.search(rx, Path(f).name)
                 if m: self.tab.setdefault(g, []).append((midi(m.group(1)), m.group(2) if m.lastindex > 1 else "p", f))
+        # piano de armário: arquivos numerados (MappingChart: índice k → tecla MIDI 21 + 2k), 3 dinâmicas
+        for f in glob.glob(str(BASE / "Keys/Upright Piano/Player_dyn*_rr1_*.wav")):
+            m = re.search(r"dyn(\d)_rr1_(\d+)", Path(f).name)
+            if m: self.tab.setdefault("piano", []).append((21 + 2 * int(m.group(2)), {"1": "p", "2": "m", "3": "f"}[m.group(1)], f))
         self.perc = {"bumbo": sorted(glob.glob(str(BASE / "Percussion/BDrumNewhit_*.wav"))),
                      "timp": sorted(glob.glob(str(BASE / "Percussion/Timpani/Timpani*_Hit_*.wav"))),
                      "rufo": sorted(glob.glob(str(BASE / "Percussion/Timpani/Rolls/*.wav")))}
@@ -67,7 +80,7 @@ class Orquestra:
         cand = [c for c in self.tab[g] if c[1] == din] or self.tab[g]
         m, _, f = min(cand, key=lambda c: (abs(c[0] - alvo), c[0] < alvo))
         x = carregar(f)
-        return reamostrar(x, 2 ** ((m - alvo) / 12)) if m != alvo else x
+        return reamostrar(x, 2 ** ((m - alvo) / 12)) if abs(m - alvo) > 1e-6 else x
 
     def _por(self, x, t, vel, pan, molhado=1.0):
         i = int(t * SR); x = x[: len(self.buf) - i]
@@ -90,6 +103,14 @@ class Orquestra:
         env = np.ones(total, np.float32); a = max(1, int(ataque * SR)); env[:a] = np.linspace(0, 1, a) ** 1.5
         r = int(solta * SR); env[-r:] *= np.linspace(1, 0, r) ** 2
         self._por(y * env[:, None], t, vel, pan, molhado)
+
+    def toque(self, g, n, t, vel=1.0, pan=0.0, din="p", dur=None, desafina=0.0, molhado=1.0):
+        """nota que soa e decai sozinha (pizzicato, harpa, glockenspiel, piano): a gravação inteira, sem emendar.
+        desafina: em semitons (o piano 'errado' da Outra Mamãe)."""
+        alvo = midi(n); x = self._amostra(g, alvo + desafina, din)
+        if dur:
+            k = int(dur * SR); x = x[:k].copy(); f = min(len(x), int(0.25 * SR)); x[-f:] *= np.linspace(1, 0, f)[:, None]
+        self._por(x, t, vel, pan, molhado)
 
     def cresc(self, g, n, t, d, v0, v1, pan=0.0, din="p"):
         """nota com crescendo/decrescendo (curva) — para os trêmulos e os bordões que incham"""
