@@ -87,7 +87,7 @@ O corpo foi encontrado numa cova rasa, dias depois.
 Michael foi condenado por homicídio culposo e passou quinze anos na prisão.
 E até hoje as crianças da Irlanda cantam uma rima que nasceu desse caso.
 "Você é uma bruxa, ou você é uma fada, ou você é a esposa de Michael Cleary?"
-`[PISTA 5 — a mãe verdadeira olhando para a filha como se não a conhecesse]`
+`[CENA — a mãe verdadeira olhando para a filha como se não a conhecesse]`
 É Outra Mamãe ao contrário. No filme, a filha desconfia da mãe. Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa.
 E quem pagou foi a pessoa de verdade.
 
