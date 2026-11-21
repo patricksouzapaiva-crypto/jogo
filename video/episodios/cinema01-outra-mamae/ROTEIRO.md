@@ -154,26 +154,38 @@ Só que o rosto da mãe ainda finge. E no pescoço dela, a cicatriz de uma mordi
 `[PISTA 13 — a cena pós-créditos]`
 E depois dos créditos, a Outra Mamãe olha direto para a câmera. E pede silêncio. Para você.
 
-## LIVRO × FILME — OS DOIS FINAIS
+## LIVRO × FILME — OS DOIS FINAIS (E O QUE O LIVRO PROVA)
 `[REAL: capa do livro Incidents Around the House]`
 E aqui está a parte que quase ninguém sabe. No livro de Josh Malerman, o final é outro.
+E esse outro final é a melhor prova que a gente tem sobre o que ela é.
 A família volta para casa, e a avó Ruth está esperando por eles. Ela diz para a menina: "o coração é uma casa com muitos quartos. Cuidado com quem você deixa entrar."
 `[IA: um corredor escuro de casa, portas fechadas dos dois lados]`
 Só que aquela avó era a Outra Mamãe.
+`FICHA: PROVA DO LIVRO 1 — ELA VIRA QUEM VOCÊ AMA`
+No livro, ela não copia só a mãe. Ela vira a avó inteira, de corpo e voz, e engana a família toda.
 Naquela noite, escondida dentro do armário, Bela ouve a criatura chamar os pais com a voz da avó. E ouve o que acontece com eles.
-Sozinha, sem mais ninguém para amar, ela finalmente diz sim.
-E acorda num lugar enorme e vazio. Enquanto, do lado de fora, alguém treina a voz dela.
-`FICHA: NO LIVRO, A CRIATURA VENCE · NO FILME, A MENINA VENCE · OU SERÁ?`
-O filme salvou a menina. O livro não.
+`FICHA: PROVA DO LIVRO 2 — MESMO VENCENDO, ELA ESPERA O SIM`
+Ela já matou os pais. A menina está sozinha, sem ninguém para protegê-la. E mesmo assim, a criatura não entra.
+Ela volta para o quarto e pergunta de novo. Porque, sem o sim, ela não pode.
+Sozinha, sem mais ninguém para amar, Bela finalmente diz sim.
+`FICHA: PROVA DO LIVRO 3 — UMA TROCA, NÃO UMA MORTE`
+E a menina não morre. Ela acorda num lugar enorme e vazio, que o livro faz questão de dizer que não é uma casa.
+Enquanto, do lado de fora, no corpo dela, alguém treina a voz da Bela.
+A criatura não queria matar a menina. Queria o lugar dela.
+`FICHA: NO LIVRO, A CRIATURA VENCE · NO FILME, A MENINA VENCE`
+Dois finais opostos. Mas repara: as regras são as mesmas nos dois.
+No filme, quando a verdade é dita em voz alta, ela perde. No livro, quando ninguém sobra para dizer a verdade, ela ganha.
+O filme salvou a menina. O livro mostrou o que acontece quando ninguém salva.
 
 ## O VEREDITO
 `[VIGIA]`
-Agora junta as pistas.
-Ela pede permissão, e à força ela falha. Copia quem você ama. Obedece aos desejos da menina. E só aparece numa casa cheia de segredos.
+Agora junta tudo. As pistas do filme e as provas do livro.
+`FICHA: O PLACAR FINAL — fada que troca · duplo · demônio trapaceiro · tulpa`
+Ela pede permissão, e à força ela falha. No livro, mesmo depois de matar todo mundo, ela ainda espera o sim. Copia quem você ama. Obedece aos desejos da menina. E só aparece numa casa cheia de segredos.
 Ela não é um duplo. E não é só um demônio que rouba berços.
 A Outra Mamãe é uma tulpa com a regra de uma fada: uma coisa criada pela necessidade de uma criança sozinha, que só entra pela porta que a própria criança abre.
 E repara como cada final é uma lenda diferente.
-No livro, ela vence: a troca acontece. A criatura fica com o corpo, e a menina vai para o lugar vazio. É o changeling completo.
+No livro, ela vence, e o que ela faz é uma troca: fica com o corpo, e a menina vai para o lugar vazio. Ninguém morre: alguém é substituído. É o changeling completo, só que dessa vez quem fica no berço é a fada.
 No filme, ela perde do jeito que o trocado sempre perdeu no folclore: quando a verdade é dita em voz alta. Quando a mãe confessa o segredo, a casa para de ter rachaduras para ela morar.
 Mas a cicatriz ficou. A mãe continua fingindo. A menina aprendeu a dizer que está tudo bem.
 E enquanto uma família tiver um segredo, a Outra Mamãe tem um armário para voltar. A cena pós-créditos diz exatamente isso.
