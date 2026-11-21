@@ -1,5 +1,6 @@
 reais/*.jpg
 reais/*.png
 reais/*.json
-identidade/
+identidade/brutas/
+identidade/camadas/
 filme/
