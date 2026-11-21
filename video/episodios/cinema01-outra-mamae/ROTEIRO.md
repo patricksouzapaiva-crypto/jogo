@@ -1,4 +1,10 @@
-# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v1, 21/11, para aprovação)
+# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v2, 21/11, para aprovação)
+
+v2 (usuário: "quero que realmente seja um estudo… no final do filme a criança não fala sim, ela derrota a criatura"):
+o final do FILME corrigido (Bela vence; quem diz sim é a Bela do LIVRO), um capítulo novo LIVRO × FILME, pistas novas
+(a tentativa de entrar à força pela babá, o "demônio trapaceiro" dito no próprio filme, o desejo que mata Frank) e
+um veredito que explica os dois finais. Fontes do final: Cinemaholic (10/11/2026) e Books of Brilliance (09/10/2026).
+Tudo será conferido de novo no filme quando ele chegar.
 
 Título: **O que é a Outra Mamãe? O folclore real por trás do filme**
 Duração estimada: ~12 min. Narração: Vigia (Algenib), mesmo jeito do canal.
@@ -9,7 +15,7 @@ Duração estimada: ~12 min. Narração: Vigia (Algenib), mesmo jeito do canal.
 
 ## GANCHO
 `[PISTA 0 — a cena mais forte da Outra Mamãe saindo do armário]`
-Uma menina de oito anos conversa todas as noites com alguém que sai do armário do quarto dela.
+Uma menina pequena conversa todas as noites com alguém que sai do armário do quarto dela.
 Esse alguém tem o rosto da mãe dela. A voz da mãe dela. E só faz uma pergunta.
 "Posso entrar no seu coração?"
 O filme dá um nome para essa coisa. Outra Mamãe.
@@ -39,7 +45,17 @@ Ela se estica, se dobra, desliza no chão. O corpo dela não obedece regra nenhu
 `FICHA: PISTA 4 — A CASA ESTÁ RACHANDO`
 `[PISTA 4 — uma briga dos pais / o casamento em crise]`
 Ela não aparece numa casa feliz. Ela aparece quando a família está quebrando.
-Guarde essas quatro pistas. Toda teoria vai ter que explicar as quatro.
+`FICHA: PISTA 5 — À FORÇA, ELA FALHA`
+`[PISTA 5 — a babá possuída tentando chegar até Bela]`
+Numa noite, ela toma o corpo da babá e tenta entrar na menina à força. E não consegue. Ela precisa de um "sim".
+`FICHA: PISTA 6 — O DESEJO DA MENINA ACONTECE`
+`[PISTA 6 — Bela desejando que Frank desapareça / o que acontece depois]`
+Quando Bela deseja que alguém suma, essa pessoa morre. Ela não só escuta a menina. Ela obedece.
+`FICHA: PISTA 7 — ATÉ O FILME TENTA DAR UM NOME`
+`[PISTA 7 — os investigadores da avó Ruth]`
+A avó, Ruth, chama dois investigadores do paranormal. Eles olham para ela e dizem: um demônio trapaceiro.
+E morrem na mesma noite.
+Guarde essas pistas. Toda teoria vai ter que explicar todas elas.
 
 ## TEORIA 1 — UMA FADA QUE TROCA PESSOAS
 `[REAL: The Changeling, de Henry Füssli (1781)]`
@@ -51,9 +67,10 @@ O trocado tinha o rosto da criança. Mas chorava sem parar, comia sem nunca cres
 E para descobrir se o filho tinha sido trocado, os pais faziam testes.
 Deixavam o bebê de madrugada sobre um monte de esterco. Seguravam a criança numa pá, em cima do fogo.
 Porque se fosse mesmo uma fada, ela fugiria. E o filho verdadeiro seria devolvido.
-`FICHA: A FADA QUE TROCA — permissão ✗ · vozes ✓ · corpo que muda ✓ · casa em crise ✓`
-O trocado explica quase tudo. Menos uma coisa.
+`FICHA: A FADA QUE TROCA — permissão ✗ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✗ · desejo ✗`
+O trocado explica muita coisa. Mas não tudo.
 Ninguém pede permissão para trocar um bebê.
+Guarda, porém, um detalhe do folclore: o trocado ia embora quando era DESMASCARADO. Quando alguém dizia em voz alta o que ele era.
 Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou num tribunal.
 
 ## O CASO REAL — BRIDGET CLEARY, 1895
@@ -80,7 +97,7 @@ Os irlandeses tinham outro nome para uma cópia: o fetch.
 O fetch é o duplo de uma pessoa viva. Ele aparece igual a ela, com a mesma roupa, o mesmo rosto.
 Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito. Se vê à noite, ela vai morrer em breve.
 Na Alemanha, o nome é doppelgänger. "O que anda em dobro."
-`FICHA: O DUPLO — permissão ✗ · vozes ✓ · corpo que muda ✗ · casa em crise ✗`
+`FICHA: O DUPLO — permissão ✗ · vozes ✓ · corpo que muda ✗ · casa em crise ✗ · à força falha ✗ · desejo ✗`
 Mas o duplo é um aviso. Ele não quer nada. E a Outra Mamãe quer muito uma coisa.
 
 ## TEORIA 3 — O DEMÔNIO DOS BERÇOS
@@ -90,8 +107,10 @@ Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nasci
 As mães penduravam amuletos de pedra sobre a cama para afastá-la.
 `[REAL: amuleto hebraico contra Lilith, com os três anjos]`
 Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith. E os berços ganharam amuletos com os nomes de três anjos.
-`FICHA: O DEMÔNIO — permissão ✗ · vozes ✗ · corpo que muda ✓ · casa em crise ✗`
-O demônio rouba. A Outra Mamãe pede. Não fecha.
+E aqui entra a pista sete: no filme, os investigadores chamam a Outra Mamãe de demônio trapaceiro.
+Só que existe uma regra muito antiga sobre demônios e espíritos da casa, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.
+`FICHA: O DEMÔNIO TRAPACEIRO — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✗ · à força falha ✓ · desejo ✗`
+O trapaceiro explica a permissão. Mas não explica por que ela só aparece numa casa que está quebrando.
 
 ## TEORIA 4 — UMA COISA CRIADA PELO DESEJO
 `[IA: um quarto de criança à noite, a porta do armário entreaberta]`
@@ -102,7 +121,7 @@ E que ela levou seis meses para conseguir destruir.
 `[PISTA 6 — Bela falando com o armário como quem fala com uma amiga]`
 É a regra mais importante do livro de Malerman. A Outra Mamãe só ganha força quando é querida.
 Quanto mais a menina precisa dela, mais real ela fica.
-`FICHA: A TULPA — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✓`
+`FICHA: A TULPA — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✓ · desejo ✓`
 
 ## TEORIA 5 — A AVÓ DE CORALINE
 `[REAL: ilustração de The New Mother, Lucy Clifford (1882)]`
@@ -121,29 +140,51 @@ O medo do filme existe. E tem nome em todos os livros de medicina.
 
 ## ⚠️ AVISO DE SPOILER — O FINAL EXPLICADO
 `CARTÃO: "SPOILER — pule para [tempo] se ainda não viu"`
-`[PISTA 7 — a confissão da mãe na cozinha]`
-No terço final, a mãe verdadeira confessa o que a família escondia.
-`[PISTA 8 — Bela escondida no armário, ouvindo vozes]`
-`[PISTA 9 — Bela responde "sim"]`
-E a menina, sozinha, dá a resposta que a Outra Mamãe esperava o filme inteiro.
-No livro, o final é ainda mais claro. Bela acorda num lugar enorme e vazio, que não é uma casa.
-E dentro do corpo dela, a Outra Mamãe treina a voz da menina.
+`[PISTA 8 — a confissão da mãe]`
+No terço final, a mãe, Ursula, faz a coisa que ninguém naquela casa tinha feito: fala a verdade.
+Ela conta que Russ não é o pai biológico de Bela.
+`[PISTA 9 — Bela correndo para o quarto]`
+A menina sobe a escada destruída. Corre para o quarto. E por um instante, ela quase diz sim.
+`[PISTA 10 — Bela enfrentando a Outra Mamãe]`
+Mas no último segundo, ela reage. E derrota a criatura.
+`[PISTA 11 — a família montando as luzes de Natal]`
+Meses depois, a família monta as luzes de Natal. Bela diz que agora tem uma vida ótima, que os pais estão felizes de verdade.
+`[PISTA 12 — a cicatriz no pescoço de Ursula]`
+Só que o rosto da mãe ainda finge. E no pescoço dela, a cicatriz de uma mordida.
+`[PISTA 13 — a cena pós-créditos]`
+E depois dos créditos, a Outra Mamãe olha direto para a câmera. E pede silêncio. Para você.
+
+## LIVRO × FILME — OS DOIS FINAIS
+`[REAL: capa do livro Incidents Around the House]`
+E aqui está a parte que quase ninguém sabe. No livro de Josh Malerman, o final é outro.
+A família volta para casa, e a avó Ruth está esperando por eles. Ela diz para a menina: "o coração é uma casa com muitos quartos. Cuidado com quem você deixa entrar."
+`[IA: um corredor escuro de casa, portas fechadas dos dois lados]`
+Só que aquela avó era a Outra Mamãe.
+Naquela noite, escondida dentro do armário, Bela ouve a criatura chamar os pais com a voz da avó. E ouve o que acontece com eles.
+Sozinha, sem mais ninguém para amar, ela finalmente diz sim.
+E acorda num lugar enorme e vazio. Enquanto, do lado de fora, alguém treina a voz dela.
+`FICHA: NO LIVRO, A CRIATURA VENCE · NO FILME, A MENINA VENCE · OU SERÁ?`
+O filme salvou a menina. O livro não.
 
 ## O VEREDITO
 `[VIGIA]`
 Agora junta as pistas.
-Ela pede permissão. Copia quem você ama. Aparece quando a casa está rachando. E no fim leva a criança e fica no lugar dela.
-Isso não é um demônio. Não é um duplo. É a troca mais antiga do folclore: o changeling, só que ao contrário.
-As fadas da Irlanda deixavam uma cópia no berço e levavam a criança de verdade.
-A Outra Mamãe faz a mesma troca. Só que dessa vez, a criança abre a porta sozinha.
-E é isso que torna o filme tão cruel. Porque, no folclore, os pais tinham como se defender.
-Mas ninguém ensina uma criança a dizer não para a própria mãe.
+Ela pede permissão, e à força ela falha. Copia quem você ama. Obedece aos desejos da menina. E só aparece numa casa cheia de segredos.
+Ela não é um duplo. E não é só um demônio que rouba berços.
+A Outra Mamãe é uma tulpa com a regra de uma fada: uma coisa criada pela necessidade de uma criança sozinha, que só entra pela porta que a própria criança abre.
+E repara como cada final é uma lenda diferente.
+No livro, ela vence: a troca acontece. A criatura fica com o corpo, e a menina vai para o lugar vazio. É o changeling completo.
+No filme, ela perde do jeito que o trocado sempre perdeu no folclore: quando a verdade é dita em voz alta. Quando a mãe confessa o segredo, a casa para de ter rachaduras para ela morar.
+Mas a cicatriz ficou. A mãe continua fingindo. A menina aprendeu a dizer que está tudo bem.
+E enquanto uma família tiver um segredo, a Outra Mamãe tem um armário para voltar. A cena pós-créditos diz exatamente isso.
 E você? O que acha que ela é? Deixa nos comentários. E me diz qual filme eu devo abrir no próximo arquivo.
 `[CTA: "Não deixe ela entrar."]`
 
 ---
 ### Fontes
 - *Other Mommy* (Universal, 2026) e *Incidents Around the House* (Josh Malerman, 2024).
+- Final do filme e do livro: Cinemaholic, "Other Mommy Ending Explained" (10/11/2026); Books of Brilliance, "Other Mommy Book vs. Movie" (09/10/2026).
+- Trapaceiros e a regra do convite: o vampiro eslavo e os espíritos da soleira (folclore europeu).
 - Changelings: folclore irlandês, escocês e escandinavo (bortbytingar).
 - Bridget Cleary: Angela Bourke, *The Burning of Bridget Cleary* (2000); *Irish Times*.
 - Fetch e doppelgänger (termo de Jean Paul, 1796); Rossetti, *How They Met Themselves* (1864).
