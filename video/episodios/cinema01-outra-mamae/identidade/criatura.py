@@ -164,6 +164,31 @@ def fio(tela, pts, prog, M):
     tela[:] = tela * (1 - camada[..., None]) + cor * camada[..., None]
 
 
+def virar(tela, C, teta, frente, verso, xs, yc, w, h, centro):
+    """Capa da pasta girando na lombada (eixo vertical em x = xs), em 3D com perspectiva: a borda livre sobe em
+    direção à câmera (fica maior), a capa escurece de perfil, mostra o verso depois dos 90° e projeta sombra."""
+    th = math.radians(teta); co, si = math.cos(th), max(0.0, math.sin(th))
+    xf = xs + w * co; z = w * si
+    p = 2600 / (2600 - z * 0.9)
+    def proj(x, y): return (centro[0] + (x - centro[0]) * p, centro[1] + (y - centro[1]) * p)
+    mundo = [(xs, yc - h / 2), (xs, yc + h / 2), proj(xf, yc - h / 2), proj(xf, yc + h / 2)]
+    tela_pts = [tuple((C @ np.array([x, y, 1], np.float32))[:2]) for x, y in mundo]
+    # sombra na mesa / na página de baixo
+    if si > 0.01:
+        sx_ = xs + w * co + z * 0.35; som = [(xs, yc - h / 2), (xs, yc + h / 2), (sx_, yc + h / 2 + z * 0.25), (sx_, yc - h / 2 + z * 0.25)]
+        pts = np.array([(C @ np.array([x, y, 1], np.float32))[:2] for x, y in som], np.float32)
+        a = np.zeros((H, W), np.float32); cv2.fillConvexPoly(a, pts.astype(np.int32), 1.0, cv2.LINE_AA)
+        a = cv2.GaussianBlur(a, (0, 0), 6 + z * 0.04) * 0.5 * si
+        tela *= (1 - a[..., None])
+    img = frente if teta <= 90 else verso
+    h0, w0 = img.shape[:2]
+    src = np.float32([(0, 0), (0, h0), (w0, 0), (w0, h0)]) if teta <= 90 else np.float32([(w0, 0), (w0, h0), (0, 0), (0, h0)])
+    Mp = cv2.getPerspectiveTransform(src, np.float32(tela_pts))
+    cam = cv2.warpPerspective(img, Mp, (W, H), flags=cv2.INTER_LINEAR)
+    luz_c = 0.62 + 0.38 * abs(co) + (0.06 * si if teta > 90 else 0)
+    tela[:] = tela * (1 - cam[..., 3:4]) + cam[..., :3] * luz_c
+
+
 def luz(t, cx, cy, z, rot):
     """Poça de luz quente da luminária (presa à mesa) + pisca leve."""
     M = mat_cam(cx, cy, z, rot)
@@ -247,9 +272,13 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
     esc_f = 600 / fechada0.height
     FX, FY = 960 + fechada0.width * esc_f / 2, 560      # a lombada (borda esquerda da fechada) fica no centro
     esc_a = (fechada0.height * esc_f * 0.98) / aberta.shape[0]
+    meio = aberta.shape[1] // 2      # as duas páginas da pasta aberta, cada uma do tamanho exato da capa fechada
+    pag_esq = cv2.resize(aberta[:, :meio], (fechada0.width, fechada0.height), interpolation=cv2.INTER_AREA)
+    pag_dir = cv2.resize(aberta[:, meio:], (fechada0.width, fechada0.height), interpolation=cv2.INTER_AREA)
+    wf, hf = fechada0.width * esc_f, fechada0.height * esc_f
     largA = aberta.shape[1] * esc_a; espinha = FX - fechada0.width * esc_f / 2   # lombada: borda esquerda da fechada
     AX = espinha                              # centro da aberta = lombada
-    tA, tJ, tB = 4.0, 4.35, 4.7
+    tA, tJ, tB = 4.3, 4.6, 4.9
     PA = (AX - 300, FY - 95, 360 / polA.shape[0], -6)
     PJ = (AX + 150, FY - 120, 205 / jornal.shape[1], 3.5)
     PB = (AX + 450, FY - 150, 260 / polB.shape[0], 9)
@@ -266,7 +295,7 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
         if so is not None and q not in so:
             continue
         # câmera: começa perto da mesa vazia, aproxima da etiqueta, recua para a pasta aberta, treme no carimbo
-        k1 = ease(lin(t, 1.1, 1.2)); k2 = ease(lin(t, 2.9, 1.3)); k3 = ease(lin(t, 7.6, 2.6)) * 0.4
+        k1 = ease(lin(t, 1.1, 1.2)); k2 = ease(lin(t, 2.8, 0.85)); k3 = ease(lin(t, 7.6, 2.6)) * 0.4
         cx = 1000 + (FX - 1000) * k1 * (1 - k2) + (980 - 1000) * k2
         cy = 560 + (FY - 560 - 150) * k1 * (1 - k2) + (40) * k2
         z = 1.12 + 0.55 * k1 * (1 - k2) - 0.06 * k2 + 0.05 * k3
@@ -280,7 +309,7 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
         por(tela, filme_t, C @ mat_obj(330, 230, 0.55, -14, filme_t.shape[1], filme_t.shape[0]), sombra=1)
         por(tela, lupa, C @ mat_obj(1680, 880, 0.42, 28, lupa.shape[1], lupa.shape[0]), sombra=1, z=0.15)
         # a pasta chega deslizando (0.15–1.0 s)
-        u = eout(lin(t, 0.15, 0.85)); px = FX + (1 - u) * 260; py = FY + (1 - u) * 760; pa = -14 * (1 - u) + 2
+        u = eout(lin(t, 0.15, 0.85)); px = FX + (1 - u) * 260; py = FY + (1 - u) * 760; pa = -14 * (1 - u)
         if t < 3.05:
             n = int(np.clip((t - 1.45) / 1.35 * tt, 0, tt))
             por(tela, fechada_com(n), C @ mat_obj(px, py, esc_f, pa, fechada0.width, fechada0.height), sombra=1, z=0.6 * (1 - u))
@@ -288,13 +317,15 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
             if q == int(0.98 * FPS): sons.append((0.98, "impacto", -16))
             if 1.45 <= t < 2.8 and n > int(np.clip((t - 1.45 - 1 / FPS) / 1.35 * tt, 0, tt)): sons.append((t, "tecla", -9))
         else:
-            # abre: a capa gira na lombada (escala horizontal 1 → 0), a aberta cresce para a esquerda
-            v = ease(lin(t, 3.05, 0.5))
-            por(tela, aberta, C @ mat_obj(AX, FY, esc_a, 2, aberta.shape[1], aberta.shape[0], sx=1.0), sombra=1)
-            if v < 1:
-                cap = fechada_com(tt).copy(); cap[..., :3] *= (1 - 0.5 * v)
-                por(tela, cap, C @ mat_obj(espinha, FY, esc_f, 2, fechada0.width, fechada0.height, sx=1 - 2 * v, ancora=(0.0, 0.5)), sombra=1, z=0.3 * math.sin(math.pi * v))
-            if q == int(3.05 * FPS): sons.append((3.05, "ep09_papel", -5))
+            # abre: a capa gira em 3D na lombada (0 → 180°, ~0,8 s), pousa e assenta; o verso vira a página da esquerda
+            teta = 180 * ease(lin(t, 3.2, 0.85)) - 7 * math.sin(math.pi * lin(t, 4.05, 0.32))
+            por(tela, pag_dir, C @ mat_obj(espinha + wf / 2, FY, esc_f, 0, fechada0.width, fechada0.height), sombra=1)
+            if teta >= 179.9 or t > 4.4:
+                por(tela, pag_esq, C @ mat_obj(espinha - wf / 2, FY, esc_f, 0, fechada0.width, fechada0.height), sombra=1)
+            else:
+                virar(tela, C, teta, fechada_com(tt), pag_esq, espinha, FY, wf, hf, (cx, cy))
+            if q == int(3.2 * FPS): sons.append((3.2, "ep09_papel", -5))
+            if q == int(4.03 * FPS): sons.append((4.03, "impacto", -22))
             # as provas saem da pasta e se espalham
             for (img, alvo, t0, som) in ((polA, PA, tA, "ep10_obturador"), (jornal, PJ, tJ, "ep09_papel"), (polB, PB, tB, "ep10_obturador")):
                 w2 = eout(lin(t, t0, 0.7))
@@ -305,7 +336,7 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
                 if q == int(t0 * FPS): sons.append((t0, som, -12))
             # tachinhas caem
             for k, (x, y) in enumerate(pinos):
-                t0 = 5.35 + k * 0.22; w3 = lin(t, t0, 0.18)
+                t0 = 5.6 + k * 0.2; w3 = lin(t, t0, 0.18)
                 if w3 <= 0: continue
                 e = 0.11 * (1 + 1.4 * (1 - w3))
                 por(tela, pino, C @ mat_obj(x, y, e, 0, pino.shape[1], pino.shape[0]), alfa=min(1, w3 * 3), sombra=1, z=0.6 * (1 - w3) + 0.1)
