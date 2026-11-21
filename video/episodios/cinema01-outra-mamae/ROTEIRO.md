@@ -1,4 +1,6 @@
-# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v4, 21/11, para aprovação)
+# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v5, 21/11, para aprovação)
+
+v5 (usuário: "depois de dar o veredito temos que explicar o porquê chegamos nele"): bloco novo POR QUE A FADA TROCADORA — as 9 provas, uma a uma, cada uma ligada ao folclore das fadas; e por que não a tulpa. Só depois a pergunta para os comentários.
 
 v4 (usuário: "no final fala 3 coisas diferentes, temos que dar um veredito"): UM veredito — fada trocadora (changeling) — com placar de 9 provas; a tulpa vira a "quase", eliminada pela troca do livro.
 
@@ -193,14 +195,57 @@ O duplo cai primeiro: ele é só um aviso, não quer nada.
 O demônio trapaceiro explica a permissão, mas não explica por que ela precisa de uma casa rachada.
 A tulpa chega muito perto. Empata com a fada em tudo o que o filme mostra. Mas uma tulpa não rouba o corpo de ninguém. E no livro, é exatamente isso que ela faz.
 Só uma teoria explica as nove provas.
-`CARTÃO: VEREDITO — A OUTRA MAMÃE É UMA FADA TROCADORA (CHANGELING)`
+`CARTÃO: VEREDITO — A OUTRA MAMÃE É UMA FADA TROCADORA (CHANGELING)` (peça "veredito")
 O meu veredito: a Outra Mamãe é um changeling. Uma fada trocadora.
-A mesma criatura que, por mil anos, os pais da Irlanda e da Escandinávia temeram encontrar no berço.
-Só que moderna. Ela não arromba a casa: espera uma brecha, uma família cheia de segredos, uma criança sozinha que diga sim.
-E os dois finais confirmam isso. No livro, a troca acontece: a fada fica com o corpo, e a menina vai para o lugar vazio.
-No filme, ela perde do único jeito que um trocado sempre perdeu: quando a verdade é dita em voz alta.
+
+## POR QUE A FADA TROCADORA (a explicação do veredito)
+`[VIGIA]`
+E eu não vou te deixar só com o carimbo. Vamos voltar em cada prova e ver por que todas apontam para o mesmo lugar.
+`[checklist da fada: cada linha acende quando é explicada]`
+`FICHA: PROVA 1 — ELA PEDE PERMISSÃO`
+`[PISTA 1 de novo, curta]`
+No folclore irlandês, as fadas não podiam levar quem estava protegido. Ferro no berço, sal na porta, uma bênção dita em voz alta.
+Por isso elas esperavam uma brecha: uma porta aberta, um presente aceito, um sim. A Outra Mamãe pergunta toda noite porque, sem o sim, a regra não deixa.
+`FICHA: PROVA 2 — À FORÇA, ELA FALHA`
+`[PISTA 5 de novo]`
+É a mesma regra vista do outro lado. Quando ela tenta entrar pela babá, à força, ela falha. Uma fada não leva quem não abriu a porta.
+`FICHA: PROVA 3 — ELA COPIA QUEM VOCÊ AMA`
+`[PISTA 2 + REAL: The Changeling, de Füssli]`
+O trocado chegava com o rosto da criança. E nas lendas, as fadas chamavam as pessoas para fora de casa com a voz de alguém da família.
+No livro, ela vai além: vira a avó inteira. A cópia perfeita de quem você confia é a arma mais antiga das fadas.
+`FICHA: PROVA 4 — O CORPO QUE NÃO OBEDECE`
+`[PISTA 3 de novo]`
+As fadas do folclore não tinham um tamanho fixo. Podiam parecer gente, ou caber num buraco na terra. A Outra Mamãe se estica, se dobra e desliza, porque nunca foi gente de verdade.
+`FICHA: PROVA 5 — A CASA RACHADA`
+`[PISTA 4 + REAL: o jornal de 1895]`
+Os trocados apareciam nas casas onde algo já estava errado: uma criança doente, uma mãe exausta, uma família em crise. Foi assim com Bridget Cleary, em mil oitocentos e noventa e cinco.
+A Outra Mamãe só aparece quando o casamento está quebrando, porque a brecha não é a porta. É a família.
+`FICHA: PROVA 6 — O DESEJO ATENDIDO`
+`[PISTA 6 de novo]`
+As fadas cumpriam desejos, sempre cobrando um preço. Bela deseja que Frank suma, e Frank some. O preço quem paga é ela.
+`FICHA: PROVA 7 — O "DEMÔNIO TRAPACEIRO"`
+`[PISTA 7 de novo]`
+E por que os investigadores chamam a Outra Mamãe de demônio? Porque na Irlanda, durante séculos, a Igreja ensinou que as fadas eram anjos caídos.
+Não eram maus o bastante para o inferno, nem bons o bastante para o céu. Para quem olha de fora, uma fada e um demônio trapaceiro são a mesma coisa.
+`FICHA: PROVA 8 — ELA QUER O LUGAR, NÃO A VIDA`
+`[IA: um berço vazio iluminado por uma vela]`
+E a prova que decide tudo: no livro, ela não mata a menina. Ela troca de lugar com ela. Fica com o corpo, e manda a criança de verdade para um lugar vazio.
+É exatamente o que a palavra changeling quer dizer. Trocado.
+`FICHA: PROVA 9 — A VERDADE EXPULSA`
+`[PISTA 8 de novo — a confissão da mãe]`
+E no filme, ela perde do único jeito que um trocado sempre perdeu nas lendas: quando alguém diz a verdade em voz alta.
+Quando a mãe confessa o segredo, a casa para de ter rachaduras para ela morar.
+`FICHA: E POR QUE NÃO A TULPA?`
+A tulpa explica muita coisa: nasce da necessidade de uma criança sozinha, fica mais forte quanto mais é querida.
+Mas uma tulpa é criada por alguém. A Outra Mamãe já existia antes de Bela. E uma tulpa não rouba o corpo de quem a criou.
+Nove provas. Uma só criatura que explica todas.
+
+## O FECHO
+`[VIGIA]`
+A Outra Mamãe é a fada trocadora que a Irlanda temia no berço, só que moderna.
+Ela não arromba a casa. Ela espera uma família cheia de segredos e uma criança sozinha que diga sim.
 Mas a cicatriz ficou. E a cena pós-créditos avisa: enquanto uma família tiver um segredo, ela tem um armário para voltar.
-Esse é o meu veredito. Agora é a sua vez.
+Esse é o meu veredito, e agora você sabe por quê. Mas a última palavra é sua.
 Você concorda? Ou acha que ela é outra coisa? Um demônio, uma tulpa, alguma coisa que eu não pensei? Deixa nos comentários.
 E me diz qual filme eu devo abrir no próximo arquivo.
 `[CTA: "Não deixe ela entrar."]`
@@ -215,5 +260,6 @@ E me diz qual filme eu devo abrir no próximo arquivo.
 - Fetch e doppelgänger (termo de Jean Paul, 1796); Rossetti, *How They Met Themselves* (1864).
 - Lamashtu (amuletos mesopotâmicos, Louvre); Lilith e os anjos Senoi, Sansenoi e Semangelof.
 - Alexandra David-Néel, *Mystiques et magiciens du Tibet* (1929).
+- Fadas como anjos caídos no folclore irlandês: W. B. Yeats, *Fairy and Folk Tales of the Irish Peasantry* (1888); proteções com ferro e sal.
 - Lucy Clifford, *The New Mother*, em *Anyhow Stories* (1882).
 - Capgras & Reboul-Lachaux (1923), *L'illusion des "sosies"*.
