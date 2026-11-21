@@ -1,140 +1,153 @@
-# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v5, 21/11, para aprovação)
+# O QUE É A CRIATURA? #1 — A OUTRA MAMÃE (roteiro v6, 21/11, para aprovação)
 
-v5 (usuário: "depois de dar o veredito temos que explicar o porquê chegamos nele"): bloco novo POR QUE A FADA TROCADORA — as 9 provas, uma a uma, cada uma ligada ao folclore das fadas; e por que não a tulpa. Só depois a pergunta para os comentários.
-
-v4 (usuário: "no final fala 3 coisas diferentes, temos que dar um veredito"): UM veredito — fada trocadora (changeling) — com placar de 9 provas; a tulpa vira a "quase", eliminada pela troca do livro.
-
-v2 (usuário: "quero que realmente seja um estudo… no final do filme a criança não fala sim, ela derrota a criatura"):
-o final do FILME corrigido (Bela vence; quem diz sim é a Bela do LIVRO), um capítulo novo LIVRO × FILME, pistas novas
-(a tentativa de entrar à força pela babá, o "demônio trapaceiro" dito no próprio filme, o desejo que mata Frank) e
-um veredito que explica os dois finais. Fontes do final: Cinemaholic (10/11/2026) e Books of Brilliance (09/10/2026).
-Tudo será conferido de novo no filme quando ele chegar.
+v6 (21/11): reescrito depois de ler o FILME inteiro (legenda em português embutida, 1.100 falas). Corrigido o que
+vinha de resumos da internet: Bela tem 7 anos; a Outra Mamãe IMITA o babá Kelvin (não possui); os investigadores não
+morrem em cena; a confissão da mãe é uma ESTRATÉGIA (a médium disse que, sem inocência, o demônio desiste); Bela vence
+escolhendo "não" com a lição da avó; não há cena de Natal — o fim é o discurso da escola. Provas novas ditas no próprio
+filme: "ela quer trocar de lugar comigo", "não me permitiram ser uma pessoa", "ela mora atrás das nossas portas",
+"precisam de permissão para existir". Placar refeito: duplo 1 · demônio 4 · tulpa 7 · fada trocadora 9.
+Veredito mantido (fada trocadora) e agora com a explicação prova a prova. v5 guardado em ROTEIRO_v5.md.
 
 Título: **O que é a Outra Mamãe? O folclore real por trás do filme**
-Duração estimada: ~12 min. Narração: Vigia (Algenib), mesmo jeito do canal.
-`[PISTA x]` = cena do filme a escolher quando o filme chegar (trecho de 5–10 s, moldura de arquivo, Vigia por cima).
-`[REAL]` = imagem real em domínio público. `[IA]` = ilustração nossa (sem rosto).
+Duração estimada: ~13 min. Narração: Vigia (Algenib).
+`[CENA mm:ss]` = trecho do filme (5–10 s, moldura de arquivo, Vigia por cima; som original só onde marcado 🔊).
+`[REAL]` = imagem real em domínio público. `[IA]` = ilustração nossa (sem rosto). `[PEÇA]` = animação do formato.
 
 ---
 
 ## GANCHO
-`[PISTA 0 — a cena mais forte da Outra Mamãe saindo do armário]`
-Uma menina pequena conversa todas as noites com alguém que sai do armário do quarto dela.
+`[CENA 02:32 — Bela, deitada, olhando para a porta do armário: "Boa noite, Outra Mamãe." 🔊]`
+Toda noite, uma menina de sete anos dá boa noite para o pai, para a mãe… e para mais alguém.
+`[CENA 09:59–10:06 — a "mãe" na cozinha 🔊 "Posso entrar no seu coração?"]`
 Esse alguém tem o rosto da mãe dela. A voz da mãe dela. E só faz uma pergunta.
-"Posso entrar no seu coração?"
 O filme dá um nome para essa coisa. Outra Mamãe.
 Mas em nenhum momento ele diz o que ela é.
 Hoje a gente vai descobrir.
+`[PEÇA: abertura "O QUE É A CRIATURA?"]`
 
 ## O VIGIA APRESENTA
-Bem-vindo de volta ao Último Abrigo.
-Esta é a primeira noite de um arquivo novo aqui no canal. Toda semana, eu pego um filme que mostrou um monstro e não explicou.
-E faço o que o filme não fez.
+`[VIGIA]`
+Bem-vindo de volta ao Último Abrigo. Esta é a primeira noite de um arquivo novo aqui no canal.
+Toda semana, eu pego um filme que mostrou um monstro e não explicou. E faço o que o filme não fez.
 Outra Mamãe estreou em outubro de dois mil e vinte e seis. Direção de Rob Savage, produção de James Wan, e Jessica Chastain no papel das duas mães: a verdadeira, e a outra.
 O filme é baseado no livro Incidents Around the House, de Josh Malerman, o mesmo autor de Caixa de Pássaros.
 A crítica odiou: dezessete por cento de aprovação. Mas o público lotou as salas. Quarenta e cinco milhões de dólares na estreia.
-E todo mundo saiu do cinema com a mesma pergunta.
-Antes das teorias, vamos às pistas.
+`[CENA 00:39–00:52 — a frase de abertura do filme na tela]`
+E repara na frase que abre o filme: "Uma chance de ser humano. O milagre que confundimos com algo corriqueiro. É cobiçada tanto por deuses como por demônios."
+Guarda essa frase. Ela vai voltar.
+Antes das teorias, as pistas.
 
 ## AS PISTAS (sem spoiler)
-`FICHA: PISTA 1 — ELA PEDE PERMISSÃO`
-`[PISTA 1 — Outra Mamãe perguntando se pode entrar no coração]`
-Ela nunca entra à força. Ela pergunta. Toda noite, a mesma pergunta.
-`FICHA: PISTA 2 — ELA COPIA VOZES`
-`[PISTA 2 — a voz de alguém da família vindo do lugar errado]`
-Ela não imita só a mãe. Ela imita qualquer pessoa que a menina ama.
-`FICHA: PISTA 3 — ELA MUDA DE TAMANHO`
-`[PISTA 3 — o corpo dela se dobrando / crescendo no corredor]`
-Ela se estica, se dobra, desliza no chão. O corpo dela não obedece regra nenhuma.
-`FICHA: PISTA 4 — A CASA ESTÁ RACHANDO`
-`[PISTA 4 — uma briga dos pais / o casamento em crise]`
-Ela não aparece numa casa feliz. Ela aparece quando a família está quebrando.
-`FICHA: PISTA 5 — À FORÇA, ELA FALHA`
-`[PISTA 5 — a babá possuída tentando chegar até Bela]`
-Numa noite, ela toma o corpo da babá e tenta entrar na menina à força. E não consegue. Ela precisa de um "sim".
-`FICHA: PISTA 6 — O DESEJO DA MENINA ACONTECE`
-`[PISTA 6 — Bela desejando que Frank desapareça / o que acontece depois]`
-Quando Bela deseja que alguém suma, essa pessoa morre. Ela não só escuta a menina. Ela obedece.
-`FICHA: PISTA 7 — ATÉ O FILME TENTA DAR UM NOME`
-`[PISTA 7 — os investigadores da avó Ruth]`
-A avó, Ruth, chama dois investigadores do paranormal. Eles olham para ela e dizem: um demônio trapaceiro.
-E morrem na mesma noite.
-Guarde essas pistas. Toda teoria vai ter que explicar todas elas.
+`[PEÇA: pista 1]` **PISTA 1 — ELA PEDE PERMISSÃO**
+`[CENA 10:02 🔊 "Posso entrar no seu coração?"]`
+Ela nunca entra à força. Ela pergunta. Toda vez, a mesma pergunta.
+`[CENA 59:49–59:51 — a médium Lois 🔊 "…mas precisam de permissão para existir."]`
+Até a médium que a família contrata explica a regra: essas coisas precisam de permissão para existir.
+
+`[PEÇA: pista 2]` **PISTA 2 — ELA VIRA QUEM VOCÊ AMA**
+`[CENA 07:42–08:30 — a "mãe" que volta para almoçar]`
+Primeiro ela vira a mãe. A mãe que nunca está em casa, de repente, volta para almoçar.
+`[CENA 27:03–27:10 🔊 "Vou ser quem você quiser que eu seja."]`
+Depois o babá, Kelvin. Depois o tio Frank. Ela vira qualquer pessoa que a menina ama.
+
+`[PEÇA: pista 3]` **PISTA 3 — O CORPO NÃO OBEDECE**
+`[CENA 14:20–14:26 — Bela conta para os pais: "ficar bem grande, ficar bem pequena e fazer caretas"]`
+`[CENA a escolher — o corpo dela se dobrando / crescendo]`
+Ela cresce, encolhe, se dobra, desliza. E Bela diz onde ela mora: "atrás das nossas portas".
+
+`[PEÇA: pista 4]` **PISTA 4 — UMA CASA CHEIA DE SEGREDOS**
+`[CENA 05:49–06:01 — "Vou chegar tarde de novo." / "Mesmo time."]`
+Ela não aparece numa casa feliz. Aparece numa casa onde a mãe nunca está, onde o pai fuma escondido, e onde cada adulto guarda um segredo.
+
+`[PEÇA: pista 5]` **PISTA 5 — O DESEJO DA MENINA ACONTECE**
+`[CENA 39:42–39:45 🔊 "Pode fazer o tio Frank ir embora?" — "É uma ótima ideia."]`
+Bela faz um pedido. E o tio Frank nunca mais volta.
+
+`[PEÇA: pista 6]` **PISTA 6 — ELA QUER SER HUMANA**
+`[CENA 39:15 🔊 "Não me permitiram ser uma pessoa."]` `[CENA 28:42 "Dói muito, Bela. Eu preciso existir."]`
+Ela não quer só a menina. Ela quer existir. Quer ser gente.
+
+`[PEÇA: pista 7]` **PISTA 7 — ELA QUER TROCAR DE LUGAR**
+`[CENA 45:03–45:18 — Bela explica aos pais: "Ela quer trocar de lugar comigo. Ela vai ser eu."]`
+`[CENA 50:17 🔊 "Eu vou ser você, e você será eu."]`
+E Bela diz com todas as letras o que ela quer: trocar de lugar.
+Sete pistas. Toda teoria vai ter que explicar as sete.
 
 ## TEORIA 1 — UMA FADA QUE TROCA PESSOAS
+`[PEÇA: teoria 1]`
 `[REAL: The Changeling, de Henry Füssli (1781)]`
 Na Irlanda, na Escócia e na Escandinávia, durante séculos, pais acreditaram numa coisa terrível.
-Que as fadas entravam nas casas à noite, levavam o bebê, e deixavam no berço uma cópia.
+Que as fadas entravam nas casas à noite, levavam a criança, e deixavam no lugar uma cópia.
 Os irlandeses chamavam essa cópia de changeling. Os suecos, de bortbyting. O trocado.
 O trocado tinha o rosto da criança. Mas chorava sem parar, comia sem nunca crescer, e olhava para os pais como se não os conhecesse.
 `[IA: um berço vazio iluminado por uma vela, a janela aberta para a mata]`
-E para descobrir se o filho tinha sido trocado, os pais faziam testes.
-Deixavam o bebê de madrugada sobre um monte de esterco. Seguravam a criança numa pá, em cima do fogo.
-Porque se fosse mesmo uma fada, ela fugiria. E o filho verdadeiro seria devolvido.
-E tem um detalhe que quase ninguém conta. As fadas não conseguiam levar quem estava protegido.
-Ferro sobre o berço, sal na soleira, uma bênção dita em voz alta. Contra isso, elas não podiam nada.
-Então elas esperavam uma brecha. Uma porta deixada aberta. Uma bênção esquecida. Um presente aceito. Um sim.
-E quando faziam um acordo, as fadas cumpriam o desejo. Sempre cobrando um preço.
-`FICHA: A FADA QUE TROCA — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✓ · desejo ✓`
-Seis de seis. E guarda mais um detalhe do folclore: o trocado ia embora quando era desmascarado. Quando alguém dizia a verdade em voz alta.
+E por que as fadas queriam crianças humanas? Porque, nas lendas, o povo das fadas cobiçava aquilo que não tinha: uma vida humana.
+E elas viviam do outro lado: debaixo da terra, atrás das colinas, dentro dos fortes de terra. Às vezes, do outro lado do mar.
+Mas tem um detalhe que quase ninguém conta. As fadas não conseguiam levar quem estava protegido.
+Ferro sobre o berço, sal na soleira, uma bênção dita em voz alta. Então elas esperavam uma brecha. Uma porta aberta. Um presente aceito. Um sim.
+E quando faziam um acordo, cumpriam o desejo. Sempre cobrando um preço.
+`[PEÇA: checklist — A FADA QUE TROCA: 7 de 7]`
+Sete de sete. Guarda isso.
 Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou num tribunal.
 
 ## O CASO REAL — BRIDGET CLEARY, 1895
-`[REAL: recortes de jornal de 1895 sobre o caso]`
+`[REAL: The Sun, Nova York, 28 de abril de 1895 — "The Burning of Bridget Cleary"]`
 Ballyvadlea, condado de Tipperary, Irlanda. Março de mil oitocentos e noventa e cinco.
 Bridget Cleary, vinte e seis anos, costureira, adoeceu depois de passar perto de um forte das fadas, um círculo de terra antigo que os moradores evitavam.
 O marido dela, Michael, chamou um "médico das fadas", um curandeiro da região chamado Denis Ganey.
 E o veredito dele foi: a verdadeira Bridget tinha sido levada pelas fadas.
-`[REAL: The Sun, Nova York, 28 de abril de 1895 — "The Burning of Bridget Cleary"]`
 Michael se convenceu de que aquela mulher na cama não era mais a esposa dele.
-Que as fadas tinham levado Bridget e deixado uma cópia no lugar.
 `[IA: uma lareira acesa num casebre irlandês, cadeira vazia]`
-Durante noites seguidas, com a ajuda de parentes, ele forçou a mulher a beber ervas e perguntou, de novo e de novo.
+Durante noites seguidas, com a ajuda de parentes, ele forçou a mulher a beber ervas e perguntou, de novo e de novo:
 "Você é Bridget Boland, esposa de Michael Cleary, em nome do Pai, do Filho e do Espírito Santo?"
 Está registrado assim, palavra por palavra, nos jornais da época.
 Na noite de quinze de março, ele a cobriu de óleo de lamparina e ateou fogo. Na frente da família.
-O corpo foi encontrado numa cova rasa, dias depois.
-Michael foi condenado por homicídio culposo e passou quinze anos na prisão.
-E até hoje as crianças da Irlanda cantam uma rima que nasceu desse caso.
+O corpo foi encontrado numa cova rasa, dias depois. Michael foi condenado por homicídio culposo e passou quinze anos na prisão.
+E até hoje as crianças da Irlanda cantam uma rima que nasceu desse caso:
 "Você é uma bruxa, ou você é uma fada, ou você é a esposa de Michael Cleary?"
-`[CENA — a mãe verdadeira olhando para a filha como se não a conhecesse]`
+`[CENA 15:09–15:16 🔊 "Você está com o cheiro de outra pessoa." — "Bela, sou eu. Sou a Mamãe."]`
 É Outra Mamãe ao contrário. No filme, a filha desconfia da mãe. Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa.
 E quem pagou foi a pessoa de verdade.
 
 ## TEORIA 2 — O DUPLO
+`[PEÇA: teoria 2]`
 `[REAL: How They Met Themselves, de Dante Gabriel Rossetti (1864)]`
 Os irlandeses tinham outro nome para uma cópia: o fetch.
-O fetch é o duplo de uma pessoa viva. Ele aparece igual a ela, com a mesma roupa, o mesmo rosto.
+O fetch é o duplo de uma pessoa viva. Igual a ela, com a mesma roupa, o mesmo rosto.
 Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito. Se vê à noite, ela vai morrer em breve.
-Na Alemanha, o nome é doppelgänger. "O que anda em dobro."
-`FICHA: O DUPLO — permissão ✗ · vozes ✓ · corpo que muda ✗ · casa em crise ✗ · à força falha ✗ · desejo ✗`
-Mas o duplo é um aviso. Ele não quer nada. E a Outra Mamãe quer muito uma coisa.
+Na Alemanha, o nome é doppelgänger: o que anda em dobro.
+`[PEÇA: checklist — O DUPLO: 1 de 7]`
+O duplo copia. Mas ele é só um aviso. Não pede, não deseja, não quer nada. E a Outra Mamãe quer muito uma coisa.
 
-## TEORIA 3 — O DEMÔNIO DOS BERÇOS
-`[REAL: amuleto de Lamashtu, Museu do Louvre]`
+## TEORIA 3 — O DEMÔNIO TRAPACEIRO
+`[PEÇA: teoria 3]`
+`[REAL: amuleto de Lamashtu, British Museum]`
 Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.
 Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas.
 As mães penduravam amuletos de pedra sobre a cama para afastá-la.
-`[REAL: amuleto hebraico contra Lilith, com os três anjos]`
+`[REAL: amuleto medieval de proteção da mãe e da criança, Wellcome Collection]`
 Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith. E os berços ganharam amuletos com os nomes de três anjos.
-E aqui entra a pista sete: no filme, os investigadores chamam a Outra Mamãe de demônio trapaceiro.
-Só que existe uma regra muito antiga sobre demônios e espíritos da casa, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.
-`FICHA: O DEMÔNIO TRAPACEIRO — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✗ · à força falha ✓ · desejo ✗`
-O trapaceiro explica a permissão. Mas não explica por que ela só aparece numa casa que está quebrando.
+`[CENA 59:17–59:24 🔊 "Um ser ardiloso. Uma energia corrompida buscando um hospedeiro, invadindo de outro plano."]`
+E o próprio filme aposta nessa teoria. A médium Lois chama a Outra Mamãe de ser ardiloso. De demônio.
+E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.
+`[CENA 60:20–60:42 — o ritual: vela, água e sal]`
+Só que o ritual da médium, com fogo, água e sal, não espanta nada. Só faz a coisa aparecer.
+`[PEÇA: checklist — O DEMÔNIO: 4 de 7]`
+O demônio explica a permissão, as cópias, o corpo e o desejo. Mas um demônio não quer ser gente. E não precisa de uma família rachada.
 
 ## TEORIA 4 — UMA COISA CRIADA PELO DESEJO
+`[PEÇA: teoria 4]`
 `[IA: um quarto de criança à noite, a porta do armário entreaberta]`
 Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.
 Ela contou que tinha criado, só com a concentração, um ser imaginário. Uma tulpa.
-Um monge baixinho e simpático. Que, com o tempo, começou a aparecer sozinho. A mudar de jeito. A ficar sinistro.
-E que ela levou seis meses para conseguir destruir.
-`[PISTA 6 — Bela falando com o armário como quem fala com uma amiga]`
-É a regra mais importante do livro de Malerman. A Outra Mamãe só ganha força quando é querida.
-Quanto mais a menina precisa dela, mais real ela fica.
-`FICHA: A TULPA — permissão ✓ · vozes ✓ · corpo que muda ✓ · casa em crise ✓ · à força falha ✓ · desejo ✓`
+Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro. E que ela levou seis meses para conseguir destruir.
+`[CENA 13:37–13:51 — os pais perguntam se é uma amiga imaginária: "Não." "Ela é muito boa em se esconder."]`
+E a Outra Mamãe parece uma tulpa. Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela. Fica mais forte quanto mais é querida.
+`[PEÇA: checklist — A TULPA: 6 de 7]`
+Seis de sete. Só não explica uma coisa: uma tulpa nasce de alguém. Ela não quer trocar de lugar com quem a criou.
 
 ## TEORIA 5 — A AVÓ DE CORALINE
-`[REAL: ilustração de The New Mother, Lucy Clifford (1882)]`
+`[REAL: ilustração de The New Mother, Lucy Clifford (1882), e a primeira página do conto]`
 Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.
 Duas irmãs desobedecem a mãe, mesmo avisadas. E a mãe vai embora.
 No lugar dela, chega uma nova mãe. Com olhos de vidro. E um rabo de madeira que bate no chão.
@@ -146,105 +159,74 @@ E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser 
 Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.
 Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.
 A pessoa reconhece o rosto. Mas não sente mais nada ao ver aquele rosto. E a única explicação que o cérebro encontra é: "essa não é a minha mãe".
+`[CENA 29:42–29:45 🔊 "É você mesmo?"]`
 O medo do filme existe. E tem nome em todos os livros de medicina.
 
-## ⚠️ AVISO DE SPOILER — O FINAL EXPLICADO
-`CARTÃO: "SPOILER — pule para [tempo] se ainda não viu"`
-`[PISTA 8 — a confissão da mãe]`
-No terço final, a mãe, Ursula, faz a coisa que ninguém naquela casa tinha feito: fala a verdade.
-Ela conta que Russ não é o pai biológico de Bela.
-`[PISTA 9 — Bela correndo para o quarto]`
-A menina sobe a escada destruída. Corre para o quarto. E por um instante, ela quase diz sim.
-`[PISTA 10 — Bela enfrentando a Outra Mamãe]`
-Mas no último segundo, ela reage. E derrota a criatura.
-`[PISTA 11 — a família montando as luzes de Natal]`
-Meses depois, a família monta as luzes de Natal. Bela diz que agora tem uma vida ótima, que os pais estão felizes de verdade.
-`[PISTA 12 — a cicatriz no pescoço de Ursula]`
-Só que o rosto da mãe ainda finge. E no pescoço dela, a cicatriz de uma mordida.
-`[PISTA 13 — a cena pós-créditos]`
-E depois dos créditos, a Outra Mamãe olha direto para a câmera. E pede silêncio. Para você.
+## ⚠️ SPOILER — O FINAL EXPLICADO
+`[PEÇA: spoiler — "pule para mm:ss"]`
+`[CENA 51:19 — "Aquilo afundou com ela." / 52:18 🔊 "Bela, vamos ver o mar?"]`
+No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo. Para ver o mar.
+`[CENA 57:33–57:52 — a avó Ruth: "Ninguém passa pela vida sem algumas cicatrizes… É isso que significa ser humano."]`
+Na casa da avó Ruth, Bela ouve uma lição que vai salvar a vida dela.
+`[CENA 59:53–59:55 🔊 "Quando a inocência da Bela for quebrada, o demônio não vai querer mais ela."]`
+E a médium deixa uma ideia na cabeça dos pais.
+`[CENA 74:05–76:10 — a confissão de Ursula]`
+No terço final, a mãe, Ursula, faz de propósito o que ninguém naquela casa tinha feito: fala a verdade.
+Conta que Russ não é o pai biológico de Bela. E que ela nunca quis ser mãe.
+`[CENA 77:39–77:45 🔊 "Eu vou dizer sim. Por favor! Estou pronta."]`
+A menina sobe correndo. E, por um instante, ela implora para a Outra Mamãe voltar.
+`[CENA 79:43–79:52 — a voz da avó: "Você pode escolher quem vai deixar entrar no seu coração…"]`
+`[CENA 80:09–80:15 🔊 "Mas eu sou mentirosa como eles. Eu não quero você! Eu escolho não!"]`
+Mas no último segundo ela lembra da avó. Aceita ser humana, com mentiras e cicatrizes. E escolhe "não".
+`[CENA 81:25–81:49 🔊 "Toda vez que olhar para ela, você vai pensar em mim."]`
+A criatura vai embora, mas deixa uma marca na mãe. A mesma cicatriz que Bela chama de zíper.
+`[CENA 84:16–84:44 — o discurso na escola: "Todos sobreviveram. Somos uma família muito feliz."]`
+E no último discurso, Bela já sabe fazer o que os adultos faziam: contar a história de um jeito diferente.
+`[CENA ~92:50 — depois dos créditos, a Outra Mamãe no escuro]`
+E depois dos créditos, ela ainda está lá.
 
-## LIVRO × FILME — OS DOIS FINAIS (E O QUE O LIVRO PROVA)
+## LIVRO × FILME — OS DOIS FINAIS
 `[REAL: capa do livro Incidents Around the House]`
-E aqui está a parte que quase ninguém sabe. No livro de Josh Malerman, o final é outro.
-E esse outro final é a melhor prova que a gente tem sobre o que ela é.
-A família volta para casa, e a avó Ruth está esperando por eles. Ela diz para a menina: "o coração é uma casa com muitos quartos. Cuidado com quem você deixa entrar."
+No livro de Josh Malerman, o final é outro. Segundo os resumos do livro, a família volta para casa e a avó está esperando por eles.
+Ela diz para a menina: "o coração é uma casa com muitos quartos. Cuidado com quem você deixa entrar."
 `[IA: um corredor escuro de casa, portas fechadas dos dois lados]`
-Só que aquela avó era a Outra Mamãe.
-`FICHA: PROVA DO LIVRO 1 — ELA VIRA QUEM VOCÊ AMA`
-No livro, ela não copia só a mãe. Ela vira a avó inteira, de corpo e voz, e engana a família toda.
-Naquela noite, escondida dentro do armário, Bela ouve a criatura chamar os pais com a voz da avó. E ouve o que acontece com eles.
-`FICHA: PROVA DO LIVRO 2 — MESMO VENCENDO, ELA ESPERA O SIM`
-Ela já matou os pais. A menina está sozinha, sem ninguém para protegê-la. E mesmo assim, a criatura não entra.
-Ela volta para o quarto e pergunta de novo. Porque, sem o sim, ela não pode.
-Sozinha, sem mais ninguém para amar, Bela finalmente diz sim.
-`FICHA: PROVA DO LIVRO 3 — UMA TROCA, NÃO UMA MORTE`
-E a menina não morre. Ela acorda num lugar enorme e vazio, que o livro faz questão de dizer que não é uma casa.
-Enquanto, do lado de fora, no corpo dela, alguém treina a voz da Bela.
-A criatura não queria matar a menina. Queria o lugar dela.
+Só que, no livro, aquela avó era a Outra Mamãe.
+Naquela noite, escondida no armário, Bela ouve a criatura chamar os pais com a voz da avó. E ouve o que acontece com eles.
+Sozinha, ela diz sim. E acorda num lugar enorme e vazio, enquanto, do lado de fora, no corpo dela, alguém treina a voz da Bela.
 `FICHA: NO LIVRO, A CRIATURA VENCE · NO FILME, A MENINA VENCE`
-Dois finais opostos. Mas repara: as regras são as mesmas nos dois.
-No filme, quando a verdade é dita em voz alta, ela perde. No livro, quando ninguém sobra para dizer a verdade, ela ganha.
-O filme salvou a menina. O livro mostrou o que acontece quando ninguém salva.
+Dois finais opostos. Mas as regras são as mesmas nos dois: ela só entra com um sim, e o que ela quer é o lugar da menina.
 
 ## O VEREDITO
-`[VIGIA]`
-Agora junta tudo. As seis pistas do filme e as três provas do livro.
-`FICHA: O PLACAR FINAL (9 provas) — duplo 2 · demônio trapaceiro 6 · tulpa 8 · fada que troca 9`
-O duplo cai primeiro: ele é só um aviso, não quer nada.
-O demônio trapaceiro explica a permissão, mas não explica por que ela precisa de uma casa rachada.
-A tulpa chega muito perto. Empata com a fada em tudo o que o filme mostra. Mas uma tulpa não rouba o corpo de ninguém. E no livro, é exatamente isso que ela faz.
+`[PEÇA: placar — duplo 1 · demônio 4 · tulpa 7 · fada trocadora 9]`
+Agora junta tudo: as sete pistas, mais duas provas do final. Ela leva a criança para o outro lado. E perde quando ouve um "não".
+O duplo cai primeiro: só copia, não quer nada.
+O demônio explica a permissão e as cópias, mas o ritual contra demônios não funcionou, e um demônio não sonha em ser gente.
+A tulpa chega muito perto. Mas uma tulpa não troca de lugar com a criança, nem a leva para outro mundo.
 Só uma teoria explica as nove provas.
-`CARTÃO: VEREDITO — A OUTRA MAMÃE É UMA FADA TROCADORA (CHANGELING)` (peça "veredito")
+`[PEÇA: veredito — "A OUTRA MAMÃE É UMA FADA TROCADORA"]`
 O meu veredito: a Outra Mamãe é um changeling. Uma fada trocadora.
 
-## POR QUE A FADA TROCADORA (a explicação do veredito)
-`[VIGIA]`
-E eu não vou te deixar só com o carimbo. Vamos voltar em cada prova e ver por que todas apontam para o mesmo lugar.
-`[checklist da fada: cada linha acende quando é explicada]`
-`FICHA: PROVA 1 — ELA PEDE PERMISSÃO`
-`[PISTA 1 de novo, curta]`
-No folclore irlandês, as fadas não podiam levar quem estava protegido. Ferro no berço, sal na porta, uma bênção dita em voz alta.
-Por isso elas esperavam uma brecha: uma porta aberta, um presente aceito, um sim. A Outra Mamãe pergunta toda noite porque, sem o sim, a regra não deixa.
-`FICHA: PROVA 2 — À FORÇA, ELA FALHA`
-`[PISTA 5 de novo]`
-É a mesma regra vista do outro lado. Quando ela tenta entrar pela babá, à força, ela falha. Uma fada não leva quem não abriu a porta.
-`FICHA: PROVA 3 — ELA COPIA QUEM VOCÊ AMA`
-`[PISTA 2 + REAL: The Changeling, de Füssli]`
-O trocado chegava com o rosto da criança. E nas lendas, as fadas chamavam as pessoas para fora de casa com a voz de alguém da família.
-No livro, ela vai além: vira a avó inteira. A cópia perfeita de quem você confia é a arma mais antiga das fadas.
-`FICHA: PROVA 4 — O CORPO QUE NÃO OBEDECE`
-`[PISTA 3 de novo]`
-As fadas do folclore não tinham um tamanho fixo. Podiam parecer gente, ou caber num buraco na terra. A Outra Mamãe se estica, se dobra e desliza, porque nunca foi gente de verdade.
-`FICHA: PROVA 5 — A CASA RACHADA`
-`[PISTA 4 + REAL: o jornal de 1895]`
-Os trocados apareciam nas casas onde algo já estava errado: uma criança doente, uma mãe exausta, uma família em crise. Foi assim com Bridget Cleary, em mil oitocentos e noventa e cinco.
-A Outra Mamãe só aparece quando o casamento está quebrando, porque a brecha não é a porta. É a família.
-`FICHA: PROVA 6 — O DESEJO ATENDIDO`
-`[PISTA 6 de novo]`
-As fadas cumpriam desejos, sempre cobrando um preço. Bela deseja que Frank suma, e Frank some. O preço quem paga é ela.
-`FICHA: PROVA 7 — O "DEMÔNIO TRAPACEIRO"`
-`[PISTA 7 de novo]`
-E por que os investigadores chamam a Outra Mamãe de demônio? Porque na Irlanda, durante séculos, a Igreja ensinou que as fadas eram anjos caídos.
-Não eram maus o bastante para o inferno, nem bons o bastante para o céu. Para quem olha de fora, uma fada e um demônio trapaceiro são a mesma coisa.
-`FICHA: PROVA 8 — ELA QUER O LUGAR, NÃO A VIDA`
-`[IA: um berço vazio iluminado por uma vela]`
-E a prova que decide tudo: no livro, ela não mata a menina. Ela troca de lugar com ela. Fica com o corpo, e manda a criança de verdade para um lugar vazio.
-É exatamente o que a palavra changeling quer dizer. Trocado.
-`FICHA: PROVA 9 — A VERDADE EXPULSA`
-`[PISTA 8 de novo — a confissão da mãe]`
-E no filme, ela perde do único jeito que um trocado sempre perdeu nas lendas: quando alguém diz a verdade em voz alta.
-Quando a mãe confessa o segredo, a casa para de ter rachaduras para ela morar.
+## POR QUE A FADA TROCADORA
+`[VIGIA + PEÇA: checklist da fada, uma linha acende a cada prova]`
+E eu não vou te deixar só com o carimbo. Vamos voltar em cada prova.
+**1. Ela pede permissão.** As fadas não podiam levar quem estava protegido. Esperavam uma brecha, um sim. A médium disse a regra em voz alta: elas precisam de permissão para existir.
+**2. Ela vira quem você ama.** O trocado chegava com o rosto da criança, e as fadas chamavam as pessoas para fora de casa com a voz de alguém da família. A mãe, o babá, o tio Frank.
+**3. O corpo que não obedece.** As fadas não tinham tamanho fixo: podiam parecer gente, ou caber atrás de uma porta. "Ela mora atrás das nossas portas."
+**4. A casa cheia de segredos.** As trocas aconteciam nas casas onde algo já estava errado: uma criança sozinha, uma mãe ausente, uma família em crise. Foi assim com Bridget Cleary. A brecha não é a porta. É a família.
+**5. O desejo atendido.** As fadas cumpriam desejos, e sempre cobravam. Bela pede que o tio Frank vá embora, e o preço quem paga é ela.
+**6. Ela quer ser humana.** "Não me permitiram ser uma pessoa." Nas lendas, o povo das fadas cobiçava o que não tinha: uma vida humana. É a frase que abre o filme: uma chance de ser humano, cobiçada por deuses e demônios.
+**7. Ela quer trocar de lugar.** "Ela vai ser eu." É exatamente o que a palavra changeling quer dizer: trocado. No livro, a troca acontece.
+**8. Ela leva a criança para o outro lado.** As fadas levavam as pessoas para baixo da terra, para além do mar. A Outra Mamãe afunda com Bela pelo chão para ver o mar.
+**9. O "não" a derrota.** Fada nenhuma leva quem não se entrega. Quando Bela aceita ser humana, com mentiras e cicatrizes, e diz "não", a troca não tem mais por onde acontecer.
 `FICHA: E POR QUE NÃO A TULPA?`
-A tulpa explica muita coisa: nasce da necessidade de uma criança sozinha, fica mais forte quanto mais é querida.
-Mas uma tulpa é criada por alguém. A Outra Mamãe já existia antes de Bela. E uma tulpa não rouba o corpo de quem a criou.
+A tulpa explica a solidão, o desejo, a vontade de existir. Mas uma tulpa nasce de alguém e some quando deixa de ser querida. Ela não troca de lugar com a criança, nem a leva para outro mundo. Uma fada, sim.
 Nove provas. Uma só criatura que explica todas.
 
 ## O FECHO
 `[VIGIA]`
 A Outra Mamãe é a fada trocadora que a Irlanda temia no berço, só que moderna.
-Ela não arromba a casa. Ela espera uma família cheia de segredos e uma criança sozinha que diga sim.
-Mas a cicatriz ficou. E a cena pós-créditos avisa: enquanto uma família tiver um segredo, ela tem um armário para voltar.
+Ela não arromba a casa. Espera uma família cheia de segredos e uma criança sozinha que diga sim.
+Mas a cicatriz ficou. E depois dos créditos, ela ainda está lá. Enquanto uma família tiver um segredo, ela tem uma porta para voltar.
 Esse é o meu veredito, e agora você sabe por quê. Mas a última palavra é sua.
 Você concorda? Ou acha que ela é outra coisa? Um demônio, uma tulpa, alguma coisa que eu não pensei? Deixa nos comentários.
 E me diz qual filme eu devo abrir no próximo arquivo.
@@ -252,14 +234,12 @@ E me diz qual filme eu devo abrir no próximo arquivo.
 
 ---
 ### Fontes
-- *Other Mommy* (Universal, 2026) e *Incidents Around the House* (Josh Malerman, 2024).
-- Final do filme e do livro: Cinemaholic, "Other Mommy Ending Explained" (10/11/2026); Books of Brilliance, "Other Mommy Book vs. Movie" (09/10/2026).
-- Trapaceiros e a regra do convite: o vampiro eslavo e os espíritos da soleira (folclore europeu).
-- Changelings: folclore irlandês, escocês e escandinavo (bortbytingar).
-- Bridget Cleary: Angela Bourke, *The Burning of Bridget Cleary* (2000); *Irish Times*.
-- Fetch e doppelgänger (termo de Jean Paul, 1796); Rossetti, *How They Met Themselves* (1864).
-- Lamashtu (amuletos mesopotâmicos, Louvre); Lilith e os anjos Senoi, Sansenoi e Semangelof.
+- *Other Mommy / Outra Mamãe* (Universal, 2026) — falas citadas da legenda oficial em português; *Incidents Around the House* (Josh Malerman, 2024).
+- Final do livro: Cinemaholic (10/11/2026); Books of Brilliance (09/10/2026).
+- Changelings: folclore irlandês, escocês e escandinavo (bortbytingar); W. B. Yeats, *Fairy and Folk Tales of the Irish Peasantry* (1888).
+- Bridget Cleary: *The Sun* (Nova York), 28/04/1895; Angela Bourke, *The Burning of Bridget Cleary* (2000).
+- Fetch e doppelgänger (Jean Paul, 1796); Rossetti, *How They Met Themselves* (1864).
+- Lamashtu (amuletos mesopotâmicos, British Museum); Lilith e os anjos Senoi, Sansenoi e Semangelof.
 - Alexandra David-Néel, *Mystiques et magiciens du Tibet* (1929).
-- Fadas como anjos caídos no folclore irlandês: W. B. Yeats, *Fairy and Folk Tales of the Irish Peasantry* (1888); proteções com ferro e sal.
 - Lucy Clifford, *The New Mother*, em *Anyhow Stories* (1882).
 - Capgras & Reboul-Lachaux (1923), *L'illusion des "sosies"*.
