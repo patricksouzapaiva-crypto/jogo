@@ -39,3 +39,4 @@ previas/*.tempos.json
 shorts/*.wav
 publicacao/*.jpg
 publicacao/shorts_final/fim.txt
+publicacao/shorts_final/*.tempos.json
