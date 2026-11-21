@@ -1,6 +1,6 @@
 # Ep. 11 — pacote de publicação no YouTube (21/11)
 
-Arquivo para subir: `previas/O_Vigia_Ep11_Por_que_voce_nunca_deve_entrar_na_floresta_escandinava_1080p_entrega.mp4`
+Arquivo para subir: `previas/O_Vigia_Ep11_Por_que_voce_nunca_deve_entrar_na_floresta_escandinava_1080p_entrega_envio.mp4` (a versão que foi mandada no app)
 Legendas: `publicacao/legendas_pt-BR.srt` (Português)
 
 ## Título (56 caracteres)
