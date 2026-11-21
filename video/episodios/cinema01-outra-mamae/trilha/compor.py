@@ -115,7 +115,72 @@ def veredito(o, t0):
     return caixinha(o, t + 2.2, 0.8, ate=10, cansa=True)
 
 
-if __name__ == "__main__":
+def duplo(o, t0, vel=1.0):
+    """O duplo: a canção de ninar em cânone com ela mesma — a segunda voz entra um compasso depois e meio tom acima,
+    como um reflexo que quase bate. Harpa e glockenspiel de um lado, piano do outro."""
+    o.cresc("cb", "A2", t0 - 0.5, 30, 0.15, 0.28); o.cresc("vla_trem", "E4", t0 + 6, 22, 0.02, 0.16, pan=0.3)
+    t = t0
+    for k, (n, q) in enumerate(NINAR[:20]):
+        o.toque("harpa", n, t, 0.55 * vel, pan=-0.45)
+        o.toque("piano", n, t + 3 * Q, 0.5 * vel, pan=0.45, desafina=0.5 + 0.1 * math.sin(k), dur=q * Q * 1.5 + 0.6)
+        t += q * Q
+    return t + 3 * Q
+
+
+def demonio(o, t0, vel=1.0, d=26.0):
+    """O demônio trapaceiro: trombone e tuba graves em semitom (lá–si bemol), trêmulos de cellos e tímpano surdo."""
+    o.cresc("tuba", "A1", t0 - 1.0, d + 1.0, 0.35, 0.75 * vel); o.cresc("trombone", "A2", t0 + 2, d - 2, 0.05, 0.45 * vel, pan=-0.3)
+    o.cresc("trombone", "Bb2", t0 + d * 0.45, d * 0.55, 0.02, 0.4 * vel, pan=0.3)
+    o.cresc("vc_trem", "E3", t0 + 4, d - 4, 0.02, 0.4 * vel); o.cresc("cb", "A2", t0 - 1.0, d + 1.0, 0.4, 0.55)
+    t = t0 + 3
+    while t < t0 + d - 2:
+        o.golpe("timp", t, 0.45 * vel, int(t)); t += 2.4
+    for k, (n, q) in enumerate(NINAR[:6]):     # a canção deformada, baixa, no meio do grave
+        o.toque("piano", oit(n, -2), t0 + 8 + k * 1.1, 0.4 * vel, desafina=-0.4, dur=2.0)
+    return t0 + d
+
+
+def tulpa(o, t0, vel=1.0):
+    """A tulpa: a canção etérea — notas espaçadas de glockenspiel e harpa com muito eco, cordas agudas paradas."""
+    o.cresc("vlns", "E5", t0, 28, 0.05, 0.18, pan=-0.3); o.cresc("vlns", "A5", t0 + 4, 24, 0.03, 0.12, pan=0.3)
+    o.cresc("cb", "A2", t0 - 0.5, 32, 0.25, 0.3)
+    t = t0 + 0.5
+    for k, (n, q) in enumerate(NINAR[:20]):
+        o.toque("glock", oit(n, 1), t, 0.4 * vel, pan=math.sin(k) * 0.6, molhado=1.0)
+        if k % 2 == 0:
+            o.toque("harpa", oit(n, -1), t + 0.03, 0.35 * vel, pan=-math.sin(k) * 0.5)
+        t += q * Q * 1.35
+    return t + 1.5
+
+
+def tensao(o, t0, d=24.0, vel=1.0):
+    """Spoiler / o final explicado: tensão que sobe — trêmulos em cluster, o coração no bumbo acelerando, golpe final."""
+    o.cresc("cb", "A2", t0 - 1.5, d + 1.5, 0.4, 0.8 * vel); o.cresc("vc_trem", "A2", t0 + 1, d - 1, 0.02, 0.55 * vel)
+    o.cresc("vlns_trem", "E5", t0 + d * 0.2, d * 0.8, 0.0, 0.5 * vel, pan=-0.4)
+    o.cresc("vlns_trem", "F5", t0 + d * 0.45, d * 0.55, 0.0, 0.45 * vel, pan=0.4)
+    o.cresc("vla_trem", "Bb3", t0 + d * 0.6, d * 0.4, 0.0, 0.45 * vel)
+    t, passo = t0 + 1.5, 1.3
+    while t < t0 + d - 0.8:
+        o.golpe("bumbo", t, 0.3 + 0.5 * (t - t0) / d, int(t * 7)); o.golpe("bumbo", t + 0.22, 0.18 + 0.3 * (t - t0) / d, int(t * 7) + 3)
+        t += passo; passo = max(0.55, passo * 0.94)
+    o.golpe("timp", t0 + d - 0.3, 1.4, 5); o.golpe("bumbo", t0 + d - 0.3, 1.5, 12)
+    o.cresc("cb", "A2", t0 + d, 4, 0.7, 0.2); o.cresc("vc", "A2", t0 + d + 0.3, 3.7, 0.5, 0.15)
+    return t0 + d + 4
+
+
+if __name__ == "__main__" and "variacoes" in sys.argv:
+    o = Orquestra(130); t = 0.5
+    t = duplo(o, t) + 0.3
+    t = demonio(o, t) + 0.3
+    t = tulpa(o, t) + 0.3
+    t = tensao(o, t) + 0.5
+    wav = AQUI / "previa_variacoes.wav"; o.salvar(wav, rev=0.36, corte=t)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", "afade=t=out:st=%.2f:d=2.5" % (t - 2.6), "-b:a", "192k",
+                    str(AQUI / "previa_variacoes.mp3")], check=True); wav.unlink()
+    print("ok", AQUI / "previa_variacoes.mp3", f"{t:.1f}s")
+
+
+if __name__ == "__main__" and "variacoes" not in sys.argv:
     o = Orquestra(150); t = 0.5
     # 1. o tema do formato (o relógio da investigação)
     t = relogio(o, t, 20) + 0.4
