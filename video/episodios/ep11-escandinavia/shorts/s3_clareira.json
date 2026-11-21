@@ -125,7 +125,6 @@
      ],
      "entrada": "obturador",
      "duracao_entrada": 0.55,
-     "em": "coisa",
      "antecipar": 0.55,
      "encaixe": "cobrir"
     }

@@ -120,17 +120,6 @@
    "sem_legenda": true,
    "cenas": [
     {
-     "tipo": "texto",
-     "texto": "KULNING\nO canto das pastoras suecas para chamar o gado",
-     "estilo": "maquina",
-     "vermelho": "KULNING",
-     "cps": 40,
-     "antecipar": 6.7,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
      "imagem": "../imagens/cenas/H03/H03_01.png",
      "zoom": [
       1.1,
@@ -146,7 +135,6 @@
        0.48
       ]
      ],
-     "em": "Era",
      "entrada": "fundir",
      "duracao_entrada": 0.6,
      "encaixe": "cobrir"

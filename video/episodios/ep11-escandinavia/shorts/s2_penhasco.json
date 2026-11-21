@@ -104,31 +104,6 @@
     }
    ],
    "pausa_antes_s": 0.45
-  },
-  {
-   "fala": "Os historiadores acreditam que o Ättestupa seja mais lenda do que prática.",
-   "cena": {
-    "imagem": "../imagens/cenas/C2_02/C2_02_01.png",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.5,
-      0.55
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6,
-    "encaixe": "cobrir"
-   },
-   "pausa_antes_s": 0.45
   }
  ],
  "musica": {

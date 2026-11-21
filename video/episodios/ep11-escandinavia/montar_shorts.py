@@ -23,7 +23,7 @@ SHORTS = [
     # 1. o canto na madrugada: Lucas acorda às duas e dez, o kulning, ninguém chamando gado, o tambor
     {"nome": "s1_canto", "de": 100, "ate": 104, "titulo": "Não siga o canto.", "ambiente": "ep11_mata_inverno_noite"},
     # 2. o Ättestupa: os idosos que subiam o penhasco no inverno (sem o trecho de filme: só imagens nossas)
-    {"nome": "s2_penhasco", "de": 40, "ate": 42, "titulo": "O inverno escolhe quem fica.", "ambiente": "ep11_vento_pinheiros"},
+    {"nome": "s2_penhasco", "de": 40, "ate": 41, "titulo": "O inverno escolhe quem fica.", "ambiente": "ep11_vento_pinheiros"},
     # 3. a coisa na clareira: o vento para, a lanterna acerta a coisa, o deus do altar já esperava
     {"nome": "s3_clareira", "de": 117, "ate": 122, "titulo": "Você é o pagamento.", "ambiente": "ep11_vento_pinheiros"},
 ]
@@ -71,6 +71,15 @@ for S in SHORTS:
         p = x.pop("pausa_antes_s", None)
         if p and j > 0:
             x["pausa_antes_s"] = min(p, 1.2)
+        # 21/11: no Short a narração não para nas fichas (ficaria por cima da legenda): sai a ficha, fica a imagem
+        if x.get("cenas"):
+            x["cenas"] = [c for c in x["cenas"] if c.get("tipo") != "texto"]
+            if x["cenas"]:
+                x["cenas"][0].pop("em", None)
+            else:
+                x.pop("cenas")
+        if x.get("cena", {}).get("tipo") == "texto":
+            x.pop("cena")
         for c in ([x["cena"]] if x.get("cena") else []) + x.get("cenas", []):
             ajustar_cena(c)
     if S.get("primeira_cena_de") is not None:
