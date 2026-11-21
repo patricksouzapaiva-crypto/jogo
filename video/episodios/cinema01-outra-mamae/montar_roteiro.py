@@ -5,7 +5,7 @@ fichas ✓/✗) → spoiler → livro × filme → UM veredito → o porquê, pr
   (identidade/abertura_v2.mp4, aprovada) entram como os cartões do Ep. 11: vídeo pronto com o próprio som, numa pausa da voz.
 - Cena do filme com 🔊 (cortar_filmes.py): o Vigia se cala, o filme fala (dublagem) com a fala escrita embaixo; depois
   a narração segue sobre o último quadro congelado ("prova" parada na tela), a não ser que outra cena entre.
-- Imagens [IA] que ainda não chegaram (PROMPTS_CENAS.md): no lugar, o quarto (ID03) e o armário (ID21) da identidade.
+- Imagens [IA] (PROMPTS_CENAS.md, geradas pelo usuário em 21/11) em imagens/ (fora do git): berço, lareira, retrato, corredor, parquinho.
 Regras: Vigia na apresentação, no porquê e no fecho; nenhum rosto de IA; cena >= 4 s; legenda só em português.
 Uso: python3 montar_roteiro.py → roteiro.json"""
 import hashlib
@@ -203,16 +203,16 @@ peca(50, f"{PC}teoria1.mp4")
 C(50, real("fussli_changeling", (1.0, 1.06)))
 C(52, ficha("CHANGELING (Irlanda) · BORTBYTING (Suécia)\n\"o trocado\"", "o trocado"))
 C(54, real("fussli_changeling", (1.06, 1.12), foco=((0.45, 0.6), (0.5, 0.62))))
-C(57, quarto(2))
-C(61, armario(1))
+C(57, img("imagens/IA01_berco_1", (1.0, 1.08), ((0.3, 0.6), (0.28, 0.62))))
+C(61, img("imagens/IA01_berco_2", (1.0, 1.07), ((0.6, 0.5), (0.62, 0.52))))
 peca(70, f"{PC}checklist1.mp4")
 C(70, img(ID + "ID02_quadro_2.png", (1.0, 1.05)))
 C(72, real("cleary_sun_1895", (1.0, 1.05)))
 # ================================================================ O CASO REAL — Bridget Cleary
 C(74, ficha("BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895", "BRIDGET CLEARY"))
 C(76, real("cleary_sun_1895", (1.05, 1.14), foco=((0.5, 0.3), (0.5, 0.36))))
-C(79, real("cleary_sun_1895", (1.1, 1.18), foco=((0.4, 0.6), (0.42, 0.66))))
-C(83, quarto(1))
+C(79, img("imagens/IA02_lareira_1", (1.0, 1.07), ((0.4, 0.6), (0.38, 0.62))))
+C(83, img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.35, 0.6), (0.33, 0.62))))
 C(85, real("cleary_sun_1895", (1.0, 1.05)))
 fala_filme(88, "caso_cheiro")
 # ================================================================ TEORIA 2 — o duplo
@@ -243,7 +243,8 @@ C(130, real("new_mother_n26", (1.0, 1.07)))
 C(133, ficha("THE NEW MOTHER (1882) → CORALINE (2002) → OUTRA MAMÃE (2026)", "OUTRA MAMÃE"))
 # ================================================================ A CIÊNCIA — Capgras
 C(135, ficha("SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"", "CAPGRAS"))
-C(137, img(ID + "ID20_outra_mamae_2.png", (1.0, 1.08)))
+C(136, img("imagens/IA03_retrato_1", (1.0, 1.08), ((0.55, 0.45), (0.6, 0.42))))
+C(138, img("imagens/IA03_retrato_2", (1.0, 1.08), ((0.45, 0.5), (0.45, 0.46))))
 fala_filme(140, "capgras")
 # ================================================================ SPOILER
 SPOILER_I = 142
@@ -262,8 +263,8 @@ C(157, filme("pos_creditos"))
 # ================================================================ LIVRO × FILME
 C(158, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO", "O LIVRO"))
 C(160, quarto(1))
-C(161, armario(1))
-C(164, quarto(2))
+C(161, img("imagens/IA04_corredor_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
+C(164, img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
 C(166, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"))
 # ================================================================ O VEREDITO
 peca(168, f"{PC}placar.mp4", sobra=1.0)
@@ -273,7 +274,7 @@ C(176, img(ID + "ID02_quadro_1.png", (1.0, 1.04)))
 # ================================================================ POR QUE A FADA TROCADORA
 PROVAS = [180, 184, 187, 190, 195, 198, 202, 206, 209]
 DEPOIS = [filme("p1_medium", congelar=True), filme("p2_kelvin", congelar=True), armario(2), real("cleary_sun_1895"),
-          filme("p5_frank", congelar=True), filme("abertura"), filme("p7_trocar", congelar=True), filme("s_afundou"),
+          filme("p5_frank", congelar=True), filme("abertura"), filme("p7_trocar", congelar=True), img("imagens/IA05_parquinho_1", (1.0, 1.07), ((0.4, 0.75), (0.38, 0.78))),
           filme("s_nao", congelar=True)]
 C(178, vigia())
 PORQUE = f"{PC}porque.mp4"
