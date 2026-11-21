@@ -9,3 +9,10 @@ identidade/pecas/
 identidade/__pycache__/
 trilha/*.wav
 trilha/*.mp3
+audio/
+filmes_prontos/
+__pycache__/
+reais_prontos/
+identidade/*.som.wav
+camera3d/
+previas/

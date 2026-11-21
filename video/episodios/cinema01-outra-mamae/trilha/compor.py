@@ -168,6 +168,60 @@ def tensao(o, t0, d=24.0, vel=1.0):
     return t0 + d + 4
 
 
+def encher(o, f, a, b, **kw):
+    """repete o motivo f de a até perto de b (cada chamada devolve onde terminou)"""
+    t = a
+    while t < b - 8:
+        t = f(o, t, **kw) + 0.6
+    return t
+
+
+def episodio(plano, saida):
+    """A trilha do episódio inteiro sobre os tempos da montagem (montar_roteiro.py → trilha/plano.json).
+    plano = {"secoes": [[nome, ini, fim], ...], "fim": s, "furos": [[ini, fim], ...] (falas do filme: a música desce),
+             "golpes": [s, ...] (peças de pista/teoria: tímpano), "veredito": s (o carimbo)}.
+    Bordão grave contínuo do começo ao fim: nunca há silêncio."""
+    fim = plano["fim"]; o = Orquestra(fim + 10)
+    t = 0.0
+    while t < fim:                                # o bordão (lá grave), em ondas de 18 s que se cruzam
+        o.cresc("cb", "A2", t, 20, 0.16, 0.2); o.cresc("vc", "E3", t + 9, 20, 0.06, 0.1, pan=0.3); t += 18
+    for nome, a, b in plano["secoes"]:
+        if nome == "gancho": caixinha(o, a + 0.3, 0.8)
+        elif nome == "apresenta": encher(o, piano_errado, a, b, vel=0.6)
+        elif nome == "pistas": encher(o, relogio, a, b, compassos=16, vel=0.55, sobe=False)
+        elif nome == "fada": encher(o, caixinha, a, b, vel=0.75)
+        elif nome == "cleary": encher(o, lamento, a, b, vel=0.85)
+        elif nome == "duplo": encher(o, duplo, a, b, vel=0.8)
+        elif nome == "demonio": demonio(o, a, 0.8, d=b - a)
+        elif nome == "tulpa": encher(o, tulpa, a, b, vel=0.85)
+        elif nome in ("avo", "capgras", "livro"): encher(o, piano_errado, a, b, vel=0.5)
+        elif nome == "spoiler": tensao(o, a, d=b - a - 4, vel=0.75)
+        elif nome == "veredito": relogio(o, a, max(4, int((plano["veredito"] - a) / 1.2)), vel=0.7)
+        elif nome == "porque": encher(o, relogio, a, b, compassos=8, vel=0.45, sobe=False)
+        elif nome == "fecho": caixinha(o, max(a, b - 26), 0.7, cansa=True); piano_errado(o, a, 0.45, ate=12)
+    for g in plano.get("golpes", []):
+        o.golpe("timp", g, 0.7, int(g))
+    if plano.get("veredito"):
+        veredito(o, plano["veredito"] - 2.4)
+    wav = Path(saida).with_suffix(".wav"); o.salvar(wav, rev=0.34, corte=fim)
+    import soundfile as sf
+    y, sr = sf.read(wav); env = np.ones(len(y))
+    for a, b in plano.get("furos", []):            # fala do filme: a música desce 9 dB (nunca some)
+        i, j, r = int(a * sr), int(b * sr), int(0.35 * sr)
+        env[i:j] = np.minimum(env[i:j], 0.35)
+        env[max(0, i - r):i] = np.minimum(env[max(0, i - r):i], np.linspace(1, 0.35, i - max(0, i - r)))
+        env[j:j + r] = np.minimum(env[j:j + r], np.linspace(0.35, 1, len(env[j:j + r])))
+    sf.write(wav, y * env[:, None], sr)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", f"afade=t=out:st={fim - 4:.2f}:d=4", "-b:a", "192k",
+                    str(saida)], check=True); wav.unlink()
+    print("ok", saida, f"{fim:.1f}s")
+
+
+if __name__ == "__main__" and len(sys.argv) > 2 and sys.argv[1] == "episodio":
+    import json
+    episodio(json.load(open(sys.argv[2])), sys.argv[3]); sys.exit()
+
+
 if __name__ == "__main__" and "variacoes" in sys.argv:
     o = Orquestra(130); t = 0.5
     t = duplo(o, t) + 0.3

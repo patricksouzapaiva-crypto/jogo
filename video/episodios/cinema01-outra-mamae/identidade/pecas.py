@@ -20,12 +20,17 @@ STENCIL = str(FONTES / "StardosStencil-Bold.ttf")
 VERM = (150, 24, 28)        # RGB da tinta vermelha (texto)
 PRETO = (30, 26, 24)
 
-EP_OUTRA_MAMAE = {
-    "pistas": ["ELA PEDE PERMISSÃO", "ELA COPIA VOZES", "ELA MUDA DE TAMANHO", "A CASA ESTÁ RACHANDO",
-               "À FORÇA, ELA FALHA", "O DESEJO DA MENINA ACONTECE", "ATÉ O FILME TENTA DAR UM NOME"],
+EP_OUTRA_MAMAE = {   # 21/11: roteiro v6 (7 pistas; placar 1 · 4 · 7 · 9)
+    "pistas": ["ELA PEDE PERMISSÃO", "ELA VIRA QUEM VOCÊ AMA", "O CORPO NÃO OBEDECE", "UMA CASA CHEIA DE SEGREDOS",
+               "O DESEJO DA MENINA ACONTECE", "ELA QUER SER HUMANA", "ELA QUER TROCAR DE LUGAR"],
     "teorias": ["UMA FADA QUE TROCA PESSOAS", "O DUPLO", "O DEMÔNIO TRAPACEIRO", "UMA COISA CRIADA PELO DESEJO"],
-    "itens": ["permissão", "vozes", "corpo que muda", "casa em crise", "à força falha", "desejo"],
-    "placar": [("O DUPLO", 2), ("DEMÔNIO TRAPACEIRO", 6), ("TULPA", 8), ("FADA TROCADORA", 9)],
+    "itens": ["permissão", "vira quem ama", "corpo que muda", "casa com segredos", "desejo", "quer ser humana",
+              "trocar de lugar"],
+    "provas_final": ["o outro lado", "o \"não\" a derrota"],
+    # marcas de cada teoria nas 7 pistas (roteiro: fada 7, duplo 1, demônio 4, tulpa 6)
+    "checklists": [("A FADA QUE TROCA", [1, 1, 1, 1, 1, 1, 1]), ("O DUPLO", [0, 1, 0, 0, 0, 0, 0]),
+                   ("O DEMÔNIO", [1, 1, 1, 0, 1, 0, 0]), ("A TULPA", [1, 1, 1, 1, 1, 1, 0])],
+    "placar": [("O DUPLO", 1), ("DEMÔNIO TRAPACEIRO", 4), ("TULPA", 7), ("FADA TROCADORA", 9)],
     "total": 9, "vencedor": 3,
     "veredito": "A OUTRA MAMÃE É UMA FADA TROCADORA",
 }
@@ -42,7 +47,7 @@ def renderizar(saida, dur, quadro, sons):
     so = [int(float(x) * FPS) for x in K.PREVIA] if K.PREVIA else None
     proc = None if so is not None else subprocess.Popen(
         ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-         "-c:v", "libx264", "-crf", "16", "-preset", "medium", "-pix_fmt", "yuv420p", str(saida) + ".v.mp4"], stdin=subprocess.PIPE)
+         "-c:v", "libx264", "-crf", "21", "-preset", "medium", "-pix_fmt", "yuv420p", str(saida) + ".v.mp4"], stdin=subprocess.PIPE)
     for q in range(int(dur * FPS)):
         t = q / FPS
         if so is not None and q not in so:
@@ -215,16 +220,20 @@ def marca(d, x, y, tam, certo, prog):
         d.line([a, (a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f)], fill=cor, width=larg, joint="curve")
 
 
-def checklist(saida, nome, itens, marcas):
-    """A ficha da teoria com as pistas: cada pista recebe ✓ ou ✗ à mão, uma por vez, e no fim o total."""
-    DUR = 3.2 + 0.75 * len(itens) + 1.8
+def checklist(saida, nome, itens, marcas, tempos=None, dur=None):
+    """A ficha da teoria com as pistas: cada pista recebe ✓ ou ✗ à mão, uma por vez, e no fim o total.
+    21/11: 2 colunas com quantas linhas precisar (até 9 itens); tempos = quando cada marca entra (senão 0,75 s cada)."""
+    tempos = tempos or [3.2 + 0.75 * k for k in range(len(itens))]
+    t_total = tempos[-1] + 0.75
+    DUR = dur or t_total + 1.8
     quad, Mq = fundo("ID02_quadro_1.png", None)
     base = Image.open(CAM / "ID07_ficha_2.png")
     ls = [(nome, ELITE, 0, VERM, 0.07, 0.07)]
     ls[0] = (nome, ELITE, fonte_que_cabe(nome, ELITE, 84, base.width * 0.86).size, VERM, 0.07, 0.07)
-    col = [(0.09, 0.30 + (k % 3) * 0.17) if k < 3 else (0.55, 0.30 + (k % 3) * 0.17) for k in range(len(itens))]
+    nl = -(-len(itens) // 2); passo = min(0.17, 0.48 / nl); tam = 60 if nl <= 3 else 50
+    col = [(0.09 if k < nl else 0.55, 0.27 + (k % nl) * passo) for k in range(len(itens))]
     for k, it in enumerate(itens):
-        ls.append((it, ELITE, 60, PRETO, col[k][0] + 0.07, col[k][1]))
+        ls.append((it, ELITE, tam, PRETO, col[k][0] + 0.07, col[k][1]))
     fi = Ficha(ls); som = Sons(); esc = 1250 / fi.base.width; total_txt = fi.total
     certos = sum(marcas)
 
@@ -232,10 +241,10 @@ def checklist(saida, nome, itens, marcas):
         def f(im):
             d = ImageDraw.Draw(im)
             for k, ok in enumerate(marcas):
-                p = lin(t, 3.2 + 0.75 * k, 0.35)
+                p = lin(t, tempos[k], 0.35)
                 if p > 0:
-                    marca(d, col[k][0] * im.width, col[k][1] * im.height - 6, 70, ok, p)
-            p = lin(t, 3.2 + 0.75 * len(itens), 0.2)
+                    marca(d, col[k][0] * im.width, col[k][1] * im.height - 6, 70 if nl <= 3 else 58, ok, p)
+            p = lin(t, t_total, 0.2)
             if p > 0:
                 fz = ImageFont.truetype(STENCIL, 110)
                 d.text((im.width * 0.62, im.height * 0.80 - 30), f"{certos} DE {len(itens)}", font=fz, fill=VERM + (int(240 * p),))
@@ -248,9 +257,9 @@ def checklist(saida, nome, itens, marcas):
         n = int(np.clip((t - 0.9) / 2.0 * total_txt, 0, total_txt))
         if 0.9 < t < 2.95 and int(t * 18) != int((t - 1 / FPS) * 18): som(t, round(t, 3), "tecla", -12)
         for k in range(len(itens)):
-            som(t, 3.2 + 0.75 * k, "ep08_pincel", -8)
-        som(t, 3.2 + 0.75 * len(itens), "ep08_carimbo", -6)
-        chave = (n, tuple(round(lin(t, 3.2 + 0.75 * k, 0.35), 1) for k in range(len(itens) + 1)))
+            som(t, tempos[k], "ep08_pincel", -8)
+        som(t, t_total, "ep08_carimbo", -6)
+        chave = (n, tuple(round(lin(t, x, 0.35), 1) for x in tempos + [t_total]))
         im = fi.texto_ate(n, (chave, desenhar_marcas(t)))
         por(tela, im, C @ mat_obj(960, 560 + (1 - u) * 700, esc, -1.2, fi.base.width, fi.base.height), sombra=1, z=0.4 * (1 - u))
         return tela, (960, 540, z, 0)
@@ -380,12 +389,19 @@ def spoiler(saida, pular="10:40"):
 
 if __name__ == "__main__":
     peca, saida = sys.argv[1], sys.argv[2]
-    if len(sys.argv) > 3 and sys.argv[3].startswith("previa="):
-        K.PREVIA = sys.argv[3].split("=")[1].split(",")
+    resto = [a for a in sys.argv[3:] if not a.startswith("previa=")]   # pecas.py pista saida.mp4 3 [previa=1,2]
+    for a in sys.argv[3:]:
+        if a.startswith("previa="):
+            K.PREVIA = a.split("=")[1].split(",")
     E = EP_OUTRA_MAMAE
-    if peca == "pista": pista(saida, 1, E["pistas"][0])
-    elif peca == "teoria": teoria(saida, 1, E["teorias"][0])
-    elif peca == "checklist": checklist(saida, "A FADA QUE TROCA", E["itens"], [True] * 6)
+    n = int(resto[0]) if resto and resto[0].isdigit() else 1
+    if peca == "pista": pista(saida, n, E["pistas"][n - 1])
+    elif peca == "teoria": teoria(saida, n, E["teorias"][n - 1])
+    elif peca == "checklist":
+        nome, m = E["checklists"][n - 1]; checklist(saida, nome, E["itens"], [bool(x) for x in m])
+    elif peca == "porque":   # o porquê do veredito: as 9 provas da fada, uma por vez, nos tempos dados (s)
+        ts = [float(x) for x in resto[0].split(",")]
+        checklist(saida, "A FADA QUE TROCA", E["itens"] + E["provas_final"], [True] * 9, ts, ts[-1] + 6)
     elif peca == "placar": placar(saida, E["placar"], E["total"])
     elif peca == "veredito": placar(saida, E["placar"], E["total"], E["vencedor"], E["veredito"])
-    elif peca == "spoiler": spoiler(saida)
+    elif peca == "spoiler": spoiler(saida, resto[0] if resto else "10:40")
