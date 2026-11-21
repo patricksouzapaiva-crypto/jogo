@@ -81,11 +81,15 @@ Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou
 `[REAL: recortes de jornal de 1895 sobre o caso]`
 Ballyvadlea, condado de Tipperary, Irlanda. Março de mil oitocentos e noventa e cinco.
 Bridget Cleary, vinte e seis anos, costureira, adoeceu depois de passar perto de um forte das fadas, um círculo de terra antigo que os moradores evitavam.
-O marido dela, Michael, se convenceu de que aquela mulher na cama não era mais a esposa dele.
+O marido dela, Michael, chamou um "médico das fadas", um curandeiro da região chamado Denis Ganey.
+E o veredito dele foi: a verdadeira Bridget tinha sido levada pelas fadas.
+`[REAL: The Sun, Nova York, 28 de abril de 1895 — "The Burning of Bridget Cleary"]`
+Michael se convenceu de que aquela mulher na cama não era mais a esposa dele.
 Que as fadas tinham levado Bridget e deixado uma cópia no lugar.
 `[IA: uma lareira acesa num casebre irlandês, cadeira vazia]`
 Durante noites seguidas, com a ajuda de parentes, ele forçou a mulher a beber ervas e perguntou, de novo e de novo.
-"Você é Bridget Boland, esposa de Michael Cleary, em nome de Deus?"
+"Você é Bridget Boland, esposa de Michael Cleary, em nome do Pai, do Filho e do Espírito Santo?"
+Está registrado assim, palavra por palavra, nos jornais da época.
 Na noite de quinze de março, ele a cobriu de óleo de lamparina e ateou fogo. Na frente da família.
 O corpo foi encontrado numa cova rasa, dias depois.
 Michael foi condenado por homicídio culposo e passou quinze anos na prisão.
