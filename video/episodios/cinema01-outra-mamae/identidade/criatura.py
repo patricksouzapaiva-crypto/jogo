@@ -346,11 +346,11 @@ def abertura(saida, num="1", filme="OUTRA MAMÃE", ano="2026"):
 
 
 def mixar(saida, sons, dur):
-    sons = [(0.0, "drone_terror", -22)] + sons
+    sons = [(0.0, "drone_terror", -9), (0.0, "drone_tensao", -15)] + sons
     ent, filt = [], []
     for k, (t, nome, db) in enumerate(sons):
         ent += ["-i", str(SONS / f"{nome}.mp3")]
-        cauda = 0.35 if nome == "tecla" else (dur if nome == "drone_terror" else 3.5)
+        cauda = 0.35 if nome == "tecla" else (dur if nome.startswith("drone") else 3.5)
         filt.append(f"[{k + 1}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{cauda},afade=t=out:st={max(0, cauda - 0.3)}:d=0.3,"
                     f"volume={db}dB,adelay={int(t * 1000)}:all=1[s{k}]")
     filt.append("".join(f"[s{k}]" for k in range(len(sons))) + f"amix=inputs={len(sons)}:normalize=0,afade=t=in:d=0.4,"
