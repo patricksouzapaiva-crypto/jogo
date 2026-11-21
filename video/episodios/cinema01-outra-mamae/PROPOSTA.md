@@ -1,41 +1,50 @@
-# Novo formato da semana: O VIGIA NO CINEMA (proposta, 21/11)
+# Novo formato da semana: O QUE É A CRIATURA? (proposta v2, 21/11)
 
-**Fim de semana:** O Vigia, como no Ep11 (investigação de folclore + caso dramatizado, ~18 min).
-**Durante a semana:** O Vigia no Cinema. Um filme de terror por vídeo, e o folclore REAL por trás dele.
+21/11, do usuário: "vou subir o filme todo no Drive… quero explorar filmes que deixam em aberto o que é a criatura, ou
+dizem o que é mas não explicam, e as pessoas ficam com essa dúvida".
 
-## A diferença entre os dois formatos
-| | Fim de semana (O Vigia) | Semana (O Vigia no Cinema) |
-|---|---|---|
-| Duração | 15–20 min | **10–12 min** |
-| Base | uma região e um caso inventado | **um filme do momento** |
-| Vigia na tela | só no tema, no aparte e no fecho | **mais presente**: ele é o "crítico" que analisa |
-| Imagem | ilustrações nossas + clipes do Flow | **trechos do trailer** (com moldura de arquivo) + fotos e documentos reais + poucas ilustrações |
-| Cartão de capítulo | xilogravura do episódio | **cartão próprio fixo do formato**: rolo de filme / claquete / cartaz rasgado |
-| Spoiler | — | **sem spoiler até o fim**; o final explicado vem num bloco separado e avisado |
-| Ritmo de produção | ~1 semana | **2–3 dias** (menos imagem própria e sem caso dramatizado) |
+**A ideia:** cada vídeo da semana pega UM filme cuja criatura ficou sem explicação e faz o que o filme não fez.
+O Vigia junta as **pistas nas cenas do próprio filme**, testa cada **teoria contra o folclore real** e no fim dá o
+**veredito**: o que a criatura é, de verdade. É uma investigação, como no fim de semana, só que o "caso" é o filme.
 
-## Episódio 1: OUTRA MAMÃE (*Other Mommy*, 2026)
-Rob Savage (direção), Jessica Chastain (as duas mães), James Wan (produção), Universal.
-Baseado no livro *Incidents Around the House* (2024), de Josh Malerman, o mesmo autor de *Caixa de Pássaros*.
-Uma menina de 8 anos, Bela, conversa com uma coisa que sai do armário dela. A coisa copia o rosto da mãe.
-Slogan do filme: *"Deixe ela entrar no seu coração"*.
+## Como funciona o episódio (molde fixo, ~11–13 min)
+1. **A pergunta (gancho):** a cena mais forte da criatura e a dúvida que todo mundo saiu do cinema tendo.
+2. **O que o filme mostra (sem spoiler):** quem fez, de onde veio, a premissa.
+3. **As pistas:** de 3 a 5 cenas do filme, cada uma com um detalhe que o espectador não percebeu (uma regra, uma
+   palavra, um objeto, um comportamento). Ficha na tela: "PISTA 1 — ela só entra se for chamada".
+4. **As teorias:** cada hipótese vira um capítulo, com o folclore real, a evidência a favor e a evidência contra.
+5. **⚠️ O final explicado (bloco de spoiler avisado).**
+6. **O veredito do Vigia:** a teoria que fecha com todas as pistas. Pergunta para os comentários: "e você, o que acha que ela é?"
 
-**Título:** `A Outra Mamãe existe? O folclore real por trás do filme`
+## Episódio 1: O QUE É A OUTRA MAMÃE? (*Other Mommy*, 2026)
+Rob Savage, Jessica Chastain, James Wan; baseado em *Incidents Around the House*, de Josh Malerman.
+O filme dá um nome para a coisa do armário ("Outra Mamãe"), mas não diz o que ela é.
 
-### Roteiro (esqueleto, ~11 min)
-1. **Gancho (0:00–0:40):** o susto do trailer que viralizou. "E se a pessoa que te coloca pra dormir não for mais a sua mãe? Por mais de mil anos, pais e mães acreditaram exatamente nisso. E pelo menos uma pessoa morreu por causa dessa crença."
-2. **O Vigia apresenta (0:40–1:30):** o filme sem spoiler: quem fez, de onde vem o livro, por que está sendo chamado de "o novo Coraline".
-3. **Capítulo 1: Os trocados (changelings):** na Irlanda, na Escócia e na Escandinávia, as fadas levavam o bebê e deixavam uma cópia no lugar. Os testes cruéis que os pais faziam para "descobrir" a cópia.
-4. **Capítulo 2: Bridget Cleary, 1895 (o caso real):** o marido, Michael Cleary, se convenceu de que a esposa tinha sido trocada por uma fada. Ele a queimou viva na frente da família, em Tipperary, na Irlanda. "Você é a minha mulher?" Ele foi condenado por homicídio culposo e cumpriu 15 anos de prisão. É o "Outra Mamãe" da vida real, invertido.
-5. **Capítulo 3: A cópia que entra em casa:** o *fetch* irlandês e o *doppelgänger* alemão (ver o seu duplo é presságio de morte). Lamashtu, o demônio mesopotâmico que imitava mães para chegar até os bebês. E a regra mais antiga do folclore, a que o filme usa: **a coisa só entra se for convidada**, como o vampiro na soleira da porta.
-6. **Capítulo 4: A avó do Coraline:** *The New Mother* (1882), conto vitoriano de Lucy Clifford. Duas irmãs desobedecem, e a mãe delas é substituída por uma "nova mãe" com olhos de vidro e um rabo de madeira. É o avô literário de *Coraline* e de *Outra Mamãe*.
-7. **Capítulo 5: A ciência: síndrome de Capgras:** pessoas reais que, depois de uma lesão no cérebro, passam a acreditar que a mãe, o marido ou o filho foram trocados por um impostor idêntico. O medo do filme existe, como doença.
-8. **⚠️ Bloco de spoiler: o final explicado** (avisado na tela, com o tempo para quem quiser pular).
-9. **Veredito do Vigia + chamada:** o filme é bom? (A crítica está dividida: 17% no Rotten Tomatoes, mas US$ 45 milhões na estreia.) Qual filme você quer que eu analise na próxima?
+**As teorias (cada uma é um capítulo):**
+- **Uma fada que troca pessoas (changeling):** fadas trocavam bebês por cópias. Caso real: Bridget Cleary, queimada
+  pelo marido em 1895 porque ele achava que ela era uma cópia.
+- **Um duplo (fetch, doppelgänger):** a cópia de alguém que aparece antes de uma morte.
+- **Um demônio que imita mães:** Lamashtu, na Mesopotâmia, e Lilith; os amuletos que as mães penduravam no berço.
+- **Uma coisa criada pelo desejo (tulpa / amigo imaginário):** a regra central do livro é que ela só vira gente se
+  for QUERIDA, se for deixada "entrar no coração". É a tulpa do ocultismo do século 20: o ser que nasce de quem acredita nele.
+- **A aranha (a linhagem de Coraline):** *The New Mother* (1882), de Lucy Clifford, a mãe com olhos de vidro, e a Bela
+  Dama de Neil Gaiman.
+- **E a ciência:** a síndrome de Capgras, em que a pessoa jura que a mãe foi trocada por um impostor idêntico.
+- **O veredito:** qual teoria explica TODAS as pistas que o filme deixou.
+
+## Próximos filmes do formato (todos com criatura sem explicação)
+*Corrente do Mal* (*It Follows*: o que é a coisa que anda?), *O Babadook*, *Sorria* (*Smile*), *Fale Comigo* (de quem
+era a mão?), *Hereditário* (Paimon), *A Bruxa* (Black Phillip), *Longlegs*, *O Ritual* (o Jötunn), *A Médium*.
+
+## Sobre usar o filme inteiro como material (importante)
+- **Trechos curtos e comentados:** de 5 a 10 s por cena, sempre com o Vigia falando por cima, na moldura de arquivo
+  e com o crédito. É o que a lei brasileira (citação para crítica, Lei 9.610/98, art. 46, III) e o uso justo do YouTube protegem.
+  Cenas longas com o som original são o que gera reivindicação de direitos (Content ID) e tira o dinheiro do vídeo.
+- **Som original só em momentos escolhidos:** 2 ou 3 no vídeo, curtos (uma fala-chave). O resto vai sem o som do filme.
+- **Eu faço o trabalho pesado:** detecto todas as cenas do filme, transcrevo os diálogos e encontro as pistas
+  (as falas sobre a regra, os nomes, os objetos). Depois monto uma folha com as cenas candidatas para você aprovar.
 
 ### Do que eu preciso de você
-- **Trailers e cenas** de *Outra Mamãe*, no Drive como no Ep11: os trailers oficiais 1 e 2 e, se tiver, a cena do susto viral.
+- **O filme inteiro**, no Drive, como você disse. De preferência numa cópia legítima, comprada ou alugada no digital, que costuma vir com imagem e som limpos.
 - O resto eu consigo sozinho: fotos e jornais reais do caso Cleary (domínio público), a ilustração de *The New Mother* (1882), as ilustrações nossas, a narração, a trilha e as capas.
 
-### Próximos filmes do formato (ideias)
-*A Médium* (o Rang Song tailandês, que já estudamos no Ep10), *Hereditário* (o culto de Paimon), *O Exorcismo de Emily Rose* (o caso real de Anneliese Michel), *A Bruxa* (os julgamentos da Nova Inglaterra), *Fale Comigo* (a mão embalsamada), *Exhuma* (o xamanismo coreano).
