@@ -1115,7 +1115,7 @@
      "som": "checklist1.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -8.0,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist1.mp4.som.wav"
     }
    ],
@@ -1129,7 +1129,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1142,7 +1142,7 @@
      "em": "sete"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 8.4
   },
   {
    "fala": "Guarda isso."
@@ -1398,7 +1398,7 @@
      "som": "checklist2.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -8.0,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist2.mp4.som.wav"
     }
    ],
@@ -1412,7 +1412,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1425,7 +1425,7 @@
      "em": "copia"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 8.4
   },
   {
    "fala": "Mas ele é só um aviso."
@@ -1444,7 +1444,7 @@
      "som": "teoria3.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -3.55,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria3.mp4.som.wav"
     }
    ],
@@ -1458,24 +1458,23 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 3.6,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
     {
-     "tipo": "texto",
-     "texto": "LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos",
-     "estilo": "maquina",
-     "vermelho": "LAMASHTU",
-     "cps": 40,
+     "imagem": "reais_prontos/lamashtu_bm.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
      "em": "Mesopotâmia"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 3.95
   },
   {
-   "fala": "Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas.",
-   "pausa_antes_s": 1.2
+   "fala": "Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas."
   },
   {
    "fala": "As mães penduravam amuletos de pedra sobre a cama para afastá-la."
@@ -1557,7 +1556,7 @@
      "som": "checklist3.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -8.0,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist3.mp4.som.wav"
     }
    ],
@@ -1571,7 +1570,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1584,7 +1583,7 @@
      "em": "as"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 8.4
   },
   {
    "fala": "Mas um demônio não quer ser gente."
@@ -1600,7 +1599,7 @@
      "som": "teoria4.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -3.55,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria4.mp4.som.wav"
     }
    ],
@@ -1614,7 +1613,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 3.6,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1627,7 +1626,7 @@
      "em": "e"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 3.95
   },
   {
    "fala": "Ela contou que tinha criado, só com a concentração, um ser imaginário.",
@@ -1704,7 +1703,7 @@
      "som": "checklist4.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -6.75,
+     "atraso": -8.0,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist4.mp4.som.wav"
     }
    ],
@@ -1718,7 +1717,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.8,
+     "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1731,7 +1730,7 @@
      "em": "sete"
     }
    ],
-   "pausa_antes_s": 7.15
+   "pausa_antes_s": 8.4
   },
   {
    "fala": "Só não explica uma coisa: uma tulpa nasce de alguém."
@@ -2322,7 +2321,7 @@
      "som": "placar.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -7.95,
+     "atraso": -5.23,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/placar.mp4.som.wav"
     }
    ],
@@ -2336,7 +2335,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 8.0,
+     "antecipar": 5.28,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2349,7 +2348,7 @@
      "em": "tudo"
     }
    ],
-   "pausa_antes_s": 8.35
+   "pausa_antes_s": 5.63
   },
   {
    "fala": "Ela leva a criança para o outro lado."
@@ -2380,7 +2379,7 @@
      "som": "veredito.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -7.45,
+     "atraso": -8.13,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/veredito.mp4.som.wav"
     }
    ],
@@ -2394,7 +2393,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 7.5,
+     "antecipar": 8.18,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2407,7 +2406,7 @@
      "em": "a"
     }
    ],
-   "pausa_antes_s": 7.85
+   "pausa_antes_s": 8.53
   },
   {
    "fala": "Uma fada trocadora."
