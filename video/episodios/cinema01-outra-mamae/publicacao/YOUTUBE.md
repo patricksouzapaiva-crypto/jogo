@@ -3,18 +3,29 @@
 Arquivo para subir: `previas/O_Que_E_A_Criatura_01_Outra_Mamae_1080p.mp4` (aprovado no rascunho 7)
 Legendas: `publicacao/legendas_pt-BR.srt` (Português)
 
-## Título — 3 opções (a 1ª é a recomendada)
-```
-Outra Mamãe: o que é a criatura? Teorias e final explicado
-```
-(58 caracteres — leva as duas buscas mais fortes: "Outra Mamãe final explicado" e "o que é a Outra Mamãe")
+## Título — pesquisa de 22/11 (vidIQ: busca "outra mamãe" no BR + vídeos que estouraram no nicho)
+O que a pesquisa mostrou:
+- "outra mamãe" tem ~41,6 mil buscas/mês no YouTube e está **subindo (+50%)**; o filme está quente agora
+  (o "Como derrotar" de 14/11 já passou de 900 mil, com 2,2 mil views/hora).
+- O vídeo que mais estourou para o tamanho do canal é o MESMO formato do nosso: "OUTRA MAMÃE NÃO É QUEM VOCÊ PENSA!
+  A VERDADE REVELADA" (canal de 43 mil inscritos, 182 mil views, 13× a média do canal). Refúgio Cult: "NÃO É A MAMÃE!!!" (374 mil).
+- O padrão que funciona: **nome do filme primeiro** (é o que as pessoas buscam), **uma negação ou pergunta** ("NÃO é", "o que é"),
+  **1–3 palavras em MAIÚSCULA** e "Final Explicado" no fim (é a busca de quem já viu o filme).
+- O que NÃO usar: "baseado em caso real" (o filme não é: o caso de 1895 é a nossa ligação, e o título enganaria) e o nome de outro canal.
 
+1ª (recomendada — nota 91/100 no vidIQ):
 ```
-O que é a Outra Mamãe? A explicação que o filme não te dá
+O QUE É A OUTRA MAMÃE? A Verdade Que o Filme Esconde (Final Explicado)
 ```
+2ª (negação, o padrão do vídeo que mais estourou; verdadeira: o veredito é a fada do folclore, mais antiga que o demônio):
 ```
-Outra Mamãe NÃO é um demônio (teorias e final explicado)
+A Outra Mamãe NÃO é um demônio. Ela é algo muito mais antigo (Final Explicado)
 ```
+3ª (o gancho do caso real, sem dizer que o filme é baseado nele):
+```
+OUTRA MAMÃE: o caso real de 1895 que explica a criatura (Final Explicado)
+```
+Dica: suba com a 1ª e as 3 capas no "Testar e comparar". Se depois de 48–72 h a CTR estiver abaixo de 4%, troque para a 2ª.
 
 ## Capas (teste A/B — as 3 vão no "Testar e comparar" do YouTube; v3: uma imagem forte, nítida, 2–4 palavras)
 - `capa_A_sorriso.jpg` — a Outra Mamãe sorrindo, "ELA NÃO É SUA MÃE"
