@@ -84,7 +84,10 @@ def transicoes(mp4, t):
     from gerar import tokens
     import numpy as np
     from faster_whisper import WhisperModel
-    fl, pers = F.ler()[0], F.ler()[1]
+    lido = F.ler()
+    fl, pers = lido[0], lido[1]
+    if not all(isinstance(x, int) for x in pers):   # 22/11: o falas.py do formato "O que é a criatura?" não tem personagens
+        return
     pal = t.get("palavras") or []
     ini, k = [], 0
     for f in fl:

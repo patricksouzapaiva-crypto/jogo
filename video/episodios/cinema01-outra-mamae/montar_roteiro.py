@@ -159,7 +159,12 @@ def montar_antes():
                 r.pop("em")
                 if itens[-1][5] > 0:
                     ws = [w.strip('.,:;!?"“”') for w in falas[i].split()]
-                    r["em"] = ws[min(len(ws) - 1, max(1, int(itens[-1][5] * 2.4)))]
+                    k = min(len(ws) - 1, max(1, int(itens[-1][5] * 2.4)))
+                    baixo = [w.lower() for w in ws]
+                    while k < len(ws) - 1 and (len(baixo[k]) < 3 or any(w.startswith(baixo[k]) for w in baixo[:k])):
+                        # 22/11: o motor acha a 1ª palavra que COMEÇA assim ("na" = "Na", "e" = "Em")
+                        k += 1
+                    r["em"] = ws[k]
             novas += [r] + resto[1:]
         batidas[i].pop("cena", None); batidas[i]["cenas"] = novas
         pausa(i, round(total + 0.35, 2))

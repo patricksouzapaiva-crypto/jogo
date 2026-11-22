@@ -1533,6 +1533,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     ab = roteiro.get("abertura")
     meio = bool(ab and ab.get("antes_da_batida"))
     inicio_voz = (ab["duracao"] + ab.get("respiro", 0.15)) if (ab and not meio) else VOZ0
+    if not (ab and not meio) and batidas and batidas[0].get("pausa_antes_s"):
+        inicio_voz += float(batidas[0]["pausa_antes_s"])   # 22/11: pausa antes da 1ª fala (o filme fala primeiro, Cinema #1)
     roteiro["_inicio_voz"] = inicio_voz
     rel = Relogio(batidas, tempos, inicio_voz)
     fim_voz = rel.t[-1][1]
