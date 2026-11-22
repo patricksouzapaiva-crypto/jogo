@@ -158,7 +158,7 @@ im = brilho_em_volta(im, mk, (255, 40, 20), 12, 0.55)
 im = vinheta(lado_escuro(im, "esq", 0.5, 0.85), 0.4, 0.7)
 c = letreiro(im, [("O QUE", MONT, 150, BRANCO), ("ELA É?", MONT, 170, OURO)], 46, 205, entre=1.0)
 tarja(c, "OUTRA MAMÃE", 40, 70, 50)
-seta(c, (470, 665), (745, 480), larg=24, curva=0.18)
+# seta tirada a pedido do usuário (23/11)
 salvar(c, "capa_A_mesa.jpg")
 
 # B — a criatura de perto, clara e limpa, com brilho vermelho; "ELA NÃO É SUA MÃE" (23/11, usuário: "não é um demônio" entregava o veredito)
