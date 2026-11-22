@@ -20,7 +20,7 @@ CREDITO = "OUTRA MAMÃE (2026) · DIR. ROB SAVAGE · UNIVERSAL PICTURES"
 
 # nome: (início, fim, som, luz)   — tempos em segundos do filme
 TRECHOS = {
-    "g_boanoite":   (148.6, 155.0, True, 1.35),   # 02:32 "Boa noite, Outra Mamãe."
+    "g_boanoite":   (148.6, 155.0, True, 1.5),   # 02:32 "Boa noite, Outra Mamãe."
     "g_coracao":    (598.6, 605.0, True, 1.0),    # 10:02 "Posso entrar no seu coração?"
     "p1_coracao":   (1716.8, 1721.3, True, 1.0),  # 28:38 "Bela, por favor, me deixe entrar no seu coração."
     "p1_medium":    (3590.9, 3594.0, True, 1.0),  # 59:51 "…mas precisam de permissão para existir."
@@ -28,8 +28,8 @@ TRECHOS = {
     "p2_kelvin":    (1623.4, 1633.1, True, 1.0),  # 27:03 "Não sabia que podia ser o Kelvin também" / "Vou ser quem você quiser"
     "p3_grande":    (860.6, 867.0, False, 1.0),   # 14:23 "ficar bem grande, ficar bem pequena"
     "p4_segredos":  (356.4, 363.2, False, 1.0),   # 06:00 "Mesmo time."
-    "p5_frank":     (2381.9, 2387.7, True, 1.25), # 39:42 "Pode fazer o tio Frank ir embora?" / "É uma ótima ideia."
-    "p6_pessoa":    (2355.5, 2359.0, True, 1.3),  # 39:15 "Não me permitiram ser uma pessoa."
+    "p5_frank":     (2381.9, 2387.7, True, 1.45), # 39:42 "Pode fazer o tio Frank ir embora?" / "É uma ótima ideia."
+    "p6_pessoa":    (2355.5, 2359.0, True, 1.45),  # 39:15 "Não me permitiram ser uma pessoa."
     "p6_existir":   (1721.8, 1725.4, True, 1.0),  # 28:42 "Dói muito, Bela. Eu preciso existir."
     "p7_trocar":    (2705.6, 2708.8, True, 1.0),  # 45:06 "Ela quer trocar de lugar comigo."
     "p7_eu":        (3017.3, 3020.9, True, 1.0),  # 50:17 "Eu vou ser você e você será eu."

@@ -211,7 +211,6 @@ C(54, real("fussli_changeling", (1.06, 1.12), foco=((0.45, 0.6), (0.5, 0.62))))
 C(57, img("imagens/IA01_berco_1", (1.0, 1.08), ((0.3, 0.6), (0.28, 0.62))))
 C(61, img("imagens/IA01_berco_2", (1.0, 1.07), ((0.6, 0.5), (0.62, 0.52))))
 peca(70, f"{PC}checklist1.mp4")
-C(70, img(ID + "ID02_quadro_2.png", (1.0, 1.05)))
 C(72, real("cleary_sun_1895", (1.0, 1.05)))
 # ================================================================ O CASO REAL — Bridget Cleary
 C(74, ficha("BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895", "BRIDGET CLEARY"))
@@ -225,7 +224,6 @@ peca(92, f"{PC}teoria2.mp4")
 C(92, real("rossetti_met") if tem_real("rossetti_met") else ficha("FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva", "o duplo"))
 C(96, filme("p2_almoco", congelar=True))
 peca(98, f"{PC}checklist2.mp4")
-C(98, img(ID + "ID02_quadro_1.png", (1.0, 1.05)))
 # ================================================================ TEORIA 3 — o demônio trapaceiro
 peca(102, f"{PC}teoria3.mp4")
 C(102, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
@@ -233,7 +231,6 @@ C(105, real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
 fala_filme(107, "t3_ardiloso")
 C(111, filme("t3_ritual"))
 peca(113, f"{PC}checklist3.mp4")
-C(113, img(ID + "ID02_quadro_2.png", (1.0, 1.05)))
 # ================================================================ TEORIA 4 — a tulpa
 peca(116, f"{PC}teoria4.mp4")
 C(116, quarto(2))
@@ -241,7 +238,6 @@ C(117, ficha("ALEXANDRA DAVID-NÉEL\nMystiques et magiciens du Tibet · 1929\nTU
 C(119, armario(2))
 C(121, filme("t4_imaginaria"))
 peca(124, f"{PC}checklist4.mp4")
-C(124, img(ID + "ID02_quadro_1.png", (1.0, 1.05)))
 # ================================================================ TEORIA 5 — a avó de Coraline
 C(127, real("new_mother_n23", (1.0, 1.05)))
 C(130, real("new_mother_n26", (1.0, 1.07)))
@@ -273,9 +269,11 @@ C(164, img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
 C(166, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"))
 # ================================================================ O VEREDITO
 peca(168, f"{PC}placar.mp4", sobra=1.0)
-C(168, img(ID + "ID02_quadro_2.png", (1.0, 1.05)))
+# 22/11 (rascunho 1): sem o quadro de cortiça vazio depois das peças — o último quadro da peça fica congelado na tela
+C(169, filme("s_mar", congelar=True))
+C(170, filme("s_nao", congelar=True))
+C(171, {"video": f"{PC}placar.mp4", "zoom": [1.0, 1.04], "video_inicio": round(dur_video(f"{PC}placar.mp4") - 0.4, 2), "congelar": True, "sem_look": True, "entrada": "fundir", "duracao_entrada": 0.5})
 peca(176, f"{PC}veredito.mp4", sobra=1.5)
-C(176, img(ID + "ID02_quadro_1.png", (1.0, 1.04)))
 # ================================================================ POR QUE A FADA TROCADORA
 PROVAS = [180, 184, 187, 190, 195, 198, 202, 206, 209]
 DEPOIS = [filme("p1_medium", congelar=True), filme("p2_kelvin", congelar=True), armario(2), real("cleary_sun_1895"),

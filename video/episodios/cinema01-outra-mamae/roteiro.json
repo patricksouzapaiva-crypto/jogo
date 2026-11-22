@@ -1132,14 +1132,6 @@
      "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_2.png",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "sete"
     }
    ],
    "pausa_antes_s": 8.4
@@ -1415,14 +1407,6 @@
      "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_1.png",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "copia"
     }
    ],
    "pausa_antes_s": 8.4
@@ -1573,14 +1557,6 @@
      "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_2.png",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "cópias"
     }
    ],
    "pausa_antes_s": 8.4
@@ -1720,14 +1696,6 @@
      "antecipar": 8.05,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_1.png",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "sete"
     }
    ],
    "pausa_antes_s": 8.4
@@ -2338,26 +2306,53 @@
      "antecipar": 5.28,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_2.png",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "tudo"
     }
    ],
    "pausa_antes_s": 5.63
   },
   {
-   "fala": "Ela leva a criança para o outro lado."
+   "fala": "Ela leva a criança para o outro lado.",
+   "cena": {
+    "video": "filmes_prontos/s_mar.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "E perde quando ouve um \"não\"."
+   "fala": "E perde quando ouve um \"não\".",
+   "cena": {
+    "video": "filmes_prontos/s_nao.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "O duplo cai primeiro: só copia, não quer nada."
+   "fala": "O duplo cai primeiro: só copia, não quer nada.",
+   "cena": {
+    "video": "identidade/pecas/v6/placar.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "video_inicio": 5.88,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.5,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "O demônio explica a permissão e as cópias, mas o ritual contra demônios não funcionou, e um demônio não sonha em ser gente."
@@ -2396,14 +2391,6 @@
      "antecipar": 8.18,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID02_quadro_1.png",
-     "zoom": [
-      1.0,
-      1.04
-     ],
-     "em": "Outra"
     }
    ],
    "pausa_antes_s": 8.53
