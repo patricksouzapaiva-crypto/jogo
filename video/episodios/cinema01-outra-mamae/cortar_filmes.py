@@ -8,7 +8,7 @@
   O filme é escuro: a cor sobe um pouco (gama) em vez de descer; "luz" > 1 clareia mais os planos muito escuros.
 - A taxa fica a original: o motor passa pelo RIFE e chega a 30 q/s sem tranco.
 Uso: python3 cortar_filmes.py [nome ...]"""
-import json, re, subprocess, sys
+import json, os, re, subprocess, sys
 from pathlib import Path
 
 AQUI = Path(__file__).parent
@@ -122,12 +122,14 @@ for nome in sys.argv[1:] or list(TRECHOS):
           f"drawtext=fontfile={FONTE}:text='TRECHO DE FILME':fontsize=22:fontcolor=0xc8302c:x={fx}:y={fy - 46},"
           f"drawtext=fontfile={FONTE}:text='{esc(CREDITO)}':fontsize=22:fontcolor=0xd8d0c4:x={fx + 230}:y={fy - 46}{txt},format=yuv420p[v]")
     saida = SAI / f"{nome}.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{fim_v - a:.3f}", "-i", str(FILME), "-filter_complex", fc,
-                    "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "19", "-preset", "medium", str(saida)], check=True)
+    if os.environ.get("SO_SOM") != "1":   # 22/11: SO_SOM=1 refaz só as falas (.wav), sem recortar o vídeo
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{fim_v - a:.3f}", "-i", str(FILME), "-filter_complex", fc,
+                        "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "19", "-preset", "medium", str(saida)], check=True)
     if som:   # a dublagem, com entrada e saída suaves
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", str(FILME), "-map", "0:1",
-                        "-af", f"afade=t=in:d=0.25,afade=t=out:st={b - a - 0.35:.2f}:d=0.35", "-ar", "48000", "-ac", "2",
+                        "-af", f"pan=stereo|FL=FC+0.45*FL+0.3*BL+0.3*SL|FR=FC+0.45*FR+0.3*BR+0.3*SR,loudnorm=I=-18:TP=-2:LRA=11,afade=t=in:d=0.25,afade=t=out:st={b - a - 0.35:.2f}:d=0.35", "-ar", "48000", "-ac", "2",
                         str(SAI / f"{nome}.wav")], check=True)
+        # 22/11: a dublagem fica no canal central (FC); o downmix padrão a deixava ~10 dB abaixo e o sussurro sumia
     info[nome] = {"dur": round(b - a, 2), "video_dur": round(fim_v - a, 2), "som": som, "falas": [[round(x, 2), round(y, 2), t] for x, y, t in falas]}
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(saida), "-vf", f"fps=1/{max(0.5, (fim_v - a) / 6):.2f},scale=320:-2,tile=6x1",
                     "-frames:v", "1", str(SAI / f"{nome}_conferir.jpg")], check=True)

@@ -229,7 +229,7 @@ def checklist_falado(i, arq, db=-10):
 
 
 # ================================================================ GANCHO
-fala_filme(0, "g_boanoite", db=5)                  # a cena continua rolando sob a 1ª frase
+fala_filme(0, "g_boanoite")                  # a cena continua rolando sob a 1ª frase
 fala_filme(1, "g_coracao")
 C(I("O filme dá um nome"), F("b_porta_azul"))
 C(I("Mas em nenhum momento"), F("b_espelho"))
