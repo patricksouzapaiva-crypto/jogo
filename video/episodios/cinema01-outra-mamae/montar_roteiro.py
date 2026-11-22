@@ -367,7 +367,8 @@ fala_filme(1, "g_coracao")
 C(I("O filme dá um nome"), F("b_porta_azul"))
 C(I("Mas em nenhum momento"), F("b_espelho"))
 # 23/11 (retenção): prévia do caso real no gancho — o motivo concreto para ficar até a metade
-C(I("Em mil oitocentos e noventa e cinco, na Irlanda"), real("cleary_sun_1895", (1.0, 1.1), foco=((0.5, 0.25), (0.5, 0.32))))
+C(I("Em mil oitocentos e noventa e cinco, na Irlanda"), real("cleary_sun_1895", (1.0, 1.1), foco=((0.5, 0.25), (0.5, 0.32)),
+                                                              entrada="fundir", duracao_entrada=0.5))   # "entrada": a regra da cena mínima não pode engolir
 C(I("Essa história é real"), img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.4, 0.55), (0.45, 0.6))))
 peca(I("Bem-vindo de volta"), "identidade/abertura_v2.mp4", sobra=4.0, db=-7)   # a voz entra quando o carimbo assenta
 # ================================================================ O VIGIA APRESENTA
