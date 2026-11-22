@@ -16,10 +16,10 @@ O que é a Outra Mamãe? A explicação que o filme não te dá
 Outra Mamãe NÃO é um demônio (teorias e final explicado)
 ```
 
-## Capas (teste A/B — as 3 vão no "Testar e comparar" do YouTube; v2, no padrão dos canais do nicho)
-- `capa_A_final_explicado.jpg` — Bela com medo + a criatura no círculo vermelho, "O QUE ELA É?" + selo "FINAL EXPLICADO" (estilo Sessão Nerd)
-- `capa_B_linha_do_tempo.jpg` — a criatura recortada com brilho vermelho + linha do tempo 1895 → 2026 + selo "O QUE É A CRIATURA?" (estilo Horror History, CZsWorld)
-- `capa_C_nao_e_a_mae.jpg` — a mãe perfeita × a criatura no círculo, "NÃO É A MÃE DELA"
+## Capas (teste A/B — as 3 vão no "Testar e comparar" do YouTube; v3: uma imagem forte, nítida, 2–4 palavras)
+- `capa_A_sorriso.jpg` — a Outra Mamãe sorrindo, "ELA NÃO É SUA MÃE"
+- `capa_B_criatura.jpg` — a criatura de perto, "O QUE ELA É?"
+- `capa_C_tunel.jpg` — Bela no túnel vermelho, "FINAL EXPLICADO"
 
 ## Descrição
 ```
