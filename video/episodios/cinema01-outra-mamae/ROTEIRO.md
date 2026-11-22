@@ -22,6 +22,9 @@ Toda noite, uma menina de sete anos dá boa noite para o pai, para a mãe… e p
 Esse alguém tem o rosto da mãe dela. A voz da mãe dela. E só faz uma pergunta.
 O filme dá um nome para essa coisa. Outra Mamãe.
 Mas em nenhum momento ele diz o que ela é.
+`[REAL: The Sun, Nova York, 1895 — prévia do caso Cleary]`
+Em mil oitocentos e noventa e cinco, na Irlanda, um homem queimou a própria esposa, porque jurava que ela tinha sido trocada por uma coisa assim.
+Essa história é real. E ela é a chave.
 Hoje a gente vai descobrir.
 `[PEÇA: abertura "O QUE É A CRIATURA?"]`
 
@@ -29,13 +32,12 @@ Hoje a gente vai descobrir.
 `[VIGIA]`
 Bem-vindo de volta ao Último Abrigo. Esta é a primeira noite de um arquivo novo aqui no canal.
 Toda semana, eu pego um filme que mostrou um monstro e não explicou. E faço o que o filme não fez.
-Outra Mamãe estreou em outubro de dois mil e vinte e seis. Direção de Rob Savage, produção de James Wan, e Jessica Chastain no papel das duas mães: a verdadeira, e a outra.
-O filme é baseado no livro Incidents Around the House, de Josh Malerman, o mesmo autor de Caixa de Pássaros.
-A crítica odiou: dezessete por cento de aprovação. Mas o público lotou as salas. Quarenta e cinco milhões de dólares na estreia.
+Outra Mamãe, de dois mil e vinte e seis: a crítica odiou, o público lotou as salas, e quase ninguém saiu do cinema sabendo o que viu.
 `[CENA 00:39–00:52 — a frase de abertura do filme na tela]`
 E repara na frase que abre o filme: "Uma chance de ser humano. O milagre que confundimos com algo corriqueiro. É cobiçada tanto por deuses como por demônios."
 Guarda essa frase. Ela vai voltar.
 Antes das teorias, as pistas.
+Guarda essas sete. Quatro teorias vão tentar explicar todas. Só uma consegue. E ela é a mais antiga de todas.
 
 ## AS PISTAS (sem spoiler)
 `[PEÇA: pista 1]` **PISTA 1 — ELA PEDE PERMISSÃO**
@@ -58,6 +60,7 @@ Ela cresce, encolhe, se dobra, desliza. E Bela diz onde ela mora: "atrás das no
 `[PEÇA: pista 4]` **PISTA 4 — UMA CASA CHEIA DE SEGREDOS**
 `[CENA 05:49–06:01 — "Vou chegar tarde de novo." / "Mesmo time."]`
 Ela não aparece numa casa feliz. Aparece numa casa onde a mãe nunca está, onde o pai fuma escondido, e onde cada adulto guarda um segredo.
+Quatro de sete. E as próximas são as piores.
 
 `[PEÇA: pista 5]` **PISTA 5 — O DESEJO DA MENINA ACONTECE**
 `[CENA 39:42–39:45 🔊 "Pode fazer o tio Frank ir embora?" — "É uma ótima ideia."]`

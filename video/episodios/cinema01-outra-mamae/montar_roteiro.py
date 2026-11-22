@@ -19,7 +19,7 @@ import falas as F
 
 AQUI = Path(__file__).parent
 falas, SEC, DIREC, _ = F.ler()
-assert len(falas) == 249, "o ROTEIRO.md mudou: rever o mapa"
+assert len(falas) == 253, "o ROTEIRO.md mudou: rever o mapa"
 
 
 def I(comeco, depois=0):
@@ -320,14 +320,17 @@ fala_filme(0, "g_boanoite")                  # a cena continua rolando sob a 1ª
 fala_filme(1, "g_coracao")
 C(I("O filme dá um nome"), F("b_porta_azul"))
 C(I("Mas em nenhum momento"), F("b_espelho"))
+# 23/11 (retenção): prévia do caso real no gancho — o motivo concreto para ficar até a metade
+C(I("Em mil oitocentos e noventa e cinco, na Irlanda"), real("cleary_sun_1895", (1.0, 1.1), foco=((0.5, 0.25), (0.5, 0.32))))
+C(I("Essa história é real"), img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.4, 0.55), (0.45, 0.6))))
 peca(I("Bem-vindo de volta"), "identidade/abertura_v2.mp4", sobra=4.0, db=-7)   # a voz entra quando o carimbo assenta
 # ================================================================ O VIGIA APRESENTA
 C(I("Bem-vindo de volta"), vigia())
-k = I("Outra Mamãe estreou"); C(k, ficha("OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain", "OUTRA MAMÃE")); falada(k, k + 1)
-k = I("O filme é baseado"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)", "INCIDENTS AROUND THE HOUSE")); falada(k)
-k = I("A crítica odiou"); C(k, ficha("CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões", "17%")); falada(k, k + 2)
+# 23/11 (retenção): a apresentação virou UMA frase (ficha técnica, livro e bilheteria esfriavam os primeiros 40 s)
+k = I("Outra Mamãe, de dois mil e vinte e seis"); C(k, ficha("OUTRA MAMÃE · 2026\nCRÍTICA: 17% · ESTREIA: US$ 45 milhões", "17%"))
 k = I("E repara na frase"); C(k, ficha("\"UMA CHANCE DE SER HUMANO.\nO MILAGRE QUE CONFUNDIMOS\nCOM ALGO CORRIQUEIRO.\"\n— a frase que abre o filme", "UMA CHANCE DE SER HUMANO")); falada(k)
 C(I("Guarda essa frase"), vigia((1.0, 1.05)))
+C(I("Guarda essas sete"), vigia((1.02, 1.08), ((0.55, 0.48), (0.56, 0.45))))   # 23/11: a promessa, olho no olho
 # ================================================================ AS PISTAS
 for n, txt in enumerate(("Pista um.", "Pista dois.", "Pista três.", "Pista quatro.", "Pista cinco.", "Pista seis.", "Pista sete."), 1):
     peca_falada(I(txt), f"{PC}pista{n}.mp4")
