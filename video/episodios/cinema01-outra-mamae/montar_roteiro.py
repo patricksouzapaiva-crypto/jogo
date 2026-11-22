@@ -83,6 +83,26 @@ def ficha(t, vermelho=None):
     return texto(t, vermelho, cps=40)
 
 
+# 23/11 (retenção, sem o filme de fundo): um som discreto da biblioteca nas ilustrações-chave (o ElevenLabs está sem
+# crédito). Nada de susto: entra suave, sob a voz, e corta antes de cansar (no máximo 2 vezes por som no vídeo).
+SOM_IL = {"porta_azul": ("ep09_sn_porta_rangido_lento", -17, 6.0), "mesa": ("ep06_estalo", -15, 2.0),
+          "rasteja": ("ep09_sao_oleo_pele_1", -15, 6.0), "abraco": ("ep07_respiracao_nuca", -17, 6.0),
+          "pos_creditos": ("ep09_sn_porta_assombrada", -16, 6.0), "uv": ("ep09_fluorescente_tenso", -19, 7.0),
+          "carro": ("chuva_externa", -19, 7.0), "cozinha": ("ep09_cozinha", -21, 7.0), "ritual_sal": ("ep08_vela", -16, 3.0),
+          "outra_silhueta": ("ep09_sn_sussurro_fantasma", -18, 2.0), "frank": ("ep09_fluorescente", -20, 6.0),
+          "escada": ("passos_atrasados", -16, 4.0), "quarto_portas": ("ep09_jh_rangido_1", -18, 6.0)}
+_SOM_USO = {}
+
+
+def som_ilustr(i, c):
+    m = __import__("re").search(r"/IL_(\w+?)_\d\.jpg$", c.get("imagem", ""))
+    if not m or m.group(1) not in SOM_IL or _SOM_USO.get(m.group(1), 0) >= 2:
+        return
+    _SOM_USO[m.group(1)] = _SOM_USO.get(m.group(1), 0) + 1
+    som, db, ate = SOM_IL[m.group(1)]
+    fx(i, c.get("em"), som, db, ate=ate, saida=1.2, entrada=0.6, _il=True)
+
+
 def C(i, *cenas, com_vigia=False):
     b = batidas[i]; lista = []
     for x in cenas:
@@ -92,6 +112,8 @@ def C(i, *cenas, com_vigia=False):
             c["em"] = em
         lista.append(c)
     b.pop("cena", None); b.pop("cenas", None)
+    for c in lista:
+        som_ilustr(i, c)
     if len(lista) == 1 and "em" not in lista[0]:
         b["cena"] = lista[0]
     else:
@@ -255,7 +277,23 @@ _MOV = [((1.0, 1.08), ((0.5, 0.5), (0.52, 0.47))), ((1.08, 1.0), ((0.45, 0.55), 
         ((1.0, 1.07), ((0.4, 0.5), (0.46, 0.5))), ((1.0, 1.07), ((0.6, 0.5), (0.54, 0.5)))]
 
 
+# 23/11 (retenção): atmosfera viva por cima (motor.js: vela tremendo, neblina, poeira na luz, fumaça/vapor)
+ATMOS = {"ritual_sal": {"vela": 0.7}, "medium": {"vela": 0.8}, "avo": {"vela": 0.6}, "confissao": {"vela": 0.4},
+         "uv": {"fumaca": 0.4}, "cozinha": {"fumaca": 0.3}, "outra_silhueta": {"neblina": 0.5}, "segredos": {"neblina": 0.4},
+         "pos_creditos": {"neblina": 0.3}, "rasteja": {"neblina": 0.3}, "espelho": {"neblina": 0.3}, "porta_azul": {"poeira": 0.4},
+         "mesa": {"poeira": 0.5}, "quarto_portas": {"poeira": 0.3}, "maquete": {"poeira": 0.4}, "bela_sozinha": {"poeira": 0.5},
+         "abraco": {"poeira": 0.3}, "escola": {"poeira": 0.4}, "almoco": {"poeira": 0.4}, "botas": {"poeira": 0.4},
+         "lareira": {"fumaca": 0.3}}
+
+
 def ilustr(chave):
+    c = _ilustr(chave)
+    if chave in ATMOS:
+        c["atmos"] = ATMOS[chave]
+    return c
+
+
+def _ilustr(chave):
     """a ilustração da vez: alterna as versões _1/_2 e o movimento de câmera a cada uso"""
     if chave == "lareira":
         return img("imagens/IA02_lareira_2", (1.0, 1.07), ((0.4, 0.55), (0.44, 0.58)))
@@ -264,6 +302,12 @@ def ilustr(chave):
     if not (AQUI / arq).exists():
         arq = PROVISORIA[sum(_USO.values()) % len(PROVISORIA)]
     z, foco = _MOV[(n + len(chave)) % len(_MOV)]
+    anim = AQUI / "imagens" / f"ANIM_{chave}.mp4"   # 23/11: a cena animada pelo usuário (Veo) entra no 1º uso
+    if n == 1 and anim.exists():
+        return {"video": f"imagens/ANIM_{chave}.mp4", "zoom": [1.0, 1.03], "congelar": True}
+    if "/IL_" in arq and not __import__("os").environ.get("SEM_3D"):   # 23/11 (retenção): câmera 3D por profundidade
+        mov = ("entrar", "lado", "entrar", "lado_esq", "sair")[(n + len(chave)) % 5]
+        return c3(arq, mov, foco[0], forca=0.85)
     return img(arq, z, foco)
 
 
@@ -301,12 +345,14 @@ def checklist_falado(i, arq, db=-10, inicio=None, segurar=None, ate=None):
           "duracao_entrada": 0.4, **({"video_inicio": vi} if vi else {})})
     for k in range(j + 1, i + 1):
         batidas[k].pop("cena", None); batidas[k].pop("cenas", None)
+        batidas[k]["sons"] = [x for x in batidas[k].get("sons", []) if not x.get("_il")]   # sem efeito sob a ficha
     fx(j, None, Path(som_de(arq)).stem, db, arquivo=som_de(arq))
     fim_peca = t_fala(j) + d - vi
     movidas = []
     k = i + 1
     while k < len(falas) and t_fala(k) < fim_peca - 0.3 and not ANTES.get(k) and (ate is None or k < ate):
-        movidas += cenas_de(batidas[k]); batidas[k].pop("cena", None); batidas[k].pop("cenas", None); k += 1
+        movidas += cenas_de(batidas[k]); batidas[k].pop("cena", None); batidas[k].pop("cenas", None)
+        batidas[k]["sons"] = [x for x in batidas[k].get("sons", []) if not x.get("_il")]; k += 1
     if movidas and k < len(falas) and not cenas_de(batidas[k]) and not ANTES.get(k):
         C(k, movidas[-1])
     if segurar:
