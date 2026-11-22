@@ -204,7 +204,7 @@ def congelado(arq, menos=0.4):
             "entrada": "fundir", "duracao_entrada": 0.5}
 
 
-def peca_falada(i, arq, entra=1.3, db=-9):
+def peca_falada(i, arq, entra=2.1, db=-9):   # respiro: a ficha abre e o título é datilografado antes da voz
     """22/11 (usuário: "o narrador conversando a maior parte do tempo"): a peça abre, e a voz entra 'entra' s depois."""
     peca(i, arq, sobra=round(dur_video(arq) - entra, 2), db=db)
 
