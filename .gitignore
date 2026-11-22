@@ -19,3 +19,7 @@ video/episodios/ep11-escandinavia/trilha/*.wav
 # Ep11: kulning gerado por IA (vidIQ) — fora do repo público
 video/painel/sons/ep11_kulning_voz*.mp3
 video/painel/sons/ep11_fim_voz.mp3
+
+# Cinema01: capas e quadros saem do filme (fora do git)
+video/episodios/cinema01-outra-mamae/publicacao/quadros/
+video/episodios/cinema01-outra-mamae/publicacao/capa_*.jpg
