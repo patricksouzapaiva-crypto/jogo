@@ -229,7 +229,7 @@ def checklist_falado(i, arq, db=-10):
 
 
 # ================================================================ GANCHO
-fala_filme(0, "g_boanoite")                  # a cena continua rolando sob a 1ª frase
+fala_filme(0, "g_boanoite", db=5)                  # a cena continua rolando sob a 1ª frase
 fala_filme(1, "g_coracao")
 C(I("O filme dá um nome"), F("b_porta_azul"))
 C(I("Mas em nenhum momento"), F("b_espelho"))
@@ -255,7 +255,7 @@ k = I("Ela não quer só a menina"); fala_filme(k, "p6_pessoa"); fala_filme(k, "
 k = I("E Bela diz com todas as letras"); fala_filme(k, "p7_trocar"); fala_filme(k, "p7_eu")
 C(I("Sete pistas."), F("b_outra_rosto"))
 # ================================================================ TEORIA 1 — o duplo
-k = I("A primeira teoria"); peca_falada(k, f"{PC}teoria1.mp4"); C(k, F("p2_almoco"))
+k = I("A primeira teoria"); peca_falada(k, f"{PC}teoria1.mp4")   # 22/11: o p2_almoco entrava só 0.7 s antes da ficha
 k = I("Na Irlanda, ela tem nome"); C(k, ficha("FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva", "o duplo")); falada(k, k + 1)
 C(I("Igual a ela"), F("b_carro_outra"))
 C(I("Se vê à noite"), F("b_bela_cama"))
@@ -288,8 +288,7 @@ C(I("Hoje sabemos"), img("imagens/IA03_retrato_1", (1.0, 1.08), ((0.55, 0.45), (
 C(I("Mas não sente mais nada"), F("b_praca"))
 fala_filme(I("O medo do filme existe"), "capgras")
 # ================================================================ AS FADAS DE VERDADE (contexto antes da teoria 4)
-C(I("E agora, a última teoria"), F("b_rosto_final"))
-C(I("Mas antes, esquece a fada"), vigia((1.0, 1.05)))
+C(I("E agora, a última teoria"), vigia((1.0, 1.05)))   # 22/11: o b_rosto_final piscava 2.4 s; o Vigia conversa direto
 C(I("No folclore da Irlanda e da Escócia"), real("fussli_changeling", (1.08, 1.16), foco=((0.4, 0.4), (0.42, 0.36))))
 C(I("Elas roubavam o leite"), img("imagens/IA01_berco_2", (1.0, 1.07), ((0.6, 0.5), (0.62, 0.52))))
 C(I("É por isso que ela entra"), F("b_maos_porta"))
@@ -334,7 +333,7 @@ C(I("Ela diz para a menina"), quarto(1))
 C(I("Só que, no livro"), img("imagens/IA04_corredor_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
 C(I("Sozinha, ela diz sim"), img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
 k = I("Dois finais opostos")
-antes(k, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"), 5.4,
+antes(k, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"), 6.0,
       str(AQUI / "audio/extras/livro_filme.wav"), 1, furo=True)                                  # o Vigia lê a ficha
 C(k, F("b_quarto_portas"))
 # ================================================================ O VEREDITO
@@ -414,7 +413,7 @@ def cenas_de(b):
 
 for b in batidas:  # tela de texto não leva legenda (o texto já está na tela)
     for c in cenas_de(b):
-        if c.get("tipo") == "texto" and "em" not in c and not c.get("parada"):
+        if c.get("tipo") == "texto" and "em" not in c and not c.get("parada") and not c.get("antecipar"):   # 22/11: ficha ANTES da fala (lida na pausa) não tira a legenda da fala
             b["sem_legenda"] = True
 arqs = set()
 for b in batidas:
