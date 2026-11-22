@@ -43,7 +43,14 @@ class Sons:
             self.feitos.add((t0, nome)); self.lista.append((t0, nome, db))
 
 
+CAUDA = 0.0      # 23/11 (usuário: "o checklist ficava escurecido e parado antes da próxima cena"): as fichas que ficam
+UTIL = None      # na tela sob a narração não escurecem no fim e ganham CAUDA s a mais, com a câmera ainda andando; o montador
+                 # lê a duração útil (UTIL, ou dur) em <saida>.util e corta na troca de cena — nada de quadro congelado
+
+
 def renderizar(saida, dur, quadro, sons):
+    if CAUDA:
+        return renderizar_com_cauda(saida, dur, quadro, sons)
     so = [int(float(x) * FPS) for x in K.PREVIA] if K.PREVIA else None
     proc = None if so is not None else subprocess.Popen(
         ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
@@ -59,6 +66,24 @@ def renderizar(saida, dur, quadro, sons):
         proc.stdin.write(img.tobytes())
     if proc:
         proc.stdin.close(); proc.wait(); mixar(saida, sons.lista, dur)
+
+
+def renderizar_com_cauda(saida, dur, quadro, sons):
+    total = dur + CAUDA
+    proc = subprocess.Popen(
+        ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+         "-c:v", "libx264", "-crf", "21", "-preset", "medium", "-pix_fmt", "yuv420p", str(saida) + ".v.mp4"], stdin=subprocess.PIPE)
+    for q in range(int(total * FPS)):
+        t = q / FPS
+        tela, (cx, cy, z, rot) = quadro(min(t, dur - 1 / FPS))
+        img = acabamento(tela, luz(min(t, dur), cx, cy, z, rot), t, 1e9)       # sem escurecer no fim
+        if t > dur:   # a câmera continua chegando perto devagar (não congela)
+            e = 1 + 0.012 * (t - dur)
+            M = cv2.getRotationMatrix2D((W / 2, H / 2), 0, e)
+            img = cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+        proc.stdin.write(img.tobytes())
+    proc.stdin.close(); proc.wait(); mixar(saida, sons.lista, total)
+    Path(str(saida) + ".util").write_text(f"{UTIL or dur:.3f}\n")
 
 
 # ------------------------------------------------------------------ peças de texto
@@ -412,10 +437,13 @@ if __name__ == "__main__":
     if peca == "pista": pista(saida, n, E["pistas"][n - 1])
     elif peca == "teoria": teoria(saida, n, E["teorias"][n - 1])
     elif peca == "checklist":
+        CAUDA = 6.0; UTIL = 11.5 if n < 4 else None   # 1–3: os 11,5 s de antes (eram cortados para tirar o escurecer)
         nome, m = E["checklists"][n - 1]; checklist(saida, nome, E["itens"], [bool(x) for x in m], descartar=n < 4)
     elif peca == "porque":   # o porquê do veredito: as 9 provas da fada, uma por vez, nos tempos dados (s)
         ts = [float(x) for x in resto[0].split(",")]
         checklist(saida, "A FADA QUE TROCA", E["itens"] + E["provas_final"], [True] * 9, ts, ts[-1] + 6)
-    elif peca == "placar": placar(saida, E["placar"], E["total"])
-    elif peca == "veredito": placar(saida, E["placar"], E["total"], E["vencedor"], E["veredito"])
+    elif peca == "placar":
+        CAUDA = 6.0; placar(saida, E["placar"], E["total"])
+    elif peca == "veredito":
+        CAUDA = 6.0; placar(saida, E["placar"], E["total"], E["vencedor"], E["veredito"])
     elif peca == "spoiler": spoiler(saida, resto[0] if resto else "10:40")

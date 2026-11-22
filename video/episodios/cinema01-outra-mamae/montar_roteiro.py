@@ -109,6 +109,9 @@ def fx(i, em, som, db, depois=False, atraso=0.0, **kw):
 def dur_video(arq):
     if not (AQUI / arq).exists() and __import__("os").environ.get("TESTE"):
         return 9.0                                     # teste do montador antes das peças ficarem prontas
+    util = AQUI / (str(arq) + ".util")   # 23/11: peça com cauda (pecas.py CAUDA) — o tempo útil, sem a cauda
+    if util.exists():
+        return float(util.read_text())
     return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(AQUI / arq)],
                                 capture_output=True, text=True).stdout)
 
