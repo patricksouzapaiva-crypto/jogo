@@ -86,7 +86,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+     "imagem": "imagens/IL_bela_cama_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -130,7 +130,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_2.jpg",
+     "imagem": "imagens/IL_porta_azul_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -158,7 +158,7 @@
   {
    "fala": "O filme dá um nome para essa coisa.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_porta_azul_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -400,7 +400,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID03_quarto_2.png",
+     "imagem": "imagens/IL_maos_porta_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -450,7 +450,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+     "imagem": "imagens/IL_medium_2.jpg",
      "zoom": [
       1.0,
       1.08
@@ -504,7 +504,7 @@
   {
    "fala": "A mãe que nunca está em casa, de repente, volta para almoçar.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_cozinha_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -549,7 +549,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID03_quarto_1.png",
+     "imagem": "imagens/IL_cozinha_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -609,7 +609,7 @@
   {
    "fala": "E Bela diz onde ela mora: \"atrás das nossas portas\".",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_quarto_portas_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -664,7 +664,7 @@
   {
    "fala": "Aparece numa casa onde a mãe nunca está, onde o pai fuma escondido, e onde cada adulto guarda um segredo.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_pais_briga_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -738,7 +738,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_1.jpg",
+     "imagem": "imagens/IL_frank_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -833,7 +833,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+     "imagem": "imagens/IL_abraco_2.jpg",
      "zoom": [
       1.0,
       1.08
@@ -931,7 +931,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_2.jpg",
+     "imagem": "imagens/IL_espelho_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -953,7 +953,7 @@
   {
    "fala": "Sete pistas.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_outra_silhueta_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1030,7 +1030,7 @@
   {
    "fala": "Igual a ela, com a mesma roupa, o mesmo rosto.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_carro_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1056,7 +1056,7 @@
   {
    "fala": "Se vê à noite, ela vai morrer em breve.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_bela_cama_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1197,7 +1197,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID03_quarto_2.png",
+     "imagem": "imagens/IL_medium_1.jpg",
      "zoom": [
       1.08,
       1.0
@@ -1226,7 +1226,7 @@
    "fala": "E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.",
    "cenas": [
     {
-     "imagem": "identidade/brutas/ID03_quarto_1.png",
+     "imagem": "imagens/IL_porta_azul_2.jpg",
      "zoom": [
       1.0,
       1.08
@@ -1246,7 +1246,7 @@
      "antecipar": 0.25
     },
     {
-     "imagem": "imagens/IA04_corredor_1.jpg",
+     "imagem": "imagens/IL_maos_porta_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -1268,7 +1268,7 @@
   {
    "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_ritual_sal_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1291,7 +1291,7 @@
   {
    "fala": "Só faz a coisa aparecer.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_uv_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1392,7 +1392,7 @@
   {
    "fala": "Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_rasteja_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1418,7 +1418,7 @@
   {
    "fala": "E a Outra Mamãe parece uma tulpa.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_maquete_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1474,7 +1474,7 @@
    "fala": "Só não explica uma coisa: uma tulpa nasce de alguém.",
    "cenas": [
     {
-     "imagem": "imagens/IA04_corredor_1.jpg",
+     "imagem": "imagens/IL_botas_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -1578,7 +1578,7 @@
   {
    "fala": "E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_outra_silhueta_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1657,7 +1657,7 @@
   {
    "fala": "Mas não sente mais nada ao ver aquele rosto.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_praca_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1705,7 +1705,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+     "imagem": "imagens/IL_praca_1.jpg",
      "zoom": [
       1.0,
       1.08
@@ -1812,7 +1812,7 @@
   {
    "fala": "É por isso que ela entra nesta lista: tudo o que a Outra Mamãe faz, as fadas antigas já faziam.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_maos_porta_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -1949,7 +1949,7 @@
   {
    "fala": "E elas viviam do outro lado: debaixo da terra, atrás das colinas, dentro dos fortes de terra.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_outro_lado_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -1975,7 +1975,7 @@
   {
    "fala": "Mas tem um detalhe que quase ninguém conta.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_ritual_sal_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2007,7 +2007,7 @@
   {
    "fala": "Uma porta aberta.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_porta_azul_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -2310,7 +2310,7 @@
   {
    "fala": "Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_pais_briga_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2370,7 +2370,7 @@
   {
    "fala": "No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_afundou_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2415,7 +2415,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID03_quarto_1.png",
+     "imagem": "imagens/IL_mar_1.jpg",
      "zoom": [
       1.0,
       1.08
@@ -2462,7 +2462,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_1.jpg",
+     "imagem": "imagens/IL_medium_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -2484,7 +2484,7 @@
   {
    "fala": "No terço final, a mãe, Ursula, faz de propósito o que ninguém naquela casa tinha feito: fala a verdade.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_confissao_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -2507,7 +2507,7 @@
   {
    "fala": "Conta que Russ não é o pai biológico de Bela.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_cicatriz_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -2555,7 +2555,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+     "imagem": "imagens/IL_escada_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -2602,7 +2602,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_2.jpg",
+     "imagem": "imagens/IL_maos_avo_2.jpg",
      "zoom": [
       1.0,
       1.07
@@ -2627,7 +2627,7 @@
   {
    "fala": "E escolhe \"não\".",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_familia_fim_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2672,7 +2672,7 @@
      "entrada": "corte"
     },
     {
-     "imagem": "identidade/brutas/ID03_quarto_2.png",
+     "imagem": "imagens/IL_cicatriz_1.jpg",
      "zoom": [
       1.0,
       1.07
@@ -2697,7 +2697,7 @@
   {
    "fala": "E no último discurso, Bela já sabe fazer o que os adultos faziam: contar a história de um jeito diferente.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_escola_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -2720,7 +2720,7 @@
   {
    "fala": "E depois dos créditos, ela ainda está lá.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_pos_creditos_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -2848,7 +2848,7 @@
   {
    "fala": "Dois finais opostos.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_quarto_portas_2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -2903,7 +2903,7 @@
   {
    "fala": "Ela leva a criança para o outro lado.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_outro_lado_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2945,7 +2945,7 @@
   {
    "fala": "O demônio explica a permissão e as cópias, mas o ritual contra demônios não funcionou, e um demônio não sonha em ser gente.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_uv_2.jpg",
     "zoom": [
      1.0,
      1.08
@@ -2968,7 +2968,7 @@
   {
    "fala": "A tulpa chega muito perto.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_maquete_2.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3084,7 +3084,7 @@
   {
    "fala": "As fadas não podiam levar quem estava protegido.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_ritual_sal_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3110,7 +3110,7 @@
   {
    "fala": "A médium disse a regra em voz alta: elas precisam de permissão para existir.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_medium_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3148,7 +3148,7 @@
   {
    "fala": "O trocado chegava com o rosto da criança, e as fadas chamavam as pessoas para fora de casa com a voz de alguém da família.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_cozinha_2.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3171,7 +3171,7 @@
   {
    "fala": "A mãe, o babá, o tio Frank.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_outro_lado_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3209,7 +3209,7 @@
   {
    "fala": "As fadas não tinham tamanho fixo: podiam parecer gente, ou caber atrás de uma porta.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "imagem": "imagens/IL_mesa_2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3232,7 +3232,7 @@
   {
    "fala": "\"Ela mora atrás das nossas portas.\"",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_maos_porta_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3270,7 +3270,7 @@
   {
    "fala": "As trocas aconteciam nas casas onde algo já estava errado: uma criança sozinha, uma mãe ausente, uma família em crise.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_praca_2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3327,7 +3327,7 @@
   {
    "fala": "As fadas cumpriam desejos, e sempre cobravam.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_frank_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3368,7 +3368,7 @@
   {
    "fala": "\"Não me permitiram ser uma pessoa.\"",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_abraco_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3412,7 +3412,7 @@
   {
    "fala": "\"Ela vai ser eu.\"",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_carro_2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3438,7 +3438,7 @@
   {
    "fala": "No livro, a troca acontece.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_espelho_2.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3476,7 +3476,7 @@
   {
    "fala": "As fadas levavam as pessoas para baixo da terra, para além do mar.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_tunel_1.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3499,7 +3499,7 @@
   {
    "fala": "A Outra Mamãe afunda com Bela pelo chão para ver o mar.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "imagem": "imagens/IL_bolinhas_1.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3537,7 +3537,7 @@
   {
    "fala": "Fada nenhuma leva quem não se entrega.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_espelho_rachado_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -3563,7 +3563,7 @@
   {
    "fala": "A tulpa explica a solidão, o desejo, a vontade de existir.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_2.jpg",
+    "imagem": "imagens/IL_bela_sozinha_2.jpg",
     "zoom": [
      1.0,
      1.07
@@ -3586,7 +3586,7 @@
   {
    "fala": "Mas uma tulpa nasce de alguém e some quando deixa de ser querida.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_2.png",
+    "imagem": "imagens/IL_rasteja_2.jpg",
     "zoom": [
      1.08,
      1.0
@@ -3666,7 +3666,7 @@
   {
    "fala": "Ela não arromba a casa.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "imagem": "imagens/IL_quarto_portas_1.jpg",
     "zoom": [
      1.0,
      1.08
@@ -3695,7 +3695,7 @@
   {
    "fala": "E depois dos créditos, ela ainda está lá.",
    "cena": {
-    "imagem": "imagens/IA04_corredor_1.jpg",
+    "imagem": "imagens/IL_pos_creditos_2.jpg",
     "zoom": [
      1.0,
      1.07

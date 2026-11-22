@@ -4,6 +4,6 @@ cd "$(dirname "$0")"
 R=../../painel/ferramentas/revisar.py
 python3 montar_roteiro.py || exit 1
 python3 $R roteiro || { echo "REVISÃO DO ROTEIRO FALHOU: corrigir antes de renderizar"; exit 1; }
-python3 ../../painel/gerar.py roteiro.json previas/cin01_rascunho7.mp4 --rascunho
-python3 $R video previas/cin01_rascunho7.mp4 previas/rascunho.log
+PAINEL_SEM_RIFE=1 python3 ../../painel/gerar.py roteiro.json previas/cin01_rascunho8.mp4 --rascunho
+python3 $R video previas/cin01_rascunho8.mp4 previas/rascunho.log
 echo "FIM codigo=$?"
