@@ -1241,21 +1241,24 @@
    "fala": "Seis de sete."
   },
   {
-   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém."
+   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/b_familia.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "em": "tulpa",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    }
+   ]
   },
   {
-   "fala": "Ela não quer trocar de lugar com quem a criou.",
-   "cena": {
-    "video": "filmes_prontos/b_familia.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "fala": "Ela não quer trocar de lugar com quem a criou."
   },
   {
    "fala": "Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.",
