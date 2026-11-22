@@ -69,7 +69,9 @@ async function trabalhador(browser, porta, i0, i1, arq) {
   await browser.close(); servidor.close();
   const lista = path.join(tmp, "lista.txt");
   fs.writeFileSync(lista, partes.filter(Boolean).map((p) => `file '${p}'`).join("\n"));
-  spawnSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", saida], { stdio: "inherit" });
+  const r = spawnSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", saida], { stdio: "inherit" });
+  // 23/11: as partes saem do disco logo depois de juntar (o pico de espaço caía de ~3,7 para ~2,5 GB no 1080p de 18 min)
+  if (r.status === 0) for (const p of partes.filter(Boolean)) { try { fs.unlinkSync(p); } catch (e) {} }
   console.log(`vídeo: ${saida} (${n} quadros em ${((Date.now() - t0) / 1000).toFixed(0)} s)`);
   if (MED.n) console.log(`  por quadro: desenho ${(MED.q / MED.n).toFixed(1)} ms · JPEG ${(MED.e / MED.n).toFixed(1)} ms`);
 })();
