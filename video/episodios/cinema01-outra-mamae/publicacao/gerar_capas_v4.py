@@ -162,13 +162,15 @@ tarja(c, "OUTRA MAMÃE", 40, 70, 50)
 salvar(c, "capa_A_mesa.jpg")
 
 # B — a criatura de perto, clara e limpa, com brilho vermelho; "ELA NÃO É SUA MÃE" (23/11, usuário: "não é um demônio" entregava o veredito)
-im = base("q_4898.5.png", 0.0, 0.5, 1.0, espelhar=True, limpar=5, luz=2.2)
+im = base("q_4898.5.png", 0.0, 0.5, 1.0, espelhar=False, limpar=5, luz=2.2)   # 23/11: rosto à direita, texto à esquerda
 im = grade(im, sat=1.25, contraste=1.2, brilho=1.45, tinta=(1.1, 0.97, 0.9), gama=0.8)
 mk = recorte(im, "f_criatura")
-im = vinheta(lado_escuro(im, "dir", 0.48, 0.88), 0.35, 0.3)
-c = letreiro(im, [("ELA NÃO É", MONT, 112, BRANCO), ("SUA MÃE", MONT, 150, SANGUE)], W - 40, 220,
-             alinhar="dir", entre=1.02, brilho=(230, 20, 40))
-tarja(c, "OUTRA MAMÃE", W - 500, 70, 50, giro=3)
+_a = np.asarray(im); _n = np.empty_like(_a); _d = 150                 # o rosto vai 150 px para a direita
+_n[:, _d:] = _a[:, :W - _d]; _n[:, :_d] = cv2.GaussianBlur(_a[:, :_d], (0, 0), 25)
+im = vinheta(lado_escuro(Image.fromarray(_n), "esq", 0.5, 0.9), 0.35, 0.75)
+c = letreiro(im, [("ELA NÃO É", MONT, 96, BRANCO), ("SUA MÃE", MONT, 128, SANGUE)], 40, 235,
+             alinhar="esq", entre=1.02, brilho=(230, 20, 40))
+tarja(c, "OUTRA MAMÃE", 40, 70, 50, giro=-3)
 salvar(c, "capa_B_sua_mae.jpg")
 
 # C — antes × depois: a mãe sorrindo | a coisa com o mesmo sorriso, corte inclinado; "FINAL EXPLICADO"
