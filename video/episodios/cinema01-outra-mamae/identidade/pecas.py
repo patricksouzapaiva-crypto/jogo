@@ -220,12 +220,13 @@ def marca(d, x, y, tam, certo, prog):
         d.line([a, (a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f)], fill=cor, width=larg, joint="curve")
 
 
-def checklist(saida, nome, itens, marcas, tempos=None, dur=None):
+def checklist(saida, nome, itens, marcas, tempos=None, dur=None, descartar=False):
     """A ficha da teoria com as pistas: cada pista recebe ✓ ou ✗ à mão, uma por vez, e no fim o total.
     21/11: 2 colunas com quantas linhas precisar (até 9 itens); tempos = quando cada marca entra (senão 0,75 s cada)."""
     tempos = tempos or [3.2 + 0.75 * k for k in range(len(itens))]
     t_total = tempos[-1] + 0.75
-    DUR = dur or t_total + 1.8
+    t_desc = t_total + 1.1   # 22/11 (usuário: "o check list e descartar"): a teoria que não fecha leva o carimbo DESCARTADA
+    DUR = dur or (t_desc + 2.6 if descartar else t_total + 1.8)
     quad, Mq = fundo("ID02_quadro_1.png", None)
     base = Image.open(CAM / "ID07_ficha_2.png")
     ls = [(nome, ELITE, 0, VERM, 0.07, 0.07)]
@@ -248,6 +249,18 @@ def checklist(saida, nome, itens, marcas, tempos=None, dur=None):
             if p > 0:
                 fz = ImageFont.truetype(STENCIL, 110)
                 d.text((im.width * 0.62, im.height * 0.80 - 30), f"{certos} DE {len(itens)}", font=fz, fill=VERM + (int(240 * p),))
+            p = lin(t, t_desc, 0.18) if descartar else 0
+            if p > 0:   # carimbo: cai de cima (maior → tamanho certo), torto, tinta falhada
+                fz = ImageFont.truetype(STENCIL, 150); txt = "DESCARTADA"
+                tw = int(fz.getlength(txt)) + 80; cam = Image.new("RGBA", (tw, 260), (0, 0, 0, 0)); dc = ImageDraw.Draw(cam)
+                dc.rectangle([10, 10, tw - 10, 250], outline=VERM + (225,), width=14)
+                dc.text((40, 38), txt, font=fz, fill=VERM + (225,))
+                rng = np.random.default_rng(7); a = np.array(cam); buraco = rng.random(a.shape[:2]) < 0.10
+                a[..., 3] = np.where(buraco, a[..., 3] // 3, a[..., 3]); cam = Image.fromarray(a)
+                esc_c = (1.6 - 0.6 * p) * im.width * 0.62 / tw
+                cam = cam.resize((int(tw * esc_c), int(260 * esc_c))).rotate(14, expand=True, resample=Image.BICUBIC)
+                if p < 1: cam.putalpha(cam.getchannel("A").point(lambda v: int(v * p)))
+                im.alpha_composite(cam, (int(im.width * 0.5 - cam.width / 2), int(im.height * 0.5 - cam.height / 2)))
         return f
 
     def quadro(t):
@@ -259,7 +272,8 @@ def checklist(saida, nome, itens, marcas, tempos=None, dur=None):
         for k in range(len(itens)):
             som(t, tempos[k], "ep08_pincel", -8)
         som(t, t_total, "ep08_carimbo", -6)
-        chave = (n, tuple(round(lin(t, x, 0.35), 1) for x in tempos + [t_total]))
+        if descartar: som(t, t_desc + 0.15, "ep08_carimbo", -2)
+        chave = (n, tuple(round(lin(t, x, 0.35), 1) for x in tempos + [t_total] + ([t_desc] if descartar else [])))
         im = fi.texto_ate(n, (chave, desenhar_marcas(t)))
         por(tela, im, C @ mat_obj(960, 560 + (1 - u) * 700, esc, -1.2, fi.base.width, fi.base.height), sombra=1, z=0.4 * (1 - u))
         return tela, (960, 540, z, 0)
@@ -398,7 +412,7 @@ if __name__ == "__main__":
     if peca == "pista": pista(saida, n, E["pistas"][n - 1])
     elif peca == "teoria": teoria(saida, n, E["teorias"][n - 1])
     elif peca == "checklist":
-        nome, m = E["checklists"][n - 1]; checklist(saida, nome, E["itens"], [bool(x) for x in m])
+        nome, m = E["checklists"][n - 1]; checklist(saida, nome, E["itens"], [bool(x) for x in m], descartar=n < 4)
     elif peca == "porque":   # o porquê do veredito: as 9 provas da fada, uma por vez, nos tempos dados (s)
         ts = [float(x) for x in resto[0].split(",")]
         checklist(saida, "A FADA QUE TROCA", E["itens"] + E["provas_final"], [True] * 9, ts, ts[-1] + 6)

@@ -96,7 +96,7 @@ def lamento(o, t0, vel=1.0):
         acc = {"A2": ["A2", "E3", "A3", "C4"], "G2": ["G2", "D3", "G3", "B3"], "E2": ["E2", "B2", "E3", "G3"]}[raiz]
         for i, n in enumerate(acc):
             o.toque("harpa", n, t0 + b * q + i * 0.13, 0.5 * vel, pan=0.2)
-    return t
+    return max(t, t0 + 34 * q)   # 22/11: os arpejos vão até 34 tempos — a próxima volta espera eles acabarem
 
 
 def veredito(o, t0):
@@ -168,10 +168,17 @@ def tensao(o, t0, d=24.0, vel=1.0):
     return t0 + d + 4
 
 
+class _Nulo:   # 22/11: mede quanto um motivo dura sem tocar nada
+    def __getattr__(self, n):
+        return lambda *a, **k: None
+
+
 def encher(o, f, a, b, **kw):
-    """repete o motivo f de a até perto de b (cada chamada devolve onde terminou)"""
+    """repete o motivo f de a até perto de b (cada chamada devolve onde terminou).
+    22/11 (usuário: "parece que ficou duas músicas tocando"): um motivo só começa se TERMINA dentro da seção (+2 s) —
+    nada de uma repetição invadir a seguinte nem a próxima seção."""
     t = a
-    while t < b - 8:
+    while t < b - 8 and f(_Nulo(), t, **kw) <= b + 2:
         t = f(o, t, **kw) + 0.6
     return t
 
@@ -190,7 +197,7 @@ def episodio(plano, saida):
         elif nome == "apresenta": encher(o, piano_errado, a, b, vel=0.6)
         elif nome == "pistas": encher(o, relogio, a, b, compassos=16, vel=0.55, sobe=False)
         elif nome == "fada": encher(o, caixinha, a, b, vel=0.75)
-        elif nome == "cleary": encher(o, lamento, a, b, vel=0.85)
+        elif nome == "cleary": encher(o, lamento, a, b, vel=0.5)   # 22/11: "música alta demais" sob o caso real
         elif nome == "duplo": encher(o, duplo, a, b, vel=0.8)
         elif nome == "demonio": demonio(o, a, 0.8, d=b - a)
         elif nome == "tulpa": encher(o, tulpa, a, b, vel=0.85)

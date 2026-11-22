@@ -230,6 +230,27 @@ def alinhar(palavras_roteiro: list[str], ouvidas):
     return tempos, casadas
 
 
+def voz_extra(voz_wav, plano, inicio_voz, destino):
+    """22/11 (Cinema #1, usuário: "a narração muda, a voz sai diferente e com volume diferente"): falas extras do
+    narrador (som com "na_voz": True) entram NA TRILHA DA VOZ — mesma cadeia de locução, mesmo nível —, não como efeito."""
+    ext = [e for e in plano["efeitos"] if e.get("na_voz")]
+    if not ext:
+        return voz_wav
+    plano["efeitos"] = [e for e in plano["efeitos"] if not e.get("na_voz")]
+    info = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=sample_rate,channels",
+                           "-of", "csv=p=0", str(voz_wav)], capture_output=True, text=True).stdout.strip().split(",")
+    sr, ch = int(info[0]), int(info[1])
+    fmt = f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts={'mono' if ch == 1 else 'stereo'}"
+    ent, f = ["-i", str(voz_wav)], [f"[0:a]{fmt}[v0]"]
+    for k, e in enumerate(ext, 1):
+        ent += ["-i", str(e["arquivo"])]
+        f.append(f"[{k}:a]{fmt},volume={e.get('volume_db', 0)}dB,adelay={int(max(0, e['t'] - inicio_voz) * 1000)}:all=1[v{k}]")
+    f.append("".join(f"[v{k}]" for k in range(len(ext) + 1)) + f"amix=inputs={len(ext) + 1}:normalize=0:duration=first[s]")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", *ent, "-filter_complex", ";".join(f), "-map", "[s]", str(destino)], check=True)
+    print(f"    falas extras na trilha da voz: {len(ext)}")
+    return destino
+
+
 def inserir_silencios(wav, tempos, insercoes, destino):
     """Insere silêncio antes da palavra de índice i (no meio da pausa que já existe) e desloca os tempos."""
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "48000", "-"],
@@ -860,7 +881,7 @@ def montar_cenas(roteiro, rel: Relogio, duracao, W=1080, H=1920, fps=30):
         for so in b.get("sons", []):
             plano["efeitos"].append({"t": rel.em(k, so.get("em"), fim=so.get("depois", False)) + so.get("atraso", 0),
                                      "som": so["som"], "volume_db": so.get("volume_db", -10), "grave": so.get("grave", False),
-                                     **{x: so[x] for x in ("pan", "reverso", "eco", "tom", "ate", "saida", "arquivo", "entrada")
+                                     **{x: so[x] for x in ("pan", "reverso", "eco", "tom", "ate", "saida", "arquivo", "entrada", "na_voz")
                                         if x in so}})
         if b.get("musica"):
             if not plano["trilhas"] and roteiro.get("musica"):
@@ -1543,6 +1564,7 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     if roteiro.get("modo") == "cenas":
         W, H = {"9:16": (1080, 1920), "16:9": (1920, 1080)}[roteiro.get("formato", "9:16")]
         D, plano = montar_cenas(roteiro, rel, duracao, W, H)
+        voz_cortada = voz_extra(voz_cortada, plano, inicio_voz, tmp / "voz_extra.wav")
         D["voz_env"] = envelope_voz(voz_cortada, roteiro["_inicio_voz"], duracao)
     else:
         D, eventos = montar(roteiro, rel, duracao)

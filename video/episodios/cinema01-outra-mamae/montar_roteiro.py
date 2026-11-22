@@ -10,6 +10,7 @@ Regras: Vigia na apresentação, no porquê e no fecho; nenhum rosto de IA; cena
 Uso: python3 montar_roteiro.py → roteiro.json"""
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -126,6 +127,40 @@ FUROS = []      # (fala, deslocamento) das falas do filme → a música desce (t
 GOLPES = []     # fala das peças → tímpano na trilha
 
 
+_AL = {}
+
+
+def _alinh():
+    if not _AL:
+        sys.path.insert(0, str(AQUI.parents[1] / "painel")); from gerar import tokens as _tk
+        ali = json.load(open(ALI)); ini = [0]
+        for f in falas[:-1]:
+            ini.append(ini[-1] + len(_tk(f)))
+        _AL.update(ali=ali, ini=ini, tk=_tk)
+    return _AL
+
+
+def t_fala(i):
+    A = _alinh(); return A["ali"][A["ini"][i]][0]
+
+
+def fim_fala(i):
+    A = _alinh(); return A["ali"][A["ini"][i] + len(A["tk"](falas[i])) - 1][1]
+
+
+def palavra_apos(i, s):
+    """22/11: a palavra da fala i dita >= s segundos depois do começo dela (pelo alinhamento real, não por estimativa),
+    que o motor não confunde com uma anterior (ele pega a 1ª palavra que COMEÇA assim)."""
+    A = _alinh(); toks = A["tk"](falas[i]); t0 = t_fala(i)
+    nz = [re.sub(r"[^\wà-ú]", "", w.lower()) for w in toks]
+    k = 1
+    while k < len(toks) - 1 and A["ali"][A["ini"][i] + k][0] - t0 < s:
+        k += 1
+    while k < len(toks) - 1 and (len(nz[k]) < 3 or any(w.startswith(nz[k]) for w in nz[:k])):
+        k += 1
+    return toks[k].strip('.,:;!?"“”')
+
+
 def antes(i, cena, dur, som=None, db=-10, furo=False, sobra=0.0):
     """Algo que toca inteiro numa pausa da voz antes da fala i (sobra = quanto a voz pode entrar antes do fim)."""
     ANTES.setdefault(i, []).append((cena, dur, som, db, furo, sobra))
@@ -164,14 +199,8 @@ def montar_antes():
             r = dict(resto[0]); r["em"] = r.get("em") or None
             if r["em"] is None:   # a peça ainda está terminando sob a voz: a cena da fala entra umas palavras depois
                 r.pop("em")
-                if itens[-1][5] > 0:
-                    ws = [w.strip('.,:;!?"“”') for w in falas[i].split()]
-                    k = min(len(ws) - 1, max(1, int(itens[-1][5] * 2.4)))
-                    baixo = [w.lower() for w in ws]
-                    while k < len(ws) - 1 and (len(baixo[k]) < 3 or any(w.startswith(baixo[k]) for w in baixo[:k])):
-                        # 22/11: o motor acha a 1ª palavra que COMEÇA assim ("na" = "Na", "e" = "Em")
-                        k += 1
-                    r["em"] = ws[k]
+                if itens[-1][5] > 0:   # 22/11 (usuário: "não termina de aparecer a escrita e já troca"): pelo tempo real
+                    r["em"] = palavra_apos(i, itens[-1][5] + 0.3)
             novas += [r] + resto[1:]
         batidas[i].pop("cena", None); batidas[i]["cenas"] = novas
         pausa(i, round(total + 0.35, 2))
@@ -209,21 +238,36 @@ def peca_falada(i, arq, entra=2.1, db=-9):   # respiro: a ficha abre e o título
     peca(i, arq, sobra=round(dur_video(arq) - entra, 2), db=db)
 
 
-def checklist_falado(i, arq, db=-10):
-    """A lista de conferência roda SOB a narração das frases anteriores e o "N de 7" cai quando a fala i começa."""
+T_PLACAR = 8.45   # pecas.py: o "N DE 7" carimba aos 8,45 s; o DESCARTADA 1,1 s depois
+
+
+def checklist_falado(i, arq, db=-10, inicio=None, segurar=None, ate=None):
+    """A lista de conferência roda SOB a narração e o "N de 7" cai quando a fala i começa (ou, com 'inicio', a ficha
+    entra na fala 'inicio' — a avaliação — e as falas de antes ficam com as cenas do filme).
+    22/11 (usuário: "depois do checklist fica uma tela preta", "check list e descartar"): a peça termina no carimbo
+    DESCARTADA (sem escurecer); as cenas das falas que caem DURANTE a peça vão para depois dela; 'segurar' = pausa
+    (s) antes da fala seguinte para o carimbo ser visto."""
     d = dur_video(arq)
-    sys.path.insert(0, str(AQUI.parents[1] / "painel")); from gerar import tokens as _tk
-    ali = json.load(open(ALI)); ini = [0]
-    for f in falas[:-1]:
-        ini.append(ini[-1] + len(_tk(f)))
-    j = i
-    while j > 0 and ali[ini[i]][0] - ali[ini[j]][0] < d - 1.2:
-        j -= 1
+    if inicio is None:
+        cands = [j for j in range(i, max(-1, i - 12), -1) if t_fala(i) - t_fala(j) <= T_PLACAR + 0.3]
+        j = cands[-1]
+    else:
+        j = inicio
+    vi = round(min(1.2, max(0.0, T_PLACAR - (t_fala(i) - t_fala(j)))), 2) if inicio is None else 0.0
     C(j, {"video": arq, "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True, "entrada": "fundir",
-          "duracao_entrada": 0.4})
+          "duracao_entrada": 0.4, **({"video_inicio": vi} if vi else {})})
     for k in range(j + 1, i + 1):
         batidas[k].pop("cena", None); batidas[k].pop("cenas", None)
     fx(j, None, Path(som_de(arq)).stem, db, arquivo=som_de(arq))
+    fim_peca = t_fala(j) + d - vi
+    movidas = []
+    k = i + 1
+    while k < len(falas) and t_fala(k) < fim_peca - 0.3 and not ANTES.get(k) and (ate is None or k < ate):
+        movidas += cenas_de(batidas[k]); batidas[k].pop("cena", None); batidas[k].pop("cenas", None); k += 1
+    if movidas and k < len(falas) and not cenas_de(batidas[k]) and not ANTES.get(k):
+        C(k, movidas[-1])
+    if segurar:
+        pausa(ate if ate is not None else k, segurar)
     GOLPES.append(i)
     return j
 
@@ -259,24 +303,31 @@ k = I("A primeira teoria"); peca_falada(k, f"{PC}teoria1.mp4")   # 22/11: o p2_a
 k = I("Na Irlanda, ela tem nome"); C(k, ficha("FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva", "o duplo")); falada(k, k + 1)
 C(I("Igual a ela"), F("b_carro_outra"))
 C(I("Se vê à noite"), F("b_bela_cama"))
-checklist_falado(I("O duplo copia."), f"{PC}checklist1.mp4")
-C(I("Não pede, não deseja"), F("b_abraco"))
+k = I("O duplo copia.")   # 22/11: a ficha entra na avaliação e termina com DESCARTADA (as cenas do filme ficam antes)
+checklist_falado(k, f"{PC}checklist1.mp4", inicio=k, ate=I("Há quatro mil anos"), segurar=1.8)
 # ================================================================ TEORIA 2 — o demônio trapaceiro
 k = I("Há quatro mil anos"); peca_falada(k, f"{PC}teoria2.mp4")
 C(k, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
 C(I("Séculos depois, no folclore judaico"), real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
 fala_filme(I("E o próprio filme aposta"), "t3_ardiloso")
-C(I("E existe uma regra muito antiga"), F("b_porta_azul"))
-C(I("Só que o ritual da médium"), F("t3_ritual")); C(I("Só faz a coisa aparecer"), F("b_uv"))
-checklist_falado(I("O demônio explica a permissão, as cópias, o corpo"), f"{PC}checklist2.mp4")
-C(I("E não precisa de uma família rachada"), F("b_pai_sofa"))
+C(I("E existe uma regra muito antiga"), F("b_porta_azul"), (F("b_maos_porta"), "atravessam"))   # a fala é mais longa que o clipe
+C(I("Só que o ritual da médium"), F("b_ritual_sal")); C(I("Só faz a coisa aparecer"), F("b_uv"))
+k = I("O demônio explica a permissão, as cópias, o corpo")   # 22/11: o ritual com cenas do filme; a ficha só na avaliação
+checklist_falado(k, f"{PC}checklist2.mp4", inicio=k, ate=I("Em mil novecentos e vinte e nove"), segurar=2.8)
 # ================================================================ TEORIA 3 — a tulpa
 k = I("Em mil novecentos e vinte e nove"); peca_falada(k, f"{PC}teoria3.mp4")
 C(k, ficha("ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente", "TULPA")); falada(k, k + 2)
 C(I("Um monge baixinho"), F("b_rasteja"))
 C(I("E a Outra Mamãe parece uma tulpa"), F("t4_imaginaria")); C(I("Nasceu numa menina sozinha"), F("b_bela_sozinha"))
-checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4")
 C(I("Só não explica uma coisa"), F("b_familia"))
+checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4", ate=I("Em mil oitocentos e oitenta e dois"))
+# ================================================================ OS PARENTES (22/11, usuário: "não dá pra saber se é uma teoria ou várias")
+EXTRAS = AQUI / "audio/extras"
+k = I("Em mil oitocentos e oitenta e dois")
+antes(k, ficha("ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA", "DOIS PARENTES"), 8.0,
+      str(EXTRAS / "parentes_1.wav"), 0, furo=True)
+k = I("Em mil novecentos e vinte e três")
+antes(k, ficha("2 · NA MEDICINA", "NA MEDICINA"), 3.6, str(EXTRAS / "parentes_2.wav"), 0, furo=True)
 # ================================================================ A AVÓ DE CORALINE
 C(I("Em mil oitocentos e oitenta e dois"), real("new_mother_n23", (1.0, 1.05)))
 C(I("No lugar dela, chega"), real("new_mother_n26", (1.0, 1.07)))
@@ -306,6 +357,8 @@ C(I("Mas, em mil oitocentos e noventa e cinco"), real("cleary_sun_1895", (1.0, 1
 k = I("Ballyvadlea"); C(k, ficha("BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895", "BRIDGET CLEARY")); falada(k, k + 2)
 C(I("O marido dela, Michael"), real("cleary_sun_1895", (1.05, 1.14), foco=((0.5, 0.3), (0.5, 0.36))))
 C(I("Durante noites seguidas"), img("imagens/IA02_lareira_1", (1.0, 1.07), ((0.4, 0.6), (0.38, 0.62))))
+C(I("Está registrado assim"), real("cleary_sun_1895", (1.1, 1.2), foco=((0.5, 0.55), (0.5, 0.62))))   # 22/11: 26 s na mesma lareira
+C(I("Na noite de quinze de março"), img("imagens/IA02_lareira_1", (1.1, 1.18), ((0.55, 0.65), (0.6, 0.62))))
 C(I("Na frente da família"), img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.35, 0.6), (0.33, 0.62))))
 C(I("Michael foi condenado"), img("imagens/IA02_lareira_1", (1.08, 1.14), ((0.6, 0.5), (0.62, 0.48))))
 fala_filme(I("É Outra Mamãe ao contrário"), "caso_cheiro")
@@ -695,6 +748,10 @@ def conferir_clipes():
 
 conferir_clipes()
 sem = [i for i, b in enumerate(batidas) if not cenas_de(b)]
+for _b in batidas:   # 22/11 (usuário: "a narração muda, a voz sai diferente e com volume diferente"): as falas extras do
+    for _so in _b.get("sons", []):   # Vigia entram na trilha da VOZ (mesma cadeia de locução), não como efeito
+        if "/audio/extras/" in str(_so.get("arquivo", "")):
+            _so["na_voz"] = True; _so["volume_db"] = 0
 (AQUI / "roteiro.json").write_text(json.dumps(roteiro, ensure_ascii=False, indent=1), encoding="utf-8")
 n_cenas = sum(len(cenas_de(b)) for b in batidas)
 print(f"{len(batidas)} falas, {n_cenas} cenas, falas sem cena (continuam a anterior): {sem}")

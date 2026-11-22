@@ -901,7 +901,27 @@
    }
   },
   {
-   "fala": "Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito.",
+   "fala": "Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito."
+  },
+  {
+   "fala": "Se vê à noite, ela vai morrer em breve.",
+   "cena": {
+    "video": "filmes_prontos/b_bela_cama.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Na Alemanha, o nome é doppelgänger: o que anda em dobro."
+  },
+  {
+   "fala": "O duplo copia.",
    "cena": {
     "video": "identidade/pecas/v6/checklist1.mp4",
     "zoom": [
@@ -926,36 +946,17 @@
    ]
   },
   {
-   "fala": "Se vê à noite, ela vai morrer em breve."
-  },
-  {
-   "fala": "Na Alemanha, o nome é doppelgänger: o que anda em dobro."
-  },
-  {
-   "fala": "O duplo copia."
-  },
-  {
    "fala": "Mas ele é só um aviso."
   },
   {
-   "fala": "Não pede, não deseja, não quer nada.",
-   "cena": {
-    "video": "filmes_prontos/b_abraco.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "fala": "Não pede, não deseja, não quer nada."
   },
   {
    "fala": "E a Outra Mamãe quer muito uma coisa."
   },
   {
    "fala": "Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.",
+   "pausa_antes_s": 4.25,
    "sons": [
     {
      "em": null,
@@ -986,10 +987,9 @@
       1.0,
       1.035
      ],
-     "em": "tinham"
+     "em": "mães"
     }
-   ],
-   "pausa_antes_s": 2.45
+   ]
   },
   {
    "fala": "Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas."
@@ -1049,6 +1049,48 @@
   {
    "fala": "E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.",
    "cena": {
+    "video": "filmes_prontos/b_porta_azul.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada.",
+   "cena": {
+    "video": "filmes_prontos/b_ritual_sal.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Só faz a coisa aparecer.",
+   "cena": {
+    "video": "filmes_prontos/b_uv.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O demônio explica a permissão, as cópias, o corpo e o desejo.",
+   "cena": {
     "video": "identidade/pecas/v6/checklist2.mp4",
     "zoom": [
      1.0,
@@ -1072,33 +1114,14 @@
    ]
   },
   {
-   "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada."
-  },
-  {
-   "fala": "Só faz a coisa aparecer."
-  },
-  {
-   "fala": "O demônio explica a permissão, as cópias, o corpo e o desejo."
-  },
-  {
    "fala": "Mas um demônio não quer ser gente."
   },
   {
-   "fala": "E não precisa de uma família rachada.",
-   "cena": {
-    "video": "filmes_prontos/b_pai_sofa.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "fala": "E não precisa de uma família rachada."
   },
   {
    "fala": "Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.",
+   "pausa_antes_s": 5.25,
    "sons": [
     {
      "em": null,
@@ -1130,10 +1153,9 @@
      "vermelho": "TULPA",
      "cps": 40,
      "falada": true,
-     "em": "exploradora"
+     "em": "publicou"
     }
    ],
-   "pausa_antes_s": 2.45,
    "sem_legenda": true
   },
   {
@@ -1164,6 +1186,20 @@
   {
    "fala": "E a Outra Mamãe parece uma tulpa.",
    "cena": {
+    "video": "filmes_prontos/t4_imaginaria.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela.",
+   "cena": {
     "video": "identidade/pecas/v6/checklist3.mp4",
     "zoom": [
      1.0,
@@ -1173,7 +1209,8 @@
     "congelar": true,
     "sem_look": true,
     "entrada": "fundir",
-    "duracao_entrada": 0.4
+    "duracao_entrada": 0.4,
+    "video_inicio": 0.47
    },
    "sons": [
     {
@@ -1187,16 +1224,16 @@
    ]
   },
   {
-   "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela."
-  },
-  {
    "fala": "Fica mais forte quanto mais é querida."
   },
   {
    "fala": "Seis de sete."
   },
   {
-   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém.",
+   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém."
+  },
+  {
+   "fala": "Ela não quer trocar de lugar com quem a criou.",
    "cena": {
     "video": "filmes_prontos/b_familia.mp4",
     "zoom": [
@@ -1210,20 +1247,38 @@
    }
   },
   {
-   "fala": "Ela não quer trocar de lugar com quem a criou."
-  },
-  {
    "fala": "Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.",
-   "cena": {
-    "imagem": "reais_prontos/new_mother_n23.jpg",
-    "zoom": [
-     1.0,
-     1.05
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "sons": [
+    {
+     "em": null,
+     "som": "parentes_1",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -7.95,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/parentes_1.wav",
+     "na_voz": true
+    }
+   ],
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA",
+     "estilo": "maquina",
+     "vermelho": "DOIS PARENTES",
+     "cps": 40,
+     "antecipar": 8.0,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "reais_prontos/new_mother_n23.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    }
+   ],
+   "pausa_antes_s": 8.35
   },
   {
    "fala": "Duas irmãs desobedecem a mãe, mesmo avisadas."
@@ -1281,17 +1336,38 @@
   },
   {
    "fala": "Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.",
-   "cena": {
-    "tipo": "texto",
-    "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
-    "estilo": "maquina",
-    "vermelho": "CAPGRAS",
-    "cps": 40,
-    "falada": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   },
+   "sons": [
+    {
+     "em": null,
+     "som": "parentes_2",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.55,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/parentes_2.wav",
+     "na_voz": true
+    }
+   ],
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "2 · NA MEDICINA",
+     "estilo": "maquina",
+     "vermelho": "NA MEDICINA",
+     "cps": 40,
+     "antecipar": 3.6,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
+     "estilo": "maquina",
+     "vermelho": "CAPGRAS",
+     "cps": 40,
+     "falada": true
+    }
+   ],
+   "pausa_antes_s": 3.95,
    "sem_legenda": true
   },
   {
@@ -1495,7 +1571,7 @@
       1.0,
       1.06
      ],
-     "em": "séculos"
+     "em": "acreditaram"
     }
    ],
    "pausa_antes_s": 2.45
@@ -1620,6 +1696,20 @@
   {
    "fala": "Uma porta aberta.",
    "cena": {
+    "video": "filmes_prontos/b_porta_azul.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um presente aceito.",
+   "cena": {
     "video": "identidade/pecas/v6/checklist4.mp4",
     "zoom": [
      1.0,
@@ -1641,9 +1731,6 @@
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist4.mp4.som.wav"
     }
    ]
-  },
-  {
-   "fala": "Um presente aceito."
   },
   {
    "fala": "Um sim."
@@ -1752,10 +1839,50 @@
    "fala": "\"Você é Bridget Boland, esposa de Michael Cleary, em nome do Pai, do Filho e do Espírito Santo?\""
   },
   {
-   "fala": "Está registrado assim, palavra por palavra, nos jornais da época."
+   "fala": "Está registrado assim, palavra por palavra, nos jornais da época.",
+   "cena": {
+    "imagem": "reais_prontos/cleary_sun_1895.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "Na noite de quinze de março, ele a cobriu de óleo de lamparina e ateou fogo."
+   "fala": "Na noite de quinze de março, ele a cobriu de óleo de lamparina e ateou fogo.",
+   "cena": {
+    "imagem": "imagens/IA02_lareira_1.jpg",
+    "zoom": [
+     1.1,
+     1.18
+    ],
+    "foco": [
+     [
+      0.55,
+      0.65
+     ],
+     [
+      0.6,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Na frente da família.",
@@ -1873,10 +2000,11 @@
     {
      "em": null,
      "som": "spoiler_1s",
-     "volume_db": 1,
+     "volume_db": 0,
      "depois": false,
      "atraso": -8.25,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/spoiler_1s.wav"
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/spoiler_1s.wav",
+     "na_voz": true
     }
    ],
    "cenas": [
@@ -2238,10 +2366,11 @@
     {
      "em": null,
      "som": "livro_filme",
-     "volume_db": 1,
+     "volume_db": 0,
      "depois": false,
      "atraso": -5.95,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/livro_filme.wav"
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/livro_filme.wav",
+     "na_voz": true
     }
    ],
    "cenas": [
