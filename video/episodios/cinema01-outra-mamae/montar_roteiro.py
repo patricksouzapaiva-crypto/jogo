@@ -18,7 +18,14 @@ import falas as F
 
 AQUI = Path(__file__).parent
 falas, SEC, DIREC, _ = F.ler()
-assert len(falas) == 231 and falas[180].startswith("Prova um"), "o ROTEIRO.md mudou: rever os índices"
+assert len(falas) == 240, "o ROTEIRO.md mudou: rever o mapa"
+
+
+def I(comeco, depois=0):
+    """22/11: índice da fala pelo começo do texto (o roteiro muda de ordem; números fixos quebravam)."""
+    ach = [k for k, f in enumerate(falas) if f.startswith(comeco) and k >= depois]
+    assert ach, comeco
+    return ach[0]
 batidas = [{"fala": f} for f in falas]
 VIGIA = {"imagem": "../../painel/cenarios/abrigo_16x9.png", "vigia": True}
 C3D = AQUI / "camera3d"; C3D.mkdir(exist_ok=True)
@@ -197,142 +204,172 @@ def congelado(arq, menos=0.4):
             "entrada": "fundir", "duracao_entrada": 0.5}
 
 
+def peca_falada(i, arq, entra=1.3, db=-9):
+    """22/11 (usuário: "o narrador conversando a maior parte do tempo"): a peça abre, e a voz entra 'entra' s depois."""
+    peca(i, arq, sobra=round(dur_video(arq) - entra, 2), db=db)
+
+
+def checklist_falado(i, arq, db=-10):
+    """A lista de conferência roda SOB a narração das frases anteriores e o "N de 7" cai quando a fala i começa."""
+    d = dur_video(arq)
+    j = i
+    while j > 0 and _ali[_ini[i]][0] - _ali[_ini[j]][0] < d - 1.2:
+        j -= 1
+    C(j, {"video": arq, "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True, "entrada": "fundir",
+          "duracao_entrada": 0.4})
+    for k in range(j + 1, i + 1):
+        batidas[k].pop("cena", None); batidas[k].pop("cenas", None)
+    fx(j, None, Path(som_de(arq)).stem, db, arquivo=som_de(arq))
+    GOLPES.append(i)
+    return j
+
+
 # ================================================================ GANCHO
 fala_filme(0, "g_boanoite")                  # a cena continua rolando sob a 1ª frase
 fala_filme(1, "g_coracao")
-C(4, F("b_porta_azul"))
-C(6, F("b_espelho"))
-peca(8, "identidade/abertura_v2.mp4", sobra=0.0, db=-7)
+C(I("O filme dá um nome"), F("b_porta_azul"))
+C(I("Mas em nenhum momento"), F("b_espelho"))
+peca(I("Bem-vindo de volta"), "identidade/abertura_v2.mp4", sobra=4.0, db=-7)   # a voz entra quando o carimbo assenta
 # ================================================================ O VIGIA APRESENTA
-C(8, vigia())
-C(12, ficha("OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain", "OUTRA MAMÃE")); falada(12, 13)
-C(14, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)", "INCIDENTS AROUND THE HOUSE")); falada(14)
-C(15, ficha("CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões", "17%")); falada(15, 17)
-C(18, F("abertura"))
-C(19, vigia((1.0, 1.05)))
+C(I("Bem-vindo de volta"), vigia())
+k = I("Outra Mamãe estreou"); C(k, ficha("OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain", "OUTRA MAMÃE")); falada(k, k + 1)
+k = I("O filme é baseado"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)", "INCIDENTS AROUND THE HOUSE")); falada(k)
+k = I("A crítica odiou"); C(k, ficha("CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões", "17%")); falada(k, k + 2)
+C(I("E repara na frase"), F("abertura"))
+C(I("Guarda essa frase"), vigia((1.0, 1.05)))
 # ================================================================ AS PISTAS
-for n, i in enumerate((22, 27, 33, 36, 39, 42, 46), 1):
-    peca(i, f"{PC}pista{n}.mp4", sobra=1.0)
-fala_filme(23, "p1_coracao")
-fala_filme(26, "p1_medium")
-C(28, F("p2_almoco")); C(29, F("b_cozinha"))
-fala_filme(30, "p2_kelvin")
-C(34, F("b_mesa")); C(35, F("b_quarto_portas"))
-C(37, F("p4_segredos")); C(38, F("b_pais_briga"))
-fala_filme(40, "p5_frank")
-fala_filme(43, "p6_pessoa"); fala_filme(43, "p6_existir")
-fala_filme(47, "p7_trocar"); fala_filme(47, "p7_eu")
-C(48, F("b_outra_rosto"))
-# ================================================================ TEORIA 1 — a fada que troca
-peca(50, f"{PC}teoria1.mp4", sobra=1.0)
-C(50, real("fussli_changeling", (1.0, 1.06)))
-C(52, ficha("CHANGELING (Irlanda) · BORTBYTING (Suécia)\n\"o trocado\"", "o trocado")); falada(52, 53)
-C(54, real("fussli_changeling", (1.06, 1.12), foco=((0.45, 0.6), (0.5, 0.62))))
-C(57, img("imagens/IA01_berco_1", (1.0, 1.08), ((0.3, 0.6), (0.28, 0.62))))
-C(59, F("b_outro_lado"))
-C(61, img("imagens/IA01_berco_2", (1.0, 1.07), ((0.6, 0.5), (0.62, 0.52))))
-C(65, F("b_maos_porta"))
-peca(70, f"{PC}checklist1.mp4", sobra=1.0)
-C(72, real("cleary_sun_1895", (1.0, 1.05)))
-# ================================================================ O CASO REAL — Bridget Cleary
-C(73, ficha("BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895", "BRIDGET CLEARY")); falada(73, 75)
-C(76, real("cleary_sun_1895", (1.05, 1.14), foco=((0.5, 0.3), (0.5, 0.36))))
-C(79, img("imagens/IA02_lareira_1", (1.0, 1.07), ((0.4, 0.6), (0.38, 0.62))))
-C(83, img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.35, 0.6), (0.33, 0.62))))
-C(85, img("imagens/IA02_lareira_1", (1.08, 1.14), ((0.6, 0.5), (0.62, 0.48))))
-fala_filme(88, "caso_cheiro")
-# ================================================================ TEORIA 2 — o duplo
-peca(92, f"{PC}teoria2.mp4", sobra=1.0)
-C(92, ficha("FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva", "o duplo")); falada(92, 93)
-C(94, F("b_carro_outra"))
-C(96, F("b_bela_cama"))
-peca(98, f"{PC}checklist2.mp4", sobra=1.0)
-C(100, F("b_abraco"))
-# ================================================================ TEORIA 3 — o demônio trapaceiro
-peca(102, f"{PC}teoria3.mp4", sobra=1.0)
-C(102, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
-C(105, real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
-fala_filme(107, "t3_ardiloso")
-C(110, F("b_porta_azul"))
-C(111, F("t3_ritual")); C(112, F("b_uv"))
-peca(113, f"{PC}checklist3.mp4", sobra=1.0)
-C(115, F("b_pai_sofa"))
-# ================================================================ TEORIA 4 — a tulpa
-peca(116, f"{PC}teoria4.mp4", sobra=1.0)
-C(116, ficha("ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente", "TULPA")); falada(116, 118)
-C(119, F("b_rasteja"))
-C(121, F("t4_imaginaria")); C(122, F("b_bela_sozinha"))
-peca(124, f"{PC}checklist4.mp4", sobra=1.0)
-C(125, F("b_familia"))
-# ================================================================ TEORIA 5 — a avó de Coraline
-C(127, real("new_mother_n23", (1.0, 1.05)))
-C(130, real("new_mother_n26", (1.0, 1.07)))
-C(133, ficha("THE NEW MOTHER (1882) → CORALINE (2002) → OUTRA MAMÃE (2026)", "OUTRA MAMÃE")); falada(133)
-C(134, F("b_outra_rosto"))
+for n, txt in enumerate(("Pista um.", "Pista dois.", "Pista três.", "Pista quatro.", "Pista cinco.", "Pista seis.", "Pista sete."), 1):
+    peca_falada(I(txt), f"{PC}pista{n}.mp4")
+fala_filme(I("Ela nunca entra à força"), "p1_coracao")
+fala_filme(I("Até a médium"), "p1_medium")
+C(I("Primeiro ela vira a mãe"), F("p2_almoco")); C(I("A mãe que nunca está"), F("b_cozinha"))
+fala_filme(I("Depois o babá"), "p2_kelvin")
+C(I("Ela cresce, encolhe"), F("b_mesa")); C(I("E Bela diz onde ela mora"), F("b_quarto_portas"))
+C(I("Ela não aparece numa casa feliz"), F("p4_segredos")); C(I("Aparece numa casa"), F("b_pais_briga"))
+fala_filme(I("Bela faz um pedido"), "p5_frank")
+k = I("Ela não quer só a menina"); fala_filme(k, "p6_pessoa"); fala_filme(k, "p6_existir")
+k = I("E Bela diz com todas as letras"); fala_filme(k, "p7_trocar"); fala_filme(k, "p7_eu")
+C(I("Sete pistas."), F("b_outra_rosto"))
+# ================================================================ TEORIA 1 — o duplo
+k = I("A primeira teoria"); peca_falada(k, f"{PC}teoria1.mp4"); C(k, F("p2_almoco"))
+k = I("Na Irlanda, ela tem nome"); C(k, ficha("FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva", "o duplo")); falada(k, k + 1)
+C(I("Igual a ela"), F("b_carro_outra"))
+C(I("Se vê à noite"), F("b_bela_cama"))
+checklist_falado(I("O duplo copia."), f"{PC}checklist1.mp4")
+C(I("Não pede, não deseja"), F("b_abraco"))
+# ================================================================ TEORIA 2 — o demônio trapaceiro
+k = I("Há quatro mil anos"); peca_falada(k, f"{PC}teoria2.mp4")
+C(k, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Mesopotâmia\no demônio que roubava recém-nascidos", "LAMASHTU"))
+C(I("Séculos depois, no folclore judaico"), real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
+fala_filme(I("E o próprio filme aposta"), "t3_ardiloso")
+C(I("E existe uma regra muito antiga"), F("b_porta_azul"))
+C(I("Só que o ritual da médium"), F("t3_ritual")); C(I("Só faz a coisa aparecer"), F("b_uv"))
+checklist_falado(I("O demônio explica a permissão, as cópias, o corpo"), f"{PC}checklist2.mp4")
+C(I("E não precisa de uma família rachada"), F("b_pai_sofa"))
+# ================================================================ TEORIA 3 — a tulpa
+k = I("Em mil novecentos e vinte e nove"); peca_falada(k, f"{PC}teoria3.mp4")
+C(k, ficha("ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente", "TULPA")); falada(k, k + 2)
+C(I("Um monge baixinho"), F("b_rasteja"))
+C(I("E a Outra Mamãe parece uma tulpa"), F("t4_imaginaria")); C(I("Nasceu numa menina sozinha"), F("b_bela_sozinha"))
+checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4")
+C(I("Só não explica uma coisa"), F("b_familia"))
+# ================================================================ A AVÓ DE CORALINE
+C(I("Em mil oitocentos e oitenta e dois"), real("new_mother_n23", (1.0, 1.05)))
+C(I("No lugar dela, chega"), real("new_mother_n26", (1.0, 1.07)))
+k = I("Cento e vinte anos depois"); C(k, ficha("THE NEW MOTHER (1882) → CORALINE (2002) → OUTRA MAMÃE (2026)", "OUTRA MAMÃE")); falada(k)
+C(I("E Outra Mamãe é a neta"), F("b_outra_rosto"))
 # ================================================================ A CIÊNCIA — Capgras
-C(135, ficha("SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"", "CAPGRAS")); falada(135)
-C(136, img("imagens/IA03_retrato_1", (1.0, 1.08), ((0.55, 0.45), (0.6, 0.42))))
-C(138, F("b_praca"))
-fala_filme(140, "capgras")
+k = I("Em mil novecentos e vinte e três"); C(k, ficha("SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"", "CAPGRAS")); falada(k)
+C(I("Hoje sabemos"), img("imagens/IA03_retrato_1", (1.0, 1.08), ((0.55, 0.45), (0.6, 0.42))))
+C(I("Mas não sente mais nada"), F("b_praca"))
+fala_filme(I("O medo do filme existe"), "capgras")
+# ================================================================ AS FADAS DE VERDADE (contexto antes da teoria 4)
+C(I("E agora, a última teoria"), F("b_rosto_final"))
+C(I("Mas antes, esquece a fada"), vigia((1.0, 1.05)))
+C(I("No folclore da Irlanda e da Escócia"), real("fussli_changeling", (1.08, 1.16), foco=((0.4, 0.4), (0.42, 0.36))))
+C(I("Elas roubavam o leite"), img("imagens/IA01_berco_2", (1.0, 1.07), ((0.6, 0.5), (0.62, 0.52))))
+C(I("É por isso que ela entra"), F("b_maos_porta"))
+# ================================================================ TEORIA 4 — a fada que troca
+k = I("Na Irlanda, na Escócia e na Escandinávia"); peca_falada(k, f"{PC}teoria4.mp4"); C(k, real("fussli_changeling", (1.0, 1.06)))
+k = I("Os irlandeses chamavam essa cópia"); C(k, ficha("CHANGELING (Irlanda) · BORTBYTING (Suécia)\n\"o trocado\"", "o trocado")); falada(k, k + 1)
+C(I("O trocado."), real("fussli_changeling", (1.06, 1.12), foco=((0.45, 0.6), (0.5, 0.62))))
+C(I("E por que as fadas queriam"), img("imagens/IA01_berco_1", (1.0, 1.08), ((0.3, 0.6), (0.28, 0.62))))
+C(I("E elas viviam do outro lado"), F("b_outro_lado"))
+C(I("Mas tem um detalhe"), F("b_ritual_sal"))
+C(I("Uma porta aberta"), F("b_porta_azul"))
+checklist_falado(I("Sete de sete."), f"{PC}checklist4.mp4")
+C(I("Mas, em mil oitocentos e noventa e cinco"), real("cleary_sun_1895", (1.0, 1.05)))
+# ================================================================ O CASO REAL — Bridget Cleary
+k = I("Ballyvadlea"); C(k, ficha("BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895", "BRIDGET CLEARY")); falada(k, k + 2)
+C(I("O marido dela, Michael"), real("cleary_sun_1895", (1.05, 1.14), foco=((0.5, 0.3), (0.5, 0.36))))
+C(I("Durante noites seguidas"), img("imagens/IA02_lareira_1", (1.0, 1.07), ((0.4, 0.6), (0.38, 0.62))))
+C(I("Na frente da família"), img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.35, 0.6), (0.33, 0.62))))
+C(I("Michael foi condenado"), img("imagens/IA02_lareira_1", (1.08, 1.14), ((0.6, 0.5), (0.62, 0.48))))
+fala_filme(I("É Outra Mamãe ao contrário"), "caso_cheiro")
 # ================================================================ SPOILER
-SPOILER_I = 142
-peca(142, f"{PC}spoiler.mp4", sobra=0.0, db=-9)
-antes(142, congelado(f"{PC}spoiler.mp4"), 7.3, str(AQUI / "audio/extras/spoiler.wav"), 1, furo=True)   # o Vigia lê o aviso
-C(142, F("s_afundou"))
-fala_filme(143, "s_mar")
-C(144, F("b_avo"))
-fala_filme(145, "s_inocencia")
-C(146, F("s_confissao")); C(147, F("b_cicatriz"))
-fala_filme(149, "s_sim")
-fala_filme(151, "s_nao")
-C(152, F("s_avo")); C(153, F("b_familia_fim"))
-fala_filme(154, "s_pensar")
-C(156, F("s_escola"))
-C(157, F("pos_creditos"))      # o cartão do fim dos créditos e a Outra Mamãe no escuro
+SPOILER_I = I("No meio do filme")
+antes(SPOILER_I, {"video": f"{PC}spoiler.mp4", "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True},
+      8.3, str(AQUI / "audio/extras/spoiler_1s.wav"), 1, furo=True)   # a peça abre e o Vigia lê o aviso por cima
+fx(SPOILER_I, None, "spoiler.mp4.som", -9, atraso=-8.25, arquivo=som_de(f"{PC}spoiler.mp4"))
+GOLPES.append(SPOILER_I)
+C(SPOILER_I, F("s_afundou"))
+fala_filme(I("Para ver o mar"), "s_mar")
+C(I("Na casa da avó Ruth"), F("b_avo"))
+fala_filme(I("E a médium deixa"), "s_inocencia")
+C(I("No terço final"), F("s_confissao")); C(I("Conta que Russ"), F("b_cicatriz"))
+fala_filme(I("A menina sobe correndo"), "s_sim")
+fala_filme(I("Mas no último segundo"), "s_nao")
+C(I("Aceita ser humana"), F("s_avo")); C(I("E escolhe"), F("b_familia_fim"))
+fala_filme(I("A criatura vai embora"), "s_pensar")
+C(I("E no último discurso"), F("s_escola"))
+C(I("E depois dos créditos"), F("pos_creditos"))
 # ================================================================ LIVRO × FILME
-C(158, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO", "O LIVRO")); falada(158)
-C(160, quarto(1))
-C(161, img("imagens/IA04_corredor_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
-C(164, img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
-antes(166, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"), 5.4,
-      str(AQUI / "audio/extras/livro_filme.wav"), 1, furo=True)                                         # o Vigia lê a ficha
-C(166, F("b_quarto_portas"))
+k = I("No livro de Josh Malerman"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO", "O LIVRO")); falada(k)
+C(I("Ela diz para a menina"), quarto(1))
+C(I("Só que, no livro"), img("imagens/IA04_corredor_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
+C(I("Sozinha, ela diz sim"), img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
+k = I("Dois finais opostos")
+antes(k, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"), 5.4,
+      str(AQUI / "audio/extras/livro_filme.wav"), 1, furo=True)                                  # o Vigia lê a ficha
+C(k, F("b_quarto_portas"))
 # ================================================================ O VEREDITO
-peca(168, f"{PC}placar.mp4", sobra=1.0)
-C(169, F("b_outro_lado")); C(170, F("b_familia_fim"))
-C(171, congelado(f"{PC}placar.mp4")); C(172, F("b_uv")); C(173, F("t4_imaginaria")); C(175, congelado(f"{PC}placar.mp4"))
-peca(176, f"{PC}veredito.mp4", sobra=1.0)
+k = I("Agora junta tudo"); peca_falada(k, f"{PC}placar.mp4", entra=1.0)
+C(k + 1, F("b_outro_lado")); C(k + 2, F("b_familia_fim"))
+C(I("O duplo cai primeiro"), congelado(f"{PC}placar.mp4")); C(I("O demônio explica a permissão e as cópias, mas"), F("b_uv"))
+C(I("A tulpa chega muito perto"), F("t4_imaginaria")); C(I("Só uma teoria explica"), congelado(f"{PC}placar.mp4"))
+peca(I("O meu veredito"), f"{PC}veredito.mp4", sobra=3.0)   # silêncio com motivo: o carimbo bate, e a voz entra
 # ================================================================ POR QUE A FADA TROCADORA
-PROVAS = [180, 184, 187, 190, 195, 198, 202, 206, 209]
-DEPOIS = [  # (cena logo depois da prova, mais cenas: fala → cena) — o filme dá peso a cada prova
-    (F("b_ritual_sal"), {183: F("b_medium")}),
-    (F("b_cozinha"), {186: F("b_outro_lado")}),
-    (F("b_mesa"), {189: F("b_maos_porta")}),
-    (F("b_praca"), {192: real("cleary_sun_1895"), 193: F("b_pais_briga")}),
+PROVAS = [I(t) for t in ("Prova um.", "Prova dois.", "Prova três.", "Prova quatro.", "Prova cinco.", "Prova seis.",
+                         "Prova sete.", "Prova oito.", "Prova nove.")]
+DEPOIS = [  # (cena logo depois da prova, mais cenas) — o filme dá peso a cada prova
+    (F("b_ritual_sal"), {"A médium disse a regra": F("b_medium")}),
+    (F("b_cozinha"), {"A mãe, o babá": F("b_outro_lado")}),
+    (F("b_mesa"), {"\"Ela mora atrás": F("b_maos_porta")}),
+    (F("b_praca"), {"Foi assim com Bridget": real("cleary_sun_1895"), "A brecha não é a porta": F("b_pais_briga")}),
     (F("b_frank_fim"), {}),
-    (F("b_abraco"), {200: F("abertura")}),
-    (F("b_carro_outra"), {205: F("b_espelho")}),
-    (F("b_tunel"), {208: F("b_bolinhas")}),
-    (F("b_rosto_final"), {211: F("b_familia_fim")}),
+    (F("b_abraco"), {"Nas lendas, o povo": F("abertura")}),
+    (F("b_carro_outra"), {"No livro, a troca": F("b_espelho")}),
+    (F("b_tunel"), {"A Outra Mamãe afunda": F("b_bolinhas")}),
+    (F("b_rosto_final"), {"Quando Bela aceita": F("b_familia_fim")}),
 ]
-C(178, vigia())
+C(I("E eu não vou te deixar"), vigia())
 PORQUE = f"{PC}porque.mp4"
 for k, i in enumerate(PROVAS):   # a ficha da fada volta a cada prova e marca a linha da vez (porquê.mp4: marca k em 3+6k s)
     C(i, {"video": PORQUE, "zoom": [1.0, 1.0], "video_inicio": round(1.0 + 6 * k, 2), "sem_look": True, "entrada": "fundir",
           "duracao_entrada": 0.5})
     C(i + 1, DEPOIS[k][0])
-    for j, c in DEPOIS[k][1].items():
-        C(j, c)
+    for txt, c in DEPOIS[k][1].items():
+        C(I(txt, i), c)
     fx(i, None, "ep08_pincel", -10, atraso=2.0)
-C(212, F("b_bela_sozinha"))
-C(213, F("b_rasteja"))
-C(215, vigia())
+C(I("A tulpa explica a solidão"), F("b_bela_sozinha"))
+C(I("Mas uma tulpa nasce de alguém e some"), F("b_rasteja"))
+C(I("Uma fada, sim"), vigia())
 # ================================================================ O FECHO
-C(218, vigia((1.0, 1.05)))
-C(219, F("b_quarto_portas"))
-C(220, F("b_cicatriz"))
-C(222, F("pos_creditos"))
-C(223, vigia((1.0, 1.06)))
+C(I("A Outra Mamãe é a fada trocadora"), vigia((1.0, 1.05)))
+C(I("Ela não arromba"), F("b_quarto_portas"))
+C(I("Espera uma família"), F("b_cicatriz"))
+C(I("E depois dos créditos", I("Ela não arromba")), F("pos_creditos"))
+C(I("Enquanto uma família"), vigia((1.0, 1.06)))
 
 montar_antes()
 
@@ -586,16 +623,17 @@ def trilha_por_secoes():
         cum += batidas[i].get("pausa_antes_s", 0); T0.append(_ali[_ini[i]][0] + cum)
     fim = _ali[-1][1] + cum + 24
     nomes = [("gancho", "GANCHO"), ("apresenta", "O VIGIA APRESENTA"), ("pistas", "AS PISTAS (sem spoiler)"),
-             ("fada", "TEORIA 1 — UMA FADA QUE TROCA PESSOAS"), ("cleary", "O CASO REAL — BRIDGET CLEARY, 1895"),
-             ("duplo", "TEORIA 2 — O DUPLO"), ("demonio", "TEORIA 3 — O DEMÔNIO TRAPACEIRO"),
-             ("tulpa", "TEORIA 4 — UMA COISA CRIADA PELO DESEJO"), ("avo", "TEORIA 5 — A AVÓ DE CORALINE"),
-             ("capgras", "A CIÊNCIA — A SÍNDROME DE CAPGRAS"), ("spoiler", "⚠️ SPOILER — O FINAL EXPLICADO"),
+             ("duplo", "TEORIA 1 — O DUPLO"), ("demonio", "TEORIA 2 — O DEMÔNIO TRAPACEIRO"),
+             ("tulpa", "TEORIA 3 — UMA COISA CRIADA PELO DESEJO"), ("avo", "A AVÓ DE CORALINE"),
+             ("capgras", "A CIÊNCIA — A SÍNDROME DE CAPGRAS"), ("fada", "AS FADAS DE VERDADE"),
+             ("fada", "TEORIA 4 — UMA FADA QUE TROCA PESSOAS"), ("cleary", "O CASO REAL — BRIDGET CLEARY, 1895"),
+             ("spoiler", "⚠️ SPOILER — O FINAL EXPLICADO"),
              ("livro", "LIVRO × FILME — OS DOIS FINAIS"), ("veredito", "O VEREDITO"), ("porque", "POR QUE A FADA TROCADORA"),
              ("fecho", "O FECHO")]
     ini = [0.0] + [T0[SEC[s]] - batidas[SEC[s]].get("pausa_antes_s", 0) for _, s in nomes[1:]]
     secoes = [[n, round(ini[k], 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)] for k, (n, _) in enumerate(nomes)]
     furos = [[round(T0[i] + a, 2), round(T0[i] + b, 2)] for i, a, b in FUROS]
-    plano = {"secoes": secoes, "fim": round(fim, 2), "furos": furos, "veredito": round(T0[176] - 1.0, 2)}
+    plano = {"secoes": secoes, "fim": round(fim, 2), "furos": furos, "veredito": round(T0[I("O meu veredito")] - 1.0, 2)}
     sons = AQUI.parents[1] / "painel" / "sons"
     marca = sons / f"{TRILHA_SOM}.plano"; txt = json.dumps(plano)
     if (sons / f"{TRILHA_SOM}.mp3").exists() and marca.exists() and marca.read_text() == txt:
@@ -639,13 +677,16 @@ def conferir_clipes():
             ini.append((t, i, c))
     for k, (t, i, c) in enumerate(ini):
         v = str(c.get("video", ""))
-        if not v or v.startswith("camera3d") or c.get("congelar") or not (AQUI / v).exists():
-            continue   # congelada: o último quadro segura de propósito
+        if not v or v.startswith("camera3d") or not (AQUI / v).exists():
+            continue
+        if c.get("congelar") and not v.startswith(FP):
+            continue   # peça congelada: o último quadro segura de propósito
         fim = ini[k + 1][0] if k + 1 < len(ini) else t + 6
         d = float(sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(AQUI / v)],
                          capture_output=True, text=True).stdout) - float(c.get("video_inicio", 0))
         if d / float(c.get("velocidade", 1)) < (fim - t) + 1.2:
-            print(f"!! CLIPE CURTO fala {i}: {Path(v).name} tem {d:.1f}s, a cena pede {(fim - t) + 1.2:.1f}s — dividir a cena")
+            print(f"!! CLIPE CURTO fala {i}: {Path(v).name} tem {d:.1f}s, a cena pede {(fim - t) + 1.2:.1f}s — o filme para "
+                  f"{(fim - t) + 1.2 - d:.1f}s")
 
 
 conferir_clipes()

@@ -73,8 +73,69 @@ Ela não quer só a menina. Ela quer existir. Quer ser gente.
 E Bela diz com todas as letras o que ela quer: trocar de lugar.
 Sete pistas. Toda teoria vai ter que explicar as sete.
 
-## TEORIA 1 — UMA FADA QUE TROCA PESSOAS
+## TEORIA 1 — O DUPLO
 `[PEÇA: teoria 1]`
+`[REAL: How They Met Themselves, de Dante Gabriel Rossetti (1864)]`
+A primeira teoria é a mais simples: uma cópia. Na Irlanda, ela tem nome: o fetch.
+O fetch é o duplo de uma pessoa viva. Igual a ela, com a mesma roupa, o mesmo rosto.
+Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito. Se vê à noite, ela vai morrer em breve.
+Na Alemanha, o nome é doppelgänger: o que anda em dobro.
+`[PEÇA: checklist — O DUPLO: 1 de 7]`
+O duplo copia. Mas ele é só um aviso. Não pede, não deseja, não quer nada. E a Outra Mamãe quer muito uma coisa.
+
+## TEORIA 2 — O DEMÔNIO TRAPACEIRO
+`[PEÇA: teoria 2]`
+`[REAL: amuleto de Lamashtu, British Museum]`
+Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.
+Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas.
+As mães penduravam amuletos de pedra sobre a cama para afastá-la.
+`[REAL: amuleto medieval de proteção da mãe e da criança, Wellcome Collection]`
+Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith. E os berços ganharam amuletos com os nomes de três anjos.
+`[CENA 59:17–59:24 🔊 "Um ser ardiloso. Uma energia corrompida buscando um hospedeiro, invadindo de outro plano."]`
+E o próprio filme aposta nessa teoria. A médium Lois chama a Outra Mamãe de ser ardiloso. De demônio.
+E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.
+`[CENA 60:20–60:42 — o ritual: vela, água e sal]`
+Só que o ritual da médium, com fogo, água e sal, não espanta nada. Só faz a coisa aparecer.
+`[PEÇA: checklist — O DEMÔNIO: 4 de 7]`
+O demônio explica a permissão, as cópias, o corpo e o desejo. Mas um demônio não quer ser gente. E não precisa de uma família rachada.
+
+## TEORIA 3 — UMA COISA CRIADA PELO DESEJO
+`[PEÇA: teoria 3]`
+`[IA: um quarto de criança à noite, a porta do armário entreaberta]`
+Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.
+Ela contou que tinha criado, só com a concentração, um ser imaginário. Uma tulpa.
+Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro. E que ela levou seis meses para conseguir destruir.
+`[CENA 13:37–13:51 — os pais perguntam se é uma amiga imaginária: "Não." "Ela é muito boa em se esconder."]`
+E a Outra Mamãe parece uma tulpa. Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela. Fica mais forte quanto mais é querida.
+`[PEÇA: checklist — A TULPA: 6 de 7]`
+Seis de sete. Só não explica uma coisa: uma tulpa nasce de alguém. Ela não quer trocar de lugar com quem a criou.
+
+## A AVÓ DE CORALINE
+`[REAL: ilustração de The New Mother, Lucy Clifford (1882), e a primeira página do conto]`
+Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.
+Duas irmãs desobedecem a mãe, mesmo avisadas. E a mãe vai embora.
+No lugar dela, chega uma nova mãe. Com olhos de vidro. E um rabo de madeira que bate no chão.
+Cento e vinte anos depois, Neil Gaiman transformou essa ideia em Coraline: a outra mãe com botões no lugar dos olhos.
+E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade.
+
+## A CIÊNCIA — A SÍNDROME DE CAPGRAS
+`[IA: um retrato de família numa parede, com o rosto da mãe apagado pela luz]`
+Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.
+Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.
+A pessoa reconhece o rosto. Mas não sente mais nada ao ver aquele rosto. E a única explicação que o cérebro encontra é: "essa não é a minha mãe".
+`[CENA 29:42–29:45 🔊 "É você mesmo?"]`
+O medo do filme existe. E tem nome em todos os livros de medicina.
+
+## AS FADAS DE VERDADE
+`[CENA: o rosto da criatura]`
+E agora, a última teoria. Mas antes, esquece a fada dos contos infantis: a Sininho, a fada madrinha, a varinha que realiza sonhos.
+Essa fada boazinha é invenção recente.
+No folclore da Irlanda e da Escócia, as fadas eram temidas. Ninguém dizia o nome delas em voz alta: chamavam de "o bom povo", para não atrair a atenção.
+Elas roubavam o leite, cegavam quem as espiava, adoeciam o gado. E levavam gente.
+É por isso que ela entra nesta lista: tudo o que a Outra Mamãe faz, as fadas antigas já faziam.
+
+## TEORIA 4 — UMA FADA QUE TROCA PESSOAS
+`[PEÇA: teoria 4]`
 `[REAL: The Changeling, de Henry Füssli (1781)]`
 Na Irlanda, na Escócia e na Escandinávia, durante séculos, pais acreditaram numa coisa terrível.
 Que as fadas entravam nas casas à noite, levavam a criança, e deixavam no lugar uma cópia.
@@ -108,59 +169,6 @@ E até hoje as crianças da Irlanda cantam uma rima que nasceu desse caso:
 `[CENA 15:09–15:16 🔊 "Você está com o cheiro de outra pessoa." — "Bela, sou eu. Sou a Mamãe."]`
 É Outra Mamãe ao contrário. No filme, a filha desconfia da mãe. Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa.
 E quem pagou foi a pessoa de verdade.
-
-## TEORIA 2 — O DUPLO
-`[PEÇA: teoria 2]`
-`[REAL: How They Met Themselves, de Dante Gabriel Rossetti (1864)]`
-Os irlandeses tinham outro nome para uma cópia: o fetch.
-O fetch é o duplo de uma pessoa viva. Igual a ela, com a mesma roupa, o mesmo rosto.
-Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito. Se vê à noite, ela vai morrer em breve.
-Na Alemanha, o nome é doppelgänger: o que anda em dobro.
-`[PEÇA: checklist — O DUPLO: 1 de 7]`
-O duplo copia. Mas ele é só um aviso. Não pede, não deseja, não quer nada. E a Outra Mamãe quer muito uma coisa.
-
-## TEORIA 3 — O DEMÔNIO TRAPACEIRO
-`[PEÇA: teoria 3]`
-`[REAL: amuleto de Lamashtu, British Museum]`
-Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.
-Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas.
-As mães penduravam amuletos de pedra sobre a cama para afastá-la.
-`[REAL: amuleto medieval de proteção da mãe e da criança, Wellcome Collection]`
-Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith. E os berços ganharam amuletos com os nomes de três anjos.
-`[CENA 59:17–59:24 🔊 "Um ser ardiloso. Uma energia corrompida buscando um hospedeiro, invadindo de outro plano."]`
-E o próprio filme aposta nessa teoria. A médium Lois chama a Outra Mamãe de ser ardiloso. De demônio.
-E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.
-`[CENA 60:20–60:42 — o ritual: vela, água e sal]`
-Só que o ritual da médium, com fogo, água e sal, não espanta nada. Só faz a coisa aparecer.
-`[PEÇA: checklist — O DEMÔNIO: 4 de 7]`
-O demônio explica a permissão, as cópias, o corpo e o desejo. Mas um demônio não quer ser gente. E não precisa de uma família rachada.
-
-## TEORIA 4 — UMA COISA CRIADA PELO DESEJO
-`[PEÇA: teoria 4]`
-`[IA: um quarto de criança à noite, a porta do armário entreaberta]`
-Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.
-Ela contou que tinha criado, só com a concentração, um ser imaginário. Uma tulpa.
-Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro. E que ela levou seis meses para conseguir destruir.
-`[CENA 13:37–13:51 — os pais perguntam se é uma amiga imaginária: "Não." "Ela é muito boa em se esconder."]`
-E a Outra Mamãe parece uma tulpa. Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela. Fica mais forte quanto mais é querida.
-`[PEÇA: checklist — A TULPA: 6 de 7]`
-Seis de sete. Só não explica uma coisa: uma tulpa nasce de alguém. Ela não quer trocar de lugar com quem a criou.
-
-## TEORIA 5 — A AVÓ DE CORALINE
-`[REAL: ilustração de The New Mother, Lucy Clifford (1882), e a primeira página do conto]`
-Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.
-Duas irmãs desobedecem a mãe, mesmo avisadas. E a mãe vai embora.
-No lugar dela, chega uma nova mãe. Com olhos de vidro. E um rabo de madeira que bate no chão.
-Cento e vinte anos depois, Neil Gaiman transformou essa ideia em Coraline: a outra mãe com botões no lugar dos olhos.
-E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade.
-
-## A CIÊNCIA — A SÍNDROME DE CAPGRAS
-`[IA: um retrato de família numa parede, com o rosto da mãe apagado pela luz]`
-Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.
-Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.
-A pessoa reconhece o rosto. Mas não sente mais nada ao ver aquele rosto. E a única explicação que o cérebro encontra é: "essa não é a minha mãe".
-`[CENA 29:42–29:45 🔊 "É você mesmo?"]`
-O medo do filme existe. E tem nome em todos os livros de medicina.
 
 ## ⚠️ SPOILER — O FINAL EXPLICADO
 `[PEÇA: spoiler — "pule para mm:ss"]`

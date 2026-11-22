@@ -23,13 +23,13 @@ PRETO = (30, 26, 24)
 EP_OUTRA_MAMAE = {   # 21/11: roteiro v6 (7 pistas; placar 1 · 4 · 7 · 9)
     "pistas": ["ELA PEDE PERMISSÃO", "ELA VIRA QUEM VOCÊ AMA", "O CORPO NÃO OBEDECE", "UMA CASA CHEIA DE SEGREDOS",
                "O DESEJO DA MENINA ACONTECE", "ELA QUER SER HUMANA", "ELA QUER TROCAR DE LUGAR"],
-    "teorias": ["UMA FADA QUE TROCA PESSOAS", "O DUPLO", "O DEMÔNIO TRAPACEIRO", "UMA COISA CRIADA PELO DESEJO"],
+    "teorias": ["O DUPLO", "O DEMÔNIO TRAPACEIRO", "UMA COISA CRIADA PELO DESEJO", "UMA FADA QUE TROCA PESSOAS"],   # 22/11: a fada por último
     "itens": ["permissão", "vira quem ama", "corpo que muda", "casa com segredos", "desejo", "quer ser humana",
               "trocar de lugar"],
     "provas_final": ["o outro lado", "o \"não\" a derrota"],
     # marcas de cada teoria nas 7 pistas (roteiro: fada 7, duplo 1, demônio 4, tulpa 6)
-    "checklists": [("A FADA QUE TROCA", [1, 1, 1, 1, 1, 1, 1]), ("O DUPLO", [0, 1, 0, 0, 0, 0, 0]),
-                   ("O DEMÔNIO", [1, 1, 1, 0, 1, 0, 0]), ("A TULPA", [1, 1, 1, 1, 1, 1, 0])],
+    "checklists": [("O DUPLO", [0, 1, 0, 0, 0, 0, 0]), ("O DEMÔNIO", [1, 1, 1, 0, 1, 0, 0]),
+                   ("A TULPA", [1, 1, 1, 1, 1, 1, 0]), ("A FADA QUE TROCA", [1, 1, 1, 1, 1, 1, 1])],
     "placar": [("O DUPLO", 1), ("DEMÔNIO TRAPACEIRO", 4), ("TULPA", 7), ("FADA TROCADORA", 9)],
     "total": 9, "vencedor": 3,
     "veredito": "A OUTRA MAMÃE É UMA FADA TROCADORA",
