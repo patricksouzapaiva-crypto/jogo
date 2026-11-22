@@ -17,9 +17,9 @@ O que a pesquisa mostrou:
 ```
 O QUE É A OUTRA MAMÃE? A Verdade Que o Filme Esconde (Final Explicado)
 ```
-2ª (negação, o padrão do vídeo que mais estourou; verdadeira: o veredito é a fada do folclore, mais antiga que o demônio):
+2ª (pergunta + negação, sem entregar o veredito — 23/11: "NÃO é um demônio" contava o fim da investigação):
 ```
-A Outra Mamãe NÃO é um demônio. Ela é algo muito mais antigo (Final Explicado)
+OUTRA MAMÃE: ela NÃO é a mãe dela. Então o que é? (Final Explicado)
 ```
 3ª (o gancho do caso real, sem dizer que o filme é baseado nele):
 ```
@@ -27,10 +27,11 @@ OUTRA MAMÃE: o caso real de 1895 que explica a criatura (Final Explicado)
 ```
 Dica: suba com a 1ª e as 3 capas no "Testar e comparar". Se depois de 48–72 h a CTR estiver abaixo de 4%, troque para a 2ª.
 
-## Capas (teste A/B — as 3 vão no "Testar e comparar" do YouTube; v3: uma imagem forte, nítida, 2–4 palavras)
-- `capa_A_sorriso.jpg` — a Outra Mamãe sorrindo, "ELA NÃO É SUA MÃE"
-- `capa_B_criatura.jpg` — a criatura de perto, "O QUE ELA É?"
-- `capa_C_tunel.jpg` — Bela no túnel vermelho, "FINAL EXPLICADO"
+## Capas (v4, 23/11 — estilo dos canais grandes: quadros do filme, brilho, tarja, seta; `gerar_capas_v4.py`)
+- `capa_A_mesa.jpg` — a mãe dobrada debaixo da mesa (a cena-ícone), "O QUE ELA É?" + seta — **a principal**
+- `capa_B_sua_mae.jpg` — a criatura de perto, "ELA NÃO É SUA MÃE"
+- `capa_C_final.jpg` — a mãe | a criatura, "FINAL EXPLICADO"
+As 3 vão no "Testar e comparar" do YouTube.
 
 ## Descrição
 ```

@@ -161,15 +161,15 @@ tarja(c, "OUTRA MAMÃE", 40, 70, 50)
 seta(c, (470, 665), (745, 480), larg=24, curva=0.18)
 salvar(c, "capa_A_mesa.jpg")
 
-# B — a criatura de perto, clara e limpa, com brilho vermelho; "ELA NÃO É UM DEMÔNIO" (título 2)
+# B — a criatura de perto, clara e limpa, com brilho vermelho; "ELA NÃO É SUA MÃE" (23/11, usuário: "não é um demônio" entregava o veredito)
 im = base("q_4898.5.png", 0.0, 0.5, 1.0, espelhar=True, limpar=5, luz=2.2)
 im = grade(im, sat=1.25, contraste=1.2, brilho=1.45, tinta=(1.1, 0.97, 0.9), gama=0.8)
 mk = recorte(im, "f_criatura")
 im = vinheta(lado_escuro(im, "dir", 0.48, 0.88), 0.35, 0.3)
-c = letreiro(im, [("ELA NÃO É", MONT, 104, BRANCO), ("UM", MONT, 104, BRANCO), ("DEMÔNIO", MONT, 150, SANGUE)], W - 40, 190,
+c = letreiro(im, [("ELA NÃO É", MONT, 112, BRANCO), ("SUA MÃE", MONT, 150, SANGUE)], W - 40, 220,
              alinhar="dir", entre=1.02, brilho=(230, 20, 40))
 tarja(c, "OUTRA MAMÃE", W - 500, 70, 50, giro=3)
-salvar(c, "capa_B_demonio.jpg")
+salvar(c, "capa_B_sua_mae.jpg")
 
 # C — antes × depois: a mãe sorrindo | a coisa com o mesmo sorriso, corte inclinado; "FINAL EXPLICADO"
 e = grade(base("q_609.png", 0.0, 0.40, 1.15, limpar=3, luz=1.2), sat=1.3, contraste=1.15, brilho=1.15, tinta=(1.06, 1.0, 0.94))
