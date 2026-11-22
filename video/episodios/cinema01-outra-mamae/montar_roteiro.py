@@ -319,8 +319,8 @@ k = I("Em mil novecentos e vinte e nove"); peca_falada(k, f"{PC}teoria3.mp4")
 C(k, ficha("ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente", "TULPA")); falada(k, k + 2)
 C(I("Um monge baixinho"), F("b_rasteja"))
 C(I("E a Outra Mamãe parece uma tulpa"), F("t4_imaginaria")); C(I("Nasceu numa menina sozinha"), F("b_bela_sozinha"))
-C(I("Só não explica uma coisa"), F("b_familia"))
 checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4", ate=I("Em mil oitocentos e oitenta e dois"))
+C(I("Só não explica uma coisa"), (F("b_familia"), "tulpa"))   # 22/11: o filme volta logo depois do DESCARTADA
 # ================================================================ OS PARENTES (22/11, usuário: "não dá pra saber se é uma teoria ou várias")
 EXTRAS = AQUI / "audio/extras"
 k = I("Em mil oitocentos e oitenta e dois")
