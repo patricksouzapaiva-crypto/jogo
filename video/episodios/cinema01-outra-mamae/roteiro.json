@@ -1048,17 +1048,28 @@
   },
   {
    "fala": "E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.",
-   "cena": {
-    "video": "filmes_prontos/b_porta_azul.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "cenas": [
+    {
+     "video": "filmes_prontos/b_porta_azul.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.25
+    },
+    {
+     "video": "filmes_prontos/b_maos_porta.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "em": "atravessam"
+    }
+   ]
   },
   {
    "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada.",
