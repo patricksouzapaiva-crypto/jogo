@@ -71,7 +71,7 @@ Ela não quer só a menina. Ela quer existir. Quer ser gente.
 `[CENA 45:03–45:18 — Bela explica aos pais: "Ela quer trocar de lugar comigo. Ela vai ser eu."]`
 `[CENA 50:17 🔊 "Eu vou ser você, e você será eu."]`
 E Bela diz com todas as letras o que ela quer: trocar de lugar.
-Sete pistas. Toda teoria vai ter que explicar as sete.
+Sete pistas. Toda teoria vai ter que explicar as sete. E o final do filme ainda traz mais duas provas: essas, só depois do aviso de spoiler.
 
 ## TEORIA 1 — O DUPLO
 `[PEÇA: teoria 1]`

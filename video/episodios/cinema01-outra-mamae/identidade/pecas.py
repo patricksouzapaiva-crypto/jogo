@@ -270,7 +270,7 @@ def checklist(saida, nome, itens, marcas, tempos=None, dur=None, descartar=False
         n = int(np.clip((t - 0.9) / 2.0 * total_txt, 0, total_txt))
         if 0.9 < t < 2.95 and int(t * 18) != int((t - 1 / FPS) * 18): som(t, round(t, 3), "tecla", -12)
         for k in range(len(itens)):
-            som(t, tempos[k], "ep08_pincel", -8)
+            som(t, tempos[k], "ep08_pincel", -14)   # 22/11 (usuário: "use ele mais baixo um pouco, está muito alto")
         som(t, t_total, "ep08_carimbo", -6)
         if descartar: som(t, t_desc + 0.15, "ep08_carimbo", -2)
         chave = (n, tuple(round(lin(t, x, 0.35), 1) for x in tempos + [t_total] + ([t_desc] if descartar else [])))

@@ -19,7 +19,7 @@ import falas as F
 
 AQUI = Path(__file__).parent
 falas, SEC, DIREC, _ = F.ler()
-assert len(falas) == 240, "o ROTEIRO.md mudou: rever o mapa"
+assert len(falas) == 241, "o ROTEIRO.md mudou: rever o mapa"
 
 
 def I(comeco, depois=0):
@@ -417,7 +417,7 @@ for k, i in enumerate(PROVAS):   # a ficha da fada volta a cada prova e marca a 
     C(i + 1, DEPOIS[k][0])
     for txt, c in DEPOIS[k][1].items():
         C(I(txt, i), c)
-    fx(i, None, "ep08_pincel", -10, atraso=2.0)
+    # 22/11 (usuário): sem rabisco nas provas — a narração, a cena e a música bastam; o rabisco só onde a tela escreve
 C(I("A tulpa explica a solidão"), F("b_bela_sozinha"))
 C(I("Mas uma tulpa nasce de alguém e some"), F("b_rasteja"))
 C(I("Uma fada, sim"), vigia())
@@ -437,7 +437,7 @@ roteiro = {
     "transcrever_pedacos": 75,
     "alinhamento_forcado": True,
     "look": {"preset": "noite_fria", "forca": 0.7, "halacao": 0.25},
-    "cintilar": 0.03, "apertar_pausas": False, "digitacao_db": -19,
+    "cintilar": 0.03, "apertar_pausas": False, "digitacao_db": -23,
     "cena_minima": 4.0,
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.12,
