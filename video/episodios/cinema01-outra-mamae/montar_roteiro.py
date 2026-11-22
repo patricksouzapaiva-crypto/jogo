@@ -174,10 +174,14 @@ def peca(i, arq, sobra=1.0, db=-9):
     GOLPES.append(i)
 
 
+FALAS_FILME = []
+
+
 def fala_filme(i, nome, db=0):   # 22/11: o filme mais alto (era -4)
     """Cena 🔊: o filme fala (dublagem), a voz espera; depois a narração segue sobre o último quadro congelado."""
     d = TRECHOS[nome]["dur"]
     antes(i, filme(nome, congelar=True), d + 0.25, str(AQUI / FP / f"{nome}.wav"), db, furo=True)
+    FALAS_FILME.append((i, nome))
 
 
 def montar_antes():
@@ -224,8 +228,44 @@ def falada(i0, i1=None):
             c["falada"] = True
 
 
+# 23/11 — a NBC Universal BLOQUEOU o vídeo (Content ID visual) pelos ~6 min de filme DE FUNDO. Decisão com o usuário:
+# o filme fica só nas 18 falas-pista (comentário, 2–5 s cada, cortadas no fim da fala); todo o fundo vira ilustração
+# ORIGINAL sem rosto (gerar_ilustracoes.py → imagens/IL_<nome>_<v>.jpg). Sem a ilustração ainda, entra uma imagem
+# nossa provisória (só para o rascunho).
+ILUSTR = {"b_porta_azul": "porta_azul", "b_espelho": "espelho", "p2_almoco": "almoco", "b_cozinha": "cozinha", "b_mesa": "mesa",
+          "b_quarto_portas": "quarto_portas", "p4_segredos": "segredos", "b_pais_briga": "pais_briga",
+          "b_outra_rosto": "outra_silhueta", "b_carro_outra": "carro", "b_bela_cama": "bela_cama", "b_maos_porta": "maos_porta",
+          "b_ritual_sal": "ritual_sal", "b_uv": "uv", "b_rasteja": "rasteja", "t4_imaginaria": "maquete",
+          "b_bela_sozinha": "bela_sozinha", "b_familia": "botas", "b_praca": "praca", "b_outro_lado": "outro_lado",
+          "s_afundou": "afundou", "b_avo": "avo", "s_confissao": "confissao", "b_cicatriz": "cicatriz", "s_avo": "maos_avo",
+          "b_familia_fim": "familia_fim", "s_escola": "escola", "pos_creditos": "pos_creditos", "b_medium": "medium",
+          "b_frank_fim": "frank", "b_abraco": "abraco", "b_tunel": "tunel", "b_bolinhas": "bolinhas",
+          "b_rosto_final": "espelho_rachado"}
+RABO = {"g_boanoite": "bela_cama", "g_coracao": "porta_azul", "p1_coracao": "maos_porta", "p1_medium": "medium",
+        "p2_kelvin": "cozinha", "p5_frank": "frank", "p6_pessoa": "abraco", "p7_trocar": "espelho", "t3_ardiloso": "medium",
+        "capgras": "praca", "caso_cheiro": "lareira", "s_mar": "mar", "s_inocencia": "medium", "s_sim": "escada",
+        "s_nao": "maos_avo", "s_pensar": "cicatriz"}
+PROVISORIA = ["identidade/brutas/ID03_quarto_1.png", "imagens/IA04_corredor_1.jpg", "identidade/brutas/ID21_armario_vazio_1.png",
+              "imagens/IA04_corredor_2.jpg", "identidade/brutas/ID03_quarto_2.png", "identidade/brutas/ID21_armario_vazio_2.png"]
+_USO = {}
+_MOV = [((1.0, 1.08), ((0.5, 0.5), (0.52, 0.47))), ((1.08, 1.0), ((0.45, 0.55), (0.5, 0.5))),
+        ((1.0, 1.07), ((0.4, 0.5), (0.46, 0.5))), ((1.0, 1.07), ((0.6, 0.5), (0.54, 0.5)))]
+
+
+def ilustr(chave):
+    """a ilustração da vez: alterna as versões _1/_2 e o movimento de câmera a cada uso"""
+    if chave == "lareira":
+        return img("imagens/IA02_lareira_2", (1.0, 1.07), ((0.4, 0.55), (0.44, 0.58)))
+    n = _USO[chave] = _USO.get(chave, 0) + 1
+    arq = f"imagens/IL_{chave}_{2 - n % 2}.jpg"
+    if not (AQUI / arq).exists():
+        arq = PROVISORIA[sum(_USO.values()) % len(PROVISORIA)]
+    z, foco = _MOV[(n + len(chave)) % len(_MOV)]
+    return img(arq, z, foco)
+
+
 def F(nome, **kw):
-    return filme(nome, **kw)
+    return ilustr(ILUSTR[nome])
 
 
 def congelado(arq, menos=0.4):
@@ -283,7 +323,7 @@ C(I("Bem-vindo de volta"), vigia())
 k = I("Outra Mamãe estreou"); C(k, ficha("OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain", "OUTRA MAMÃE")); falada(k, k + 1)
 k = I("O filme é baseado"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)", "INCIDENTS AROUND THE HOUSE")); falada(k)
 k = I("A crítica odiou"); C(k, ficha("CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões", "17%")); falada(k, k + 2)
-C(I("E repara na frase"), F("abertura"))
+k = I("E repara na frase"); C(k, ficha("\"UMA CHANCE DE SER HUMANO.\nO MILAGRE QUE CONFUNDIMOS\nCOM ALGO CORRIQUEIRO.\"\n— a frase que abre o filme", "UMA CHANCE DE SER HUMANO")); falada(k)
 C(I("Guarda essa frase"), vigia((1.0, 1.05)))
 # ================================================================ AS PISTAS
 for n, txt in enumerate(("Pista um.", "Pista dois.", "Pista três.", "Pista quatro.", "Pista cinco.", "Pista seis.", "Pista sete."), 1):
@@ -399,7 +439,7 @@ DEPOIS = [  # (cena logo depois da prova, mais cenas) — o filme dá peso a cad
     (F("b_mesa"), {"\"Ela mora atrás": F("b_maos_porta")}),
     (F("b_praca"), {"Foi assim com Bridget": real("cleary_sun_1895"), "A brecha não é a porta": F("b_pais_briga")}),
     (F("b_frank_fim"), {}),
-    (F("b_abraco"), {"Nas lendas, o povo": F("abertura")}),
+    (F("b_abraco"), {"Nas lendas, o povo": ilustr("outra_silhueta")}),
     (F("b_carro_outra"), {"No livro, a troca": F("b_espelho")}),
     (F("b_tunel"), {"A Outra Mamãe afunda": F("b_bolinhas")}),
     (F("b_rosto_final"), {"Quando Bela aceita": F("b_familia_fim")}),
@@ -422,6 +462,10 @@ C(I("Ela não arromba"), F("b_quarto_portas"))
 C(I("Espera uma família"), F("b_cicatriz"))
 C(I("E depois dos créditos", I("Ela não arromba")), F("pos_creditos"))
 C(I("Enquanto uma família"), vigia((1.0, 1.06)))
+
+for _i, _n in FALAS_FILME:   # 23/11: o filme corta no fim da fala — a narração segue sobre a ilustração (antes: 12 s de filme)
+    if not cenas_de(batidas[_i]):
+        C(_i, ilustr(RABO[_n]))
 
 montar_antes()
 
