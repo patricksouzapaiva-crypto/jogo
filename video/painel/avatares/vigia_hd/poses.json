@@ -7,7 +7,7 @@
    "topo": 12,
    "centro_x": 536.0,
    "largura_cabeca": 497.0,
-   "grupo": "conversa"
+   "grupo": "triste"
   },
   "c_cafe_convite": {
    "w": 1023,
@@ -108,7 +108,7 @@
    "topo": 12,
    "centro_x": 541.5,
    "largura_cabeca": 474.0,
-   "grupo": "conversa"
+   "grupo": "triste"
   },
   "c_oferecendo": {
    "w": 1004,

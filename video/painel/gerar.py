@@ -607,7 +607,7 @@ DICAS_CONVERSA = [
     (r"\?", ["c_dar_de_ombros", "c_mao_aberta_lado"]),
     (r"\b(nao|nunca|nenhum|nenhuma|ninguem|nada|vazio|vazia)\b", ["c_serio_frontal", "c_desconfiado_lado", "c_preocupado"]),
     (r"\b(madrugada|noite|chovia|chuva|estrada|ceu)\b", ["c_olhar_cima", "c_falando_olhar_lado"]),
-    (r"\b(certeza|sozinho|sabia|achava)\b", ["c_mao_no_peito", "c_falando_inclinado"]),
+    (r"\b(certeza|sozinho|sabia|achava)\b", ["c_falando", "c_serio_frontal"]),
     (r"\b(duas|tres|uma|primeira|segunda|cada)\b", ["c_dedo_explicando"]),
     (r"\b(olhou|olhar|olhando|viu|ver)\b", ["c_falando_olhar_lado", "c_desconfiado_lado"]),
     (r"\b(seguinte|depois|entao|quando)\b", ["c_falando", "c_oferecendo"]),
@@ -1583,7 +1583,9 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
                "cenas": [{"t0": round(c.get("t0", 0), 2), "tipo": c.get("tipo") or ("vigia" if c.get("vigia") else
                           "video" if c.get("quadros") else "imagem"), "arquivo": Path(str(c.get("video") or c.get("imagem") or "")).name,
                           "kanji": [k.get("texto") for k in (c.get("kanji") or [])] if isinstance(c.get("kanji"), list) else [],
-                          "entrada": c.get("entrada")} for c in D.get("cenas", [])]},
+                          "entrada": c.get("entrada")} for c in D.get("cenas", [])],
+               # 22/11: legendas que entraram (para conferir fala sem legenda)
+               "legendas": [[round(L["t0"], 2), round(L["t1"], 2), " / ".join(L["linhas"])] for L in D.get("legendas", [])]},
               open(str(saida) + ".tempos.json", "w"), ensure_ascii=False)
     if not os.environ.get("MANTER_TEMP"):  # 10/11: cada render deixava 1,5–2,5 GB em /tmp e o disco encheu
         shutil.rmtree(tmp, ignore_errors=True)
