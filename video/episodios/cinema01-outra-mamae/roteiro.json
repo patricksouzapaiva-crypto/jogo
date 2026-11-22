@@ -67,7 +67,7 @@
     {
      "em": null,
      "som": "g_boanoite",
-     "volume_db": 0,
+     "volume_db": 5,
      "depois": false,
      "atraso": -6.6,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/g_boanoite.wav"
@@ -863,15 +863,6 @@
      "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "video": "filmes_prontos/p2_almoco.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true,
-     "em": "cópia"
     }
    ],
    "pausa_antes_s": 2.45
@@ -1379,20 +1370,6 @@
   {
    "fala": "E agora, a última teoria.",
    "cena": {
-    "video": "filmes_prontos/b_rosto_final.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Mas antes, esquece a fada dos contos infantis: a Sininho, a fada madrinha, a varinha que realiza sonhos.",
-   "cena": {
     "imagem": "../../painel/cenarios/abrigo_16x9.png",
     "vigia": true,
     "zoom": [
@@ -1413,6 +1390,9 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    }
+  },
+  {
+   "fala": "Mas antes, esquece a fada dos contos infantis: a Sininho, a fada madrinha, a varinha que realiza sonhos."
   },
   {
    "fala": "Essa fada boazinha é invenção recente."
@@ -2260,7 +2240,7 @@
      "som": "livro_filme",
      "volume_db": 1,
      "depois": false,
-     "atraso": -5.35,
+     "atraso": -5.95,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/livro_filme.wav"
     }
    ],
@@ -2271,7 +2251,7 @@
      "estilo": "maquina",
      "vermelho": "A MENINA VENCE",
      "cps": 40,
-     "antecipar": 5.4,
+     "antecipar": 6.0,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2284,8 +2264,7 @@
      "congelar": true
     }
    ],
-   "pausa_antes_s": 5.75,
-   "sem_legenda": true
+   "pausa_antes_s": 6.35
   },
   {
    "fala": "Mas as regras são as mesmas nos dois: ela só entra com um sim, e o que ela quer é o lugar da menina."
