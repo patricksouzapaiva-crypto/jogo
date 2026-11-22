@@ -82,9 +82,10 @@ texto(b, ["ELA NÃO É", "SUA MÃE"], 60, 175, [148, 168], [BRANCO, AMARELO])
 salvar(b, "capa_A_sorriso.jpg")
 
 # B — a criatura de perto, iluminada e limpa do grão, fria; a pergunta do vídeo
-a = quadro("q_4903.png", 0.62, 0.42, 1.05, limpar=10, luz="auto")
-a = cor_cinema(a, sombras=(0.85, 0.95, 1.12), luzes=(1.02, 1.0, 0.98), sat=0.7, contraste=1.25, brilho=1.15, vx=0.4)
-a = lado_escuro(a, "dir", 0.42, 0.85)
+a = quadro("q_4898.5.png", 0.0, 0.5, 1.0, limpar=4, luz=2.1)   # 1:21:38 — o sorriso da criatura, o quadro mais claro e nítido
+a = a[:, ::-1]   # espelhado: o rosto vai para a esquerda e o texto fica no escuro da direita
+a = cor_cinema(a, sombras=(0.9, 0.98, 1.08), luzes=(1.06, 1.0, 0.95), sat=0.9, contraste=1.08, brilho=1.12, vx=0.4)
+a = lado_escuro(a, "dir", 0.38, 0.8)
 b = tela(a)
 texto(b, ["O QUE", "ELA É?"], W - 60, 175, [150, 170], [BRANCO, AMARELO], alinhar="dir")
 salvar(b, "capa_B_criatura.jpg")
