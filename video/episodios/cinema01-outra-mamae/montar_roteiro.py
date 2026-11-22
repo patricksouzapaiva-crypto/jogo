@@ -19,7 +19,7 @@ import falas as F
 
 AQUI = Path(__file__).parent
 falas, SEC, DIREC, _ = F.ler()
-assert len(falas) == 241, "o ROTEIRO.md mudou: rever o mapa"
+assert len(falas) == 249, "o ROTEIRO.md mudou: rever o mapa"
 
 
 def I(comeco, depois=0):
@@ -319,15 +319,13 @@ k = I("Em mil novecentos e vinte e nove"); peca_falada(k, f"{PC}teoria3.mp4")
 C(k, ficha("ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente", "TULPA")); falada(k, k + 2)
 C(I("Um monge baixinho"), F("b_rasteja"))
 C(I("E a Outra Mamãe parece uma tulpa"), F("t4_imaginaria")); C(I("Nasceu numa menina sozinha"), F("b_bela_sozinha"))
-checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4", ate=I("Em mil oitocentos e oitenta e dois"))
+checklist_falado(I("Seis de sete."), f"{PC}checklist3.mp4", ate=I("Antes da última teoria"))
 C(I("Só não explica uma coisa"), (F("b_familia"), "tulpa"))   # 22/11: o filme volta logo depois do DESCARTADA
 # ================================================================ OS PARENTES (22/11, usuário: "não dá pra saber se é uma teoria ou várias")
-EXTRAS = AQUI / "audio/extras"
-k = I("Em mil oitocentos e oitenta e dois")
-antes(k, ficha("ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA", "DOIS PARENTES"), 8.0,
-      str(EXTRAS / "parentes_1.wav"), 0, furo=True)
-k = I("Em mil novecentos e vinte e três")
-antes(k, ficha("2 · NA MEDICINA", "NA MEDICINA"), 3.6, str(EXTRAS / "parentes_2.wav"), 0, furo=True)
+# r7: as falas das fichas estão NA narração (mesma leitura do TTS) — antes eram gravações à parte e a voz mudava
+k = I("Antes da última teoria"); C(k, ficha("ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA", "DOIS PARENTES"))
+falada(k, k + 2)
+k = I("O segundo parente vem da medicina"); C(k, ficha("2 · NA MEDICINA", "NA MEDICINA")); falada(k)
 # ================================================================ A AVÓ DE CORALINE
 C(I("Em mil oitocentos e oitenta e dois"), real("new_mother_n23", (1.0, 1.05)))
 C(I("No lugar dela, chega"), real("new_mother_n26", (1.0, 1.07)))
@@ -365,10 +363,8 @@ fala_filme(I("É Outra Mamãe ao contrário"), "caso_cheiro")
 C(I("Em mil oitocentos e noventa e cinco, o marido"), F("b_pais_briga"))
 # ================================================================ SPOILER
 SPOILER_I = I("No meio do filme")
-antes(SPOILER_I, {"video": f"{PC}spoiler.mp4", "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True},
-      8.3, str(AQUI / "audio/extras/spoiler_1s.wav"), 1, furo=True)   # a peça abre e o Vigia lê o aviso por cima
-fx(SPOILER_I, None, "spoiler.mp4.som", -9, atraso=-8.25, arquivo=som_de(f"{PC}spoiler.mp4"))
-GOLPES.append(SPOILER_I)
+k = I("Atenção: a partir daqui")   # r7: o aviso é lido na própria narração, sobre a peça (sem legenda: está na tela)
+peca_falada(k, f"{PC}spoiler.mp4", entra=1.2); falada(k, k + 1)
 C(SPOILER_I, F("s_afundou"))
 fala_filme(I("Para ver o mar"), "s_mar")
 C(I("Na casa da avó Ruth"), F("b_avo"))
@@ -385,10 +381,9 @@ k = I("No livro de Josh Malerman"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh
 C(I("Ela diz para a menina"), quarto(1))
 C(I("Só que, no livro"), img("imagens/IA04_corredor_1", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
 C(I("Sozinha, ela diz sim"), img("imagens/IA04_corredor_2", (1.0, 1.1), ((0.5, 0.5), (0.5, 0.48))))
-k = I("Dois finais opostos")
-antes(k, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"), 6.0,
-      str(AQUI / "audio/extras/livro_filme.wav"), 1, furo=True)                                  # o Vigia lê a ficha
-C(k, F("b_quarto_portas"))
+k = I("No livro, a criatura vence"); C(k, ficha("NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE", "A MENINA VENCE"))
+falada(k, k + 1)
+C(I("Dois finais opostos"), F("b_quarto_portas"))
 # ================================================================ O VEREDITO
 k = I("Agora junta tudo"); peca_falada(k, f"{PC}placar.mp4", entra=1.0)
 C(k + 1, F("b_outro_lado")); C(k + 2, F("b_familia_fim"))

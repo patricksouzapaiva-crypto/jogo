@@ -111,6 +111,8 @@ E a Outra Mamãe parece uma tulpa. Nasceu numa menina sozinha, numa casa onde ni
 Seis de sete. Só não explica uma coisa: uma tulpa nasce de alguém. Ela não quer trocar de lugar com quem a criou.
 
 ## A AVÓ DE CORALINE
+`FICHA (lida): ANTES DA ÚLTIMA TEORIA: DOIS PARENTES DA OUTRA MAMÃE · 1 · NA LITERATURA`
+Antes da última teoria, duas paradas. Não são teorias: são parentes da Outra Mamãe. O primeiro vem da literatura.
 `[REAL: ilustração de The New Mother, Lucy Clifford (1882), e a primeira página do conto]`
 Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.
 Duas irmãs desobedecem a mãe, mesmo avisadas. E a mãe vai embora.
@@ -119,6 +121,8 @@ Cento e vinte anos depois, Neil Gaiman transformou essa ideia em Coraline: a out
 E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade.
 
 ## A CIÊNCIA — A SÍNDROME DE CAPGRAS
+`FICHA (lida): 2 · NA MEDICINA`
+O segundo parente vem da medicina.
 `[IA: um retrato de família numa parede, com o rosto da mãe apagado pela luz]`
 Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.
 Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.
@@ -172,6 +176,7 @@ E quem pagou foi a pessoa de verdade.
 
 ## ⚠️ SPOILER — O FINAL EXPLICADO
 `[PEÇA: spoiler — "pule para mm:ss"]`
+Atenção: a partir daqui, spoiler do final. Se você ainda não viu o filme, pula para o tempo que está na tela.
 `[CENA 51:19 — "Aquilo afundou com ela." / 52:18 🔊 "Bela, vamos ver o mar?"]`
 No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo. Para ver o mar.
 `[CENA 57:33–57:52 — a avó Ruth: "Ninguém passa pela vida sem algumas cicatrizes… É isso que significa ser humano."]`
@@ -202,6 +207,7 @@ Só que, no livro, aquela avó era a Outra Mamãe.
 Naquela noite, escondida no armário, Bela ouve a criatura chamar os pais com a voz da avó. E ouve o que acontece com eles.
 Sozinha, ela diz sim. E acorda num lugar enorme e vazio, enquanto, do lado de fora, no corpo dela, alguém treina a voz da Bela.
 `FICHA: NO LIVRO, A CRIATURA VENCE · NO FILME, A MENINA VENCE`
+No livro, a criatura vence. No filme, a menina vence.
 Dois finais opostos. Mas as regras são as mesmas nos dois: ela só entra com um sim, e o que ela quer é o lugar da menina.
 
 ## O VEREDITO

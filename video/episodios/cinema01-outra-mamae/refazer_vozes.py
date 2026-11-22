@@ -16,6 +16,7 @@ AQUI = Path(__file__).parent; A = AQUI / "audio"; X = A / "extras"
 FERR = AQUI.parents[1] / "painel" / "ferramentas" / "narrar_fluxo.py"
 LIMPA = "afftdn=nr=12:nf=-50"   # a mesma limpeza da narração principal (narrar.py)
 SR = 48000
+CTX = int(os.environ.get("CTX", 12))   # 22/11: com só 3 frases o TTS lia mais devagar e mais "teatral" que a narração (medido: 2,5 × 3,8 pal/s)
 src = (AQUI / "narrar.py").read_text()
 ns = {"__file__": str(AQUI / "narrar.py"), "__name__": "narrar_funcs"}
 ns.update(re=re, subprocess=subprocess, np=np, unicodedata=__import__("unicodedata"), _modelo=None)
@@ -23,9 +24,9 @@ exec(src[src.index("norm = lambda"):src.index("\n", src.index("norm = lambda"))]
 exec(src[src.index("def palavras"):src.index("def texto")], ns)   # só as funções; o resto do narrar.py não roda
 palavras, achar, norm = ns["palavras"], ns["achar"], ns["norm"]
 
-novo_md = (AQUI / "ROTEIRO.md").read_text()
-shutil.copy(AQUI / "ROTEIRO_r5.md", AQUI / "ROTEIRO.md"); importlib.reload(F); velho = F.ler()[0] + [F.VINHETA]
-(AQUI / "ROTEIRO.md").write_text(novo_md); importlib.reload(F); novo, sec, direc, _ = F.ler(); novo = novo + [F.VINHETA]
+novo, sec, direc, _ = F.ler(); novo = novo + [F.VINHETA]
+velho = list(novo)   # a trilha atual já segue o ROTEIRO.md (alinhamento.json atual); só os pedaços refeitos mudam
+SO = set(filter(None, os.environ.get("SO", "").split(",")))   # SO=parentes,livro: refaz só esses (teste)
 QUEBRAS = set(sec.values()) | set(direc)
 I = lambda c: next(i for i, f in enumerate(novo) if f.startswith(c))
 tts_txt = lambda f: F.para_tts(f).strip()
@@ -54,7 +55,9 @@ def tts(texto, bruto):
 
 def gerar_com_contexto(nome, i_ctx, partes):
     """partes = textos novos (cada um vira um pedaço); devolve [áudio de cada parte] já limpo, a 48 kHz."""
-    ctx = " ".join(tts_txt(f) for f in novo[i_ctx - 3:i_ctx])
+    ctx = ""
+    for i in range(i_ctx - CTX, i_ctx):   # o contexto com os mesmos parágrafos da narração principal
+        ctx += ("" if i == i_ctx - CTX else ("\n\n" if i in QUEBRAS else " ")) + tts_txt(novo[i])
     bruto = X / f"ctx_{nome}.wav"
     corpo = ""
     for j, p in enumerate(partes):   # p = texto, ou (texto, parágrafo_novo): respiro maior só onde o roteiro tem seção/cena
@@ -99,6 +102,8 @@ refeitas = {}
 g1 = list(range(I("Toda teoria vai ter que explicar"), I("O fetch é o duplo")))
 g2 = list(range(I("E agora, a última teoria"), I("Na Irlanda, na Escócia e na Escandinávia")))
 for nome, g in (("duplo", g1), ("fadas", g2)):
+    if SO and nome not in SO:
+        continue
     # cada fala é um pedaço; parágrafo novo onde o roteiro tem seção/cena (como no narrar.py)
     for j, a in zip(g, gerar_com_contexto(nome, g[0], [(novo[i], i in QUEBRAS) for i in g])):
         refeitas[j] = a
@@ -109,10 +114,11 @@ for i, f in enumerate(novo):
         saida.append(a)
     else:
         saida.append(seg[f].pop(0))
-if not (A / "voz_r5.wav").exists():
-    shutil.copy(A / "voz_com_vinheta_limpa.wav", A / "voz_r5.wav")
-gravar(np.concatenate(saida), A / "voz_com_vinheta_limpa.wav")
-print("narração:", round(sum(len(x) for x in saida) / SR, 1), "s")
+if refeitas:
+    if not (A / "voz_r5.wav").exists():
+        shutil.copy(A / "voz_com_vinheta_limpa.wav", A / "voz_r5.wav")
+    gravar(np.concatenate(saida), A / "voz_com_vinheta_limpa.wav")
+    print("narração:", round(sum(len(x) for x in saida) / SR, 1), "s")
 
 # ---- 3) as falas das fichas (lidas numa pausa da narração)
 EXTRAS = {
@@ -123,8 +129,11 @@ EXTRAS = {
     "spoiler": (I("No meio do filme"), ["Atenção: a partir daqui, spoiler do final. Se você ainda não viu o filme, pula para o tempo que está na tela."]),
 }
 for nome, (i, txt) in EXTRAS.items():
+    if SO and nome not in SO:
+        continue
     a, = gerar_com_contexto(nome, i, txt)
     destino = {"parentes": "parentes_1", "parentes2": "parentes_2", "livro": "livro_filme", "spoiler": "spoiler"}[nome]
     gravar(a, X / f"{destino}.wav")
-gravar(np.concatenate([np.zeros(SR, np.int16), ler(X / "spoiler.wav")]), X / "spoiler_1s.wav")
+if not SO or "spoiler" in SO:
+    gravar(np.concatenate([np.zeros(SR, np.int16), ler(X / "spoiler.wav")]), X / "spoiler_1s.wav")
 print("ok")

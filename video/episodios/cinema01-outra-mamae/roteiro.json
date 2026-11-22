@@ -13,7 +13,7 @@
  },
  "cintilar": 0.03,
  "apertar_pausas": false,
- "digitacao_db": -19,
+ "digitacao_db": -23,
  "cena_minima": 4.0,
  "vigia_padrao": false,
  "cauda": 1.6,
@@ -839,6 +839,9 @@
    "fala": "Toda teoria vai ter que explicar as sete."
   },
   {
+   "fala": "E o final do filme ainda traz mais duas provas: essas, só depois do aviso de spoiler."
+  },
+  {
    "fala": "A primeira teoria é a mais simples: uma cópia.",
    "sons": [
     {
@@ -987,7 +990,7 @@
       1.0,
       1.035
      ],
-     "em": "mães"
+     "em": "Lamashtu"
     }
    ]
   },
@@ -1221,7 +1224,7 @@
     "sem_look": true,
     "entrada": "fundir",
     "duracao_entrada": 0.4,
-    "video_inicio": 0.47
+    "video_inicio": 1.0
    },
    "sons": [
     {
@@ -1261,38 +1264,40 @@
    "fala": "Ela não quer trocar de lugar com quem a criou."
   },
   {
+   "fala": "Antes da última teoria, duas paradas.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA",
+    "estilo": "maquina",
+    "vermelho": "DOIS PARENTES",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não são teorias: são parentes da Outra Mamãe.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "O primeiro vem da literatura.",
+   "sem_legenda": true
+  },
+  {
    "fala": "Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.",
-   "sons": [
-    {
-     "em": null,
-     "som": "parentes_1",
-     "volume_db": 0,
-     "depois": false,
-     "atraso": -7.95,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/parentes_1.wav",
-     "na_voz": true
-    }
-   ],
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "ANTES DA ÚLTIMA TEORIA:\nDOIS PARENTES DA OUTRA MAMÃE\n1 · NA LITERATURA",
-     "estilo": "maquina",
-     "vermelho": "DOIS PARENTES",
-     "cps": 40,
-     "antecipar": 8.0,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "imagem": "reais_prontos/new_mother_n23.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ]
-    }
-   ],
-   "pausa_antes_s": 8.35
+   "cena": {
+    "imagem": "reais_prontos/new_mother_n23.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Duas irmãs desobedecem a mãe, mesmo avisadas."
@@ -1349,39 +1354,33 @@
    }
   },
   {
+   "fala": "O segundo parente vem da medicina.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "2 · NA MEDICINA",
+    "estilo": "maquina",
+    "vermelho": "NA MEDICINA",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
    "fala": "Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.",
-   "sons": [
-    {
-     "em": null,
-     "som": "parentes_2",
-     "volume_db": 0,
-     "depois": false,
-     "atraso": -3.55,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/parentes_2.wav",
-     "na_voz": true
-    }
-   ],
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "2 · NA MEDICINA",
-     "estilo": "maquina",
-     "vermelho": "NA MEDICINA",
-     "cps": 40,
-     "antecipar": 3.6,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "tipo": "texto",
-     "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
-     "estilo": "maquina",
-     "vermelho": "CAPGRAS",
-     "cps": 40,
-     "falada": true
-    }
-   ],
-   "pausa_antes_s": 3.95,
+   "cena": {
+    "tipo": "texto",
+    "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
+    "estilo": "maquina",
+    "vermelho": "CAPGRAS",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
    "sem_legenda": true
   },
   {
@@ -1585,7 +1584,7 @@
       1.0,
       1.06
      ],
-     "em": "acreditaram"
+     "em": "pais"
     }
    ],
    "pausa_antes_s": 2.45
@@ -1722,7 +1721,10 @@
    }
   },
   {
-   "fala": "Um presente aceito.",
+   "fala": "Um presente aceito."
+  },
+  {
+   "fala": "Um sim.",
    "cena": {
     "video": "identidade/pecas/v6/checklist4.mp4",
     "zoom": [
@@ -1733,7 +1735,8 @@
     "congelar": true,
     "sem_look": true,
     "entrada": "fundir",
-    "duracao_entrada": 0.4
+    "duracao_entrada": 0.4,
+    "video_inicio": 1.09
    },
    "sons": [
     {
@@ -1745,9 +1748,6 @@
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist4.mp4.som.wav"
     }
    ]
-  },
-  {
-   "fala": "Um sim."
   },
   {
    "fala": "E quando faziam um acordo, cumpriam o desejo."
@@ -2001,24 +2001,15 @@
    "fala": "E quem pagou foi a pessoa de verdade."
   },
   {
-   "fala": "No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo.",
+   "fala": "Atenção: a partir daqui, spoiler do final.",
    "sons": [
     {
      "em": null,
      "som": "spoiler.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -8.25,
+     "atraso": -1.15,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/spoiler.mp4.som.wav"
-    },
-    {
-     "em": null,
-     "som": "spoiler_1s",
-     "volume_db": 0,
-     "depois": false,
-     "atraso": -8.25,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/spoiler_1s.wav",
-     "na_voz": true
     }
    ],
    "cenas": [
@@ -2031,20 +2022,31 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 8.3,
+     "antecipar": 1.2,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "video": "filmes_prontos/s_afundou.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true
     }
    ],
-   "pausa_antes_s": 8.65
+   "pausa_antes_s": 1.55,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Se você ainda não viu o filme, pula para o tempo que está na tela.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo.",
+   "cena": {
+    "video": "filmes_prontos/s_afundou.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Para ver o mar.",
@@ -2375,39 +2377,37 @@
    "fala": "E acorda num lugar enorme e vazio, enquanto, do lado de fora, no corpo dela, alguém treina a voz da Bela."
   },
   {
+   "fala": "No livro, a criatura vence.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE",
+    "estilo": "maquina",
+    "vermelho": "A MENINA VENCE",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "No filme, a menina vence.",
+   "sem_legenda": true
+  },
+  {
    "fala": "Dois finais opostos.",
-   "sons": [
-    {
-     "em": null,
-     "som": "livro_filme",
-     "volume_db": 0,
-     "depois": false,
-     "atraso": -5.95,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/livro_filme.wav",
-     "na_voz": true
-    }
-   ],
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "NO LIVRO, A CRIATURA VENCE\nNO FILME, A MENINA VENCE",
-     "estilo": "maquina",
-     "vermelho": "A MENINA VENCE",
-     "cps": 40,
-     "antecipar": 6.0,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "video": "filmes_prontos/b_quarto_portas.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true
-    }
-   ],
-   "pausa_antes_s": 6.35
+   "cena": {
+    "video": "filmes_prontos/b_quarto_portas.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Mas as regras são as mesmas nos dois: ela só entra com um sim, e o que ela quer é o lugar da menina."
@@ -2604,16 +2604,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "As fadas não podiam levar quem estava protegido.",
@@ -2659,16 +2650,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "O trocado chegava com o rosto da criança, e as fadas chamavam as pessoas para fora de casa com a voz de alguém da família.",
@@ -2711,16 +2693,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "As fadas não tinham tamanho fixo: podiam parecer gente, ou caber atrás de uma porta.",
@@ -2763,16 +2736,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "As trocas aconteciam nas casas onde algo já estava errado: uma criança sozinha, uma mãe ausente, uma família em crise.",
@@ -2831,16 +2795,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "As fadas cumpriam desejos, e sempre cobravam.",
@@ -2872,16 +2827,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "\"Não me permitiram ser uma pessoa.\"",
@@ -2927,16 +2873,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "\"Ela vai ser eu.\"",
@@ -2982,16 +2919,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "As fadas levavam as pessoas para baixo da terra, para além do mar.",
@@ -3034,16 +2962,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.5,
     "antecipar": 0.25
-   },
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_pincel",
-     "volume_db": -10,
-     "depois": false,
-     "atraso": 2.0
-    }
-   ]
+   }
   },
   {
    "fala": "Fada nenhuma leva quem não se entrega.",

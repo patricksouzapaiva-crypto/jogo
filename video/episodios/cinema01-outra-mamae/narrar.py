@@ -16,7 +16,8 @@ SR = 24000
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 norm = lambda s: re.sub(r"[^a-z0-9 ]", "", unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode())
 fl, sec, direc, _ = F.ler()
-CORTES = [0, sec["TEORIA 1 — UMA FADA QUE TROCA PESSOAS"], sec["TEORIA 3 — O DEMÔNIO TRAPACEIRO"],
+# 22/11 (r7): roteiro reordenado + as falas das fichas DENTRO da narração (antes eram gravações à parte, com outra voz)
+CORTES = [0, sec["TEORIA 1 — O DUPLO"], sec["A CIÊNCIA — A SÍNDROME DE CAPGRAS"],
           sec["⚠️ SPOILER — O FINAL EXPLICADO"], sec["POR QUE A FADA TROCADORA"], len(fl)]
 QUEBRAS = set(sec.values()) | set(direc)   # parágrafo novo (respiro) a cada seção e a cada cena/peça
 _modelo = None

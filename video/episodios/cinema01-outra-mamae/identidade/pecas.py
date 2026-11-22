@@ -27,10 +27,10 @@ EP_OUTRA_MAMAE = {   # 21/11: roteiro v6 (7 pistas; placar 1 · 4 · 7 · 9)
     "itens": ["permissão", "vira quem ama", "corpo que muda", "casa com segredos", "desejo", "quer ser humana",
               "trocar de lugar"],
     "provas_final": ["o outro lado", "o \"não\" a derrota"],
-    # marcas de cada teoria nas 7 pistas (roteiro: fada 7, duplo 1, demônio 4, tulpa 6)
+    # marcas de cada teoria nas 7 pistas (roteiro: fada 7, duplo 1, demônio 4, tulpa 6); no placar, + as 2 provas do final (só a fada)
     "checklists": [("O DUPLO", [0, 1, 0, 0, 0, 0, 0]), ("O DEMÔNIO", [1, 1, 1, 0, 1, 0, 0]),
                    ("A TULPA", [1, 1, 1, 1, 1, 1, 0]), ("A FADA QUE TROCA", [1, 1, 1, 1, 1, 1, 1])],
-    "placar": [("O DUPLO", 1), ("DEMÔNIO TRAPACEIRO", 4), ("TULPA", 7), ("FADA TROCADORA", 9)],
+    "placar": [("O DUPLO", 1), ("DEMÔNIO TRAPACEIRO", 4), ("TULPA", 6), ("FADA TROCADORA", 9)],
     "total": 9, "vencedor": 3,
     "veredito": "A OUTRA MAMÃE É UMA FADA TROCADORA",
 }
