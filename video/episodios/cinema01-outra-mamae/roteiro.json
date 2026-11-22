@@ -67,7 +67,7 @@
     {
      "em": null,
      "som": "g_boanoite",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -6.6,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/g_boanoite.wav"
@@ -84,13 +84,6 @@
      "antecipar": 6.65,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID03_quarto_1.png",
-     "zoom": [
-      1.0,
-      1.07
-     ]
     }
    ],
    "pausa_antes_s": 7.0
@@ -101,9 +94,9 @@
     {
      "em": null,
      "som": "g_coracao",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
-     "atraso": -6.6,
+     "atraso": -3.1,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/g_coracao.wav"
     }
    ],
@@ -115,12 +108,12 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 6.65,
+     "antecipar": 3.15,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 7.0
+   "pausa_antes_s": 3.5
   },
   {
    "fala": "A voz da mãe dela."
@@ -131,21 +124,12 @@
   {
    "fala": "O filme dá um nome para essa coisa.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_1.png",
+    "video": "filmes_prontos/b_porta_azul.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
-    "foco": [
-     [
-      0.5,
-      0.5
-     ],
-     [
-      0.5,
-      0.42
-     ]
-    ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -157,21 +141,12 @@
   {
    "fala": "Mas em nenhum momento ele diz o que ela é.",
    "cena": {
-    "imagem": "identidade/brutas/ID20_outra_mamae_1.png",
+    "video": "filmes_prontos/b_espelho.mp4",
     "zoom": [
      1.0,
-     1.1
+     1.0
     ],
-    "foco": [
-     [
-      0.5,
-      0.45
-     ],
-     [
-      0.5,
-      0.35
-     ]
-    ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -188,7 +163,7 @@
      "som": "abertura_v2.mp4.som",
      "volume_db": -7,
      "depois": false,
-     "atraso": -15.63,
+     "atraso": -11.63,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/abertura_v2.mp4.som.wav"
     }
    ],
@@ -202,7 +177,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 15.68,
+     "antecipar": 11.68,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -222,10 +197,11 @@
        0.57,
        0.48
       ]
-     ]
+     ],
+     "em": "Abrigo"
     }
    ],
-   "pausa_antes_s": 16.03
+   "pausa_antes_s": 12.03
   },
   {
    "fala": "Esta é a primeira noite de um arquivo novo aqui no canal."
@@ -238,150 +214,60 @@
   },
   {
    "fala": "Outra Mamãe estreou em outubro de dois mil e vinte e seis.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain",
-     "estilo": "maquina",
-     "vermelho": "OUTRA MAMÃE",
-     "cps": 40,
-     "antecipar": 9.2,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.04
-     ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "em": "Outra",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 9.2
-  },
-  {
-   "fala": "Direção de Rob Savage, produção de James Wan, e Jessica Chastain no papel das duas mães: a verdadeira, e a outra.",
    "cena": {
-    "imagem": "../../painel/cenarios/abrigo_16x9.png",
-    "vigia": true,
-    "zoom": [
-     1.0,
-     1.05
-    ],
-    "foco": [
-     [
-      0.55,
-      0.5
-     ],
-     [
-      0.57,
-      0.48
-     ]
-    ],
+    "tipo": "texto",
+    "texto": "OUTRA MAMÃE (Other Mommy) · 2026\nDireção: Rob Savage · Produção: James Wan\nJessica Chastain",
+    "estilo": "maquina",
+    "vermelho": "OUTRA MAMÃE",
+    "cps": 40,
+    "falada": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
-   }
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Direção de Rob Savage, produção de James Wan, e Jessica Chastain no papel das duas mães: a verdadeira, e a outra.",
+   "sem_legenda": true
   },
   {
    "fala": "O filme é baseado no livro Incidents Around the House, de Josh Malerman, o mesmo autor de Caixa de Pássaros.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)",
-     "estilo": "maquina",
-     "vermelho": "INCIDENTS AROUND THE HOUSE",
-     "cps": 40,
-     "antecipar": 9.0,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "em": "O",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 9.0
+   "cena": {
+    "tipo": "texto",
+    "texto": "INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\n(o mesmo autor de Caixa de Pássaros)",
+    "estilo": "maquina",
+    "vermelho": "INCIDENTS AROUND THE HOUSE",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
    "fala": "A crítica odiou: dezessete por cento de aprovação.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões",
-     "estilo": "maquina",
-     "vermelho": "17%",
-     "cps": 40,
-     "antecipar": 5.9,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "../../painel/cenarios/abrigo_16x9.png",
-     "vigia": true,
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "foco": [
-      [
-       0.55,
-       0.5
-      ],
-      [
-       0.57,
-       0.48
-      ]
-     ],
-     "em": "A",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 5.9
+   "cena": {
+    "tipo": "texto",
+    "texto": "CRÍTICA: 17% de aprovação\nESTREIA: US$ 45 milhões",
+    "estilo": "maquina",
+    "vermelho": "17%",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
-   "fala": "Mas o público lotou as salas."
+   "fala": "Mas o público lotou as salas.",
+   "sem_legenda": true
   },
   {
-   "fala": "Quarenta e cinco milhões de dólares na estreia."
+   "fala": "Quarenta e cinco milhões de dólares na estreia.",
+   "sem_legenda": true
   },
   {
    "fala": "E repara na frase que abre o filme: \"Uma chance de ser humano. O milagre que confundimos com algo corriqueiro. É cobiçada tanto por deuses como por demônios.\"",
@@ -435,7 +321,7 @@
      "som": "pista1.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista1.mp4.som.wav"
     }
    ],
@@ -449,12 +335,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Ela nunca entra à força.",
@@ -462,7 +348,7 @@
     {
      "em": null,
      "som": "p1_coracao",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -4.7,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p1_coracao.wav"
@@ -495,7 +381,7 @@
     {
      "em": null,
      "som": "p1_medium",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -3.3,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p1_medium.wav"
@@ -524,7 +410,7 @@
      "som": "pista2.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista2.mp4.som.wav"
     }
    ],
@@ -538,12 +424,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Primeiro ela vira a mãe.",
@@ -560,7 +446,18 @@
    }
   },
   {
-   "fala": "A mãe que nunca está em casa, de repente, volta para almoçar."
+   "fala": "A mãe que nunca está em casa, de repente, volta para almoçar.",
+   "cena": {
+    "video": "filmes_prontos/b_cozinha.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Depois o babá, Kelvin.",
@@ -568,7 +465,7 @@
     {
      "em": null,
      "som": "p2_kelvin",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -9.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p2_kelvin.wav"
@@ -603,7 +500,7 @@
      "som": "pista3.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista3.mp4.som.wav"
     }
    ],
@@ -617,17 +514,17 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Ela cresce, encolhe, se dobra, desliza.",
    "cena": {
-    "video": "filmes_prontos/p3_grande.mp4",
+    "video": "filmes_prontos/b_mesa.mp4",
     "zoom": [
      1.0,
      1.0
@@ -641,11 +538,12 @@
   {
    "fala": "E Bela diz onde ela mora: \"atrás das nossas portas\".",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "video": "filmes_prontos/b_quarto_portas.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -659,7 +557,7 @@
      "som": "pista4.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista4.mp4.som.wav"
     }
    ],
@@ -673,12 +571,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Ela não aparece numa casa feliz.",
@@ -695,7 +593,18 @@
    }
   },
   {
-   "fala": "Aparece numa casa onde a mãe nunca está, onde o pai fuma escondido, e onde cada adulto guarda um segredo."
+   "fala": "Aparece numa casa onde a mãe nunca está, onde o pai fuma escondido, e onde cada adulto guarda um segredo.",
+   "cena": {
+    "video": "filmes_prontos/b_pais_briga.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Pista cinco. O desejo da menina acontece.",
@@ -705,7 +614,7 @@
      "som": "pista5.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista5.mp4.som.wav"
     }
    ],
@@ -719,12 +628,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Bela faz um pedido.",
@@ -732,7 +641,7 @@
     {
      "em": null,
      "som": "p5_frank",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -6.0,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p5_frank.wav"
@@ -764,7 +673,7 @@
      "som": "pista6.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista6.mp4.som.wav"
     }
    ],
@@ -778,12 +687,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Ela não quer só a menina.",
@@ -791,7 +700,7 @@
     {
      "em": null,
      "som": "p6_pessoa",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -7.55,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p6_pessoa.wav"
@@ -799,7 +708,7 @@
     {
      "em": null,
      "som": "p6_existir",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -3.8,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p6_existir.wav"
@@ -845,7 +754,7 @@
      "som": "pista7.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.35,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/pista7.mp4.som.wav"
     }
    ],
@@ -859,12 +768,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.4,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 4.75
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "E Bela diz com todas as letras o que ela quer: trocar de lugar.",
@@ -872,7 +781,7 @@
     {
      "em": null,
      "som": "p7_trocar",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -7.25,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p7_trocar.wav"
@@ -880,7 +789,7 @@
     {
      "em": null,
      "som": "p7_eu",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -3.8,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/p7_eu.wav"
@@ -915,11 +824,12 @@
   {
    "fala": "Sete pistas.",
    "cena": {
-    "imagem": "identidade/brutas/ID02_quadro_1.png",
+    "video": "filmes_prontos/b_outra_rosto.mp4",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -929,14 +839,14 @@
    "fala": "Toda teoria vai ter que explicar as sete."
   },
   {
-   "fala": "Na Irlanda, na Escócia e na Escandinávia, durante séculos, pais acreditaram numa coisa terrível.",
+   "fala": "A primeira teoria é a mais simples: uma cópia.",
    "sons": [
     {
      "em": null,
      "som": "teoria1.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -3.55,
+     "atraso": -2.05,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria1.mp4.som.wav"
     }
    ],
@@ -950,7 +860,652 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 3.6,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "video": "filmes_prontos/p2_almoco.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "em": "cópia"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Na Irlanda, ela tem nome: o fetch.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva",
+    "estilo": "maquina",
+    "vermelho": "o duplo",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "O fetch é o duplo de uma pessoa viva.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Igual a ela, com a mesma roupa, o mesmo rosto.",
+   "cena": {
+    "video": "filmes_prontos/b_carro_outra.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito.",
+   "cena": {
+    "video": "identidade/pecas/v6/checklist1.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist1.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist1.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Se vê à noite, ela vai morrer em breve."
+  },
+  {
+   "fala": "Na Alemanha, o nome é doppelgänger: o que anda em dobro."
+  },
+  {
+   "fala": "O duplo copia."
+  },
+  {
+   "fala": "Mas ele é só um aviso."
+  },
+  {
+   "fala": "Não pede, não deseja, não quer nada.",
+   "cena": {
+    "video": "filmes_prontos/b_abraco.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a Outra Mamãe quer muito uma coisa."
+  },
+  {
+   "fala": "Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria2.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria2.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/v6/teoria2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "reais_prontos/lamashtu_bm.jpg",
+     "zoom": [
+      1.0,
+      1.035
+     ],
+     "em": "tinham"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas."
+  },
+  {
+   "fala": "As mães penduravam amuletos de pedra sobre a cama para afastá-la."
+  },
+  {
+   "fala": "Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith.",
+   "cena": {
+    "imagem": "reais_prontos/amuleto_mae_bebe_wellcome.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E os berços ganharam amuletos com os nomes de três anjos."
+  },
+  {
+   "fala": "E o próprio filme aposta nessa teoria.",
+   "sons": [
+    {
+     "em": null,
+     "som": "t3_ardiloso",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -5.7,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/t3_ardiloso.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/t3_ardiloso.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 5.75,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 6.1
+  },
+  {
+   "fala": "A médium Lois chama a Outra Mamãe de ser ardiloso."
+  },
+  {
+   "fala": "De demônio."
+  },
+  {
+   "fala": "E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados.",
+   "cena": {
+    "video": "identidade/pecas/v6/checklist2.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist2.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist2.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada."
+  },
+  {
+   "fala": "Só faz a coisa aparecer."
+  },
+  {
+   "fala": "O demônio explica a permissão, as cópias, o corpo e o desejo."
+  },
+  {
+   "fala": "Mas um demônio não quer ser gente."
+  },
+  {
+   "fala": "E não precisa de uma família rachada.",
+   "cena": {
+    "video": "filmes_prontos/b_pai_sofa.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria3.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria3.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/v6/teoria3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "tipo": "texto",
+     "texto": "ALEXANDRA DAVID-NÉEL · 1929\nMystiques et magiciens du Tibet\nTULPA: um ser criado pela mente",
+     "estilo": "maquina",
+     "vermelho": "TULPA",
+     "cps": 40,
+     "falada": true,
+     "em": "exploradora"
+    }
+   ],
+   "pausa_antes_s": 2.45,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela contou que tinha criado, só com a concentração, um ser imaginário.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Uma tulpa.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro.",
+   "cena": {
+    "video": "filmes_prontos/b_rasteja.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E que ela levou seis meses para conseguir destruir."
+  },
+  {
+   "fala": "E a Outra Mamãe parece uma tulpa.",
+   "cena": {
+    "video": "identidade/pecas/v6/checklist3.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist3.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist3.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela."
+  },
+  {
+   "fala": "Fica mais forte quanto mais é querida."
+  },
+  {
+   "fala": "Seis de sete."
+  },
+  {
+   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém.",
+   "cena": {
+    "video": "filmes_prontos/b_familia.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela não quer trocar de lugar com quem a criou."
+  },
+  {
+   "fala": "Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.",
+   "cena": {
+    "imagem": "reais_prontos/new_mother_n23.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Duas irmãs desobedecem a mãe, mesmo avisadas."
+  },
+  {
+   "fala": "E a mãe vai embora."
+  },
+  {
+   "fala": "No lugar dela, chega uma nova mãe.",
+   "cena": {
+    "imagem": "reais_prontos/new_mother_n26.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Com olhos de vidro."
+  },
+  {
+   "fala": "E um rabo de madeira que bate no chão."
+  },
+  {
+   "fala": "Cento e vinte anos depois, Neil Gaiman transformou essa ideia em Coraline: a outra mãe com botões no lugar dos olhos.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "THE NEW MOTHER (1882) → CORALINE (2002) → OUTRA MAMÃE (2026)",
+    "estilo": "maquina",
+    "vermelho": "OUTRA MAMÃE",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade.",
+   "cena": {
+    "video": "filmes_prontos/b_outra_rosto.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
+    "estilo": "maquina",
+    "vermelho": "CAPGRAS",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.",
+   "cena": {
+    "imagem": "imagens/IA03_retrato_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.6,
+      0.42
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A pessoa reconhece o rosto."
+  },
+  {
+   "fala": "Mas não sente mais nada ao ver aquele rosto.",
+   "cena": {
+    "video": "filmes_prontos/b_praca.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a única explicação que o cérebro encontra é: \"essa não é a minha mãe\"."
+  },
+  {
+   "fala": "O medo do filme existe.",
+   "sons": [
+    {
+     "em": null,
+     "som": "capgras",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -2.7,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/capgras.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/capgras.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 2.75,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 3.1
+  },
+  {
+   "fala": "E tem nome em todos os livros de medicina."
+  },
+  {
+   "fala": "E agora, a última teoria.",
+   "cena": {
+    "video": "filmes_prontos/b_rosto_final.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas antes, esquece a fada dos contos infantis: a Sininho, a fada madrinha, a varinha que realiza sonhos.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Essa fada boazinha é invenção recente."
+  },
+  {
+   "fala": "No folclore da Irlanda e da Escócia, as fadas eram temidas.",
+   "cena": {
+    "imagem": "reais_prontos/fussli_changeling.jpg",
+    "zoom": [
+     1.08,
+     1.16
+    ],
+    "foco": [
+     [
+      0.4,
+      0.4
+     ],
+     [
+      0.42,
+      0.36
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ninguém dizia o nome delas em voz alta: chamavam de \"o bom povo\", para não atrair a atenção."
+  },
+  {
+   "fala": "Elas roubavam o leite, cegavam quem as espiava, adoeciam o gado.",
+   "cena": {
+    "imagem": "imagens/IA01_berco_2.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.62,
+      0.52
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E levavam gente."
+  },
+  {
+   "fala": "É por isso que ela entra nesta lista: tudo o que a Outra Mamãe faz, as fadas antigas já faziam.",
+   "cena": {
+    "video": "filmes_prontos/b_maos_porta.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Na Irlanda, na Escócia e na Escandinávia, durante séculos, pais acreditaram numa coisa terrível.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria4.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria4.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/v6/teoria4.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -960,44 +1515,32 @@
       1.0,
       1.06
      ],
-     "em": "Escandinávia"
+     "em": "séculos"
     }
    ],
-   "pausa_antes_s": 3.95
+   "pausa_antes_s": 2.45
   },
   {
    "fala": "Que as fadas entravam nas casas à noite, levavam a criança, e deixavam no lugar uma cópia."
   },
   {
    "fala": "Os irlandeses chamavam essa cópia de changeling.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "CHANGELING (Irlanda) · BORTBYTING (Suécia)\n\"o trocado\"",
-     "estilo": "maquina",
-     "vermelho": "o trocado",
-     "cps": 40,
-     "antecipar": 5.7,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/fussli_changeling.jpg",
-     "zoom": [
-      1.0,
-      1.06
-     ],
-     "em": "Os",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 5.7
+   "cena": {
+    "tipo": "texto",
+    "texto": "CHANGELING (Irlanda) · BORTBYTING (Suécia)\n\"o trocado\"",
+    "estilo": "maquina",
+    "vermelho": "o trocado",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
-   "fala": "Os suecos, de bortbyting."
+   "fala": "Os suecos, de bortbyting.",
+   "sem_legenda": true
   },
   {
    "fala": "O trocado.",
@@ -1055,7 +1598,18 @@
    "fala": "Porque, nas lendas, o povo das fadas cobiçava aquilo que não tinha: uma vida humana."
   },
   {
-   "fala": "E elas viviam do outro lado: debaixo da terra, atrás das colinas, dentro dos fortes de terra."
+   "fala": "E elas viviam do outro lado: debaixo da terra, atrás das colinas, dentro dos fortes de terra.",
+   "cena": {
+    "video": "filmes_prontos/b_outro_lado.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Às vezes, do outro lado do mar."
@@ -1063,21 +1617,12 @@
   {
    "fala": "Mas tem um detalhe que quase ninguém conta.",
    "cena": {
-    "imagem": "imagens/IA01_berco_2.jpg",
+    "video": "filmes_prontos/b_ritual_sal.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
-    "foco": [
-     [
-      0.6,
-      0.5
-     ],
-     [
-      0.62,
-      0.52
-     ]
-    ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -1093,7 +1638,29 @@
    "fala": "Então elas esperavam uma brecha."
   },
   {
-   "fala": "Uma porta aberta."
+   "fala": "Uma porta aberta.",
+   "cena": {
+    "video": "identidade/pecas/v6/checklist4.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist4.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist4.mp4.som.wav"
+    }
+   ]
   },
   {
    "fala": "Um presente aceito."
@@ -1108,73 +1675,46 @@
    "fala": "Sempre cobrando um preço."
   },
   {
-   "fala": "Sete de sete.",
-   "sons": [
-    {
-     "em": null,
-     "som": "checklist1.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -8.0,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist1.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/checklist1.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 8.05,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 8.4
+   "fala": "Sete de sete."
   },
   {
    "fala": "Guarda isso."
   },
   {
-   "fala": "Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou num tribunal."
+   "fala": "Mas, em mil oitocentos e noventa e cinco, essa crença saiu do folclore e entrou num tribunal.",
+   "cena": {
+    "imagem": "reais_prontos/cleary_sun_1895.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "Ballyvadlea, condado de Tipperary, Irlanda."
+   "fala": "Ballyvadlea, condado de Tipperary, Irlanda.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895",
+    "estilo": "maquina",
+    "vermelho": "BRIDGET CLEARY",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
    "fala": "Março de mil oitocentos e noventa e cinco.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "BRIDGET CLEARY · 26 anos\nBallyvadlea, Tipperary, Irlanda · março de 1895",
-     "estilo": "maquina",
-     "vermelho": "BRIDGET CLEARY",
-     "cps": 40,
-     "antecipar": 7.7,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/cleary_sun_1895.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "em": "Março",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 7.7
+   "sem_legenda": true
   },
   {
-   "fala": "Bridget Cleary, vinte e seis anos, costureira, adoeceu depois de passar perto de um forte das fadas, um círculo de terra antigo que os moradores evitavam."
+   "fala": "Bridget Cleary, vinte e seis anos, costureira, adoeceu depois de passar perto de um forte das fadas, um círculo de terra antigo que os moradores evitavam.",
+   "sem_legenda": true
   },
   {
    "fala": "O marido dela, Michael, chamou um \"médico das fadas\", um curandeiro da região chamado Denis Ganey.",
@@ -1266,10 +1806,20 @@
   {
    "fala": "Michael foi condenado por homicídio culposo e passou quinze anos na prisão.",
    "cena": {
-    "imagem": "reais_prontos/cleary_sun_1895.jpg",
+    "imagem": "imagens/IA02_lareira_1.jpg",
     "zoom": [
-     1.0,
-     1.05
+     1.08,
+     1.14
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.62,
+      0.48
+     ]
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -1288,7 +1838,7 @@
     {
      "em": null,
      "som": "caso_cheiro",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -10.1,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/caso_cheiro.wav"
@@ -1313,577 +1863,21 @@
    "fala": "No filme, a filha desconfia da mãe."
   },
   {
-   "fala": "Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa."
+   "fala": "Em mil oitocentos e noventa e cinco, o marido desconfiou da esposa.",
+   "cena": {
+    "video": "filmes_prontos/b_pais_briga.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "E quem pagou foi a pessoa de verdade."
-  },
-  {
-   "fala": "Os irlandeses tinham outro nome para uma cópia: o fetch.",
-   "sons": [
-    {
-     "em": null,
-     "som": "teoria2.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -3.55,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria2.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/teoria2.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 3.6,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "tipo": "texto",
-     "texto": "FETCH (Irlanda) · DOPPELGÄNGER (Alemanha)\no duplo de uma pessoa viva",
-     "estilo": "maquina",
-     "vermelho": "o duplo",
-     "cps": 40,
-     "em": "para"
-    }
-   ],
-   "pausa_antes_s": 3.95
-  },
-  {
-   "fala": "O fetch é o duplo de uma pessoa viva.",
-   "pausa_antes_s": 1.2
-  },
-  {
-   "fala": "Igual a ela, com a mesma roupa, o mesmo rosto."
-  },
-  {
-   "fala": "Se você vê o fetch de alguém de manhã, essa pessoa vai viver muito."
-  },
-  {
-   "fala": "Se vê à noite, ela vai morrer em breve.",
-   "cena": {
-    "video": "filmes_prontos/p2_almoco.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Na Alemanha, o nome é doppelgänger: o que anda em dobro."
-  },
-  {
-   "fala": "O duplo copia.",
-   "sons": [
-    {
-     "em": null,
-     "som": "checklist2.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -8.0,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist2.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/checklist2.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 8.05,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 8.4
-  },
-  {
-   "fala": "Mas ele é só um aviso."
-  },
-  {
-   "fala": "Não pede, não deseja, não quer nada."
-  },
-  {
-   "fala": "E a Outra Mamãe quer muito uma coisa."
-  },
-  {
-   "fala": "Há quatro mil anos, na Mesopotâmia, as mães tinham medo de Lamashtu.",
-   "sons": [
-    {
-     "em": null,
-     "som": "teoria3.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -3.55,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria3.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/teoria3.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 3.6,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "imagem": "reais_prontos/lamashtu_bm.jpg",
-     "zoom": [
-      1.0,
-      1.035
-     ],
-     "em": "Mesopotâmia"
-    }
-   ],
-   "pausa_antes_s": 3.95
-  },
-  {
-   "fala": "Um demônio com cabeça de leoa que entrava nas casas para tomar os recém-nascidos e atacar as grávidas."
-  },
-  {
-   "fala": "As mães penduravam amuletos de pedra sobre a cama para afastá-la."
-  },
-  {
-   "fala": "Séculos depois, no folclore judaico, o mesmo medo ganhou outro nome: Lilith.",
-   "cena": {
-    "imagem": "reais_prontos/amuleto_mae_bebe_wellcome.jpg",
-    "zoom": [
-     1.0,
-     1.06
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "E os berços ganharam amuletos com os nomes de três anjos."
-  },
-  {
-   "fala": "E o próprio filme aposta nessa teoria.",
-   "sons": [
-    {
-     "em": null,
-     "som": "t3_ardiloso",
-     "volume_db": -4,
-     "depois": false,
-     "atraso": -5.7,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/t3_ardiloso.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "filmes_prontos/t3_ardiloso.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true,
-     "antecipar": 5.75,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 6.1
-  },
-  {
-   "fala": "A médium Lois chama a Outra Mamãe de ser ardiloso."
-  },
-  {
-   "fala": "De demônio."
-  },
-  {
-   "fala": "E existe uma regra muito antiga sobre demônios, do vampiro eslavo aos espíritos das soleiras: eles não atravessam a porta se não forem convidados."
-  },
-  {
-   "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada.",
-   "cena": {
-    "video": "filmes_prontos/t3_ritual.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Só faz a coisa aparecer."
-  },
-  {
-   "fala": "O demônio explica a permissão, as cópias, o corpo e o desejo.",
-   "sons": [
-    {
-     "em": null,
-     "som": "checklist3.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -8.0,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist3.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/checklist3.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 8.05,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 8.4
-  },
-  {
-   "fala": "Mas um demônio não quer ser gente."
-  },
-  {
-   "fala": "E não precisa de uma família rachada."
-  },
-  {
-   "fala": "Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.",
-   "sons": [
-    {
-     "em": null,
-     "som": "teoria4.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -3.55,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/teoria4.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/teoria4.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 3.6,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    },
-    {
-     "imagem": "identidade/brutas/ID03_quarto_2.png",
-     "zoom": [
-      1.0,
-      1.07
-     ],
-     "em": "exploradora"
-    }
-   ],
-   "pausa_antes_s": 3.95
-  },
-  {
-   "fala": "Ela contou que tinha criado, só com a concentração, um ser imaginário.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "ALEXANDRA DAVID-NÉEL\nMystiques et magiciens du Tibet · 1929\nTULPA: um ser criado pela mente",
-     "estilo": "maquina",
-     "vermelho": "TULPA",
-     "cps": 40,
-     "antecipar": 9.2,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "identidade/brutas/ID03_quarto_2.png",
-     "zoom": [
-      1.0,
-      1.07
-     ],
-     "em": "Ela",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 9.2
-  },
-  {
-   "fala": "Uma tulpa."
-  },
-  {
-   "fala": "Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro.",
-   "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
-    "zoom": [
-     1.0,
-     1.07
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "E que ela levou seis meses para conseguir destruir."
-  },
-  {
-   "fala": "E a Outra Mamãe parece uma tulpa.",
-   "cena": {
-    "video": "filmes_prontos/t4_imaginaria.mp4",
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "congelar": true,
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela."
-  },
-  {
-   "fala": "Fica mais forte quanto mais é querida."
-  },
-  {
-   "fala": "Seis de sete.",
-   "sons": [
-    {
-     "em": null,
-     "som": "checklist4.mp4.som",
-     "volume_db": -9,
-     "depois": false,
-     "atraso": -8.0,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/checklist4.mp4.som.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "identidade/pecas/v6/checklist4.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "tipo_cartao": true,
-     "congelar": true,
-     "sem_look": true,
-     "antecipar": 8.05,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 8.4
-  },
-  {
-   "fala": "Só não explica uma coisa: uma tulpa nasce de alguém."
-  },
-  {
-   "fala": "Ela não quer trocar de lugar com quem a criou."
-  },
-  {
-   "fala": "Em mil oitocentos e oitenta e dois, uma escritora inglesa chamada Lucy Clifford publicou um conto infantil que traumatizou gerações.",
-   "cena": {
-    "imagem": "reais_prontos/new_mother_n23.jpg",
-    "zoom": [
-     1.0,
-     1.05
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Duas irmãs desobedecem a mãe, mesmo avisadas."
-  },
-  {
-   "fala": "E a mãe vai embora."
-  },
-  {
-   "fala": "No lugar dela, chega uma nova mãe.",
-   "cena": {
-    "imagem": "reais_prontos/new_mother_n26.jpg",
-    "zoom": [
-     1.0,
-     1.07
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "Com olhos de vidro."
-  },
-  {
-   "fala": "E um rabo de madeira que bate no chão."
-  },
-  {
-   "fala": "Cento e vinte anos depois, Neil Gaiman transformou essa ideia em Coraline: a outra mãe com botões no lugar dos olhos.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "THE NEW MOTHER (1882) → CORALINE (2002) → OUTRA MAMÃE (2026)",
-     "estilo": "maquina",
-     "vermelho": "OUTRA MAMÃE",
-     "cps": 40,
-     "antecipar": 7.1,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/new_mother_n26.jpg",
-     "zoom": [
-      1.0,
-      1.07
-     ],
-     "em": "Cento",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 7.1
-  },
-  {
-   "fala": "E Outra Mamãe é a neta dessa linhagem: a mãe que é perfeita demais para ser verdade."
-  },
-  {
-   "fala": "Em mil novecentos e vinte e três, o psiquiatra francês Joseph Capgras descreveu uma paciente que jurava que o marido e a filha tinham sido trocados por sósias perfeitos.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "SÍNDROME DE CAPGRAS\nJoseph Capgras · 1923\n\"o meu parente foi trocado por um sósia\"",
-     "estilo": "maquina",
-     "vermelho": "CAPGRAS",
-     "cps": 40,
-     "antecipar": 8.9,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/new_mother_n26.jpg",
-     "zoom": [
-      1.0,
-      1.07
-     ],
-     "em": "Em",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 8.9
-  },
-  {
-   "fala": "Hoje sabemos que isso acontece de verdade, depois de lesões ou doenças no cérebro.",
-   "cena": {
-    "imagem": "imagens/IA03_retrato_1.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.55,
-      0.45
-     ],
-     [
-      0.6,
-      0.42
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "A pessoa reconhece o rosto."
-  },
-  {
-   "fala": "Mas não sente mais nada ao ver aquele rosto.",
-   "cena": {
-    "imagem": "imagens/IA03_retrato_2.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "foco": [
-     [
-      0.45,
-      0.5
-     ],
-     [
-      0.45,
-      0.46
-     ]
-    ],
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
-  },
-  {
-   "fala": "E a única explicação que o cérebro encontra é: \"essa não é a minha mãe\"."
-  },
-  {
-   "fala": "O medo do filme existe.",
-   "sons": [
-    {
-     "em": null,
-     "som": "capgras",
-     "volume_db": -4,
-     "depois": false,
-     "atraso": -2.7,
-     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/capgras.wav"
-    }
-   ],
-   "cenas": [
-    {
-     "video": "filmes_prontos/capgras.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true,
-     "antecipar": 2.75,
-     "antecipar_fixo": true,
-     "entrada": "corte"
-    }
-   ],
-   "pausa_antes_s": 3.1
-  },
-  {
-   "fala": "E tem nome em todos os livros de medicina."
   },
   {
    "fala": "No meio do filme, a Outra Mamãe afunda com Bela pelo chão de um parquinho e a leva para um lugar que não é deste mundo.",
@@ -1893,8 +1887,16 @@
      "som": "spoiler.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -4.75,
+     "atraso": -8.25,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/spoiler.mp4.som.wav"
+    },
+    {
+     "em": null,
+     "som": "spoiler_1s",
+     "volume_db": 1,
+     "depois": false,
+     "atraso": -8.25,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/spoiler_1s.wav"
     }
    ],
    "cenas": [
@@ -1907,7 +1909,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 4.8,
+     "antecipar": 8.3,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1917,11 +1919,10 @@
       1.0,
       1.0
      ],
-     "congelar": true,
-     "em": "meio"
+     "congelar": true
     }
    ],
-   "pausa_antes_s": 5.15
+   "pausa_antes_s": 8.65
   },
   {
    "fala": "Para ver o mar.",
@@ -1929,7 +1930,7 @@
     {
      "em": null,
      "som": "s_mar",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -3.6,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/s_mar.wav"
@@ -1953,7 +1954,7 @@
   {
    "fala": "Na casa da avó Ruth, Bela ouve uma lição que vai salvar a vida dela.",
    "cena": {
-    "video": "filmes_prontos/s_ruth.mp4",
+    "video": "filmes_prontos/b_avo.mp4",
     "zoom": [
      1.0,
      1.0
@@ -1970,7 +1971,7 @@
     {
      "em": null,
      "som": "s_inocencia",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -4.5,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/s_inocencia.wav"
@@ -2006,7 +2007,18 @@
    }
   },
   {
-   "fala": "Conta que Russ não é o pai biológico de Bela."
+   "fala": "Conta que Russ não é o pai biológico de Bela.",
+   "cena": {
+    "video": "filmes_prontos/b_cicatriz.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "E que ela nunca quis ser mãe."
@@ -2017,7 +2029,7 @@
     {
      "em": null,
      "som": "s_sim",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -6.2,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/s_sim.wav"
@@ -2047,7 +2059,7 @@
     {
      "em": null,
      "som": "s_nao",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -8.2,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/s_nao.wav"
@@ -2064,23 +2076,37 @@
      "antecipar": 8.25,
      "antecipar_fixo": true,
      "entrada": "corte"
-    },
-    {
-     "video": "filmes_prontos/s_avo.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true
     }
    ],
    "pausa_antes_s": 8.6
   },
   {
-   "fala": "Aceita ser humana, com mentiras e cicatrizes."
+   "fala": "Aceita ser humana, com mentiras e cicatrizes.",
+   "cena": {
+    "video": "filmes_prontos/s_avo.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "E escolhe \"não\"."
+   "fala": "E escolhe \"não\".",
+   "cena": {
+    "video": "filmes_prontos/b_familia_fim.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "A criatura vai embora, mas deixa uma marca na mãe.",
@@ -2088,7 +2114,7 @@
     {
      "em": null,
      "som": "s_pensar",
-     "volume_db": -4,
+     "volume_db": 0,
      "depois": false,
      "atraso": -5.1,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/filmes_prontos/s_pensar.wav"
@@ -2142,32 +2168,18 @@
   },
   {
    "fala": "No livro de Josh Malerman, o final é outro.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO",
-     "estilo": "maquina",
-     "vermelho": "O LIVRO",
-     "cps": 40,
-     "antecipar": 6.7,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "video": "filmes_prontos/pos_creditos.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true,
-     "em": "No",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 6.7
+   "cena": {
+    "tipo": "texto",
+    "texto": "INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO",
+    "estilo": "maquina",
+    "vermelho": "O LIVRO",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
   },
   {
    "fala": "Segundo os resumos do livro, a família volta para casa e a avó está esperando por eles."
@@ -2242,7 +2254,16 @@
   },
   {
    "fala": "Dois finais opostos.",
-   "sem_legenda": true,
+   "sons": [
+    {
+     "em": null,
+     "som": "livro_filme",
+     "volume_db": 1,
+     "depois": false,
+     "atraso": -5.35,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/audio/extras/livro_filme.wav"
+    }
+   ],
    "cenas": [
     {
      "tipo": "texto",
@@ -2250,33 +2271,21 @@
      "estilo": "maquina",
      "vermelho": "A MENINA VENCE",
      "cps": 40,
-     "antecipar": 6.6,
+     "antecipar": 5.4,
      "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
+     "entrada": "corte"
     },
     {
-     "imagem": "imagens/IA04_corredor_2.jpg",
+     "video": "filmes_prontos/b_quarto_portas.mp4",
      "zoom": [
       1.0,
-      1.1
+      1.0
      ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.48
-      ]
-     ],
-     "em": "Dois",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "congelar": true
     }
    ],
-   "pausa_antes_s": 6.6
+   "pausa_antes_s": 5.75,
+   "sem_legenda": true
   },
   {
    "fala": "Mas as regras são as mesmas nos dois: ela só entra com um sim, e o que ela quer é o lugar da menina."
@@ -2289,7 +2298,7 @@
      "som": "placar.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -5.23,
+     "atraso": -0.95,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/placar.mp4.som.wav"
     }
    ],
@@ -2303,17 +2312,17 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 5.28,
+     "antecipar": 1.0,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 5.63
+   "pausa_antes_s": 1.35
   },
   {
    "fala": "Ela leva a criança para o outro lado.",
    "cena": {
-    "video": "filmes_prontos/s_mar.mp4",
+    "video": "filmes_prontos/b_outro_lado.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2327,7 +2336,7 @@
   {
    "fala": "E perde quando ouve um \"não\".",
    "cena": {
-    "video": "filmes_prontos/s_nao.mp4",
+    "video": "filmes_prontos/b_familia_fim.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2355,16 +2364,51 @@
    }
   },
   {
-   "fala": "O demônio explica a permissão e as cópias, mas o ritual contra demônios não funcionou, e um demônio não sonha em ser gente."
+   "fala": "O demônio explica a permissão e as cópias, mas o ritual contra demônios não funcionou, e um demônio não sonha em ser gente.",
+   "cena": {
+    "video": "filmes_prontos/b_uv.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
-   "fala": "A tulpa chega muito perto."
+   "fala": "A tulpa chega muito perto.",
+   "cena": {
+    "video": "filmes_prontos/t4_imaginaria.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Mas uma tulpa não troca de lugar com a criança, nem a leva para outro mundo."
   },
   {
-   "fala": "Só uma teoria explica as nove provas."
+   "fala": "Só uma teoria explica as nove provas.",
+   "cena": {
+    "video": "identidade/pecas/v6/placar.mp4",
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "video_inicio": 5.88,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.5,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "O meu veredito: a Outra Mamãe é um changeling.",
@@ -2374,7 +2418,7 @@
      "som": "veredito.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -8.13,
+     "atraso": -6.63,
      "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/identidade/pecas/v6/veredito.mp4.som.wav"
     }
    ],
@@ -2388,12 +2432,12 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 8.18,
+     "antecipar": 6.68,
      "antecipar_fixo": true,
      "entrada": "corte"
     }
    ],
-   "pausa_antes_s": 8.53
+   "pausa_antes_s": 7.03
   },
   {
    "fala": "Uma fada trocadora."
@@ -2452,7 +2496,7 @@
   {
    "fala": "As fadas não podiam levar quem estava protegido.",
    "cena": {
-    "video": "filmes_prontos/p1_medium.mp4",
+    "video": "filmes_prontos/b_ritual_sal.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2467,7 +2511,18 @@
    "fala": "Esperavam uma brecha, um sim."
   },
   {
-   "fala": "A médium disse a regra em voz alta: elas precisam de permissão para existir."
+   "fala": "A médium disse a regra em voz alta: elas precisam de permissão para existir.",
+   "cena": {
+    "video": "filmes_prontos/b_medium.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Prova dois. Ela vira quem você ama.",
@@ -2496,7 +2551,7 @@
   {
    "fala": "O trocado chegava com o rosto da criança, e as fadas chamavam as pessoas para fora de casa com a voz de alguém da família.",
    "cena": {
-    "video": "filmes_prontos/p2_kelvin.mp4",
+    "video": "filmes_prontos/b_cozinha.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2508,7 +2563,18 @@
    }
   },
   {
-   "fala": "A mãe, o babá, o tio Frank."
+   "fala": "A mãe, o babá, o tio Frank.",
+   "cena": {
+    "video": "filmes_prontos/b_outro_lado.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Prova três. O corpo que não obedece.",
@@ -2537,18 +2603,30 @@
   {
    "fala": "As fadas não tinham tamanho fixo: podiam parecer gente, ou caber atrás de uma porta.",
    "cena": {
-    "imagem": "identidade/brutas/ID21_armario_vazio_2.png",
+    "video": "filmes_prontos/b_mesa.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    }
   },
   {
-   "fala": "\"Ela mora atrás das nossas portas.\""
+   "fala": "\"Ela mora atrás das nossas portas.\"",
+   "cena": {
+    "video": "filmes_prontos/b_maos_porta.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Prova quatro. A casa cheia de segredos.",
@@ -2577,6 +2655,20 @@
   {
    "fala": "As trocas aconteciam nas casas onde algo já estava errado: uma criança sozinha, uma mãe ausente, uma família em crise.",
    "cena": {
+    "video": "filmes_prontos/b_praca.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Foi assim com Bridget Cleary.",
+   "cena": {
     "imagem": "reais_prontos/cleary_sun_1895.jpg",
     "zoom": [
      1.0,
@@ -2588,10 +2680,18 @@
    }
   },
   {
-   "fala": "Foi assim com Bridget Cleary."
-  },
-  {
-   "fala": "A brecha não é a porta."
+   "fala": "A brecha não é a porta.",
+   "cena": {
+    "video": "filmes_prontos/b_pais_briga.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "É a família."
@@ -2623,7 +2723,7 @@
   {
    "fala": "As fadas cumpriam desejos, e sempre cobravam.",
    "cena": {
-    "video": "filmes_prontos/p5_frank.mp4",
+    "video": "filmes_prontos/b_frank_fim.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2664,7 +2764,7 @@
   {
    "fala": "\"Não me permitiram ser uma pessoa.\"",
    "cena": {
-    "video": "filmes_prontos/abertura.mp4",
+    "video": "filmes_prontos/b_abraco.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2676,7 +2776,18 @@
    }
   },
   {
-   "fala": "Nas lendas, o povo das fadas cobiçava o que não tinha: uma vida humana."
+   "fala": "Nas lendas, o povo das fadas cobiçava o que não tinha: uma vida humana.",
+   "cena": {
+    "video": "filmes_prontos/abertura.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "É a frase que abre o filme: uma chance de ser humano, cobiçada por deuses e demônios."
@@ -2708,7 +2819,7 @@
   {
    "fala": "\"Ela vai ser eu.\"",
    "cena": {
-    "video": "filmes_prontos/p7_trocar.mp4",
+    "video": "filmes_prontos/b_carro_outra.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2723,7 +2834,18 @@
    "fala": "É exatamente o que a palavra changeling quer dizer: trocado."
   },
   {
-   "fala": "No livro, a troca acontece."
+   "fala": "No livro, a troca acontece.",
+   "cena": {
+    "video": "filmes_prontos/b_espelho.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Prova oito. Ela leva a criança para o outro lado.",
@@ -2752,28 +2874,30 @@
   {
    "fala": "As fadas levavam as pessoas para baixo da terra, para além do mar.",
    "cena": {
-    "imagem": "imagens/IA05_parquinho_1.jpg",
+    "video": "filmes_prontos/b_tunel.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
-    "foco": [
-     [
-      0.4,
-      0.75
-     ],
-     [
-      0.38,
-      0.78
-     ]
-    ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    }
   },
   {
-   "fala": "A Outra Mamãe afunda com Bela pelo chão para ver o mar."
+   "fala": "A Outra Mamãe afunda com Bela pelo chão para ver o mar.",
+   "cena": {
+    "video": "filmes_prontos/b_bolinhas.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Prova nove. O \"não\" a derrota.",
@@ -2802,7 +2926,7 @@
   {
    "fala": "Fada nenhuma leva quem não se entrega.",
    "cena": {
-    "video": "filmes_prontos/s_nao.mp4",
+    "video": "filmes_prontos/b_rosto_final.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2814,45 +2938,42 @@
    }
   },
   {
-   "fala": "Quando Bela aceita ser humana, com mentiras e cicatrizes, e diz \"não\", a troca não tem mais por onde acontecer."
+   "fala": "Quando Bela aceita ser humana, com mentiras e cicatrizes, e diz \"não\", a troca não tem mais por onde acontecer.",
+   "cena": {
+    "video": "filmes_prontos/b_familia_fim.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "A tulpa explica a solidão, o desejo, a vontade de existir.",
-   "sem_legenda": true,
-   "cenas": [
-    {
-     "tipo": "texto",
-     "texto": "E POR QUE NÃO A TULPA?",
-     "estilo": "maquina",
-     "vermelho": "TULPA",
-     "cps": 40,
-     "antecipar": 4.6,
-     "antecipar_fixo": true,
-     "entrada": "corte",
-     "parada": true
-    },
-    {
-     "video": "filmes_prontos/s_nao.mp4",
-     "zoom": [
-      1.0,
-      1.0
-     ],
-     "congelar": true,
-     "em": "A",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
-    }
-   ],
-   "pausa_antes_s": 4.6
+   "cena": {
+    "video": "filmes_prontos/b_bela_sozinha.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
   },
   {
    "fala": "Mas uma tulpa nasce de alguém e some quando deixa de ser querida.",
    "cena": {
-    "imagem": "identidade/brutas/ID03_quarto_1.png",
+    "video": "filmes_prontos/b_rasteja.mp4",
     "zoom": [
      1.0,
-     1.07
+     1.0
     ],
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25
@@ -2916,12 +3037,9 @@
    }
   },
   {
-   "fala": "Ela não arromba a casa."
-  },
-  {
-   "fala": "Espera uma família cheia de segredos e uma criança sozinha que diga sim.",
+   "fala": "Ela não arromba a casa.",
    "cena": {
-    "video": "filmes_prontos/s_pensar.mp4",
+    "video": "filmes_prontos/b_quarto_portas.mp4",
     "zoom": [
      1.0,
      1.0
@@ -2933,7 +3051,24 @@
    }
   },
   {
-   "fala": "Mas a cicatriz ficou.",
+   "fala": "Espera uma família cheia de segredos e uma criança sozinha que diga sim.",
+   "cena": {
+    "video": "filmes_prontos/b_cicatriz.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "congelar": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas a cicatriz ficou."
+  },
+  {
+   "fala": "E depois dos créditos, ela ainda está lá.",
    "cena": {
     "video": "filmes_prontos/pos_creditos.mp4",
     "zoom": [
@@ -2945,9 +3080,6 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    }
-  },
-  {
-   "fala": "E depois dos créditos, ela ainda está lá."
   },
   {
    "fala": "Enquanto uma família tiver um segredo, ela tem uma porta para voltar.",

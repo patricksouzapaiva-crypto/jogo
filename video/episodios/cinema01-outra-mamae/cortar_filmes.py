@@ -38,18 +38,18 @@ TRECHOS = {
     "t3_ritual":    (3690.5, 3697.0, False, 1.1), # 61:30 o ritual visto de cima (vela, água e sal)
     "t4_imaginaria": (823.3, 833.7, False, 1.0),  # 13:43 "não é uma amiga imaginária?" … "muito boa em se esconder"
     "capgras":      (1785.2, 1787.7, True, 1.0),  # 29:45 "É você mesmo?"
-    "s_afundou":    (3078.8, 3084.5, False, 1.0), # 51:19 "Aquilo afundou com ela."
+    "s_afundou":    (3078.8, 3090.0, False, 1.0), # 51:19 "Aquilo afundou com ela."
     "s_mar":        (3138.2, 3141.6, True, 1.0),  # 52:18 "Bela, vamos ver o mar?"
     "s_ruth":       (3453.4, 3460.0, False, 1.0), # 57:33 a avó Ruth
     "s_inocencia":  (3593.4, 3597.7, True, 1.0),  # 59:53 "Quando a inocência da Bela for quebrada, o demônio não vai querer mais ela."
-    "s_confissao":  (4445.0, 4452.0, False, 1.0), # 74:05 a confissão de Ursula
+    "s_confissao":  (4445.0, 4457.0, False, 1.0), # 74:05 a confissão de Ursula
     "s_sim":        (4659.4, 4665.4, True, 1.0),  # 77:39 "Eu vou dizer sim. Por favor!" / "Estou pronta."
     "s_avo":        (4782.7, 4788.0, False, 1.0), # 79:43 a voz da avó
     "s_nao":        (4809.6, 4817.6, True, 1.0),  # 80:09 "Mas eu sou mentirosa como eles. Eu não quero você! Eu escolho não!"
     "s_pensar":     (4884.9, 4889.8, True, 1.0),  # 81:25 "Toda vez que olhar para ela, você vai pensar em mim."
-    "s_escola":     (5077.8, 5085.0, False, 1.0), # 84:38 "Todos sobreviveram."
+    "s_escola":     (5077.8, 5087.0, False, 1.0), # 84:38 "Todos sobreviveram."
     "pos_creditos": (5575.1, 5583.0, False, 1.8), # 92:55 depois dos créditos: a Outra Mamãe no escuro
-    "abertura":     (39.4, 52.4, False, 1.0),     # 00:39 a frase de abertura na tela
+    "abertura":     (39.4, 54.5, False, 1.0),     # 00:39 a frase de abertura na tela
     # 22/11 (rascunho 2): CENAS QUE ROLAM sob a narração (sem som; o canal de análise sempre tem filme passando)
     "b_bela_cama":   (118.0, 134.0, False, 1.4),   # 01:58 Bela na cama, a câmera chega perto
     "b_familia":     (72.0, 92.0, False, 1.0),     # 01:12 a família brincando

@@ -212,8 +212,12 @@ def peca_falada(i, arq, entra=2.1, db=-9):   # respiro: a ficha abre e o título
 def checklist_falado(i, arq, db=-10):
     """A lista de conferência roda SOB a narração das frases anteriores e o "N de 7" cai quando a fala i começa."""
     d = dur_video(arq)
+    sys.path.insert(0, str(AQUI.parents[1] / "painel")); from gerar import tokens as _tk
+    ali = json.load(open(ALI)); ini = [0]
+    for f in falas[:-1]:
+        ini.append(ini[-1] + len(_tk(f)))
     j = i
-    while j > 0 and _ali[_ini[i]][0] - _ali[_ini[j]][0] < d - 1.2:
+    while j > 0 and ali[ini[i]][0] - ali[ini[j]][0] < d - 1.2:
         j -= 1
     C(j, {"video": arq, "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True, "entrada": "fundir",
           "duracao_entrada": 0.4})
@@ -306,6 +310,7 @@ C(I("Durante noites seguidas"), img("imagens/IA02_lareira_1", (1.0, 1.07), ((0.4
 C(I("Na frente da família"), img("imagens/IA02_lareira_2", (1.0, 1.08), ((0.35, 0.6), (0.33, 0.62))))
 C(I("Michael foi condenado"), img("imagens/IA02_lareira_1", (1.08, 1.14), ((0.6, 0.5), (0.62, 0.48))))
 fala_filme(I("É Outra Mamãe ao contrário"), "caso_cheiro")
+C(I("Em mil oitocentos e noventa e cinco, o marido"), F("b_pais_briga"))
 # ================================================================ SPOILER
 SPOILER_I = I("No meio do filme")
 antes(SPOILER_I, {"video": f"{PC}spoiler.mp4", "zoom": [1.0, 1.0], "tipo_cartao": True, "congelar": True, "sem_look": True},
