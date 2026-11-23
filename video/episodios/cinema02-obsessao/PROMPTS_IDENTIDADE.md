@@ -154,3 +154,5 @@ The same willow stick from the reference image snapped in the middle into two pi
 
 Nomes no Drive: `ID43_boneco_1.png`, `ID43_boneco_2.png`, `ID44_boneco_desfeito.png`, `ID45_galho_filme.png`,
 `ID46_galho_filme_quebrado.png`. O resto (mesa ID31, alfinete ID41, etiqueta ID36, cera ID37, sinete ID38) continua.
+
+**23/11: rev. 2 APROVADA pelo usuário** (bonecos de pano, abertura só com o galho do filme ID45/ID46). Render: `identidade/render_rev2.sh`.
