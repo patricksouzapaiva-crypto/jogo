@@ -110,3 +110,47 @@ A single old wooden spool of thick red thread with a loose end, seen from direct
 2. Animo no mesmo motor do #1: o fio vermelho é desenhado por mim, correndo de peça em peça. O risco do prego no chumbo,
    o líquido subindo nos frascos e a cera pingando também são animados por mim.
 3. Te mostro uma prévia de cada peça antes de usar no episódio.
+
+---
+
+## Revisão 2 (23/11, depois da prévia)
+
+**Pedido do usuário:** "não gostei desses frascos, vamos mudar pra outra coisa" → escolheu **bonecos de pano**. "Na abertura
+não precisa da linha vermelha, e vamos refazer o galho de salgueiro mais parecido com o do filme; vai ser só o galho
+quebrado no início."
+
+### Como as peças mudam
+| Peça | antes | agora |
+|---|---|---|
+| Abertura | fio vermelho se enrola no galho, o galho quebra | **sem fio**: só o galho (igual ao do filme) sobre o veludo, ele **quebra** com o estalo, cai o lacre Nº 2 e a pena escreve o título |
+| TEORIA | frasco, nome no rótulo | **boneco de pano sem rosto** desliza para o meio da mesa; a etiqueta de pergaminho amarrada nele recebe "SUSPEITO N" + o nome |
+| PLACAR | 4 frascos, líquido sobe | **4 bonecos deitados lado a lado** no veludo; cada pista que a teoria explica = **um alfinete espetado** (ID41), um por vez, com o som |
+| DESCARTE | frasco escurece + risco | o fio que amarra o boneco **solta** e ele **se desfaz** (troca para o ID44, escurece) |
+| VEREDITO | cera no frasco | o **fio vermelho amarra o último boneco**, a cera pinga no nó e o sinete sela |
+
+### Prompts novos (mesmas regras: fundo verde chapado #00FF00, sem texto, sem sombra, **sem rosto**)
+
+**ID43 — o boneco de pano (poppet), inteiro — gere 2 versões (tecidos diferentes)**
+```
+A single small rustic handmade cloth poppet doll lying flat, seen from directly above, made of old stained linen and coarse burlap, crude hand stitching with dark thread, simple body with round head, two arms and two legs, the head is completely blank with NO face, no eyes, no mouth, a band of thin red thread wrapped tightly several times around the waist, a little dried herb stuffing peeking from one seam, isolated on a solid flat pure green background (#00FF00), no shadow, no text, photorealistic, high detail
+```
+
+**ID44 — o mesmo boneco, DESFEITO (para o descarte)**
+```
+The same small rustic cloth poppet doll from above, now come apart: the red thread unwound and loose, the stitches torn open, the linen limp and collapsed, dried herb stuffing spilled out around it, the head still completely blank with no face, isolated on a solid flat pure green background (#00FF00), no shadow, no text, photorealistic, high detail
+```
+
+**ID45 — o galho do filme ("One Wish Willow"), inteiro**
+Não achei descrição escrita do objeto (as matérias só dizem que é "um brinquedo de novidade dos anos 80": um graveto
+pintado à mão, vendido numa caixa). **Use um print do filme/trailer como imagem de referência** no gerador e cole:
+```
+Recreate the willow stick from the reference image as a single isolated object: the same shape, length, colors, paint and details, intact, lying flat, seen from directly above, isolated on a solid flat pure green background (#00FF00), no box, no hands, no shadow, no text, photorealistic, high detail
+```
+
+**ID46 — o mesmo galho, QUEBRADO em dois**
+```
+The same willow stick from the reference image snapped in the middle into two pieces lying slightly apart, splintered fresh wood at the break, same colors and paint, seen from directly above, isolated on a solid flat pure green background (#00FF00), no shadow, no text, photorealistic, high detail
+```
+
+Nomes no Drive: `ID43_boneco_1.png`, `ID43_boneco_2.png`, `ID44_boneco_desfeito.png`, `ID45_galho_filme.png`,
+`ID46_galho_filme_quebrado.png`. O resto (mesa ID31, alfinete ID41, etiqueta ID36, cera ID37, sinete ID38) continua.
