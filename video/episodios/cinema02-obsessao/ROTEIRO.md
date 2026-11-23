@@ -1,4 +1,9 @@
-# O QUE É A CRIATURA? #2 — OBSESSÃO (roteiro v2, 23/11, sem o filme)
+# O QUE É A CRIATURA? #2 — OBSESSÃO (roteiro v3, 23/11, sem o filme)
+
+**v3 — retenção** (usuário: "não precisa falar o que vamos fazer; gancho forte com promessa; as pessoas têm saído cedo
+demais"): o início não anuncia o formato; abre com o momento mais forte + uma pergunta + três promessas concretas; a
+marca do canal entra em 1 frase depois da promessa; cada suspeito termina com um re-gancho para o próximo (laço aberto
+a cada 1–2 min).
 
 **v2 — estrutura de JULGAMENTO** (pedido do usuário, 23/11): primeiro as 4 teorias apresentadas no máximo da força,
 cada uma parecendo a certa; DEPOIS o julgamento, que descarta uma por vez até sobrar uma. A pessoa tem que achar, até o
@@ -12,28 +17,30 @@ do #2 (mesa do feitiço: etiqueta, frasco, tábua de chumbo, lacre; ver `PROMPTS
 
 ---
 
-## GANCHO
-`[CENA ⚠️ — Bear quebra o salgueiro: "Eu queria que a Nikki Freeman me amasse mais do que qualquer pessoa no mundo." 🔊]`
-Um rapaz tímido compra um brinquedo numa loja de cristais. Um galhinho de salgueiro, que realiza um único desejo.
-Ele quebra o galho e pede uma coisa só: que a garota de quem ele gosta o ame mais do que qualquer pessoa no mundo.
-E funciona.
-Funciona tão bem que, dias depois, tem gente morta.
-O filme chama isso de desejo. Mas em nenhum momento diz o que entrou nela.
-`[REAL: The execution of Miss Mary Blandy, 1752 — Wellcome Collection]`
-Em mil setecentos e cinquenta e dois, na Inglaterra, uma moça pôs um pó do amor na comida do próprio pai, e foi enforcada por isso.
-Essa história é real. E ela vai decidir este julgamento.
-`[PEÇA: abertura "O QUE É A CRIATURA?"]`
+## GANCHO (os primeiros 40 s decidem a retenção: nada de apresentação, nada de "hoje vamos")
+Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
+1) começa pelo momento mais forte do filme, sem logo e sem "bem-vindo";
+2) abre uma pergunta que só se fecha no veredito;
+3) faz três promessas concretas (um papiro, um enforcamento, um museu) que a pessoa só recebe se ficar;
+4) a marca do canal entra só depois da promessa, e rápida.
 
-## O VIGIA APRESENTA
-`[VIGIA]`
-Bem-vindo de volta ao Último Abrigo. Segundo arquivo de O que é a criatura.
-`FICHA: OBSESSÃO (Obsession) · 2026 · Curry Barker`
-Obsessão, de dois mil e vinte e seis: um diretor de vinte e poucos anos, saído do YouTube, fez o filme com quase nada de dinheiro, e virou um dos maiores terrores do ano.
-E o próprio diretor já avisou: não é um filme de possessão.
-Então o que é aquilo dentro da Nikki?
-Hoje vai ser diferente. Eu vou te apresentar quatro suspeitos. Os quatro com tudo a favor.
-E só depois a gente julga. Um por um, até sobrar um.
-Mas primeiro, as pistas.
+`[CENA ⚠️ — Nikki parada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
+Ela não dorme. Não come. Não sai da frente da casa dele.
+E quem fica no caminho, morre.
+`[CENA ⚠️ — Bear quebra o salgueiro: "Eu queria que a Nikki Freeman me amasse mais do que qualquer pessoa no mundo." 🔊]`
+Tudo isso por causa de um brinquedo de loja: um galhinho de salgueiro que realiza um único desejo.
+Ele pediu que ela o amasse mais do que qualquer pessoa no mundo. E foi atendido.
+O filme nunca diz o que entrou nela. Nem o diretor diz.
+Eu fui atrás.
+`[REAL: papiro mágico grego — British Library]`
+E a resposta está num papiro egípcio de mil e seiscentos anos,
+`[REAL: The execution of Miss Mary Blandy, 1752]`
+num enforcamento na Inglaterra, em mil setecentos e cinquenta e dois,
+`[REAL ⚠️: o galho de salgueiro com nós — Museum of Witchcraft and Magic (ou ilustração)]`
+e num galho de salgueiro guardado até hoje num museu inglês. Igual ao do filme.
+No final, você vai saber exatamente o que é a Nikki. E por que esse desejo só podia acabar de um jeito.
+`[PEÇA: abertura "O QUE É A CRIATURA?" — versão #2 (o galho quebra, o lacre)]`
+`[VIGIA]` Eu sou o Vigia. Arquivo número dois: Obsessão.
 
 ## AS PISTAS (sem spoiler) ⚠️ conferir todas na legenda
 `[PEÇA: pista 1 — etiqueta no fio vermelho]` **PISTA 1 — O DESEJO TEM REGRAS**
@@ -60,7 +67,7 @@ O atendente diz a frase que resume o filme: só porque você escolheu isso por e
 
 `[PEÇA: pista 7]` **PISTA 7 — "MAIS DO QUE QUALQUER PESSOA NO MUNDO"**
 O pedido foi ao pé da letra. Mais do que qualquer pessoa. Mais do que a família dela. Mais do que ela mesma.
-Sete pistas. Agora, os suspeitos.
+Sete pistas. Quatro suspeitos. E um deles está escondido em plena vista desde o primeiro minuto do filme.
 
 ---
 # ATO I — OS QUATRO SUSPEITOS
@@ -83,7 +90,7 @@ E, na crença popular de boa parte do mundo muçulmano, a maior parte das posses
 Há relatos de jinn que impedem a pessoa amada de se casar, para que ela não seja de mais ninguém.
 Um objeto que guarda um ser. Um desejo cumprido ao pé da letra. Um amor que entra no corpo e elimina os rivais.
 `[PEÇA: tábua — o que o gênio explica: ✓ regras · ✓ ao pé da letra · ✓ quem atrapalha, morre · ✓ ela muda por dentro]`
-Parece perfeito.
+Parece perfeito. Só que o próximo suspeito é mil anos mais velho, e explica uma coisa que o gênio não explica: por que o galho tem que ser quebrado.
 
 ## SUSPEITO 2 — A AMARRAÇÃO
 `[PEÇA: teoria — frasco "A AMARRAÇÃO"]`
@@ -106,7 +113,7 @@ A Idade Média trocou o chumbo pelo filtro do amor. Tristão e Isolda bebem por 
 E em Veneza, entre mil quinhentos e oitenta e seis e mil seiscentos e trinta, o Santo Ofício abriu mais de trezentos processos de magia. Boa parte, por feitiços de amor.
 Um objeto que precisa ser quebrado. Uma pessoa que não dorme, não sossega, e vai até quem amarrou.
 `[PEÇA: tábua — o que a amarração explica: ✓ o galho quebrado · ✓ ela não sossega · ✓ ele escolheu por ela · ✓ quem atrapalha, morre]`
-Parece perfeito também.
+Parece perfeito também. Mas tem uma cena que nem o gênio nem a amarração explicam direito: o grito no fundo do telefone. E o terceiro suspeito explica.
 
 ## SUSPEITO 3 — O DYBBUK
 `[PEÇA: teoria — frasco "O DYBBUK"]`
@@ -122,6 +129,7 @@ E, no dia do casamento, a voz que sai da boca da noiva já não é a dela.
 Um amor que entra no corpo de uma moça. A moça de verdade presa lá dentro, sem conseguir falar. E uma voz que não é a dela.
 `[PEÇA: tábua — o que o dybbuk explica: ✓ a Nikki de verdade está lá · ✓ ela não sossega · ✓ quem atrapalha, morre · ✓ "mais do que qualquer pessoa"]`
 E a cena do telefone, com a Nikki gritando no fundo da linha, é um dybbuk de manual.
+Três suspeitos, e ainda falta o mais perigoso: o que o próprio diretor confessou.
 
 ## SUSPEITO 4 — A PATA DO MACACO
 `[PEÇA: teoria — frasco "A PATA DO MACACO"]`
@@ -135,12 +143,13 @@ E o diretor de Obsessão admite: o filme é uma releitura da Pata do Macaco. Ele
 O objeto que cumpre. O preço que ninguém leu. O desejo que não tem volta.
 `[PEÇA: tábua — o que a pata explica: ✓ regras · ✓ não tem volta · ✓ ao pé da letra · ✓ o preço]`
 Quatro suspeitos. Os quatro explicam o filme. E só um deles é a coisa dentro da Nikki.
+Antes de julgar, duas provas que vêm de fora do filme. E a segunda é um processo de assassinato.
 
 ---
 # INTERVALO — DUAS PROVAS DE FORA DO FILME
 ## A CIÊNCIA — EROTOMANIA
 `FICHA: SÍNDROME DE DE CLÉRAMBAULT · Paris · 1921`
-Antes do julgamento, duas provas que vêm de fora do filme. A primeira, da medicina.
+A primeira prova vem da medicina.
 Em mil novecentos e vinte e um, o psiquiatra francês Gaëtan Gatian de Clérambault descreveu o caso de uma mulher de cinquenta e três anos, que ele chamou de Léa-Anna.
 `[REAL: George V, retrato]`
 Desde mil novecentos e dezoito, ela tinha certeza de que o rei George Quinto da Inglaterra estava apaixonado por ela, e mandava sinais secretos.
@@ -170,7 +179,7 @@ Guarda isso também.
 ---
 # ATO II — O JULGAMENTO
 `[PEÇA: a prateleira com os 4 frascos]`
-Agora, com tudo na mesa, o julgamento. Um suspeito por vez.
+Agora, com tudo na mesa, o julgamento. Um suspeito por vez. E o primeiro a cair é justamente o que o filme confessou.
 
 ## O PRIMEIRO A CAIR — A PATA DO MACACO
 `[PEÇA: tábua — ✗ "o objeto é amaldiçoado" · prego atravessa · DESCARTADA]`
