@@ -1,8 +1,9 @@
 # Shorts do O QUE É A CRIATURA? #1 — pacote de postagem (canal Último Abrigo)
 
 Cada Short é um **teaser** do episódio (termina em aberto) e fecha com o Vigia chamando pro episódio completo.
-**Nenhum tem cena do filme** (o longo foi bloqueado pela NBC Universal no Content ID): só ilustrações, animações e imagens
-históricas — não devem levar reivindicação.
+Cada um **abre com uma fala curta do filme** (3–4 s, dublada) e tem 1–2 cenas curtas do filme sem som no meio; o resto é
+ilustração, animação e imagem histórica. É a mesma regra do episódio r9, que subiu sem bloqueio: trecho curto + a nossa
+narração comentando. Se algum Short levar bloqueio, troque pela versão só com ilustrações (dá para remontar).
 
 **Em todos:** YouTube Studio → Detalhes → **Vídeo relacionado → o episódio da Outra Mamãe**. É esse campo que põe o link
 do episódio dentro do Short. **Conteúdo alterado ou sintético: Sim** (narração e ilustrações com IA).
