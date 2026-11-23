@@ -286,14 +286,24 @@ ATMOS = {"ritual_sal": {"vela": 0.7}, "medium": {"vela": 0.8}, "avo": {"vela": 0
          "lareira": {"fumaca": 0.3}}
 
 
-def ilustr(chave):
-    c = _ilustr(chave)
+def anim_ok(chave, n, pedido):
+    if chave in _ANIM_USADA:
+        return False
+    return pedido if chave in ANIM_EXPLICITA else n == 1
+
+
+def ilustr(chave, anim=False):
+    c = _ilustr(chave, anim)
     if chave in ATMOS:
         c["atmos"] = ATMOS[chave]
     return c
 
 
-def _ilustr(chave):
+ANIM_EXPLICITA = {"porta_azul"}   # 23/11: a animação desta entra onde for pedida (anim=True), não no 1º uso
+_ANIM_USADA = set()
+
+
+def _ilustr(chave, anim=False):
     """a ilustração da vez: alterna as versões _1/_2 e o movimento de câmera a cada uso"""
     if chave == "lareira":
         return img("imagens/IA02_lareira_2", (1.0, 1.07), ((0.4, 0.55), (0.44, 0.58)))
@@ -302,8 +312,9 @@ def _ilustr(chave):
     if not (AQUI / arq).exists():
         arq = PROVISORIA[sum(_USO.values()) % len(PROVISORIA)]
     z, foco = _MOV[(n + len(chave)) % len(_MOV)]
-    anim = AQUI / "imagens" / f"ANIM_{chave}.mp4"   # 23/11: a cena animada pelo usuário (Veo) entra no 1º uso
-    if n == 1 and anim.exists():
+    _anim = AQUI / "imagens" / f"ANIM_{chave}.mp4"   # 23/11: a cena animada pelo usuário (Veo) entra no 1º uso
+    if anim_ok(chave, n, anim) and _anim.exists():
+        _ANIM_USADA.add(chave)
         return {"video": f"imagens/ANIM_{chave}.mp4", "zoom": [1.0, 1.03], "congelar": True}
     if "/IL_" in arq and not __import__("os").environ.get("SEM_3D"):   # 23/11 (retenção): câmera 3D por profundidade
         mov = ("entrar", "lado", "entrar", "lado_esq", "sair")[(n + len(chave)) % 5]
@@ -364,7 +375,7 @@ def checklist_falado(i, arq, db=-10, inicio=None, segurar=None, ate=None):
 # ================================================================ GANCHO
 fala_filme(0, "g_boanoite")                  # a cena continua rolando sob a 1ª frase
 fala_filme(1, "g_coracao")
-C(I("O filme dá um nome"), F("b_porta_azul"))
+# 23/11: a porta azul animada fica do "coração?" até o espelho (em "O filme dá um nome" sobrava < 4 s e o motor a engolia)
 C(I("Mas em nenhum momento"), F("b_espelho"))
 # 23/11 (retenção): prévia do caso real no gancho — o motivo concreto para ficar até a metade
 C(I("Em mil oitocentos e noventa e cinco, na Irlanda"), real("cleary_sun_1895", (1.0, 1.1), foco=((0.5, 0.25), (0.5, 0.32)),
@@ -385,7 +396,7 @@ fala_filme(I("Ela nunca entra à força"), "p1_coracao")
 fala_filme(I("Até a médium"), "p1_medium")
 C(I("Primeiro ela vira a mãe"), F("p2_almoco")); C(I("A mãe que nunca está"), F("b_cozinha"))
 fala_filme(I("Depois o babá"), "p2_kelvin")
-C(I("Ela cresce, encolhe"), F("b_mesa")); C(I("E Bela diz onde ela mora"), F("b_quarto_portas"))
+C(I("Ela cresce, encolhe"), F("b_mesa"))   # 23/11: a mesa animada segue em "atrás das nossas portas" (não engolida)
 C(I("Ela não aparece numa casa feliz"), F("p4_segredos")); C(I("Aparece numa casa"), F("b_pais_briga"))
 fala_filme(I("Bela faz um pedido"), "p5_frank")
 k = I("Ela não quer só a menina"); fala_filme(k, "p6_pessoa"); fala_filme(k, "p6_existir")
@@ -404,7 +415,7 @@ C(k, real("lamashtu_bm") if tem_real("lamashtu_bm") else ficha("LAMASHTU · Meso
 C(I("Séculos depois, no folclore judaico"), real("amuleto_mae_bebe_wellcome", (1.0, 1.06)))
 fala_filme(I("E o próprio filme aposta"), "t3_ardiloso")
 C(I("E existe uma regra muito antiga"), F("b_porta_azul"), (F("b_maos_porta"), "atravessam"))   # a fala é mais longa que o clipe
-C(I("Só que o ritual da médium"), F("b_ritual_sal")); C(I("Só faz a coisa aparecer"), F("b_uv"))
+C(I("Só que o ritual da médium"), F("b_uv"))   # 23/11: o ritual que dá errado, animado, nas duas frases
 k = I("O demônio explica a permissão, as cópias, o corpo")   # 22/11: o ritual com cenas do filme; a ficha só na avaliação
 checklist_falado(k, f"{PC}checklist2.mp4", inicio=k, ate=I("Em mil novecentos e vinte e nove"), segurar=2.8)
 # ================================================================ TEORIA 3 — a tulpa
@@ -468,7 +479,7 @@ fala_filme(I("Mas no último segundo"), "s_nao")
 C(I("Aceita ser humana"), F("s_avo")); C(I("E escolhe"), F("b_familia_fim"))
 fala_filme(I("A criatura vai embora"), "s_pensar")
 C(I("E no último discurso"), F("s_escola"))
-C(I("E depois dos créditos"), F("pos_creditos"))
+C(I("E depois dos créditos"), F("pos_creditos")); pausa(I("No livro de Josh Malerman"), 2.0)   # 23/11: respiro de suspense
 # ================================================================ LIVRO × FILME
 k = I("No livro de Josh Malerman"); C(k, ficha("INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO", "O LIVRO")); falada(k)
 C(I("Ela diz para a menina"), quarto(1))
@@ -492,7 +503,7 @@ DEPOIS = [  # (cena logo depois da prova, mais cenas) — o filme dá peso a cad
     (F("b_mesa"), {"\"Ela mora atrás": F("b_maos_porta")}),
     (F("b_praca"), {"Foi assim com Bridget": real("cleary_sun_1895"), "A brecha não é a porta": F("b_pais_briga")}),
     (F("b_frank_fim"), {}),
-    (F("b_abraco"), {"Nas lendas, o povo": ilustr("outra_silhueta")}),
+    (F("b_abraco"), {}),   # 23/11: o abraço animado segue (a troca em "Nas lendas" deixava 2,6 s)
     (F("b_carro_outra"), {"No livro, a troca": F("b_espelho")}),
     (F("b_tunel"), {"A Outra Mamãe afunda": F("b_bolinhas")}),
     (F("b_rosto_final"), {"Quando Bela aceita": F("b_familia_fim")}),
@@ -518,7 +529,7 @@ C(I("Enquanto uma família"), vigia((1.0, 1.06)))
 
 for _i, _n in FALAS_FILME:   # 23/11: o filme corta no fim da fala — a narração segue sobre a ilustração (antes: 12 s de filme)
     if not cenas_de(batidas[_i]):
-        C(_i, ilustr(RABO[_n]))
+        C(_i, ilustr(RABO[_n], anim=(_n == "g_coracao")))
 
 montar_antes()
 
@@ -744,6 +755,10 @@ def camera_3d():
                 k = next((j for j, w in enumerate(ws) if w == alvo or w.startswith(alvo)), 0)
                 t = T0[i] + _ali[_ini[i] + k][0] - _ali[_ini[i]][0]
             inicios.append((t, c))
+    for k, (t, c) in enumerate(inicios):   # 23/11: conferência — cena animada com menos de 4 s seria engolida pelo motor
+        if "ANIM_" in str(c.get("video", "")):
+            d = (inicios[k + 1][0] if k + 1 < len(inicios) else t + 20) - t
+            print(f"animação {Path(c['video']).stem}: {t:.1f}s, {d:.1f}s na tela" + ("  <<< CURTA" if d < 4.2 else ""))
     feitos = 0
     for k, (t, c) in enumerate(inicios):
         if "_c3d" not in c:

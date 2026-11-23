@@ -120,14 +120,15 @@
      "entrada": "corte"
     },
     {
+     "video": "imagens/ANIM_porta_azul.mp4",
      "zoom": [
       1.0,
-      1.0
+      1.03
      ],
+     "congelar": true,
      "atmos": {
       "poeira": 0.4
-     },
-     "video": "camera3d/IL_porta_azul_2_8285aab25e_8.0.mp4"
+     }
     }
    ],
    "pausa_antes_s": 3.5
@@ -139,21 +140,7 @@
    "fala": "E só faz uma pergunta."
   },
   {
-   "fala": "O filme dá um nome para essa coisa.",
-   "cena": {
-    "video": "imagens/ANIM_porta_azul.mp4",
-    "zoom": [
-     1.0,
-     1.03
-    ],
-    "congelar": true,
-    "atmos": {
-     "poeira": 0.4
-    },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25
-   }
+   "fala": "O filme dá um nome para essa coisa."
   },
   {
    "fala": "Outra Mamãe."
@@ -670,33 +657,7 @@
    }
   },
   {
-   "fala": "E Bela diz onde ela mora: \"atrás das nossas portas\".",
-   "sons": [
-    {
-     "em": null,
-     "som": "ep09_jh_rangido_1",
-     "volume_db": -18,
-     "depois": false,
-     "atraso": 0.0,
-     "ate": 6.0,
-     "saida": 1.2,
-     "entrada": 0.6,
-     "_il": true
-    }
-   ],
-   "cena": {
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "atmos": {
-     "poeira": 0.3
-    },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/IL_quarto_portas_1_a4f1dbcc2e_7.3.mp4"
-   }
+   "fala": "E Bela diz onde ela mora: \"atrás das nossas portas\"."
   },
   {
    "fala": "Pista quatro. Uma casa cheia de segredos.",
@@ -1308,7 +1269,7 @@
      "entrada": "fundir",
      "duracao_entrada": 0.6,
      "antecipar": 0.25,
-     "video": "camera3d/IL_porta_azul_2_2a5698d0e2_9.2.mp4"
+     "video": "camera3d/IL_porta_azul_1_503604a921_9.2.mp4"
     },
     {
      "zoom": [
@@ -1322,35 +1283,6 @@
   },
   {
    "fala": "Só que o ritual da médium, com fogo, água e sal, não espanta nada.",
-   "sons": [
-    {
-     "em": null,
-     "som": "ep08_vela",
-     "volume_db": -16,
-     "depois": false,
-     "atraso": 0.0,
-     "ate": 3.0,
-     "saida": 1.2,
-     "entrada": 0.6,
-     "_il": true
-    }
-   ],
-   "cena": {
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "atmos": {
-     "vela": 0.7
-    },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/IL_ritual_sal_1_031b921162_7.3.mp4"
-   }
-  },
-  {
-   "fala": "Só faz a coisa aparecer.",
    "cena": {
     "video": "imagens/ANIM_uv.mp4",
     "zoom": [
@@ -1365,6 +1297,9 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.25
    }
+  },
+  {
+   "fala": "Só faz a coisa aparecer."
   },
   {
    "fala": "O demônio explica a permissão, as cópias, o corpo e o desejo.",
@@ -2004,7 +1939,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/IL_ritual_sal_2_32dd1c0e70_16.9.mp4"
+    "video": "camera3d/IL_ritual_sal_1_031b921162_16.9.mp4"
    }
   },
   {
@@ -2042,7 +1977,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/IL_porta_azul_1_0b48de8ff4_6.5.mp4"
+    "video": "camera3d/IL_porta_azul_2_2a5698d0e2_9.2.mp4"
    }
   },
   {
@@ -2695,6 +2630,7 @@
   },
   {
    "fala": "No livro de Josh Malerman, o final é outro.",
+   "pausa_antes_s": 2.0,
    "cena": {
     "tipo": "texto",
     "texto": "INCIDENTS AROUND THE HOUSE\nJosh Malerman · 2024\nO LIVRO",
@@ -2704,7 +2640,7 @@
     "falada": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.6
    },
    "sem_legenda": true
   },
@@ -2824,7 +2760,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/IL_quarto_portas_2_8a70bf5363_12.6.mp4"
+    "video": "camera3d/IL_quarto_portas_1_a4f1dbcc2e_12.6.mp4"
    }
   },
   {
@@ -3041,6 +2977,19 @@
   },
   {
    "fala": "As fadas não podiam levar quem estava protegido.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 3.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
    "cena": {
     "zoom": [
      1.0,
@@ -3052,7 +3001,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/IL_ritual_sal_1_e8570d723d_7.9.mp4"
+    "video": "camera3d/IL_ritual_sal_2_32dd1c0e70_7.9.mp4"
    }
   },
   {
@@ -3322,33 +3271,7 @@
    }
   },
   {
-   "fala": "Nas lendas, o povo das fadas cobiçava o que não tinha: uma vida humana.",
-   "sons": [
-    {
-     "em": null,
-     "som": "ep09_sn_sussurro_fantasma",
-     "volume_db": -18,
-     "depois": false,
-     "atraso": 0.0,
-     "ate": 2.0,
-     "saida": 1.2,
-     "entrada": 0.6,
-     "_il": true
-    }
-   ],
-   "cena": {
-    "zoom": [
-     1.0,
-     1.0
-    ],
-    "atmos": {
-     "neblina": 0.5
-    },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.25,
-    "video": "camera3d/IL_outra_silhueta_1_e2bdf7534b_13.6.mp4"
-   }
+   "fala": "Nas lendas, o povo das fadas cobiçava o que não tinha: uma vida humana."
   },
   {
    "fala": "É a frase que abre o filme: uma chance de ser humano, cobiçada por deuses e demônios."
@@ -3599,6 +3522,19 @@
   },
   {
    "fala": "Ela não arromba a casa.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_jh_rangido_1",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
    "cena": {
     "zoom": [
      1.0,
@@ -3610,7 +3546,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.25,
-    "video": "camera3d/IL_quarto_portas_1_ea3b68dde0_6.5.mp4"
+    "video": "camera3d/IL_quarto_portas_2_8a70bf5363_6.5.mp4"
    }
   },
   {
