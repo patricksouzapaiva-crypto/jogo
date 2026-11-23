@@ -1,6 +1,6 @@
 # O QUE É A CRIATURA? #1 — Outra Mamãe — pacote de publicação no YouTube (22/11)
 
-Arquivo para subir: `previas/O_Que_E_A_Criatura_01_Outra_Mamae_1080p.mp4` (aprovado no rascunho 7)
+Arquivo para subir: `previas/O_Que_E_A_Criatura_01_Outra_Mamae_1080p.mp4` (r9, 23/11: filme só nas 18 falas-pista; 18:34) — cópia para o celular: `..._1080p_celular.mp4` (≤ 500 MB)
 Legendas: `publicacao/legendas_pt-BR.srt` (Português)
 
 ## Título — pesquisa de 22/11 (vidIQ: busca "outra mamãe" no BR + vídeos que estouraram no nicho)
@@ -39,27 +39,27 @@ Ela tem o rosto da mãe. A voz da mãe. E só faz uma pergunta. O filme chama es
 
 🕯️ No primeiro O QUE É A CRIATURA?, o Vigia junta as sete pistas que o próprio filme deixa e testa quatro teorias, uma por uma, com o checklist na mão: o duplo (o fetch irlandês e o doppelgänger), o demônio trapaceiro (de Lamashtu a Lilith), a tulpa de Alexandra David-Néel e a fada que troca pessoas, o changeling. No caminho: a avó de Coraline (The New Mother, de 1882), a síndrome de Capgras, e o caso real de Bridget Cleary, queimada pelo marido em 1895 porque ele jurava que ela era uma fada.
 
-⚠️ A partir de 11:22 o vídeo tem spoiler do final (o aviso na tela diz para onde pular).
+⚠️ A partir de 11:44 o vídeo tem spoiler do final (o aviso na tela diz para onde pular).
 
 💬 E você, concorda com o veredito? Ou acha que é outra coisa? Comenta aí embaixo — e me diz qual criatura de filme você quer ver no próximo episódio.
 
 CAPÍTULOS
 00:00 Boa noite, Outra Mamãe
-00:44 O Vigia apresenta
-01:36 As sete pistas (sem spoiler)
-03:59 Teoria 1 — O duplo
-04:36 Teoria 2 — O demônio trapaceiro
-05:44 Teoria 3 — A tulpa
-06:27 A avó de Coraline
-07:08 A síndrome de Capgras
-07:42 As fadas de verdade
-08:17 Teoria 4 — A fada que troca pessoas
-09:40 O caso real — Bridget Cleary, 1895
-11:22 ⚠️ Spoiler — o final explicado
-13:09 Livro × filme — os dois finais
-14:07 O veredito
-14:56 Por que a fada trocadora
-17:14 Fecho
+00:45 O Vigia apresenta
+01:52 As sete pistas (sem spoiler)
+04:21 Teoria 1 — O duplo
+04:58 Teoria 2 — O demônio trapaceiro
+06:06 Teoria 3 — A tulpa
+06:48 A avó de Coraline
+07:30 A síndrome de Capgras
+08:04 As fadas de verdade
+08:40 Teoria 4 — A fada que troca pessoas
+10:01 O caso real — Bridget Cleary, 1895
+11:44 ⚠️ Spoiler — o final explicado
+13:30 Livro × filme — os dois finais
+14:31 O veredito
+15:19 Por que a fada trocadora
+17:38 Fecho
 
 📌 Fontes:
 - Outra Mamãe (Other Mommy, 2026) — falas citadas da legenda oficial em português
@@ -81,7 +81,7 @@ CAPÍTULOS
 - Amuleto de Lamashtu — British Museum (Wikimedia Commons)
 - Amuleto contra Lilith, Sefer Raziel (Amsterdã, 1701) — Wellcome Collection
 
-🤖 Transparência: este vídeo usa inteligência artificial na narração do Vigia e em algumas ilustrações de cena (o berço, a lareira, o retrato e o corredor), combinadas com pesquisa histórica, imagens reais e trechos do filme.
+🤖 Transparência: este vídeo usa inteligência artificial na narração do Vigia e nas ilustrações e animações de cena (nenhum rosto real foi criado), combinadas com pesquisa histórica, imagens reais e trechos curtos do filme para comentário.
 
 🎻 Trilha original com gravações reais de orquestra: Versilian Studios Chamber Orchestra 2 Community Edition (VSCO-2 CE, domínio público / CC0).
 
