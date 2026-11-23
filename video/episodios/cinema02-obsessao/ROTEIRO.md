@@ -165,6 +165,10 @@ Até hoje se discute se ela sabia. Ela jurou, até o fim, que acreditava estar d
 `[REAL: salgueiro — gravura do século XIX]`
 E por que um salgueiro?
 O diretor diz que inventou o objeto. Mas escolheu, talvez sem saber, a árvore mais ligada a amarrações no folclore europeu.
+`[REAL ⚠️: Willow knot — Museum of Witchcraft and Magic, Boscastle (pedir licença) ou ilustração]`
+Num museu da Cornualha, na Inglaterra, existe um galho de salgueiro cheio de nós, que veio de Tavistock.
+Era assim que se fazia, no oeste da Inglaterra: quem sofria de amor ia até um salgueiro na beira do rio, dava um nó num galho, e recitava uma rima de amor.
+O objeto do filme existe. É um galho de salgueiro que guarda um desejo de amor.
 Na Alemanha, se dizia que, amarrando nós num ramo de salgueiro, dava para matar um inimigo distante.
 Na Inglaterra, varinhas de salgueiro serviam para adivinhar com quem a moça ia casar.
 E se pendurava salgueiro na porta para afastar bruxas.

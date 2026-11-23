@@ -84,7 +84,14 @@ filme abaixo vêm de entrevistas e da Wikipedia e serão conferidos na legenda.
   às vezes vinha **com uma boneca de barro ou cera furada** ([GRBS](https://grbs.library.duke.edu/index.php/grbs/article/download/14739/3877/13593),
   [Betz, PGM](https://static1.squarespace.com/static/5f6e1fb02827913871797e3b/t/65984cad705a9450d4b69393/1704479932339/Greek+Magical+Papyri+-+Betz.pdf)).
   Os estudiosos resumem: o feitiço servia para *forçar alguém a fazer algo contra a própria vontade*.
-- **O elo europeu (a pesquisar):** a Inquisição de **Veneza** no fim do século XVI, com feitiços de amarração,
+- **Veneza, 1586–1630:** os anais do Santo Ofício de Veneza têm **319 processos de magia**; no século XVII, as acusações
+  de bruxaria miravam muitas vezes mulheres em amores "desviados"
+  ([academia.edu, "Fossimo presi per incantamento"](https://www.academia.edu/26159236/_Fossimo_presi_per_incantamento_Witchcraft_And_Love_Deviances_In_The_Trials_Of_Venice_s_Santo_Uffizio_In_The_XVII_Century_In_Recounting_Deviance_Forms_and_practices_of_presenting_divergent_behaviour_in_the_Late_Middle_Ages_and_Early_Modern_period_ed_by_J%C3%B6rg_Rogge_2016),
+  [Cambridge, Renaissance Quarterly](https://www.cambridge.org/core/journals/renaissance-quarterly/article/abs/root-is-hidden-and-the-material-uncertain-the-challenges-of-prosecuting-witchcraft-in-early-modern-venice/E3CC33E1B9384A28F641FB9D455FCBFF)).
+  **Apollonia Madizza** (Latisana, 1591) foi interrogada por magia de amor, e chamou as provas contra ela de *"uma caixa de
+  stregamenti"*, coisas de bruxaria ([academia.edu, "Bagatelle or Stregamenti"](https://www.academia.edu/44067779/_Bagatelle_or_Stregamenti_The_Spiritual_Potential_of_Material_Objects_and_Spaces_in_Late_Rinascimento_Venice_1580_1630_)).
+  O caso está no capítulo "Apollonia Madizza and the Ties That Bind" de Ruggiero.
+- **O elo europeu (continuação, opcional):** a Inquisição de **Veneza** no fim do século XVI, com feitiços de amarração,
   bonecas de cera e "óleos encantados" como filtro. Fonte: Guido Ruggiero, *Binding Passions* (Oxford, 1993), nos
   capítulos "That Old Black Magic Called Love" e "Apollonia Madizza and the Ties That Bind"
   ([OUP](https://global.oup.com/academic/product/binding-passions-9780195083200)). Falta achar um caso com nome e uma
@@ -102,6 +109,12 @@ item na fonte original antes de usar.
   amarração.**
 - No norte da Inglaterra, varinhas de salgueiro para adivinhação amorosa. No País de Gales, a vara de salgueiro do
   casamento.
+- **O NÓ DE SALGUEIRO EXISTE, NUM MUSEU:** o **Museum of Witchcraft and Magic** (Boscastle, Cornualha) guarda o objeto
+  294, *Willow knot*: um galho de salgueiro com nós, de **Tavistock**. Cecil Williamson registrou a prática do oeste da
+  Inglaterra: quem sofria de amor era mandado a um salgueiro na beira do rio, para dar um nó num galho pendente
+  recitando uma rima de amor ([Museum of Witchcraft and Magic](https://museumofwitchcraftandmagic.co.uk/object/willow-knot/)).
+  ⇒ O objeto do filme existe de verdade: um galho de salgueiro que segura um desejo de amor. Pedir a foto ao museu, ou
+  ilustrar.
 - Na Inglaterra, pendurar salgueiro na porta protegia **contra bruxas**, mas a árvore também tinha fama sinistra: o
   salgueiro *"que se arranca do chão e persegue viajantes"* ([Trees for Life](https://treesforlife.org.uk/into-the-forest/trees-plants-animals/trees/willow/willow-mythology-and-folklore/)).
 - **A tese do ensaio:** o salgueiro dobrado cura, o salgueiro QUEBRADO mata. E o desejo só acontece quando o salgueiro
@@ -143,6 +156,6 @@ Desvios fixos do formato: a erotomania (a ciência) e Mary Blandy (o caso real).
 ## 4. Falta
 - **O FILME com legenda em português**, para tirar as pistas exatas e as falas dublar/citar. Rodar `falas.py` como no #1.
 - O texto completo do artigo sobre jinn e erotomania, e o artigo da Andrews, que deu 403.
-- Um caso com nome da Inquisição de Veneza (Ruggiero) com a fórmula da amarração.
+- A fórmula exata do feitiço de Madizza (no livro de Ruggiero), se quiser citar.
 - A fonte primária dos itens do salgueiro.
 - Imagens em domínio público: o papiro da British Library, uma tábua de defixio, a gravura de Mary Blandy, a peça *O Dibuk* (cartaz de 1920 ou o filme de 1937) .
