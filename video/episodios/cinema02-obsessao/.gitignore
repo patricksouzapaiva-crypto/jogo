@@ -14,3 +14,5 @@ shorts/*.wav
 shorts/*.mp4
 publicacao/shorts_final/
 __pycache__/
+identidade/brutas/*.png
+identidade/camadas/
