@@ -1,0 +1,128 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.7,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -23,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.12,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Outra Mamãe",
+   "changeling",
+   "fada trocadora",
+   "Bridget Cleary",
+   "fetch",
+   "doppelgänger",
+   "Lamashtu",
+   "Lilith",
+   "tulpa",
+   "Capgras",
+   "Coraline",
+   "permissão",
+   "trocar de lugar",
+   "veredito"
+  ]
+ },
+ "voz_arquivo": "s2_tulpa_voz.wav",
+ "batidas": [
+  {
+   "fala": "Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.",
+   "cena": {
+    "imagem": "../imagens/IL_outra_silhueta_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir",
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "Ela contou que tinha criado, só com a concentração, um ser imaginário.",
+   "cena": {
+    "imagem": "../imagens/IL_maquete_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Uma tulpa."
+  },
+  {
+   "fala": "Um monge baixinho e simpático, que com o tempo começou a aparecer sozinho, a mudar de jeito, a ficar sinistro.",
+   "cena": {
+    "video": "../imagens/ANIM_rasteja.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "congelar": true,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "E que ela levou seis meses para conseguir destruir."
+  },
+  {
+   "fala": "E a Outra Mamãe parece uma tulpa.",
+   "cena": {
+    "imagem": "../imagens/IL_maquete_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela.",
+   "cena": {
+    "imagem": "../imagens/IL_bela_sozinha_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Fica mais forte quanto mais é querida."
+  }
+ ],
+ "musica": {
+  "som": "cin01_trilha",
+  "volume_db": -24
+ },
+ "cta": {
+  "titulo": "Ela criou um ser só com a mente.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}

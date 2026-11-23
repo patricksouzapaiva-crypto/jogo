@@ -1,0 +1,201 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.7,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -23,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.12,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Outra Mamãe",
+   "changeling",
+   "fada trocadora",
+   "Bridget Cleary",
+   "fetch",
+   "doppelgänger",
+   "Lamashtu",
+   "Lilith",
+   "tulpa",
+   "Capgras",
+   "Coraline",
+   "permissão",
+   "trocar de lugar",
+   "veredito"
+  ]
+ },
+ "voz_arquivo": "s1_cleary_voz.wav",
+ "batidas": [
+  {
+   "fala": "Em mil oitocentos e noventa e cinco, na Irlanda, um homem queimou a própria esposa, porque jurava que ela tinha sido trocada por uma coisa assim.",
+   "cena": {
+    "imagem": "../reais_prontos/cleary_sun_1895.jpg",
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "encaixe": "cobrir",
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "O marido dela, Michael, chamou um \"médico das fadas\", um curandeiro da região chamado Denis Ganey.",
+   "cena": {
+    "imagem": "../imagens/IA02_lareira_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.35
+  },
+  {
+   "fala": "E o veredito dele foi: a verdadeira Bridget tinha sido levada pelas fadas.",
+   "cena": {
+    "video": "../imagens/ANIM_outra_silhueta.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "congelar": true,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Michael se convenceu de que aquela mulher na cama não era mais a esposa dele.",
+   "cena": {
+    "imagem": "../imagens/IL_pais_briga_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Durante noites seguidas, com a ajuda de parentes, ele forçou a mulher a beber ervas e perguntou, de novo e de novo:",
+   "cena": {
+    "imagem": "../imagens/IA02_lareira_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "\"Você é Bridget Boland, esposa de Michael Cleary, em nome do Pai, do Filho e do Espírito Santo?\"",
+   "cena": {
+    "imagem": "../reais_prontos/cleary_sun_1895.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "Na noite de quinze de março, ele a cobriu de óleo de lamparina e ateou fogo.",
+   "cena": {
+    "imagem": "../imagens/IA02_lareira_1.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.35
+  },
+  {
+   "fala": "Na frente da família.",
+   "cena": {
+    "imagem": "../imagens/IA02_lareira_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.62
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "O corpo foi encontrado numa cova rasa, dias depois.",
+   "cena": {
+    "imagem": "../imagens/IL_pos_creditos_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   }
+  },
+  {
+   "fala": "E até hoje as crianças da Irlanda cantam uma rima que nasceu desse caso:",
+   "cena": {
+    "imagem": "../imagens/IL_bela_cama_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.35
+  },
+  {
+   "fala": "\"Você é uma bruxa, ou você é uma fada, ou você é a esposa de Michael Cleary?\"",
+   "cena": {
+    "video": "../imagens/ANIM_porta_azul.mp4",
+    "zoom": [
+     1.0,
+     1.03
+    ],
+    "congelar": true,
+    "encaixe": "cobrir"
+   }
+  }
+ ],
+ "musica": {
+  "som": "cin01_trilha",
+  "volume_db": -24
+ },
+ "cta": {
+  "titulo": "Você é a esposa de Michael Cleary?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ }
+}
