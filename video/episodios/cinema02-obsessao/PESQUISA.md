@@ -1,6 +1,8 @@
 # O QUE É A CRIATURA? #2 — OBSESSÃO (Obsession, 2026, dir. Curry Barker) — pesquisa (23/11)
 
 Pedido do usuário: "bastante desenvolvimento da parte de folclore, nada raso, pesquisas bem feitas e teorias boas".
+**Restrições do usuário (23/11):** NADA de ligar com as fadas do #1 (fica repetitivo) e NADA brasileiro — sem Pombagira,
+Maria Padilha, Inquisição no Brasil, simpatias. O folclore é do mundo antigo, do Oriente Médio, judaico e europeu.
 Regra da casa (#1): ler o FILME inteiro com a legenda em português antes de fechar as pistas e o veredito. Os fatos do
 filme abaixo vêm de entrevistas e da Wikipedia e serão conferidos na legenda.
 
@@ -69,7 +71,7 @@ filme abaixo vêm de entrevistas e da Wikipedia e serão conferidos na legenda.
   exorcismo de dybbuks como prática corriqueira entre os hassídicos.
 
 ### D. A amarração (agogé, defixio, cartas de tocar) — o feitiço que obriga a amar
-**Este é o fio mais forte, e o mais brasileiro.**
+**Este é o fio mais forte.**
 - **Egito romano, século IV:** feitiços do tipo **agogé** ("que conduz") do *Papiro 121* da British Library, um manual
   de magia de mais de 2 metros ([British Library, Dra. Federica Micucci, 2021](https://www.bl.uk/stories/blogs/posts/love-spells-in-the-greek-magical-papyri)).
   - Escrever nomes sagrados com **sangue de jumento preto** numa concha: *"efeito imediato"*.
@@ -82,37 +84,11 @@ filme abaixo vêm de entrevistas e da Wikipedia e serão conferidos na legenda.
   às vezes vinha **com uma boneca de barro ou cera furada** ([GRBS](https://grbs.library.duke.edu/index.php/grbs/article/download/14739/3877/13593),
   [Betz, PGM](https://static1.squarespace.com/static/5f6e1fb02827913871797e3b/t/65984cad705a9450d4b69393/1704479932339/Greek+Magical+Papyri+-+Betz.pdf)).
   Os estudiosos resumem: o feitiço servia para *forçar alguém a fazer algo contra a própria vontade*.
-- **Brasil, 1591:** na primeira Visitação do Santo Ofício (Bahia e Pernambuco), o visitador **Heitor Furtado de Mendonça**
-  se espanta com o número de mulheres, de toda condição social, praticando **magia amorosa**. Elas usavam as **cartas de
-  tocar**, papéis com orações que, encostados na pessoa, a fariam se apaixonar
-  ([Magia amorosa no Brasil e México coloniais](https://bffrepositorio.unal.edu.co/server/api/core/bitstreams/26629dee-8736-48e6-bc1d-b5d51b3710c1/content),
-  [UNICAMP](https://sistemas-prp.unicamp.br/inscricao-congresso/resumos/2015P7895A2873O2295.pdf)).
-  - **Paula de Siqueira** aprendeu cartas de tocar, "palavras sedutoras que havia de dizer andando em cruz" e pó de
-    pedra d'ara (a pedra consagrada do altar) misturado no vinho ([UNEB](https://ppghis.uneb.br/wp-content/uploads/2024/09/Daniele-Stefani-da-Silva-Corado.pdf)).
-- **Belém, 7 de novembro de 1766:** **Maria Joanna de Azevedo**, 37 anos, nascida em São Luís, confessa ao inquisidor
-  Giraldo José de Abranches doze anos de "orações para obrigar a querer bem" (Livro da Visitação do Grão-Pará, fls.
-  178–189, analisado por [Fernanda Vale, UFMA/Simpósio da UFRB, 2011](https://www2.ufrb.edu.br/simposioinquisicao/wp-content/uploads/2012/01/Fernanda-Vale.pdf)).
-  - Rezava à meia-noite, na encruzilhada, e completava a oração com os nomes **"Edis, Eluas, Eloquis"**, demônios
-    medievais segundo Laura de Mello e Souza.
-  - O homem que ela queria apareceu dizendo que *"não pudera parar nem ter sossego sem que fosse"*.
-  - A oração (IANTT, Inquisição de Lisboa, proc. 2704): *"Fulano, com dois te vejo, com cinco te mando, com dez te
-    amarro, o sangue te bebo, o coração te parto… não poderás comer nem beber, nem dormir, nem sossegar sem comigo
-    vires estar e falar."*
-  - **⇒ É a MESMA fórmula do papiro egípcio de 1.400 anos antes**: a vítima não dorme e não sossega até vir. A fórmula
-    atravessou o Mediterrâneo, Portugal e o Atlântico.
-- **Maria Padilha:** a personagem real é **María de Padilla**, amante do rei **Pedro I de Castela** (1334–1369). O
-  *Romancero* espanhol diz que ela **enfeitiçou o rei** com o cinto de diamantes que a rainha Branca de Bourbon tinha
-  dado a ele ([es.wikipedia](https://es.wikipedia.org/wiki/Maria_de_Padilla),
-  [El Debate](https://www.eldebate.com/historia/20240917/maria-padilla-amante-pedro-i-castilla-conocida-como-hechicera-brasil_227818.html),
-  [SciELO/Alea](https://www.scielo.br/j/alea/a/chKTRcWh7WNFKxLWRyNjhTG/?format=html&lang=pt)).
-  - O nome dela aparece em **orações de feitiçaria amorosa** registradas pela Inquisição portuguesa. No Brasil, virou
-    **Maria Padilha**, talvez a Pombagira mais popular. O livro de **Marlyse Meyer**, *Maria Padilha e toda a sua
-    quadrilha* (1993), refaz o caminho: Montalvan, Beja, Angola, Recife e os terreiros de São Paulo
-    ([Reginaldo Prandi, *Herdeiras do Axé*, 1996, cap. IV](https://reginaldoprandi.fflch.usp.br/sites/reginaldoprandi.fflch.usp.br/files/inline-files/Pombagira_e_as_faces_inconfessas_do_Brasil.pdf)).
-  - **Cuidado:** é uma entidade de religiões vivas, a Umbanda e a Quimbanda. Falar com respeito, sem demonizar. Muitos
-    devotos dizem que **a Pombagira desfaz a amarração, não faz**: quem amarra são as pessoas
-    ([Prandi](https://reginaldoprandi.fflch.usp.br/sites/reginaldoprandi.fflch.usp.br/files/inline-files/Pombagira_e_as_faces_inconfessas_do_Brasil.pdf),
-    [Wikipedia](https://en.wikipedia.org/wiki/Pomba_Gira)).
+- **O elo europeu (a pesquisar):** a Inquisição de **Veneza** no fim do século XVI, com feitiços de amarração,
+  bonecas de cera e "óleos encantados" como filtro. Fonte: Guido Ruggiero, *Binding Passions* (Oxford, 1993), nos
+  capítulos "That Old Black Magic Called Love" e "Apollonia Madizza and the Ties That Bind"
+  ([OUP](https://global.oup.com/academic/product/binding-passions-9780195083200)). Falta achar um caso com nome e uma
+  fórmula que repita o "não dormir, não sossegar" dos papiros.
 - **O filtro do amor — Tristão e Isolda:** os dois bebem por engano o filtro feito para a noite de núpcias de Isolda com
   o rei Marcos. Nas versões antigas, o filtro é **a causa da tragédia**. Em Gottfried von Strassburg (c. 1210), ele vira
   símbolo da paixão ([Britannica](https://www.britannica.com/biography/Gottfried-von-Strassburg/article-history),
@@ -150,12 +126,6 @@ item na fonte original antes de usar.
   [Wikipedia](https://en.wikipedia.org/wiki/Mary_Blandy), [NLM](https://www.nlm.nih.gov/hmd/topics/murder-pamphlets/blandy-tryal_2449071R-sm.html?imgid=10).
 - **⇒ O tema do filme numa história real:** um "feitiço de amor" que, na prática, mata quem está em volta.
 
-### H. Simpatias de Santo Antônio — o desejo que pressiona
-- A imagem do santo **de cabeça para baixo**, dentro do copo d'água ou do armário, "até ele arrumar o casamento".
-- É um jeito de **forçar** o santo, tradição popular que a Igreja não reconhece oficialmente
-  ([A Tarde](https://atarde.com.br/municipios/por-que-a-igreja-catolica-nao-reconhece-santo-antonio-como-o-santo-casamenteiro-1390781)).
-- Falta achar a origem documentada (Portugal). Usar só como abertura leve ou nem usar.
-
 ## 3. Esboço de teorias (a fechar DEPOIS de ler o filme)
 Mesmo formato do #1: pistas do filme, um checklist por teoria, um veredito.
 1. **O gênio** (*jinn*): realiza o desejo e se apaixona. Contra: o diretor diz que não é possessão, e o jinn tem vontade
@@ -163,19 +133,16 @@ Mesmo formato do #1: pistas do filme, um checklist por teoria, um veredito.
 2. **A pata do macaco**: o objeto amaldiçoado. Contra: o diretor diz que o objeto não é amaldiçoado; o desejo é.
 3. **O dybbuk**: um espírito que entra no corpo por amor. Contra: não há morto apaixonado, e a Nikki verdadeira está
    presa lá dentro.
-4. **A amarração** (agogé → cartas de tocar → amarração): a "criatura" é o próprio feitiço de amor. Nikki se comporta
-   exatamente como as vítimas descritas nos papiros e nas confissões: não dorme, não sossega, vai até quem amarrou, e
+4. **A amarração** (agogé → defixio → filtro de amor → Veneza): a "criatura" é o próprio feitiço de amor. Nikki se comporta
+   exatamente como as vítimas descritas nos papiros e nos processos: não dorme, não sossega, vai até quem amarrou, e
    qualquer obstáculo é destruído.
    **Forte candidato a veredito**, porque explica a regra "só acaba com a morte" e o "você escolheu isso por ela".
 
-Desvios fixos do formato: a erotomania (a ciência), Mary Blandy (o caso real) e Maria Padilha (o Brasil), contada com
-respeito.
+Desvios fixos do formato: a erotomania (a ciência) e Mary Blandy (o caso real). Sem ponte com as fadas do #1.
 
 ## 4. Falta
 - **O FILME com legenda em português**, para tirar as pistas exatas e as falas dublar/citar. Rodar `falas.py` como no #1.
 - O texto completo do artigo sobre jinn e erotomania, e o artigo da Andrews, que deu 403.
-- A rima, a oração ou o documento da "Oração de Maria Padilha" na Inquisição (Laura de Mello e Souza, *O Diabo e a
-  Terra de Santa Cruz*, 1986).
+- Um caso com nome da Inquisição de Veneza (Ruggiero) com a fórmula da amarração.
 - A fonte primária dos itens do salgueiro.
-- Imagens em domínio público: o papiro da British Library, uma tábua de defixio, a gravura de Mary Blandy, María de
-  Padilla, a peça *O Dibuk* (cartaz de 1920 ou o filme de 1937) e o *Romancero*.
+- Imagens em domínio público: o papiro da British Library, uma tábua de defixio, a gravura de Mary Blandy, a peça *O Dibuk* (cartaz de 1920 ou o filme de 1937) .
