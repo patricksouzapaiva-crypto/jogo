@@ -28,8 +28,8 @@ SANGUE = (150, 18, 22)        # vermelho do fio e dos títulos
 FIO_BGR = np.array([0.08, 0.06, 0.62], np.float32)
 
 EP = {
-    "pistas": ["O DESEJO TEM REGRAS", "O GALHO PRECISA SER QUEBRADO", "ELA NÃO SOSSEGA", "QUEM ATRAPALHA, MORRE",
-               "A NIKKI DE VERDADE AINDA ESTÁ LÁ", "ELE ESCOLHEU POR ELA", "MAIS DO QUE QUALQUER PESSOA NO MUNDO"],
+    "pistas": ["O desejo tem regras", "O galho precisa ser quebrado", "Ela não sossega", "Quem atrapalha, morre",
+               "A Nikki de verdade ainda está lá", "Ele escolheu por ela", "Mais do que qualquer pessoa no mundo"],
     "itens": ["tem regras", "o galho quebrado", "não sossega", "quem atrapalha morre", "a Nikki está lá dentro",
               "escolheu por ela", "ao pé da letra"],
     # ✓ de cada suspeito (provisório até a legenda): gênio 5 · amarração 7 · dybbuk 6 · pata 4
@@ -126,9 +126,26 @@ def catenaria(a, b, queda, n=40):
     return [(x0 + (x1 - x0) * s, y0 + (y1 - y0) * s + queda * 4 * s * (1 - s)) for s in np.linspace(0, 1, n)]
 
 
+def cabe(txt, arq, tam, larg, minimo=40):
+    """o maior tamanho (até 'tam') em que o texto cabe na largura 'larg' (px)"""
+    while ImageFont.truetype(arq, tam).getlength(txt) > larg and tam > minimo:
+        tam -= 2
+    return tam
+
+
+def conferir(linhas, im, margem=0.04):
+    """23/11 (usuário: "AMARRAÇÃO está cortada — verifique em todos"): nenhuma linha pode passar da borda do papel/chumbo.
+    Se passar, a renderização PARA, em vez de sair uma palavra cortada."""
+    for txt, arq, tam, _, x, y in linhas:
+        w = ImageFont.truetype(arq, tam).getlength(txt)
+        if x * im.width < margem * im.width - 1 or x * im.width + w > (1 - margem) * im.width + 1:
+            raise SystemExit(f"TEXTO CORTADO: '{txt}' ({tam}px) vai de {x * im.width:.0f} a {x * im.width + w:.0f}, papel {im.width}px")
+
+
 def escrita_pena(im, linhas, prog):
     """linhas = [(texto, fonte, tam, cor, x, y)] (fração do papel); prog 0..1 revela da esquerda p/ a direita, linha a
     linha, como uma pena escrevendo (máscara com borda macia), com a tinta um pouco mais escura no traço novo."""
+    conferir(linhas, im)
     camada = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(camada)
     caixas = []
     for txt, arq, tam, cor, x, y in linhas:
@@ -148,6 +165,8 @@ def escrita_pena(im, linhas, prog):
 def risco_texto(im, linhas, prog, cor_sulco=(14, 14, 18), brilho=(240, 240, 245), grosso=2):
     """texto RISCADO no chumbo com um prego: sulco escuro + rebarba clara deslocada; prog revela como o de cima"""
     from PIL import ImageFilter
+    if linhas and linhas[0][0] != "DESCARTADA":   # a DESCARTADA é girada e conferida à parte
+        conferir(linhas, im, margem=0.05)
     sulco = Image.new("L", im.size, 0); d = ImageDraw.Draw(sulco); caixas = []
     for txt, arq, tam, _, x, y in linhas:
         f = ImageFont.truetype(arq, tam); X, Y = x * im.width, y * im.height
@@ -226,7 +245,7 @@ def pista(saida, num, frase):
     larg = base.width * 0.84
     for tam in (150, 132, 116, 102):   # o maior tamanho que fecha em até 3 linhas (4 no último)
         f = ImageFont.truetype(FELL_I, tam)
-        palavras, linhas_txt, atual = frase.capitalize().split(), [], ""
+        palavras, linhas_txt, atual = frase.split(), [], ""   # como está escrita (nomes próprios)
         for p in palavras:
             if atual and f.getlength(atual + " " + p) > larg:
                 linhas_txt.append(atual); atual = p
@@ -296,7 +315,8 @@ def checklist(saida, nome, marcas, apresentacao=False):
     a_ = base.getchannel("A"); base = ImageEnhance.Contrast(ImageEnhance.Brightness(base.convert("RGB")).enhance(1.3)).enhance(0.8).convert("RGBA")
     base.putalpha(a_)   # chumbo mais claro e mais liso: o sulco escuro aparece
     prego = carregar("ID34_prego_ferro_1.png")
-    titulo = [(nome, FELL_SC, 104, None, 0.09, 0.06)]
+    t_tit = cabe(nome, FELL_SC, 104, base.width * 0.8)
+    titulo = [(nome, FELL_SC, t_tit, None, 0.09, 0.06)]
     tam_l = 72   # o maior tamanho em que a linha mais longa cabe na tábua (de 0.235 até 0.93 da largura)
     while max(ImageFont.truetype(FELL, tam_l).getlength(it) for it in itens) > base.width * 0.69 and tam_l > 50:
         tam_l -= 2
@@ -325,7 +345,7 @@ def checklist(saida, nome, marcas, apresentacao=False):
                 else:
                     x_fundo(d, x, y, 62, pm[k])
             if p_tot > 0:
-                im = risco_texto(im, [(f"{sum(1 for m in marcas if m)} DE {n}", FELL_SC, 110, None, 0.52, 0.86)], p_tot,
+                im = risco_texto(im, [(f"{sum(1 for m in marcas if m)} DE {n}", FELL_SC, 110, None, 0.5, 0.86)], p_tot,
                                  cor_sulco=(150, 14, 18), brilho=(255, 190, 180))
             if p_desc > 0:   # DESCARTADA riscada fundo, em diagonal, em vermelho
                 cam = Image.new("RGBA", im.size, (0, 0, 0, 0))
@@ -349,7 +369,12 @@ def checklist(saida, nome, marcas, apresentacao=False):
         por(tela, tabua(t), C @ Mt, sombra=1, z=0.3 * (1 - u) + 0.05)
         if not apresentacao and t > t_desc - 0.4:   # o prego atravessa a tábua: DESCARTADA
             p = eout(lin(t, t_desc - 0.4, 0.35)); som(t, t_desc - 0.1, "impacto", -6)
-            Mp = mat_obj(1330 - 120 * p, 120 + 150 * p, 0.55, 52, prego.shape[1], prego.shape[0])   # crava no canto de cima
+            # crava no furinho do canto de cima à esquerda da tábua, vindo de fora: não cobre nenhum texto
+            furo = Mt @ np.array([base.width * 0.035, base.height * 0.035, 1], np.float32)
+            Lp = prego.shape[1] * 0.5
+            ang = 35; dx, dy = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+            ponta = (furo[0] - (1 - p) * 220 * dx, furo[1] - (1 - p) * 220 * dy)
+            Mp = mat_obj(ponta[0] - dx * Lp * 0.42, ponta[1] - dy * Lp * 0.42, 0.5, ang, prego.shape[1], prego.shape[0])
             por(tela, prego, C @ Mp, sombra=1, z=0.4 * (1 - p) + 0.05)
             if p >= 1:   # a palavra riscada em vermelho
                 pass
