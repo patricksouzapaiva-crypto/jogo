@@ -1,6 +1,7 @@
 """Capas dos 3 Shorts (1080×1920) do O QUE É A CRIATURA? #1 — mesmo estilo das capas v4 (letra Montserrat Black em
 degradê, contorno, sombra 3D, tarja vermelha), com as imagens do PRÓPRIO Short (nenhum quadro do filme: os Shorts não
-usam o filme). O texto fica no terço de cima (embaixo o app do YouTube põe título e botões).
+usam o filme). 23/11 (pesquisa): no feed e na busca o Short aparece cortado em QUADRADO (o meio 1080×1080) — o texto e o assunto
+ficam dentro dessa faixa do meio (y 420–1500); 2–4 palavras, contorno forte, um assunto só.
 Uso: python3 gerar_capas_shorts.py → capa_short1_cleary.jpg, capa_short2_tulpa.jpg, capa_short3_trocado.jpg"""
 import capas_base as cb
 from capas_base import BRANCO, MONT, OURO, SANGUE, grade, letreiro, tarja, vinheta, salvar
@@ -20,9 +21,9 @@ def topo_escuro(im, ate=0.5, forca=0.8):
 def capa(arq, cx, linhas, tag, nome, tinta=(1.0, 1.0, 1.0), brilho=1.25, zoom=1.0):
     im = cb.base(arq, cx, 0.5, zoom)
     im = grade(im, sat=1.3, contraste=1.22, brilho=brilho, tinta=tinta)
-    im = vinheta(topo_escuro(im, 0.55, 0.82), 0.35, 0.5, 0.6)
-    c = letreiro(im, linhas, cb.W / 2, 330, alinhar="centro", entre=1.0)
-    tarja(c, tag, 80, 170, 58)
+    im = vinheta(topo_escuro(im, 0.62, 0.75), 0.35, 0.5, 0.6)
+    c = letreiro(im, linhas, cb.W / 2, 560, alinhar="centro", entre=1.0)   # dentro do quadrado do meio
+    tarja(c, tag, 90, 440, 58)
     salvar(c, nome)
 
 
