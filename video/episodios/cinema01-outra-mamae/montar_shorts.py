@@ -1,7 +1,8 @@
 """Monta os 3 Shorts (9:16) do O QUE É A CRIATURA? #1 (23/11; molde do montar_shorts do Ep. 11): gancho no 1º quadro,
 cada Short é um teaser que termina em aberto e fecha com o Vigia chamando pro episódio.
-REGRA DESTE EPISÓDIO: nenhuma cena do filme (a NBC Universal bloqueou o vídeo longo pelo Content ID) — só ilustrações,
-animações e imagens históricas. Saem: trechos do filme, a dublagem, as peças 16:9 (cartões, checklists) e as fichas.
+23/11: a 1ª versão não tinha filme (a NBC Universal bloqueou o longo pelo Content ID); o usuário pediu cenas do filme
+("vitaliza muito"), sabendo que os Shorts podem ser reivindicados: abertura com uma fala + 1–2 cenas sem som no meio
+(formato vertical próprio, cortar_vertical.py). Saem do longo: os trechos 16:9, as peças (cartões, checklists) e as fichas.
 Cada Short pode juntar vários trechos da narração ("blocos"); os tempos saem de audio/alinhamento.json.
 Uso: python3 montar_shorts.py → shorts/*.json + vozes; depois: gerar.py shorts/<nome>.json publicacao/shorts_final/<nome>.mp4"""
 import copy, json, subprocess, sys
@@ -34,24 +35,31 @@ def foto(arq, z=(1.0, 1.08)):
 
 
 JORNAL = "reais_prontos/cleary_sun_1895.jpg"
+# 23/11 (usuário: "cenas do filme nos shorts, isso vitaliza muito"): cada Short ABRE com uma fala do filme (com a dublagem)
+# e tem 1–2 cenas do filme sem som no meio (shorts/filme_*.mp4, de cortar_vertical.py). O resto segue com as ilustrações.
+TRECHO = {"caso_cheiro": 3.1, "p6_existir": 3.6, "p7_eu": 3.6}   # duração dos trechos de abertura (s)
+
+
+def filme_v(nome):
+    return {"video": f"filme_{nome}.mp4", "zoom": [1.0, 1.0], "congelar": True, "_local": True}
 SHORTS = [
     # 1. o caso real: o marido que queimou a esposa porque jurava que ela tinha sido trocada (fecha na rima das crianças)
-    {"nome": "s1_cleary", "blocos": [(7, 7), (144, 148), (150, 152), (154, 155)], "titulo": "Você é a esposa de Michael Cleary?",
-     "cenas": {7: foto(JORNAL, (1.0, 1.12)), 144: foto("imagens/IA02_lareira_2.jpg"), 145: anim("outra_silhueta"),
-               146: il("pais_briga", 1), 147: foto("imagens/IA02_lareira_1.jpg"), 148: foto(JORNAL, (1.1, 1.2)),
+    {"nome": "s1_cleary", "abre": "caso_cheiro", "blocos": [(7, 7), (144, 148), (150, 152), (154, 155)], "titulo": "Você é a esposa de Michael Cleary?",
+     "cenas": {7: foto(JORNAL, (1.0, 1.12)), 144: foto("imagens/IA02_lareira_2.jpg"), 145: filme_v("b_outra_rosto"),
+               146: filme_v("b_pais_briga"), 147: foto("imagens/IA02_lareira_1.jpg"), 148: foto(JORNAL, (1.1, 1.2)),
                150: foto("imagens/IA02_lareira_1.jpg", (1.1, 1.2)), 152: il("pos_creditos", 2),
                154: il("bela_cama", 2), 155: anim("porta_azul")}},
     # 2. a tulpa: o monge que Alexandra David-Néel criou com a mente e que começou a aparecer sozinho
-    {"nome": "s2_tulpa", "blocos": [(80, 87)], "titulo": "Ela criou um ser só com a mente.",
+    {"nome": "s2_tulpa", "abre": "p6_existir", "blocos": [(80, 87)], "titulo": "Ela criou um ser só com a mente.",
      "cenas": {80: il("outra_silhueta", 2), 81: il("maquete", 2), 83: anim("rasteja"), 85: il("maquete", 1),
-               86: il("bela_sozinha", 1)}},
+               86: filme_v("b_bela_sozinha")}},
     # 3. o trocado: as fadas que levavam a criança e deixavam uma cópia no berço
-    {"nome": "s3_trocado", "blocos": [(118, 126)], "titulo": "Não era o seu filho.",
+    {"nome": "s3_trocado", "abre": "p7_eu", "blocos": [(118, 126)], "titulo": "Não era o seu filho.",
      "cenas": {118: foto("imagens/IA01_berco_1.jpg"), 119: foto("imagens/IA01_berco_2.jpg"),
-               120: foto("reais_prontos/fussli_changeling.jpg", (1.05, 1.15)), 123: il("bela_cama", 1),
-               124: anim("abraco"), 126: il("outra_silhueta", 1)}},
+               120: foto("reais_prontos/fussli_changeling.jpg", (1.05, 1.15)), 123: filme_v("b_mesa"),
+               124: anim("abraco"), 126: filme_v("b_rosto_final")}},
 ]
-FILME = ("filmes_prontos/",)
+FILME = ("filmes_prontos/",)   # os trechos 16:9 do longo (com moldura) não entram: no vertical entram os shorts/filme_*
 
 
 def limpar(c):
@@ -60,8 +68,9 @@ def limpar(c):
 
 
 def ajustar_cena(c):
+    local = c.pop("_local", False)
     for campo in ("imagem", "video"):
-        if c.get(campo):
+        if c.get(campo) and not local:
             c[campo] = "../" + c[campo]
     if c.get("imagem") or c.get("video"):
         c["encaixe"] = "cobrir"
@@ -110,10 +119,19 @@ for S in SHORTS:
     if not bat[0].get("cena"):
         raise SystemExit(f"{S['nome']}: a 1ª batida precisa de cena")
     bat[0]["cena"]["entrada"] = "corte"   # gancho: imagem no 1º quadro
+    if S.get("abre"):   # a fala do filme toca ANTES da 1ª frase (como o fala_filme do longo): a voz espera
+        d = TRECHO[S["abre"]] + 0.25
+        clip = {"video": f"filme_{S['abre']}.mp4", "zoom": [1.0, 1.0], "congelar": True, "encaixe": "cobrir",
+                "antecipar": round(d, 2), "antecipar_fixo": True, "entrada": "corte"}
+        bat[0]["cenas"] = [clip, bat[0].pop("cena")]
+        bat[0]["cenas"][1]["entrada"] = "corte"
+        bat[0]["pausa_antes_s"] = round(d + 0.1, 2)
+        bat[0]["sons"] = [{"em": None, "som": f"filme_{S['abre']}", "volume_db": 0, "depois": False,
+                           "atraso": round(-d + 0.05, 2), "arquivo": str(AQUI / "shorts" / f"filme_{S['abre']}.wav")}]
     r = {k: v for k, v in longo.items() if k not in ("batidas", "cta", "voz_arquivo", "musica")}
     r.update({"formato": "9:16", "voz_arquivo": voz.name, "batidas": bat, "cauda": 1.0, "apertar_pausas": False,
               "vigia_padrao": False, "cena_minima": 2.0, "musica": {"som": "cin01_trilha", "volume_db": -24},
               "cta": {"titulo": S["titulo"], "canal": "Último Abrigo", "subtitulo": "Episódio completo no canal",
                       "fundo": "../../../painel/cenarios/abrigo_vertical.png", "pose": "c_cafe_convite", "duracao": 3.4}})
     (AQUI / "shorts" / f"{S['nome']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(S["nome"], f"{total:.1f}s de narração, {len(bat)} falas, filme: {json.dumps(r).count('filmes_prontos')}")
+    print(S["nome"], f"{total:.1f}s de narração, {len(bat)} falas, trechos do filme: {json.dumps(r).count('filme_') // 1}")

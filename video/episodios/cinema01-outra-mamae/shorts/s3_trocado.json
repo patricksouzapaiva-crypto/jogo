@@ -48,15 +48,40 @@
  "batidas": [
   {
    "fala": "Na Irlanda, na Escócia e na Escandinávia, durante séculos, pais acreditaram numa coisa terrível.",
-   "cena": {
-    "imagem": "../imagens/IA01_berco_1.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "encaixe": "cobrir",
-    "entrada": "corte"
-   }
+   "cenas": [
+    {
+     "video": "filme_p7_eu.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "encaixe": "cobrir",
+     "antecipar": 3.85,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "../imagens/IA01_berco_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "encaixe": "cobrir",
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 3.95,
+   "sons": [
+    {
+     "em": null,
+     "som": "filme_p7_eu",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.8,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/shorts/filme_p7_eu.wav"
+    }
+   ]
   },
   {
    "fala": "Que as fadas entravam nas casas à noite, levavam a criança, e deixavam no lugar uma cópia.",
@@ -109,11 +134,12 @@
   {
    "fala": "O trocado tinha o rosto da criança.",
    "cena": {
-    "imagem": "../imagens/IL_bela_cama_1.jpg",
+    "video": "filme_b_mesa.mp4",
     "zoom": [
      1.0,
-     1.08
+     1.0
     ],
+    "congelar": true,
     "encaixe": "cobrir"
    }
   },
@@ -155,11 +181,12 @@
   {
    "fala": "Porque, nas lendas, o povo das fadas cobiçava aquilo que não tinha: uma vida humana.",
    "cena": {
-    "imagem": "../imagens/IL_outra_silhueta_1.jpg",
+    "video": "filme_b_rosto_final.mp4",
     "zoom": [
      1.0,
-     1.08
+     1.0
     ],
+    "congelar": true,
     "encaixe": "cobrir"
    }
   }

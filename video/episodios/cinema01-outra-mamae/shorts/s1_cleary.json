@@ -48,15 +48,40 @@
  "batidas": [
   {
    "fala": "Em mil oitocentos e noventa e cinco, na Irlanda, um homem queimou a própria esposa, porque jurava que ela tinha sido trocada por uma coisa assim.",
-   "cena": {
-    "imagem": "../reais_prontos/cleary_sun_1895.jpg",
-    "zoom": [
-     1.0,
-     1.12
-    ],
-    "encaixe": "cobrir",
-    "entrada": "corte"
-   }
+   "cenas": [
+    {
+     "video": "filme_caso_cheiro.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "encaixe": "cobrir",
+     "antecipar": 3.35,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "../reais_prontos/cleary_sun_1895.jpg",
+     "zoom": [
+      1.0,
+      1.12
+     ],
+     "encaixe": "cobrir",
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 3.45,
+   "sons": [
+    {
+     "em": null,
+     "som": "filme_caso_cheiro",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.3,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/shorts/filme_caso_cheiro.wav"
+    }
+   ]
   },
   {
    "fala": "O marido dela, Michael, chamou um \"médico das fadas\", um curandeiro da região chamado Denis Ganey.",
@@ -73,10 +98,10 @@
   {
    "fala": "E o veredito dele foi: a verdadeira Bridget tinha sido levada pelas fadas.",
    "cena": {
-    "video": "../imagens/ANIM_outra_silhueta.mp4",
+    "video": "filme_b_outra_rosto.mp4",
     "zoom": [
      1.0,
-     1.03
+     1.0
     ],
     "congelar": true,
     "encaixe": "cobrir"
@@ -85,11 +110,12 @@
   {
    "fala": "Michael se convenceu de que aquela mulher na cama não era mais a esposa dele.",
    "cena": {
-    "imagem": "../imagens/IL_pais_briga_1.jpg",
+    "video": "filme_b_pais_briga.mp4",
     "zoom": [
      1.0,
-     1.08
+     1.0
     ],
+    "congelar": true,
     "encaixe": "cobrir"
    }
   },

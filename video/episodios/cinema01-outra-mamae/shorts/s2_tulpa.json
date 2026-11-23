@@ -48,15 +48,40 @@
  "batidas": [
   {
    "fala": "Em mil novecentos e vinte e nove, a exploradora francesa Alexandra David-Néel publicou um relato sobre o Tibete.",
-   "cena": {
-    "imagem": "../imagens/IL_outra_silhueta_2.jpg",
-    "zoom": [
-     1.0,
-     1.08
-    ],
-    "encaixe": "cobrir",
-    "entrada": "corte"
-   }
+   "cenas": [
+    {
+     "video": "filme_p6_existir.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "encaixe": "cobrir",
+     "antecipar": 3.85,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "../imagens/IL_outra_silhueta_2.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "encaixe": "cobrir",
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 3.95,
+   "sons": [
+    {
+     "em": null,
+     "som": "filme_p6_existir",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.8,
+     "arquivo": "/home/user/jogo/video/episodios/cinema01-outra-mamae/shorts/filme_p6_existir.wav"
+    }
+   ]
   },
   {
    "fala": "Ela contou que tinha criado, só com a concentração, um ser imaginário.",
@@ -101,11 +126,12 @@
   {
    "fala": "Nasceu numa menina sozinha, numa casa onde ninguém tinha tempo para ela.",
    "cena": {
-    "imagem": "../imagens/IL_bela_sozinha_1.jpg",
+    "video": "filme_b_bela_sozinha.mp4",
     "zoom": [
      1.0,
-     1.08
+     1.0
     ],
+    "congelar": true,
     "encaixe": "cobrir"
    }
   },
