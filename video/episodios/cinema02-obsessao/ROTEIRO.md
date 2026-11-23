@@ -41,6 +41,9 @@ e num galho de salgueiro guardado até hoje num museu inglês. Igual ao do filme
 No final, você vai saber exatamente o que é a Nikki. E por que esse desejo só podia acabar de um jeito.
 `[PEÇA: abertura "O QUE É A CRIATURA?" — versão #2 (o galho quebra, o lacre)]`
 `[VIGIA]` Eu sou o Vigia. Arquivo número dois: Obsessão.
+`[VIGIA — tela com o botão de inscrição animado, ~5 s]` Se você ainda não é inscrito, se inscreve e ativa o sininho. O veredito de hoje não é o que você está pensando.
+<!-- 23/11 (usuário): pedido de inscrição no começo, depois da apresentação. Regra: no máximo ~5 s e emendado com um
+     gancho (a 2ª frase reabre a curiosidade). Nada de pedido no meio do julgamento; o pedido do fim continua. -->
 
 ## AS PISTAS (sem spoiler) ⚠️ conferir todas na legenda
 `[PEÇA: pista 1 — etiqueta no fio vermelho]` **PISTA 1 — O DESEJO TEM REGRAS**
