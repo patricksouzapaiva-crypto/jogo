@@ -145,13 +145,13 @@ def escrita_pena(im, linhas, prog):
     out = im.copy(); out.alpha_composite(camada); return out
 
 
-def risco_texto(im, linhas, prog, cor_sulco=(18, 18, 22), brilho=(235, 235, 240)):
+def risco_texto(im, linhas, prog, cor_sulco=(14, 14, 18), brilho=(240, 240, 245), grosso=2):
     """texto RISCADO no chumbo com um prego: sulco escuro + rebarba clara deslocada; prog revela como o de cima"""
     from PIL import ImageFilter
     sulco = Image.new("L", im.size, 0); d = ImageDraw.Draw(sulco); caixas = []
     for txt, arq, tam, _, x, y in linhas:
         f = ImageFont.truetype(arq, tam); X, Y = x * im.width, y * im.height
-        d.text((X, Y), txt, font=f, fill=255); caixas.append(d.textbbox((X, Y), txt, font=f))
+        d.text((X, Y), txt, font=f, fill=255, stroke_width=grosso, stroke_fill=255); caixas.append(d.textbbox((X, Y), txt, font=f))
     tot = sum(b[2] - b[0] for b in caixas); falta = prog * tot
     mask = Image.new("L", im.size, 0); dm = ImageDraw.Draw(mask)
     for b in caixas:
@@ -167,6 +167,36 @@ def risco_texto(im, linhas, prog, cor_sulco=(18, 18, 22), brilho=(235, 235, 240)
     rgb = rgb * (1 - 0.7 * rebarba[..., None]) + np.array(brilho, np.float32) * 0.7 * rebarba[..., None]
     arr[..., :3] = rgb
     return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGBA")
+
+
+def visto_fio(d, x, y, tam, prog):
+    """✓ (23/11, usuário: "o chumbo está meio confuso"): um VISTO claro, feito de fio vermelho, com um nó na ponta"""
+    if prog <= 0: return
+    a, b, c = (x - tam * 0.42, y - tam * 0.02), (x - tam * 0.1, y + tam * 0.32), (x + tam * 0.48, y - tam * 0.42)
+    pts = [a, b, c]; L1 = math.dist(a, b); L2 = math.dist(b, c); falta = prog * 1.2 * (L1 + L2)
+    if falta < L1:
+        pts = [a, (a[0] + (b[0] - a[0]) * falta / L1, a[1] + (b[1] - a[1]) * falta / L1)]
+    elif falta < L1 + L2:
+        e = (falta - L1) / L2; pts = [a, b, (b[0] + (c[0] - b[0]) * e, b[1] + (c[1] - b[1]) * e)]
+    larg = max(5, tam // 6)
+    d.line(pts, fill=(95, 8, 12, 255), width=larg + 4, joint="curve")
+    d.line(pts, fill=SANGUE + (255,), width=larg, joint="curve")
+    d.line([(p[0] - 1, p[1] - 2) for p in pts], fill=(225, 80, 80, 200), width=max(1, larg // 4))
+    r = larg * 0.75
+    d.ellipse([a[0] - r, a[1] - r, a[0] + r, a[1] + r], fill=(120, 10, 14, 255))   # o nó
+
+
+def x_fundo(d, x, y, tam, prog):
+    """✗: um X riscado fundo no chumbo"""
+    if prog <= 0: return
+    larg = max(6, tam // 6)
+    for k, (p0, p1) in enumerate((((x - tam * .38, y - tam * .38), (x + tam * .38, y + tam * .38)),
+                                  ((x + tam * .38, y - tam * .38), (x - tam * .38, y + tam * .38)))):
+        e = min(1, max(0, prog * 2 - k))
+        if e <= 0: continue
+        q = (p0[0] + (p1[0] - p0[0]) * e, p0[1] + (p1[1] - p0[1]) * e)
+        d.line([p0, q], fill=(10, 10, 12, 255), width=larg)
+        d.line([(p0[0] + 2, p0[1] + 2), (q[0] + 2, q[1] + 2)], fill=(225, 225, 230, 160), width=max(1, larg // 3))
 
 
 def no_vermelho(d, x, y, tam, prog):
@@ -193,21 +223,28 @@ def pista(saida, num, frase):
     base = Image.open(CAM / "ID36_etiqueta_pergaminho_1.png").convert("RGBA")
     alf = carregar("ID41_alfinete_cabeca_preta_2.png")
     from criatura import texto_img  # noqa
-    larg = base.width * 0.8
-    f = ImageFont.truetype(FELL_I, 112)
-    palavras, linhas_txt, atual = frase.capitalize().split(), [], ""
-    for p in palavras:
-        if atual and f.getlength(atual + " " + p) > larg:
-            linhas_txt.append(atual); atual = p
-        else:
-            atual = (atual + " " + p).strip()
-    linhas_txt.append(atual)
-    tam = 112 if len(linhas_txt) <= 3 else 92
-    ls = [(f"Pista {ROMANOS[num - 1]}", FELL_SC, 96, SANGUE, 0.12, 0.22)]
+    larg = base.width * 0.84
+    for tam in (150, 132, 116, 102):   # o maior tamanho que fecha em até 3 linhas (4 no último)
+        f = ImageFont.truetype(FELL_I, tam)
+        palavras, linhas_txt, atual = frase.capitalize().split(), [], ""
+        for p in palavras:
+            if atual and f.getlength(atual + " " + p) > larg:
+                linhas_txt.append(atual); atual = p
+            else:
+                atual = (atual + " " + p).strip()
+        linhas_txt.append(atual)
+        if len(linhas_txt) <= 3:
+            break
+    def centro(txt, arq, t_):
+        return (1 - ImageFont.truetype(arq, t_).getlength(txt) / base.width) / 2
+    altura = (tam / base.height) * 1.08 * len(linhas_txt)
+    y0 = 0.32 + (0.58 - altura) / 2          # o bloco da frase no meio da área livre
+    ls = [(f"Pista {ROMANOS[num - 1]}", FELL_SC, 128, SANGUE, centro(f"Pista {ROMANOS[num - 1]}", FELL_SC, 128), 0.17)]
     for k, l in enumerate(linhas_txt):
-        ls.append((l, FELL_I, tam, TINTA, 0.1, 0.4 + k * (tam / base.height) * 1.12))
+        ls.append((l, FELL_I, tam, TINTA, centro(l, FELL_I, tam), y0 + k * (tam / base.height) * 1.08))
     cache = {}
-    som = Sons(); esc = 620 / base.width
+    som = Sons(); esc = 700 / base.width
+    carretel = carregar("ID42_carretel_linha_vermelha_1.png"); galho = carregar("ID39_galho_salgueiro_inteiro_1.png")
 
     def etiqueta(prog):
         k = round(prog, 2)
@@ -220,10 +257,15 @@ def pista(saida, num, frase):
         tela = np.zeros((H, W, 3), np.float32); por(tela, mesa, C @ Mm)
         desce = eout(lin(t, 0.0, 1.1)); som(t, 0.05, "ep09_papel", -8)
         balanco = math.sin(t * 4.2) * 7 * math.exp(-t * 1.3) if t > 0.6 else 0
-        cx, cy = 960, 600 - (1 - desce) * 900
+        cx, cy = 960, 560 - (1 - desce) * 1000
         Me = mat_obj(cx, cy, esc, balanco, base.width, base.height)
         furo = Me @ np.array([base.width * 0.5, base.height * 0.08, 1], np.float32)
-        fio(tela, [(C @ np.array([furo[0] - 40, -200, 1], np.float32))[:2], (C @ np.array([*furo[:2], 1], np.float32))[:2]], 1.0, 6)
+        # a mesa ao redor: o carretel (o fio sai dele até a etiqueta) e o galho de salgueiro
+        Mc = mat_obj(300, 800, 0.36, -12, carretel.shape[1], carretel.shape[0]); por(tela, carretel, C @ Mc, sombra=1, z=0.05)
+        Mg = mat_obj(1530, 850, 0.6, -20, galho.shape[1], galho.shape[0]); por(tela, galho, C @ Mg, sombra=1, z=0.03)
+        ponta = Mc @ np.array([carretel.shape[1] * 0.62, carretel.shape[0] * 0.55, 1], np.float32)
+        pts = catenaria(ponta[:2], furo[:2], 120 * desce + 40)
+        fio(tela, [(C @ np.array([px, py, 1], np.float32))[:2] for px, py in pts], 1.0, 6)
         prog = ease(lin(t, 1.3, 3.4))
         if 1.3 < t < 4.7:
             som(t, 1.3, "ep08_pincel", -16)
@@ -249,10 +291,16 @@ def checklist(saida, nome, marcas, apresentacao=False):
     if apresentacao:
         marcas = [1 if m else None for m in marcas]
     mesa, Mm = fundo("ID31_mesa_feitico_2.png")
+    from PIL import ImageEnhance
     base = Image.open(CAM / "ID33_tabua_chumbo_1.png").convert("RGBA")
+    a_ = base.getchannel("A"); base = ImageEnhance.Contrast(ImageEnhance.Brightness(base.convert("RGB")).enhance(1.3)).enhance(0.8).convert("RGBA")
+    base.putalpha(a_)   # chumbo mais claro e mais liso: o sulco escuro aparece
     prego = carregar("ID34_prego_ferro_1.png")
-    titulo = [(nome, FELL_SC, 92, None, 0.1, 0.07)]
-    linhas = [(it, FELL, 62, None, 0.22, 0.24 + k * 0.088) for k, it in enumerate(itens)]
+    titulo = [(nome, FELL_SC, 104, None, 0.09, 0.06)]
+    tam_l = 72   # o maior tamanho em que a linha mais longa cabe na tábua (de 0.235 até 0.93 da largura)
+    while max(ImageFont.truetype(FELL, tam_l).getlength(it) for it in itens) > base.width * 0.69 and tam_l > 50:
+        tam_l -= 2
+    linhas = [(it, FELL, tam_l, None, 0.235, 0.215 + k * 0.093) for k, it in enumerate(itens)]
     som = Sons(); esc = 880 / base.height
     cache = {}
 
@@ -271,12 +319,11 @@ def checklist(saida, nome, marcas, apresentacao=False):
             d = ImageDraw.Draw(im)
             for k, m in enumerate(marcas):
                 if m is None: continue
-                x, y = base.width * 0.12, base.height * (0.24 + k * 0.088) + 30
+                x, y = base.width * 0.135, base.height * (0.215 + k * 0.093) + 44
                 if m:
-                    no_vermelho(d, x, y, 74, pm[k])
-                elif pm[k] > 0:
-                    e = pm[k]
-                    d.line([(x - 30, y - 22), (x - 30 + 60 * e, y + 22 * (2 * e - 1))], fill=(30, 30, 34, 255), width=9)
+                    visto_fio(d, x, y, 80, pm[k])
+                else:
+                    x_fundo(d, x, y, 62, pm[k])
             if p_tot > 0:
                 im = risco_texto(im, [(f"{sum(1 for m in marcas if m)} DE {n}", FELL_SC, 110, None, 0.52, 0.86)], p_tot,
                                  cor_sulco=(150, 14, 18), brilho=(255, 190, 180))
