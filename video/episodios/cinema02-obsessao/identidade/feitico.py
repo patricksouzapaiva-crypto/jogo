@@ -1,6 +1,6 @@
 """O QUE É A CRIATURA? #2 — Obsessão: as peças com a identidade PRÓPRIA do episódio (23/11, usuário: "itens diferentes na
 tela de apresentação, checklist etc., pra ter uma identidade própria"). Usa o motor do #1 (cinema01/identidade/criatura.py:
-câmera, sombra, grão), trocando os objetos (veludo, chumbo, prego, frasco, lacre, galho de salgueiro, fio vermelho),
+câmera, sombra, grão), trocando os objetos (veludo, chumbo, prego, boneco de pano, alfinete, lacre, galho de salgueiro, fio vermelho),
 a luz (vela, em vez de luminária) e a letra (IM Fell, livro antigo, em vez da máquina de escrever).
 Peças:
   pista      etiqueta de pergaminho no fio vermelho, presa por um alfinete; "PISTA I" + a frase escrita à pena
@@ -263,7 +263,7 @@ def pista(saida, num, frase):
         ls.append((l, FELL_I, tam, TINTA, centro(l, FELL_I, tam), y0 + k * (tam / base.height) * 1.08))
     cache = {}
     som = Sons(); esc = 700 / base.width
-    carretel = carregar("ID42_carretel_linha_vermelha_1.png"); galho = carregar("ID39_galho_salgueiro_inteiro_1.png")
+    carretel = carregar("ID42_carretel_linha_vermelha_1.png"); galho = carregar("ID45_galho_filme_1.png")
 
     def etiqueta(prog):
         k = round(prog, 2)
@@ -281,7 +281,7 @@ def pista(saida, num, frase):
         furo = Me @ np.array([base.width * 0.5, base.height * 0.08, 1], np.float32)
         # a mesa ao redor: o carretel (o fio sai dele até a etiqueta) e o galho de salgueiro
         Mc = mat_obj(300, 800, 0.36, -12, carretel.shape[1], carretel.shape[0]); por(tela, carretel, C @ Mc, sombra=1, z=0.05)
-        Mg = mat_obj(1530, 850, 0.6, -20, galho.shape[1], galho.shape[0]); por(tela, galho, C @ Mg, sombra=1, z=0.03)
+        Mg = mat_obj(1530, 880, 0.5, -20, galho.shape[1], galho.shape[0]); por(tela, galho, C @ Mg, sombra=1, z=0.03)
         ponta = Mc @ np.array([carretel.shape[1] * 0.62, carretel.shape[0] * 0.55, 1], np.float32)
         pts = catenaria(ponta[:2], furo[:2], 120 * desce + 40)
         fio(tela, [(C @ np.array([px, py, 1], np.float32))[:2] for px, py in pts], 1.0, 6)
@@ -382,153 +382,195 @@ def checklist(saida, nome, marcas, apresentacao=False):
     renderizar(saida, DUR, quadro, som)
 
 
-# ------------------------------------------------------------------ frascos (TEORIA, PLACAR, VEREDITO)
-ROT = (0.08, 0.36, 0.92, 0.77)     # o rótulo do frasco (fração): x0, y0, x1, y1
-VIDRO = (0.03, 0.29, 0.97, 0.965)  # o corpo de vidro (onde cabe o líquido)
+# ------------------------------------------------------------------ bonecos de pano (TEORIA, PLACAR, VEREDITO)
+# 23/11 (usuário: "não gostei desses frascos, vamos mudar pra outra coisa" → escolheu bonecos de pano): os 'poppets' sem
+# rosto das amarrações inglesas. Cada pista que a teoria explica = um ALFINETE espetado no boneco; o descartado SE DESFAZ.
+BONECO = [("ID43_boneco_1.png", "ID44_boneco_desfeito_1.png"), ("ID43_boneco_2.png", "ID44_boneco_desfeito_2.png")]
+CINTURA = 0.52    # a faixa de fio vermelho no boneco (fração da altura)
+# onde cada alfinete entra (fração do boneco) e para que lado fica a cabeça dele (graus)
+FUROS = [(0.50, 0.16, 215), (0.27, 0.40, 160), (0.73, 0.41, 20), (0.47, 0.66, 185), (0.38, 0.82, 150), (0.63, 0.80, 30),
+         (0.56, 0.30, -30)]
 
 
-def frasco_com_rotulo(nome, sub=None, prog=1.0, apagado=0.0):
-    """o frasco (PIL) com o nome do suspeito escrito à pena no rótulo; sub = linha pequena em cima ("SUSPEITO I")"""
-    base = Image.open(CAM / "ID35_frasco_boticario_vazio_1.png").convert("RGBA")
-    x0, y0, x1, y1 = ROT; larg = (x1 - x0) * base.width * 0.92
-    palavras = nome.split(); linhas_txt = []
-    for w_ in palavras:   # uma palavra por linha (o rótulo é estreito), juntando artigos curtos
-        if linhas_txt and len(linhas_txt[-1]) <= 2:
+def pontos(marcas):
+    return sum(1 for m in marcas if m)
+
+
+def boneco_img(k):
+    """(inteiro, desfeito) do suspeito k (linho e juta alternados)"""
+    a, b = BONECO[k % 2]
+    return carregar(a), carregar(b)
+
+
+_ALF = {}
+
+
+def alfinete():
+    """o alfinete cravado visto de cima: só a cabeça e o começo da haste (o resto entrou no pano); a ponta à direita"""
+    if "a" not in _ALF:
+        a = carregar("ID41_alfinete_cabeca_preta_2.png"); _ALF["a"] = np.ascontiguousarray(a[:, : int(a.shape[1] * 0.42)])
+    return _ALF["a"]
+
+
+def cravar(tela, C, Mb, wh, furo, p, esc=0.30, alfa=1.0, solta=0.0):
+    """um alfinete entrando no boneco (p 0..1: cai de cima e crava); solta 0..1: o alfinete sai voando (descarte)"""
+    if p <= 0 or alfa <= 0: return
+    a = alfinete(); fx, fy, ang = furo
+    P = Mb @ np.array([fx * wh[0], fy * wh[1], 1], np.float32)
+    e = eout(p)
+    dx, dy = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+    x = P[0] + dx * 120 * solta; y = P[1] + dy * 120 * solta - 60 * solta
+    M = mat_obj(x, y, esc * (1.5 - 0.5 * e), ang + 180 + 40 * solta, a.shape[1], a.shape[0], ancora=(1.0, 0.5))
+    por(tela, a, C @ M, alfa=alfa * min(1, p * 3) * (1 - solta), sombra=1, z=0.25 * (1 - e) + 0.03 + 0.3 * solta)
+
+
+def etiqueta_nome(nome, sub=None, prog=1.0, risco=0.0, base_nome="ID36_etiqueta_pergaminho_1.png"):
+    """a etiqueta de pergaminho com o nome do suspeito à pena (e 'SUSPEITO I' em vermelho em cima); risco 0..1 = um traço
+    vermelho atravessando o nome (descartado)"""
+    base = Image.open(CAM / base_nome).convert("RGBA")
+    larg = base.width * 0.82
+    linhas_txt = []
+    for w_ in nome.split():   # uma palavra por linha, juntando os artigos curtos
+        if linhas_txt and (len(linhas_txt[-1]) <= 2 or w_.lower() in ("do", "da", "de")):
             linhas_txt[-1] += " " + w_
         else:
             linhas_txt.append(w_)
-    tam = min(cabe(l, FELL_SC, 96, larg) for l in linhas_txt)
-    ls = []
-    yy = y0 + 0.04
+    tam = min(cabe(l, FELL_SC, 150, larg) for l in linhas_txt)
+    ls = []; yy = 0.24
     if sub:
-        ts = cabe(sub, FELL_SC, 46, larg)
-        ls.append((sub, FELL_SC, ts, SANGUE, (1 - ImageFont.truetype(FELL_SC, ts).getlength(sub) / base.width) / 2, yy)); yy += 0.05
-    bloco = len(linhas_txt) * tam * 1.05 / base.height
-    yy += max(0, ((y1 - 0.03) - yy - bloco) / 2)
+        ts = cabe(sub, FELL_SC, 92, larg)
+        ls.append((sub, FELL_SC, ts, SANGUE, (1 - ImageFont.truetype(FELL_SC, ts).getlength(sub) / base.width) / 2, yy))
+        yy += ts * 1.25 / base.height
+    bloco = len(linhas_txt) * tam * 1.08 / base.height
+    yy += max(0, (0.88 - yy - bloco) / 2)
     for l in linhas_txt:
         ls.append((l, FELL_SC, tam, TINTA, (1 - ImageFont.truetype(FELL_SC, tam).getlength(l) / base.width) / 2, yy))
-        yy += tam * 1.05 / base.height
+        yy += tam * 1.08 / base.height
     im = escrita_pena(base, ls, prog)
-    if apagado > 0:   # o suspeito descartado: o frasco escurece e o rótulo leva um risco
-        d = ImageDraw.Draw(im)
-        e = apagado
-        d.line([(base.width * x0, base.height * (y0 + 0.05)), (base.width * (x0 + (x1 - x0) * e), base.height * (y0 + 0.05 + (y1 - y0 - 0.1) * e))],
-               fill=SANGUE + (230,), width=10)
-        arr = np.asarray(im).astype(np.float32); arr[..., :3] *= 1 - 0.45 * e
+    if risco > 0:
+        d = ImageDraw.Draw(im); x0, y0, x1, y1 = base.width * 0.1, base.height * 0.4, base.width * 0.9, base.height * 0.78
+        d.line([(x0, y0), (x0 + (x1 - x0) * risco, y0 + (y1 - y0) * risco)], fill=SANGUE + (235,), width=22)
+        arr = np.asarray(im).astype(np.float32); arr[..., :3] *= 1 - 0.3 * risco
         im = Image.fromarray(arr.astype(np.uint8), "RGBA")
     return im
 
 
-def com_liquido(frasco, nivel, t=0.0):
-    """o líquido vermelho escuro (feitiço) dentro do vidro, até 'nivel' (0..1), com a superfície ondulando; atrás do
-    rótulo e na transparência do vidro"""
-    if nivel <= 0:
-        return frasco
-    w, h = frasco.size
-    x0, y0, x1, y1 = VIDRO
-    topo = h * (y1 - (y1 - y0) * nivel)
-    alfa = np.asarray(frasco.getchannel("A"))
-    sil = cv2.morphologyEx((alfa > 20).astype(np.uint8), cv2.MORPH_CLOSE, np.ones((25, 25), np.uint8))
-    cont, _ = cv2.findContours(sil, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    cheia = np.zeros_like(sil); cv2.drawContours(cheia, cont, -1, 1, -1)
-    cheia = cv2.erode(cheia, np.ones((15, 15), np.uint8))
-    yy, xx = np.mgrid[0:h, 0:w]
-    onda = topo + 6 * np.sin(xx / 30 + t * 3)
-    m = (cheia > 0) & (yy > onda) & (yy < h * y1) & (yy > h * y0)
-    liq = np.zeros((h, w, 4), np.float32)
-    grad = np.clip((yy - topo) / max(1, h * y1 - topo), 0, 1)[..., None]
-    liq[..., :3] = np.array([120, 8, 16], np.float32) * (1 - 0.45 * grad) / 255
-    liq[..., 3] = m * 0.88
-    brilho = (np.abs(yy - onda) < 4) & m
-    liq[brilho, :3] = np.array([210, 70, 70]) / 255
-    L = Image.fromarray((liq * 255).astype(np.uint8), "RGBA")
-    out = L.copy(); out.alpha_composite(frasco)   # o vidro e o rótulo por cima do líquido
-    veu = liq.copy(); veu[..., 3] *= 0.5          # 23/11: o nível aparece também através do rótulo (papel fino)
-    out.alpha_composite(Image.fromarray((veu * 255).astype(np.uint8), "RGBA"))
-    return out
+def escurecer(img, f):
+    out = img.copy(); out[..., :3] *= f; return out
+
+
+def fio_em(tela, C, pts, larg=5, alfa=1.0):
+    fio(tela, [(C @ np.array([x, y, 1], np.float32))[:2] for x, y in pts], alfa, larg)
 
 
 def teoria(saida, num, nome):
-    """TEORIA / SUSPEITO: o frasco vazio desliza até o centro da mesa e a pena escreve 'SUSPEITO I' + o nome no rótulo."""
-    DUR = 5.6
+    """TEORIA / SUSPEITO: o boneco de pano desliza para a mesa, a etiqueta chega amarrada a ele pelo fio vermelho e a pena
+    escreve 'SUSPEITO I' + o nome."""
+    DUR = 5.8
     mesa, Mm = fundo("ID31_mesa_feitico_1.png")
-    carretel = carregar("ID42_carretel_linha_vermelha_2.png"); galho = carregar("ID39_galho_salgueiro_inteiro_2.png")
+    carretel = carregar("ID42_carretel_linha_vermelha_2.png"); galho = carregar("ID45_galho_filme_1.png")
+    bon, _ = boneco_img(num - 1); bh, bw = bon.shape[:2]; eb = 900 / bh
+    et0 = Image.open(CAM / "ID36_etiqueta_pergaminho_1.png"); ew, eh = et0.size; ee = 760 / eh
     sub = f"SUSPEITO {ROMANOS[num - 1]}"
     cache = {}; som = Sons()
 
-    def fr(prog):
+    def et(prog):
         k = round(prog, 2)
         if k not in cache:
-            cache[k] = de_pil(frasco_com_rotulo(nome, sub, k))
+            cache[k] = de_pil(etiqueta_nome(nome, sub, k))
         return cache[k]
-    h0 = Image.open(CAM / "ID35_frasco_boticario_vazio_1.png").size
-    esc = 1010 / h0[1]
 
     def quadro(t):
         z = 1.03 + 0.04 * ease(lin(t, 0, DUR)); C = mat_cam(960, 540, z, 0.4 - 0.4 * ease(lin(t, 0, 2)))
         tela = np.zeros((H, W, 3), np.float32); por(tela, mesa, C @ Mm)
-        por(tela, carretel, C @ mat_obj(380, 820, 0.33, 10, carretel.shape[1], carretel.shape[0]), sombra=1, z=0.05)
-        por(tela, galho, C @ mat_obj(1540, 860, 0.55, 18, galho.shape[1], galho.shape[0]), sombra=1, z=0.03)
-        u = eout(lin(t, 0.0, 0.9)); som(t, 0.05, "ep09_papel", -14); som(t, 0.85, "impacto", -24)
-        prog = ease(lin(t, 1.1, 2.6))
-        if t > 1.1: som(t, 1.1, "ep08_pincel", -18)
-        Mf = mat_obj(960 + (1 - u) * 900, 555, esc, (1 - u) * 6, h0[0], h0[1])
-        por(tela, fr(prog), C @ Mf, sombra=1, z=0.12)
+        por(tela, carretel, C @ mat_obj(210, 930, 0.3, 10, carretel.shape[1], carretel.shape[0]), sombra=1, z=0.05)
+        por(tela, galho, C @ mat_obj(1560, 105, 0.5, -6, galho.shape[1], galho.shape[0]), sombra=1, z=0.03)
+        u = eout(lin(t, 0.0, 0.9)); som(t, 0.05, "ep09_papel", -14); som(t, 0.85, "impacto", -22)
+        Mb = mat_obj(700 - (1 - u) * 1100, 560, eb, -4 + (1 - u) * 10, bw, bh); por(tela, bon, C @ Mb, sombra=1, z=0.1)
+        v = eout(lin(t, 0.35, 0.8)); som(t, 0.4, "ep09_papel", -18)
+        Me = mat_obj(1330 + (1 - v) * 900, 580, ee, 5 - (1 - v) * 8, ew, eh)
+        a = Mb @ np.array([bw * 0.86, bh * CINTURA, 1], np.float32); b = Me @ np.array([ew * 0.5, eh * 0.09, 1], np.float32)
+        pts = catenaria(a[:2], b[:2], 70)      # o fio passa por baixo da etiqueta e sai pelo furo (não risca o texto)
+        fio_em(tela, C, pts[: max(2, int(len(pts) * ease(lin(t, 0.9, 0.5))))], 6)
+        por(tela, et(ease(lin(t, 1.3, 2.6))), C @ Me, sombra=1, z=0.08)
+        if t > 1.3: som(t, 1.3, "ep08_pincel", -18)
+        if t > 1.4:   # a volta do fio no furo
+            fio_em(tela, C, [tuple(b[:2] + np.array([-14 + 28 * s_, -8 * math.sin(s_ * math.pi)])) for s_ in np.linspace(0, 1, 8)], 6)
         return tela, (960, 540, z, 0)
     renderizar(saida, DUR, quadro, som)
 
 
-def placar(saida, nomes, niveis, descartados=(), vencedor=None):
-    """PLACAR: a prateleira do boticário com os 4 frascos; o líquido sobe até o nível de cada um (sem número).
-    descartados = índices que escurecem e levam um risco no rótulo (no julgamento); vencedor = o que fica iluminado."""
-    DUR = 7.0
-    prat, Mp_ = fundo("ID32_prateleira_boticario_1.png", 2150)
-    h0 = Image.open(CAM / "ID35_frasco_boticario_vazio_1.png").size
-    esc = 560 / h0[1]; xs = [960 + (k - 1.5) * 330 for k in range(len(nomes))]
-    rotulos = {}; som = Sons()
+def placar(saida, nomes, marcas, descartados=()):
+    """PLACAR: os 4 bonecos deitados lado a lado no veludo, cada um com a sua etiqueta; a cada rodada entra um alfinete
+    em cada boneco que explica mais uma pista (sem número: conta-se pelos alfinetes). descartados = índices em ordem: os
+    anteriores já aparecem desfeitos; o ÚLTIMO se desfaz agora (os alfinetes voam, o fio solta, o boneco desaba)."""
+    DUR = 7.2
+    mesa, Mm = fundo("ID31_mesa_feitico_2.png")
+    n = len(nomes); xs = [300 + k * 440 for k in range(n)]
+    bons = [boneco_img(k) for k in range(n)]
+    ets = {}; som = Sons()
+    pts_ = [pontos(m) for m in marcas]
+    ja = set(descartados[:-1]); agora = descartados[-1] if descartados else None
+    T_DESC = 4.7
+    ew, eh = Image.open(CAM / "ID36_etiqueta_pergaminho_1.png").size; ee = 420 / eh
 
-    def rot(k, ap):
-        c = (k, round(ap, 2))
-        if c not in rotulos:
-            rotulos[c] = frasco_com_rotulo(nomes[k], None, 1.0, ap)
-        return rotulos[c]
-    cache = {}
-
-    def frasco(k, nivel, ap, t):
-        c = (k, round(nivel, 2), round(ap, 2), int(t * 6))
-        if c not in cache:
-            if len(cache) > 400: cache.clear()
-            cache[c] = de_pil(com_liquido(rot(k, ap), nivel, t))
-        return cache[c]
+    def et(k, r):
+        c = (k, round(r, 2))
+        if c not in ets:
+            nome = nomes[k].split(" ", 1)[1] if nomes[k].split(" ", 1)[0] in ("O", "A") else nomes[k]
+            ets[c] = de_pil(etiqueta_nome(nome, None, 1.0, r))   # sem o artigo: cabe maior na etiqueta pequena
+        return ets[c]
 
     def quadro(t):
         z = 1.0 + 0.03 * ease(lin(t, 0, DUR)); C = mat_cam(960, 540, z, 0)
-        tela = np.zeros((H, W, 3), np.float32); por(tela, prat, C @ Mp_)
-        for k in range(len(nomes)):
-            entra = eout(lin(t, 0.2 + 0.25 * k, 0.6)); som(t, 0.2 + 0.25 * k, "impacto", -26)
-            nv = niveis[k] * ease(lin(t, 1.8 + 0.3 * k, 1.8))
-            if t > 1.8: som(t, 1.8, "ep09_sn_riser_cordas", -24)
-            ap = ease(lin(t, 4.4 + 0.3 * descartados.index(k), 0.6)) if k in descartados else 0
-            if k in descartados: som(t, 4.4 + 0.3 * descartados.index(k), "impacto", -14)
-            Mf = mat_obj(xs[k], 470 - (1 - entra) * 700, esc, 0, h0[0], h0[1])
-            por(tela, frasco(k, nv, ap, t), C @ Mf, sombra=1, z=0.08)
+        tela = np.zeros((H, W, 3), np.float32); por(tela, mesa, C @ Mm)
+        for k in range(n):
+            inteiro, desfeito = bons[k]; bh, bw = inteiro.shape[:2]; eb = 520 / bh
+            entra = eout(lin(t, 0.15 + 0.2 * k, 0.6)); som(t, 0.15 + 0.2 * k, "ep09_papel", -20)
+            if k in ja: d = 1.0
+            elif k == agora: d = ease(lin(t, T_DESC, 0.8))
+            else: d = 0.0
+            treme = math.sin(t * 60) * 3 * (1 - d) * (lin(t, T_DESC - 0.4, 0.4) if k == agora else 0)
+            Mb = mat_obj(xs[k] + treme, 365 - (1 - entra) * 800, eb, (-3, 2, -2, 3)[k % 4], bw, bh)
+            por(tela, inteiro, C @ Mb, alfa=1 - d, sombra=1, z=0.08)
+            if d > 0:
+                dh, dw = desfeito.shape[:2]
+                Md = mat_obj(xs[k], 370, 520 / dh * (1 + 0.04 * d), (-3, 2, -2, 3)[k % 4] + 4 * d, dw, dh)
+                por(tela, escurecer(desfeito, 1 - 0.4 * d), C @ Md, alfa=d, sombra=1, z=0.04)
+            if k == agora:
+                som(t, T_DESC, "ep09_papel", -8); som(t, T_DESC + 0.05, "impacto", -14)
+            for r in range(pts_[k]):   # os alfinetes (rodada r entra em todos que têm mais de r pontos)
+                tr = 1.5 + 0.36 * r + 0.07 * k
+                som(t, 1.5 + 0.36 * r, "impacto", -24)
+                cravar(tela, C, Mb, (bw, bh), FUROS[r], lin(t, tr, 0.3), esc=0.24, alfa=0 if k in ja else 1,
+                       solta=ease(lin(t, T_DESC + 0.04 * r, 0.5)) if k == agora else 0)
+            Me = mat_obj(xs[k], 845 + (1 - entra) * 500, ee, (2, -3, 3, -2)[k % 4], ew, eh)
+            por(tela, et(k, 1.0 if k in ja else (ease(lin(t, T_DESC + 0.5, 0.5)) if k == agora else 0)), C @ Me, sombra=1, z=0.05)
+            a = Mb @ np.array([bw * 0.5, bh * 0.97, 1], np.float32); b = Me @ np.array([ew * 0.5, eh * 0.09, 1], np.float32)
+            fio_em(tela, C, catenaria(a[:2], b[:2], 18), 4, alfa=1 - 0.6 * d)
         return tela, (960, 540, z, 0)
     renderizar(saida, DUR, quadro, som)
 
 
-def veredito(saida, nome, frase):
-    """VEREDITO: o frasco vencedor no centro; a cera vermelha cai sobre a rolha, o sinete desce e sela; uma tira de
-    pergaminho embaixo recebe a frase do veredito à pena."""
-    DUR = 9.0
+def veredito(saida, num, frase):
+    """VEREDITO: o boneco vencedor no centro; o fio vermelho dá voltas e o AMARRA inteiro; a cera cai no nó, o sinete
+    desce e sela; uma tira de pergaminho embaixo recebe a frase do veredito à pena."""
+    DUR = 10.0
     mesa, Mm = fundo("ID31_mesa_feitico_2.png")
     lacre = carregar("ID37_lacre_cera_vermelha_1.png"); sinete = carregar("ID38_sinete_latao_1.png")
+    bon, _ = boneco_img(num - 1); bh, bw = bon.shape[:2]; eb = 700 / bh
     tira0 = Image.open(CAM / "ID36_etiqueta_pergaminho_2.png").convert("RGBA")
     tira0 = tira0.crop((0, int(tira0.height * 0.3), tira0.width, int(tira0.height * 0.62))).resize((1500, 260))
-    h0 = Image.open(CAM / "ID35_frasco_boticario_vazio_1.png").size; esc = 700 / h0[1]
-    fr = de_pil(com_liquido(frasco_com_rotulo(nome, "VEREDITO", 1.0), 0.86, 0))
     tam = cabe(frase, FELL_I, 92, 1500 * 0.9)
     lt = [(frase, FELL_I, tam, TINTA, (1 - ImageFont.truetype(FELL_I, tam).getlength(frase) / 1500) / 2, 0.28)]
     cache = {}; som = Sons()
+    # as voltas do fio: do peito até as pernas, de um lado ao outro do corpo (fração do boneco)
+    voltas = []
+    for q in range(321):
+        s = q / 320; yv = 0.30 + 0.52 * s
+        meia = 0.21 if yv < 0.6 else 0.27
+        ang_ = s * 2 * math.pi * 5.5
+        voltas.append((0.5 + meia * math.sin(ang_), yv + 0.02 * math.cos(ang_), math.cos(ang_) > 0))   # True = na frente
 
     def tira(prog):
         k = round(prog, 2)
@@ -539,23 +581,29 @@ def veredito(saida, nome, frase):
     def quadro(t):
         z = 1.0 + 0.03 * ease(lin(t, 0, DUR)); C = mat_cam(960, 540, z, 0)
         tela = np.zeros((H, W, 3), np.float32); por(tela, mesa, C @ Mm)
-        Mf = mat_obj(960, 470, esc, 0, h0[0], h0[1]); por(tela, fr, C @ Mf, sombra=1, z=0.1)
-        rolha = Mf @ np.array([h0[0] * 0.5, h0[1] * 0.04, 1], np.float32)
-        cai = ease(lin(t, 1.0, 0.5)); som(t, 1.0, "ep08_vela", -16)
-        if t > 1.0:   # a cera cai e se espalha sobre a rolha
-            e = 0.07 + 0.06 * cai
-            por(tela, lacre, C @ mat_obj(rolha[0], rolha[1] + 10, e, 0, lacre.shape[1], lacre.shape[0]), alfa=min(1, cai * 2), sombra=1, z=0.02)
-        desce = lin(t, 2.0, 0.6); sobe = lin(t, 3.0, 0.7)
-        if 1.6 < t < 4.0:   # o sinete desce, aperta e sobe
-            y = rolha[1] - 520 + 470 * ease(desce) - 600 * ease(sobe)
-            som(t, 2.55, "ep08_carimbo", -6)
-            por(tela, sinete, C @ mat_obj(rolha[0], y - 200, 0.42, 0, sinete.shape[1], sinete.shape[0]), sombra=1, z=0.4 * (1 - ease(desce)) + 0.05)
-        if t > 2.6:   # a marca no lacre
-            ImageDraw.Draw  # noqa
-        u = eout(lin(t, 4.0, 0.8)); som(t, 4.0, "ep09_papel", -12)
-        prog = ease(lin(t, 4.7, 2.6))
-        if t > 4.7: som(t, 4.7, "ep08_pincel", -16)
-        Mt = mat_obj(960, 945 + (1 - u) * 400, 0.92, -1, 1500, 260)
+        u = eout(lin(t, 0.0, 0.8)); som(t, 0.05, "ep09_papel", -14)
+        Mb = mat_obj(960, 430 - (1 - u) * 900, eb, -2, bw, bh); por(tela, bon, C @ Mb, sombra=1, z=0.08)
+        ev = ease(lin(t, 0.9, 2.0))
+        if t > 0.9: som(t, 0.9, "whoosh", -20)
+        if ev > 0:
+            n_ = max(2, int(len(voltas) * ev)); trecho = []
+            for q, (x, y, frente) in enumerate(voltas[:n_]):   # as voltas de trás aparecem pouco (passam atrás do pano)
+                trecho.append(tuple((Mb @ np.array([x * bw, y * bh, 1], np.float32))[:2]))
+                if q == n_ - 1 or voltas[q + 1][2] != frente:
+                    fio_em(tela, C, trecho, 7 if frente else 4, alfa=1.0 if frente else 0.35); trecho = trecho[-1:]
+        no = Mb @ np.array([bw * 0.5, bh * CINTURA, 1], np.float32)
+        cai = ease(lin(t, 3.1, 0.5)); som(t, 3.1, "ep08_vela", -16)
+        if t > 3.1:   # a cera cai e se espalha sobre o nó
+            por(tela, lacre, C @ mat_obj(no[0], no[1], 0.09 + 0.07 * cai, 0, lacre.shape[1], lacre.shape[0]), alfa=min(1, cai * 2), sombra=1, z=0.02)
+        desce = lin(t, 3.9, 0.6); sobe = lin(t, 4.9, 0.7)
+        if 3.5 < t < 5.9:   # o sinete desce, aperta e sobe
+            y = no[1] - 520 + 470 * ease(desce) - 600 * ease(sobe)
+            som(t, 4.45, "ep08_carimbo", -6)
+            por(tela, sinete, C @ mat_obj(no[0], y - 200, 0.42, 0, sinete.shape[1], sinete.shape[0]), sombra=1, z=0.4 * (1 - ease(desce)) + 0.05)
+        v = eout(lin(t, 5.6, 0.8)); som(t, 5.6, "ep09_papel", -12)
+        prog = ease(lin(t, 6.3, 2.6))
+        if t > 6.3: som(t, 6.3, "ep08_pincel", -16)
+        Mt = mat_obj(960, 955 + (1 - v) * 400, 0.92, -1, 1500, 260)
         por(tela, tira(prog), C @ Mt, sombra=1, z=0.1)
         return tela, (960, 540, z, 0)
     renderizar(saida, DUR, quadro, som)
@@ -609,13 +657,17 @@ def spoiler(saida, pular):
 
 
 def abertura(saida, num="2", filme="OBSESSÃO"):
-    """ABERTURA do arquivo: o galho de salgueiro sobre o veludo; o fio vermelho se enrola nele; o galho QUEBRA (estalo);
-    o lacre de cera cai no centro e o título aparece: O QUE É A CRIATURA? / ARQUIVO Nº 2 — OBSESSÃO."""
-    DUR = 9.5
+    """ABERTURA do arquivo (23/11, usuário: "não precisa da linha vermelha; o galho mais parecido com o do filme; vai ser
+    só o galho quebrado no início"): o galho do filme sobre o veludo, ele treme e QUEBRA (estalo), as metades voam; o lacre
+    de cera cai e o título aparece: O QUE É A CRIATURA? / arquivo nº 2 · Obsessão."""
+    DUR = 8.6
     mesa, Mm = fundo("ID31_mesa_feitico_1.png")
-    galho = Image.open(CAM / "ID39_galho_salgueiro_inteiro_1.png").convert("RGBA")
-    gw, gh = galho.size; corte = int(gw * 0.46)
-    meio1 = de_pil(galho.crop((0, 0, corte, gh))); meio2 = de_pil(galho.crop((corte, 0, gw, gh))); inteiro = de_pil(galho)
+    inteiro = carregar("ID45_galho_filme_1.png"); gh, gw = inteiro.shape[:2]
+    qb = Image.open(CAM / "ID46_galho_filme_quebrado_1.png").convert("RGBA")
+    a = np.asarray(qb.getchannel("A")).astype(np.float32).sum(0); m0 = int(qb.width * 0.4)
+    corte = m0 + int(np.argmin(a[m0:int(qb.width * 0.6)]))          # a coluna vazia entre as duas metades
+    meio1 = de_pil(qb.crop((0, 0, corte, qb.height))); meio2 = de_pil(qb.crop((corte, 0, qb.width, qb.height)))
+    qh, qw = qb.height, qb.width
     lacre = Image.open(CAM / "ID37_lacre_cera_vermelha_2.png").convert("RGBA")
     lw = lacre.width
     tn = cabe(f"Nº {num}", FELL_SC, 340, lw * 0.5)
@@ -637,36 +689,32 @@ def abertura(saida, num="2", filme="OBSESSÃO"):
         return cache[k]
 
     def quadro(t):
-        z = 1.08 - 0.06 * ease(lin(t, 0, DUR)); C = mat_cam(960, 540, z, 0.6 * math.sin(t * 0.4))
+        z = 1.1 - 0.08 * ease(lin(t, 0, DUR)); C = mat_cam(960, 540, z, 0.6 * math.sin(t * 0.4))
         tela = np.zeros((H, W, 3), np.float32); por(tela, mesa, C @ Mm)
-        esc = 1.05; gx, gy = 960, 560
-        quebra = 3.6
-        if t < quebra:
-            Mg = mat_obj(gx, gy, esc, -6, gw, gh); por(tela, inteiro, C @ Mg, sombra=1, z=0.04)
-            # o fio se enrola no galho (espiral que avança da esquerda para a direita)
-            ev = ease(lin(t, 0.6, 2.6)); som(t, 0.6, "ep09_papel", -18)
-            pts = []
-            for q in range(int(160 * ev) + 1):
-                s_ = q / 160
-                x = gx - 420 + 840 * s_; y = gy - 20 + 26 * math.sin(s_ * 26) - 40 * (s_ - 0.5)
-                pts.append((C @ np.array([x, y, 1], np.float32))[:2])
-            fio(tela, pts, 1.0, 5)
+        esc = 1.2; gx, gy = 960, 560
+        quebra = 2.4
+        if t < quebra:   # o galho sozinho; antes de quebrar ele treme cada vez mais
+            tr = lin(t, 1.2, quebra - 1.2) ** 2
+            som(t, 1.2, "ep09_sn_riser_cordas", -20)
+            Mg = mat_obj(gx + math.sin(t * 70) * 4 * tr, gy, esc, -6 + math.sin(t * 53) * 0.8 * tr, gw, gh)
+            por(tela, inteiro, C @ Mg, sombra=1, z=0.04)
         else:
             som(t, quebra, "ep11_galho_quebra", -4); som(t, quebra + 0.02, "ep06_estalo", -8)
             e = eout(lin(t, quebra, 0.5))
-            M1 = mat_obj(gx - 180 - 560 * e, gy - 260 * e, esc * (1 - 0.25 * e), -6 - 30 * e, corte, gh, ancora=(1.0, 0.5))
-            M2 = mat_obj(gx - 180 + 20 + 620 * e, gy - 300 * e, esc * (1 - 0.25 * e), -6 + 32 * e, gw - corte, gh, ancora=(0.0, 0.5))
+            x_q = gx - (qw / 2 - corte) * esc     # onde fica a quebra na tela
+            M1 = mat_obj(x_q - 330 * e, gy - 150 * e, esc * (1 - 0.25 * e), -6 - 28 * e, corte, qh, ancora=(1.0, 0.5))
+            M2 = mat_obj(x_q + 6 + 360 * e, gy - 170 * e, esc * (1 - 0.25 * e), -6 + 30 * e, qw - corte, qh, ancora=(0.0, 0.5))
             por(tela, meio1, C @ M1, sombra=1, z=0.04); por(tela, meio2, C @ M2, sombra=1, z=0.04)
             if t < quebra + 0.12:   # o tranco do estalo
                 tela *= 1.25
-        cai = eout(lin(t, 4.4, 0.45))
-        if t > 4.2:
-            som(t, 4.75, "impacto", -6)
+        cai = eout(lin(t, 3.2, 0.45))
+        if t > 3.0:
+            som(t, 3.55, "impacto", -6)
             el = 0.42 * (1.6 - 0.6 * cai)
-            por(tela, lacre_t, C @ mat_obj(960, 400, el, -4, lacre.width, lacre.height), alfa=min(1, lin(t, 4.2, 0.25)), sombra=1, z=0.5 * (1 - cai) + 0.05)
-        p1 = ease(lin(t, 5.4, 1.4)); p2 = ease(lin(t, 6.6, 1.3))
-        if t > 5.4:
-            som(t, 5.4, "ep09_sn_gongo_cinema", -12)
+            por(tela, lacre_t, C @ mat_obj(960, 400, el, -4, lacre.width, lacre.height), alfa=min(1, lin(t, 3.0, 0.25)), sombra=1, z=0.5 * (1 - cai) + 0.05)
+        p1 = ease(lin(t, 4.2, 1.4)); p2 = ease(lin(t, 5.4, 1.3))
+        if t > 4.2:
+            som(t, 4.2, "ep09_sn_gongo_cinema", -12)
             por(tela, titulo(p1, p2), mat_obj(960, 850, 1.0, 0, 1800, 520), sombra=0)
         return tela, (960, 540, z, 0)
     renderizar(saida, DUR, quadro, som)
@@ -688,9 +736,9 @@ if __name__ == "__main__":
         teoria(saida, nn, EP["suspeitos"][nn - 1][0])
     elif peca == "placar":   # placar <saida> [desc1,desc2] : Ato I (iguais) ou julgamento (com descartados)
         desc = tuple(int(x) for x in resto[0].split(",")) if resto else ()   # ex.: 3 · 3,0 · 3,0,2
-        placar(saida, [n_ for n_, _ in EP["suspeitos"]], [0.62, 0.6, 0.64, 0.58], desc)
+        placar(saida, [n_ for n_, _ in EP["suspeitos"]], [m for _, m in EP["suspeitos"]], desc)
     elif peca == "veredito":
-        veredito(saida, "A AMARRAÇÃO", "Aquilo dentro da Nikki é uma amarração.")
+        veredito(saida, 2, "Aquilo dentro da Nikki é uma amarração.")
     elif peca == "spoiler":
         spoiler(saida, resto[0] if resto else "14:20")
     elif peca == "abertura":
