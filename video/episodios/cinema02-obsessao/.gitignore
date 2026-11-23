@@ -1,0 +1,16 @@
+reais/*.jpg
+reais/*.png
+reais/*.log
+reais/b2/
+reais/resultados.json
+filme/
+filmes_prontos/
+audio/
+previas/
+imagens/
+camera3d/
+identidade/pecas/
+shorts/*.wav
+shorts/*.mp4
+publicacao/shorts_final/
+__pycache__/
