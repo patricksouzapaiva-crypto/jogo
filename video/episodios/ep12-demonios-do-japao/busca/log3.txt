@@ -1,1 +1,11 @@
 ok jorogumo 5
+ok yamauba 7
+ok tsuchigumo 12
+ok tsuchigumo_kuniyoshi 11
+Traceback (most recent call last):
+  File "/home/user/jogo/video/episodios/ep12-demonios-do-japao/buscar_reais.py", line 54, in <module>
+    r = api(action="query", generator="search", gsrnamespace=6, gsrsearch=q + " filetype:bitmap", gsrlimit=12,
+            prop="imageinfo", iiprop="url|size", iiurlwidth=360)
+  File "/home/user/jogo/video/episodios/ep12-demonios-do-japao/buscar_reais.py", line 39, in api
+    raise RuntimeError("429")
+RuntimeError: 429
