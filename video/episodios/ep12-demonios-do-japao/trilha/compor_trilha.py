@@ -263,6 +263,12 @@ class Trilha:
             self.tema(a + 18, 0.5, ate=6, ritmo=1.4)
             j.bonsho(b - 3.0, 0.65)
 
+        # 24/11 (revisão do rascunho 1): nas FICHAS a narração para por 7–10 s e ficava quase silêncio. A música segura
+        # a leitura: um trêmulo baixo de violas, o koto tocando sozinho e um rin na entrada (nunca silêncio)
+        for f0, f1 in self.p.get("fichas", []):
+            j.rin(f0 + 0.3, 0.35, 1)
+            self.tremulo(f0, f1 + 1.0, "D4", 0.12, 0.28, "vla_trem")
+            self.koto_solto(f0 + 0.8, f1 + 1.5, dens=0.6, vel=0.5, reg=(3, 10))
         return self
 
     def salvar(self, saida):

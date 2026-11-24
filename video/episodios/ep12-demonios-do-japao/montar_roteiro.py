@@ -471,7 +471,7 @@ roteiro = {
     "legendas": {"destaques": ["Japão", "oni", "yōkai", "demônio", "regra", "Hashihime", "Shuten-dōji", "Tenjin", "kimon",
                                "Sesshō-seki", "Hyakki Yagyō", "Camila", "sete noites", "maldição", "rosto"]},
     "ambiente_inicial": [{"som": "ep08_campo_noite", "volume_db": -22}],
-    "musica": {"som": TRILHA_SOM, "volume_db": -24},   # 24/11: a trilha em destaque (pedido do usuário)
+    "musica": {"som": TRILHA_SOM, "volume_db": -27},   # 24/11: em destaque, mas 10 dB abaixo da voz (revisão do rascunho 1)
     "titulo_ep": {"antes_da_batida": 12, "linhas": ["O VIGIA · EPISÓDIO 12", "OS DEMÔNIOS DO JAPÃO", "NÃO QUEREM", "A SUA ALMA"],
                   "vermelho": "A SUA ALMA", "duracao": 5.6, "folga": 1.0, "centro": True},
     "cta": {"titulo": "Não deixe que te vejam.", "canal": "Último Abrigo",
@@ -729,7 +729,8 @@ def trilha_por_secoes():
     secoes = [[n, round(ini[k] + (5.2 if marcos[k][1] in CARTOES else 0), 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)]
               for k, (n, _) in enumerate(marcos)]
     cartoes = [[round(T0[i] - 5.2, 2), round(T0[i] - 0.1, 2)] for i in CARTOES]
-    plano = {"secoes": secoes, "marcos": M, "fim": round(fim, 2), "cartoes": cartoes}
+    fichas = [[round(T0[i] - L, 2), round(T0[i], 2)] for i, L in FICHA_L.items()]   # a voz para: a música segura
+    plano = {"secoes": secoes, "marcos": M, "fim": round(fim, 2), "cartoes": cartoes, "fichas": fichas}
     sons = AQUI.parents[1] / "painel" / "sons"
     marca = sons / f"{TRILHA_SOM}.plano"; txt = json.dumps(plano)
     if (sons / f"{TRILHA_SOM}.mp3").exists() and marca.exists() and marca.read_text() == txt:
