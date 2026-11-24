@@ -732,11 +732,13 @@ def trilha_por_secoes():
     fichas = [[round(T0[i] - L, 2), round(T0[i], 2)] for i, L in FICHA_L.items()]   # a voz para: a música segura
     plano = {"secoes": secoes, "marcos": M, "fim": round(fim, 2), "cartoes": cartoes, "fichas": fichas}
     sons = AQUI.parents[1] / "painel" / "sons"
-    marca = sons / f"{TRILHA_SOM}.plano"; txt = json.dumps(plano)
+    # a marca leva também o código do compositor: mudar a música (sem mudar os tempos) recompõe
+    marca = sons / f"{TRILHA_SOM}.plano"
+    txt = json.dumps(plano) + hashlib.md5((AQUI / "trilha" / "compor_trilha.py").read_bytes()).hexdigest()
     if (sons / f"{TRILHA_SOM}.mp3").exists() and marca.exists() and marca.read_text() == txt:
         return
     print("trilha: compondo sobre a montagem…", flush=True)
-    (AQUI / "trilha" / "plano.json").write_text(txt)
+    (AQUI / "trilha" / "plano.json").write_text(json.dumps(plano))
     subprocess.run([sys.executable, str(AQUI / "trilha" / "compor_trilha.py"), str(AQUI / "trilha" / "plano.json"),
                     str(sons / f"{TRILHA_SOM}.mp3")], check=True)
     marca.write_text(txt)
