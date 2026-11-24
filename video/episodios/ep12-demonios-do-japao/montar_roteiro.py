@@ -147,20 +147,38 @@ def seco(c):
     return c
 
 
+CARTAO = 7.6
+
+
 def capitulo(i, n, titulo, ano, imagem, cena):
-    """Cartão de capítulo japonês do Ep. 08 (第一章…, tinta + taiko longe), depois a 1ª cena entra na 1ª palavra."""
+    """24/11: o cartão EMAKI VIVO (capitulos/emaki.py: o rolo desenrola, a gravura nasce no nanquim, o pincel escreve o
+    número, o carimbo 鬼 bate) — vídeo pronto de 7,6 s em cartoes/cap<n>.mp4, com o som dele. Sem o vídeo (ainda não
+    renderizado), cai no cartão japonês do Ep. 08."""
+    primeira = falas[i].split()[0].strip(",.:;…\"")
+    cena = dict(cena); cena.setdefault("entrada", "fundir"); cena.setdefault("duracao_entrada", 0.9)
+    vid = AQUI / "cartoes" / f"cap{n}.mp4"
+    if vid.exists():
+        cap = {"video": f"cartoes/cap{n}.mp4", "zoom": [1.0, 1.0], "antecipar": CARTAO, "antecipar_fixo": True,
+               "entrada": "corte", "tipo_cartao": True, "congelar": True, "sem_look": True}
+        C(i, cap, (cena, primeira))
+        pausa(i, CARTAO - 0.2)
+        som = AQUI / "cartoes" / f"cap{n}_som.wav"
+        if not som.exists() or som.stat().st_mtime < vid.stat().st_mtime:
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(vid), "-vn", "-ac", "2", "-ar", "48000", str(som)], check=True)
+        fx(i, None, f"cartao{n}", -6, atraso=-CARTAO + 0.05, arquivo=str(som))
+        CARTOES.append(i); return
     nums = "一二三四五六七"
     cap = {"tipo": "capitulo", "numero": f"第{nums[n - 1]}章" if n else "最終章", "numero_pt": f"Capítulo {n}" if n else "A história",
            "titulo": titulo, "ano": ano, "imagem": imagem, "antecipar": 4.8, "entrada": "nanquim", "atmos": {"poeira": 0.6}}
-    primeira = falas[i].split()[0].strip(",.:;…\"")
-    cena = dict(cena); cena.setdefault("entrada", "fundir"); cena.setdefault("duracao_entrada", 0.8)
     C(i, cap, (cena, primeira))
     pausa(i, 5.2)
     fx(i, None, "ep08_tinta", -17, atraso=-4.8)
     fx(i, None, "ep08_taiko", -17, atraso=-3.4)
     CARTOES.append(i)
+    DUR_CARTAO[i] = 5.2
 
 
+DUR_CARTAO = {}
 CARTOES = []
 HIST = []
 
@@ -725,10 +743,10 @@ def trilha_por_secoes():
          "sumiu": tw(186, "Sumiu"), "prego_novo": tw(188, "prego"), "nao_dela": tw(191, "Não"), "ninguem_viu": tw(194, "ninguém")}
     marcos = [("gancho", 0), ("vigia", 12), ("tema", 15), ("p1", 28), ("p2", 51), ("p3", 71), ("p4", 94), ("p5", 109),
               ("p6", 125), ("p7", 146), ("hist", 160), ("fecho", 195)]
-    ini = [0.0] + [T0[i] - (5.2 if i in CARTOES else 7.2 if i == 12 else 1.0) for _, i in marcos[1:]]
-    secoes = [[n, round(ini[k] + (5.2 if marcos[k][1] in CARTOES else 0), 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)]
+    ini = [0.0] + [T0[i] - (DUR_CARTAO.get(i, CARTAO) if i in CARTOES else 7.2 if i == 12 else 1.0) for _, i in marcos[1:]]
+    secoes = [[n, round(ini[k] + (DUR_CARTAO.get(marcos[k][1], CARTAO) if marcos[k][1] in CARTOES else 0), 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)]
               for k, (n, _) in enumerate(marcos)]
-    cartoes = [[round(T0[i] - 5.2, 2), round(T0[i] - 0.1, 2)] for i in CARTOES]
+    cartoes = [[round(T0[i] - DUR_CARTAO.get(i, CARTAO), 2), round(T0[i] - 0.1, 2)] for i in CARTOES]
     fichas = [[round(T0[i] - L, 2), round(T0[i], 2)] for i, L in FICHA_L.items()]   # a voz para: a música segura
     plano = {"secoes": secoes, "marcos": M, "fim": round(fim, 2), "cartoes": cartoes, "fichas": fichas}
     sons = AQUI.parents[1] / "painel" / "sons"
