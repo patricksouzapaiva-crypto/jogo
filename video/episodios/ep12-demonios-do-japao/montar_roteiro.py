@@ -10,6 +10,7 @@ Regras: Vigia só no VIGIA e no FECHO; nenhum rosto de IA; cena >= 4 s; legenda 
 Uso: python3 montar_roteiro.py → roteiro.json"""
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -383,15 +384,15 @@ C(124, det("m_tengu_rei", ((0.5, 0.4), (0.5, 0.35)), (1.3, 1.4)))
 pausa(113, 0.6); pausa(115, 0.6); pausa(117, 0.6); pausa(119, 0.6); pausa(122, 1.2); pausa(124, 0.6)
 
 # ================================================================ PARTE 6 — os piores
-capitulo(125, 6, "Os piores", "1251 · 2022", RP + "ushioni_rolo.jpg", real("nureonna_7"))
-C(126, real("nureonna_sekien"))
-C(127, det("nureonna_7", ((0.5, 0.3), (0.5, 0.45)), (1.3, 1.4)))
-C(128, det("nureonna_sekien", ((0.5, 0.5), (0.5, 0.45)), (1.4, 1.6)))
+capitulo(125, 6, "Os piores", "1251 · 2022", RP + "ushioni_rolo.jpg", IA("N08_mulher_mar_bebe", real("nureonna_sekien")))
+# 126: continua a mulher do mar (a frase é a mesma cena)
+C(127, IA("N09_bebe_pedra", det("nureonna_sekien", ((0.5, 0.6), (0.5, 0.55)), (1.3, 1.4))))
+# 128 "Ela desaparece": continua o bebê que pesa
 C(129, kj(real("ushioni_rolo"), "牛鬼", 0.84, 0.5, "sangue", "ushi-oni", atraso=0.6))
 kanji_som(129, "ushi-oni")
 C(130, ficha("TEMPLO SENSŌ-JI · ANO DE 1251\nCrônica Azuma Kagami: 24 monges doentes, 7 mortos", "7 MORTOS"))
 C(131, real("ushioni_sekien"))
-C(132, det("ushioni_rolo", ((0.5, 0.55), (0.5, 0.5)), (1.4, 1.6)))
+C(132, det("ushioni_suushi", ((0.5, 0.5), (0.45, 0.5)), (1.0, 1.08)))   # 24/11: outro ushi-oni (o rolo já apareceu 2 vezes)
 C(133, real("tsuchigumo_rijks"))
 C(134, rolo("tsuchigumo_14"))
 C(135, real("tamamo_xilo"))
@@ -458,7 +459,7 @@ C(184, IA("H16_cadeira_vazia", det("kifune_1", ((0.5, 0.5), (0.5, 0.45)), (1.0, 
 C(187, IA("H02_bosque_santuario", det("kifune_2", ((0.5, 0.6), (0.5, 0.5)), (1.05, 1.15))))
 C(188, IA("H17_prego_novo", det("m_ushinokoku", ((0.85, 0.75), (0.85, 0.65)), (1.4, 1.6))))
 C(190, IA("H18_papel_outra_data", det("ritual_mulher", ((0.3, 0.5), (0.28, 0.45)), (1.6, 1.8))))
-C(192, real("ritual_sekien", (1.0, 1.08)))
+C(192, IA("H12_coroa_velas_costas", real("ritual_sekien", (1.0, 1.08)), z=(1.15, 1.25), foco=((0.6, 0.3), (0.6, 0.25))))
 C(194, IA("H19_arvore_vazia_madrugada", det("kifune_2", ((0.5, 0.5), (0.5, 0.42)), (1.0, 1.1))))
 amb(161, "ep08_campo_noite", -22); amb(166, "nenhum"); amb(169, "ep08_campo_noite", -26)
 fx(164, "som", "ep12_martelo_prego", -17, atraso=0.5)
@@ -583,6 +584,13 @@ def aplicar_ajuste_pausas():
             b["pausa_antes_s"] = round(max(0.3, b["pausa_antes_s"] + d), 2)
 
 
+def obra(c):
+    """A obra por trás de uma cena (o mesmo quadro inteiro, em detalhe, restaurado ou em rolo conta como uma só)."""
+    a = c.get("imagem") or c.get("video") or c.get("tipo") or ""
+    a = re.sub(r"^.*/", "", a); a = re.sub(r"\.(jpg|jpeg|png|mp4)$", "", a); a = re.sub(r"^restauro_", "", a)
+    return "casamento" if re.fullmatch(r"alt\d+", a) else a
+
+
 def ritmo():
     """13/11 (pedido do usuário): ritmo contínuo, nada de corte rápido nem troca no meio da frase.
     - cena comum fica >= 3,6 s; cena com kanji/linha do tempo fica >= 6,5 s depois que o kanji aparece;
@@ -634,7 +642,10 @@ def ritmo():
         tipo_ant = next((tipo_de(batidas[j]) for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), None)
         if tipo_de(b) in ("chat", "vigia", "mapa") and tipo_de(b) == tipo_ant and not any(c.get("kanji") for c in cenas_de(b)):
             acc += dur(i); continue                   # mesma tela (conversa→conversa, Vigia→Vigia): não é corte
-        if acc < falta and comum(b) and i not in PROTEGE:
+        # 24/11 (usuário: "continua repetindo imagens mesmo falando de outros onis"): uma frase só CONTINUA a imagem
+        # anterior se a imagem dela for a MESMA obra (outro recorte do mesmo quadro). Assunto novo = imagem nova, sempre
+        ant_vis = next((cenas_de(batidas[j])[-1] for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), {})
+        if acc < falta and comum(b) and i not in PROTEGE and obra(cenas_de(b)[0]) == obra(ant_vis):
             b.pop("cena", None); b.pop("cenas", None); continuadas.append(i); acc += dur(i); continue
         if acc < falta:
             extra = round(min(1.2, falta - acc), 2)   # 15/11: pausa longa sem nada acontecendo parece erro; b["pausa_antes_s"] = round(b.get("pausa_antes_s", 0) + extra, 2); alongadas.append((i, extra))

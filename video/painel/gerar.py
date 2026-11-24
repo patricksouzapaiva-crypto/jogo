@@ -1345,7 +1345,7 @@ def _duracao_midia(arq):
     return float(r.stdout.strip() or 0)
 
 
-def respirar_cenas(D, minimo, duracao):
+def respirar_cenas(D, minimo, duracao, roteiro_so_mesma_obra=True):
     """15/11 (Ep. 09: "nenhuma cena curta demais, tudo com o seu tempo, dinâmico"): nenhuma cena fica menos que
     `minimo` s na tela. Uma cena curta some e a VIZINHA cobre o tempo dela — a seguinte entra mais cedo (se for imagem
     ou se o vídeo dela tiver duração para isso) ou a anterior continua. Ficam de fora: o Vigia, cartões de capítulo/
@@ -1360,7 +1360,12 @@ def respirar_cenas(D, minimo, duracao):
         disp = _duracao_midia(c["video"]) - float(c.get("video_inicio", 0))
         return disp / float(c.get("velocidade", 1.0)) >= (t1 - t0) + 1.2
 
-    cs = D["cenas"]; tirou = 0
+    def obra(c):   # 24/11: a mesma obra (detalhe/restauro/rolo do mesmo quadro) conta como uma só
+        a = c.get("imagem") or c.get("video") or c.get("tipo") or ""
+        a = re.sub(r"^.*/", "", a); a = re.sub(r"\.(jpg|jpeg|png|mp4)$", "", a)
+        return re.sub(r"^restauro_", "", a)
+
+    cs = D["cenas"]; tirou = 0; manteve = 0
     for _ in range(4):
         mudou = False
         i = 1
@@ -1370,6 +1375,12 @@ def respirar_cenas(D, minimo, duracao):
             if t1 - c["t0"] >= minimo or fixa(c):
                 i += 1; continue
             fim_prox = cs[i + 2]["t0"] if i + 2 < len(cs) else duracao
+            # 24/11 (Ep. 12: "repete imagens mesmo falando de outros onis"): a cena curta só some se uma vizinha
+            # mostra a MESMA obra. Se é assunto novo, ela fica (curta, mas certa): imagem errada é pior que corte rápido
+            if obra(prox) != obra(c) and obra(ant) != obra(c) and roteiro_so_mesma_obra:
+                if c.get("_mantida") is None:
+                    c["_mantida"] = True; manteve += 1
+                i += 1; continue
             # 15/11 (rascunho 2: "aparece um pouco de legenda e troca de cena, como um corte rápido"): NUNCA empurrar a
             # troca para o meio da frase. A cena curta sai e uma vizinha cobre o tempo dela — se o vídeo da vizinha for
             # curto, o fim dele fica parado (congela) em vez de desacelerar
@@ -1387,7 +1398,7 @@ def respirar_cenas(D, minimo, duracao):
             i += 1
         if not mudou:
             break
-    print(f"    cenas curtas (< {minimo:.1f}s) absorvidas pelas vizinhas: {tirou}")
+    print(f"    cenas curtas (< {minimo:.1f}s) absorvidas pelas vizinhas: {tirou}; mantidas (assunto novo): {manteve}")
 
 
 def extrair_quadros(c, fps):
@@ -1569,6 +1580,9 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     else:
         D, eventos = montar(roteiro, rel, duracao)
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))
+    if os.environ.get("SO_LINHA"):   # 24/11: só a linha do tempo final (auditoria imagem × fala, sem renderizar)
+        D["_palavras"] = [(w, round(a, 2), round(b, 2)) for w, (a, b) in zip(rel.palavras, rel.t)]
+        Path(os.environ["SO_LINHA"]).write_text(json.dumps(D, ensure_ascii=False)); return
     if so_audio:  # reaproveita a imagem de um vídeo já pronto e refaz só a mixagem
         print("3/5 quadros: reaproveitando", so_audio)
         try:   # 17/11: link em vez de cópia (o vídeo já pronto não ocupa o disco duas vezes)
