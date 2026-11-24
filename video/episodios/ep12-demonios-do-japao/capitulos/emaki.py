@@ -28,7 +28,7 @@ CAPS = {
     0: ("A sétima noite", "hoje", "ritual_sekien", "17_boneco_palha_01"),
 }
 NUM = "〇一二三四五六七"
-KX, SX, SY = 1510, 1335, 128   # coluna do número, carimbo (x) e altura do carimbo abaixo do centro do rolo
+KX, SX, SY = 1510, 1350, 88   # coluna do número, carimbo (x) e altura do carimbo abaixo do centro do rolo
 
 
 # ------------------------------------------------------------------ utilidades
