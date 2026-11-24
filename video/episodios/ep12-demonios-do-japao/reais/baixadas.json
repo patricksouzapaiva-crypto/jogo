@@ -8,5 +8,245 @@
   "arquivo": "ritual_sekien.jpg",
   "titulo": "SekienUshi-no-tokimairi.jpg",
   "fonte": "https://commons.wikimedia.org/wiki/File:SekienUshi-no-tokimairi.jpg"
+ },
+ "modoribashi": {
+  "arquivo": "modoribashi.jpg",
+  "titulo": "Itijo-modoribashi.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Itijo-modoribashi.jpg"
+ },
+ "kifune_1": {
+  "arquivo": "kifune_1.jpg",
+  "titulo": "Kifune Jinja Shrine 20150914.JPG",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kifune_Jinja_Shrine_20150914.JPG"
+ },
+ "kifune_2": {
+  "arquivo": "kifune_2.jpg",
+  "titulo": "貴船神社 Kibune Jinja (KYOTO-JAPAN) (4951368080).jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E8%B2%B4%E8%88%B9%E7%A5%9E%E7%A4%BE_Kibune_Jinja_%28KYOTO-JAPAN%29_%284951368080%29.jpg"
+ },
+ "kifune_3": {
+  "arquivo": "kifune_3.jpg",
+  "titulo": "Kifune-jinja shrine 20160618-01.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kifune-jinja_shrine_20160618-01.jpg"
+ },
+ "hannya_preto": {
+  "arquivo": "hannya_preto.jpg",
+  "titulo": "Hannya no mask-Ethno BHM 1946.266.4828-P6141142-black.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hannya_no_mask-Ethno_BHM_1946.266.4828-P6141142-black.jpg"
+ },
+ "hyakki_1": {
+  "arquivo": "hyakki_1.jpg",
+  "titulo": "Hyakki Yako 1.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hyakki_Yako_1.jpg"
+ },
+ "hyakki_2": {
+  "arquivo": "hyakki_2.jpg",
+  "titulo": "Hyakki Yako 2.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hyakki_Yako_2.jpg"
+ },
+ "hyakki_shinjuan": {
+  "arquivo": "hyakki_shinjuan.jpg",
+  "titulo": "Hyakki Yagyo emaki.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hyakki_Yagyo_emaki.jpg"
+ },
+ "hyakki_tsukumogami": {
+  "arquivo": "hyakki_tsukumogami.jpg",
+  "titulo": "Hyakki-Yagyo-Emaki Tsukumogami 1.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hyakki-Yagyo-Emaki_Tsukumogami_1.jpg"
+ },
+ "kyosai_1": {
+  "arquivo": "kyosai_1.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 02.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_02.jpg"
+ },
+ "kyosai_2": {
+  "arquivo": "kyosai_2.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 30.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_30.jpg"
+ },
+ "kyosai_3": {
+  "arquivo": "kyosai_3.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 11.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_11.jpg"
+ },
+ "kyosai_4": {
+  "arquivo": "kyosai_4.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 26.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_26.jpg"
+ },
+ "kyosai_5": {
+  "arquivo": "kyosai_5.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 21.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_21.jpg"
+ },
+ "kyosai_6": {
+  "arquivo": "kyosai_6.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 07.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_07.jpg"
+ },
+ "kyosai_7": {
+  "arquivo": "kyosai_7.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 17.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_17.jpg"
+ },
+ "kyosai_8": {
+  "arquivo": "kyosai_8.jpg",
+  "titulo": "『暁斎百鬼画談』-Kyōsai’s Pictures of One Hundred Demons (Kyōsai hyakki gadan) MET 2013 767 23.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:%E3%80%8E%E6%9A%81%E6%96%8E%E7%99%BE%E9%AC%BC%E7%94%BB%E8%AB%87%E3%80%8F-Ky%C5%8Dsai%E2%80%99s_Pictures_of_One_Hundred_Demons_%28Ky%C5%8Dsai_hyakki_gadan%29_MET_2013_767_23.jpg"
+ },
+ "sekien_kamaitachi": {
+  "arquivo": "sekien_kamaitachi.jpg",
+  "titulo": "SekienKamaitachi.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienKamaitachi.jpg"
+ },
+ "sekien_kappa": {
+  "arquivo": "sekien_kappa.jpg",
+  "titulo": "Kappa jap myth.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kappa_jap_myth.jpg"
+ },
+ "sekien_rokurokubi": {
+  "arquivo": "sekien_rokurokubi.jpg",
+  "titulo": "SekienRokurokubi.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienRokurokubi.jpg"
+ },
+ "shuten_sekien": {
+  "arquivo": "shuten_sekien.jpg",
+  "titulo": "SekienShuten-doji.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienShuten-doji.jpg"
+ },
+ "shuten_oeyama_1927": {
+  "arquivo": "shuten_oeyama_1927.jpg",
+  "titulo": "Iwaya(1927)-p000-frontispiece-oeyama.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Iwaya%281927%29-p000-frontispiece-oeyama.jpg"
+ },
+ "shuten_rolo_honolulu": {
+  "arquivo": "shuten_rolo_honolulu.jpg",
+  "titulo": "Shuten Dōji, Ōeyama Handscroll, Honolulu Museum of Art.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Shuten_D%C5%8Dji%2C_%C5%8Ceyama_Handscroll%2C_Honolulu_Museum_of_Art.jpg"
+ },
+ "shuten_rolo_cbl": {
+  "arquivo": "shuten_rolo_cbl.jpg",
+  "titulo": "Scroll 3 from Tale of Ōeyama (Ōeyama emaki) (CBL J 1145.3).jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Scroll_3_from_Tale_of_%C5%8Ceyama_%28%C5%8Ceyama_emaki%29_%28CBL_J_1145.3%29.jpg"
+ },
+ "kubizuka_1": {
+  "arquivo": "kubizuka_1.jpg",
+  "titulo": "Kubizuka Daimyoujin Annual festival April 15, 2019 IMG 20190415 095838.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kubizuka_Daimyoujin_Annual_festival_April_15%2C_2019_IMG_20190415_095838.jpg"
+ },
+ "kubizuka_2": {
+  "arquivo": "kubizuka_2.jpg",
+  "titulo": "Kubizuka Daimyoujin Annual festival April 15, 2019 IMG 20190415 100308.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kubizuka_Daimyoujin_Annual_festival_April_15%2C_2019_IMG_20190415_100308.jpg"
+ },
+ "kubizuka_3": {
+  "arquivo": "kubizuka_3.jpg",
+  "titulo": "Kubizuka Daimyoujin Annual festival April 15, 2019 IMG 20190415 082505.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kubizuka_Daimyoujin_Annual_festival_April_15%2C_2019_IMG_20190415_082505.jpg"
+ },
+ "tamamo_xilo": {
+  "arquivo": "tamamo_xilo.jpg",
+  "titulo": "Tamamo-no-mae-woodblock.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Tamamo-no-mae-woodblock.jpg"
+ },
+ "tamamo_rijks": {
+  "arquivo": "tamamo_rijks.jpg",
+  "titulo": "Tamamo no Mae en Miura Kuranosuke, RP-P-1958-436.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Tamamo_no_Mae_en_Miura_Kuranosuke%2C_RP-P-1958-436.jpg"
+ },
+ "pedra_rachada": {
+  "arquivo": "pedra_rachada.jpg",
+  "titulo": "Splited Sessho-Seki.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Splited_Sessho-Seki.jpg"
+ },
+ "pedra_2018": {
+  "arquivo": "pedra_2018.jpg",
+  "titulo": "180727 Sessho-seki Nasu Japan14.JPG",
+  "fonte": "https://commons.wikimedia.org/wiki/File:180727_Sessho-seki_Nasu_Japan14.JPG"
+ },
+ "pedra_2022": {
+  "arquivo": "pedra_2022.jpg",
+  "titulo": "Sessho-Seki Park, May 2022.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Sessho-Seki_Park%2C_May_2022.jpg"
+ },
+ "pedra_tochigi": {
+  "arquivo": "pedra_tochigi.jpg",
+  "titulo": "Sessho-seki, Tochigi 01.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Sessho-seki%2C_Tochigi_01.jpg"
+ },
+ "sarugatsuji": {
+  "arquivo": "sarugatsuji.jpg",
+  "titulo": "Kyoto-gosho Sarugatsuji.JPG",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Kyoto-gosho_Sarugatsuji.JPG"
+ },
+ "enryakuji": {
+  "arquivo": "enryakuji.jpg",
+  "titulo": "Otsu Enryaku-ji 3.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Otsu_Enryaku-ji_3.jpg"
+ },
+ "setsubun_hokusai": {
+  "arquivo": "setsubun_hokusai.jpg",
+  "titulo": "Hokusai Setsubun no Oni.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Hokusai_Setsubun_no_Oni.jpg"
+ },
+ "ushioni_suushi": {
+  "arquivo": "ushioni_suushi.jpg",
+  "titulo": "Suushi Ushioni.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Suushi_Ushioni.jpg"
+ },
+ "ushioni_rolo": {
+  "arquivo": "ushioni_rolo.jpg",
+  "titulo": "29.Ushioni.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:29.Ushioni.jpg"
+ },
+ "ushioni_sekien": {
+  "arquivo": "ushioni_sekien.jpg",
+  "titulo": "SekienUshioni.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienUshioni.jpg"
+ },
+ "nureonna_7": {
+  "arquivo": "nureonna_7.jpg",
+  "titulo": "7.Nure-onna.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:7.Nure-onna.jpg"
+ },
+ "nureonna_sekien": {
+  "arquivo": "nureonna_sekien.jpg",
+  "titulo": "SekienNureonna.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienNureonna.jpg"
+ },
+ "yamauba_paris": {
+  "arquivo": "yamauba_paris.jpg",
+  "titulo": "Motoyama 本山 Yamauba 山姥, Paris Musées 20231007084004.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Motoyama_%E6%9C%AC%E5%B1%B1_Yamauba_%E5%B1%B1%E5%A7%A5%2C_Paris_Mus%C3%A9es_20231007084004.jpg"
+ },
+ "tsuchigumo_14": {
+  "arquivo": "tsuchigumo_14.jpg",
+  "titulo": "Tsuchigumo no soshi emaki - Kamakura - part 14.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Tsuchigumo_no_soshi_emaki_-_Kamakura_-_part_14.jpg"
+ },
+ "tsuchigumo_rijks": {
+  "arquivo": "tsuchigumo_rijks.jpg",
+  "titulo": "Demonen Raikô en de aardspin (serietitel), RP-P-1991-687.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:Demonen_Raik%C3%B4_en_de_aardspin_%28serietitel%29%2C_RP-P-1991-687.jpg"
+ },
+ "sekien_satori": {
+  "arquivo": "sekien_satori.jpg",
+  "titulo": "SekienSatori.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienSatori.jpg"
+ },
+ "sekien_tengu": {
+  "arquivo": "sekien_tengu.jpg",
+  "titulo": "SekienTengu.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienTengu.jpg"
+ },
+ "sekien_nue": {
+  "arquivo": "sekien_nue.jpg",
+  "titulo": "SekienNue.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienNue.jpg"
+ },
+ "sekien_yamauba": {
+  "arquivo": "sekien_yamauba.jpg",
+  "titulo": "SekienYamauba.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienYamauba.jpg"
  }
 }

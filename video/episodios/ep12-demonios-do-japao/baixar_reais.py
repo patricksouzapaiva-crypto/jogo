@@ -55,14 +55,19 @@ for chave, tit in ESCOLHAS.items():
     if "#" in tit:
         t, i = tit.split("#"); tit = cand[t][int(i)]["titulo"]
     url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(tit.replace(" ", "_")) + "?width=3000"
-    try:
-        dados = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90).read()
-    except urllib.error.HTTPError as e:
-        print("FALHOU", chave, e.code, tit, flush=True); time.sleep(3); continue
+    dados = None
+    for tent in range(5):   # o Commons devolve 429 quando pedimos rápido: espera e tenta de novo
+        try:
+            dados = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90).read(); break
+        except urllib.error.HTTPError as e:
+            if e.code != 429: break
+            time.sleep(60 * (tent + 1))
+    if dados is None:
+        print("FALHOU", chave, tit, flush=True); time.sleep(10); continue
     ext = ".png" if tit.lower().endswith(".png") else ".jpg"
     (SAI / f"{chave}{ext}").write_bytes(dados)
     lista[chave] = {"arquivo": f"{chave}{ext}", "titulo": tit,
                     "fonte": "https://commons.wikimedia.org/wiki/File:" + urllib.parse.quote(tit.replace(" ", "_"))}
     (SAI / "baixadas.json").write_text(json.dumps(lista, ensure_ascii=False, indent=1))
-    print("ok", chave, len(dados) // 1024, "KB", flush=True); time.sleep(3)
+    print("ok", chave, len(dados) // 1024, "KB", flush=True); time.sleep(12)
 print("FIM")
