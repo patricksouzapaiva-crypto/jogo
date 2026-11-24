@@ -48,6 +48,7 @@ def baixar(url):
             time.sleep(30 * (t + 1))
 
 
+SEM_FOLHA = __import__('os').environ.get('SEM_FOLHA')
 for tema, q in TEMAS.items():
     if tema in cand: continue
     r = api(action="query", generator="search", gsrnamespace=6, gsrsearch=q + " filetype:bitmap", gsrlimit=12,
@@ -56,6 +57,8 @@ for tema, q in TEMAS.items():
     lista = [{"titulo": p["title"][5:], "url": p["imageinfo"][0].get("thumburl"), "tam": [p["imageinfo"][0]["width"], p["imageinfo"][0]["height"]]}
              for p in pags if p.get("imageinfo")]
     cand[tema] = lista; SAIDA.write_text(json.dumps(cand, ensure_ascii=False, indent=1))
+    if SEM_FOLHA:
+        print('ok', tema, len(lista), flush=True); time.sleep(4); continue
     # folha de contato: 12 miniaturas numeradas
     folha = Image.new("RGB", (4 * 360, 3 * 400), (20, 20, 20)); d = ImageDraw.Draw(folha)
     for i, c in enumerate(lista[:12]):
