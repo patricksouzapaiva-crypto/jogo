@@ -1,4 +1,4 @@
-# O Vigia — Ep. 12 "Os demônios do Japão" (v1 — para aprovação)
+# O Vigia — Ep. 12 "Os demônios do Japão" (v2)
 
 **Pedido do usuário (24/11):** explicar os demônios do Japão e por que são tão diferentes; onis e yokais; o paralelo com
 o Ocidente; os mais famosos e os piores, as regras, os contos. **Sem fantasmas** (já foram o Ep. 08). **O máximo de
@@ -8,7 +8,7 @@ Fatos e fontes: `PESQUISA.md`. ⚠️ "matar quem te viu" NÃO está nas fontes 
 para você".
 
 **Títulos (opções):**
-1. **Os demônios do Japão não querem a sua alma** (42 car.) ← recomendado
+1. **Os demônios do Japão não querem a sua alma** (42 car.) ← ✅ APROVADO pelo usuário em 24/11
 2. Por que os demônios japoneses são os piores do mundo (51)
 3. Ela pediu para virar demônio. E virou. (39)
 **Capa:** gravura real (a Hashihime de Sekien ou a cabeça do Shuten-dōji mordendo o capacete) + "ELA PEDIU." / "NÃO É O
@@ -295,7 +295,30 @@ E a Camila acendeu a lanterna do celular. Bem no rosto de quem estava pregando.
 A pessoa virou devagar. As velas tremendo na cabeça.
 E a Camila conhecia aquele rosto.
 Todo dia, há seis anos.
+*(pausa — só o vento e as velas)*
+A pessoa não correu. Não disse nada.
+Desceu o martelo. Arrancou o boneco da árvore. E foi embora pelo meio do bosque, com as três chamas apagando uma por
+uma.
+*(pausa)*
+A Camila nunca contou pra ninguém o que viu.
+Mas aquele rosto, que ela via todo dia havia seis anos… ela nunca mais viu.
+Sumiu. Sem aviso. Sem despedida.
+*(pausa)*
+Um mês depois, voltando do turno, ela passou de novo pelo santuário.
+E tinha um prego novo na árvore.
+Um boneco novo.
+E no papel, uma data de nascimento.
+Não era a dela.
+*(pausa)*
+Era de quem ela tinha visto naquela noite.
+Porque a regra é essa. Se alguém te vir… a maldição volta pra você.
+E, dessa vez, alguém estava pregando o boneco.
 *(corte seco)*
+
+<!-- Pedido do usuário (24/11): NÃO revelar quem era, mas o final tem que satisfazer. Solução: o espectador não sabe
+QUEM, mas sabe O QUE aconteceu. A regra do gancho se cumpre na tela (a maldição volta), a pessoa some da vida da Camila
+e o boneco novo fecha o ciclo. "Todo dia, há seis anos" deixa o espectador montar a lista de suspeitos sozinho, e isso
+vira comentário. -->
 
 ## FECHO — o Vigia
 *(volta para a gravura de Sekien; depois a máscara Hannya)*
@@ -305,4 +328,5 @@ Só precisa de alguém que te queira mal o bastante… pra ficar sete noites aco
 E, se um dia você passar por uma árvore de santuário e vir um prego…
 olha bem pro tronco.
 Você talvez conheça o nome que está escrito ali.
+Ou… o rosto de quem pregou.
 Eu sou o Vigia. Boa noite.
