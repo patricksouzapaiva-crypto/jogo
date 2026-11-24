@@ -32,6 +32,11 @@ def palavras(wav):
 
 def achar(ws, alvo):
     alvo = norm(alvo).split()
+    # Ep. 12: o Whisper escreve "Camilla": procura também a partir da 2ª/3ª palavra do texto novo
+    for d in (1, 2, 3):
+        for i in range(1, len(ws) - 3):
+            if [w[0] for w in ws[i:i + 3]] == alvo[d:d + 3] and i - d >= 1:
+                return i - d
     for n in (3, 2):
         for i in range(1, len(ws) - n):
             if [w[0] for w in ws[i:i + n]] == alvo[:n]:

@@ -1,0 +1,5013 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 4.0,
+ "vigia_padrao": false,
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "oni",
+   "yōkai",
+   "demônio",
+   "regra",
+   "Hashihime",
+   "Shuten-dōji",
+   "Tenjin",
+   "kimon",
+   "Sesshō-seki",
+   "Hyakki Yagyō",
+   "Camila",
+   "sete noites",
+   "maldição",
+   "rosto"
+  ]
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep08_campo_noite",
+   "volume_db": -22
+  }
+ ],
+ "musica": {
+  "som": "ep12_trilha",
+  "volume_db": -30
+ },
+ "titulo_ep": {
+  "antes_da_batida": 12,
+  "linhas": [
+   "O VIGIA · EPISÓDIO 12",
+   "OS DEMÔNIOS DO JAPÃO",
+   "NÃO QUEREM",
+   "A SUA ALMA"
+  ],
+  "vermelho": "A SUA ALMA",
+  "duracao": 5.6,
+  "folga": 1.0,
+  "centro": true
+ },
+ "cta": {
+  "titulo": "Não deixe que te vejam.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais casos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "antes": 0.6,
+  "clique_em": "Inscreva-se",
+  "duracao": 6.0
+ },
+ "batidas": [
+  {
+   "fala": "Em maio de dois mil e vinte e dois, numa cidade colada em Tóquio, os sacerdotes começaram a achar a mesma coisa, de manhã, em mais de dez santuários.",
+   "cena": {
+    "imagem": "reais/kifune_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    }
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -22
+   }
+  },
+  {
+   "fala": "Bonecos de palha. Pregados nas árvores sagradas. Com um prego atravessado no peito.",
+   "cena": {
+    "imagem": "reais/ritual_mulher.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.28,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_martelo_prego",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.3
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E, presa em cada boneco, a foto de um homem e um bilhete: \"rezo pela aniquilação\".",
+   "pausa_antes_s": 8.75,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "\"REZO PELA ANIQUILAÇÃO\"\nBilhete preso aos bonecos · Matsudo, Japão, maio de 2022",
+     "estilo": "maquina",
+     "vermelho": "REZO PELA ANIQUILAÇÃO",
+     "cps": 40,
+     "antecipar": 8.3,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/ritual_mulher.jpg",
+     "zoom": [
+      1.3,
+      1.45
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.28,
+       0.45
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "E,",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "A câmera de um santuário filmou quem estava pregando. Um senhor de setenta e dois anos.",
+   "cena": {
+    "imagem": "reais/kifune_3.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.52,
+      0.48
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 02",
+      "hora": "02:14:37",
+      "data": "18-05-2022"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele foi preso. Mas não pela maldição. No Japão, amaldiçoar alguém até a morte não é crime.",
+   "pausa_antes_s": 9.35,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "MATSUDO · MAIO DE 2022\nHomem de 72 anos preso por danificar as árvores sagradas",
+     "estilo": "maquina",
+     "vermelho": "72 ANOS",
+     "cps": 40,
+     "antecipar": 8.9,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/kifune_3.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.52,
+       0.48
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "efeitos": {
+      "cctv": {
+       "cam": "CAM 02",
+       "hora": "02:14:37",
+       "data": "18-05-2022"
+      }
+     },
+     "em": "Ele",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "O crime… foi o prego na árvore.",
+   "cena": {
+    "imagem": "reais/m_ushinokoku.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.85,
+      0.75
+     ],
+     [
+      0.85,
+      0.6
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "prego",
+     "som": "ep12_martelo_prego",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "O que ele estava fazendo tem quase mil anos. Começa às duas da manhã. Roupa branca. Um aro de ferro na cabeça, com três velas acesas. Um espelho no peito. Sete noites seguidas.",
+   "pausa_antes_s": 2.05,
+   "cenas": [
+    {
+     "imagem": "reais_prontos/ritual_sekien.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais/ritual_sekien.jpg",
+     "zoom": [
+      1.6,
+      1.8
+     ],
+     "foco": [
+      [
+       0.4,
+       0.35
+      ],
+      [
+       0.4,
+       0.3
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "aro"
+    }
+   ],
+   "sons": [
+    {
+     "em": "três",
+     "som": "ep08_vela",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "E se alguém te vir… a maldição volta pra você.",
+   "cena": {
+    "imagem": "reais_prontos/ritual_mulher.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "丑の刻参り",
+     "x": 0.12,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "ushi no toki mairi · a visita da hora do Boi",
+     "selo": "呪",
+     "atraso": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "maldição",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": -0.4
+    }
+   ],
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Esse ritual nasceu de uma mulher que pediu aos deuses pra virar um demônio.",
+   "cena": {
+    "imagem": "reais_prontos/hashihime_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E os deuses atenderam.",
+   "cena": {
+    "imagem": "reais/hashihime_sekien.jpg",
+    "zoom": [
+     1.4,
+     1.65
+    ],
+    "foco": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.45,
+      0.38
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.45
+  },
+  {
+   "fala": "Hoje você vai conhecer os demônios do Japão. Os que comiam gente, os que viraram deuses, e o pior de todos… que até hoje ninguém sabe se ainda está preso.",
+   "cenas": [
+    {
+     "imagem": "reais_prontos/kyosai_6.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "video": "rolos/ROLO_hyakki_aic.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "em": "pior"
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E vai entender por que, no Japão… ninguém nasce demônio.",
+   "cena": {
+    "imagem": "reais_prontos/hannya_preto.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "鬼",
+     "x": 0.15,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "demônio",
+     "atraso": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "ninguém",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Boa noite. Eu sou o Vigia.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -36
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Se você ainda não é inscrito, se inscreve e ativa o sininho.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Porque depois de hoje você nunca mais vai olhar pra uma árvore de santuário do mesmo jeito.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Quando a gente pensa em demônio, pensa no do Ocidente.",
+   "cena": {
+    "imagem": "reais_prontos/m_jigoku_livro.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele é mau por natureza. Ele é um anjo que caiu. Ele serve a um chefe, o Diabo. E ele quer uma coisa só: a sua alma.",
+   "pausa_antes_s": 10.25,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "NO OCIDENTE, O DEMÔNIO\nÉ um anjo caído · serve ao Diabo · quer a sua alma",
+     "estilo": "maquina",
+     "vermelho": "QUER A SUA ALMA",
+     "cps": 40,
+     "antecipar": 9.4,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais_prontos/m_jigoku_livro.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "Ele",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Pra vencer, você chama um padre. Reza. Expulsa.",
+   "cena": {
+    "imagem": "reais/m_jigoku_livro.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.72,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "No Japão, nada disso funciona.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Lá não existe Diabo. Não existe uma guerra do bem contra o mal.",
+   "cena": {
+    "imagem": "reais/m_otsue_oni.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.3
+     ],
+     [
+      0.5,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Os demônios japoneses têm dois nomes. O primeiro é oni: o que tem chifre, presa e clava de ferro. O mais perto do nosso demônio.",
+   "cena": {
+    "imagem": "reais_prontos/m_mascara_kobeshimi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "鬼",
+     "x": 0.18,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "oni",
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "oni",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O segundo é yōkai: uma palavra que cobre tudo o que é estranho. Monstro, bicho que se transforma, objeto que ganha alma. Até deus que ficou com raiva.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_4.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "妖怪",
+     "x": 0.12,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "yōkai",
+     "atraso": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "yōkai",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E eles quase nunca querem a sua alma.",
+   "cena": {
+    "imagem": "reais/kyosai_5.jpg",
+    "zoom": [
+     1.25,
+     1.3
+    ],
+    "foco": [
+     [
+      0.35,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Uns querem comida. Outros querem respeito. Outros só querem que você siga uma regra.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E quem conhece a regra… sobrevive.",
+   "cena": {
+    "imagem": "reais/m_kyosai_luta.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.3,
+      0.45
+     ],
+     [
+      0.35,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Mas o mais estranho é outra coisa. No Japão, o demônio não nasce demônio. Ele vira.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Vira um animal velho. Vira um objeto esquecido. Vira um deus que ninguém mais respeita.",
+   "cenas": [
+    {
+     "imagem": "reais_prontos/hyakki_tsukumogami.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais_prontos/m_raijin_momoyogusa.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "deus"
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E vira, principalmente… gente.",
+   "cena": {
+    "imagem": "reais/m_hannya_hokusai.jpg",
+    "zoom": [
+     1.4,
+     1.7
+    ],
+    "foco": [
+     [
+      0.55,
+      0.45
+     ],
+     [
+      0.55,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.45
+  },
+  {
+   "fala": "Kyoto, por volta do ano oitocentos e dez. Uma moça de família nobre descobre que o homem que ela ama trocou ela por outra.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第一章",
+     "numero_pt": "Capítulo 1",
+     "titulo": "A mulher que virou demônio",
+     "ano": "séc. IX",
+     "imagem": "reais_prontos/m_kanawa.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais_prontos/m_ushinokoku.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Kyoto"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "E o ciúme dela é tão grande que ela não quer chorar. Ela quer matar.",
+   "cena": {
+    "imagem": "reais/m_ushinokoku.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.42,
+      0.25
+     ],
+     [
+      0.42,
+      0.2
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela sobe a montanha até o santuário de Kifune, ao norte da cidade. Fica lá sete dias, rezando.",
+   "cena": {
+    "imagem": "reais_prontos/kifune_2.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E não reza pra esquecer. Reza pra virar um demônio. Um demônio vivo.",
+   "cena": {
+    "imagem": "reais/kifune_3.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Na sétima noite, o deus responde. \"Se você quer virar um oni… mude a sua aparência. E entre no rio Uji. Vinte e um dias.\"",
+   "cena": {
+    "imagem": "reais/kifune_2.jpg",
+    "zoom": [
+     1.15,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.35
+     ],
+     [
+      0.5,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela volta pra casa. Divide o cabelo em cinco mechas e torce cada uma até virar um chifre.",
+   "cena": {
+    "imagem": "reais/hashihime_sekien.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.45,
+      0.25
+     ],
+     [
+      0.45,
+      0.2
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Pinta o rosto de vermelho. O corpo inteiro de vermelho.",
+   "cena": {
+    "imagem": "reais_prontos/m_kanawa.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Põe na cabeça um tripé de ferro, virado de cabeça pra baixo, com tochas acesas nas três pernas.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Põe na boca uma tocha acesa nas duas pontas.",
+   "cena": {
+    "imagem": "reais/hashihime_sekien.jpg",
+    "zoom": [
+     1.8,
+     2.0
+    ],
+    "foco": [
+     [
+      0.45,
+      0.4
+     ],
+     [
+      0.45,
+      0.35
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.85
+  },
+  {
+   "fala": "E sai correndo, de madrugada, pelas ruas de Kyoto, até o rio.",
+   "sons": [
+    {
+     "em": "correndo",
+     "som": "ep08_taiko",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Quem viu, diz o texto, caiu morto de medo.",
+   "cena": {
+    "imagem": "reais/ritual_mulher.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Vinte e um dias dentro da água.",
+   "cena": {
+    "imagem": "reais/hashihime_sekien.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.8
+     ],
+     [
+      0.5,
+      0.7
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "E quando ela saiu… não era mais uma mulher.",
+   "cena": {
+    "imagem": "reais_prontos/hannya_preto.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.45
+  },
+  {
+   "fala": "Ela matou a rival. Matou a família da rival. Matou os parentes do homem que a abandonou.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/m_shirazunoyabu.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "E depois, já sem motivo nenhum… começou a matar qualquer um.",
+   "cena": {
+    "imagem": "reais/m_shirazunoyabu.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.4,
+      0.3
+     ],
+     [
+      0.4,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Chamaram ela de Hashihime: a princesa da ponte.",
+   "cena": {
+    "imagem": "reais_prontos/hashihime_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "橋姫",
+     "x": 0.15,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Hashihime · a princesa da ponte",
+     "selo": "鬼",
+     "atraso": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Hashihime",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Duzentos anos depois, numa ponte de Kyoto, um guerreiro chamado Watanabe no Tsuna encontrou uma moça sozinha, de madrugada, pedindo companhia pra atravessar.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "No meio da ponte, ela agarrou ele pelos cabelos e virou um oni.",
+   "cena": {
+    "imagem": "reais/m_rashomon_tsuna.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.25
+     ],
+     [
+      0.5,
+      0.2
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele cortou o braço dela com a espada. E ela fugiu voando, sem o braço.",
+   "cena": {
+    "imagem": "reais_prontos/m_rashomon_noh.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "cortou",
+     "som": "ep12_espada",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A ponte existe. Ela se chama Modoribashi, \"a ponte da volta\". E até hoje tem noiva em Kyoto que evita passar por ela no dia do casamento… porque quem cruza a ponte da volta, volta pra casa dos pais.",
+   "cena": {
+    "imagem": "reais_prontos/modoribashi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "戻橋",
+     "x": 0.14,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Modoribashi · a ponte da volta",
+     "atraso": 0.8
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Modoribashi",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Mais tarde, o teatro Nō transformou essa história numa peça chamada Kanawa, \"o tripé de ferro\". E deu um rosto pra mulher que vira demônio por ciúme: a máscara Hannya. Chifres, olhos de ouro, a boca rasgada.",
+   "pausa_antes_s": 2.05,
+   "cenas": [
+    {
+     "imagem": "reais_prontos/m_kanawa.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais_prontos/hannya_preto.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "rosto"
+    }
+   ]
+  },
+  {
+   "fala": "Repara na máscara. De um lado, ela parece furiosa. Do outro… ela parece estar chorando.",
+   "cena": {
+    "imagem": "reais/hannya_preto.jpg",
+    "zoom": [
+     1.2,
+     1.25
+    ],
+    "foco": [
+     [
+      0.35,
+      0.5
+     ],
+     [
+      0.65,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "É isso que o Japão entende por demônio.",
+   "cena": {
+    "imagem": "reais_prontos/m_hannya_hokusai.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Mas, afinal, o que é um oni?",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第二章",
+     "numero_pt": "Capítulo 2",
+     "titulo": "A porta do demônio",
+     "ano": "713 · hoje",
+     "imagem": "reais_prontos/m_ibaraki_esboco.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais_prontos/m_ibaraki_esboco.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Mas"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "A palavra oni vem de uma mais antiga, on, que quer dizer \"o que se esconde\". O invisível.",
+   "cena": {
+    "imagem": "reais/m_ibaraki_esboco.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.4,
+      0.3
+     ],
+     [
+      0.4,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "kanji": {
+     "texto": "隠",
+     "x": 0.82,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "on · o que se esconde",
+     "atraso": 1.0
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "on",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O primeiro oni escrito do Japão aparece num livro de setecentos e treze: um demônio de um olho só que sai do mato e come um homem que trabalhava no campo.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_7.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Sete anos depois, outro livro conta que, no funeral de uma imperatriz, um oni de chapéu ficou assistindo tudo do alto de uma montanha.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_3.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Quando o budismo chegou, os onis ganharam um emprego: viraram os carcereiros do inferno. Um com cabeça de boi, outro com cabeça de cavalo, aplicando os castigos que o rei do inferno decide.",
+   "cenas": [
+    {
+     "imagem": "reais_prontos/m_jigokudayu.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
+    },
+    {
+     "imagem": "reais/m_jigoku_livro.jpg",
+     "zoom": [
+      1.4,
+      1.5
+     ],
+     "foco": [
+      [
+       0.7,
+       0.45
+      ],
+      [
+       0.72,
+       0.42
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "cabeça"
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E de onde vêm os chifres de boi e a tanga de pele de tigre?",
+   "cena": {
+    "imagem": "reais_prontos/m_raijin_estatua.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Do mapa.",
+   "cena": {
+    "imagem": "reais/m_shoki_tigre.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.65,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "kanji": {
+     "texto": "艮",
+     "x": 0.2,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "ushitora · o nordeste",
+     "tam": 0.3,
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "mapa",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.85
+  },
+  {
+   "fala": "No Japão antigo, cada direção tem um bicho. E a direção nordeste fica entre o Boi e o Tigre.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "É por ali que os demônios entram. Chamam o nordeste de kimon: a porta do demônio.",
+   "cena": {
+    "imagem": "reais_prontos/enryakuji.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "鬼門",
+     "x": 0.14,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "kimon · a porta do demônio",
+     "selo": "鬼",
+     "atraso": 0.8
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "kimon",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Isso não é só lenda. Quando construíram a capital, Kyoto, puseram um templo enorme no monte do nordeste, pra tapar a porta.",
+   "cena": {
+    "imagem": "reais/enryakuji.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E o Palácio Imperial de Kyoto tem uma coisa que você só percebe se souber.",
+   "cena": {
+    "imagem": "reais_prontos/sarugatsuji.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O muro não tem o canto nordeste. Ele é afundado. Cortado pra dentro.",
+   "cena": {
+    "imagem": "reais/sarugatsuji.jpg",
+    "zoom": [
+     1.2,
+     1.4
+    ],
+    "foco": [
+     [
+      0.35,
+      0.5
+     ],
+     [
+      0.25,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Sem canto, o demônio não tem por onde entrar.",
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "E debaixo do telhado, bem ali, fica um macaco de madeira, de guarda. Há séculos.",
+   "cena": {
+    "imagem": "reais/sarugatsuji.jpg",
+    "zoom": [
+     1.5,
+     1.7
+    ],
+    "foco": [
+     [
+      0.25,
+      0.35
+     ],
+     [
+      0.22,
+      0.3
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Até hoje, tem japonês que não põe porta, nem banheiro, nem cozinha no nordeste da casa.",
+   "pausa_antes_s": 2.05
+  },
+  {
+   "fala": "Em dois mil e quinze, só em Kyoto, contaram mais de mil e cem cantos de casa protegidos contra a porta do demônio.",
+   "pausa_antes_s": 8.35,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "KYOTO · 2015\nMais de 1.100 cantos de casa protegidos contra o kimon",
+     "estilo": "maquina",
+     "vermelho": "1.100",
+     "cps": 40,
+     "antecipar": 7.9,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/sarugatsuji.jpg",
+     "zoom": [
+      1.5,
+      1.7
+     ],
+     "foco": [
+      [
+       0.25,
+       0.35
+      ],
+      [
+       0.22,
+       0.3
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "Em",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "E em mil novecentos e trinta e seis, dois ex-ministros da Educação do Japão morreram de repente, um atrás do outro.",
+   "pausa_antes_s": 10.35,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "TÓQUIO · ABRIL DE 1936\nO Ministério da Educação demole o banheiro do ministro: estava no kimon",
+     "estilo": "maquina",
+     "vermelho": "1936",
+     "cps": 40,
+     "antecipar": 9.9,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/sarugatsuji.jpg",
+     "zoom": [
+      1.5,
+      1.7
+     ],
+     "foco": [
+      [
+       0.25,
+       0.35
+      ],
+      [
+       0.22,
+       0.3
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "E",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Logo depois, o próprio Ministério mandou demolir um banheiro novinho, feito só para o ministro… porque tinha sido construído no nordeste.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O ministério que combatia a superstição no país.",
+   "cena": {
+    "imagem": "reais/enryakuji.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Mas se eram os onis que entravam pela porta… quem era o pior deles?",
+   "cena": {
+    "imagem": "reais_prontos/shuten_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Por volta do ano novecentos e noventa, moças de Kyoto começaram a sumir.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第三章",
+     "numero_pt": "Capítulo 3",
+     "titulo": "O oni que bebia saquê",
+     "ano": "990",
+     "imagem": "reais_prontos/m_raiko_cabeca.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais_prontos/m_shuten_palacio.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Por"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "Filhas de nobres. Uma por uma.",
+   "cena": {
+    "imagem": "reais/m_shuten_palacio.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Um adivinho da corte disse de onde vinha: do monte Ōe, a noroeste da capital. Lá vivia um oni chamado Shuten-dōji.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O nome quer dizer \"o menino que bebe saquê\".",
+   "cena": {
+    "imagem": "reais_prontos/shuten_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "酒呑童子",
+     "x": 0.12,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Shuten-dōji · o menino que bebe saquê",
+     "selo": "酒",
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "nome",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele levava as moças pro castelo dele. E o texto mais antigo é bem direto: os onis comiam a carne delas. E bebiam o sangue.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O imperador mandou o maior guerreiro do Japão, Minamoto no Raikō, com quatro homens.",
+   "cena": {
+    "video": "rolos/shuten_rolo_cbl.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Eles não atacaram. Se vestiram de monges peregrinos e bateram na porta do castelo, pedindo abrigo.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O oni recebeu eles com uma festa. E eles ofereceram um presente: um saquê especial.",
+   "cena": {
+    "imagem": "reais_prontos/shuten_rolo_cbl.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Era um saquê divino… que é veneno pra demônio.",
+   "cena": {
+    "imagem": "reais/shuten_rolo_cbl.jpg",
+    "zoom": [
+     1.5,
+     1.6
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.45,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O Shuten-dōji bebeu, dormiu… e eles cortaram a cabeça.",
+   "cena": {
+    "imagem": "reais_prontos/m_kyosai_luta.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "cortaram",
+     "som": "ep12_espada",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "E a cabeça, separada do corpo, voou. E mordeu o capacete do Raikō.",
+   "cena": {
+    "imagem": "reais_prontos/m_raiko_cabeca.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "mordeu",
+     "som": "ep08_taiko",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele só sobreviveu porque, antes, tinha posto os capacetes dos companheiros por cima do dele.",
+   "cena": {
+    "imagem": "reais/m_raiko_cabeca.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.6,
+      0.65
+     ],
+     [
+      0.6,
+      0.6
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Na volta pra Kyoto, carregando a cabeça, eles pararam num morro chamado Oinosaka.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/kubizuka_3.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "E ali, diz a lenda, a cabeça ficou tão pesada que ninguém conseguia mais levantar.",
+   "cena": {
+    "imagem": "reais/kubizuka_3.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Enterraram ali mesmo.",
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "O túmulo existe até hoje, à beira da estrada. Chama-se Kubizuka, \"o túmulo da cabeça\".",
+   "cena": {
+    "imagem": "reais_prontos/kubizuka_1.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "首塚",
+     "x": 0.84,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Kubizuka · o túmulo da cabeça",
+     "atraso": 0.8
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Kubizuka",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E as pessoas vão lá rezar pro demônio que comia moças.",
+   "cena": {
+    "imagem": "reais_prontos/kubizuka_2.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Pedem pra ele curar as doenças… do pescoço pra cima.",
+   "cena": {
+    "imagem": "reais/kubizuka_2.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "E tem um detalhe. Todo ano, no começo de fevereiro, o Japão inteiro faz o Setsubun: as famílias jogam feijão gritando \"onis pra fora, sorte pra dentro\".",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/m_setsubun.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Menos uma família. Quem tem o sobrenome Watanabe não joga feijão.",
+   "cena": {
+    "imagem": "reais/m_setsubun.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.35,
+      0.5
+     ],
+     [
+      0.3,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Porque um dos guerreiros do Raikō era Watanabe no Tsuna. O mesmo da ponte. E dizem que os onis, até hoje, têm medo de chegar perto dos Watanabe.",
+   "cena": {
+    "imagem": "reais/m_rashomon_tsuna.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.7
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E num templo nas montanhas de Yoshino, o grito é o contrário: \"onis, entrem também\". Porque ali um monge converteu um oni e fez dele o seu discípulo.",
+   "cena": {
+    "imagem": "reais_prontos/setsubun_hokusai.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Um demônio pode virar discípulo. Pode ganhar túmulo. Pode ser convidado.",
+   "cena": {
+    "imagem": "reais_prontos/m_otsue_oni.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Então o que separa um demônio de um deus?",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第四章",
+     "numero_pt": "Capítulo 4",
+     "titulo": "O demônio que virou deus",
+     "ano": "903",
+     "imagem": "reais_prontos/m_michizane_trovao.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais_prontos/m_raijin_momoyogusa.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Então"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "No Japão, todo espírito tem dois lados. Um lado calmo, que traz sorte. E um lado bravo, que traz doença e desastre.",
+   "cena": {
+    "imagem": "reais_prontos/m_raijin_biombo.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "和魂 · 荒魂",
+     "x": 0.5,
+     "y": 0.18,
+     "modo": "luz",
+     "legenda": "o lado calmo · o lado bravo",
+     "atraso": 1.0
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Se você cuida, respeita, faz oferenda… o lado calmo ganha. E o espírito vira deus.",
+   "cena": {
+    "imagem": "reais/m_raijin_biombo.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.6,
+      0.4
+     ],
+     [
+      0.55,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Se você esquece… ele vira yokai.",
+   "cena": {
+    "imagem": "reais/m_raijin_momoyogusa.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "O caso mais famoso é real.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Em novecentos e três, um ministro chamado Sugawara no Michizane morreu no exílio, acusado injustamente pelos rivais.",
+   "cena": {
+    "imagem": "reais/m_michizane_retrato.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.35
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Nos anos seguintes, os rivais começaram a morrer. Um raio caiu dentro do palácio imperial. O príncipe herdeiro morreu.",
+   "cena": {
+    "imagem": "reais_prontos/m_michizane_trovao.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "raio",
+     "som": "ep12_trovao",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.85
+  },
+  {
+   "fala": "Um rolo pintado conta assim: o espírito dele virou um deus do trovão… com cara de oni.",
+   "cena": {
+    "imagem": "reais_prontos/m_tenjin_engi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O Japão não exorcizou. Fez o contrário. Devolveu os cargos dele, promoveu ele depois de morto, e construiu um santuário pra ele.",
+   "cena": {
+    "imagem": "reais/m_tenjin_engi.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Hoje ele se chama Tenjin. É o deus dos estudantes. Milhões de jovens rezam pra ele antes da prova.",
+   "cena": {
+    "imagem": "reais_prontos/m_michizane_ator.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "天神",
+     "x": 0.82,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Tenjin · o deus dos estudantes",
+     "atraso": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Tenjin",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "E não é só gente. No Japão, diz a tradição, um objeto que faz cem anos ganha alma.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/hyakki_tsukumogami.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "付喪神",
+     "x": 0.14,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "tsukumogami · o objeto que ganha alma",
+     "atraso": 1.2
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Um rolo do século quinze conta que, na faxina de fim de ano, as famílias jogaram fora panelas, sandálias, guarda-chuvas velhos. Faltando um ano pra fazerem cem.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E os objetos, furiosos, viraram monstros e se vingaram dos donos.",
+   "cena": {
+    "imagem": "reais/hyakki_tsukumogami.jpg",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.8,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "É esse desfile aqui. Pintado há quinhentos anos.",
+   "cena": {
+    "imagem": "reais/ROLO_casamento/alt06.jpg",
+    "zoom": [
+     1.15,
+     1.2
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E é por isso que no Japão você é educado até com as coisas.",
+   "cena": {
+    "imagem": "reais/ROLO_casamento/alt12.jpg",
+    "zoom": [
+     1.15,
+     1.2
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Agora, se um yokai não quer a sua alma… o que ele quer?",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第五章",
+     "numero_pt": "Capítulo 5",
+     "titulo": "As regras",
+     "ano": "como sobreviver",
+     "imagem": "reais_prontos/sekien_kappa.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais/ROLO_casamento/alt18.jpg",
+     "zoom": [
+      1.15,
+      1.2
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.7,
+       0.5
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Agora"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "Ele quer que você siga a regra.",
+   "cena": {
+    "imagem": "reais/ROLO_casamento/alt24.jpg",
+    "zoom": [
+     1.15,
+     1.2
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "掟",
+     "x": 0.2,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "a regra",
+     "tam": 0.3,
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "regra",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O kappa vive nos rios. Parece uma criança com casco de tartaruga e um prato cheio de água no alto da cabeça. Ele afoga quem entra na água.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A regra: faça uma reverência. Bem funda.",
+   "cena": {
+    "imagem": "reais/sekien_kappa.jpg",
+    "zoom": [
+     1.3,
+     1.45
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.55
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O kappa é educado. Ele devolve a reverência… e a água do prato cai. E sem água, ele perde a força.",
+   "cena": {
+    "imagem": "reais/sekien_kappa.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "O nurikabe é uma parede invisível. Você está andando à noite e, de repente, não consegue mais passar.",
+   "pausa_antes_s": 8.75,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "NURIKABE\nA parede invisível que fecha o caminho à noite",
+     "estilo": "maquina",
+     "vermelho": "NURIKABE",
+     "cps": 40,
+     "antecipar": 6.7,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/sekien_kappa.jpg",
+     "zoom": [
+      1.6,
+      1.8
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.4
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "O",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "A regra: pegue um pau e bata na parte de baixo. Em cima não adianta.",
+   "cena": {
+    "imagem": "reais/ROLO_casamento/alt30.jpg",
+    "zoom": [
+     1.15,
+     1.2
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "O satori é um bicho da montanha que lê os seus pensamentos. Tudo o que você pensa, ele fala antes. Você não consegue fugir, porque ele sabe pra onde você vai.",
+   "cena": {
+    "imagem": "reais_prontos/sekien_satori.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A regra: não pense. Só uma coisa que você não planejou pode assustar ele.",
+   "cena": {
+    "imagem": "reais/sekien_satori.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.45,
+      0.45
+     ],
+     [
+      0.45,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "A rokurokubi é uma mulher comum de dia. À noite, enquanto ela dorme, a cabeça se solta e sai voando pra beber sangue.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/sekien_rokurokubi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "A regra: ache o corpo. E mude ele de lugar. Quando a cabeça voltar… não consegue mais se encaixar.",
+   "cena": {
+    "imagem": "reais/sekien_rokurokubi.jpg",
+    "zoom": [
+     1.5,
+     1.7
+    ],
+    "foco": [
+     [
+      0.5,
+      0.35
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "E a jorōgumo é uma aranha que vira uma mulher linda, numa cachoeira de Izu. Um lenhador deixou o machado cair na água, e ela apareceu pra devolver. E pediu uma coisa só: \"nunca conte a ninguém o que viu aqui\".",
+   "pausa_antes_s": 7.55,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "JORŌGUMO\nA aranha que vira mulher · cachoeira de Jōren, Izu",
+     "estilo": "maquina",
+     "vermelho": "JORŌGUMO",
+     "cps": 40,
+     "antecipar": 7.1,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais/sekien_rokurokubi.jpg",
+     "zoom": [
+      1.5,
+      1.7
+     ],
+     "foco": [
+      [
+       0.5,
+       0.35
+      ],
+      [
+       0.5,
+       0.3
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "em": "E",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Dias depois, ele contou. Bêbado, numa festa.",
+   "cena": {
+    "imagem": "reais_prontos/m_kezori.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Dormiu… e não acordou mais.",
+   "cena": {
+    "imagem": "reais/m_tsuchigumo_noh.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.65
+  },
+  {
+   "fala": "Essas são as regras que salvam.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Mas tem yokai que não tem regra.",
+   "cena": {
+    "imagem": "reais/m_tengu_rei.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Na costa do oeste do Japão, contam assim.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第六章",
+     "numero_pt": "Capítulo 6",
+     "titulo": "Os piores",
+     "ano": "1251 · 2022",
+     "imagem": "reais_prontos/ushioni_rolo.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais_prontos/nureonna_7.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Na"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ],
+   "ambiente": {
+    "som": "ep12_mar_noite",
+    "volume_db": -24
+   }
+  },
+  {
+   "fala": "Você está na praia, à noite. Uma mulher de cabelo molhado sai do mar com um bebê no colo e pede: \"segura ele um pouco pra mim\".",
+   "cena": {
+    "imagem": "reais_prontos/nureonna_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Você segura. E o bebê começa a pesar. Pesa como uma pedra. E você não consegue soltar.",
+   "cena": {
+    "imagem": "reais/nureonna_7.jpg",
+    "zoom": [
+     1.3,
+     1.4
+    ],
+    "foco": [
+     [
+      0.5,
+      0.3
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "pesar",
+     "som": "sub_drop",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela desaparece.",
+   "cena": {
+    "imagem": "reais/nureonna_sekien.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "E do mar sai o ushi-oni: cabeça de boi, corpo de aranha, cuspindo veneno.",
+   "cena": {
+    "imagem": "reais_prontos/ushioni_rolo.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "牛鬼",
+     "x": 0.84,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "ushi-oni",
+     "atraso": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "ushi-oni",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Em mil duzentos e cinquenta e um, uma crônica oficial registrou um ser com forma de boi num templo onde hoje é Tóquio. Vinte e quatro monges adoeceram. Sete morreram.",
+   "pausa_antes_s": 9.05,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "TEMPLO SENSŌ-JI · ANO DE 1251\nCrônica Azuma Kagami: 24 monges doentes, 7 mortos",
+     "estilo": "maquina",
+     "vermelho": "7 MORTOS",
+     "cps": 40,
+     "antecipar": 8.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais_prontos/ushioni_rolo.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "kanji": {
+      "texto": "牛鬼",
+      "x": 0.84,
+      "y": 0.5,
+      "modo": "sangue",
+      "legenda": "ushi-oni",
+      "atraso": 0.6
+     },
+     "em": "Em",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Pra esse, os antigos tinham um conselho só: se for segurar um bebê na praia… use luvas. E, ao fugir, jogue tudo fora.",
+   "cena": {
+    "imagem": "reais_prontos/ushioni_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Até as luvas.",
+   "cena": {
+    "imagem": "reais/ushioni_rolo.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.55
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Tem a tsuchigumo, a aranha da terra. Quando o guerreiro Raikō matou uma, o rolo conta que abriram a barriga dela.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/tsuchigumo_rijks.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -36
+   }
+  },
+  {
+   "fala": "E de dentro saíram mil novecentos e noventa crânios humanos.",
+   "cena": {
+    "video": "rolos/tsuchigumo_14.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "crânios",
+     "som": "ep08_taiko",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.45
+  },
+  {
+   "fala": "E tem a pior de todas. A mais bonita.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/tamamo_xilo.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "No século doze, apareceu na corte do imperador uma mulher perfeita. A mais bela, a mais culta, a mais inteligente. Se chamava Tamamo-no-Mae.",
+   "cena": {
+    "imagem": "reais_prontos/tamamo_rijks.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O imperador se apaixonou. E começou a adoecer. Cada dia mais.",
+   "cena": {
+    "imagem": "reais/tamamo_rijks.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.3
+     ],
+     [
+      0.5,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Até que um astrólogo da corte descobriu: ela não era mulher. Era uma raposa de nove caudas.",
+   "cena": {
+    "imagem": "reais/tamamo_xilo.jpg",
+    "zoom": [
+     1.3,
+     1.5
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "kanji": {
+     "texto": "九尾",
+     "x": 0.16,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "a raposa de nove caudas",
+     "atraso": 1.0
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "raposa",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela fugiu. Foi caçada até o norte, em Nasu. E quando morreu, virou uma pedra.",
+   "cena": {
+    "imagem": "reais_prontos/pedra_tochigi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A Sesshō-seki: \"a pedra que mata\". Por séculos, contaram que quem encostasse nela morria. E de fato, ali saem gases vulcânicos que matam bichos.",
+   "cena": {
+    "imagem": "reais_prontos/pedra_2018.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "殺生石",
+     "x": 0.84,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "Sesshō-seki · a pedra que mata",
+     "selo": "死",
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Sesshō-seki",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Em cinco de março de dois mil e vinte e dois… a pedra rachou ao meio.",
+   "pausa_antes_s": 2.65,
+   "cena": {
+    "imagem": "reais_prontos/pedra_2022.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "rachou",
+     "som": "ep12_pedra_racha",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "As fotos rodaram o mundo. A pedra aberta. Vazia.",
+   "cena": {
+    "imagem": "reais_prontos/pedra_rachada.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Os cientistas explicaram: chuva, frio, rachaduras antigas.",
+   "cena": {
+    "imagem": "reais/pedra_rachada.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Mas um santuário da região fez uma cerimônia, às pressas, pra acalmar o espírito.",
+   "cena": {
+    "imagem": "reais/pedra_2022.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Porque ninguém sabia dizer, com certeza… se ela tinha saído.",
+   "cena": {
+    "imagem": "reais/pedra_rachada.jpg",
+    "zoom": [
+     1.3,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.65
+  },
+  {
+   "fala": "Agora imagina todos eles juntos. Na mesma noite. Na mesma rua.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "第七章",
+     "numero_pt": "Capítulo 7",
+     "titulo": "O desfile dos cem demônios",
+     "ano": "956",
+     "imagem": "reais_prontos/kyosai_6.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais/ROLO_casamento/alt36.jpg",
+     "zoom": [
+      1.15,
+      1.2
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.7,
+       0.5
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "Agora"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "Os japoneses imaginaram. Chamaram de Hyakki Yagyō: o desfile noturno dos cem demônios.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_6.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "百鬼夜行",
+     "x": 0.12,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Hyakki Yagyō · o desfile noturno dos cem demônios",
+     "selo": "百",
+     "atraso": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "Hyakki",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E quem encontrasse o desfile… morria.",
+   "cena": {
+    "imagem": "reais/kyosai_6.jpg",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "Na antiga Kyoto, isso era levado tão a sério que existia um calendário oficial. Em certos dias de cada mês, os nobres simplesmente não saíam de casa à noite. Eram as noites do desfile.",
+   "cena": {
+    "video": "rolos/ROLO_hyakki_aic.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Em novecentos e cinquenta e seis, um ministro chamado Fujiwara no Morosuke estava na rua numa dessas noites. E viu o desfile chegando.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_7.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Na frente… vinham os mortos. Os homens que a família dele tinha traído.",
+   "cena": {
+    "imagem": "reais/kyosai_7.jpg",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.4,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ele se jogou no chão e rezou sem parar a única reza que protegia. E o desfile passou por cima dele.",
+   "cena": {
+    "imagem": "reais_prontos/kyosai_8.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "A reza existe até hoje. É assim: katashihaya, ekasenikurini, tamerusake…",
+   "pausa_antes_s": 8.05,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "KATASHIHAYA, EKASENIKURINI, TAMERUSAKE…\nA reza contra o desfile dos cem demônios",
+     "estilo": "maquina",
+     "vermelho": "KATASHIHAYA",
+     "cps": 40,
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais_prontos/kyosai_8.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "A",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "Ninguém sabe direito o que ela quer dizer. Uma das leituras é: \"eu estou bêbado\". Como se você dissesse aos demônios:",
+   "cena": {
+    "imagem": "reais/kyosai_8.jpg",
+    "zoom": [
+     1.3,
+     1.35
+    ],
+    "foco": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "não liguem pra mim. Eu não estou aqui.",
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "Em mil setecentos e setenta e seis, um pintor chamado Toriyama Sekien desenhou cada um desses seres num livro. E foi ele que deu a cara que os yokais têm até hoje, nos desenhos, nos animes, nos jogos.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/sekien_kamaitachi.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "鳥山石燕",
+     "x": 0.84,
+     "y": 0.5,
+     "modo": "luz",
+     "legenda": "Toriyama Sekien · 1776",
+     "atraso": 0.8
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Quase todas as imagens que você viu neste vídeo saíram de livros e rolos como esses.",
+   "cena": {
+    "imagem": "reais_prontos/sekien_yamauba.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Gente que viveu há trezentos, quinhentos, oitocentos anos… desenhando o que tinha medo de encontrar na rua.",
+   "cena": {
+    "imagem": "reais_prontos/m_yamauba.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E alguns desses medos… ainda saem às duas da manhã.",
+   "cena": {
+    "imagem": "reais_prontos/ritual_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "A Camila mora no Japão há seis anos. Trabalha numa fábrica de autopeças, no turno da noite.",
+   "cenas": [
+    {
+     "tipo": "capitulo",
+     "numero": "最終章",
+     "numero_pt": "A história",
+     "titulo": "A sétima noite",
+     "ano": "hoje",
+     "imagem": "reais_prontos/kifune_3.jpg",
+     "antecipar": 4.8,
+     "entrada": "nanquim",
+     "atmos": {
+      "poeira": 0.6
+     }
+    },
+    {
+     "imagem": "reais/kifune_1.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.3
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
+     "em": "A"
+    }
+   ],
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_tinta",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -4.8
+    },
+    {
+     "em": null,
+     "som": "ep08_taiko",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": -3.4
+    }
+   ]
+  },
+  {
+   "fala": "E toda madrugada, na volta, ela corta caminho pelo bosque de um santuário pequeno do bairro.",
+   "cena": {
+    "imagem": "reais/kifune_2.jpg",
+    "zoom": [
+     1.05,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -22
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Numa terça-feira, às duas e dez da manhã, ela vê uma luz entre as árvores.",
+   "cena": {
+    "imagem": "reais/ritual_sekien.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.4,
+      0.3
+     ],
+     [
+      0.4,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Três chamas. Paradas. Na altura de uma cabeça.",
+   "pausa_antes_s": 1.05
+  },
+  {
+   "fala": "E um som. Seco. Metal batendo em madeira.",
+   "cena": {
+    "imagem": "reais/m_ushinokoku.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.85,
+      0.6
+     ],
+     [
+      0.85,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "som",
+     "som": "ep12_martelo_prego",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.5
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela não chega perto. Volta pela rua de cima, com o coração na boca.",
+   "cena": {
+    "imagem": "reais/kifune_1.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "De manhã, no grupo do trabalho, alguém manda uma foto: um boneco de palha pregado na árvore do santuário.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.3
+    },
+    {
+     "em": null,
+     "som": "ep08_msg",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 1.4
+    }
+   ],
+   "cena": {
+    "tipo": "chat",
+    "grupo": "Turno da noite 🏭",
+    "membros": "Camila, Tati, Rodrigo, Kenji",
+    "mensagens": [
+     {
+      "de": "Tati",
+      "texto": "gente olha isso no santuário do lado da firma 😨",
+      "hora": "07:12",
+      "apos": 0.3
+     },
+     {
+      "de": "Tati",
+      "tipo": "foto",
+      "imagem": "reais_prontos/ritual_mulher.jpg",
+      "hora": "07:12",
+      "apos": 1.4
+     }
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -36
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E no boneco, um papel com uma data de nascimento.",
+   "cena": {
+    "imagem": "reais/ritual_mulher.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.28,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A dela.",
+   "pausa_antes_s": 1.65
+  },
+  {
+   "fala": "A Camila pesquisa a noite inteira. Aprende que o ritual dura sete noites. Que na sétima… acontece.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais_prontos/ritual_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -26
+   }
+  },
+  {
+   "fala": "Conta os dias. A terça foi a quinta noite.",
+   "pausa_antes_s": 8.85,
+   "sem_legenda": true,
+   "cenas": [
+    {
+     "tipo": "texto",
+     "texto": "RITUAL DA HORA DO BOI\nSete noites seguidas · a terça-feira foi a quinta",
+     "estilo": "maquina",
+     "vermelho": "a quinta",
+     "cps": 40,
+     "antecipar": 8.4,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "parada": true
+    },
+    {
+     "imagem": "reais_prontos/ritual_sekien.jpg",
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "Conta",
+     "entrada": "fundir",
+     "duracao_entrada": 0.6
+    }
+   ]
+  },
+  {
+   "fala": "E aprende a única regra que existe.",
+   "cena": {
+    "imagem": "reais/ritual_sekien.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.6,
+      0.3
+     ],
+     [
+      0.6,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Se alguém te vir… a maldição volta pra você.",
+   "cena": {
+    "imagem": "reais_prontos/ritual_mulher.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "見るな",
+     "x": 0.15,
+     "y": 0.5,
+     "modo": "sangue",
+     "legenda": "não seja visto",
+     "selo": "呪",
+     "atraso": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "vir",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Na sétima noite, a Camila não foi trabalhar.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais/kubizuka_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Às duas da manhã, ela estava no bosque. Escondida atrás do muro, com o celular na mão.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Não pra fugir.",
+   "cena": {
+    "imagem": "reais/kifune_3.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Pra ver.",
+   "pausa_antes_s": 1.25
+  },
+  {
+   "fala": "As três chamas apareceram entre as árvores. O martelo começou a bater.",
+   "cena": {
+    "imagem": "reais/ritual_sekien.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.4,
+      0.3
+     ],
+     [
+      0.4,
+      0.25
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "martelo",
+     "som": "ep12_martelo_prego",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E a Camila acendeu a lanterna do celular. Bem no rosto de quem estava pregando.",
+   "cena": {
+    "imagem": "reais/ritual_sekien.jpg",
+    "zoom": [
+     2.0,
+     2.3
+    ],
+    "foco": [
+     [
+      0.4,
+      0.35
+     ],
+     [
+      0.42,
+      0.33
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "lanterna",
+     "som": "ep11_lanterna_clique",
+     "volume_db": -14,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A pessoa virou devagar. As velas tremendo na cabeça.",
+   "cena": {
+    "imagem": "reais/hashihime_sekien.jpg",
+    "zoom": [
+     1.8,
+     2.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.3
+     ],
+     [
+      0.45,
+      0.28
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E a Camila conhecia aquele rosto.",
+   "pausa_antes_s": 1.85
+  },
+  {
+   "fala": "Todo dia, há seis anos.",
+   "cena": {
+    "imagem": "reais_prontos/hannya_preto.jpg",
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "sub_drop",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.2
+    }
+   ],
+   "pausa_antes_s": 2.05
+  },
+  {
+   "fala": "A pessoa não correu. Não disse nada.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais/ritual_mulher.jpg",
+    "zoom": [
+     1.4,
+     1.5
+    ],
+    "foco": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.6,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Desceu o martelo. Arrancou o boneco da árvore. E foi embora pelo meio do bosque, com as três chamas apagando uma por uma.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A Camila nunca contou pra ninguém o que viu.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais/kifune_1.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Mas aquele rosto, que ela via todo dia havia seis anos… ela nunca mais viu.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Sumiu. Sem aviso. Sem despedida.",
+   "pausa_antes_s": 1.65
+  },
+  {
+   "fala": "Um mês depois, voltando do turno, ela passou de novo pelo santuário.",
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais/kifune_2.jpg",
+    "zoom": [
+     1.05,
+     1.15
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "E tinha um prego novo na árvore.",
+   "cena": {
+    "imagem": "reais/m_ushinokoku.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.85,
+      0.75
+     ],
+     [
+      0.85,
+      0.65
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "sons": [
+    {
+     "em": "prego",
+     "som": "ep12_martelo_prego",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Um boneco novo.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E no papel, uma data de nascimento.",
+   "cena": {
+    "imagem": "reais/ritual_mulher.jpg",
+    "zoom": [
+     1.6,
+     1.8
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.28,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Não era a dela.",
+   "pausa_antes_s": 1.65
+  },
+  {
+   "fala": "Era de quem ela tinha visto naquela noite.",
+   "pausa_antes_s": 2.85,
+   "cena": {
+    "imagem": "reais_prontos/ritual_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Porque a regra é essa. Se alguém te vir… a maldição volta pra você.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E, dessa vez… ninguém viu quem pregou.",
+   "cena": {
+    "imagem": "reais/kifune_2.jpg",
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.42
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 2.05
+  },
+  {
+   "fala": "Eu te disse no começo. No Japão, ninguém nasce demônio.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "ambiente": {
+    "som": "ep08_campo_noite",
+    "volume_db": -36
+   },
+   "pausa_antes_s": 2.05
+  },
+  {
+   "fala": "Não precisa de chifre, nem de inferno, nem de Diabo.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Só precisa de alguém que te queira mal o bastante… pra ficar sete noites acordado.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E, se um dia você passar por uma árvore de santuário e vir um prego…",
+   "cena": {
+    "imagem": "reais_prontos/ritual_sekien.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "olha bem pro tronco.",
+   "cena": {
+    "imagem": "reais/m_ushinokoku.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.85,
+      0.6
+     ],
+     [
+      0.85,
+      0.55
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Você talvez conheça o nome que está escrito ali.",
+   "cena": {
+    "imagem": "reais_prontos/hannya_preto.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ou… o rosto de quem pregou.",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Eu sou o Vigia. Boa noite.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "foco": [
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.43,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Se você ficou até aqui… então já é um dos meus. Inscreva-se no Último Abrigo e ative o sininho, pra não perder o próximo caso. Eu vou estar aqui. Esperando.",
+   "cta_inicio": true,
+   "sem_legenda": true,
+   "ambiente": {
+    "som": "nenhum"
+   },
+   "musica": {
+    "som": "vinheta_ultimo_abrigo",
+    "volume_db": -20
+   }
+  }
+ ]
+}
