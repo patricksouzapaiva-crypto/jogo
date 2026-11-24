@@ -54,7 +54,8 @@ def credito(nome):
 
 def quadro(arq):
     nome = arq.stem
-    im = ImageOps.exif_transpose(Image.open(arq)).convert("RGB")
+    rest = AQUI / "reais_restauradas" / arq.name          # 24/11: a versão restaurada, se houver (restaurar.py)
+    im = ImageOps.exif_transpose(Image.open(rest if rest.exists() else arq)).convert("RGB")
     fundo = ImageOps.fit(im, (1920, 1080)).resize((240, 135)).filter(ImageFilter.GaussianBlur(6)).resize((1920, 1080))
     fundo = ImageEnhance.Brightness(ImageEnhance.Color(fundo).enhance(0.35)).enhance(0.22)
     mh, mw = 900, 1720

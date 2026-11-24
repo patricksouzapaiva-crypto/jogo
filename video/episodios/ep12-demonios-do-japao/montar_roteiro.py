@@ -50,7 +50,8 @@ def real(nome, z=(1.0, 1.05), foco=None, **kw):
 
 def det(nome, foco=((0.5, 0.5), (0.5, 0.45)), z=(1.0, 1.1), **kw):
     """Close de detalhe: o original cobrindo a tela; a câmera vai de foco[0] a foco[1]."""
-    return {"imagem": _arq("reais/", nome), "zoom": list(z), "foco": [list(foco[0]), list(foco[1])],
+    pasta = "reais_restauradas/" if (AQUI / "reais_restauradas" / f"{nome}.jpg").exists() else "reais/"   # 24/11: a restaurada, se houver
+    return {"imagem": _arq(pasta, nome), "zoom": list(z), "foco": [list(foco[0]), list(foco[1])],
             "atmos": kw.pop("atmos", {"poeira": 0.3}), **kw}
 
 
@@ -60,6 +61,12 @@ def conter(nome, z=(1.0, 1.06), foco=None, **kw):
     if foco:
         c["foco"] = [list(foco[0]), list(foco[1])]
     return c
+
+
+def restauro(nome):
+    """24/11 (usuário: restaurar as imagens importantes): a gravura velha e a linha de luz que revela a restaurada
+    (restauro_clip.py). Depois de 7 s fica parada na restaurada."""
+    return {"video": f"rolos/restauro_{nome}.mp4", "zoom": [1.0, 1.02], "congelar": True}
 
 
 def rolo(nome, **kw):
@@ -212,7 +219,7 @@ C(3, dict(IA("G03_camera_santuario", det("kifune_3", ((0.5, 0.5), (0.52, 0.48)),
          efeitos={"cctv": {"cam": "CAM 02", "hora": "02:14:37", "data": "18-05-2022"}}))
 C(4, ficha("MATSUDO · MAIO DE 2022\nHomem de 72 anos preso por danificar as árvores sagradas", "72 ANOS"))
 C(5, det("m_ushinokoku", ((0.85, 0.75), (0.85, 0.6)), (1.4, 1.6)))
-C(6, real("ritual_sekien"), (det("ritual_sekien", ((0.4, 0.35), (0.4, 0.3)), (1.6, 1.8)), "aro"))
+C(6, restauro("ritual_sekien"), (det("ritual_sekien", ((0.4, 0.35), (0.4, 0.3)), (1.6, 1.8)), "aro"))
 C(7, kj(real("ritual_mulher", (1.0, 1.06)), "丑の刻参り", 0.12, 0.5, "sangue", "ushi no toki mairi · a visita da hora do Boi", selo="呪", atraso=0.3))
 kanji_som(7, "maldição", atraso=-0.4)
 C(8, real("hashihime_sekien"))
@@ -267,8 +274,9 @@ C(39, det("hashihime_sekien", ((0.5, 0.8), (0.5, 0.7)), (1.4, 1.5)))
 C(40, real("hannya_preto", (1.0, 1.08)))
 C(41, real("m_shirazunoyabu"))
 C(42, det("m_shirazunoyabu", ((0.4, 0.3), (0.4, 0.25)), (1.4, 1.6)))
-C(43, kj(real("hashihime_sekien"), "橋姫", 0.15, 0.5, "luz", "Hashihime · a princesa da ponte", selo="鬼", atraso=0.6))
+C(43, kj(restauro("hashihime_sekien"), "橋姫", 0.15, 0.5, "luz", "Hashihime · a princesa da ponte", selo="鬼", atraso=0.6))
 kanji_som(43, "Hashihime")
+C(44, real("m_rashomon_tsuna"))
 C(44, real("m_rashomon_tsuna"))
 C(45, det("m_rashomon_tsuna", ((0.5, 0.25), (0.5, 0.2)), (1.4, 1.6)))
 C(46, real("m_rashomon_noh"))
@@ -316,7 +324,7 @@ C(76, rolo("shuten_rolo_cbl"))
 C(78, real("shuten_rolo_cbl"))
 C(79, det("shuten_rolo_cbl", ((0.3, 0.5), (0.45, 0.5)), (1.5, 1.6)))
 C(80, det("shuten_rolo_cbl", ((0.55, 0.5), (0.65, 0.5)), (1.6, 1.7)))
-C(81, real("m_raiko_cabeca"))
+C(81, restauro("m_raiko_cabeca"))
 C(82, det("m_raiko_cabeca", ((0.6, 0.65), (0.6, 0.6)), (1.4, 1.6)))
 C(83, real("kubizuka_3"))
 C(84, det("kubizuka_3", ((0.5, 0.5), (0.5, 0.45)), (1.1, 1.2)))
@@ -355,7 +363,9 @@ pausa(97, 0.8); pausa(100, 0.4); pausa(103, 0.8); pausa(108, 0.8)
 
 # ================================================================ PARTE 5 — as regras
 capitulo(109, 5, "As regras", "como sobreviver", RP + "sekien_kappa.jpg", casamento(18))
-C(110, kj(casamento(24), "掟", 0.2, 0.5, "sangue", "a regra", tam=0.3, atraso=0.4))
+C(110, kj(casamento(24), "掟", 0.2, 0.5, "sangue", "a regra", tam=0.3, atraso=0.4), ({"imagem": "imagens/O02_ep08_arquivo.jpg", "zoom": [1.0, 1.03], "foco": [[0.5, 0.45], [0.5, 0.45]],
+     "kanji": K("掟", 0.1, 0.42, "sangue", "a regra", tam=0.26, em="medo")}, "Se"), (casamento(30), "Mas"))
+# 24/11 (usuário): a referência ao Ep. 08 ("o medo é uma regra") com o quadro do episódio; card do YouTube neste ponto
 kanji_som(110, "regra")
 C(111, real("sekien_kappa"))
 C(112, det("sekien_kappa", ((0.5, 0.6), (0.5, 0.55)), (1.3, 1.45)))
@@ -614,7 +624,7 @@ def ritmo():
         c = cenas_de(b)[0]
         return "vigia" if c.get("vigia") else c.get("tipo") or "imagem"
 
-    PROTEGE = {1, 2, 3, 4, 5, 7, 8, 17, 18, 19, 11, 40, 46, 81, 126, 200, 128, 134, 141, 163, 168, 172, 176, 178, 179, 180, 181, 188, 191, 192, 194}   # sustos e silêncios: nunca continuar a anterior
+    PROTEGE = {1, 2, 3, 4, 5, 7, 8, 17, 18, 19, 44, 11, 40, 46, 81, 126, 200, 128, 134, 141, 163, 168, 172, 176, 178, 179, 180, 181, 188, 191, 192, 194}   # sustos e silêncios: nunca continuar a anterior
     continuadas, alongadas = [], []
     acc, falta = 0.0, 0.0
     for i, b in enumerate(batidas[:len(falas)]):

@@ -195,7 +195,9 @@ Agora, se um yokai não quer a sua alma… o que ele quer?
 ## PARTE 5 — as regras (como sobreviver a um yokai)
 *(Sekien, uma gravura por yokai: kappa, nurikabe, satori, kamaitachi, rokurokubi, jorōgumo; Hokusai: rokurokubi)*
 
-Ele quer que você siga a regra.
+Ele quer que você siga a regra. Se você viu o nosso episódio sobre o terror japonês, você já ouviu isso de mim: no Japão, o medo é uma regra. E regra… não tem pena de ninguém. Mas com os yokais é diferente. Aqui, a regra é a única coisa que pode te salvar.
+<!-- 24/11 (usuário): referência ao Ep. 08 ("O terror japonês é uma regra. E regra… não tem pena de ninguém."). Na tela, o
+quadro do Ep. 08 (vela + 掟) e, na publicação, um CARD do YouTube para o Ep. 08 neste segundo. -->
 O kappa vive nos rios. Parece uma criança com casco de tartaruga e um prato cheio de água no alto da cabeça. Ele afoga
 quem entra na água.
 A regra: faça uma reverência. Bem funda.

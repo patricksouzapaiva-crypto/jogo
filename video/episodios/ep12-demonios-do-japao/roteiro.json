@@ -264,7 +264,7 @@
   {
    "fala": "O crime… foi o prego na árvore.",
    "cena": {
-    "imagem": "reais/m_ushinokoku.jpg",
+    "imagem": "reais_restauradas/m_ushinokoku.jpg",
     "zoom": [
      1.4,
      1.6
@@ -302,20 +302,18 @@
    "pausa_antes_s": 2.05,
    "cenas": [
     {
-     "imagem": "reais_prontos/ritual_sekien.jpg",
+     "video": "rolos/restauro_ritual_sekien.mp4",
      "zoom": [
       1.0,
-      1.05
+      1.02
      ],
-     "atmos": {
-      "poeira": 0.4
-     },
+     "congelar": true,
      "entrada": "fundir",
      "duracao_entrada": 0.6,
      "antecipar": 0.6
     },
     {
-     "imagem": "reais/ritual_sekien.jpg",
+     "imagem": "reais_restauradas/ritual_sekien.jpg",
      "zoom": [
       1.6,
       1.8
@@ -401,7 +399,7 @@
   {
    "fala": "E os deuses atenderam.",
    "cena": {
-    "imagem": "reais/hashihime_sekien.jpg",
+    "imagem": "reais_restauradas/hashihime_sekien.jpg",
     "zoom": [
      1.4,
      1.65
@@ -806,7 +804,7 @@
   {
    "fala": "E vira, principalmente… gente.",
    "cena": {
-    "imagem": "reais/m_hannya_hokusai.jpg",
+    "imagem": "reais_restauradas/m_hannya_hokusai.jpg",
     "zoom": [
      1.4,
      1.7
@@ -875,7 +873,7 @@
   {
    "fala": "E o ciúme dela é tão grande que ela não quer chorar. Ela quer matar.",
    "cena": {
-    "imagem": "reais/m_ushinokoku.jpg",
+    "imagem": "reais_restauradas/m_ushinokoku.jpg",
     "zoom": [
      1.6,
      1.8
@@ -973,7 +971,7 @@
   {
    "fala": "Ela volta pra casa. Divide o cabelo em cinco mechas e torce cada uma até virar um chifre.",
    "cena": {
-    "imagem": "reais/hashihime_sekien.jpg",
+    "imagem": "reais_restauradas/hashihime_sekien.jpg",
     "zoom": [
      1.6,
      1.8
@@ -1021,7 +1019,7 @@
   {
    "fala": "Põe na boca uma tocha acesa nas duas pontas.",
    "cena": {
-    "imagem": "reais/hashihime_sekien.jpg",
+    "imagem": "reais_restauradas/hashihime_sekien.jpg",
     "zoom": [
      1.8,
      2.0
@@ -1088,7 +1086,7 @@
   {
    "fala": "Vinte e um dias dentro da água.",
    "cena": {
-    "imagem": "reais/hashihime_sekien.jpg",
+    "imagem": "reais_restauradas/hashihime_sekien.jpg",
     "zoom": [
      1.4,
      1.5
@@ -1176,14 +1174,12 @@
   {
    "fala": "Chamaram ela de Hashihime: a princesa da ponte.",
    "cena": {
-    "imagem": "reais_prontos/hashihime_sekien.jpg",
+    "video": "rolos/restauro_hashihime_sekien.mp4",
     "zoom": [
      1.0,
-     1.05
+     1.02
     ],
-    "atmos": {
-     "poeira": 0.4
-    },
+    "congelar": true,
     "kanji": {
      "texto": "橋姫",
      "x": 0.15,
@@ -2093,14 +2089,12 @@
   {
    "fala": "E a cabeça, separada do corpo, voou. E mordeu o capacete do Raikō.",
    "cena": {
-    "imagem": "reais_prontos/m_raiko_cabeca.jpg",
+    "video": "rolos/restauro_m_raiko_cabeca.mp4",
     "zoom": [
      1.0,
-     1.05
+     1.02
     ],
-    "atmos": {
-     "poeira": 0.4
-    },
+    "congelar": true,
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
@@ -2119,7 +2113,7 @@
   {
    "fala": "Ele só sobreviveu porque, antes, tinha posto os capacetes dos companheiros por cima do dele.",
    "cena": {
-    "imagem": "reais/m_raiko_cabeca.jpg",
+    "imagem": "reais_restauradas/m_raiko_cabeca.jpg",
     "zoom": [
      1.4,
      1.6
@@ -2783,39 +2777,89 @@
    ]
   },
   {
-   "fala": "Ele quer que você siga a regra.",
-   "cena": {
-    "imagem": "reais/ROLO_casamento/alt24.jpg",
-    "zoom": [
-     1.15,
-     1.2
-    ],
-    "foco": [
-     [
-      0.3,
-      0.5
+   "fala": "Ele quer que você siga a regra. Se você viu o nosso episódio sobre o terror japonês, você já ouviu isso de mim: no Japão, o medo é uma regra. E regra… não tem pena de ninguém. Mas com os yokais é diferente. Aqui, a regra é a única coisa que pode te salvar.",
+   "cenas": [
+    {
+     "imagem": "reais/ROLO_casamento/alt24.jpg",
+     "zoom": [
+      1.15,
+      1.2
      ],
-     [
-      0.7,
-      0.5
-     ]
-    ],
-    "atmos": {
-     "poeira": 0.4
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.7,
+       0.5
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "kanji": {
+      "texto": "掟",
+      "x": 0.2,
+      "y": 0.5,
+      "modo": "sangue",
+      "legenda": "a regra",
+      "tam": 0.3,
+      "atraso": 0.4
+     },
+     "entrada": "fundir",
+     "duracao_entrada": 0.6,
+     "antecipar": 0.6
     },
-    "kanji": {
-     "texto": "掟",
-     "x": 0.2,
-     "y": 0.5,
-     "modo": "sangue",
-     "legenda": "a regra",
-     "tam": 0.3,
-     "atraso": 0.4
+    {
+     "imagem": "imagens/O02_ep08_arquivo.jpg",
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "foco": [
+      [
+       0.5,
+       0.45
+      ],
+      [
+       0.5,
+       0.45
+      ]
+     ],
+     "kanji": {
+      "texto": "掟",
+      "x": 0.1,
+      "y": 0.42,
+      "modo": "sangue",
+      "legenda": "a regra",
+      "tam": 0.26,
+      "em": "medo"
+     },
+     "em": "Se"
     },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
+    {
+     "imagem": "reais/ROLO_casamento/alt30.jpg",
+     "zoom": [
+      1.15,
+      1.2
+     ],
+     "foco": [
+      [
+       0.3,
+       0.5
+      ],
+      [
+       0.7,
+       0.5
+      ]
+     ],
+     "atmos": {
+      "poeira": 0.4
+     },
+     "em": "Mas"
+    }
+   ],
    "sons": [
     {
      "em": "regra",
@@ -2829,12 +2873,25 @@
   },
   {
    "fala": "O kappa vive nos rios. Parece uma criança com casco de tartaruga e um prato cheio de água no alto da cabeça. Ele afoga quem entra na água.",
+   "cena": {
+    "imagem": "reais_prontos/sekien_kappa.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.45
   },
   {
    "fala": "A regra: faça uma reverência. Bem funda.",
    "cena": {
-    "imagem": "reais/sekien_kappa.jpg",
+    "imagem": "reais_restauradas/sekien_kappa.jpg",
     "zoom": [
      1.3,
      1.45
@@ -2861,7 +2918,7 @@
   {
    "fala": "O kappa é educado. Ele devolve a reverência… e a água do prato cai. E sem água, ele perde a força.",
    "cena": {
-    "imagem": "reais/sekien_kappa.jpg",
+    "imagem": "reais_restauradas/sekien_kappa.jpg",
     "zoom": [
      1.6,
      1.8
@@ -2902,7 +2959,7 @@
      "parada": true
     },
     {
-     "imagem": "reais/sekien_kappa.jpg",
+     "imagem": "reais_restauradas/sekien_kappa.jpg",
      "zoom": [
       1.6,
       1.8
@@ -2973,7 +3030,7 @@
   {
    "fala": "A regra: não pense. Só uma coisa que você não planejou pode assustar ele.",
    "cena": {
-    "imagem": "reais/sekien_satori.jpg",
+    "imagem": "reais_restauradas/sekien_satori.jpg",
     "zoom": [
      1.4,
      1.6
@@ -3017,7 +3074,7 @@
   {
    "fala": "A regra: ache o corpo. E mude ele de lugar. Quando a cabeça voltar… não consegue mais se encaixar.",
    "cena": {
-    "imagem": "reais/sekien_rokurokubi.jpg",
+    "imagem": "reais_restauradas/sekien_rokurokubi.jpg",
     "zoom": [
      1.5,
      1.7
@@ -3058,7 +3115,7 @@
      "parada": true
     },
     {
-     "imagem": "reais/sekien_rokurokubi.jpg",
+     "imagem": "reais_restauradas/sekien_rokurokubi.jpg",
      "zoom": [
       1.5,
       1.7
@@ -3259,7 +3316,7 @@
   {
    "fala": "Ela desaparece.",
    "cena": {
-    "imagem": "reais/nureonna_sekien.jpg",
+    "imagem": "reais_restauradas/nureonna_sekien.jpg",
     "zoom": [
      1.4,
      1.6
@@ -3403,19 +3460,6 @@
   {
    "fala": "Tem a tsuchigumo, a aranha da terra. Quando o guerreiro Raikō matou uma, o rolo conta que abriram a barriga dela.",
    "pausa_antes_s": 2.05,
-   "cena": {
-    "imagem": "reais_prontos/tsuchigumo_rijks.jpg",
-    "zoom": [
-     1.0,
-     1.05
-    ],
-    "atmos": {
-     "poeira": 0.4
-    },
-    "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
-   },
    "ambiente": {
     "som": "ep08_campo_noite",
     "volume_db": -36
@@ -3508,7 +3552,7 @@
   {
    "fala": "Até que um astrólogo da corte descobriu: ela não era mulher. Era uma raposa de nove caudas.",
    "cena": {
-    "imagem": "reais/tamamo_xilo.jpg",
+    "imagem": "reais_restauradas/tamamo_xilo.jpg",
     "zoom": [
      1.3,
      1.5
@@ -3815,7 +3859,7 @@
   {
    "fala": "E quem encontrasse o desfile… morria.",
    "cena": {
-    "imagem": "reais/kyosai_6.jpg",
+    "imagem": "reais_restauradas/kyosai_6.jpg",
     "zoom": [
      1.3,
      1.35
@@ -4138,7 +4182,7 @@
   {
    "fala": "Numa terça-feira, às duas e dez da manhã, ela vê uma luz entre as árvores.",
    "cena": {
-    "imagem": "reais/ritual_sekien.jpg",
+    "imagem": "reais_restauradas/ritual_sekien.jpg",
     "zoom": [
      1.6,
      1.8
@@ -4169,7 +4213,7 @@
   {
    "fala": "E um som. Seco. Metal batendo em madeira.",
    "cena": {
-    "imagem": "reais/m_ushinokoku.jpg",
+    "imagem": "reais_restauradas/m_ushinokoku.jpg",
     "zoom": [
      1.4,
      1.6
@@ -4363,7 +4407,7 @@
   {
    "fala": "E aprende a única regra que existe.",
    "cena": {
-    "imagem": "reais/ritual_sekien.jpg",
+    "imagem": "reais_restauradas/ritual_sekien.jpg",
     "zoom": [
      1.4,
      1.5
@@ -4487,7 +4531,7 @@
   {
    "fala": "As três chamas apareceram entre as árvores. O martelo começou a bater.",
    "cena": {
-    "imagem": "reais/ritual_sekien.jpg",
+    "imagem": "reais_restauradas/ritual_sekien.jpg",
     "zoom": [
      1.6,
      1.8
@@ -4523,7 +4567,7 @@
   {
    "fala": "E a Camila acendeu a lanterna do celular. Bem no rosto de quem estava pregando.",
    "cena": {
-    "imagem": "reais/ritual_sekien.jpg",
+    "imagem": "reais_restauradas/ritual_sekien.jpg",
     "zoom": [
      2.0,
      2.3
@@ -4559,7 +4603,7 @@
   {
    "fala": "A pessoa virou devagar. As velas tremendo na cabeça.",
    "cena": {
-    "imagem": "reais/hashihime_sekien.jpg",
+    "imagem": "reais_restauradas/hashihime_sekien.jpg",
     "zoom": [
      1.8,
      2.1
@@ -4709,7 +4753,7 @@
   {
    "fala": "E tinha um prego novo na árvore.",
    "cena": {
-    "imagem": "reais/m_ushinokoku.jpg",
+    "imagem": "reais_restauradas/m_ushinokoku.jpg",
     "zoom": [
      1.4,
      1.6
@@ -4882,7 +4926,7 @@
   {
    "fala": "olha bem pro tronco.",
    "cena": {
-    "imagem": "reais/m_ushinokoku.jpg",
+    "imagem": "reais_restauradas/m_ushinokoku.jpg",
     "zoom": [
      1.4,
      1.6
