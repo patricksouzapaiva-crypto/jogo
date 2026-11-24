@@ -7,6 +7,7 @@ O que mudou desde o Ep. 08 (que era toda sintetizada e em laço de 17 s, igual d
 - composta SOBRE OS TEMPOS DA MONTAGEM (trilha/plano.json, gerado pelo montar_roteiro.py): cada seção tem a sua
   música, os golpes caem na palavra ("atenderam", "mordeu", "raio", "rachou", "rosto"), e há silêncio de verdade antes
   do susto da história. Nos cartões de capítulo a música abre espaço para a tinta e o taiko do cartão.
+24/11: trilha APROVADA pelo usuário ("Trilha aprovada"), pela prévia trilha_previa_v2.mp3.
 Uso: python3 compor_trilha.py plano.json saida.mp3      (prévia: python3 compor_trilha.py --previa → trilha/previa.mp3)"""
 import json, subprocess, sys
 from pathlib import Path
