@@ -212,3 +212,11 @@ Fontes: Wikipedia EN/JA de cada um. [S] = só do resumo da página (confirmar an
   de lenha pula e o acerta sem que o lenhador tivesse pensado nisso).
 - ⚠️ **Gashadokuro** (o esqueleto gigante): **invenção do séc. XX** (1º impresso nos anos 1960); a gravura de Kuniyoshi
   é de outra história (a princesa Takiyasha). Se usar, dizer que é moderno.
+
+## 7. Imagens de museus (CC0)
+O Commons bloqueou este ambiente (erro 429). Troquei por acervos em domínio público CC0: Cleveland Museum of Art e Art Institute of Chicago.
+- `museus.py` faz a busca por tema → `museus/catalogo.json`. `baixar_museus.py` baixa em tamanho grande → `reais/m_*.jpg`.
+- Créditos e links de cada obra estão em `reais/museus.json`.
+- Rolo do desfile de yokais: `reais/ROLO_casamento/` (Cleveland 1987.194, *Casamento ilustrado de assombrações*), 49 trechos de 3400×2545. Serve para a câmera andar pelo desfile.
+- Rolo da noite dos cem demônios: `reais/ROLO_hyakki_aic.jpg`, 2247×1200.
+- Ficou de fora: o *Oeyama Engi* (Cleveland 1982.31). Só existe em TIFF de 1,5 GB e não cabe no disco. A versão menor tem 257 px de altura.

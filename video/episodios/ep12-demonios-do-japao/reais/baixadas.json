@@ -248,5 +248,10 @@
   "arquivo": "sekien_yamauba.jpg",
   "titulo": "SekienYamauba.jpg",
   "fonte": "https://commons.wikimedia.org/wiki/File:SekienYamauba.jpg"
+ },
+ "hashihime_sekien": {
+  "arquivo": "hashihime_sekien.jpg",
+  "titulo": "SekienHashihime.jpg",
+  "fonte": "https://commons.wikimedia.org/wiki/File:SekienHashihime.jpg"
  }
 }
