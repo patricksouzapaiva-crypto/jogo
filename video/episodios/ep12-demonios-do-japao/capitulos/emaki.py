@@ -104,7 +104,7 @@ class Cartao:
         self.respingo = r
         self.objeto = ler(objeto, alt=250 if n not in (4, 6) else 170)
         self.vela = ler("08_vela_warosoku_01", alt=470)
-        self.hanko = ler("06_hanko_01", alt=300)
+        self.hanko = ler("06_hanko_04", alt=300)   # 24/11: a foto vista de cima que o usuário mandou
         self.kanji = texto_rgba("第" + NUM[n] + "章" if n else "最終章", "YujiSyuku-400.ttf", 104, (16, 12, 10, 255), vertical=True, esp=1.05)
         self.selo = self._selo()
         self.t_cap = texto_rgba((f"CAPÍTULO {n}" if n else "A HISTÓRIA"), "ShipporiMincho-800.ttf", 30, (201, 162, 92, 255))
@@ -185,7 +185,7 @@ class Cartao:
         if 4.05 <= t <= 4.85:
             if t < 4.35: e = 1.6 - 0.6 * suave((t - 4.05) / 0.3); a = suave((t - 4.05) / 0.15); yy = cy + 40 - 220 * (1 - suave((t - 4.05) / 0.3))
             else: e = 1.0 + 0.25 * suave((t - 4.45) / 0.4); a = 1 - suave((t - 4.5) / 0.35); yy = cy + 40 - 260 * suave((t - 4.45) / 0.4)
-            por(tela, self.hanko, 1380, yy, esc=e, ang=-8, alfa=a, sombra=0.6 * a)
+            por(tela, self.hanko, 1375, yy, esc=e, ang=-3, alfa=a, sombra=0.6 * a)
         # título e ano embaixo (pincel: revela da esquerda para a direita, borda macia)
         for img, y, t0 in ((self.t_cap, 790, 4.6), (self.t_tit, 850, 4.75), (self.t_ano, 922, 5.2)):
             r = suave((t - t0) / 0.9)
