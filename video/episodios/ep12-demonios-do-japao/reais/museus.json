@@ -350,5 +350,53 @@
   "data": "",
   "credito": "The Cleveland Museum of Art (CC0)",
   "link": "https://clevelandart.org/art/1987.194"
+ },
+ "m_satanas_durer": {
+  "fonte": "Cleveland",
+  "titulo": "The Apocalypse:  Satan Bound for a Thousand Years",
+  "artista": "Jean Duvet (French, 1485–1561)",
+  "data": "1546–55",
+  "credito": "The Cleveland Museum of Art (CC0)",
+  "link": "https://clevelandart.org/art/1953.213.27"
+ },
+ "m_santo_antao": {
+  "fonte": "Cleveland",
+  "titulo": "The Temptation of St. Anthony",
+  "artista": "Martin Schongauer (German, c. 1450–1491)",
+  "data": "1470–75",
+  "credito": "The Cleveland Museum of Art (CC0)",
+  "link": "https://clevelandart.org/art/1923.227"
+ },
+ "m_exorcismo": {
+  "fonte": "AIC",
+  "titulo": "Saint Peter Martyr Exorcizing a Woman Possessed by a Devil",
+  "artista": "Antonio Vivarini (Italian, about 1415–1476/84)",
+  "data": "c. 1450",
+  "credito": "Art Institute of Chicago (CC0)",
+  "link": "https://www.artic.edu/artworks/100354"
+ },
+ "m_sao_miguel": {
+  "fonte": "Cleveland",
+  "titulo": "The Ecstasy of St. Mary Magdalene",
+  "artista": "Lucas Cranach the Elder (German, 1472–1553)",
+  "data": "1506",
+  "credito": "The Cleveland Museum of Art (CC0)",
+  "link": "https://clevelandart.org/art/1973.230"
+ },
+ "m_festa_sake": {
+  "fonte": "AIC",
+  "titulo": "Drinking Sake at a Housewarming Party (Takubiraki shuen no zu)",
+  "artista": "Toyohara Kunichika\nJapanese, 1835-1900",
+  "data": "1863",
+  "credito": "Art Institute of Chicago (CC0)",
+  "link": "https://www.artic.edu/artworks/149121"
+ },
+ "m_zodiaco": {
+  "fonte": "AIC",
+  "titulo": "Zodiac Surimono",
+  "artista": "Indai\nJapanese, active 19th century",
+  "data": "1866",
+  "credito": "Art Institute of Chicago (CC0)",
+  "link": "https://www.artic.edu/artworks/42653"
  }
 }

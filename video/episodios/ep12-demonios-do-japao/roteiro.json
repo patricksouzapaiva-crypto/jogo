@@ -547,7 +547,7 @@
   {
    "fala": "Quando a gente pensa em demônio, pensa no do Ocidente.",
    "cena": {
-    "imagem": "reais_prontos/m_jigoku_livro.jpg",
+    "imagem": "reais_prontos/m_satanas_durer.jpg",
     "zoom": [
      1.0,
      1.05
@@ -578,7 +578,7 @@
      "parada": true
     },
     {
-     "imagem": "reais_prontos/m_jigoku_livro.jpg",
+     "imagem": "reais_prontos/m_satanas_durer.jpg",
      "zoom": [
       1.0,
       1.05
@@ -595,23 +595,13 @@
   {
    "fala": "Pra vencer, você chama um padre. Reza. Expulsa.",
    "cena": {
-    "imagem": "reais/m_jigoku_livro.jpg",
+    "imagem": "reais_prontos/m_exorcismo.jpg",
     "zoom": [
-     1.3,
-     1.45
-    ],
-    "foco": [
-     [
-      0.7,
-      0.5
-     ],
-     [
-      0.72,
-      0.45
-     ]
+     1.0,
+     1.05
     ],
     "atmos": {
-     "poeira": 0.3
+     "poeira": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -626,23 +616,13 @@
   {
    "fala": "Lá não existe Diabo. Não existe uma guerra do bem contra o mal.",
    "cena": {
-    "imagem": "reais/m_otsue_oni.jpg",
+    "imagem": "reais_prontos/m_otsue_oni.jpg",
     "zoom": [
-     1.3,
-     1.5
-    ],
-    "foco": [
-     [
-      0.5,
-      0.3
-     ],
-     [
-      0.5,
-      0.25
-     ]
+     1.0,
+     1.05
     ],
     "atmos": {
-     "poeira": 0.3
+     "poeira": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -841,17 +821,17 @@
    "fala": "Kyoto, por volta do ano oitocentos e dez. Uma moça de família nobre descobre que o homem que ela ama trocou ela por outra.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第一章",
-     "numero_pt": "Capítulo 1",
-     "titulo": "A mulher que virou demônio",
-     "ano": "séc. IX",
-     "imagem": "reais_prontos/m_kanawa.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap1.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais_prontos/m_ushinokoku.jpg",
@@ -863,25 +843,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Kyoto"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao1",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap1_som.wav"
     }
    ]
   },
@@ -1390,17 +1364,17 @@
    "fala": "Mas, afinal, o que é um oni?",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第二章",
-     "numero_pt": "Capítulo 2",
-     "titulo": "A porta do demônio",
-     "ano": "713 · hoje",
-     "imagem": "reais_prontos/m_ibaraki_esboco.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais_prontos/m_ibaraki_esboco.jpg",
@@ -1412,25 +1386,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Mas"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao2",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap2_som.wav"
     }
    ]
   },
@@ -1572,23 +1540,13 @@
   {
    "fala": "Do mapa.",
    "cena": {
-    "imagem": "reais/m_shoki_tigre.jpg",
+    "imagem": "reais_prontos/m_zodiaco.jpg",
     "zoom": [
-     1.2,
-     1.3
-    ],
-    "foco": [
-     [
-      0.65,
-      0.5
-     ],
-     [
-      0.6,
-      0.5
-     ]
+     1.0,
+     1.05
     ],
     "atmos": {
-     "poeira": 0.3
+     "poeira": 0.4
     },
     "kanji": {
      "texto": "艮",
@@ -1731,24 +1689,21 @@
   {
    "fala": "E debaixo do telhado, bem ali, fica um macaco de madeira, de guarda. Há séculos.",
    "cena": {
-    "imagem": "reais/sarugatsuji.jpg",
+    "imagem": "imagens/O01_macaco_guardiao.jpg",
     "zoom": [
-     1.5,
-     1.7
+     1.0,
+     1.06
     ],
     "foco": [
      [
-      0.25,
-      0.35
+      0.5,
+      0.55
      ],
      [
-      0.22,
-      0.3
+      0.5,
+      0.5
      ]
     ],
-    "atmos": {
-     "poeira": 0.3
-    },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
@@ -1757,7 +1712,30 @@
   },
   {
    "fala": "Até hoje, tem japonês que não põe porta, nem banheiro, nem cozinha no nordeste da casa.",
-   "pausa_antes_s": 2.05
+   "pausa_antes_s": 2.05,
+   "cena": {
+    "imagem": "reais/sarugatsuji.jpg",
+    "zoom": [
+     1.2,
+     1.3
+    ],
+    "foco": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.25,
+      0.5
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
   },
   {
    "fala": "Em dois mil e quinze, só em Kyoto, contaram mais de mil e cem cantos de casa protegidos contra a porta do demônio.",
@@ -1778,17 +1756,17 @@
     {
      "imagem": "reais/sarugatsuji.jpg",
      "zoom": [
-      1.5,
-      1.7
+      1.2,
+      1.3
      ],
      "foco": [
       [
-       0.25,
-       0.35
+       0.3,
+       0.5
       ],
       [
-       0.22,
-       0.3
+       0.25,
+       0.5
       ]
      ],
      "atmos": {
@@ -1819,17 +1797,17 @@
     {
      "imagem": "reais/sarugatsuji.jpg",
      "zoom": [
-      1.5,
-      1.7
+      1.2,
+      1.3
      ],
      "foco": [
       [
-       0.25,
-       0.35
+       0.3,
+       0.5
       ],
       [
-       0.22,
-       0.3
+       0.25,
+       0.5
       ]
      ],
      "atmos": {
@@ -1893,17 +1871,17 @@
    "fala": "Por volta do ano novecentos e noventa, moças de Kyoto começaram a sumir.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第三章",
-     "numero_pt": "Capítulo 3",
-     "titulo": "O oni que bebia saquê",
-     "ano": "990",
-     "imagem": "reais_prontos/m_raiko_cabeca.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais_prontos/m_shuten_palacio.jpg",
@@ -1915,25 +1893,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Por"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao3",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap3_som.wav"
     }
    ]
   },
@@ -2072,13 +2044,23 @@
   {
    "fala": "O Shuten-dōji bebeu, dormiu… e eles cortaram a cabeça.",
    "cena": {
-    "imagem": "reais_prontos/m_kyosai_luta.jpg",
+    "imagem": "reais/shuten_rolo_cbl.jpg",
     "zoom": [
-     1.0,
-     1.05
+     1.6,
+     1.7
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.65,
+      0.5
+     ]
     ],
     "atmos": {
-     "poeira": 0.4
+     "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -2383,17 +2365,17 @@
    "fala": "Então o que separa um demônio de um deus?",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第四章",
-     "numero_pt": "Capítulo 4",
-     "titulo": "O demônio que virou deus",
-     "ano": "903",
-     "imagem": "reais_prontos/m_michizane_trovao.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap4.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais_prontos/m_raijin_momoyogusa.jpg",
@@ -2405,25 +2387,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Então"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao4",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap4_som.wav"
     }
    ]
   },
@@ -2700,20 +2676,10 @@
   {
    "fala": "É esse desfile aqui. Pintado há quinhentos anos.",
    "cena": {
-    "imagem": "reais/ROLO_casamento/alt06.jpg",
+    "imagem": "reais_prontos/hyakki_tsukumogami.jpg",
     "zoom": [
-     1.15,
-     1.2
-    ],
-    "foco": [
-     [
-      0.3,
-      0.5
-     ],
-     [
-      0.7,
-      0.5
-     ]
+     1.0,
+     1.05
     ],
     "atmos": {
      "poeira": 0.4
@@ -2727,23 +2693,23 @@
   {
    "fala": "E é por isso que no Japão você é educado até com as coisas.",
    "cena": {
-    "imagem": "reais/ROLO_casamento/alt12.jpg",
+    "imagem": "reais/hyakki_tsukumogami.jpg",
     "zoom": [
-     1.15,
-     1.2
+     1.35,
+     1.4
     ],
     "foco": [
      [
-      0.3,
+      0.75,
       0.5
      ],
      [
-      0.7,
+      0.55,
       0.5
      ]
     ],
     "atmos": {
-     "poeira": 0.4
+     "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
@@ -2755,17 +2721,17 @@
    "fala": "Agora, se um yokai não quer a sua alma… o que ele quer?",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第五章",
-     "numero_pt": "Capítulo 5",
-     "titulo": "As regras",
-     "ano": "como sobreviver",
-     "imagem": "reais_prontos/sekien_kappa.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap5.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais/ROLO_casamento/alt18.jpg",
@@ -2787,25 +2753,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Agora"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao5",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap5_som.wav"
     }
    ]
   },
@@ -3112,7 +3072,7 @@
   {
    "fala": "Dias depois, ele contou. Bêbado, numa festa.",
    "cena": {
-    "imagem": "reais_prontos/m_kezori.jpg",
+    "imagem": "reais_prontos/m_festa_sake.jpg",
     "zoom": [
      1.0,
      1.05
@@ -3188,17 +3148,17 @@
    "fala": "Na costa do oeste do Japão, contam assim.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第六章",
-     "numero_pt": "Capítulo 6",
-     "titulo": "Os piores",
-     "ano": "1251 · 2022",
-     "imagem": "reais_prontos/ushioni_rolo.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap6.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais_prontos/nureonna_7.jpg",
@@ -3210,25 +3170,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Na"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao6",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap6_som.wav"
     }
    ],
    "ambiente": {
@@ -3762,17 +3716,17 @@
    "fala": "Agora imagina todos eles juntos. Na mesma noite. Na mesma rua.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "第七章",
-     "numero_pt": "Capítulo 7",
-     "titulo": "O desfile dos cem demônios",
-     "ano": "956",
-     "imagem": "reais_prontos/kyosai_6.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap7.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais/ROLO_casamento/alt36.jpg",
@@ -3794,25 +3748,19 @@
       "poeira": 0.4
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "Agora"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao7",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap7_som.wav"
     }
    ]
   },
@@ -4095,17 +4043,17 @@
    "fala": "A Camila mora no Japão há seis anos. Trabalha numa fábrica de autopeças, no turno da noite.",
    "cenas": [
     {
-     "tipo": "capitulo",
-     "numero": "最終章",
-     "numero_pt": "A história",
-     "titulo": "A sétima noite",
-     "ano": "hoje",
-     "imagem": "reais_prontos/kifune_3.jpg",
-     "antecipar": 4.8,
-     "entrada": "nanquim",
-     "atmos": {
-      "poeira": 0.6
-     }
+     "video": "cartoes/cap0.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar": 7.6,
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true
     },
     {
      "imagem": "reais/kifune_1.jpg",
@@ -4127,25 +4075,19 @@
       "poeira": 0.3
      },
      "entrada": "fundir",
-     "duracao_entrada": 0.8,
+     "duracao_entrada": 0.9,
      "em": "A"
     }
    ],
-   "pausa_antes_s": 5.65,
+   "pausa_antes_s": 7.85,
    "sons": [
     {
      "em": null,
-     "som": "ep08_tinta",
-     "volume_db": -17,
+     "som": "cartao0",
+     "volume_db": -6,
      "depois": false,
-     "atraso": -4.8
-    },
-    {
-     "em": null,
-     "som": "ep08_taiko",
-     "volume_db": -17,
-     "depois": false,
-     "atraso": -3.4
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap0_som.wav"
     }
    ]
   },
