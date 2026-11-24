@@ -23,6 +23,10 @@ Nasceu dos erros apontados pelo usuário nos rascunhos (Ep. 08 e rascunho 1 do E
 - [ ] Tempo de leitura: kanji com legenda fica ≥ 6,5 s depois de aparecer; se a frase é curta, aparece no começo dela
       (não na última palavra) e a pausa seguinte cresce.
 - [ ] Ficha/texto com tempo de leitura (`garantir_leitura`).
+- [ ] **(24/11, usuário) Letras SEMPRE centralizadas e DENTRO do papel/placa/rolo** onde estão escritas (nunca encostando
+      na borda, no brocado ou saindo do suporte). Título centralizado no elemento que ele acompanha.
+- [ ] **Objetos na posição física certa:** carimbo desce RETO (vista de cima), exatamente sobre a marca que deixa; nada
+      torto ou num ângulo impossível. Conferir em quadros parados (`--quadros`) antes de renderizar.
 
 ## Trechos de filme
 - [ ] `cortar_filmes.py` → olhar a folha `<trecho>_conferir.jpg` quadro a quadro: ícone de carregando, legenda
