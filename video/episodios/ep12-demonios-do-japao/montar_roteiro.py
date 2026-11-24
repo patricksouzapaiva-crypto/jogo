@@ -237,8 +237,8 @@ batidas[12]["cena"].update({"antecipar": 7.2, "antecipar_fixo": True})   # o tí
 C(15, real("m_satanas_durer"))   # 24/11 (usuário: imagem que não condiz): o demônio do OCIDENTE (Duvet, Apocalipse)
 C(16, ficha("NO OCIDENTE, O DEMÔNIO\nÉ um anjo caído · serve ao Diabo · quer a sua alma", "QUER A SUA ALMA"))
 C(17, real("m_exorcismo"))   # o padre que expulsa (Vivarini, S. Pedro Mártir exorcizando)
-C(18, real("m_santo_antao"))   # os demônios do Ocidente (Schongauer)
-C(19, real("m_otsue_oni"))
+C(18, real("m_santo_antao"))   # ainda o Ocidente: os demônios de Schongauer
+C(19, real("m_otsue_oni"))   # "Lá não existe Diabo": a virada para o Japão
 C(20, kj(real("m_mascara_kobeshimi"), "鬼", 0.18, 0.5, "sangue", "oni", atraso=0.4))
 kanji_som(20, "oni")
 C(21, kj(real("kyosai_4"), "妖怪", 0.12, 0.5, "luz", "yōkai", atraso=0.3), )
@@ -614,7 +614,7 @@ def ritmo():
         c = cenas_de(b)[0]
         return "vigia" if c.get("vigia") else c.get("tipo") or "imagem"
 
-    PROTEGE = {1, 2, 3, 4, 5, 7, 8, 11, 40, 46, 81, 126, 200, 128, 134, 141, 163, 168, 172, 176, 178, 179, 180, 181, 188, 191, 192, 194}   # sustos e silêncios: nunca continuar a anterior
+    PROTEGE = {1, 2, 3, 4, 5, 7, 8, 17, 18, 19, 11, 40, 46, 81, 126, 200, 128, 134, 141, 163, 168, 172, 176, 178, 179, 180, 181, 188, 191, 192, 194}   # sustos e silêncios: nunca continuar a anterior
     continuadas, alongadas = [], []
     acc, falta = 0.0, 0.0
     for i, b in enumerate(batidas[:len(falas)]):

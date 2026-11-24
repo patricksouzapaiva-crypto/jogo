@@ -611,6 +611,19 @@
   },
   {
    "fala": "No Japão, nada disso funciona.",
+   "cena": {
+    "imagem": "reais_prontos/m_santo_antao.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.45
   },
   {
