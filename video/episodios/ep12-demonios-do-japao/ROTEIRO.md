@@ -335,3 +335,4 @@ olha bem pro tronco.
 Você talvez conheça o nome que está escrito ali.
 Ou… o rosto de quem pregou.
 Eu sou o Vigia. Boa noite.
+*(vinheta do Vigia)*
