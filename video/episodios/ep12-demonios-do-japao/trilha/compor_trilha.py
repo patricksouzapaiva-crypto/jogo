@@ -79,7 +79,7 @@ class Trilha:
         if t1 - t0 > 1.5: self.j.cresc(grupo, nota, t0, t1 - t0, v0, v1)
 
     def coracao(self, t0, t1, periodo=1.6, vel=0.5, acelera=1.0):
-        t = t0; p = periodo
+        t = t0; p = periodo; vel *= 0.7   # 24/11: o coração competia com a voz (revisão do rascunho 1)
         while t < t1:
             self.j.taiko(t, vel); self.j.taiko(t + 0.32 * p / 1.6, vel * 0.55)
             t += p; p = max(0.55, p / acelera)
@@ -266,9 +266,10 @@ class Trilha:
         # 24/11 (revisão do rascunho 1): nas FICHAS a narração para por 7–10 s e ficava quase silêncio. A música segura
         # a leitura: um trêmulo baixo de violas, o koto tocando sozinho e um rin na entrada (nunca silêncio)
         for f0, f1 in self.p.get("fichas", []):
-            j.rin(f0 + 0.3, 0.35, 1)
-            self.tremulo(f0, f1 + 1.0, "D4", 0.12, 0.28, "vla_trem")
-            self.koto_solto(f0 + 0.8, f1 + 1.5, dens=0.6, vel=0.5, reg=(3, 10))
+            j.rin(f0 + 0.3, 0.55, 1)
+            self.tremulo(f0, f1 + 1.0, "D4", 0.3, 0.5, "vla_trem")
+            self.j.cresc("vc", "D3", f0, f1 - f0 + 1.0, 0.25, 0.35)
+            self.koto_solto(f0 + 0.6, f1 + 1.5, dens=0.9, vel=0.8, reg=(3, 10))
         return self
 
     def salvar(self, saida):
