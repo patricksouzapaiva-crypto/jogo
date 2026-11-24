@@ -387,7 +387,8 @@ pausa(113, 0.6); pausa(115, 0.6); pausa(117, 0.6); pausa(119, 0.6); pausa(122, 1
 capitulo(125, 6, "Os piores", "1251 · 2022", RP + "ushioni_rolo.jpg", IA("N08_mulher_mar_bebe", real("nureonna_sekien")))
 # 126: continua a mulher do mar (a frase é a mesma cena)
 C(127, IA("N09_bebe_pedra", det("nureonna_sekien", ((0.5, 0.6), (0.5, 0.55)), (1.3, 1.4))))
-# 128 "Ela desaparece": continua o bebê que pesa
+C(128, IA("N10_praia_sozinho", real("nureonna_sekien")))
+batidas[129]["pausa_antes_s"] = round(batidas[129].get("pausa_antes_s", 0) + 1.6, 2)   # a praia vazia respira antes do ushi-oni   # "Ela desaparece": ele sozinho na praia, as pegadas voltando pro mar
 C(129, kj(real("ushioni_rolo"), "牛鬼", 0.84, 0.5, "sangue", "ushi-oni", atraso=0.6))
 kanji_som(129, "ushi-oni")
 C(130, ficha("TEMPLO SENSŌ-JI · ANO DE 1251\nCrônica Azuma Kagami: 24 monges doentes, 7 mortos", "7 MORTOS"))

@@ -3242,14 +3242,21 @@
      "sem_look": true
     },
     {
-     "imagem": "reais_prontos/nureonna_sekien.jpg",
+     "imagem": "imagens/N08_mulher_mar_bebe.jpg",
      "zoom": [
       1.0,
-      1.05
+      1.08
      ],
-     "atmos": {
-      "poeira": 0.4
-     },
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.46
+      ]
+     ],
      "entrada": "fundir",
      "duracao_entrada": 0.9,
      "em": "Na"
@@ -3278,24 +3285,21 @@
   {
    "fala": "Você segura. E o bebê começa a pesar. Pesa como uma pedra. E você não consegue soltar.",
    "cena": {
-    "imagem": "reais_restauradas/nureonna_sekien.jpg",
+    "imagem": "imagens/N09_bebe_pedra.jpg",
     "zoom": [
-     1.3,
-     1.4
+     1.0,
+     1.08
     ],
     "foco": [
      [
       0.5,
-      0.6
+      0.5
      ],
      [
       0.5,
-      0.55
+      0.46
      ]
     ],
-    "atmos": {
-     "poeira": 0.3
-    },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
@@ -3313,10 +3317,31 @@
   },
   {
    "fala": "Ela desaparece.",
+   "cena": {
+    "imagem": "imagens/N10_praia_sozinho.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 1.25
   },
   {
    "fala": "E do mar sai o ushi-oni: cabeça de boi, corpo de aranha, cuspindo veneno.",
+   "pausa_antes_s": 2.05,
    "cena": {
     "imagem": "reais_prontos/ushioni_rolo.jpg",
     "zoom": [
@@ -3346,8 +3371,7 @@
      "depois": false,
      "atraso": 0.0
     }
-   ],
-   "pausa_antes_s": 0.45
+   ]
   },
   {
    "fala": "Em mil duzentos e cinquenta e um, uma crônica oficial registrou um ser com forma de boi num templo onde hoje é Tóquio. Vinte e quatro monges adoeceram. Sete morreram.",
