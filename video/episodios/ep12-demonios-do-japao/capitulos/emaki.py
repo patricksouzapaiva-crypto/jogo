@@ -102,7 +102,7 @@ class Cartao:
         lum = (r[..., :3] / np.maximum(r[..., 3:4], 1e-4)).mean(2)          # só a tinta preta (o halo branco sai)
         r[..., 3] *= np.clip((0.55 - lum) / 0.4, 0, 1) ** 1.2; r[..., :3] = 0.04 * r[..., 3:4]
         self.respingo = r
-        self.objeto = ler(objeto, alt=330 if n not in (4, 6) else 250)
+        self.objeto = ler(objeto, alt=250 if n not in (4, 6) else 170)
         self.vela = ler("08_vela_warosoku_01", alt=470)
         self.hanko = ler("06_hanko_01", alt=300)
         self.kanji = texto_rgba("第" + NUM[n] + "章" if n else "最終章", "YujiSyuku-400.ttf", 104, (16, 12, 10, 255), vertical=True, esp=1.05)
@@ -131,7 +131,8 @@ class Cartao:
         dx = int(40 * t / DUR); tela = np.zeros((H, W, 4), np.float32)
         tela[..., :3] = self.mesa[30:30 + H, 40 + dx // 2:40 + dx // 2 + W]; tela[..., 3] = 1
         # objeto-símbolo à esquerda, vela à direita
-        por(tela, self.objeto, 250, 905 - self.objeto.shape[0] / 2 + 60, ang=-4, sombra=0.75)
+        oh, ow = self.objeto.shape[:2]   # canto de baixo à esquerda, longe do título
+        por(tela, self.objeto, max(150, ow / 2 + 20), 1040 - oh / 2, ang=-4, sombra=0.75)
         por(tela, self.vela, 1760, 1080 - self.vela.shape[0] / 2 - 20, sombra=0.5)
         # ROLO: x_rolo vai de 1640 (fechado à direita) até 260 (aberto)
         u = sai((t - 0.6) / 1.6); xr = 1660 - 1400 * u; cy = 470
@@ -191,7 +192,7 @@ class Cartao:
             if r > 0:
                 im = img.copy(); w = im.shape[1]; c = int(w * r)
                 rampa = np.clip((c - np.arange(w)) / 60, 0, 1).astype(np.float32)
-                im *= rampa[None, :, None]; por(tela, im, W / 2, y)
+                im *= rampa[None, :, None]; por(tela, im, W / 2 + 70, y)
         # fumaça de incenso atravessando (tela = screen)
         fy = int(500 - 90 * t / DUR); fh = self.fumaca.shape[0]
         f = np.zeros((H, W, 3), np.float32); y1 = max(0, fy); y2 = min(H, fy + fh)
