@@ -28,6 +28,7 @@ CAPS = {
     0: ("A sétima noite", "hoje", "ritual_sekien", "17_boneco_palha_01"),
 }
 NUM = "〇一二三四五六七"
+KX, SX, SY = 1510, 1335, 128   # coluna do número, carimbo (x) e altura do carimbo abaixo do centro do rolo
 
 
 # ------------------------------------------------------------------ utilidades
@@ -95,7 +96,7 @@ class Cartao:
         # a gravura real do capítulo (sem crédito: o cartão é nosso; o crédito está na cena dela)
         art = cv2.cvtColor(cv2.imread(str(next(p for p in (EP / "reais" / (arte + ".jpg"), EP / "reais" / (arte + ".png")) if p.exists()))),
                            cv2.COLOR_BGR2RGB).astype(np.float32) / 255
-        aw, ah = 960, 400; e = min(aw / art.shape[1], ah / art.shape[0])
+        aw, ah = 920, 370; e = min(aw / art.shape[1], ah / art.shape[0])   # cabe na área útil do papel (sem as faixas de brocado)
         self.arte = cv2.resize(art, (round(art.shape[1] * e), round(art.shape[0] * e)), interpolation=cv2.INTER_AREA)
         self.mancha = ler("18_mancha_nanquim_03")[..., 3]
         r = ler("20_respingos_nanquim_01", larg=1100)
@@ -104,18 +105,18 @@ class Cartao:
         self.respingo = r
         self.objeto = ler(objeto, alt=250 if n not in (4, 6) else 170)
         self.vela = ler("08_vela_warosoku_01", alt=470)
-        self.hanko = ler("06_hanko_04", alt=300)   # 24/11: a foto vista de cima que o usuário mandou
+        self.hanko = ler("06_hanko_04", alt=240)   # 24/11: a foto vista de cima que o usuário mandou
         self.kanji = texto_rgba("第" + NUM[n] + "章" if n else "最終章", "YujiSyuku-400.ttf", 104, (16, 12, 10, 255), vertical=True, esp=1.05)
         self.selo = self._selo()
         self.t_cap = texto_rgba((f"CAPÍTULO {n}" if n else "A HISTÓRIA"), "ShipporiMincho-800.ttf", 30, (201, 162, 92, 255))
-        self.t_tit = texto_rgba(titulo.upper(), "ShipporiMincho-800.ttf", 70, (238, 226, 204, 255))
+        self.t_tit = texto_rgba(titulo.upper(), "ShipporiMincho-800.ttf", 62, (238, 226, 204, 255))
         self.t_ano = texto_rgba(ano, "ShipporiMincho-800.ttf", 34, (196, 46, 40, 255))
         self.rng = np.random.default_rng(1200 + n)
 
     def _selo(self):
-        s = 132; im = Image.new("RGBA", (s, s), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+        s = 112; im = Image.new("RGBA", (s, s), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
         d.rounded_rectangle((4, 4, s - 4, s - 4), 10, fill=(176, 28, 26, 255))
-        F = ImageFont.truetype(str(FONTES / "ShipporiMincho-800.ttf"), 96); b = F.getbbox("鬼")
+        F = ImageFont.truetype(str(FONTES / "ShipporiMincho-800.ttf"), 80); b = F.getbbox("鬼")
         d.text(((s - (b[2] - b[0])) / 2 - b[0], (s - (b[3] - b[1])) / 2 - b[1]), "鬼", font=F, fill=(0, 0, 0, 0))
         a = np.asarray(im).astype(np.float32) / 255
         # tinta de carimbo: falhas e grão
@@ -147,7 +148,7 @@ class Cartao:
             reg = tela[y0:y0 + ph, x0:x_dir]
             reg[..., :3] = reg[..., :3] * (1 - tira[..., 3:4]) + tira[..., :3]
             # a GRAVURA nasce na tinta (multiplicada no papel, só onde o papel já abriu)
-            ah, aw = self.arte.shape[:2]; ax0 = 300 + (960 - aw) // 2; ay0 = int(cy - ah / 2)
+            ah, aw = self.arte.shape[:2]; ax0 = 300 + (950 - aw) // 2; ay0 = int(cy - ah / 2)
             k = suave((t - 1.9) / 1.7)
             if k > 0:
                 ms = cv2.resize(self.mancha, (int(aw * (0.3 + 1.5 * k)), int(ah * (0.3 + 1.5 * k))))
@@ -167,7 +168,7 @@ class Cartao:
             if sp > 0 and x0 < 900:
                 r = self.respingo; por(tela, r, 780, cy, esc=0.55, alfa=sp * 0.8)
             # o NÚMERO, escrito de cima para baixo
-            kh = self.kanji.shape[0]; kx, ky = 1515, int(cy - kh / 2 + 6)
+            kh = self.kanji.shape[0]; kx, ky = KX, int(cy - kh / 2)   # coluna centrada na faixa livre do papel
             w_ = suave((t - 2.9) / 1.1)
             if w_ > 0 and x0 < kx - 80:
                 kj = self.kanji.copy(); corte_y = int(kh * w_); kj[corte_y:] = 0
@@ -176,23 +177,23 @@ class Cartao:
                 por(tela, kj, kx, ky + kh / 2)
             # o CARIMBO
             if t >= 4.35:
-                por(tela, self.selo, 1370, cy + 120, ang=-3, alfa=min(1, (t - 4.35) / 0.05) * 0.92)
+                por(tela, self.selo, SX, cy + SY, ang=0, alfa=min(1, (t - 4.35) / 0.05) * 0.92)
         # rolinhos por cima do papel (o que se move e a vara fixa)
         por(tela, self.vara, x_dir + 6, cy, sombra=0.5)
         if u < 0.999 or True:
             por(tela, self.rolo, xr - 4, cy, sombra=0.6)
         # a pedra do carimbo: desce, bate, sobe
         if 4.05 <= t <= 4.85:
-            if t < 4.35: e = 1.6 - 0.6 * suave((t - 4.05) / 0.3); a = suave((t - 4.05) / 0.15); yy = cy + 40 - 220 * (1 - suave((t - 4.05) / 0.3))
-            else: e = 1.0 + 0.25 * suave((t - 4.45) / 0.4); a = 1 - suave((t - 4.5) / 0.35); yy = cy + 40 - 260 * suave((t - 4.45) / 0.4)
-            por(tela, self.hanko, 1375, yy, esc=e, ang=-3, alfa=a, sombra=0.6 * a)
+            if t < 4.35: e = 1.6 - 0.6 * suave((t - 4.05) / 0.3); a = suave((t - 4.05) / 0.15); yy = cy + SY - 220 * (1 - suave((t - 4.05) / 0.3))
+            else: e = 1.0 + 0.25 * suave((t - 4.45) / 0.4); a = 1 - suave((t - 4.5) / 0.35); yy = cy + SY - 260 * suave((t - 4.45) / 0.4)
+            por(tela, self.hanko, SX, yy - 62, esc=e, ang=0, alfa=a, sombra=0.6 * a)   # reto, o bloco exatamente sobre a marca
         # título e ano embaixo (pincel: revela da esquerda para a direita, borda macia)
         for img, y, t0 in ((self.t_cap, 790, 4.6), (self.t_tit, 850, 4.75), (self.t_ano, 922, 5.2)):
             r = suave((t - t0) / 0.9)
             if r > 0:
                 im = img.copy(); w = im.shape[1]; c = int(w * r)
                 rampa = np.clip((c - np.arange(w)) / 60, 0, 1).astype(np.float32)
-                im *= rampa[None, :, None]; por(tela, im, W / 2 + 70, y)
+                im *= rampa[None, :, None]; por(tela, im, 960, y)   # centrado no rolo
         # fumaça de incenso atravessando (tela = screen)
         fy = int(500 - 90 * t / DUR); fh = self.fumaca.shape[0]
         f = np.zeros((H, W, 3), np.float32); y1 = max(0, fy); y2 = min(H, fy + fh)
