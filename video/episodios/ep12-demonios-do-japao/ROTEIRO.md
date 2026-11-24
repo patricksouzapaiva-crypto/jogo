@@ -312,7 +312,7 @@ Não era a dela.
 *(pausa)*
 Era de quem ela tinha visto naquela noite.
 Porque a regra é essa. Se alguém te vir… a maldição volta pra você.
-E, dessa vez, alguém estava pregando o boneco.
+E, dessa vez… ninguém viu quem pregou.
 *(corte seco)*
 
 <!-- Pedido do usuário (24/11): NÃO revelar quem era, mas o final tem que satisfazer. Solução: o espectador não sabe
