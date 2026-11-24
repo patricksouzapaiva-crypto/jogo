@@ -37,8 +37,8 @@ três velas acesas. Um espelho no peito. Sete noites seguidas.
 E se alguém te vir… a maldição volta pra você.
 Esse ritual nasceu de uma mulher que pediu aos deuses pra virar um demônio.
 E os deuses atenderam.
-Hoje você vai conhecer os demônios do Japão. Os que comiam gente, os que viraram deuses, e o pior de todos, que
-ainda tem um túmulo onde as pessoas rezam.
+Hoje você vai conhecer os demônios do Japão. Os que comiam gente, os que viraram deuses, e o
+pior de todos… que até hoje ninguém sabe se ainda está preso.
 E vai entender por que, no Japão… ninguém nasce demônio.
 
 ## VIGIA (0:45–1:05)
@@ -92,8 +92,10 @@ Duzentos anos depois, numa ponte de Kyoto, um guerreiro chamado Watanabe no Tsun
 madrugada, pedindo companhia pra atravessar.
 No meio da ponte, ela agarrou ele pelos cabelos e virou um oni.
 Ele cortou o braço dela com a espada. E ela fugiu voando, sem o braço.
-A ponte existe. Ela se chama Modoribashi, "a ponte da volta". E até hoje tem noiva japonesa que não passa por ela no
-dia do casamento. <!-- ⚠️ confirmar (costume: "modoru" = voltar para casa / separação) -->
+A ponte existe. Ela se chama Modoribashi, "a ponte da volta". E até hoje tem noiva em Kyoto que evita passar por ela
+no dia do casamento… porque quem cruza a ponte da volta, volta pra casa dos pais. <!-- ✅ confirmado: atlasobscura /
+mapple / japanese-wiki-corpus (Ichijo Modoribashi): recém-casados evitam a ponte por medo do divórcio; costume ainda
+existe em parte -->
 *(pausa)*
 Mais tarde, o teatro Nō transformou essa história numa peça chamada *Kanawa*, "o tripé de ferro". E deu um rosto pra
 mulher que vira demônio por ciúme: a máscara Hannya. Chifres, olhos de ouro, a boca rasgada.
@@ -125,8 +127,11 @@ E debaixo do telhado, bem ali, fica um macaco de madeira, de guarda. Há século
 *(pausa)*
 Até hoje, tem japonês que não põe porta, nem banheiro, nem cozinha no nordeste da casa.
 Em dois mil e quinze, só em Kyoto, contaram mais de mil e cem cantos de casa protegidos contra a porta do demônio.
-E em mil novecentos e trinta e seis, o Ministério da Educação do Japão mandou demolir um banheiro novinho… porque
-tinham construído no nordeste.
+E em mil novecentos e trinta e seis, dois ex-ministros da Educação do Japão morreram de repente, um atrás do outro.
+Logo depois, o próprio Ministério mandou demolir um banheiro novinho, feito só para o ministro… porque tinha sido
+construído no nordeste.
+O ministério que combatia a superstição no país. <!-- ✅ ja.wikipedia 鬼門 → Osaka Mainichi 8/4/1936 (Matsuda Genji e
+Kawasaki Takukichi) -->
 Mas se eram os onis que entravam pela porta… quem era o pior deles?
 
 ## PARTE 3 — o oni que bebia saquê (990)
@@ -203,10 +208,10 @@ fugir, porque ele sabe pra onde você vai.
 A regra: não pense. Só uma coisa que você não planejou pode assustar ele.
 *(pausa)*
 A rokurokubi é uma mulher comum de dia. À noite, enquanto ela dorme, a cabeça se solta e sai voando pra beber sangue.
-A regra: ache o corpo. E mude ele de lugar. Quando a cabeça voltar e não encontrar o corpo… ela morre.
-E a jorōgumo é uma aranha que vira uma mulher linda, numa cachoeira de Izu. Um lenhador escapou dela. E ela só pediu
-uma coisa: "não conte pra ninguém que me viu".
-Anos depois, ele contou. Bêbado, numa festa.
+A regra: ache o corpo. E mude ele de lugar. Quando a cabeça voltar… não consegue mais se encaixar.
+E a jorōgumo é uma aranha que vira uma mulher linda, numa cachoeira de Izu. Um lenhador deixou o machado cair na água,
+e ela apareceu pra devolver. E pediu uma coisa só: "nunca conte a ninguém o que viu aqui".
+Dias depois, ele contou. Bêbado, numa festa.
 Dormiu… e não acordou mais.
 Essas são as regras que salvam.
 Mas tem yokai que não tem regra.
