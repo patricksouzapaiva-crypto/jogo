@@ -1206,6 +1206,19 @@
   },
   {
    "fala": "Duzentos anos depois, numa ponte de Kyoto, um guerreiro chamado Watanabe no Tsuna encontrou uma moça sozinha, de madrugada, pedindo companhia pra atravessar.",
+   "cena": {
+    "imagem": "reais_prontos/m_rashomon_tsuna.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   },
    "pausa_antes_s": 0.45
   },
   {
