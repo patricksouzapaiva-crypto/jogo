@@ -206,6 +206,8 @@ pausa(5, 0.6); pausa(7, 0.8); pausa(9, 1.0); pausa(11, 0.6)
 C(12, vigia((1.0, 1.04)))
 C(14, vigia((1.04, 1.1), ((0.45, 0.48), (0.43, 0.46))))
 amb(12, "nenhum")
+saida_lenta(12, 5.4, dur=2.2)
+batidas[12]["cena"].update({"antecipar": 7.2, "antecipar_fixo": True})   # o título aparece sobre o Vigia, com a trilha
 
 # ================================================================ TEMA — não são demônios
 C(15, real("m_jigoku_livro"))
@@ -469,7 +471,7 @@ roteiro = {
     "legendas": {"destaques": ["Japão", "oni", "yōkai", "demônio", "regra", "Hashihime", "Shuten-dōji", "Tenjin", "kimon",
                                "Sesshō-seki", "Hyakki Yagyō", "Camila", "sete noites", "maldição", "rosto"]},
     "ambiente_inicial": [{"som": "ep08_campo_noite", "volume_db": -22}],
-    "musica": {"som": TRILHA_SOM, "volume_db": -30},
+    "musica": {"som": TRILHA_SOM, "volume_db": -24},   # 24/11: a trilha em destaque (pedido do usuário)
     "titulo_ep": {"antes_da_batida": 12, "linhas": ["O VIGIA · EPISÓDIO 12", "OS DEMÔNIOS DO JAPÃO", "NÃO QUEREM", "A SUA ALMA"],
                   "vermelho": "A SUA ALMA", "duracao": 5.6, "folga": 1.0, "centro": True},
     "cta": {"titulo": "Não deixe que te vejam.", "canal": "Último Abrigo",
@@ -697,21 +699,49 @@ def camera_3d():
 
 
 
-def trilha_longa():
-    """A trilha japonesa do episódio (painel/ferramentas/sintetizar_japones_ep12.py) com a duração da narração + folga."""
-    fim = _ali[-1][1] + sum(b.get("pausa_antes_s", 0) for b in batidas) + 30
-    arq = AQUI.parents[1] / "painel" / "sons" / f"{TRILHA_SOM}.mp3"
-    if arq.exists():
-        d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(arq)],
-                                 capture_output=True, text=True).stdout)
-        if d >= fim:
-            return
-    print("trilha: compondo", round(fim), "s", flush=True)
-    subprocess.run([sys.executable, str(AQUI.parents[1] / "painel" / "ferramentas" / "sintetizar_japones_ep12.py"), str(arq),
-                    str(round(fim + 20))], check=True, cwd=str(AQUI.parents[1] / "painel" / "ferramentas"))
+def trilha_por_secoes():
+    """24/11 (usuário: "uma trilha ainda mais bem feita do que a do episódio 8"): a trilha é COMPOSTA sobre os tempos desta
+    montagem (trilha/compor_trilha.py): cada seção tem a sua parte e os golpes caem nas palavras. Só recompõe quando o
+    plano muda (painel/sons/ep12_trilha.plano)."""
+    from gerar import tokens as tk, norm
+    cum, T0 = 0.0, []
+    for i in range(len(falas)):
+        cum += batidas[i].get("pausa_antes_s", 0); T0.append(_ali[_ini[i]][0] + cum)
+    fim = _ali[len(sum([tk(f) for f in falas], [])) - 1][1] + cum + 6
+
+    def tw(i, palavra):
+        ws = [norm(w) for w in tk(falas[i])]; alvo = norm(palavra)
+        k = next((j for j, w in enumerate(ws) if w == alvo or w.startswith(alvo)), 0)
+        return round(T0[i] + _ali[_ini[i] + k][0] - _ali[_ini[i]][0], 2)
+
+    M = {"maldicao": tw(7, "maldição"), "atenderam": tw(9, "atenderam"), "correndo": tw(37, "correndo"),
+         "nao_mulher": tw(40, "mulher"), "hashihime": tw(43, "Hashihime"), "kimon": tw(59, "kimon"),
+         "cortaram": tw(80, "cortaram"), "mordeu": tw(81, "mordeu"), "kubizuka": tw(86, "Kubizuka"),
+         "raio": tw(100, "raio"), "tenjin": tw(103, "Tenjin"), "dormiu": tw(122, "Dormiu"), "pesar": tw(127, "pesar"),
+         "cranios": tw(134, "crânios"), "rachou": tw(141, "rachou"), "saido": tw(145, "saído"),
+         "desfile": tw(147, "Hyakki"), "morria": tw(148, "morria"), "morosuke": tw(150, "Em"), "reza": tw(153, "katashihaya"),
+         "bebado": tw(155, "não"), "tres_chamas": tw(163, "Três"), "metal": tw(164, "Metal"), "a_dela": tw(168, "dela"),
+         "setima": tw(173, "sétima"), "lanterna": tw(178, "lanterna"), "rosto": tw(180, "rosto"), "seis_anos": tw(181, "Todo"),
+         "sumiu": tw(186, "Sumiu"), "prego_novo": tw(188, "prego"), "nao_dela": tw(191, "Não"), "ninguem_viu": tw(194, "ninguém")}
+    marcos = [("gancho", 0), ("vigia", 12), ("tema", 15), ("p1", 28), ("p2", 51), ("p3", 71), ("p4", 94), ("p5", 109),
+              ("p6", 125), ("p7", 146), ("hist", 160), ("fecho", 195)]
+    ini = [0.0] + [T0[i] - (5.2 if i in CARTOES else 7.2 if i == 12 else 1.0) for _, i in marcos[1:]]
+    secoes = [[n, round(ini[k] + (5.2 if marcos[k][1] in CARTOES else 0), 2), round(ini[k + 1] if k + 1 < len(ini) else fim, 2)]
+              for k, (n, _) in enumerate(marcos)]
+    cartoes = [[round(T0[i] - 5.2, 2), round(T0[i] - 0.1, 2)] for i in CARTOES]
+    plano = {"secoes": secoes, "marcos": M, "fim": round(fim, 2), "cartoes": cartoes}
+    sons = AQUI.parents[1] / "painel" / "sons"
+    marca = sons / f"{TRILHA_SOM}.plano"; txt = json.dumps(plano)
+    if (sons / f"{TRILHA_SOM}.mp3").exists() and marca.exists() and marca.read_text() == txt:
+        return
+    print("trilha: compondo sobre a montagem…", flush=True)
+    (AQUI / "trilha" / "plano.json").write_text(txt)
+    subprocess.run([sys.executable, str(AQUI / "trilha" / "compor_trilha.py"), str(AQUI / "trilha" / "plano.json"),
+                    str(sons / f"{TRILHA_SOM}.mp3")], check=True)
+    marca.write_text(txt)
 
 
-trilha_longa()
+trilha_por_secoes()
 
 
 camera_3d()

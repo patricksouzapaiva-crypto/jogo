@@ -49,7 +49,7 @@
  ],
  "musica": {
   "som": "ep12_trilha",
-  "volume_db": -30
+  "volume_db": -24
  },
  "titulo_ep": {
   "antes_da_batida": 12,
@@ -506,14 +506,14 @@
      ]
     ],
     "entrada": "fundir",
-    "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "duracao_entrada": 2.2,
+    "antecipar": 7.2
    },
    "ambiente": {
     "som": "ep08_campo_noite",
     "volume_db": -36
    },
-   "pausa_antes_s": 0.45
+   "pausa_antes_s": 8.05
   },
   {
    "fala": "Se você ainda não é inscrito, se inscreve e ativa o sininho.",
