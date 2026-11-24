@@ -58,7 +58,7 @@ for tema, q in TEMAS.items():
              for p in pags if p.get("imageinfo")]
     cand[tema] = lista; SAIDA.write_text(json.dumps(cand, ensure_ascii=False, indent=1))
     if SEM_FOLHA:
-        print('ok', tema, len(lista), flush=True); time.sleep(4); continue
+        print('ok', tema, len(lista), flush=True); time.sleep(25); continue
     # folha de contato: 12 miniaturas numeradas
     folha = Image.new("RGB", (4 * 360, 3 * 400), (20, 20, 20)); d = ImageDraw.Draw(folha)
     for i, c in enumerate(lista[:12]):
