@@ -18,17 +18,18 @@ AQUI = Path(__file__).parent; EP = AQUI.parent; CAM = AQUI / "camadas"
 FONTES = EP.parents[1] / "painel" / "fontes"; SONS = EP.parents[1] / "painel" / "sons"
 W, H, FPS, DUR = 1920, 1080, 30, 7.6
 CAPS = {
-    1: ("A mulher que virou demônio", "séc. IX", "m_kanawa", "10_gotoku_01"),
-    2: ("A porta do demônio", "713 · hoje", "m_ibaraki_esboco", "11_macaco_madeira_01"),
-    3: ("O oni que bebia saquê", "990", "shuten_rolo_cbl", "12_sakazuki_01"),
-    4: ("O demônio que virou deus", "903", "m_michizane_trovao", "13_galho_ume_01"),
-    5: ("As regras", "como sobreviver", "kyosai_4", "14_ema_01"),
-    6: ("Os piores", "1251 · 2022", "ushioni_rolo", "15_pedra_vulcanica_01"),
-    7: ("O desfile dos cem demônios", "956", "ROLO_hyakki_aic", "16_lanterna_chochin_02"),
-    0: ("A sétima noite", "hoje", "ritual_sekien", "17_boneco_palha_01"),
+    1: ("A mulher que virou demônio", "séc. IX", "m_kanawa", "10_gotoku_01", (0.5, 0.2)),
+    2: ("A porta do demônio", "713 · hoje", "kyosai_7", "11_macaco_madeira_01", (0.5, 0.5)),
+    3: ("O oni que bebia saquê", "990", "shuten_rolo_cbl", "12_sakazuki_01", (0.5, 0.5)),
+    4: ("O demônio que virou deus", "903", "m_michizane_trovao", "13_galho_ume_01", (0.5, 0.45)),
+    5: ("As regras", "como sobreviver", "hyakki_tsukumogami", "14_ema_01", (0.5, 0.5)),
+    6: ("Os piores", "1251 · 2022", "tsuchigumo_rijks", "15_pedra_vulcanica_01", (0.5, 0.5)),
+    7: ("O desfile dos cem demônios", "956", "kyosai_6", "16_lanterna_chochin_02", (0.5, 0.5)),
+    0: ("A sétima noite", "hoje", "ritual_mulher", "17_boneco_palha_01", (0.45, 0.5)),
 }
 NUM = "〇一二三四五六七"
-KX, SX, SY = 1510, 1350, 88   # coluna do número, carimbo (x) e altura do carimbo abaixo do centro do rolo
+KX, SX, SY = 1680, 1455, 120   # coluna do número; carimbo batido no canto da pintura (como os selos de colecionador)
+AX0, AW, AH = 175, 1395, 448   # área da gravura dentro do papel (sem tocar no rolinho, nas faixas de brocado nem no número)
 
 
 # ------------------------------------------------------------------ utilidades
@@ -82,13 +83,13 @@ def texto_rgba(txt, fonte, tam, cor, vertical=False, esp=1.0):
 
 class Cartao:
     def __init__(self, n):
-        self.n = n; titulo, ano, arte, objeto = CAPS[n]
+        self.n = n; titulo, ano, arte, objeto, foco = CAPS[n]
         mesa = cv2.cvtColor(cv2.imread(str(CAM / "01_mesa_laca_01.png")), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
         self.mesa = cv2.resize(mesa, (int(W * 1.08), int(H * 1.08)), interpolation=cv2.INTER_CUBIC)
         fum = cv2.cvtColor(cv2.imread(str(CAM / "21_fumaca_incenso_02.png")), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
         self.fumaca = cv2.resize(fum, (W, int(W * fum.shape[0] / fum.shape[1])))
         # o rolo: papel (05) recortado na área útil; o rolinho (03) em pé
-        self.papel = ler("05_papel_washi_01", larg=1480)                 # ~1480×496
+        self.papel = ler("05_papel_washi_01", larg=1680)                 # ~1680×563 (24/11: maior, menos vazio)
         rolo = ler("03_rolo_fechado_01"); rolo = np.ascontiguousarray(np.rot90(rolo, 1))
         e = (self.papel.shape[0] + 70) / rolo.shape[0]
         self.rolo = cv2.resize(rolo, (round(rolo.shape[1] * e), round(rolo.shape[0] * e)), interpolation=cv2.INTER_AREA)
@@ -96,20 +97,24 @@ class Cartao:
         # a gravura real do capítulo (sem crédito: o cartão é nosso; o crédito está na cena dela)
         art = cv2.cvtColor(cv2.imread(str(next(p for p in (EP / "reais" / (arte + ".jpg"), EP / "reais" / (arte + ".png")) if p.exists()))),
                            cv2.COLOR_BGR2RGB).astype(np.float32) / 255
-        aw, ah = 920, 370; e = min(aw / art.shape[1], ah / art.shape[0])   # cabe na área útil do papel (sem as faixas de brocado)
-        self.arte = cv2.resize(art, (round(art.shape[1] * e), round(art.shape[0] * e)), interpolation=cv2.INTER_AREA)
+        # 24/11 (usuário: "preencher mais espaço, as imagens estão pequenas"): a gravura COBRE a área útil do papel
+        # (da borda esquerda até a coluna do número, entre as faixas de brocado), recortada em volta do foco
+        aw, ah = AW, AH; e = max(aw / art.shape[1], ah / art.shape[0])
+        big = cv2.resize(art, (round(art.shape[1] * e), round(art.shape[0] * e)), interpolation=cv2.INTER_AREA)
+        x0_ = int(np.clip(foco[0] * big.shape[1] - aw / 2, 0, big.shape[1] - aw)); y0_ = int(np.clip(foco[1] * big.shape[0] - ah / 2, 0, big.shape[0] - ah))
+        self.arte = big[y0_:y0_ + ah, x0_:x0_ + aw]
         self.mancha = ler("18_mancha_nanquim_03")[..., 3]
         r = ler("20_respingos_nanquim_01", larg=1100)
         lum = (r[..., :3] / np.maximum(r[..., 3:4], 1e-4)).mean(2)          # só a tinta preta (o halo branco sai)
         r[..., 3] *= np.clip((0.55 - lum) / 0.4, 0, 1) ** 1.2; r[..., :3] = 0.04 * r[..., 3:4]
         self.respingo = r
         self.objeto = ler(objeto, alt=250 if n not in (4, 6) else 170)
-        self.vela = ler("08_vela_warosoku_01", alt=470)
+        self.vela = ler("08_vela_warosoku_01", alt=330)
         self.hanko = ler("06_hanko_04", alt=240)   # 24/11: a foto vista de cima que o usuário mandou
-        self.kanji = texto_rgba("第" + NUM[n] + "章" if n else "最終章", "YujiSyuku-400.ttf", 104, (16, 12, 10, 255), vertical=True, esp=1.05)
+        self.kanji = texto_rgba("第" + NUM[n] + "章" if n else "最終章", "YujiSyuku-400.ttf", 112, (16, 12, 10, 255), vertical=True, esp=1.05)
         self.selo = self._selo()
         self.t_cap = texto_rgba((f"CAPÍTULO {n}" if n else "A HISTÓRIA"), "ShipporiMincho-800.ttf", 30, (201, 162, 92, 255))
-        self.t_tit = texto_rgba(titulo.upper(), "ShipporiMincho-800.ttf", 62, (238, 226, 204, 255))
+        self.t_tit = texto_rgba(titulo.upper(), "ShipporiMincho-800.ttf", 64, (238, 226, 204, 255))
         self.t_ano = texto_rgba(ano, "ShipporiMincho-800.ttf", 34, (196, 46, 40, 255))
         self.rng = np.random.default_rng(1200 + n)
 
@@ -134,10 +139,10 @@ class Cartao:
         # objeto-símbolo à esquerda, vela à direita
         oh, ow = self.objeto.shape[:2]   # canto de baixo à esquerda, longe do título
         por(tela, self.objeto, max(150, ow / 2 + 20), 1040 - oh / 2, ang=-4, sombra=0.75)
-        por(tela, self.vela, 1760, 1080 - self.vela.shape[0] / 2 - 20, sombra=0.5)
+        por(tela, self.vela, 1835, 1080 - self.vela.shape[0] / 2 - 12, sombra=0.5)
         # ROLO: x_rolo vai de 1640 (fechado à direita) até 260 (aberto)
-        u = sai((t - 0.6) / 1.6); xr = 1660 - 1400 * u; cy = 470
-        ph, pw = self.papel.shape[:2]; x_dir = 1660; y0 = int(cy - ph / 2)
+        u = sai((t - 0.6) / 1.6); xr = 1800 - 1680 * u; cy = 455
+        ph, pw = self.papel.shape[:2]; x_dir = 1800; y0 = int(cy - ph / 2)
         vis = int(max(0, x_dir - xr))
         if vis > 4:
             tira = self.papel[:, pw - vis:pw] if vis <= pw else self.papel
@@ -148,7 +153,7 @@ class Cartao:
             reg = tela[y0:y0 + ph, x0:x_dir]
             reg[..., :3] = reg[..., :3] * (1 - tira[..., 3:4]) + tira[..., :3]
             # a GRAVURA nasce na tinta (multiplicada no papel, só onde o papel já abriu)
-            ah, aw = self.arte.shape[:2]; ax0 = 300 + (950 - aw) // 2; ay0 = int(cy - ah / 2)
+            ah, aw = self.arte.shape[:2]; ax0 = AX0; ay0 = int(cy - ah / 2)
             k = suave((t - 1.9) / 1.7)
             if k > 0:
                 ms = cv2.resize(self.mancha, (int(aw * (0.3 + 1.5 * k)), int(ah * (0.3 + 1.5 * k))))
@@ -165,8 +170,8 @@ class Cartao:
                     a_ = self.arte[:, corte:]; mm = m[:, corte:, None] * 0.93
                     alvo[:] = alvo * (1 - mm) + alvo * (a_ ** 1.1) * mm   # multiplicar: tinta no papel
             sp = suave((t - 1.9) / 0.25) * (1 - suave((t - 3.0) / 0.8))
-            if sp > 0 and x0 < 900:
-                r = self.respingo; por(tela, r, 780, cy, esc=0.55, alfa=sp * 0.8)
+            if sp > 0 and x0 < 1000:
+                r = self.respingo; por(tela, r, 870, cy, esc=0.6, alfa=sp * 0.8)
             # o NÚMERO, escrito de cima para baixo
             kh = self.kanji.shape[0]; kx, ky = KX, int(cy - kh / 2)   # coluna centrada na faixa livre do papel
             w_ = suave((t - 2.9) / 1.1)
@@ -188,10 +193,10 @@ class Cartao:
             else: e = 1.0 + 0.25 * suave((t - 4.45) / 0.4); a = 1 - suave((t - 4.5) / 0.35); yy = cy + SY - 260 * suave((t - 4.45) / 0.4)
             por(tela, self.hanko, SX, yy - 62, esc=e, ang=0, alfa=a, sombra=0.6 * a)   # reto, o bloco exatamente sobre a marca
         # título e ano embaixo (pincel: revela da esquerda para a direita, borda macia)
-        for img, y, t0 in ((self.t_cap, 790, 4.6), (self.t_tit, 850, 4.75), (self.t_ano, 922, 5.2)):
+        for img, y, t0 in ((self.t_cap, 812, 4.6), (self.t_tit, 870, 4.75), (self.t_ano, 940, 5.2)):
             r = suave((t - t0) / 0.9)
             if r > 0:
-                im = img.copy(); w = im.shape[1]; c = int(w * r)
+                im = img.copy(); w = im.shape[1]; c = int((w + 60) * r)
                 rampa = np.clip((c - np.arange(w)) / 60, 0, 1).astype(np.float32)
                 im *= rampa[None, :, None]; por(tela, im, 960, y)   # centrado no rolo
         # fumaça de incenso atravessando (tela = screen)
