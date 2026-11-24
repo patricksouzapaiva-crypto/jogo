@@ -44,3 +44,11 @@ Nasceu dos erros apontados pelo usuário nos rascunhos (Ep. 08 e rascunho 1 do E
 ## Som
 - [ ] Trilha composta por parte (uma faixa por momento), checada contra "pancada" (`trilha/analisar.py`).
 - [ ] Mix: poucos "aviso mix" (≤ 40 num episódio); música presente mas abaixo da voz.
+
+## Imagem certa para cada fala (24/11, Ep. 12)
+- Usuário: "continua repetindo imagens mesmo falando de outros onis… analise isso de verdade pra que não fique acontecendo".
+- Uma frase só pode CONTINUAR a imagem anterior se for a mesma obra. Assunto novo = imagem nova, mesmo que a cena fique curta.
+- O motor (gerar.py) só absorve cena curta numa vizinha com a mesma obra.
+- Todo rascunho roda `painel/ferramentas/auditar_imagens.py` (está no rascunho.sh): ler `previas/auditoria_imagens.txt`
+  cena por cena (obra × palavras ditas) ANTES de mandar o vídeo, e justificar cada repetição que sobrar.
+- Conferir também se a imagem PARECE outro yokai (ex.: a nure-onna-cobra parecia a rokurokubi de pescoço comprido).
