@@ -1,1 +1,7 @@
 ok ushi_toki_sekien 1
+ok ushi_toki 4
+ok hashihime 12
+ok kanawa 12
+ok kifune 12
+ok wara_ningyo 0
+ok hyakki_emaki 12
