@@ -8,6 +8,7 @@ O que mudou desde o Ep. 08 (que era toda sintetizada e em laço de 17 s, igual d
   música, os golpes caem na palavra ("atenderam", "mordeu", "raio", "rachou", "rosto"), e há silêncio de verdade antes
   do susto da história. Nos cartões de capítulo a música abre espaço para a tinta e o taiko do cartão.
 24/11: trilha APROVADA pelo usuário ("Trilha aprovada"), pela prévia trilha_previa_v2.mp3.
+25/11: v3 APROVADA ("Aprovado"): cartões com tema forte, sem buracos (medir_buracos), um silêncio só (o rosto).
 Uso: python3 compor_trilha.py plano.json saida.mp3      (prévia: python3 compor_trilha.py --previa → trilha/previa.mp3)"""
 import json, subprocess, sys
 from pathlib import Path
