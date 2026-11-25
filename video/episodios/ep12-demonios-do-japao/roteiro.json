@@ -134,7 +134,7 @@
   },
   {
    "fala": "E, presa em cada boneco, a foto de um homem e um bilhete: \"rezo pela aniquilação\".",
-   "pausa_antes_s": 8.75,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -142,31 +142,11 @@
      "texto": "\"REZO PELA ANIQUILAÇÃO\"\nBilhete preso aos bonecos · Matsudo, Japão, maio de 2022",
      "estilo": "maquina",
      "vermelho": "REZO PELA ANIQUILAÇÃO",
-     "cps": 40,
-     "antecipar": 8.3,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "imagens/G02_boneco_prego_tronco.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.46
-      ]
-     ],
-     "em": "E,",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -199,11 +179,11 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.45
+   "pausa_antes_s": 1.65
   },
   {
    "fala": "Ele foi preso. Mas não pela maldição. No Japão, amaldiçoar alguém até a morte não é crime.",
-   "pausa_antes_s": 9.35,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -211,38 +191,11 @@
      "texto": "MATSUDO · MAIO DE 2022\nHomem de 72 anos preso por danificar as árvores sagradas",
      "estilo": "maquina",
      "vermelho": "72 ANOS",
-     "cps": 40,
-     "antecipar": 8.9,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "imagens/G03_camera_santuario.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.46
-      ]
-     ],
-     "efeitos": {
-      "cctv": {
-       "cam": "CAM 02",
-       "hora": "02:14:37",
-       "data": "18-05-2022"
-      }
-     },
-     "em": "Ele",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -280,7 +233,7 @@
      "atraso": 0.0
     }
    ],
-   "pausa_antes_s": 1.05
+   "pausa_antes_s": 2.25
   },
   {
    "fala": "O que ele estava fazendo tem quase mil anos. Começa às duas da manhã. Roupa branca. Um aro de ferro na cabeça, com três velas acesas. Um espelho no peito. Sete noites seguidas.",
@@ -546,7 +499,7 @@
   },
   {
    "fala": "Ele é mau por natureza. Ele é um anjo que caiu. Ele serve a um chefe, o Diabo. E ele quer uma coisa só: a sua alma.",
-   "pausa_antes_s": 10.25,
+   "pausa_antes_s": 0.85,
    "sem_legenda": true,
    "cenas": [
     {
@@ -554,24 +507,11 @@
      "texto": "NO OCIDENTE, O DEMÔNIO\nÉ um anjo caído · serve ao Diabo · quer a sua alma",
      "estilo": "maquina",
      "vermelho": "QUER A SUA ALMA",
-     "cps": 40,
-     "antecipar": 9.4,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/m_satanas_durer.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "atmos": {
-      "poeira": 0.4
-     },
-     "em": "Ele",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -590,7 +530,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.45
+   "pausa_antes_s": 1.65
   },
   {
    "fala": "No Japão, nada disso funciona.",
@@ -813,7 +753,7 @@
    "pausa_antes_s": 0.45
   },
   {
-   "fala": "E vira, principalmente… gente.",
+   "fala": "E vira, principalmente… gente. E a primeira… foi uma mulher.",
    "cena": {
     "imagem": "reais_restauradas/m_hannya_hokusai.jpg",
     "zoom": [
@@ -850,7 +790,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -869,7 +810,7 @@
      "em": "Kyoto"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -1390,7 +1331,7 @@
    "pausa_antes_s": 1.05
   },
   {
-   "fala": "É isso que o Japão entende por demônio.",
+   "fala": "É isso que o Japão entende por demônio. Mas todo oni vem de algum lugar. E entra… por uma porta.",
    "cena": {
     "imagem": "reais_prontos/m_hannya_hokusai.jpg",
     "zoom": [
@@ -1417,7 +1358,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -1436,7 +1378,7 @@
      "em": "Mas"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -1796,7 +1738,7 @@
   },
   {
    "fala": "Em dois mil e quinze, só em Kyoto, contaram mais de mil e cem cantos de casa protegidos contra a porta do demônio.",
-   "pausa_antes_s": 8.35,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -1804,37 +1746,41 @@
      "texto": "KYOTO · 2015\nMais de 1.100 cantos de casa protegidos contra o kimon",
      "estilo": "maquina",
      "vermelho": "1.100",
-     "cps": 40,
-     "antecipar": 7.9,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "imagens/N07_casa_canto_nordeste.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.46
-      ]
-     ],
-     "em": "Em",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
   {
    "fala": "E em mil novecentos e trinta e seis, dois ex-ministros da Educação do Japão morreram de repente, um atrás do outro.",
-   "pausa_antes_s": 10.35,
+   "pausa_antes_s": 1.65,
+   "cena": {
+    "imagem": "imagens/N07_casa_canto_nordeste.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Logo depois, o próprio Ministério mandou demolir um banheiro novinho, feito só para o ministro… porque tinha sido construído no nordeste.",
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -1842,37 +1788,13 @@
      "texto": "TÓQUIO · ABRIL DE 1936\nO Ministério da Educação demole o banheiro do ministro: estava no kimon",
      "estilo": "maquina",
      "vermelho": "1936",
-     "cps": 40,
-     "antecipar": 9.9,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "imagens/N07_casa_canto_nordeste.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.46
-      ]
-     ],
-     "em": "E",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
-  },
-  {
-   "fala": "Logo depois, o próprio Ministério mandou demolir um banheiro novinho, feito só para o ministro… porque tinha sido construído no nordeste.",
-   "pausa_antes_s": 0.45
   },
   {
    "fala": "O ministério que combatia a superstição no país.",
@@ -1899,7 +1821,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 1.05
+   "pausa_antes_s": 2.25
   },
   {
    "fala": "Mas se eram os onis que entravam pela porta… quem era o pior deles?",
@@ -1929,7 +1851,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -1948,7 +1871,7 @@
      "em": "Por"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -2407,7 +2330,7 @@
    "pausa_antes_s": 0.45
   },
   {
-   "fala": "Um demônio pode virar discípulo. Pode ganhar túmulo. Pode ser convidado.",
+   "fala": "Um demônio pode virar discípulo. Pode ganhar túmulo. Pode ser convidado. E, às vezes… pode até virar um deus.",
    "cena": {
     "imagem": "reais_prontos/m_otsue_oni.jpg",
     "zoom": [
@@ -2434,7 +2357,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -2453,7 +2377,7 @@
      "em": "Então"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -2743,7 +2667,7 @@
    "pausa_antes_s": 0.45
   },
   {
-   "fala": "E é por isso que no Japão você é educado até com as coisas.",
+   "fala": "E é por isso que no Japão você é educado até com as coisas. Porque, com um yokai, ser educado nem sempre basta.",
    "cena": {
     "imagem": "reais/hyakki_tsukumogami.jpg",
     "zoom": [
@@ -2780,7 +2704,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -2809,7 +2734,7 @@
      "em": "Agora"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -3236,7 +3161,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -3262,7 +3188,7 @@
      "em": "Na"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -3375,7 +3301,7 @@
   },
   {
    "fala": "Em mil duzentos e cinquenta e um, uma crônica oficial registrou um ser com forma de boi num templo onde hoje é Tóquio. Vinte e quatro monges adoeceram. Sete morreram.",
-   "pausa_antes_s": 9.05,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -3383,32 +3309,11 @@
      "texto": "TEMPLO SENSŌ-JI · ANO DE 1251\nCrônica Azuma Kagami: 24 monges doentes, 7 mortos",
      "estilo": "maquina",
      "vermelho": "7 MORTOS",
-     "cps": 40,
-     "antecipar": 8.6,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/ushioni_rolo.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "atmos": {
-      "poeira": 0.4
-     },
-     "kanji": {
-      "texto": "牛鬼",
-      "x": 0.84,
-      "y": 0.5,
-      "modo": "sangue",
-      "legenda": "ushi-oni",
-      "atraso": 0.6
-     },
-     "em": "Em",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -3672,16 +3577,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6
-   },
-   "sons": [
-    {
-     "em": "rachou",
-     "som": "ep12_pedra_racha",
-     "volume_db": -14,
-     "depois": false,
-     "atraso": 0.0
-    }
-   ]
+   }
   },
   {
    "fala": "As fotos rodaram o mundo. A pedra aberta. Vazia.",
@@ -3755,7 +3651,7 @@
    "pausa_antes_s": 0.45
   },
   {
-   "fala": "Porque ninguém sabia dizer, com certeza… se ela tinha saído.",
+   "fala": "Porque ninguém sabia dizer, com certeza… se ela tinha saído. E, se saiu… talvez não esteja sozinha.",
    "cena": {
     "imagem": "reais/pedra_rachada.jpg",
     "zoom": [
@@ -3792,7 +3688,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -3821,7 +3718,7 @@
      "em": "Agora"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -3972,7 +3869,7 @@
   },
   {
    "fala": "A reza existe até hoje. É assim: katashihaya, ekasenikurini, tamerusake…",
-   "pausa_antes_s": 8.05,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -3980,24 +3877,11 @@
      "texto": "KATASHIHAYA, EKASENIKURINI, TAMERUSAKE…\nA reza contra o desfile dos cem demônios",
      "estilo": "maquina",
      "vermelho": "KATASHIHAYA",
-     "cps": 40,
-     "antecipar": 7.6,
+     "cps": 25,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "reais_prontos/kyosai_8.jpg",
-     "zoom": [
-      1.0,
-      1.05
-     ],
-     "atmos": {
-      "poeira": 0.4
-     },
-     "em": "A",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -4026,7 +3910,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.45
+   "pausa_antes_s": 1.65
   },
   {
    "fala": "não liguem pra mim. Eu não estou aqui.",
@@ -4092,7 +3976,7 @@
    "pausa_antes_s": 0.45
   },
   {
-   "fala": "E alguns desses medos… ainda saem às duas da manhã.",
+   "fala": "E alguns desses medos… ainda saem às duas da manhã. Como nesta história. Que aconteceu… há pouco tempo.",
    "cena": {
     "imagem": "reais_prontos/ritual_sekien.jpg",
     "zoom": [
@@ -4119,7 +4003,8 @@
      ],
      "antecipar": 7.6,
      "antecipar_fixo": true,
-     "entrada": "corte",
+     "entrada": "fundir",
+     "duracao_entrada": 0.8,
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true
@@ -4145,7 +4030,7 @@
      "em": "A"
     }
    ],
-   "pausa_antes_s": 7.85,
+   "pausa_antes_s": 8.85,
    "sons": [
     {
      "em": null,
@@ -4376,7 +4261,7 @@
   },
   {
    "fala": "Conta os dias. A terça foi a quinta noite.",
-   "pausa_antes_s": 8.85,
+   "pausa_antes_s": 0.45,
    "sem_legenda": true,
    "cenas": [
     {
@@ -4384,31 +4269,11 @@
      "texto": "RITUAL DA HORA DO BOI\nSete noites seguidas · a terça-feira foi a quinta",
      "estilo": "maquina",
      "vermelho": "a quinta",
-     "cps": 40,
-     "antecipar": 8.4,
+     "cps": 32.7,
+     "antecipar": 0.35,
      "antecipar_fixo": true,
      "entrada": "corte",
-     "parada": true
-    },
-    {
-     "imagem": "imagens/H08_celular_pesquisa.jpg",
-     "zoom": [
-      1.0,
-      1.08
-     ],
-     "foco": [
-      [
-       0.5,
-       0.5
-      ],
-      [
-       0.5,
-       0.46
-      ]
-     ],
-     "em": "Conta",
-     "entrada": "fundir",
-     "duracao_entrada": 0.6
+     "parada": false
     }
    ]
   },
@@ -4437,7 +4302,7 @@
     "duracao_entrada": 0.6,
     "antecipar": 0.6
    },
-   "pausa_antes_s": 0.45
+   "pausa_antes_s": 1.65
   },
   {
    "fala": "Se alguém te vir… a maldição volta pra você.",

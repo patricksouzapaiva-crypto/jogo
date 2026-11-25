@@ -341,10 +341,12 @@ if __name__ == "__main__":
     else:
         plano = json.load(open(sys.argv[1]))
         T = Trilha(plano).compor(); T.salvar(sys.argv[2])
-        buracos = medir_buracos(sys.argv[2], plano)
-        if buracos:   # 25/11 (usuário: "tem uma parte do vídeo que fica sem trilha… manter a trilha o episódio todo")
-            print("buracos preenchidos:", buracos)
-            plano["preencher"] = buracos
+        plano["preencher"] = []
+        for passada in range(4):   # 25/11 (usuário: "tem uma parte do vídeo que fica sem trilha… manter a trilha o episódio todo")
+            buracos = medir_buracos(sys.argv[2], plano)
+            print(f"passada {passada + 1}: buracos", buracos)
+            if not buracos:
+                break
+            plano["preencher"] += buracos
             T = Trilha(plano).compor(); T.salvar(sys.argv[2])
-            print("depois:", medir_buracos(sys.argv[2], plano))
         print("ok", sys.argv[2])
