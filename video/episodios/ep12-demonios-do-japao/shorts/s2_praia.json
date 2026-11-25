@@ -57,7 +57,17 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "encaixe": "cobrir"
+     "encaixe": "cobrir",
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.5
+      ]
+     ]
     },
     {
      "imagem": "../imagens/N08_mulher_mar_bebe.jpg",
@@ -67,11 +77,11 @@
      ],
      "foco": [
       [
-       0.5,
+       0.3,
        0.5
       ],
       [
-       0.5,
+       0.3,
        0.46
       ]
      ],
@@ -140,11 +150,11 @@
     ],
     "foco": [
      [
-      0.5,
+      0.3,
       0.5
      ],
      [
-      0.5,
+      0.3,
       0.46
      ]
     ],
@@ -180,7 +190,17 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "encaixe": "cobrir"
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
    },
    "sons": [
     {

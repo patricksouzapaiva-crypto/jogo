@@ -28,6 +28,9 @@ SHORTS = [
     {"nome": "s3_pedra", "de": 140, "ate": 145, "titulo": "Ela saiu da pedra?", "ambiente": "ep08_campo_noite"},
 ]
 
+FOCO_X = {"N08_mulher_mar_bebe": 0.3, "N10_praia_sozinho": 0.3, "G03_camera_santuario": 0.62}   # 25/11: no vertical, o assunto não está no meio
+
+
 def ajustar_cena(c):
     """Cena do longo (16:9) → vertical: imagem/vídeo cobrem a tela; foco volta pro meio na horizontal."""
     for campo in ("imagem", "video"):
@@ -41,8 +44,8 @@ def ajustar_cena(c):
             lado["imagem"] = "../" + lado["imagem"]
     if c.get("imagem") or c.get("video"):
         c["encaixe"] = "cobrir"
-        if c.get("foco"):
-            c["foco"] = [[0.5, f[1]] for f in c["foco"]]
+        fx = next((x for k, x in FOCO_X.items() if k in (c.get("imagem") or "")), 0.5)
+        c["foco"] = [[fx, f[1]] for f in c.get("foco", [[0.5, 0.5], [0.5, 0.5]])]
         c.pop("dof", None)
     ks = c.get("kanji")
     for K in (ks if isinstance(ks, list) else [ks] if ks else []):   # no vertical: horizontal, no alto da tela

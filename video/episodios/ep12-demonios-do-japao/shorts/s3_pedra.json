@@ -67,7 +67,17 @@
     },
     "entrada": "corte",
     "duracao_entrada": 0.6,
-    "encaixe": "cobrir"
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
    },
    "sons": [
     {
@@ -93,7 +103,17 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "encaixe": "cobrir"
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
    },
    "pausa_antes_s": 1.2
   },
@@ -111,7 +131,17 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "encaixe": "cobrir"
+    "encaixe": "cobrir",
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ]
    },
    "pausa_antes_s": 0.45
   },
