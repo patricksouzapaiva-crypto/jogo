@@ -1,0 +1,221 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "oni",
+   "yōkai",
+   "demônio",
+   "regra",
+   "Hashihime",
+   "Shuten-dōji",
+   "Tenjin",
+   "kimon",
+   "Sesshō-seki",
+   "Hyakki Yagyō",
+   "Camila",
+   "sete noites",
+   "maldição",
+   "rosto"
+  ]
+ },
+ "voz_arquivo": "s3_pedra_voz.wav",
+ "batidas": [
+  {
+   "fala": "A Sesshō-seki: \"a pedra que mata\". Por séculos, contaram que quem encostasse nela morria. E de fato, ali saem gases vulcânicos que matam bichos.",
+   "cena": {
+    "imagem": "../reais_prontos/pedra_2018.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "殺生石",
+     "x": 0.5,
+     "y": 0.2,
+     "modo": "sangue",
+     "legenda": "Sesshō-seki · a pedra que mata",
+     "selo": "死",
+     "atraso": 0.4,
+     "vertical": false,
+     "tam": 0.14,
+     "lado_legenda": "baixo"
+    },
+    "entrada": "corte",
+    "duracao_entrada": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "Sesshō-seki",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ]
+  },
+  {
+   "fala": "Em cinco de março de dois mil e vinte e dois… a pedra rachou ao meio.",
+   "cena": {
+    "imagem": "../reais_prontos/pedra_2022.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "As fotos rodaram o mundo. A pedra aberta. Vazia.",
+   "cena": {
+    "imagem": "../reais_prontos/pedra_rachada.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Os cientistas explicaram: chuva, frio, rachaduras antigas.",
+   "cena": {
+    "imagem": "../reais/pedra_rachada.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Mas um santuário da região fez uma cerimônia, às pressas, pra acalmar o espírito.",
+   "cena": {
+    "imagem": "../reais/pedra_2022.jpg",
+    "zoom": [
+     1.1,
+     1.2
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.45
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Porque ninguém sabia dizer, com certeza… se ela tinha saído. E, se saiu… talvez não esteja sozinha.",
+   "cena": {
+    "imagem": "../reais/pedra_rachada.jpg",
+    "zoom": [
+     1.3,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.45
+     ],
+     [
+      0.5,
+      0.4
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "musica": {
+  "som": "ep12_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "Ela saiu da pedra?",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep08_campo_noite",
+   "volume_db": -20
+  }
+ ]
+}

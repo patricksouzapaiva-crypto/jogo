@@ -19,3 +19,9 @@ capitulos/brutas/
 capitulos/*.mp4
 cartoes/
 reais_restauradas/
+shorts/*.wav
+publicacao/*.jpg
+publicacao/*.png
+publicacao/shorts_final/*.mp4
+publicacao/shorts_final/*.json
+publicacao/shorts_final/*.log

@@ -1,0 +1,199 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "oni",
+   "yōkai",
+   "demônio",
+   "regra",
+   "Hashihime",
+   "Shuten-dōji",
+   "Tenjin",
+   "kimon",
+   "Sesshō-seki",
+   "Hyakki Yagyō",
+   "Camila",
+   "sete noites",
+   "maldição",
+   "rosto"
+  ]
+ },
+ "voz_arquivo": "s1_matsudo_voz.wav",
+ "batidas": [
+  {
+   "fala": "Em maio de dois mil e vinte e dois, numa cidade colada em Tóquio, os sacerdotes começaram a achar a mesma coisa, de manhã, em mais de dez santuários.",
+   "cena": {
+    "imagem": "../imagens/G01_arvore_santuario_madrugada.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "encaixe": "cobrir",
+    "entrada": "corte"
+   }
+  },
+  {
+   "fala": "Bonecos de palha. Pregados nas árvores sagradas. Com um prego atravessado no peito.",
+   "cena": {
+    "imagem": "../imagens/G02_boneco_prego_tronco.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_martelo_prego",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.3
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "E, presa em cada boneco, a foto de um homem e um bilhete: \"rezo pela aniquilação\".",
+   "sem_legenda": true,
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "A câmera de um santuário filmou quem estava pregando. Um senhor de setenta e dois anos.",
+   "cena": {
+    "imagem": "../imagens/G03_camera_santuario.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "efeitos": {
+     "cctv": {
+      "cam": "CAM 02",
+      "hora": "02:14:37",
+      "data": "18-05-2022"
+     }
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Ele foi preso. Mas não pela maldição. No Japão, amaldiçoar alguém até a morte não é crime.",
+   "sem_legenda": true,
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "O crime… foi o prego na árvore.",
+   "cena": {
+    "imagem": "../reais_restauradas/m_ushinokoku.jpg",
+    "zoom": [
+     1.4,
+     1.6
+    ],
+    "foco": [
+     [
+      0.5,
+      0.75
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "prego",
+     "som": "ep12_martelo_prego",
+     "volume_db": -15,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "musica": {
+  "som": "ep12_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "Não seja visto.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep08_campo_noite",
+   "volume_db": -20
+  }
+ ]
+}

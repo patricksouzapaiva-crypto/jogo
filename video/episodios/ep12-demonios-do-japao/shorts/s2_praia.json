@@ -1,0 +1,215 @@
+{
+ "modo": "cenas",
+ "formato": "9:16",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -19,
+ "cena_minima": 2.0,
+ "vigia_padrao": false,
+ "cauda": 1.0,
+ "chuva": 0,
+ "grao": 0.16,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Japão",
+   "oni",
+   "yōkai",
+   "demônio",
+   "regra",
+   "Hashihime",
+   "Shuten-dōji",
+   "Tenjin",
+   "kimon",
+   "Sesshō-seki",
+   "Hyakki Yagyō",
+   "Camila",
+   "sete noites",
+   "maldição",
+   "rosto"
+  ]
+ },
+ "voz_arquivo": "s2_praia_voz.wav",
+ "batidas": [
+  {
+   "fala": "Na costa do oeste do Japão, contam assim.",
+   "cenas": [
+    {
+     "video": "../cartoes/cap6.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "antecipar_fixo": true,
+     "entrada": "corte",
+     "duracao_entrada": 0.8,
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "encaixe": "cobrir"
+    },
+    {
+     "imagem": "../imagens/N08_mulher_mar_bebe.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco": [
+      [
+       0.5,
+       0.5
+      ],
+      [
+       0.5,
+       0.46
+      ]
+     ],
+     "entrada": "fundir",
+     "duracao_entrada": 0.9,
+     "em": "Na",
+     "encaixe": "cobrir"
+    }
+   ],
+   "sons": [
+    {
+     "em": null,
+     "som": "cartao6",
+     "volume_db": -6,
+     "depois": false,
+     "atraso": -7.55,
+     "arquivo": "/home/user/jogo/video/episodios/ep12-demonios-do-japao/cartoes/cap6_som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Você está na praia, à noite. Uma mulher de cabelo molhado sai do mar com um bebê no colo e pede: \"segura ele um pouco pra mim\".",
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Você segura. E o bebê começa a pesar. Pesa como uma pedra. E você não consegue soltar.",
+   "cena": {
+    "imagem": "../imagens/N09_bebe_pedra.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "pesar",
+     "som": "sub_drop",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 0.45
+  },
+  {
+   "fala": "Ela desaparece.",
+   "cena": {
+    "imagem": "../imagens/N10_praia_sozinho.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "foco": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.46
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "E do mar sai o ushi-oni: cabeça de boi, corpo de aranha, cuspindo veneno.",
+   "cena": {
+    "imagem": "../reais_prontos/ushioni_rolo.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "atmos": {
+     "poeira": 0.4
+    },
+    "kanji": {
+     "texto": "牛鬼",
+     "x": 0.5,
+     "y": 0.2,
+     "modo": "sangue",
+     "legenda": "ushi-oni",
+     "atraso": 0.6,
+     "vertical": false,
+     "tam": 0.14,
+     "lado_legenda": "baixo"
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6,
+    "encaixe": "cobrir"
+   },
+   "sons": [
+    {
+     "em": "ushi-oni",
+     "som": "ep08_kanji",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0
+    }
+   ],
+   "pausa_antes_s": 1.2
+  }
+ ],
+ "musica": {
+  "som": "ep12_trilha",
+  "volume_db": -27
+ },
+ "cta": {
+  "titulo": "Use luvas.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Episódio completo no canal",
+  "fundo": "../../../painel/cenarios/abrigo_vertical.png",
+  "pose": "c_cafe_convite",
+  "duracao": 3.4
+ },
+ "ambiente_inicial": [
+  {
+   "som": "ep12_mar_noite",
+   "volume_db": -20
+  }
+ ]
+}
