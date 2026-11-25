@@ -365,8 +365,7 @@ pausa(97, 0.8); pausa(100, 0.4); pausa(103, 0.8); pausa(108, 0.8)
 
 # ================================================================ PARTE 5 — as regras
 capitulo(109, 5, "As regras", "como sobreviver", RP + "sekien_kappa.jpg", casamento(18))
-C(110, kj(casamento(24), "掟", 0.2, 0.5, "sangue", "a regra", tam=0.3, atraso=0.4), ({"imagem": "imagens/O02_ep08_arquivo.jpg", "zoom": [1.0, 1.03], "foco": [[0.5, 0.45], [0.5, 0.45]],
-     "kanji": K("掟", 0.1, 0.42, "sangue", "a regra", tam=0.26, em="medo")}, "Se"), (casamento(30), "Mas"))
+C(110, kj(casamento(24), "掟", 0.2, 0.5, "sangue", "a regra", tam=0.3, atraso=0.4), ({"imagem": "imagens/O02_ep08_arquivo.jpg", "zoom": [1.0, 1.03], "foco": [[0.5, 0.45], [0.5, 0.45]]}, "Se")   # 25/11: sem kanji aqui (ficava em cima da capa), (casamento(30), "Mas"))
 # 24/11 (usuário): a referência ao Ep. 08 ("o medo é uma regra") com o quadro do episódio; card do YouTube neste ponto
 kanji_som(110, "regra")
 C(111, real("sekien_kappa"))
