@@ -52,3 +52,13 @@ Nasceu dos erros apontados pelo usuário nos rascunhos (Ep. 08 e rascunho 1 do E
 - Todo rascunho roda `painel/ferramentas/auditar_imagens.py` (está no rascunho.sh): ler `previas/auditoria_imagens.txt`
   cena por cena (obra × palavras ditas) ANTES de mandar o vídeo, e justificar cada repetição que sobrar.
 - Conferir também se a imagem PARECE outro yokai (ex.: a nure-onna-cobra parecia a rokurokubi de pescoço comprido).
+
+## Telas, capítulos e trilha (25/11, Ep. 12 rascunho 3)
+- **Tela preta (ficha) nunca em silêncio:** ela entra junto com a fala que diz aquilo, digitando no ritmo da voz.
+- **Fim de capítulo tem gancho narrado** que puxa o próximo ("…e pode até virar um deus" → cartão "O demônio que
+  virou deus"). Depois do gancho, 1 s de respiro com a música crescendo, e o cartão entra em fusão (nada de corte seco).
+- **Música do cartão forte:** sem voz, a trilha sobe (não desce) e o cartão tem tema próprio.
+- **Trilha o episódio inteiro, uniforme.** Silêncio só no momento mais necessário (um por episódio). O compositor mede a
+  trilha e preenche sozinho qualquer trecho baixo demais (medir_buracos).
+- **Legenda nunca em cima de texto da imagem:** quadro com texto deixa a faixa de baixo (y > 850) livre.
+- **Referência a outro vídeo nosso:** usar a capa REAL (print do usuário), sem contagem de views.
