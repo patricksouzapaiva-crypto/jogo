@@ -173,9 +173,11 @@ def capitulo(i, n, titulo, ano, imagem, cena):
     vid = AQUI / "cartoes" / f"cap{n}.mp4"
     if vid.exists():
         cap = {"video": f"cartoes/cap{n}.mp4", "zoom": [1.0, 1.0], "antecipar": CARTAO, "antecipar_fixo": True,
-               "entrada": "corte", "tipo_cartao": True, "congelar": True, "sem_look": True}
+               "entrada": "fundir", "duracao_entrada": 0.8, "tipo_cartao": True, "congelar": True, "sem_look": True}
         C(i, cap, (cena, primeira))
-        pausa(i, CARTAO - 0.2)
+        # 25/11 (usuário: "o corte para o próximo é muito seco, para do nada"): depois do gancho a imagem respira 1 s
+        # com a música crescendo, e o cartão entra em fusão
+        pausa(i, CARTAO + 0.8)
         som = AQUI / "cartoes" / f"cap{n}_som.wav"
         if not som.exists() or som.stat().st_mtime < vid.stat().st_mtime:
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(vid), "-vn", "-ac", "2", "-ar", "48000", str(som)], check=True)
@@ -308,7 +310,7 @@ C(62, det("sarugatsuji", ((0.35, 0.5), (0.25, 0.5)), (1.2, 1.4)))
 C(64, {"imagem": "imagens/O01_macaco_guardiao.jpg", "zoom": [1.0, 1.06], "foco": [[0.5, 0.55], [0.5, 0.5]]})   # o macaco guardião (o objeto que o usuário gerou)
 C(65, IA("N07_casa_canto_nordeste", det("sarugatsuji", ((0.3, 0.5), (0.25, 0.5)), (1.2, 1.3))))
 C(66, ficha("KYOTO · 2015\nMais de 1.100 cantos de casa protegidos contra o kimon", "1.100"))
-C(67, ficha("TÓQUIO · ABRIL DE 1936\nO Ministério da Educação demole o banheiro do ministro: estava no kimon", "1936"))
+C(68, ficha("TÓQUIO · ABRIL DE 1936\nO Ministério da Educação demole o banheiro do ministro: estava no kimon", "1936"))
 C(69, det("enryakuji", ((0.5, 0.4), (0.5, 0.35)), (1.2, 1.3)))
 C(70, real("shuten_sekien"))
 pausa(57, 0.4); pausa(63, 0.6); pausa(69, 0.6); pausa(70, 0.6)
@@ -412,7 +414,7 @@ C(145, det("pedra_rachada", ((0.5, 0.45), (0.5, 0.4)), (1.3, 1.6)))
 amb(125, "ep12_mar_noite", -24); amb(133, "nenhum")
 fx(127, "pesar", "sub_drop", -20)
 fx(134, "crânios", "ep08_taiko", -16)
-fx(141, "rachou", "ep12_pedra_racha", -14)
+# fx(141, "rachou", "ep12_pedra_racha", -14)   # 25/11: usuário não gostou do som da pedra quebrando
 pausa(128, 0.8); pausa(132, 0.8); pausa(134, 1.0); pausa(141, 0.6); pausa(145, 1.2)
 
 # ================================================================ PARTE 7 — o desfile dos cem demônios
@@ -677,9 +679,10 @@ FICHA_L = {}
 
 
 def fichas_paradas():
-    """17/11 (usuário: "quando aparece a tela com descrição, tem que estar parado… calcula o tempo que a pessoa vai
-    demorar para ler… com o barulho do teclado"): a FICHA entra numa pausa SÓ DELA — a narração para, a máquina de
-    escrever digita, a tela fica o tempo de leitura e só então a voz volta, já sobre a imagem da frase."""
+    """25/11 (usuário: "quero que o narrador leia as telas pretas, pois sempre tem informações importantes e não quero
+    aquele silêncio por todo tempo sem nada"): a FICHA entra JUNTO com a fala que diz aquilo, sem pausa muda. A máquina
+    de escrever digita no ritmo da voz (termina antes do fim da frase) e a tela fica até a fala acabar; na fala seguinte
+    volta a imagem. (17/11 era uma pausa só dela, em silêncio — trocado a pedido.)"""
     from gerar import tokens as tk
     feitas = []
     for i, b in enumerate(batidas[:len(falas)]):
@@ -687,15 +690,18 @@ def fichas_paradas():
         if len(cs) != 1 or cs[0].get("tipo") != "texto" or cs[0].get("em"):
             continue
         f = dict(cs[0]); txt = f["texto"]
-        L = round(0.3 + len(txt) / f.get("cps", 40) + 1.8 + 0.32 * len(txt.split()), 1)
-        f.update({"antecipar": L, "antecipar_fixo": True, "entrada": "corte", "parada": True})
-        ant = next((cenas_de(batidas[j])[-1] for j in range(i - 1, -1, -1) if cenas_de(batidas[j]) and
-                    cenas_de(batidas[j])[-1].get("tipo") != "texto"), None)
-        depois = {k: v for k, v in (ant or {}).items() if k not in ("em", "antecipar", "antecipar_fixo", "entrada", "duracao_entrada")}
-        depois["em"] = tk(falas[i])[0]; depois["entrada"] = "fundir"; depois["duracao_entrada"] = 0.6
-        b.pop("cena", None); b["cenas"] = [f, depois]
-        pausa(i, L); feitas.append((i, L)); FICHA_L[i] = L
-    print("fichas paradas (fala, s de leitura):", feitas)
+        dur = _ali[_ini[i] + len(tk(falas[i])) - 1][1] - _ali[_ini[i]][0]
+        f.update({"cps": round(max(25, len(txt) / max(1.5, dur * 0.7)), 1), "antecipar": 0.35, "antecipar_fixo": True,
+                  "entrada": "corte", "parada": False})
+        b.pop("cena", None); b["cenas"] = [f]
+        if i + 1 < len(falas) and not cenas_de(batidas[i + 1]):   # a fala seguinte não pode herdar a tela preta
+            ant = next((cenas_de(batidas[j])[-1] for j in range(i - 1, -1, -1) if cenas_de(batidas[j]) and
+                        cenas_de(batidas[j])[-1].get("tipo") != "texto"), None)
+            if ant:
+                depois = {k: v for k, v in ant.items() if k not in ("em", "antecipar", "antecipar_fixo", "entrada", "duracao_entrada", "kanji")}
+                batidas[i + 1]["cena"] = depois
+        feitas.append((i, round(dur, 1)))
+    print("fichas lidas pelo narrador (fala, s de voz):", feitas)
 
 
 fichas_paradas()

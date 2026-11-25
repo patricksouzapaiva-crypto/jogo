@@ -122,7 +122,7 @@ class Trilha:
             self.koto_solto(a + 3, M["maldicao"] - 2, dens=0.2, vel=0.45, reg=(5, 11))
             j.hyoshigi(M["maldicao"] - 0.25, 0.7)
             self.tremulo(M["maldicao"], M["atenderam"], "Ab4", 0.2, 0.7, "vla_trem")
-            self.silencio(M["atenderam"] - 0.9, 0.85, 0.3)
+            # self.silencio(M["atenderam"] - 0.9, 0.85, 0.3)   # 25/11: sem silêncio aqui (usuário: trilha o episódio todo)
             self.golpe(M["atenderam"], 1.0)
             j.koto("D3", M["atenderam"] + 2.5, 0.7, oshi=-1, oshi_t=0.6)
             self.koto_solto(M["atenderam"] + 4, b, dens=0.25, vel=0.4, reg=(0, 6))
@@ -173,7 +173,7 @@ class Trilha:
                 if self.rng.random() < 0.6:
                     j.koto(ESCALA[int(self.rng.integers(5, 11))], t, 0.4, pan=0.2)
                 t += Q
-            self.silencio(M["cortaram"] - 0.6, 0.55, 0.25)
+            # self.silencio(M["cortaram"] - 0.6, 0.55, 0.25)   # 25/11: sem silêncio aqui (usuário: trilha o episódio todo)
             j.golpe("timp", M["cortaram"], 0.8, 2)
             self.tremulo(M["cortaram"] + 0.5, M["mordeu"], "Eb5", 0.1, 0.6)
             self.golpe(M["mordeu"], 1.0)
@@ -213,7 +213,7 @@ class Trilha:
             self.koto_solto(M["cranios"] + 3, M["rachou"] - 25, dens=0.25, vel=0.45, reg=(0, 6))
             self.tremulo(M["rachou"] - 18, M["rachou"], "Ab4", 0.05, 0.7, "vla_trem")
             self.coracao(M["rachou"] - 10, M["rachou"] - 0.5, 1.2, 0.55, acelera=1.08)
-            self.silencio(M["rachou"] - 0.7, 0.65, 0.2)
+            # self.silencio(M["rachou"] - 0.7, 0.65, 0.2)   # 25/11: sem silêncio aqui (usuário: trilha o episódio todo)
             self.golpe(M["rachou"], 1.1)
             j.gliss(M["rachou"] + 1.0, 0.5)
             self.tremulo(M["rachou"] + 3, M["saido"], "D5", 0.25, 0.0)
@@ -227,7 +227,7 @@ class Trilha:
             self.golpe(M["morria"] + 0.6, 0.9)
             self.cortejo(M["morosuke"], M["reza"] - 1.5, 0.6)
             self.flauta(M["morosuke"] + 4, [("A4", 3.0), ("Bb4", 2.0), ("A4", 2.5), ("G4", 2.0), ("Eb4", 4.0)], 0.4)
-            self.silencio(M["reza"] - 1.0, 1.0, 1.2)
+            # self.silencio(M["reza"] - 1.0, 1.0, 1.2)   # 25/11: sem silêncio aqui (usuário: trilha o episódio todo)
             j.rin(M["reza"], 0.5, 2)
             self.tema(M["bebado"] + 2, 0.55, ate=9, ritmo=1.3)
             j.bonsho(b - 2.5, 0.7)
@@ -252,7 +252,7 @@ class Trilha:
             self.koto_solto(M["seis_anos"] + 6, M["sumiu"] + 4, dens=0.18, vel=0.4, reg=(0, 6))
             self.coracao(M["prego_novo"] - 1, M["nao_dela"], 1.5, 0.35)
             self.tremulo(M["prego_novo"], M["ninguem_viu"], "D4", 0.05, 0.55, "vla_trem")
-            self.silencio(M["nao_dela"] - 0.3, 0.9, 0.2)
+            # self.silencio(M["nao_dela"] - 0.3, 0.9, 0.2)   # 25/11: sem silêncio aqui (usuário: trilha o episódio todo)
             self.golpe(M["ninguem_viu"] + 1.6, 0.8)
             j.gliss(M["ninguem_viu"] + 2.2, 0.5)
 
@@ -270,16 +270,52 @@ class Trilha:
             self.tremulo(f0, f1 + 1.0, "D4", 0.3, 0.5, "vla_trem")
             self.j.cresc("vc", "D3", f0, f1 - f0 + 1.0, 0.25, 0.35)
             self.koto_solto(f0 + 0.6, f1 + 1.5, dens=0.9, vel=0.8, reg=(3, 10))
+        # 25/11 (usuário: "as músicas na apresentação dos capítulos poderiam ser melhores, está bem fraco"; "o corte
+        # para o próximo é muito seco"): a música cresce PARA o cartão (trêmulo subindo nos 4 s antes) e o cartão tem o
+        # seu tema — sino, o koto em glissando quando o rolo abre, as 5 primeiras notas do tema, cordas abertas por baixo
+        for c0, c1 in self.p["cartoes"]:
+            self.tremulo(c0 - 4.0, c0 + 0.6, "D4", 0.1, 0.7, "vlns_trem")
+            self.j.cresc("vc", "D3", c0 - 3.0, 3.6, 0.15, 0.45)
+            j.bonsho(c0 + 0.15, 0.75)
+            j.gliss(c0 + 0.6, 0.7)
+            self.tema(c0 + 1.6, 0.9, ate=5, ritmo=0.9)
+            self.chao(c0, c1 + 2.5, ("D2", "A2"), vel=0.55)
+            self.tremulo(c0 + 1.0, c1 + 1.0, "A4", 0.3, 0.55, "vla_trem")
+            j.taiko(c1 - 2.6, 0.9); j.taiko(c1 - 2.58, 0.55, grave=True)
+        for a, b in self.p.get("preencher", []):    # 25/11: trechos que ficaram baixos demais na 1ª passada
+            self.chao(a - 1, b + 1, vel=0.45)
+            self.tremulo(a - 0.5, b + 0.5, "D4", 0.25, 0.35, "vla_trem")
+            self.koto_solto(a, b + 1, dens=0.45, vel=0.6, reg=(2, 10))
         return self
 
     def salvar(self, saida):
         wav = Path(saida).with_suffix(".wav")
         self.j.salvar(str(wav), rev=0.34, corte=self.fim, silencios=self.sil)
-        # nos cartões a música desce 10 dB (o cartão tem o taiko e a tinta dele)
-        vol = "".join(f"volume=enable='between(t,{c0:.2f},{c1:.2f})':volume=0.32," for c0, c1 in self.p["cartoes"])
+        # 25/11: nos cartões a música SOBE (antes descia 10 dB e o usuário achou fraco): sem voz, ela é a protagonista
+        vol = "".join(f"volume=enable='between(t,{c0:.2f},{c1:.2f})':volume=1.35," for c0, c1 in self.p["cartoes"])
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(wav), "-af",
                         f"{vol}lowshelf=f=140:g=-4,equalizer=f=2500:t=q:w=1.2:g=-2.5,loudnorm=I=-20:TP=-2:LRA=11", "-ar", "44100", "-b:a", "224k", str(saida)], check=True)
         wav.unlink()
+
+
+def medir_buracos(mp3, plano, janela=1.0, minimo=4.0, abaixo=12.0):
+    """Trechos de >= `minimo` s em que a trilha fica `abaixo` dB sob a mediana (fora do silêncio do rosto)."""
+    import soundfile as sf
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp3), "-ac", "1", "-ar", "8000", "-f", "f32le", "-"],
+                         capture_output=True, check=True).stdout
+    y = np.frombuffer(raw, np.float32); n = int(janela * 8000)
+    db = np.array([20 * np.log10(np.sqrt(np.mean(y[i:i + n] ** 2)) + 1e-9) for i in range(0, len(y) - n, n)])
+    lim = np.median(db) - abaixo
+    M = plano["marcos"]; livre = [(M.get("rosto", -9) - 1, M.get("seis_anos", -9) + 1.5)]
+    out, ini = [], None
+    for k, v in enumerate(list(db) + [0]):
+        t = k * janela
+        baixo = v < lim and not any(a <= t <= b for a, b in livre) and t < plano["fim"] - 3
+        if baixo and ini is None: ini = t
+        if not baixo and ini is not None:
+            if t - ini >= minimo: out.append([round(ini, 1), round(t, 1)])
+            ini = None
+    return out
 
 
 def previa():
@@ -303,5 +339,12 @@ if __name__ == "__main__":
     if "--previa" in sys.argv:
         previa()
     else:
-        T = Trilha(json.load(open(sys.argv[1]))).compor(); T.salvar(sys.argv[2])
+        plano = json.load(open(sys.argv[1]))
+        T = Trilha(plano).compor(); T.salvar(sys.argv[2])
+        buracos = medir_buracos(sys.argv[2], plano)
+        if buracos:   # 25/11 (usuário: "tem uma parte do vídeo que fica sem trilha… manter a trilha o episódio todo")
+            print("buracos preenchidos:", buracos)
+            plano["preencher"] = buracos
+            T = Trilha(plano).compor(); T.salvar(sys.argv[2])
+            print("depois:", medir_buracos(sys.argv[2], plano))
         print("ok", sys.argv[2])

@@ -63,7 +63,7 @@ Uns querem comida. Outros querem respeito. Outros só querem que você siga uma 
 E quem conhece a regra… sobrevive.
 Mas o mais estranho é outra coisa. No Japão, o demônio não nasce demônio. Ele vira.
 Vira um animal velho. Vira um objeto esquecido. Vira um deus que ninguém mais respeita.
-E vira, principalmente… gente.
+E vira, principalmente… gente. E a primeira… foi uma mulher.
 
 ## PARTE 1 — a mulher que pediu para virar demônio (séc. IX · séc. XIV)
 *(Sekien: "Hashihime"; gravura "Ushi no toki mairi"; foto do santuário de Kifune à noite com as lanternas; foto do rio
@@ -100,7 +100,7 @@ existe em parte -->
 Mais tarde, o teatro Nō transformou essa história numa peça chamada *Kanawa*, "o tripé de ferro". E deu um rosto pra
 mulher que vira demônio por ciúme: a máscara Hannya. Chifres, olhos de ouro, a boca rasgada.
 Repara na máscara. De um lado, ela parece furiosa. Do outro… ela parece estar chorando.
-É isso que o Japão entende por demônio.
+É isso que o Japão entende por demônio. Mas todo oni vem de algum lugar. E entra… por uma porta.
 Mas, afinal, o que é um oni?
 
 ## PARTE 2 — o oni e a porta do demônio (713 · 720 · hoje)
@@ -166,7 +166,7 @@ Porque um dos guerreiros do Raikō era Watanabe no Tsuna. O mesmo da ponte. E di
 chegar perto dos Watanabe.
 E num templo nas montanhas de Yoshino, o grito é o contrário: "onis, entrem também". Porque ali um monge converteu um
 oni e fez dele o seu discípulo.
-Um demônio pode virar discípulo. Pode ganhar túmulo. Pode ser convidado.
+Um demônio pode virar discípulo. Pode ganhar túmulo. Pode ser convidado. E, às vezes… pode até virar um deus.
 Então o que separa um demônio de um deus?
 
 ## PARTE 4 — o demônio que virou deus (903) e o objeto que ganha alma
@@ -189,7 +189,7 @@ Um rolo do século quinze conta que, na faxina de fim de ano, as famílias jogar
 velhos. Faltando um ano pra fazerem cem.
 E os objetos, furiosos, viraram monstros e se vingaram dos donos.
 É esse desfile aqui. Pintado há quinhentos anos.
-E é por isso que no Japão você é educado até com as coisas.
+E é por isso que no Japão você é educado até com as coisas. Porque, com um yokai, ser educado nem sempre basta.
 Agora, se um yokai não quer a sua alma… o que ele quer?
 
 ## PARTE 5 — as regras (como sobreviver a um yokai)
@@ -249,7 +249,7 @@ Em cinco de março de dois mil e vinte e dois… a pedra rachou ao meio.
 As fotos rodaram o mundo. A pedra aberta. Vazia.
 Os cientistas explicaram: chuva, frio, rachaduras antigas.
 Mas um santuário da região fez uma cerimônia, às pressas, pra acalmar o espírito.
-Porque ninguém sabia dizer, com certeza… se ela tinha saído.
+Porque ninguém sabia dizer, com certeza… se ela tinha saído. E, se saiu… talvez não esteja sozinha.
 
 ## PARTE 7 — o desfile dos cem demônios
 *(Hyakki Yagyō Emaki do Shinju-an, em travelling da direita pra esquerda; Sekien, capa do Gazu Hyakki Yagyō 1776; a
@@ -272,7 +272,7 @@ Em mil setecentos e setenta e seis, um pintor chamado Toriyama Sekien desenhou c
 ele que deu a cara que os yokais têm até hoje, nos desenhos, nos animes, nos jogos.
 Quase todas as imagens que você viu neste vídeo saíram de livros e rolos como esses.
 Gente que viveu há trezentos, quinhentos, oitocentos anos… desenhando o que tinha medo de encontrar na rua.
-E alguns desses medos… ainda saem às duas da manhã.
+E alguns desses medos… ainda saem às duas da manhã. Como nesta história. Que aconteceu… há pouco tempo.
 
 ## A HISTÓRIA — a sétima noite (hoje)
 *(ilustração: rua de bairro japonês à noite; muro de santuário; uma luz de três velas entre as árvores; o boneco na
