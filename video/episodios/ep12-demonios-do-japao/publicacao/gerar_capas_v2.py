@@ -82,27 +82,31 @@ def capa(img, k, linhas, cores, tam, nome, glow=None, **kw):
     print("ok", nome, round((AQUI / f"{nome}.jpg").stat().st_size / 1e6, 2), "MB")
 
 
-def direita(arq, larg, cx, cy, zoom=1.0, esfuma=0.45):
-    """A imagem ocupa a faixa da direita (larg px), cobrindo a altura toda; a borda esquerda dela se esfuma no preto
-    (nunca aparece um corte reto entre a imagem e o lado do texto)."""
-    img = Image.open(arq).convert("RGB") if not isinstance(arq, Image.Image) else arq
-    faixa = cobrir(img, larg, H, cx, cy, zoom)
-    al = np.clip(np.linspace(0, 1 / esfuma, larg), 0, 1) ** 1.6
-    mask = Image.fromarray((np.tile(al, (H, 1)) * 255).astype(np.uint8))
-    tela = Image.new("RGB", (W, H)); tela.paste(faixa, (W - larg, 0), mask)
-    return tela
+def rosto(arq, fx, fy, fh, alvo_h=640, cx=1380, cy=545):
+    """27/11 (usuário: "centralizando melhor o rosto dos monstros pra ficar bem focado"): o ROSTO (centro fx, fy e
+    altura fh, em fração da imagem) vai para o centro do lado direito (cx, cy), sempre com alvo_h px de altura. Onde a
+    imagem não cobre, fica preto; as bordas dela se esfumam (nada de corte reto)."""
+    img = Image.open(arq).convert("RGB"); iw, ih = img.size
+    esc = alvo_h / (fh * ih); img = img.resize((max(1, int(iw * esc)), max(1, int(ih * esc))), Image.LANCZOS)
+    x0, y0 = int(cx - fx * img.width), int(cy - fy * img.height)
+    tela = Image.new("RGB", (W, H)); cob = Image.new("L", (W, H), 0)
+    tela.paste(img, (x0, y0)); cob.paste(255, (x0, y0, x0 + img.width, y0 + img.height))
+    cob = cob.filter(ImageFilter.GaussianBlur(40))
+    x = np.linspace(0, 1, W); rampa = np.clip((x - 0.30) / 0.22, 0, 1) ** 1.4          # o lado do texto vai ao preto
+    al = np.asarray(cob).astype(np.float32) / 255 * rampa[None, :]
+    return Image.fromarray((np.asarray(tela).astype(np.float32) * al[..., None]).astype(np.uint8))
 
 
 I = EP / "imagens"; R = EP / "reais"
-# A — a Warai Hannya de Hokusai, RESTAURADA (a mais sinistra): o rosto rindo, a cabeça da criança na mão
-capa(direita(AQUI / "fontes_capas" / "hannya_hokusai_rest.jpg", 1300, 0.40, 0.40, 1.14, esfuma=0.3), "鬼", ["ELES QUEREM", "OUTRA COISA."], [BRANCO, VERM],
-     [150, 170], "capa_A_hokusai", de=0.36, ate=0.56, contraste=1.12, cor=1.15)
-# B — a máscara Hannya de perto: os chifres, os olhos de ouro, a boca rasgada
-capa(direita(R / "hannya_preto.jpg", 1250, 0.56, 0.42, 1.45), "鬼", ["NINGUÉM NASCE", "DEMÔNIO."], [BRANCO, VERM],
-     [140, 190], "capa_B_hannya", glow=(1350, 470, 420, 0.20), de=0.36, ate=0.54)
-# C — a pessoa do ritual de costas, a coroa de três velas
-capa(direita(I / "H12_coroa_velas_costas.jpg", 1350, 0.58, 0.35, 1.1), "呪", ["NÃO SEJA", "VISTO."], [BRANCO, VERM],
-     [190, 230], "capa_C_ritual", de=0.30, ate=0.45, brilho=1.08)
-# D — o ushi-oni (cabeça de boi, corpo de aranha), o rosto do rolo de perto
-capa(direita(R / "ushioni_rolo.jpg", 1350, 0.68, 0.60, 1.3, esfuma=0.3), "牛鬼", ["ESSE NÃO", "TEM REGRA."], [BRANCO, VERM],
-     [170, 190], "capa_D_ushioni", de=0.35, ate=0.58, contraste=1.2)
+# A — a Warai Hannya de Hokusai, RESTAURADA (a mais sinistra): o rosto rindo no centro, a cabeça da criança acima
+capa(rosto(AQUI / "fontes_capas" / "hannya_hokusai_rest.jpg", 0.56, 0.52, 0.48, alvo_h=700), "鬼", ["ELES QUEREM", "OUTRA COISA."],
+     [BRANCO, VERM], [150, 170], "capa_A_hokusai", de=0.30, ate=0.50, contraste=1.12, cor=1.15)
+# B — a máscara Hannya: o rosto inteiro (sem cortar a boca), os chifres saindo pelo alto
+capa(rosto(R / "hannya_preto.jpg", 0.52, 0.55, 0.60, alvo_h=860, cy=575), "鬼", ["NINGUÉM NASCE", "DEMÔNIO."], [BRANCO, VERM],
+     [140, 190], "capa_B_hannya", glow=(1380, 575, 480, 0.20), de=0.30, ate=0.50)
+# C — a pessoa do ritual de costas: a cabeça e a coroa de velas no centro
+capa(rosto(I / "H12_coroa_velas_costas.jpg", 0.53, 0.38, 0.55, alvo_h=640, cy=500), "呪", ["NÃO SEJA", "VISTO."], [BRANCO, VERM],
+     [190, 230], "capa_C_ritual", de=0.30, ate=0.50, brilho=1.08)
+# D — o ushi-oni: o rosto (olhos e boca vermelha) no centro, os chifres e as patas em volta
+capa(rosto(R / "ushioni_rolo.jpg", 0.555, 0.80, 0.30, alvo_h=620, cy=680), "牛鬼", ["ESSE NÃO", "TEM REGRA."], [BRANCO, VERM],
+     [170, 190], "capa_D_ushioni", de=0.30, ate=0.50, contraste=1.2)
