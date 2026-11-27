@@ -83,7 +83,10 @@ class Orquestra:
         return reamostrar(x, 2 ** ((m - alvo) / 12)) if abs(m - alvo) > 1e-6 else x
 
     def _por(self, x, t, vel, pan, molhado=1.0):
-        i = int(t * SR); x = x[: len(self.buf) - i]
+        i = int(t * SR)
+        if i >= len(self.buf) or i < 0:   # 27/11: nota depois do fim (x[:negativo] não era vazio)
+            return
+        x = x[: len(self.buf) - i]
         l, r = np.cos((pan + 1) * np.pi / 4), np.sin((pan + 1) * np.pi / 4)
         y = x * vel * np.array([l * 1.414, r * 1.414], np.float32)
         self.buf[i:i + len(y)] += y * molhado; self.seco[i:i + len(y)] += y * (1 - molhado * 0.5)
