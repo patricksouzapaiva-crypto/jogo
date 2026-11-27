@@ -29,7 +29,7 @@ FIO_BGR = np.array([0.08, 0.06, 0.62], np.float32)
 
 EP = {
     "pistas": ["O desejo tem regras", "O galho precisa ser quebrado", "Ela não sossega", "Quem atrapalha, morre",
-               "A Nikki de verdade ainda está lá", "Ele escolheu por ela", "Mais do que qualquer pessoa no mundo"],
+               "A Nikki de verdade ainda está lá", "Ele escolheu por ela", "A pessoa que ela mais ama no mundo"],
     "itens": ["tem regras", "o galho quebrado", "não sossega", "quem atrapalha morre", "a Nikki está lá dentro",
               "escolheu por ela", "ao pé da letra"],
     # ✓ de cada suspeito (provisório até a legenda): gênio 5 · amarração 7 · dybbuk 6 · pata 4
