@@ -95,9 +95,9 @@ Sete pistas. Quatro suspeitos. E um deles está escondido em plena vista desde o
 
 ---
 # ATO I — OS QUATRO SUSPEITOS
-Cada teoria é apresentada como se fosse a resposta. Cada uma termina com a sua lista de pistas explicadas
+<!-- Cada teoria é apresentada como se fosse a resposta. Cada uma termina com a sua lista de pistas explicadas
 (**só os ✓**, na tábua de chumbo, nada de ✗ nem de DESCARTADA) e um frasco na prateleira que **enche um pouco**, sem
-número. Os quatro frascos ficam parecidos: ninguém sabe quem ganha.
+número. Os quatro frascos ficam parecidos: ninguém sabe quem ganha. -->
 
 ## SUSPEITO 1 — O GÊNIO
 `[PEÇA: teoria — frasco com o rótulo "O GÊNIO"]`
