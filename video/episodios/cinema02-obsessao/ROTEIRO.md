@@ -36,8 +36,7 @@ Ela passou o dia inteiro parada no meio da sala. Sem se mexer. Sem comer. Sem ir
 Babada. Suja. Molhada da própria urina.
 `[CENA 1:05:21–1:05:26 — "Eu só estava esperando você chegar." 🔊]`
 E, quando ele abriu a porta, ela só disse isso.
-`[CENA 1:27:56.0–1:27:56.5 (+ 1:27:52.2–1:27:52.6) — FLASH (~0,5 s cada): a Nikki socando a cabeça da Sarah no carro · BORRADO forte + quase sem cor + escuro,
-  nada de sangue legível (diretriz de violência do YouTube) · 🔊 só um baque abafado, cortado seco]`
+`[CENA 1:27:52.2–1:27:53.0 + 1:27:55.8–1:27:56.7 — FLASH borrado (~2 s, como no teste aprovado): a Nikki atacando a Sarah no carro, sem sangue legível · 🔊 só um baque abafado]`
 <!-- 27/11 (usuário): "na hora que falar quem fica no caminho morre, coloca a cena em flash dela socando a cabeça da
      menina, de forma bem rápida e borrada pro vídeo não cair". -->
 E quem fica no caminho, morre.
