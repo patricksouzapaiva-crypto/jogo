@@ -62,3 +62,13 @@ Nasceu dos erros apontados pelo usuário nos rascunhos (Ep. 08 e rascunho 1 do E
   trilha e preenche sozinho qualquer trecho baixo demais (medir_buracos).
 - **Legenda nunca em cima de texto da imagem:** quadro com texto deixa a faixa de baixo (y > 850) livre.
 - **Referência a outro vídeo nosso:** usar a capa REAL (print do usuário), sem contagem de views.
+
+## Cadência das trocas de cena (27/11, Cinema #2)
+- Usuário: "quero cadência nas trocas de cenas, nada de corte seco sem sentido, igual em filmes: diversos cortes, mas
+  naturais, quase imperceptíveis".
+- Troca de cena = fusão curta (0,3–0,6 s), no fim de uma frase ou na pausa da voz; nunca no meio de uma palavra.
+- Corte seco só quando ele SIGNIFICA algo (o susto, o golpe). Mesmo assim, o som entra/sai com fade curto (nada estala).
+- Entrar e sair de um trecho de filme: a imagem anterior escurece/borra e o trecho nasce do preto; o som do filme sobe
+  e desce em fade (nunca começa ou termina cortado).
+- Movimento contínuo: zoom/pan lento em toda imagem parada, para a troca parecer continuação, não salto.
+- Todo vídeo entregue em H.264 **yuv420p** (perfil High) e AAC: o 4:4:4 que sai do xfade não toca no celular.
