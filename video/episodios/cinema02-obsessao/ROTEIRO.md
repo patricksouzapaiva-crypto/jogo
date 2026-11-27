@@ -244,7 +244,57 @@ Mas uma amarração é presa em quem amarrou. Enquanto ele vive, o nó está ape
 ## O VEREDITO
 `[PEÇA: veredito — a cera vermelha pinga e o sinete sela o frasco da AMARRAÇÃO]`
 O meu veredito: aquilo dentro da Nikki é uma amarração.
-O feitiço mais antigo do amor, com um botão de compra.
+<!-- 27/11 (usuário): "deixar mais pesado o que é uma amarração, senão parece algo leve… fazer a pessoa pensar que isso
+é a pior coisa da lista, pra não parecer 'só isso' e perder o impacto do veredito". O veredito NÃO termina no selo:
+termina mostrando por que a amarração é o pior dos quatro, com uma peça real do Louvre. -->
+E, se você acha que amarração é coisa leve, simpatia de amor… espera.
+Porque, dos quatro suspeitos, esse é o pior. E eu vou te mostrar por quê.
+
+## POR QUE É O PIOR DOS QUATRO
+`[PEÇA: os quatro frascos; três se apagam um a um]`
+Pensa nos outros três.
+O gênio quer alguma coisa. Com quem quer alguma coisa, dá pra negociar.
+O dybbuk é um morto dentro de você. Mas existe exorcismo: um rabino, um ritual, e ele sai.
+A pata do macaco é um objeto. Dá pra jogar fora. Dá pra queimar.
+A amarração não quer nada. Não tem exorcismo. E não tem objeto pra jogar fora.
+Ela é presa em uma pessoa viva. Quem amarrou.
+E enquanto essa pessoa respirar… o nó continua apertado.
+
+`[REAL ⚠️ licença da foto: a boneca de barro do Louvre, E 27145 — ajoelhada, amarrada, furada de agulhas]`
+`FICHA: MUSEU DO LOUVRE · E 27145 · Egito romano · séc. III–IV`
+No Museu do Louvre, em Paris, tem uma peça que quase ninguém para pra ver.
+É uma boneca de barro, do tamanho de um dedo. Uma mulher nua, ajoelhada, com as mãos e os pés amarrados.
+E furada com agulhas de metal.
+Ela foi achada dentro de um pote de barro, no Egito, junto com uma tábua de chumbo. E a tábua diz quem fez aquilo, e pra quem.
+Um homem chamado Sarapammon. E uma mulher chamada Ptolemais.
+`[REAL: papiro mágico grego — a receita (PGM IV)]`
+Os papiros de magia trazem a receita de uma boneca assim. São treze agulhas.
+Uma no cérebro. Duas nos olhos. Duas nos ouvidos. Uma na boca. Nas entranhas. Nas mãos. No sexo. Na sola dos pés.
+Para ela não ver mais ninguém. Não ouvir mais ninguém. Não falar de mais ninguém. Não ir a lugar nenhum… a não ser até ele.
+`[PEÇA: tábua de chumbo — as linhas riscadas uma a uma, enquanto a voz lê]`
+E o texto da tábua não pede amor. Dá ordens.
+Ele chama os espíritos dos mortos. Os meninos e as meninas que morreram antes do tempo. E manda que eles vão até ela.
+Que ela não coma. Não beba. Não durma. Não saia de casa. Não fique com nenhum outro homem.
+Até que ela venha até mim.
+E se ela resistir: arrastem ela. Pelos cabelos. Pelas entranhas.
+`[PEÇA: a última linha da tábua se acende]`
+E a última ordem é a que gela.
+Ela tem que ser dele… por toda a duração da vida dele.
+`[pausa]`
+Não da vida dela. Da vida dele.
+Mil e setecentos anos antes do filme… a regra já era essa. O feitiço só termina quando quem amarrou morre.
+`[CENA 1:03:38–1:03:43 — "Quando você morrer, o desejo desaparece." 🔊]`
+Exatamente o que o homem do telefone disse ao Bear.
+
+`[CENA 1:23:24–1:23:35 — "Me mata, por favor." · "Sou eu." 🔊]`
+E agora você entende o que tem de pior nisso.
+A pessoa amarrada não desaparece. Ela continua lá dentro. Acordada. Vendo o próprio corpo beijar quem ela nunca amou. Vendo as próprias mãos matarem uma amiga.
+E sem poder fazer nada. A não ser pedir, de madrugada, pra alguém acabar com aquilo.
+O gênio te dá o que você pediu. O dybbuk toma o seu corpo. A pata cobra um preço.
+A amarração faz uma coisa pior que as três: ela te deixa inteira por dentro… e tira de você a única coisa que era só sua.
+Quem você ama.
+`[PEÇA: o selo de cera esfria; o frasco da AMARRAÇÃO fica sozinho na prateleira]`
+E o Bear comprou isso por menos de dez dólares, numa lojinha de cristais.
 
 ## POR QUE A AMARRAÇÃO (prova a prova)
 1. **Ela tem regras:** os papiros são receitas, com material, hora e palavra certa, igual à caixa do salgueiro.

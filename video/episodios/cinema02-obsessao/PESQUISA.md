@@ -159,3 +159,20 @@ Desvios fixos do formato: a erotomania (a ciência) e Mary Blandy (o caso real).
 - A fórmula exata do feitiço de Madizza (no livro de Ruggiero), se quiser citar.
 - A fonte primária dos itens do salgueiro.
 - Imagens em domínio público: o papiro da British Library, uma tábua de defixio, a gravura de Mary Blandy, a peça *O Dibuk* (cartaz de 1920 ou o filme de 1937) .
+
+### G. A boneca do Louvre (27/11, para o veredito)
+- **Louvre E 27145**: boneca de barro de uma mulher nua, ajoelhada, mãos e pés amarrados, furada com 13 agulhas, achada
+  num pote de barro com uma tábua de chumbo (11 × 11 cm, 28 linhas). Egito romano, séc. III–IV (o Kyprianos dá 101–300).
+  Comprada pelo Louvre em 1975. Feitiço de Sarapammon, filho de Area, para Ptolemais, filha de Horigenes e de Aias.
+  Edição: Supplementum Magicum 1, nº 47 (Daniel & Maltomini, 1990); Kambitsis, BIFAO 76 (1976).
+  [Kyprianos KYP M873](https://www.coptic-magic.phil.uni-wuerzburg.de/index.php/manuscript/kyp-m873) ·
+  [Brent Nongbri, "A Cursed Figurine" (2023)](https://brentnongbri.com/2023/01/07/a-cursed-figurine/)
+- **O texto** (tradução de Beard, North & Price, *Religions of Rome* vol. 2, 1998, pp. 266–267, citada por Nongbri):
+  invoca Plutão, Perséfone, Ereshkigal, Hermes-Thoth, Anúbis e os espíritos dos mortos, "os meninos e as meninas mortos
+  antes do tempo", e o espírito de Antínoo; ordena que Ptolemais não coma, não beba, não durma, não saia, não fique com
+  outro homem, "até que ela venha até mim"; "arraste-a pelos cabelos, pelas entranhas"; e que ela seja dele "por toda a
+  duração da minha vida".
+- **A receita das 13 agulhas** (PGM IV 296–466, Betz p. 44, citada por Nongbri): 1 no cérebro, 2 nos ouvidos, 2 nos
+  olhos, 1 na boca, 2 nas entranhas, 1 nas mãos, 2 no sexo, 2 nas solas. É a RECEITA: as fontes não dizem onde estão as
+  agulhas da boneca do Louvre (por isso o roteiro diz "os papiros trazem a receita").
+- ⚠️ Foto: conferir a licença da imagem no site do Louvre antes de usar.
