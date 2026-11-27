@@ -36,6 +36,10 @@ Ela passou o dia inteiro parada no meio da sala. Sem se mexer. Sem comer. Sem ir
 Babada. Suja. Molhada da própria urina.
 `[CENA 1:05:21–1:05:26 — "Eu só estava esperando você chegar." 🔊]`
 E, quando ele abriu a porta, ela só disse isso.
+`[CENA 1:27:5x — FLASH (~0,5 s): a Nikki socando a cabeça da Sarah no carro · BORRADO forte + quase sem cor + escuro,
+  nada de sangue legível (diretriz de violência do YouTube) · 🔊 só um baque abafado, cortado seco]`
+<!-- 27/11 (usuário): "na hora que falar quem fica no caminho morre, coloca a cena em flash dela socando a cabeça da
+     menina, de forma bem rápida e borrada pro vídeo não cair". -->
 E quem fica no caminho, morre.
 `[CENA 0:20:36–0:20:42 — Bear quebra o salgueiro no carro: "Desejo ser a pessoa que Nikki Freeman mais ama no mundo." 🔊]`
 Tudo isso por causa de um brinquedo de loja: um galhinho de salgueiro que realiza um único desejo.
