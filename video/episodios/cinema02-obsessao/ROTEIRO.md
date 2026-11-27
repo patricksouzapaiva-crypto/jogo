@@ -22,11 +22,11 @@ do #2 (mesa do feitiço: etiqueta, frasco, tábua de chumbo, lacre; ver `PROMPTS
 ---
 
 ## GANCHO (os primeiros 40 s decidem a retenção: nada de apresentação, nada de "hoje vamos")
-Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
+<!-- Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
 1) começa pelo momento mais forte do filme, sem logo e sem "bem-vindo";
 2) abre uma pergunta que só se fecha no veredito;
 3) faz três promessas concretas (um papiro, um enforcamento, um museu) que a pessoa só recebe se ficar;
-4) a marca do canal entra só depois da promessa, e rápida.
+4) a marca do canal entra só depois da promessa, e rápida. -->
 
 `[CENA 1:43:20 — Nikki ensanguentada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
 `[CENA 1:04:55–1:05:04 — a Nikki de pé no meio da sala, sorrindo, molhada, babada; "Cacete!" 🔊]`
