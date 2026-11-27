@@ -8,11 +8,11 @@ Legendas: `publicacao/legendas_pt-BR.srt` (Português)
 Os demônios do Japão não querem a sua alma
 ```
 
-## Capas (teste A/B — escolher 3)
-- capa_A_visto.jpg — "NÃO SEJA VISTO."
-- capa_B_prego.jpg — "O PREGO É PRA VOCÊ."
-- capa_C_alma.jpg — "ELES NÃO QUEREM SUA ALMA."
-- capa_D_viu.jpg — "VOCÊ VIU. AGORA É VOCÊ."
+## Capas (teste A/B — escolhidas pelo usuário em 27/11)
+1920×1080, rosto da criatura no centro. No YouTube Studio: Detalhes → Miniatura → **Testar e comparar** → as 3:
+- capa_A_hokusai.jpg — "ELES QUEREM OUTRA COISA." (Warai Hannya de Hokusai, restaurada)
+- capa_B_hannya.jpg — "NINGUÉM NASCE DEMÔNIO." (máscara Hannya)
+- capa_D_ushioni.jpg — "ESSE NÃO TEM REGRA." (o ushi-oni do rolo)
 
 ## Card do YouTube (Ep. 08)
 Em **13:08** ("Se você viu o nosso episódio sobre o terror japonês…"): card de vídeo → **"Por que o terror japonês é o mais pesado do mundo!"**.
