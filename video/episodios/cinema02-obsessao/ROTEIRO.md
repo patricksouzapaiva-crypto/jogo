@@ -29,14 +29,14 @@ Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
 4) a marca do canal entra só depois da promessa, e rápida.
 
 `[CENA 1:43:20 — Nikki ensanguentada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
-`[CENA 1:04:46–1:05:00 — a porta abre; a Nikki parada no meio da sala, imóvel; "Cacete!" 🔊]`
+`[CENA 1:04:55–1:05:04 — a Nikki de pé no meio da sala, sorrindo, molhada, babada; "Cacete!" 🔊]`
 <!-- 27/11 (usuário): no início, a cena da sala (ela parada o dia inteiro, babada, suja, sem se mexer até ele voltar),
      no lugar de "não sai da frente da casa dele", que não acontece no filme. -->
 Ela passou o dia inteiro parada no meio da sala. Sem se mexer. Sem comer. Sem ir ao banheiro.
 Babada. Suja. Molhada da própria urina.
 `[CENA 1:05:21–1:05:26 — "Eu só estava esperando você chegar." 🔊]`
 E, quando ele abriu a porta, ela só disse isso.
-`[CENA 1:27:5x — FLASH (~0,5 s): a Nikki socando a cabeça da Sarah no carro · BORRADO forte + quase sem cor + escuro,
+`[CENA 1:27:56.0–1:27:56.5 (+ 1:27:52.2–1:27:52.6) — FLASH (~0,5 s cada): a Nikki socando a cabeça da Sarah no carro · BORRADO forte + quase sem cor + escuro,
   nada de sangue legível (diretriz de violência do YouTube) · 🔊 só um baque abafado, cortado seco]`
 <!-- 27/11 (usuário): "na hora que falar quem fica no caminho morre, coloca a cena em flash dela socando a cabeça da
      menina, de forma bem rápida e borrada pro vídeo não cair". -->
