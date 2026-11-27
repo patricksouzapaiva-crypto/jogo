@@ -1,4 +1,8 @@
-# O QUE É A CRIATURA? #2 — OBSESSÃO (roteiro v3, 23/11, sem o filme)
+# O QUE É A CRIATURA? #2 — OBSESSÃO (roteiro v4, 27/11, conferido com o filme)
+
+**v4 — com o filme** (27/11): todas as pistas conferidas na legenda e no áudio dublado (os tempos estão em cada
+`[CENA]`). Mudou: a frase real do desejo; a frase do atendente; o grito no telefone vem do lado DO ATENDENTE; uma pista
+nova (1:23, a Nikki verdadeira pede pra morrer); o Ian não morre; o spoiler foi escrito com o filme.
 
 **v3 — retenção** (usuário: "não precisa falar o que vamos fazer; gancho forte com promessa; as pessoas têm saído cedo
 demais"): o início não anuncia o formato; abre com o momento mais forte + uma pergunta + três promessas concretas; a
@@ -10,7 +14,7 @@ cada uma parecendo a certa; DEPOIS o julgamento, que descarta uma por vez até s
 fim, que pode ser qualquer uma. Por isso a teoria vencedora (a amarração) é apresentada em **2º lugar**, não por
 último, e nenhuma teoria tem placar antes do julgamento. A v1 está em `ROTEIRO_v1.md`.
 
-Status: rascunho para aprovação. As partes de pesquisa estão prontas. ⚠️ = conferir na legenda do filme.
+Status: roteiro v4 para aprovação (pistas conferidas no filme). Os trechos do filme usam o áudio dublado em português.
 Restrições: sem ponte com as fadas do #1; nada de folclore brasileiro. Os trechos do filme são só falas-pista de 2–5 s.
 `[CENA]` trecho curto do filme · `[REAL]` imagem real · `[IA]` ilustração nossa, sem rosto · `[PEÇA]` animação da identidade
 do #2 (mesa do feitiço: etiqueta, frasco, tábua de chumbo, lacre; ver `PROMPTS_IDENTIDADE.md`).
@@ -24,12 +28,12 @@ Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
 3) faz três promessas concretas (um papiro, um enforcamento, um museu) que a pessoa só recebe se ficar;
 4) a marca do canal entra só depois da promessa, e rápida.
 
-`[CENA ⚠️ — Nikki parada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
+`[CENA 1:43:20 — Nikki ensanguentada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
 Ela não dorme. Não come. Não sai da frente da casa dele.
 E quem fica no caminho, morre.
-`[CENA ⚠️ — Bear quebra o salgueiro: "Eu queria que a Nikki Freeman me amasse mais do que qualquer pessoa no mundo." 🔊]`
+`[CENA 0:20:36–0:20:42 — Bear quebra o salgueiro no carro: "Desejo ser a pessoa que Nikki Freeman mais ama no mundo." 🔊]`
 Tudo isso por causa de um brinquedo de loja: um galhinho de salgueiro que realiza um único desejo.
-Ele pediu que ela o amasse mais do que qualquer pessoa no mundo. E foi atendido.
+Ele pediu para ser a pessoa que ela mais ama no mundo. E foi atendido.
 O filme nunca diz o que entrou nela. Nem o diretor diz.
 Eu fui atrás.
 `[REAL: papiro mágico grego — British Library]`
@@ -45,30 +49,37 @@ No final, você vai saber exatamente o que é a Nikki. E por que esse desejo só
 <!-- 23/11 (usuário): pedido de inscrição no começo, depois da apresentação. Regra: no máximo ~5 s e emendado com um
      gancho (a 2ª frase reabre a curiosidade). Nada de pedido no meio do julgamento; o pedido do fim continua. -->
 
-## AS PISTAS (sem spoiler) ⚠️ conferir todas na legenda
+## AS PISTAS (sem spoiler) — conferidas no filme
 `[PEÇA: pista 1 — etiqueta no fio vermelho]` **PISTA 1 — O DESEJO TEM REGRAS**
-`[CENA ⚠️ — a caixa / o atendente]`
-Um desejo por pessoa. E, depois de feito, ele não pode ser mudado. Só acaba de um jeito: quando quem desejou morre.
+`[CENA 0:09:57–0:10:03 — a caixa: "VOCÊ SÓ TEM DIREITO A UM DESEJO · FAÇA UM PEDIDO E QUEBRE AO MEIO"]`
+Um desejo por pessoa. E, depois de feito, ele não pode ser mudado.
+`[CENA 1:03:38–1:03:43 — o atendente: "Quando você morrer, o desejo desaparece." 🔊]`
+Só acaba de um jeito: quando quem desejou morre.
 
 `[PEÇA: pista 2]` **PISTA 2 — O GALHO PRECISA SER QUEBRADO**
-O desejo não acontece quando você pede. Acontece quando você quebra o salgueiro.
+Está escrito na caixa: faça um pedido e quebre ao meio. O desejo não acontece quando você pede. Acontece quando você quebra o salgueiro.
 
 `[PEÇA: pista 3]` **PISTA 3 — ELA NÃO SOSSEGA**
-`[CENA ⚠️ — Nikki parada, olhando, o dia inteiro]`
-Depois do desejo, a Nikki não tem mais vida própria. Fica parada, esperando. Aparece onde ele está. Não consegue ficar longe.
+`[CENA 0:23:28–0:23:32 — "Por que está entrando no meu carro?" 🔊]`
+Depois do desejo, a Nikki não tem mais vida própria. Entra no carro dele sem ser chamada. Passa o dia esperando ele chegar.
+`[CENA 1:15:17–1:15:21 — "Posso ficar do lado de fora?" 🔊]`
+Não aguenta três horas longe. Quando ele a manda embora, ela pede para ficar do lado de fora da casa.
 
 `[PEÇA: pista 4]` **PISTA 4 — QUEM ATRAPALHA, MORRE**
+`[CENA 1:12:45–1:12:53 — numa festa: "E todo mundo aqui vai morrer sem ter sentido a força da conexão que eu tive com o meu Bear." 🔊]`
 Quem fica entre ela e o Bear não sai inteiro. O amor dela não tem freio.
 
 `[PEÇA: pista 5]` **PISTA 5 — A NIKKI DE VERDADE AINDA ESTÁ LÁ**
-`[CENA ⚠️ — o telefonema: o grito da Nikki no fundo da linha]`
-Quando o Bear liga para desfazer o desejo, alguém grita no fundo da linha. É a Nikki. A de verdade. Presa.
+`[CENA 1:04:16–1:04:33 — o atendente: "Quer falar com ela?" · "Quem está aí?" · "A Nikki." · o grito 🔊]`
+Quando o Bear liga para desfazer o desejo, o atendente pergunta: quer falar com ela? E, do outro lado da linha, do lado DO ATENDENTE, alguém grita. É a Nikki. A de verdade.
+`[CENA 1:23:24–1:23:48 — de madrugada: "Me mata, por favor." · "Ela está dormindo." · "Sou eu." · "Por favor, não a acorde." 🔊]`
+E, uma madrugada, enquanto "a outra" dorme, a Nikki de verdade aparece por um minuto. E pede para morrer.
 
 `[PEÇA: pista 6]` **PISTA 6 — ELE ESCOLHEU POR ELA**
-`[CENA ⚠️ — "Só porque você escolheu isso por ela não torna menos real."]`
-O atendente diz a frase que resume o filme: só porque você escolheu isso por ela, não torna menos real.
+`[CENA 1:02:56–1:03:04 — "O amor dela é verdadeiro?" · "Ter escolhido isso pra ela não torna menos verdadeiro." 🔊]`
+O Bear pergunta se o amor dela é verdadeiro. E o atendente diz a frase que resume o filme: ter escolhido isso pra ela não torna menos verdadeiro.
 
-`[PEÇA: pista 7]` **PISTA 7 — "MAIS DO QUE QUALQUER PESSOA NO MUNDO"**
+`[PEÇA: pista 7]` **PISTA 7 — "A PESSOA QUE ELA MAIS AMA NO MUNDO"**
 O pedido foi ao pé da letra. Mais do que qualquer pessoa. Mais do que a família dela. Mais do que ela mesma.
 Sete pistas. Quatro suspeitos. E um deles está escondido em plena vista desde o primeiro minuto do filme.
 
@@ -131,7 +142,7 @@ E, no dia do casamento, a voz que sai da boca da noiva já não é a dela.
 "Voltei para a minha noiva prometida."
 Um amor que entra no corpo de uma moça. A moça de verdade presa lá dentro, sem conseguir falar. E uma voz que não é a dela.
 `[PEÇA: tábua — o que o dybbuk explica: ✓ a Nikki de verdade está lá · ✓ ela não sossega · ✓ quem atrapalha, morre · ✓ "mais do que qualquer pessoa"]`
-E a cena do telefone, com a Nikki gritando no fundo da linha, é um dybbuk de manual.
+E a madrugada em que a Nikki pede para morrer, falando "dela" como se fosse outra pessoa, é um dybbuk de manual: "ela está dormindo; sou eu".
 Três suspeitos, e ainda falta o mais perigoso: o que o próprio diretor confessou.
 
 ## SUSPEITO 4 — A PATA DO MACACO
@@ -173,11 +184,28 @@ Mary é julgada em Oxford e enforcada em seis de abril de mil setecentos e cinqu
 Um feitiço para fazer alguém amar, e quem estava em volta morreu.
 Guarda isso também.
 
-## ⚠️ SPOILER — O FINAL EXPLICADO ⚠️ (escrever com a legenda)
-- O aviso de spoiler: dois fios vermelhos dão um nó sobre a palavra riscada no chumbo.
-- O terço final: as mortes de Sarah e Ian e o que acontece com o Bear.
-- **A prova decisiva:** quando o Bear morre, a Nikki verdadeira volta e grita. O desejo só acaba com a morte de quem desejou.
-- O final alternativo (Romeu e Julieta), que o diretor filmou e descartou.
+## ⚠️ SPOILER — O FINAL EXPLICADO ⚠️
+`[PEÇA: aviso de spoiler — dois fios vermelhos dão um nó sobre a palavra riscada no chumbo]`
+A partir daqui, eu conto o final. Se você ainda não viu o filme, essa é a hora de pausar.
+`[CENA 1:27:49 — Sarah no carro (só o som, a tela escurece)]`
+No terço final, a Sarah, amiga do Bear, confessa que gosta dele. E a Nikki mata a Sarah, ali mesmo, no carro.
+`[CENA 1:28:53–1:28:59 — "Isso tudo é culpa sua. Você quis isso. Você desejou isso." 🔊]`
+E diz para ele: a culpa é sua. Você quis isso. Você desejou isso.
+O Bear volta à loja, desesperado, para desfazer o desejo. E o vendedor só tem duas saídas para ele:
+`[CENA 1:32:52–1:33:05 — "se outra pessoa fizer um pedido que seja o oposto do seu…" · "Ou você poderia morrer." 🔊]`
+alguém fazer um desejo contrário… ou ele morrer.
+Ele implora ao amigo Ian que deseje que o Bear nunca tivesse desejado nada. O Ian quebra o galho e deseja um bilhão de dólares.
+`[CENA 1:39:05–1:39:12 — "A gente vai ficar junto pra sempre e sempre, e sempre, e sempre." 🔊]`
+Então sobra só uma porta.
+`[CENA 1:43:20–1:44:05 — a Nikki sorrindo; o abraço (sem o tiro)]`
+O Bear abraça a Nikki uma última vez. E se mata.
+`[CENA 1:44:56–1:45:20 — a Nikki para de chorar, solta a arma, olha em volta 🔊]`
+E, no segundo em que ele morre, a Nikki para de chorar. Solta a arma. Olha para o próprio corpo coberto de sangue, para o Bear no chão…
+`[CENA 1:45:56 — "O que você fez?" 🔊]`
+e pergunta: o que você fez? É a Nikki de verdade. De volta. Coberta de sangue, num quarto que ela não reconhece.
+O desejo só acaba com a morte de quem desejou. E essa é a prova decisiva.
+`FICHA: O FINAL QUE NÃO FOI · Romeu e Julieta · filmado e descartado pelo diretor`
+E o diretor filmou um final diferente, inspirado em Romeu e Julieta, em que ela também morria. Ele descartou. No filme, a Nikki fica viva, livre, e sozinha com tudo o que fez.
 
 ---
 # ATO II — O JULGAMENTO
@@ -205,8 +233,9 @@ O que separa os dois é uma pergunta: quem está apaixonado?
 No dybbuk, quem ama é o morto. O amor é dele, e ele entra na moça para continuar amando.
 Na amarração, quem ama é quem amarrou. A vítima não ama nada. Ela é obrigada.
 Lembra da erotomania? A certeza de ser amado, ao contrário. A Nikki não sente amor. Sente a ordem de amar.
-`[CENA ⚠️ — "Só porque você escolheu isso por ela…"]`
-E lembra da frase do telefone: você escolheu isso por ela.
+`[CENA 1:02:59–1:03:04 — "Ter escolhido isso pra ela não torna menos verdadeiro." 🔊]`
+E lembra da frase do telefone: ter escolhido isso pra ela não torna menos verdadeiro.
+E a "outra" da madrugada, a que dorme enquanto a Nikki pede para morrer? Não é ninguém de fora. Não tem nome, não tem passado, não ama mais nada. É o próprio desejo, morando nela.
 E a prova final é o fim do filme. Quando o Bear morre, a Nikki volta.
 Um dybbuk não sairia porque um vivo morreu. Ele sairia com exorcismo.
 Mas uma amarração é presa em quem amarrou. Enquanto ele vive, o nó está apertado. Quando ele morre, o nó se desfaz.
@@ -217,14 +246,14 @@ Mas uma amarração é presa em quem amarrou. Enquanto ele vive, o nó está ape
 O meu veredito: aquilo dentro da Nikki é uma amarração.
 O feitiço mais antigo do amor, com um botão de compra.
 
-## POR QUE A AMARRAÇÃO (prova a prova) ⚠️ fechar com o filme
+## POR QUE A AMARRAÇÃO (prova a prova)
 1. **Ela tem regras:** os papiros são receitas, com material, hora e palavra certa, igual à caixa do salgueiro.
 2. **O galho precisa ser quebrado:** a tábua de chumbo era dobrada e furada. O feitiço só pega quando se faz violência a um objeto.
 3. **Ela não sossega:** é a fórmula de dezesseis séculos atrás: não dorme até chegar à casa de quem amarrou.
 4. **Quem atrapalha, morre:** como na casa de Mary Blandy, o feitiço de amor mata quem está em volta.
-5. **A Nikki de verdade está lá dentro:** a amarração não troca a pessoa. Prende a pessoa dentro de si mesma.
-6. **"Você escolheu por ela":** é a definição que os estudiosos dão aos papiros, obrigar alguém contra a própria vontade.
-7. **"Mais do que qualquer pessoa no mundo":** a magia faz exatamente o que se pede. O problema é quem pede.
+5. **A Nikki de verdade está lá dentro:** a amarração não troca a pessoa. Prende a pessoa dentro de si mesma. Ela grita no telefone e, de madrugada, pede para morrer.
+6. **"Ter escolhido isso pra ela":** é a definição que os estudiosos dão aos papiros, obrigar alguém contra a própria vontade.
+7. **"A pessoa que ela mais ama no mundo":** a magia faz exatamente o que se pede. O problema é quem pede.
 
 ## POR QUE UM SALGUEIRO ⚠️ conferir as fontes de cada item
 `[REAL: salgueiro — gravura do século XIX]`
@@ -240,7 +269,7 @@ A diferença é que, no filme, o galho não é amarrado. É quebrado.
 `[VIGIA]`
 Obsessão é a amarração vista de dentro.
 Por dezesseis séculos, as receitas falaram de quem amarra. O filme é o primeiro a mostrar quem é amarrada.
-E o que ele mostra é que não existe amor nenhum ali dentro. Existe só uma pessoa presa, gritando no fundo da linha.
+E o que ele mostra é que não existe amor nenhum ali dentro. Existe só uma pessoa presa, gritando no fundo da linha. E pedindo, de madrugada, para alguém acabar com aquilo.
 E você, concordou com o julgamento? Ou salvaria outro suspeito? Me diz nos comentários, e me diz que filme eu abro no próximo arquivo.
 
 ---
