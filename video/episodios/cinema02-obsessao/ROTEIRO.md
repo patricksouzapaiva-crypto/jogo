@@ -29,7 +29,13 @@ Regras desta abertura (23/11, usuário: "as pessoas têm saído cedo demais"):
 4) a marca do canal entra só depois da promessa, e rápida.
 
 `[CENA 1:43:20 — Nikki ensanguentada, sorrindo, olhando fixo (o plano mais perturbador) 🔊 silêncio]`
-Ela não dorme. Não come. Não sai da frente da casa dele.
+`[CENA 1:04:46–1:05:00 — a porta abre; a Nikki parada no meio da sala, imóvel; "Cacete!" 🔊]`
+<!-- 27/11 (usuário): no início, a cena da sala (ela parada o dia inteiro, babada, suja, sem se mexer até ele voltar),
+     no lugar de "não sai da frente da casa dele", que não acontece no filme. -->
+Ela passou o dia inteiro parada no meio da sala. Sem se mexer. Sem comer. Sem ir ao banheiro.
+Babada. Suja. Molhada da própria urina.
+`[CENA 1:05:21–1:05:26 — "Eu só estava esperando você chegar." 🔊]`
+E, quando ele abriu a porta, ela só disse isso.
 E quem fica no caminho, morre.
 `[CENA 0:20:36–0:20:42 — Bear quebra o salgueiro no carro: "Desejo ser a pessoa que Nikki Freeman mais ama no mundo." 🔊]`
 Tudo isso por causa de um brinquedo de loja: um galhinho de salgueiro que realiza um único desejo.
@@ -61,9 +67,10 @@ Está escrito na caixa: faça um pedido e quebre ao meio. O desejo não acontece
 
 `[PEÇA: pista 3]` **PISTA 3 — ELA NÃO SOSSEGA**
 `[CENA 0:23:28–0:23:32 — "Por que está entrando no meu carro?" 🔊]`
-Depois do desejo, a Nikki não tem mais vida própria. Entra no carro dele sem ser chamada. Passa o dia esperando ele chegar.
-`[CENA 1:15:17–1:15:21 — "Posso ficar do lado de fora?" 🔊]`
-Não aguenta três horas longe. Quando ele a manda embora, ela pede para ficar do lado de fora da casa.
+Depois do desejo, a Nikki não tem mais vida própria. Entra no carro dele sem ser chamada.
+`[CENA 1:08:06–1:08:09 — "Não consegue ficar sem ela por três horas?" 🔊]`
+Não aguenta três horas longe dele.
+E quando ele sai de casa, você já viu o que ela faz: fica parada no meio da sala, o dia inteiro, até ele voltar.
 
 `[PEÇA: pista 4]` **PISTA 4 — QUEM ATRAPALHA, MORRE**
 `[CENA 1:12:45–1:12:53 — numa festa: "E todo mundo aqui vai morrer sem ter sentido a força da conexão que eu tive com o meu Bear." 🔊]`
