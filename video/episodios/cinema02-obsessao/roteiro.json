@@ -1,0 +1,4522 @@
+{
+ "modo": "cenas",
+ "formato": "16:9",
+ "tema": "vigia",
+ "avatar": "vigia_hd",
+ "voz_arquivo": "audio/voz_com_vinheta_limpa.wav",
+ "transcrever_pedacos": 75,
+ "alinhamento_forcado": true,
+ "look": {
+  "preset": "noite_fria",
+  "forca": 0.7,
+  "halacao": 0.25
+ },
+ "cintilar": 0.03,
+ "apertar_pausas": false,
+ "digitacao_db": -23,
+ "cena_minima": 4.0,
+ "vigia_padrao": false,
+ "cauda": 1.6,
+ "chuva": 0,
+ "grao": 0.12,
+ "mix": {
+  "musica_ganho_db": 12,
+  "fundo_sob_voz": -8,
+  "efeitos_sob_voz": -4,
+  "voz_pro": true,
+  "fundo_bolso": true,
+  "efeitos_pico_max": -3
+ },
+ "legendas": {
+  "destaques": [
+   "Obsessão",
+   "Nikki",
+   "amarração",
+   "dybbuk",
+   "jinn",
+   "gênio",
+   "Pata do Macaco",
+   "agogé",
+   "katadesmos",
+   "defixio",
+   "Mary Blandy",
+   "erotomania",
+   "Louvre",
+   "salgueiro",
+   "veredito"
+  ]
+ },
+ "musica": {
+  "som": "cin02_trilha",
+  "volume_db": -13
+ },
+ "cta": {
+  "titulo": "Cuidado com o que você deseja.",
+  "canal": "Último Abrigo",
+  "subtitulo": "Inscreva-se para mais arquivos do Vigia",
+  "fundo": "../../painel/cenarios/abrigo_16x9.png",
+  "pose": "c_cafe_convite",
+  "antes": 0.6,
+  "clique_em": "Inscreva-se",
+  "duracao": 16.0,
+  "escurecer": 0.9
+ },
+ "batidas": [
+  {
+   "fala": "Ela passou o dia inteiro parada no meio da sala.",
+   "sons": [
+    {
+     "em": null,
+     "som": "casa_noite",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "g_sala",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -9.2,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_sala.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/g_sorriso.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 13.5,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "video": "filmes_prontos/g_sala.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 9.25,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/01_sala.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.35
+     }
+    }
+   ],
+   "pausa_antes_s": 13.85
+  },
+  {
+   "fala": "Sem se mexer."
+  },
+  {
+   "fala": "Sem comer."
+  },
+  {
+   "fala": "Sem ir ao banheiro."
+  },
+  {
+   "fala": "Babada.",
+   "sons": [
+    {
+     "em": null,
+     "som": "casa_noite",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/01_sala.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.35
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Suja."
+  },
+  {
+   "fala": "Molhada da própria urina."
+  },
+  {
+   "fala": "E, quando ele abriu a porta, ela só disse isso.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_porta_rangido_lento",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "g_espera",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -4.6,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_espera.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/g_espera.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 4.65,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/09_porta_banheiro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 5.0
+  },
+  {
+   "fala": "E quem fica no caminho, morre.",
+   "sons": [
+    {
+     "em": null,
+     "som": "chuva_externa",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "g_flash",
+     "volume_db": -2,
+     "depois": false,
+     "atraso": -1.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_flash.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/g_flash.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 1.05,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/04_nikki_carro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "morre"
+    }
+   ],
+   "pausa_antes_s": 1.4
+  },
+  {
+   "fala": "Tudo isso por causa de um brinquedo de loja: um galhinho de salgueiro que realiza um único desejo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "g_desejo",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -6.8,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_desejo.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/g_desejo.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 6.85,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/02_caixa_loja.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.45
+     }
+    }
+   ],
+   "pausa_antes_s": 7.2
+  },
+  {
+   "fala": "Ele pediu para ser a pessoa que ela mais ama no mundo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_galho_quebra",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 2.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E foi atendido."
+  },
+  {
+   "fala": "O filme nunca diz o que entrou nela.",
+   "cena": {
+    "imagem": "imagens/11_maos_sofa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Nem o diretor diz."
+  },
+  {
+   "fala": "Eu fui atrás.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a resposta está num papiro egípcio de mil e seiscentos anos,"
+  },
+  {
+   "fala": "num enforcamento na Inglaterra, em mil setecentos e cinquenta e dois,",
+   "cena": {
+    "imagem": "reais_prontos/blandy_execucao_2.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "e num galho de salgueiro guardado até hoje num museu inglês.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep06_riacho",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/19_no_salgueiro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Igual ao do filme."
+  },
+  {
+   "fala": "No final, você vai saber exatamente o que é a Nikki.",
+   "cena": {
+    "imagem": "imagens/08_prateleira_vazia.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E por que esse desejo só podia acabar de um jeito."
+  },
+  {
+   "fala": "Eu sou o Vigia.",
+   "sons": [
+    {
+     "em": null,
+     "som": "abertura.mp4.som",
+     "volume_db": -7,
+     "depois": false,
+     "atraso": -5.95,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/abertura.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/abertura.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 6.0,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "em": "Vigia"
+    }
+   ],
+   "pausa_antes_s": 6.35
+  },
+  {
+   "fala": "Arquivo número dois: Obsessão."
+  },
+  {
+   "fala": "Se você ainda não é inscrito, se inscreve e ativa o sininho.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.48
+     ],
+     [
+      0.56,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O veredito de hoje não é o que você está pensando."
+  },
+  {
+   "fala": "Pista um. O desejo tem regras.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista1.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista1.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista1.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Um desejo por pessoa.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/p1_caixa.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 6.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/02_caixa_loja.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.45
+     }
+    }
+   ],
+   "pausa_antes_s": 6.8
+  },
+  {
+   "fala": "E, depois de feito, ele não pode ser mudado."
+  },
+  {
+   "fala": "Só acaba de um jeito: quando quem desejou morre.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_porta_rangido_lento",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "p1_morrer",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -4.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p1_morrer.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p1_morrer.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 4.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/09_porta_banheiro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 4.8
+  },
+  {
+   "fala": "Pista dois. O galho precisa ser quebrado.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista2.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista2.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Está escrito na caixa: faça um pedido e quebre ao meio.",
+   "cena": {
+    "imagem": "imagens/02_caixa_loja.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O desejo não acontece quando você pede."
+  },
+  {
+   "fala": "Acontece quando você quebra o salgueiro.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep11_galho_quebra",
+     "volume_db": -16,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 2.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Pista três. Ela não sossega.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista3.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista3.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Depois do desejo, a Nikki não tem mais vida própria.",
+   "sons": [
+    {
+     "em": null,
+     "som": "chuva_externa",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "p3_carro",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p3_carro.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p3_carro.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 3.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/04_nikki_carro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 3.8
+  },
+  {
+   "fala": "Entra no carro dele sem ser chamada."
+  },
+  {
+   "fala": "Não aguenta três horas longe dele.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep07_respiracao_nuca",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "p3_horas",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p3_horas.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p3_horas.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 3.05,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/06_quarto_3h.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.3
+     }
+    }
+   ],
+   "pausa_antes_s": 3.4
+  },
+  {
+   "fala": "E quando ele sai de casa, você já viu o que ela faz: fica parada no meio da sala, o dia inteiro, até ele voltar.",
+   "cena": {
+    "imagem": "imagens/01_sala.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.35
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Pista quatro. Quem atrapalha, morre.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista4.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista4.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista4.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Quem fica entre ela e o Bear não sai inteiro.",
+   "sons": [
+    {
+     "em": null,
+     "som": "p4_festa",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -8.2,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p4_festa.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p4_festa.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 8.25,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/07_festa.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 8.6
+  },
+  {
+   "fala": "O amor dela não tem freio."
+  },
+  {
+   "fala": "Pista cinco. A Nikki de verdade ainda está lá.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista5.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista5.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista5.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Quando o Bear liga para desfazer o desejo, o atendente pergunta: quer falar com ela?",
+   "sons": [
+    {
+     "em": null,
+     "som": "chuva_externa",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "p5_telefone",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -16.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p5_telefone.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p5_telefone.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 16.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/05_telefone.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 16.8
+  },
+  {
+   "fala": "E, do outro lado da linha, do lado DO ATENDENTE, alguém grita."
+  },
+  {
+   "fala": "É a Nikki."
+  },
+  {
+   "fala": "A de verdade."
+  },
+  {
+   "fala": "E, uma madrugada, enquanto \"a outra\" dorme, a Nikki de verdade aparece por um minuto.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep07_respiracao_nuca",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    },
+    {
+     "em": null,
+     "som": "p5_madrugada",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -12.1,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p5_madrugada.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p5_madrugada.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 12.15,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/06_quarto_3h.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.3
+     }
+    }
+   ],
+   "pausa_antes_s": 12.5
+  },
+  {
+   "fala": "E pede para morrer."
+  },
+  {
+   "fala": "Pista seis. Ele escolheu por ela.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista6.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista6.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista6.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "O Bear pergunta se o amor dela é verdadeiro.",
+   "sons": [
+    {
+     "em": null,
+     "som": "p6_escolheu",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -8.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p6_escolheu.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p6_escolheu.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 8.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/11_maos_sofa.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 8.8
+  },
+  {
+   "fala": "E o atendente diz a frase que resume o filme: ter escolhido isso pra ela não torna menos verdadeiro."
+  },
+  {
+   "fala": "Pista sete. A pessoa que ela mais ama no mundo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "pista7.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/pista7.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/pista7.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "O pedido foi ao pé da letra.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mais do que qualquer pessoa."
+  },
+  {
+   "fala": "Mais do que a família dela.",
+   "cena": {
+    "imagem": "imagens/07_festa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mais do que ela mesma."
+  },
+  {
+   "fala": "Sete pistas.",
+   "cena": {
+    "video": "identidade/pecas/placar.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "placar.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/placar.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Quatro suspeitos.",
+   "sons": [
+    {
+     "em": null,
+     "som": "placar.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/placar.mp4.som.wav"
+    }
+   ],
+   "pausa_antes_s": 0.8,
+   "cena": {
+    "video": "identidade/pecas/placar.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   }
+  },
+  {
+   "fala": "E um deles está escondido em plena vista desde o primeiro minuto do filme.",
+   "sons": []
+  },
+  {
+   "fala": "O primeiro suspeito é o mais óbvio, e talvez seja o certo: quem realiza desejos, nas histórias, é um gênio.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria1.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/teoria1.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/teoria1.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "reais_prontos/mil_noites_0.jpg",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "em": "gênio"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Nas Mil e Uma Noites, um pescador puxa da rede um jarro de cobre lacrado.",
+   "cena": {
+    "imagem": "reais_prontos/pescador_genio_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Abre o lacre, e sai uma fumaça que vira um gigante: um jinn, preso ali havia séculos.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_mar_noite",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/15_genio_jarro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "fumaca": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os folcloristas catalogaram essa história no mundo inteiro: o espírito preso num objeto, e os desejos que ele concede.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "ATU 331 · \"O ESPÍRITO NA GARRAFA\"\nATU 750A · \"OS TRÊS DESEJOS\"",
+    "estilo": "maquina",
+    "vermelho": "ATU 331",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "E o desejo de gênio tem uma marca registrada: ele cumpre o que você disse, não o que você quis.",
+   "cena": {
+    "imagem": "reais_prontos/pescador_genio_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas a tradição do jinn é muito mais antiga e muito mais estranha do que a lâmpada do Aladim.",
+   "cena": {
+    "imagem": "reais_prontos/mil_noites_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os jinn são feitos de fogo sem fumaça.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_mar_noite",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/15_genio_jarro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "fumaca": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Têm vontade, famílias, paixões."
+  },
+  {
+   "fala": "E, na crença popular de boa parte do mundo muçulmano, a maior parte das possessões não acontece por ódio.",
+   "cena": {
+    "imagem": "reais_prontos/pescador_genio_2.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Acontece por amor: um jinn que se apaixona por uma pessoa e entra nela."
+  },
+  {
+   "fala": "Há relatos de jinn que impedem a pessoa amada de se casar, para que ela não seja de mais ninguém.",
+   "cena": {
+    "imagem": "imagens/07_festa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um objeto que guarda um ser.",
+   "cena": {
+    "video": "identidade/pecas/suspeito1.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "suspeito1.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/suspeito1.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Um desejo cumprido ao pé da letra.",
+   "sons": []
+  },
+  {
+   "fala": "Um amor que entra no corpo e elimina os rivais.",
+   "sons": []
+  },
+  {
+   "fala": "Parece perfeito.",
+   "pausa_antes_s": 1.0,
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Só que o próximo suspeito é mil anos mais velho, e explica uma coisa que o gênio não explica: por que o galho tem que ser quebrado."
+  },
+  {
+   "fala": "O segundo suspeito é o mais antigo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria2.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/teoria2.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/teoria2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Na British Library, em Londres, existe um rolo de papiro com mais de dois metros, escrito no Egito, provavelmente no século quarto."
+  },
+  {
+   "fala": "É um manual de magia."
+  },
+  {
+   "fala": "E boa parte dele é sobre uma coisa só: como obrigar alguém a te amar.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os gregos chamavam esse feitiço de agogé: o que conduz.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "AGOGÉ · \"o que conduz\"\nPapiro 121 · British Library · séc. IV",
+    "estilo": "maquina",
+    "vermelho": "AGOGÉ",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "O que arrasta.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Uma receita manda escrever nomes sagrados numa concha, com sangue de um jumento preto.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Outra manda acender uma lamparina com sete pavios, um para cada deus.",
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a vítima, diz o papiro, não vai conseguir dormir até chegar à casa de quem fez o feitiço.",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E havia as tábuas de chumbo.",
+   "cena": {
+    "imagem": "reais_prontos/defixio_1.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O nome da pessoa era riscado no metal, a tábua era dobrada, furada com pregos, e enterrada.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_martelo_prego",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 3.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/13_tabua_prego.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os gregos chamavam isso de katadesmos.",
+   "cena": {
+    "imagem": "reais_prontos/katadesmos_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os romanos, de defixio."
+  },
+  {
+   "fala": "Em português, a palavra é amarração.",
+   "cena": {
+    "imagem": "reais_prontos/defixio_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A Idade Média trocou o chumbo pelo filtro do amor."
+  },
+  {
+   "fala": "Tristão e Isolda bebem por engano a poção feita para outra noite de núpcias, e ficam presos um ao outro até a morte.",
+   "cena": {
+    "imagem": "reais_prontos/tristao_pocao_0.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E em Veneza, entre mil quinhentos e oitenta e seis e mil seiscentos e trinta, o Santo Ofício abriu mais de trezentos processos de magia.",
+   "cena": {
+    "imagem": "reais_prontos/tristao_pocao_1.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Boa parte, por feitiços de amor."
+  },
+  {
+   "fala": "Um objeto que precisa ser quebrado.",
+   "cena": {
+    "video": "identidade/pecas/suspeito2.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "suspeito2.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/suspeito2.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Uma pessoa que não dorme, não sossega, e vai até quem amarrou.",
+   "sons": []
+  },
+  {
+   "fala": "Parece perfeito também.",
+   "pausa_antes_s": 1.0,
+   "sons": [
+    {
+     "em": null,
+     "som": "chuva_externa",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/05_telefone.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Mas tem uma cena que nem o gênio nem a amarração explicam direito: o grito no fundo do telefone."
+  },
+  {
+   "fala": "E o terceiro suspeito explica."
+  },
+  {
+   "fala": "Entre mil novecentos e doze e mil novecentos e catorze, o escritor S.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria3.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/teoria3.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/teoria3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "reais_prontos/ansky_1910.jpg",
+     "zoom": [
+      1.0,
+      1.07
+     ],
+     "em": "S"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Ansky percorreu as aldeias judaicas da Volínia e da Podólia, onde hoje é a Ucrânia, recolhendo histórias."
+  },
+  {
+   "fala": "E encontrou uma coisa que, ali, era quase rotina: exorcismos de dybbuk.",
+   "cena": {
+    "imagem": "reais_prontos/dybbuk_filme_0.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O dybbuk é a alma de alguém que não descansa, e que se agarra ao corpo de um vivo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_sussurro_fantasma",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/16_noiva_dybbuk.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Daí nasceu a peça mais encenada da história do teatro ídiche: O Dibuk.",
+   "cena": {
+    "imagem": "reais_prontos/dybbuk_22.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Uma noiva, Leah, vai se casar com o homem que o pai escolheu.",
+   "cena": {
+    "imagem": "reais_prontos/dybbuk_peca_0.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O rapaz que ela amava, Khonen, morre."
+  },
+  {
+   "fala": "E, no dia do casamento, a voz que sai da boca da noiva já não é a dela.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep09_sn_sussurro_fantasma",
+     "volume_db": -19,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/16_noiva_dybbuk.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "\"Voltei para a minha noiva prometida.\""
+  },
+  {
+   "fala": "Um amor que entra no corpo de uma moça.",
+   "cena": {
+    "video": "identidade/pecas/suspeito3.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "suspeito3.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/suspeito3.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "A moça de verdade presa lá dentro, sem conseguir falar.",
+   "sons": []
+  },
+  {
+   "fala": "E uma voz que não é a dela.",
+   "sons": []
+  },
+  {
+   "fala": "E a madrugada em que a Nikki pede para morrer, falando \"dela\" como se fosse outra pessoa, é um dybbuk de manual: \"ela está dormindo; sou eu\".",
+   "pausa_antes_s": 1.0,
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Três suspeitos, e ainda falta o mais perigoso: o que o próprio diretor confessou.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O último suspeito é o que o próprio filme confessa.",
+   "sons": [
+    {
+     "em": null,
+     "som": "teoria4.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -2.05,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/teoria4.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/teoria4.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 2.1,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 2.45
+  },
+  {
+   "fala": "Em setembro de mil novecentos e dois, a revista Harper's publicou um conto de W."
+  },
+  {
+   "fala": "W."
+  },
+  {
+   "fala": "Jacobs."
+  },
+  {
+   "fala": "Um sargento volta da Índia com uma pata de macaco mumificada.",
+   "cena": {
+    "imagem": "imagens/17_pata_macaco.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um faquir pôs um feitiço nela: três desejos, para três homens."
+  },
+  {
+   "fala": "O feitiço existe para provar uma coisa: que quem mexe com o destino se arrepende."
+  },
+  {
+   "fala": "A família pede dinheiro.",
+   "cena": {
+    "imagem": "imagens/17_pata_macaco.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O dinheiro chega, como indenização pela morte do filho."
+  },
+  {
+   "fala": "E o diretor de Obsessão admite: o filme é uma releitura da Pata do Macaco.",
+   "cena": {
+    "imagem": "imagens/02_caixa_loja.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ele só trocou a pata por um salgueiro, porque a pata era conhecida demais.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O objeto que cumpre.",
+   "cena": {
+    "video": "identidade/pecas/suspeito4.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "suspeito4.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/suspeito4.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "O preço que ninguém leu."
+  },
+  {
+   "fala": "O desejo que não tem volta."
+  },
+  {
+   "fala": "Quatro suspeitos."
+  },
+  {
+   "fala": "Os quatro explicam o filme."
+  },
+  {
+   "fala": "E só um deles é a coisa dentro da Nikki."
+  },
+  {
+   "fala": "Antes de julgar, duas provas que vêm de fora do filme.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.07
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a segunda é um processo de assassinato."
+  },
+  {
+   "fala": "A primeira prova vem da medicina.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "SÍNDROME DE DE CLÉRAMBAULT\nParis · 1921 · \"erotomania\"",
+    "estilo": "maquina",
+    "vermelho": "DE CLÉRAMBAULT",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Em mil novecentos e vinte e um, o psiquiatra francês Gaëtan Gatian de Clérambault descreveu o caso de uma mulher de cinquenta e três anos, que ele chamou de Léa-Anna.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Desde mil novecentos e dezoito, ela tinha certeza de que o rei George Quinto da Inglaterra estava apaixonado por ela, e mandava sinais secretos.",
+   "cena": {
+    "imagem": "reais_prontos/george_v_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A medicina chamou isso de erotomania: a certeza de ser amado por alguém que não te ama.",
+   "cena": {
+    "imagem": "reais_prontos/george_v_2.jpg",
+    "zoom": [
+     1.0,
+     1.07
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Obsessão é a erotomania ao contrário.",
+   "cena": {
+    "imagem": "imagens/11_maos_sofa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A Nikki não acredita que é amada."
+  },
+  {
+   "fala": "Ela é obrigada a amar."
+  },
+  {
+   "fala": "Guarda isso.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A segunda prova é um processo de verdade."
+  },
+  {
+   "fala": "Henley-on-Thames, Inglaterra.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MARY BLANDY · 31 anos\nHenley-on-Thames, Inglaterra · 1751",
+    "estilo": "maquina",
+    "vermelho": "MARY BLANDY",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Mil setecentos e cinquenta e um.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Mary Blandy, trinta e um anos, se apaixona por um capitão escocês, William Cranstoun."
+  },
+  {
+   "fala": "O pai é contra."
+  },
+  {
+   "fala": "E tem razão: o capitão já é casado, escondido."
+  },
+  {
+   "fala": "Então Cranstoun manda para Mary um pó branco.",
+   "cena": {
+    "imagem": "imagens/18_po_cha.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um filtro do amor, ele diz."
+  },
+  {
+   "fala": "É só pôr na comida do pai, e o velho vai amolecer."
+  },
+  {
+   "fala": "Vai aceitar o casamento."
+  },
+  {
+   "fala": "Mary põe o pó no chá.",
+   "cena": {
+    "imagem": "imagens/18_po_cha.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Depois no mingau."
+  },
+  {
+   "fala": "O pó era arsênico."
+  },
+  {
+   "fala": "Francis Blandy morre em agosto de mil setecentos e cinquenta e um."
+  },
+  {
+   "fala": "Mary é julgada em Oxford e enforcada em seis de abril de mil setecentos e cinquenta e dois.",
+   "cena": {
+    "imagem": "reais_prontos/blandy_execucao_2.jpg",
+    "zoom": [
+     1.04,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.4
+     ],
+     [
+      0.5,
+      0.35
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Até o fim, ela jurou que acreditava estar dando ao pai um feitiço de amor.",
+   "cena": {
+    "imagem": "reais_prontos/blandy_retrato.jpg",
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um feitiço para fazer alguém amar, e quem estava em volta morreu."
+  },
+  {
+   "fala": "Guarda isso também.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A partir daqui, eu conto o final.",
+   "sons": [
+    {
+     "em": null,
+     "som": "spoiler.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -1.15,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/spoiler.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/spoiler.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 1.2,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 1.55,
+   "sem_legenda": true
+  },
+  {
+   "fala": "Se você ainda não viu o filme, essa é a hora de pausar.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "No terço final, a Sarah, amiga do Bear, confessa que gosta dele.",
+   "cena": {
+    "imagem": "imagens/04_nikki_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a Nikki mata a Sarah, ali mesmo, no carro."
+  },
+  {
+   "fala": "E diz para ele: a culpa é sua.",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_culpa",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -6.3,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_culpa.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_culpa.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 6.35,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/11_maos_sofa.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 6.7
+  },
+  {
+   "fala": "Você quis isso."
+  },
+  {
+   "fala": "Você desejou isso."
+  },
+  {
+   "fala": "O Bear volta à loja, desesperado, para desfazer o desejo.",
+   "cena": {
+    "imagem": "imagens/08_prateleira_vazia.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E o vendedor só tem duas saídas para ele:"
+  },
+  {
+   "fala": "alguém fazer um desejo contrário… ou ele morrer.",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_saidas",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -13.7,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_saidas.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_saidas.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 13.75,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/02_caixa_loja.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.45
+     }
+    }
+   ],
+   "pausa_antes_s": 14.1
+  },
+  {
+   "fala": "Ele implora ao amigo Ian que deseje que o Bear nunca tivesse desejado nada.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O Ian quebra o galho e deseja um bilhão de dólares."
+  },
+  {
+   "fala": "Então sobra só uma porta.",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_sempre",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -7.3,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_sempre.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_sempre.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 7.35,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/09_porta_banheiro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 7.7
+  },
+  {
+   "fala": "O Bear se tranca no banheiro."
+  },
+  {
+   "fala": "E toma veneno.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep07_quarto_silencio",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/10_comprimidos.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Só que, do lado de fora, a Nikki também tem um salgueiro.",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_galho",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -6.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_galho.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_galho.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 6.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/09_porta_banheiro.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 6.8
+  },
+  {
+   "fala": "Ela quebra o galho.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E deseja a mesma coisa que ele desejou."
+  },
+  {
+   "fala": "Ser a pessoa que o Bear mais ama no mundo."
+  },
+  {
+   "fala": "Agora são dois amarrados."
+  },
+  {
+   "fala": "O Bear tenta vomitar o veneno.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep07_quarto_silencio",
+     "volume_db": -20,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 6.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/10_comprimidos.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E, amarrado a ela, não consegue."
+  },
+  {
+   "fala": "Ele sai do banheiro."
+  },
+  {
+   "fala": "E morre no colo dela.",
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_abraco.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 8.25,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/11_maos_sofa.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 8.6
+  },
+  {
+   "fala": "E, no segundo em que ele morre, a Nikki para de chorar.",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_volta",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -9.2,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_volta.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_volta.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 9.25,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/11_maos_sofa.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 9.6
+  },
+  {
+   "fala": "Olha para o próprio corpo coberto de sangue."
+  },
+  {
+   "fala": "Para o Bear no colo dela…"
+  },
+  {
+   "fala": "e pergunta: o que você fez?",
+   "sons": [
+    {
+     "em": null,
+     "som": "s_oque",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -3.6,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_oque.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/s_oque.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 3.65,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/01_sala.png",
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "atmos": {
+      "poeira": 0.35
+     }
+    }
+   ],
+   "pausa_antes_s": 4.0
+  },
+  {
+   "fala": "É a Nikki de verdade."
+  },
+  {
+   "fala": "De volta."
+  },
+  {
+   "fala": "Coberta de sangue."
+  },
+  {
+   "fala": "O desejo só acaba com a morte de quem desejou.",
+   "cena": {
+    "imagem": "imagens/09_porta_banheiro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E essa é a prova decisiva."
+  },
+  {
+   "fala": "E o diretor filmou um final diferente, inspirado em Romeu e Julieta, em que ela também morria.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "O FINAL QUE NÃO FOI\nRomeu e Julieta · filmado e descartado",
+    "estilo": "maquina",
+    "vermelho": "descartado",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ele descartou.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "No filme, a Nikki fica viva, livre, e sozinha com tudo o que fez.",
+   "cena": {
+    "imagem": "imagens/08_prateleira_vazia.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Agora, com tudo na mesa, o julgamento.",
+   "sons": [
+    {
+     "em": null,
+     "som": "placar.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -0.95,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/placar.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/placar.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 1.0,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 1.35
+  },
+  {
+   "fala": "Um suspeito por vez."
+  },
+  {
+   "fala": "E o primeiro a cair é justamente o que o filme confessou."
+  },
+  {
+   "fala": "A pata do macaco é o avô do filme.",
+   "cena": {
+    "imagem": "imagens/17_pata_macaco.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas, na pata, o amaldiçoado é o objeto."
+  },
+  {
+   "fala": "E o diretor disse o contrário: o salgueiro não é amaldiçoado.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Se você escolher bem as palavras, nada de ruim acontece."
+  },
+  {
+   "fala": "O veneno não está no galho.",
+   "cena": {
+    "imagem": "imagens/10_comprimidos.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Está no que o Bear pediu."
+  },
+  {
+   "fala": "A pata do macaco explica de onde o filme veio.",
+   "cena": {
+    "video": "identidade/pecas/checklist4.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist4.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/checklist4.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Não explica o que entrou na Nikki.",
+   "sons": []
+  },
+  {
+   "fala": "O gênio parecia perfeito.",
+   "pausa_antes_s": 1.2,
+   "cena": {
+    "imagem": "imagens/15_genio_jarro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "fumaca": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.6
+   }
+  },
+  {
+   "fala": "Mas todo gênio tem uma coisa que a coisa dentro da Nikki não tem: vontade própria."
+  },
+  {
+   "fala": "O jinn apaixonado quer a pessoa para ele.",
+   "cena": {
+    "imagem": "reais_prontos/mil_noites_0.jpg",
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A coisa na Nikki não quer nada para si.",
+   "cena": {
+    "imagem": "imagens/11_maos_sofa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela só existe para amar o Bear."
+  },
+  {
+   "fala": "E o diretor foi direto: não é possessão.",
+   "cena": {
+    "video": "identidade/pecas/checklist1.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist1.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/checklist1.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Não tem ninguém de fora morando ali dentro.",
+   "sons": []
+  },
+  {
+   "fala": "Sobram dois.",
+   "pausa_antes_s": 5.65,
+   "sons": [
+    {
+     "em": null,
+     "som": "placar_d2.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -4.45,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/placar_d2.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/placar_d2.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 4.5,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ]
+  },
+  {
+   "fala": "O dybbuk e a amarração explicam quase as mesmas pistas.",
+   "cena": {
+    "imagem": "imagens/16_noiva_dybbuk.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A moça presa dentro de si."
+  },
+  {
+   "fala": "O amor que não tem freio."
+  },
+  {
+   "fala": "Os rivais que caem."
+  },
+  {
+   "fala": "O que separa os dois é uma pergunta: quem está apaixonado?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.48
+     ],
+     [
+      0.56,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "No dybbuk, quem ama é o morto.",
+   "cena": {
+    "imagem": "imagens/16_noiva_dybbuk.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O amor é dele, e ele entra na moça para continuar amando."
+  },
+  {
+   "fala": "Na amarração, quem ama é quem amarrou.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep12_martelo_prego",
+     "volume_db": -17,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 3.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/13_tabua_prego.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A vítima não ama nada."
+  },
+  {
+   "fala": "Ela é obrigada."
+  },
+  {
+   "fala": "Lembra da erotomania?",
+   "cena": {
+    "imagem": "reais_prontos/george_v_2.jpg",
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A certeza de ser amado, ao contrário."
+  },
+  {
+   "fala": "A Nikki não sente amor.",
+   "cena": {
+    "imagem": "imagens/01_sala.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.35
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Sente a ordem de amar."
+  },
+  {
+   "fala": "E lembra da frase do telefone: ter escolhido isso pra ela não torna menos verdadeiro.",
+   "cena": {
+    "imagem": "imagens/05_telefone.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a \"outra\" da madrugada, a que dorme enquanto a Nikki pede para morrer?",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Não é ninguém de fora."
+  },
+  {
+   "fala": "Não tem nome, não tem passado, não ama mais nada."
+  },
+  {
+   "fala": "É o próprio desejo, morando nela."
+  },
+  {
+   "fala": "E a prova final é o fim do filme.",
+   "cena": {
+    "imagem": "imagens/11_maos_sofa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Quando o Bear morre, a Nikki volta."
+  },
+  {
+   "fala": "Um dybbuk não sairia porque um vivo morreu.",
+   "cena": {
+    "video": "identidade/pecas/checklist3.mp4",
+    "zoom": [
+     1.0,
+     1.0
+    ],
+    "tipo_cartao": true,
+    "congelar": true,
+    "sem_look": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.4
+   },
+   "sons": [
+    {
+     "em": null,
+     "som": "checklist3.mp4.som",
+     "volume_db": -10,
+     "depois": false,
+     "atraso": 0.0,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/checklist3.mp4.som.wav"
+    }
+   ]
+  },
+  {
+   "fala": "Ele sairia com exorcismo.",
+   "sons": []
+  },
+  {
+   "fala": "Mas uma amarração é presa em quem amarrou.",
+   "sons": []
+  },
+  {
+   "fala": "Enquanto ele vive, o nó está apertado.",
+   "sons": []
+  },
+  {
+   "fala": "Quando ele morre, o nó se desfaz."
+  },
+  {
+   "fala": "O meu veredito: aquilo dentro da Nikki é uma amarração.",
+   "sons": [
+    {
+     "em": null,
+     "som": "veredito.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -5.95,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/veredito.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/veredito.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 6.0,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "../../painel/cenarios/abrigo_16x9.png",
+     "vigia": true,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco": [
+      [
+       0.55,
+       0.5
+      ],
+      [
+       0.57,
+       0.48
+      ]
+     ],
+     "em": "amarração"
+    }
+   ],
+   "pausa_antes_s": 6.35
+  },
+  {
+   "fala": "E, se você acha que amarração é coisa leve, simpatia de amor… espera.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.08
+    ],
+    "foco": [
+     [
+      0.55,
+      0.48
+     ],
+     [
+      0.56,
+      0.45
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Porque, dos quatro suspeitos, esse é o pior."
+  },
+  {
+   "fala": "E eu vou te mostrar por quê."
+  },
+  {
+   "fala": "Pensa nos outros três.",
+   "sons": [
+    {
+     "em": null,
+     "som": "placar_d3.mp4.som",
+     "volume_db": -9,
+     "depois": false,
+     "atraso": -4.45,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/placar_d3.mp4.som.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "identidade/pecas/placar_d3.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "tipo_cartao": true,
+     "congelar": true,
+     "sem_look": true,
+     "antecipar": 4.5,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    }
+   ],
+   "pausa_antes_s": 4.85
+  },
+  {
+   "fala": "O gênio quer alguma coisa.",
+   "cena": {
+    "imagem": "imagens/15_genio_jarro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "fumaca": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Com quem quer alguma coisa, dá pra negociar."
+  },
+  {
+   "fala": "O dybbuk é um morto dentro de você.",
+   "cena": {
+    "imagem": "imagens/16_noiva_dybbuk.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.4
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas existe exorcismo: um rabino, um ritual, e ele sai."
+  },
+  {
+   "fala": "A pata do macaco é um objeto.",
+   "cena": {
+    "imagem": "imagens/17_pata_macaco.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Dá pra jogar fora."
+  },
+  {
+   "fala": "Dá pra queimar."
+  },
+  {
+   "fala": "A amarração não quer nada.",
+   "cena": {
+    "imagem": "imagens/13_tabua_prego.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Não tem exorcismo."
+  },
+  {
+   "fala": "E não tem objeto pra jogar fora."
+  },
+  {
+   "fala": "Ela é presa em uma pessoa viva.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Quem amarrou."
+  },
+  {
+   "fala": "E enquanto essa pessoa respirar… o nó continua apertado."
+  },
+  {
+   "fala": "No Museu do Louvre, em Paris, tem uma peça que quase ninguém para pra ver.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "MUSEU DO LOUVRE · E 27145\nEgito romano · séc. III–IV",
+    "estilo": "maquina",
+    "vermelho": "E 27145",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "É uma boneca de barro, do tamanho de um dedo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/14_boneca_pote.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Uma mulher nua, ajoelhada, com as mãos e os pés amarrados."
+  },
+  {
+   "fala": "E furada com agulhas de metal."
+  },
+  {
+   "fala": "Ela foi achada dentro de um pote de barro, no Egito, junto com uma tábua de chumbo.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep08_vela",
+     "volume_db": -18,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 4.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/14_boneca_pote.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E a tábua diz quem fez aquilo, e pra quem.",
+   "cena": {
+    "imagem": "reais_prontos/defixio_1.jpg",
+    "zoom": [
+     1.04,
+     1.12
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Um homem chamado Sarapammon."
+  },
+  {
+   "fala": "E uma mulher chamada Ptolemais."
+  },
+  {
+   "fala": "Os papiros de magia trazem a receita de uma boneca assim.",
+   "cena": {
+    "imagem": "reais_prontos/papiro_magico_0.jpg",
+    "zoom": [
+     1.04,
+     1.12
+    ],
+    "foco": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.66
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "São treze agulhas.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "TREZE AGULHAS\ncérebro · olhos · ouvidos · boca\nentranhas · mãos · sexo · pés",
+    "estilo": "maquina",
+    "vermelho": "TREZE AGULHAS",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Uma no cérebro.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Duas nos olhos.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Duas nos ouvidos.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Uma na boca.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Nas entranhas.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Nas mãos.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "No sexo.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Na sola dos pés.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Para ela não ver mais ninguém.",
+   "cena": {
+    "imagem": "imagens/14_boneca_pote.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Não ouvir mais ninguém."
+  },
+  {
+   "fala": "Não falar de mais ninguém."
+  },
+  {
+   "fala": "Não ir a lugar nenhum… a não ser até ele."
+  },
+  {
+   "fala": "E o texto da tábua não pede amor.",
+   "cena": {
+    "imagem": "imagens/13_tabua_prego.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Dá ordens."
+  },
+  {
+   "fala": "Ele chama os espíritos dos mortos.",
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Os meninos e as meninas que morreram antes do tempo."
+  },
+  {
+   "fala": "E manda que eles vão até ela."
+  },
+  {
+   "fala": "Que ela não coma.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "QUE ELA NÃO COMA. NÃO BEBA. NÃO DURMA.\nNÃO SAIA DE CASA.\nATÉ QUE ELA VENHA ATÉ MIM.",
+    "estilo": "maquina",
+    "vermelho": "ATÉ QUE ELA VENHA ATÉ MIM.",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não beba.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não durma.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não saia de casa.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não fique com nenhum outro homem.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Até que ela venha até mim.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "E se ela resistir: arrastem ela.",
+   "cena": {
+    "imagem": "reais_prontos/katadesmos_0.jpg",
+    "zoom": [
+     1.06,
+     1.14
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Pelos cabelos."
+  },
+  {
+   "fala": "Pelas entranhas."
+  },
+  {
+   "fala": "E a última ordem é a que gela.",
+   "cena": {
+    "tipo": "texto",
+    "texto": "\"…POR TODA A DURAÇÃO\nDA VIDA DELE.\"",
+    "estilo": "maquina",
+    "vermelho": "DA VIDA DELE.",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "Ela tem que ser dele… por toda a duração da vida dele.",
+   "sem_legenda": true
+  },
+  {
+   "fala": "Não da vida dela.",
+   "pausa_antes_s": 1.2
+  },
+  {
+   "fala": "Da vida dele."
+  },
+  {
+   "fala": "Mil e setecentos anos antes do filme… a regra já era essa.",
+   "cena": {
+    "imagem": "imagens/14_boneca_pote.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.6
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O feitiço só termina quando quem amarrou morre."
+  },
+  {
+   "fala": "Exatamente o que o homem do telefone disse ao Bear.",
+   "sons": [
+    {
+     "em": null,
+     "som": "p1_morrer",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -4.4,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p1_morrer.wav"
+    }
+   ],
+   "cenas": [
+    {
+     "video": "filmes_prontos/p1_morrer.mp4",
+     "zoom": [
+      1.0,
+      1.0
+     ],
+     "congelar": true,
+     "antecipar": 4.45,
+     "antecipar_fixo": true,
+     "entrada": "corte"
+    },
+    {
+     "imagem": "imagens/05_telefone.png",
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    }
+   ],
+   "pausa_antes_s": 4.8
+  },
+  {
+   "fala": "E agora você entende o que tem de pior nisso.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A pessoa amarrada não desaparece.",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela continua lá dentro."
+  },
+  {
+   "fala": "Acordada."
+  },
+  {
+   "fala": "Vendo o próprio corpo beijar quem ela nunca amou.",
+   "cena": {
+    "imagem": "imagens/07_festa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Vendo as próprias mãos matarem uma amiga.",
+   "cena": {
+    "imagem": "imagens/04_nikki_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E sem poder fazer nada."
+  },
+  {
+   "fala": "A não ser pedir, de madrugada, pra alguém acabar com aquilo.",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O gênio te dá o que você pediu.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O dybbuk toma o seu corpo."
+  },
+  {
+   "fala": "A pata cobra um preço."
+  },
+  {
+   "fala": "A amarração faz uma coisa pior que as três: ela te deixa inteira por dentro… e tira de você a única coisa que era só sua.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.02,
+     1.09
+    ],
+    "foco": [
+     [
+      0.55,
+      0.48
+     ],
+     [
+      0.56,
+      0.44
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Quem você ama."
+  },
+  {
+   "fala": "E repara no que a coisa dentro da Nikki fez no fim.",
+   "cena": {
+    "imagem": "imagens/09_porta_banheiro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "A primeira coisa que ela fez com a liberdade que tinha… foi amarrar ele de volta."
+  },
+  {
+   "fala": "Uma amarração não termina.",
+   "sons": [
+    {
+     "em": null,
+     "som": "ep06_riacho",
+     "volume_db": -21,
+     "depois": false,
+     "atraso": 0.0,
+     "ate": 7.0,
+     "saida": 1.2,
+     "entrada": 0.6,
+     "_il": true
+    }
+   ],
+   "cena": {
+    "imagem": "imagens/19_no_salgueiro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela se espalha."
+  },
+  {
+   "fala": "E o Bear comprou isso por menos de dez dólares, numa lojinha de cristais.",
+   "cena": {
+    "imagem": "imagens/02_caixa_loja.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prova um. Ela tem regras",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 1\nELA TEM REGRAS",
+    "estilo": "maquina",
+    "vermelho": "PROVA 1",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "os papiros são receitas, com material, hora e palavra certa, igual à caixa do salgueiro.",
+   "cena": {
+    "imagem": "reais_prontos/papiro_magico_0.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prova dois. O galho precisa ser quebrado",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 2\nO GALHO PRECISA SER QUEBRADO",
+    "estilo": "maquina",
+    "vermelho": "PROVA 2",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "a tábua de chumbo era dobrada e furada.",
+   "cena": {
+    "imagem": "imagens/13_tabua_prego.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O feitiço só pega quando se faz violência a um objeto."
+  },
+  {
+   "fala": "Prova três. Ela não sossega",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 3\nELA NÃO SOSSEGA",
+    "estilo": "maquina",
+    "vermelho": "PROVA 3",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "é a fórmula de dezesseis séculos atrás: não dorme até chegar à casa de quem amarrou.",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prova quatro. Quem atrapalha, morre",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 4\nQUEM ATRAPALHA, MORRE",
+    "estilo": "maquina",
+    "vermelho": "PROVA 4",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "como na casa de Mary Blandy, o feitiço de amor mata quem está em volta.",
+   "cena": {
+    "imagem": "reais_prontos/blandy_execucao_2.jpg",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prova cinco. A Nikki de verdade está lá dentro",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 5\nA NIKKI DE VERDADE ESTÁ LÁ DENTRO",
+    "estilo": "maquina",
+    "vermelho": "PROVA 5",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "a amarração não troca a pessoa.",
+   "cena": {
+    "imagem": "imagens/05_telefone.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prende a pessoa dentro de si mesma.",
+   "cena": {
+    "imagem": "imagens/11_maos_sofa.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ela grita no telefone e, de madrugada, pede para morrer."
+  },
+  {
+   "fala": "Prova seis. \"Ter escolhido isso pra ela\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 6\n\"TER ESCOLHIDO ISSO PRA ELA\"",
+    "estilo": "maquina",
+    "vermelho": "PROVA 6",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "é a definição que os estudiosos dão aos papiros, obrigar alguém contra a própria vontade.",
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Prova sete. \"A pessoa que ela mais ama no mundo\"",
+   "cena": {
+    "tipo": "texto",
+    "texto": "PROVA 7\n\"A PESSOA QUE ELA MAIS AMA NO MUNDO\"",
+    "estilo": "maquina",
+    "vermelho": "PROVA 7",
+    "cps": 40,
+    "falada": true,
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   },
+   "sem_legenda": true
+  },
+  {
+   "fala": "a magia faz exatamente o que se pede.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O problema é quem pede."
+  },
+  {
+   "fala": "E tem uma última coisa.",
+   "cena": {
+    "imagem": "reais_prontos/salgueiro_gravura_0.jpg",
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Por que um salgueiro?"
+  },
+  {
+   "fala": "O diretor diz que inventou o objeto.",
+   "cena": {
+    "imagem": "imagens/02_caixa_loja.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.45
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Mas escolheu, talvez sem saber, a árvore mais ligada a amarrações no folclore europeu."
+  },
+  {
+   "fala": "Num museu da Cornualha, na Inglaterra, existe um galho de salgueiro cheio de nós, que veio de Tavistock.",
+   "cena": {
+    "imagem": "imagens/19_no_salgueiro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "neblina": 0.5
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "No oeste da Inglaterra, quem sofria de amor ia até um salgueiro na beira do rio, dava um nó num galho, e recitava uma rima de amor."
+  },
+  {
+   "fala": "O objeto do filme existe.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "É um galho de salgueiro que guarda um desejo de amor."
+  },
+  {
+   "fala": "A diferença é que, no filme, o galho não é amarrado.",
+   "cena": {
+    "imagem": "imagens/03_galho_carro.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "É quebrado."
+  },
+  {
+   "fala": "Obsessão é a amarração vista de dentro.",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Por dezesseis séculos, as receitas falaram de quem amarra.",
+   "cena": {
+    "imagem": "imagens/12_mago_lamparina.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "vela": 0.7
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "O filme é o primeiro a mostrar quem é amarrada.",
+   "cena": {
+    "imagem": "imagens/01_sala.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.35
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E o que ele mostra é que não existe amor nenhum ali dentro."
+  },
+  {
+   "fala": "Existe só uma pessoa presa, gritando no fundo da linha.",
+   "cena": {
+    "imagem": "imagens/05_telefone.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E pedindo, de madrugada, para alguém acabar com aquilo.",
+   "cena": {
+    "imagem": "imagens/06_quarto_3h.png",
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "atmos": {
+     "poeira": 0.3
+    },
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "E você, concordou com o julgamento?",
+   "cena": {
+    "imagem": "../../painel/cenarios/abrigo_16x9.png",
+    "vigia": true,
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "foco": [
+     [
+      0.55,
+      0.5
+     ],
+     [
+      0.57,
+      0.48
+     ]
+    ],
+    "entrada": "fundir",
+    "duracao_entrada": 0.6,
+    "antecipar": 0.25
+   }
+  },
+  {
+   "fala": "Ou salvaria outro suspeito?"
+  },
+  {
+   "fala": "Me diz nos comentários, e me diz que filme eu abro no próximo arquivo."
+  }
+ ]
+}
