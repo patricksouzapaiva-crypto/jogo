@@ -197,12 +197,18 @@ alguém fazer um desejo contrário… ou ele morrer.
 Ele implora ao amigo Ian que deseje que o Bear nunca tivesse desejado nada. O Ian quebra o galho e deseja um bilhão de dólares.
 `[CENA 1:39:05–1:39:12 — "A gente vai ficar junto pra sempre e sempre, e sempre, e sempre." 🔊]`
 Então sobra só uma porta.
-`[CENA 1:43:20–1:44:05 — a Nikki sorrindo; o abraço (sem o tiro)]`
-O Bear abraça a Nikki uma última vez. E se mata.
-`[CENA 1:44:56–1:45:20 — a Nikki para de chorar, solta a arma, olha em volta 🔊]`
-E, no segundo em que ele morre, a Nikki para de chorar. Solta a arma. Olha para o próprio corpo coberto de sangue, para o Bear no chão…
+O Bear se tranca no banheiro. E toma veneno.
+`[CENA 1:42:35–1:42:41 — a melodia da caixa e o estalo do galho 🔊]`
+Só que, do lado de fora, a Nikki também tem um salgueiro.
+Ela quebra o galho. E deseja a mesma coisa que ele desejou. Ser a pessoa que o Bear mais ama no mundo.
+Agora são dois amarrados.
+O Bear tenta vomitar o veneno. E, amarrado a ela, não consegue.
+`[CENA 1:43:20–1:44:05 — a Nikki sorrindo; o abraço]`
+Ele sai do banheiro. E morre no colo dela.
+`[CENA 1:44:56–1:45:20 — a Nikki para de chorar, olha em volta 🔊]`
+E, no segundo em que ele morre, a Nikki para de chorar. Olha para o próprio corpo coberto de sangue. Para o Bear no colo dela…
 `[CENA 1:45:56 — "O que você fez?" 🔊]`
-e pergunta: o que você fez? É a Nikki de verdade. De volta. Coberta de sangue, num quarto que ela não reconhece.
+e pergunta: o que você fez? É a Nikki de verdade. De volta. Coberta de sangue.
 O desejo só acaba com a morte de quem desejou. E essa é a prova decisiva.
 `FICHA: O FINAL QUE NÃO FOI · Romeu e Julieta · filmado e descartado pelo diretor`
 E o diretor filmou um final diferente, inspirado em Romeu e Julieta, em que ela também morria. Ele descartou. No filme, a Nikki fica viva, livre, e sozinha com tudo o que fez.
@@ -293,6 +299,8 @@ E sem poder fazer nada. A não ser pedir, de madrugada, pra alguém acabar com a
 O gênio te dá o que você pediu. O dybbuk toma o seu corpo. A pata cobra um preço.
 A amarração faz uma coisa pior que as três: ela te deixa inteira por dentro… e tira de você a única coisa que era só sua.
 Quem você ama.
+E repara no que a coisa dentro da Nikki fez no fim. A primeira coisa que ela fez com a liberdade que tinha… foi amarrar ele de volta.
+Uma amarração não termina. Ela se espalha.
 `[PEÇA: o selo de cera esfria; o frasco da AMARRAÇÃO fica sozinho na prateleira]`
 E o Bear comprou isso por menos de dez dólares, numa lojinha de cristais.
 
