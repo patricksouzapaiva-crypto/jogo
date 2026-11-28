@@ -1582,6 +1582,8 @@ def gerar(caminho_roteiro, saida, rascunho=False, so_audio=None, sem_voz=False):
     (tmp / "linha.json").write_text(json.dumps(D, ensure_ascii=False))
     if os.environ.get("SO_LINHA"):   # 24/11: só a linha do tempo final (auditoria imagem × fala, sem renderizar)
         D["_palavras"] = [(w, round(a, 2), round(b, 2)) for w, (a, b) in zip(rel.palavras, rel.t)]
+        D["_efeitos"] = plano.get("efeitos", []) if roteiro.get("modo") == "cenas" else []   # 28/11: auditar som × imagem
+        D["_inicio_voz"] = roteiro["_inicio_voz"]
         Path(os.environ["SO_LINHA"]).write_text(json.dumps(D, ensure_ascii=False)); return
     if so_audio:  # reaproveita a imagem de um vídeo já pronto e refaz só a mixagem
         print("3/5 quadros: reaproveitando", so_audio)
