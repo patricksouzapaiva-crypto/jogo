@@ -1277,6 +1277,16 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
         ent_s = e.get("entrada", mix.get("entrada_efeitos", 0))  # subida suave do efeito (s): sem estalo de susto
         if ent_s:
             extra += f"afade=t=in:d={ent_s},"
+        if "areverse" in extra:
+            # 28/11 (Cinema #2, rascunhos 1 e 2: "o áudio do filme é outro"): dentro do filtro grande, o areverse estraga os
+            # tempos e o adelay deixa de acolchoar — a trilha de EFEITOS inteira adiantava o atraso desse efeito (15 s: o
+            # som do filme tocava antes da cena dele). O efeito com "reverso"/"saida" é processado à parte, num arquivo
+            # que começa em zero, e só o adelay fica no filtro.
+            pre = Path(str(saida) + f".fx{n}.wav")
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(arq), "-af",
+                            f"aresample=48000,aformat=channel_layouts=stereo,{extra.rstrip(',')}", str(pre)], check=True)
+            ent[-1] = str(pre)
+            extra = ""
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,{extra}volume={e['volume_db'] + mix['efeitos_ganho_db']}dB,"
                  f"adelay={max(0, int(e['t'] * 1000))}:all=1[e{n}]")
         efs.append(f"[e{n}]")
@@ -1293,6 +1303,8 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
     f.append(f"[voz][camaA][fxA]amix=inputs=3:normalize=0:duration=first,atrim=0:{duracao:.3f}[mix]")
     bruto = str(saida) + ".bruto.wav"
     stem = {kk: str(saida) + f".{kk}.wav" for kk in ("voz", "fundo", "efeitos")}
+    if os.environ.get("DEPURAR_FILTRO"):   # 28/11: guarda as entradas e o filtro da mixagem (auditar tempos)
+        Path(os.environ["DEPURAR_FILTRO"]).write_text(json.dumps({"ent": [str(x) for x in ent], "filtro": f}, ensure_ascii=False, indent=0))
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ent, "-filter_complex", ";".join(f),
                     "-map", "[mix]", "-f", "null", "-",
                     "-map", "[vozstem]", stem["voz"], "-map", "[camaB]", stem["fundo"], "-map", "[fxB]", stem["efeitos"]],
