@@ -127,7 +127,9 @@
      "atmos": {
       "poeira": 0.35
      },
-     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
+     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 14.21
@@ -216,7 +218,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/09_porta_banheiro_1ffea5e64f_6.5.mp4"
+     "video": "camera3d/09_porta_banheiro_1ffea5e64f_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 6.29
@@ -262,7 +266,9 @@
       1.0
      ],
      "em": "morre",
-     "video": "camera3d/04_nikki_carro_cbd9e7bf7a_6.5.mp4"
+     "video": "camera3d/04_nikki_carro_cbd9e7bf7a_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 1.4
@@ -299,7 +305,9 @@
      "atmos": {
       "poeira": 0.45
      },
-     "video": "camera3d/02_caixa_loja_ea97c01ab9_8.6.mp4"
+     "video": "camera3d/02_caixa_loja_ea97c01ab9_8.6.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 7.2
@@ -484,7 +492,9 @@
        0.48
       ]
      ],
-     "em": "Vigia"
+     "em": "Vigia",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 5.95
@@ -571,7 +581,9 @@
      "atmos": {
       "poeira": 0.45
      },
-     "video": "camera3d/02_caixa_loja_20d8af50e6_7.5.mp4"
+     "video": "camera3d/02_caixa_loja_20d8af50e6_7.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 6.8
@@ -619,7 +631,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/09_porta_banheiro_4f101fe574_7.0.mp4"
+     "video": "camera3d/09_porta_banheiro_4f101fe574_7.0.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 6.48
@@ -769,7 +783,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/04_nikki_carro_a6da5e237d_7.9.mp4"
+     "video": "camera3d/04_nikki_carro_a6da5e237d_7.9.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 3.79
@@ -820,7 +836,9 @@
      "atmos": {
       "poeira": 0.3
      },
-     "video": "camera3d/06_quarto_3h_56f72d030b_6.5.mp4"
+     "video": "camera3d/06_quarto_3h_56f72d030b_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 4.32
@@ -900,7 +918,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/07_festa_c5acb8700f_8.1.mp4"
+     "video": "camera3d/07_festa_c5acb8700f_8.1.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 10.51
@@ -978,7 +998,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/05_telefone_20e7fdfd5b_14.4.mp4"
+     "video": "camera3d/05_telefone_20e7fdfd5b_14.4.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 17.98
@@ -1035,7 +1057,9 @@
      "atmos": {
       "poeira": 0.3
      },
-     "video": "camera3d/06_quarto_3h_adedaeb777_12.1.mp4"
+     "video": "camera3d/06_quarto_3h_adedaeb777_12.1.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 13.31
@@ -1102,7 +1126,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/11_maos_sofa_fc2294bded_13.2.mp4"
+     "video": "camera3d/11_maos_sofa_fc2294bded_13.2.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 11.09
@@ -1260,7 +1286,9 @@
       1.0,
       1.06
      ],
-     "em": "quem"
+     "em": "quem",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 2.45
@@ -1802,7 +1830,9 @@
       1.0,
       1.07
      ],
-     "em": "S"
+     "em": "S",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 2.45
@@ -2475,7 +2505,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/11_maos_sofa_13534a68d5_8.3.mp4"
+     "video": "camera3d/11_maos_sofa_13534a68d5_8.3.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 8.07
@@ -2537,7 +2569,9 @@
      "atmos": {
       "poeira": 0.45
      },
-     "video": "camera3d/02_caixa_loja_a894084294_6.5.mp4"
+     "video": "camera3d/02_caixa_loja_a894084294_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 14.87
@@ -2587,7 +2621,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/09_porta_banheiro_e6893fc75d_6.5.mp4"
+     "video": "camera3d/09_porta_banheiro_e6893fc75d_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 7.7
@@ -2650,7 +2686,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/09_porta_banheiro_44059b7f59_6.5.mp4"
+     "video": "camera3d/09_porta_banheiro_44059b7f59_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 6.8
@@ -2728,7 +2766,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/11_maos_sofa_3aedd1d757_6.5.mp4"
+     "video": "camera3d/11_maos_sofa_3aedd1d757_6.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 8.6
@@ -2762,7 +2802,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/11_maos_sofa_2c34c0dfcd_11.2.mp4"
+     "video": "camera3d/11_maos_sofa_2c34c0dfcd_11.2.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 9.6
@@ -2805,7 +2847,9 @@
      "atmos": {
       "poeira": 0.35
      },
-     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
+     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 3.5
@@ -3371,7 +3415,9 @@
        0.48
       ]
      ],
-     "em": "amarração"
+     "em": "amarração",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 7.35
@@ -3899,7 +3945,9 @@
       1.0,
       1.0
      ],
-     "video": "camera3d/05_telefone_5ec0ca7a48_6.8.mp4"
+     "video": "camera3d/05_telefone_5ec0ca7a48_6.8.mp4",
+     "entrada": "fundir",
+     "duracao_entrada": 1.0
     }
    ],
    "pausa_antes_s": 6.48
