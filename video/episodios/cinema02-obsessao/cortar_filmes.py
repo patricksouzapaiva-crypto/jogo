@@ -23,7 +23,7 @@ CROP = "crop=1620:1080:150:0"          # o filme vem com faixas pretas dos lados
 
 # nome: (início, fim, som, luz) em segundos do filme
 TRECHOS = {
-    "g_sorriso":    (6200.0, 6204.0, False, 1.2),  # 1:43:20 a Nikki ensanguentada, sorrindo (abre o vídeo, em silêncio)
+    "g_sorriso":    (6200.0, 6204.0, True, 1.2),   # 1:43:20 a Nikki ensanguentada, sorrindo (abre o vídeo; 28/11: com o som da cena, nunca mudo)
     "g_sala":       (3895.0, 3904.0, True, 1.0),   # 1:04:55 a Nikki de pé no meio da sala, molhada; "Cacete!"
     "g_espera":     (3921.6, 3926.0, True, 1.0),   # 1:05:21 "Eu só estava esperando você chegar."
     "g_desejo":     (1236.0, 1242.6, True, 1.4),   # 0:20:36 "Desejo ser a pessoa que Nikki Freeman mais ama no mundo."
@@ -44,6 +44,7 @@ TRECHOS = {
     "s_oque":       (6355.4, 6358.8, True, 1.3),   # 1:45:55 "O que você fez?"
 }
 FADE = 0.35
+CAUDA = 0.5    # 28/11 (rascunho 1: "começa no meio da palavra"): o trecho segue 0,5 s depois da última fala
 
 
 def fonte(a):
@@ -76,7 +77,7 @@ info = json.loads(arq_info.read_text()) if arq_info.exists() else {}
 fw, fh = 1440, 960; fx, fy = (1920 - fw) // 2, 80
 for nome in sys.argv[1:] or list(TRECHOS):
     a, b, som, luz = TRECHOS[nome]
-    src, k0 = fonte(a); off = a - k0; d = b - a
+    src, k0 = fonte(a); off = a - k0; d = b - a + (CAUDA if som else 0)
     cor = f"eq=gamma={1.08 * luz:.2f}:brightness={0.012 * luz:.3f}:saturation=0.88:contrast=1.04,noise=alls=5:allf=t"
     falas = [(max(0, x - a), min(d, y - a), t) for x, y, t in LEG if min(y, b) - max(x, a) > 0.6 * (y - x)] if som else []
     txt = "".join(f",drawtext=fontfile={FONTE_FALA}:text='{esc(t)}':fontsize=40:fontcolor=0xffd75e:box=1:boxcolor=0x000000@0.62"
@@ -92,8 +93,9 @@ for nome in sys.argv[1:] or list(TRECHOS):
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src),
                     "-filter_complex", fc.replace("[0:v]", "[0:v:0]"), "-map", "[v]", "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "19",
                     "-preset", "medium", str(saida)], check=True)
-    if som:   # a dublagem (faixa 1 do trecho = português), no canal central, com entrada e saída suaves
-        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src), "-map", "0:a:0",
+    if som:   # 28/11: o ÁUDIO ORIGINAL (inglês, faixa 2) — a legenda pt é tradução dele; a dublagem dizia outra coisa,
+              # em outro tempo (rascunho 1: "as cenas não coincidem com a fala", corte no meio da palavra)
+        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src), "-map", "0:a:1",
                         "-af", f"pan=stereo|FL=FC+0.45*FL+0.3*BL+0.3*SL|FR=FC+0.45*FR+0.3*BR+0.3*SR,loudnorm=I=-18:TP=-2:LRA=11,"
                         f"afade=t=in:d=0.3,afade=t=out:st={d - 0.4:.2f}:d=0.4", "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2",
                         str(SAI / f"{nome}.wav")], check=True)
