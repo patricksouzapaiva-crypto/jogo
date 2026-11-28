@@ -93,7 +93,7 @@ def som_ilustr(i, c):
         return
     _SOM_USO[m.group(1)] = _SOM_USO.get(m.group(1), 0) + 1
     som, db, ate = SOM_IL[m.group(1)]
-    fx(i, c.get("em"), som, db, ate=ate, saida=1.2, entrada=0.6, _il=True)
+    fx(i, c.get("em"), som, db, ate=ate, saida=2.0, entrada=1.2, _il=True)   # 28/11: som de ambiente entra e sai devagar
 
 
 def C(i, *cenas, com_vigia=False):
@@ -192,6 +192,7 @@ def peca(i, arq, sobra=1.0, db=-9):
     GOLPES.append(i)
 
 
+FUSAO = 1.0   # 28/11: toda troca de cena é uma fusão de 1 s (filme: troca quase imperceptível)
 FALAS_FILME = []
 
 
@@ -210,7 +211,9 @@ def montar_antes():
         t = total
         novas = []
         for cena, d, som, db, furo, sobra in itens:
-            c = dict(cena); c.update({"antecipar": round(t, 2), "antecipar_fixo": True, "entrada": "corte"})
+            # 28/11 (rascunho 2: "a troca de cena tá muito brusca… trocas suaves e naturais, quase imperceptíveis"):
+            # o trecho do filme entra por FUSÃO (era corte seco + escurecer até o preto)
+            c = dict(cena); c.update({"antecipar": round(t, 2), "antecipar_fixo": True, "entrada": "fundir", "duracao_entrada": FUSAO})
             novas.append(c)
             if som:
                 fx(i, None, Path(som).stem, db, atraso=round(-t + 0.05, 2), arquivo=som)
@@ -331,7 +334,7 @@ def som_ilustr(i, c):   # (substitui a do #1: aqui o nome vem da própria cena)
         return
     _SOM_USO[nome] = _SOM_USO.get(nome, 0) + 1
     som, db, ate = SOM_IL[nome]
-    fx(i, c.get("em"), som, db, ate=ate, saida=1.2, entrada=0.6, _il=True)
+    fx(i, c.get("em"), som, db, ate=ate, saida=2.0, entrada=1.2, _il=True)   # 28/11: som de ambiente entra e sai devagar
 
 
 def fala_filme(i, nome, db=0):   # noqa: F811 — trecho mudo (sem .wav) também entra na pausa, com a trilha por baixo
@@ -579,7 +582,7 @@ roteiro = {
     "cena_minima": 4.0,
     "vigia_padrao": False,
     "cauda": 1.6, "chuva": 0, "grao": 0.12,
-    "mix": {"musica_ganho_db": 12, "fundo_sob_voz": -8, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
+    "mix": {"fusao_ambiente": 2.0, "musica_ganho_db": 12, "fundo_sob_voz": -8, "efeitos_sob_voz": -4, "voz_pro": True, "fundo_bolso": True,
             "efeitos_pico_max": -3},
     "legendas": {"destaques": ["Obsessão", "Nikki", "amarração", "dybbuk", "jinn", "gênio", "Pata do Macaco", "agogé",
                                "katadesmos", "defixio", "Mary Blandy", "erotomania", "Louvre", "salgueiro", "veredito"]},
@@ -727,7 +730,7 @@ def ritmo():
         ant = next((cenas_de(batidas[j]) for j in range(i - 1, -1, -1) if cenas_de(batidas[j])), [{}])[-1]
         if c.get("tipo") == "chat" and ant.get("tipo") == "chat":
             c["entrada"] = "corte"; continue          # conversa → conversa: a tela é a mesma
-        padrao = {"nanquim": 1.3, "shoji": 0.9, "vela": 1.6, "queimar": 1.5, "rasgo": 0.9, "hanji": 1.2, "obturador": 0.55}.get(c.get("entrada"), 0.6)
+        padrao = {"nanquim": 1.3, "shoji": 0.9, "vela": 1.6, "queimar": 1.5, "rasgo": 0.9, "hanji": 1.2, "obturador": 0.55}.get(c.get("entrada"), FUSAO)
         c.setdefault("entrada", "fundir"); c.setdefault("duracao_entrada", padrao)
         c["antecipar"] = round(min(c["duracao_entrada"], b.get("pausa_antes_s", 0) + 0.25), 2)
     print("frases que continuam a imagem anterior:", continuadas)
@@ -753,11 +756,11 @@ def fichas_paradas():
             continue
         f = dict(cs[0]); txt = f["texto"]
         L = round(0.3 + len(txt) / f.get("cps", 40) + 1.8 + 0.32 * len(txt.split()), 1)
-        f.update({"antecipar": L, "antecipar_fixo": True, "entrada": "corte", "parada": True})
+        f.update({"antecipar": L, "antecipar_fixo": True, "entrada": "fundir", "duracao_entrada": FUSAO, "parada": True})
         ant = next((cenas_de(batidas[j])[-1] for j in range(i - 1, -1, -1) if cenas_de(batidas[j]) and
                     cenas_de(batidas[j])[-1].get("tipo") != "texto"), None)
         depois = {k: v for k, v in (ant or {}).items() if k not in ("em", "antecipar", "antecipar_fixo", "entrada", "duracao_entrada")}
-        depois["em"] = tk(falas[i])[0]; depois["entrada"] = "fundir"; depois["duracao_entrada"] = 0.6
+        depois["em"] = tk(falas[i])[0]; depois["entrada"] = "fundir"; depois["duracao_entrada"] = FUSAO
         b.pop("cena", None); b["cenas"] = [f, depois]
         pausa(i, L); feitas.append((i, L)); FICHA_L[i] = L
     print("fichas paradas (fala, s de leitura):", feitas)

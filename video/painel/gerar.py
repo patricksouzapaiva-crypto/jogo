@@ -1200,15 +1200,16 @@ def mixar_cenas(voz_wav, inicio_voz, duracao, plano, saida, mix=None, sem_voz=Fa
          f"adelay={int(inicio_voz * 1000)}:all=1,apad,atrim=0:{duracao:.3f},asplit=4[voz][chave][chave2][vozstem]"]
     n, camas = 1, []
     amb = sorted(plano["ambientes"], key=lambda a: a["t"])
-    for i, a in enumerate(amb):  # ambientes em sequência, com fusão de 0,8 s
-        ini = max(0.0, a["t"] - 0.4)
-        fim = amb[i + 1]["t"] + 0.4 if i + 1 < len(amb) else duracao
+    FA = mix.get("fusao_ambiente", 0.8)   # 28/11 (Cinema #2: "o fundo também troca de forma natural"): fusão longa
+    for i, a in enumerate(amb):  # ambientes em sequência, com fusão (padrão 0,8 s)
+        ini = max(0.0, a["t"] - FA / 2)
+        fim = amb[i + 1]["t"] + FA / 2 if i + 1 < len(amb) else duracao
         if a["som"] in (None, "nenhum", "silencio"):  # trecho sem ambiente
             continue
         ent += ["-stream_loop", "-1", "-i", str(sons / f"{a['som']}.mp3")]
-        fi = 0.8 if i else 0.6
+        fi = FA if i else max(0.6, FA * 0.75)
         f.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{fim - ini:.3f},asetpts=PTS-STARTPTS,"
-                 f"volume={a.get('volume_db', -6) + mix['ambiente_ganho_db']}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - 0.8):.3f}:d=0.8,"
+                 f"volume={a.get('volume_db', -6) + mix['ambiente_ganho_db']}dB,afade=t=in:d={fi},afade=t=out:st={max(0, fim - ini - FA):.3f}:d={FA},"
                  f"adelay={int(ini * 1000)}:all=1[amb{n}]")
         camas.append(f"[amb{n}]")
         n += 1

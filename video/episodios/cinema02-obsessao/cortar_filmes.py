@@ -45,6 +45,11 @@ TRECHOS = {
 }
 FADE = 0.35
 CAUDA = 0.5    # 28/11 (rascunho 1: "começa no meio da palavra"): o trecho segue 0,5 s depois da última fala
+# 28/11 (rascunho 2: "quero o áudio em português" + "trocas suaves, quase imperceptíveis"): a DUBLAGEM volta, e o corte
+# e a fala amarela saem dela (filme/dublagem.json, feito por dublagem.py) — não da legenda, que é outra tradução em
+# outro tempo. Sem escurecer até o preto: a troca de cena é uma fusão feita pelo montador.
+DUB = json.loads((AQUI / "filme" / "dublagem.json").read_text()) if (AQUI / "filme" / "dublagem.json").exists() else {}
+FADE_PRETO = 0.0
 
 
 def fonte(a):
@@ -77,9 +82,17 @@ info = json.loads(arq_info.read_text()) if arq_info.exists() else {}
 fw, fh = 1440, 960; fx, fy = (1920 - fw) // 2, 80
 for nome in sys.argv[1:] or list(TRECHOS):
     a, b, som, luz = TRECHOS[nome]
-    src, k0 = fonte(a); off = a - k0; d = b - a + (CAUDA if som else 0)
+    if nome in DUB:
+        a, b = DUB[nome]["a"], DUB[nome]["b"]
+    src, k0 = fonte(a); off = a - k0; d = b - a + (0 if nome in DUB else CAUDA if som else 0)
     cor = f"eq=gamma={1.08 * luz:.2f}:brightness={0.012 * luz:.3f}:saturation=0.88:contrast=1.04,noise=alls=5:allf=t"
-    falas = [(max(0, x - a), min(d, y - a), t) for x, y, t in LEG if min(y, b) - max(x, a) > 0.6 * (y - x)] if som else []
+    if nome in DUB:
+        falas, ant = [], "."
+        for x, y, t in (DUB[nome]["falas"] if som else []):   # maiúscula só no começo de frase
+            t = t.replace("O que?", "O quê?")
+            falas.append((x, y, t[:1].upper() + t[1:] if ant.endswith((".", "?", "!", "…")) else t)); ant = t
+    else:
+        falas = [(max(0, x - a), min(d, y - a), t) for x, y, t in LEG if min(y, b) - max(x, a) > 0.6 * (y - x)] if som else []
     txt = "".join(f",drawtext=fontfile={FONTE_FALA}:text='{esc(t)}':fontsize=40:fontcolor=0xffd75e:box=1:boxcolor=0x000000@0.62"
                   f":boxborderw=14:x=(w-text_w)/2:y={fy + fh - 92}:enable='between(t,{x:.2f},{y:.2f})'" for x, y, t in falas)
     fc = (f"[0:v]setpts=PTS-STARTPTS,{CROP},{cor},split[a][b];"
@@ -88,16 +101,17 @@ for nome in sys.argv[1:] or list(TRECHOS):
           f"[fundo][quadro]overlay={fx - 2}:{fy - 2},"
           f"drawtext=fontfile={FONTE}:text='TRECHO DE FILME':fontsize=22:fontcolor=0xc8302c:x={fx}:y={fy - 42},"
           f"drawtext=fontfile={FONTE}:text='{esc(CREDITO)}':fontsize=22:fontcolor=0xd8d0c4:x={fx + 230}:y={fy - 42}{txt},"
-          f"fade=t=in:d={FADE},fade=t=out:st={d - FADE:.2f}:d={FADE},fps=24,format=yuv420p[v]")
+          + (f"fade=t=in:d={FADE_PRETO},fade=t=out:st={d - FADE_PRETO:.2f}:d={FADE_PRETO}," if FADE_PRETO else "")
+          + "fps=24,format=yuv420p[v]")
     saida = SAI / f"{nome}.mp4"
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src),
                     "-filter_complex", fc.replace("[0:v]", "[0:v:0]"), "-map", "[v]", "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "19",
                     "-preset", "medium", str(saida)], check=True)
     if som:   # 28/11: o ÁUDIO ORIGINAL (inglês, faixa 2) — a legenda pt é tradução dele; a dublagem dizia outra coisa,
               # em outro tempo (rascunho 1: "as cenas não coincidem com a fala", corte no meio da palavra)
-        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src), "-map", "0:a:1",
+        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{off:.3f}", "-t", f"{d:.3f}", "-i", str(src), "-map", "0:a:0",
                         "-af", f"pan=stereo|FL=FC+0.45*FL+0.3*BL+0.3*SL|FR=FC+0.45*FR+0.3*BR+0.3*SR,loudnorm=I=-18:TP=-2:LRA=11,"
-                        f"afade=t=in:d=0.3,afade=t=out:st={d - 0.4:.2f}:d=0.4", "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2",
+                        f"afade=t=in:d=0.4,afade=t=out:st={d - 0.6:.2f}:d=0.6", "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2",
                         str(SAI / f"{nome}.wav")], check=True)
     info[nome] = {"dur": round(d, 2), "video_dur": round(d, 2), "som": som, "falas": [[round(x, 2), round(y, 2), t] for x, y, t in falas]}
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(saida), "-vf", f"fps=1/{max(0.5, d / 6):.2f},scale=320:-2,tile=6x1",

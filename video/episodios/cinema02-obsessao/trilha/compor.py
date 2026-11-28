@@ -57,7 +57,7 @@ def episodio(plano, saida):
     import soundfile as sf
     y, sr = sf.read(wav); env = np.ones(len(y))
     for a, b in plano.get("furos", []):            # fala do filme: a música desce 9 dB (nunca some)
-        i, j, r = int(a * sr), int(b * sr), int(0.35 * sr)
+        i, j, r = int(a * sr), int(b * sr), int(1.2 * sr)   # 28/11: desce e volta devagar (era 0,35 s)
         env[i:j] = np.minimum(env[i:j], 0.35)
         env[max(0, i - r):i] = np.minimum(env[max(0, i - r):i], np.linspace(1, 0.35, i - max(0, i - r)))
         env[j:j + r] = np.minimum(env[j:j + r], np.linspace(0.35, 1, len(env[j:j + r])))
