@@ -897,6 +897,10 @@ for _b in batidas:   # 22/11 (usuário: "a narração muda, a voz sai diferente 
     for _so in _b.get("sons", []):   # Vigia entram na trilha da VOZ (mesma cadeia de locução), não como efeito
         if "/audio/extras/" in str(_so.get("arquivo", "")):
             _so["na_voz"] = True; _so["volume_db"] = 0
+for _b in batidas:   # 28/11 (rascunho 3): cena sem entrada virava corte seco no motor (ex.: a ilustração depois do trecho
+    for _c in cenas_de(_b):   # do filme). Toda troca é fusão, salvo corte pedido de propósito
+        if not _c.get("entrada"):
+            _c["entrada"] = "fundir"; _c.setdefault("duracao_entrada", FUSAO)
 (AQUI / "roteiro.json").write_text(json.dumps(roteiro, ensure_ascii=False, indent=1), encoding="utf-8")
 n_cenas = sum(len(cenas_de(b)) for b in batidas)
 print(f"{len(batidas)} falas, {n_cenas} cenas, falas sem cena (continuam a anterior): {sem}")
