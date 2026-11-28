@@ -78,10 +78,18 @@
     },
     {
      "em": null,
+     "som": "g_sorriso",
+     "volume_db": 0,
+     "depois": false,
+     "atraso": -14.45,
+     "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_sorriso.wav"
+    },
+    {
+     "em": null,
      "som": "g_sala",
      "volume_db": 0,
      "depois": false,
-     "atraso": -9.2,
+     "atraso": -9.7,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_sala.wav"
     }
    ],
@@ -93,7 +101,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 13.5,
+     "antecipar": 14.5,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -104,7 +112,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 9.25,
+     "antecipar": 9.75,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -119,7 +127,7 @@
      "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
     }
    ],
-   "pausa_antes_s": 13.85
+   "pausa_antes_s": 14.85
   },
   {
    "fala": "Sem se mexer."
@@ -184,7 +192,7 @@
      "som": "g_espera",
      "volume_db": 0,
      "depois": false,
-     "atraso": -4.6,
+     "atraso": -5.1,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_espera.wav"
     }
    ],
@@ -196,7 +204,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 4.65,
+     "antecipar": 5.15,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -208,7 +216,7 @@
      "video": "camera3d/09_porta_banheiro_1ffea5e64f_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 5.0
+   "pausa_antes_s": 5.5
   },
   {
    "fala": "E quem fica no caminho, morre.",
@@ -264,7 +272,7 @@
      "som": "g_desejo",
      "volume_db": 0,
      "depois": false,
-     "atraso": -6.8,
+     "atraso": -7.3,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/g_desejo.wav"
     }
    ],
@@ -276,7 +284,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 6.85,
+     "antecipar": 7.35,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -291,7 +299,7 @@
      "video": "camera3d/02_caixa_loja_ea97c01ab9_8.6.mp4"
     }
    ],
-   "pausa_antes_s": 7.2
+   "pausa_antes_s": 7.7
   },
   {
    "fala": "Ele pediu para ser a pessoa que ela mais ama no mundo.",
@@ -585,7 +593,7 @@
      "som": "p1_morrer",
      "volume_db": 0,
      "depois": false,
-     "atraso": -4.4,
+     "atraso": -4.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p1_morrer.wav"
     }
    ],
@@ -597,7 +605,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 4.45,
+     "antecipar": 4.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -609,7 +617,7 @@
      "video": "camera3d/09_porta_banheiro_4f101fe574_7.0.mp4"
     }
    ],
-   "pausa_antes_s": 4.8
+   "pausa_antes_s": 5.3
   },
   {
    "fala": "Pista dois. O galho precisa ser quebrado.",
@@ -733,7 +741,7 @@
      "som": "p3_carro",
      "volume_db": 0,
      "depois": false,
-     "atraso": -3.4,
+     "atraso": -3.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p3_carro.wav"
     }
    ],
@@ -745,7 +753,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 3.45,
+     "antecipar": 3.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -757,7 +765,7 @@
      "video": "camera3d/04_nikki_carro_a6da5e237d_7.9.mp4"
     }
    ],
-   "pausa_antes_s": 3.8
+   "pausa_antes_s": 4.3
   },
   {
    "fala": "Entra no carro dele sem ser chamada."
@@ -781,7 +789,7 @@
      "som": "p3_horas",
      "volume_db": 0,
      "depois": false,
-     "atraso": -3.0,
+     "atraso": -3.5,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p3_horas.wav"
     }
    ],
@@ -793,7 +801,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 3.05,
+     "antecipar": 3.55,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -808,7 +816,7 @@
      "video": "camera3d/06_quarto_3h_56f72d030b_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 3.4
+   "pausa_antes_s": 3.9
   },
   {
    "fala": "E quando ele sai de casa, você já viu o que ela faz: fica parada no meio da sala, o dia inteiro, até ele voltar.",
@@ -863,7 +871,7 @@
      "som": "p4_festa",
      "volume_db": 0,
      "depois": false,
-     "atraso": -8.2,
+     "atraso": -8.7,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p4_festa.wav"
     }
    ],
@@ -875,7 +883,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 8.25,
+     "antecipar": 8.75,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -887,7 +895,7 @@
      "video": "camera3d/07_festa_c5acb8700f_8.1.mp4"
     }
    ],
-   "pausa_antes_s": 8.6
+   "pausa_antes_s": 9.1
   },
   {
    "fala": "O amor dela não tem freio."
@@ -940,7 +948,7 @@
      "som": "p5_telefone",
      "volume_db": 0,
      "depois": false,
-     "atraso": -16.4,
+     "atraso": -16.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p5_telefone.wav"
     }
    ],
@@ -952,7 +960,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 16.45,
+     "antecipar": 16.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -964,7 +972,7 @@
      "video": "camera3d/05_telefone_20e7fdfd5b_14.4.mp4"
     }
    ],
-   "pausa_antes_s": 16.8
+   "pausa_antes_s": 17.3
   },
   {
    "fala": "E, do outro lado da linha, do lado DO ATENDENTE, alguém grita."
@@ -994,7 +1002,7 @@
      "som": "p5_madrugada",
      "volume_db": 0,
      "depois": false,
-     "atraso": -12.1,
+     "atraso": -12.6,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p5_madrugada.wav"
     }
    ],
@@ -1006,7 +1014,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 12.15,
+     "antecipar": 12.65,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1021,7 +1029,7 @@
      "video": "camera3d/06_quarto_3h_adedaeb777_12.1.mp4"
     }
    ],
-   "pausa_antes_s": 12.5
+   "pausa_antes_s": 13.0
   },
   {
    "fala": "E pede para morrer."
@@ -1063,7 +1071,7 @@
      "som": "p6_escolheu",
      "volume_db": 0,
      "depois": false,
-     "atraso": -8.4,
+     "atraso": -8.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p6_escolheu.wav"
     }
    ],
@@ -1075,7 +1083,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 8.45,
+     "antecipar": 8.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -1087,7 +1095,7 @@
      "video": "camera3d/11_maos_sofa_fc2294bded_13.2.mp4"
     }
    ],
-   "pausa_antes_s": 8.8
+   "pausa_antes_s": 9.3
   },
   {
    "fala": "E o atendente diz a frase que resume o filme: ter escolhido isso pra ela não torna menos verdadeiro."
@@ -2430,7 +2438,7 @@
      "som": "s_culpa",
      "volume_db": 0,
      "depois": false,
-     "atraso": -6.3,
+     "atraso": -6.8,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_culpa.wav"
     }
    ],
@@ -2442,7 +2450,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 6.35,
+     "antecipar": 6.85,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2454,7 +2462,7 @@
      "video": "camera3d/11_maos_sofa_13534a68d5_8.3.mp4"
     }
    ],
-   "pausa_antes_s": 6.7
+   "pausa_antes_s": 7.2
   },
   {
    "fala": "Você quis isso."
@@ -2489,7 +2497,7 @@
      "som": "s_saidas",
      "volume_db": 0,
      "depois": false,
-     "atraso": -13.7,
+     "atraso": -14.2,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_saidas.wav"
     }
    ],
@@ -2501,7 +2509,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 13.75,
+     "antecipar": 14.25,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2516,7 +2524,7 @@
      "video": "camera3d/02_caixa_loja_a894084294_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 14.1
+   "pausa_antes_s": 14.6
   },
   {
    "fala": "Ele implora ao amigo Ian que deseje que o Bear nunca tivesse desejado nada.",
@@ -2542,7 +2550,7 @@
      "som": "s_sempre",
      "volume_db": 0,
      "depois": false,
-     "atraso": -7.3,
+     "atraso": -7.8,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_sempre.wav"
     }
    ],
@@ -2554,7 +2562,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 7.35,
+     "antecipar": 7.85,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2566,7 +2574,7 @@
      "video": "camera3d/09_porta_banheiro_e6893fc75d_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 7.7
+   "pausa_antes_s": 8.2
   },
   {
    "fala": "O Bear se tranca no banheiro."
@@ -2605,7 +2613,7 @@
      "som": "s_galho",
      "volume_db": 0,
      "depois": false,
-     "atraso": -6.4,
+     "atraso": -6.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_galho.wav"
     }
    ],
@@ -2617,7 +2625,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 6.45,
+     "antecipar": 6.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2629,7 +2637,7 @@
      "video": "camera3d/09_porta_banheiro_44059b7f59_6.5.mp4"
     }
    ],
-   "pausa_antes_s": 6.8
+   "pausa_antes_s": 7.3
   },
   {
    "fala": "Ela quebra o galho.",
@@ -2717,7 +2725,7 @@
      "som": "s_volta",
      "volume_db": 0,
      "depois": false,
-     "atraso": -9.2,
+     "atraso": -9.7,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_volta.wav"
     }
    ],
@@ -2729,7 +2737,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 9.25,
+     "antecipar": 9.75,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2741,7 +2749,7 @@
      "video": "camera3d/11_maos_sofa_2c34c0dfcd_11.2.mp4"
     }
    ],
-   "pausa_antes_s": 9.6
+   "pausa_antes_s": 10.1
   },
   {
    "fala": "Olha para o próprio corpo coberto de sangue."
@@ -2757,7 +2765,7 @@
      "som": "s_oque",
      "volume_db": 0,
      "depois": false,
-     "atraso": -3.6,
+     "atraso": -4.1,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/s_oque.wav"
     }
    ],
@@ -2769,7 +2777,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 3.65,
+     "antecipar": 4.15,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -2784,7 +2792,7 @@
      "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
     }
    ],
-   "pausa_antes_s": 4.0
+   "pausa_antes_s": 4.5
   },
   {
    "fala": "É a Nikki de verdade."
@@ -2975,7 +2983,7 @@
     "entrada": "fundir",
     "duracao_entrada": 0.6,
     "antecipar": 0.6,
-    "video": "camera3d/15_genio_jarro_a680f6b075_10.5.mp4"
+    "video": "camera3d/15_genio_jarro_a680f6b075_10.6.mp4"
    }
   },
   {
@@ -3850,7 +3858,7 @@
      "som": "p1_morrer",
      "volume_db": 0,
      "depois": false,
-     "atraso": -4.4,
+     "atraso": -4.9,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/filmes_prontos/p1_morrer.wav"
     }
    ],
@@ -3862,7 +3870,7 @@
       1.0
      ],
      "congelar": true,
-     "antecipar": 4.45,
+     "antecipar": 4.95,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -3874,7 +3882,7 @@
      "video": "camera3d/05_telefone_5ec0ca7a48_6.8.mp4"
     }
    ],
-   "pausa_antes_s": 4.8
+   "pausa_antes_s": 5.3
   },
   {
    "fala": "E agora você entende o que tem de pior nisso.",
