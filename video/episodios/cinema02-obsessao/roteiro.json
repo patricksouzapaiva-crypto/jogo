@@ -109,14 +109,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/01_sala.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.35
-     }
+     },
+     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
     }
    ],
    "pausa_antes_s": 13.85
@@ -146,17 +146,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/01_sala.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.35
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/01_sala_2707630df3_7.4.mp4"
    }
   },
   {
@@ -201,11 +201,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/09_porta_banheiro.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/09_porta_banheiro_1ffea5e64f_6.5.mp4"
     }
    ],
    "pausa_antes_s": 5.0
@@ -246,12 +246,12 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/04_nikki_carro.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
-     "em": "morre"
+     "em": "morre",
+     "video": "camera3d/04_nikki_carro_cbd9e7bf7a_6.5.mp4"
     }
    ],
    "pausa_antes_s": 1.4
@@ -281,14 +281,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/02_caixa_loja.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.45
-     }
+     },
+     "video": "camera3d/02_caixa_loja_ea97c01ab9_8.6.mp4"
     }
    ],
    "pausa_antes_s": 7.2
@@ -309,14 +309,14 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_0876ea263e_6.7.mp4"
    }
   },
   {
@@ -325,14 +325,14 @@
   {
    "fala": "O filme nunca diz o que entrou nela.",
    "cena": {
-    "imagem": "imagens/11_maos_sofa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/11_maos_sofa_d5f532b7c4_6.6.mp4"
    }
   },
   {
@@ -394,17 +394,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/19_no_salgueiro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/19_no_salgueiro_4640ebfaeb_8.5.mp4"
    }
   },
   {
@@ -413,17 +413,17 @@
   {
    "fala": "No final, você vai saber exatamente o que é a Nikki.",
    "cena": {
-    "imagem": "imagens/08_prateleira_vazia.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/08_prateleira_vazia_5096b619a5_9.9.mp4"
    }
   },
   {
@@ -437,7 +437,7 @@
      "som": "abertura.mp4.som",
      "volume_db": -7,
      "depois": false,
-     "atraso": -5.95,
+     "atraso": -5.55,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/abertura.mp4.som.wav"
     }
    ],
@@ -451,7 +451,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.0,
+     "antecipar": 5.6,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -475,7 +475,7 @@
      "em": "Vigia"
     }
    ],
-   "pausa_antes_s": 6.35
+   "pausa_antes_s": 5.95
   },
   {
    "fala": "Arquivo número dois: Obsessão."
@@ -551,14 +551,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/02_caixa_loja.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.45
-     }
+     },
+     "video": "camera3d/02_caixa_loja_20d8af50e6_7.5.mp4"
     }
    ],
    "pausa_antes_s": 6.8
@@ -602,11 +602,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/09_porta_banheiro.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/09_porta_banheiro_4f101fe574_7.0.mp4"
     }
    ],
    "pausa_antes_s": 4.8
@@ -643,17 +643,17 @@
   {
    "fala": "Está escrito na caixa: faça um pedido e quebre ao meio.",
    "cena": {
-    "imagem": "imagens/02_caixa_loja.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/02_caixa_loja_64f8f7e618_9.3.mp4"
    }
   },
   {
@@ -675,14 +675,14 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_5efdac2049_6.5.mp4"
    }
   },
   {
@@ -750,11 +750,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/04_nikki_carro.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/04_nikki_carro_a6da5e237d_7.9.mp4"
     }
    ],
    "pausa_antes_s": 3.8
@@ -798,14 +798,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/06_quarto_3h.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.3
-     }
+     },
+     "video": "camera3d/06_quarto_3h_56f72d030b_6.5.mp4"
     }
    ],
    "pausa_antes_s": 3.4
@@ -813,17 +813,17 @@
   {
    "fala": "E quando ele sai de casa, você já viu o que ela faz: fica parada no meio da sala, o dia inteiro, até ele voltar.",
    "cena": {
-    "imagem": "imagens/01_sala.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.35
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/01_sala_dad6c26ffe_10.4.mp4"
    }
   },
   {
@@ -880,11 +880,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/07_festa.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/07_festa_c5acb8700f_8.1.mp4"
     }
    ],
    "pausa_antes_s": 8.6
@@ -957,11 +957,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/05_telefone.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/05_telefone_20e7fdfd5b_14.4.mp4"
     }
    ],
    "pausa_antes_s": 16.8
@@ -1011,14 +1011,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/06_quarto_3h.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.3
-     }
+     },
+     "video": "camera3d/06_quarto_3h_adedaeb777_12.1.mp4"
     }
    ],
    "pausa_antes_s": 12.5
@@ -1080,11 +1080,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/11_maos_sofa.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/11_maos_sofa_fc2294bded_13.2.mp4"
     }
    ],
    "pausa_antes_s": 8.8
@@ -1124,14 +1124,14 @@
   {
    "fala": "O pedido foi ao pé da letra.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_03ec00e470_6.8.mp4"
    }
   },
   {
@@ -1140,14 +1140,14 @@
   {
    "fala": "Mais do que a família dela.",
    "cena": {
-    "imagem": "imagens/07_festa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/07_festa_b7b99ec92d_6.5.mp4"
    }
   },
   {
@@ -1240,7 +1240,7 @@
       1.0,
       1.06
      ],
-     "em": "gênio"
+     "em": "quem"
     }
    ],
    "pausa_antes_s": 2.45
@@ -1274,17 +1274,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/15_genio_jarro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "fumaca": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/15_genio_jarro_2252cb693c_8.9.mp4"
    }
   },
   {
@@ -1344,17 +1344,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/15_genio_jarro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "fumaca": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/15_genio_jarro_70b7c96749_8.7.mp4"
    }
   },
   {
@@ -1379,14 +1379,14 @@
   {
    "fala": "Há relatos de jinn que impedem a pessoa amada de se casar, para que ela não seja de mais ninguém.",
    "cena": {
-    "imagem": "imagens/07_festa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/07_festa_de906f1a9c_7.6.mp4"
    }
   },
   {
@@ -1426,14 +1426,14 @@
    "fala": "Parece perfeito.",
    "pausa_antes_s": 1.0,
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/03_galho_carro_0876ea263e_13.2.mp4"
    }
   },
   {
@@ -1490,17 +1490,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_1260897983_8.2.mp4"
    }
   },
   {
@@ -1538,49 +1538,49 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_2ae4111d83_7.8.mp4"
    }
   },
   {
    "fala": "Outra manda acender uma lamparina com sete pavios, um para cada deus.",
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_ffbea8f687_6.7.mp4"
    }
   },
   {
    "fala": "E a vítima, diz o papiro, não vai conseguir dormir até chegar à casa de quem fez o feitiço.",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_561618847e_9.4.mp4"
    }
   },
   {
@@ -1612,17 +1612,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/13_tabua_prego.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/13_tabua_prego_4f586e0235_9.9.mp4"
    }
   },
   {
@@ -1732,14 +1732,14 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/05_telefone.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/05_telefone_2af21a9ba3_15.6.mp4"
    }
   },
   {
@@ -1817,17 +1817,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/16_noiva_dybbuk.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/16_noiva_dybbuk_12806bc50d_8.5.mp4"
    }
   },
   {
@@ -1875,17 +1875,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/16_noiva_dybbuk.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/16_noiva_dybbuk_54efed0c89_9.6.mp4"
    }
   },
   {
@@ -1928,17 +1928,17 @@
    "fala": "E a madrugada em que a Nikki pede para morrer, falando \"dela\" como se fosse outra pessoa, é um dybbuk de manual: \"ela está dormindo; sou eu\".",
    "pausa_antes_s": 1.0,
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/06_quarto_3h_20480d65e6_12.1.mp4"
    }
   },
   {
@@ -2006,17 +2006,17 @@
   {
    "fala": "Um sargento volta da Índia com uma pata de macaco mumificada.",
    "cena": {
-    "imagem": "imagens/17_pata_macaco.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/17_pata_macaco_073f32871b_16.6.mp4"
    }
   },
   {
@@ -2028,17 +2028,17 @@
   {
    "fala": "A família pede dinheiro.",
    "cena": {
-    "imagem": "imagens/17_pata_macaco.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/17_pata_macaco_5e3a6244b6_7.8.mp4"
    }
   },
   {
@@ -2047,30 +2047,30 @@
   {
    "fala": "E o diretor de Obsessão admite: o filme é uma releitura da Pata do Macaco.",
    "cena": {
-    "imagem": "imagens/02_caixa_loja.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/02_caixa_loja_5467b58100_7.6.mp4"
    }
   },
   {
    "fala": "Ele só trocou a pata por um salgueiro, porque a pata era conhecida demais.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_a812e6c487_6.6.mp4"
    }
   },
   {
@@ -2188,14 +2188,14 @@
   {
    "fala": "Obsessão é a erotomania ao contrário.",
    "cena": {
-    "imagem": "imagens/11_maos_sofa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/11_maos_sofa_3aedd1d757_9.8.mp4"
    }
   },
   {
@@ -2262,17 +2262,17 @@
   {
    "fala": "Então Cranstoun manda para Mary um pó branco.",
    "cena": {
-    "imagem": "imagens/18_po_cha.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/18_po_cha_ee049d3b87_12.0.mp4"
    }
   },
   {
@@ -2287,17 +2287,17 @@
   {
    "fala": "Mary põe o pó no chá.",
    "cena": {
-    "imagem": "imagens/18_po_cha.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/18_po_cha_a724610216_12.4.mp4"
    }
   },
   {
@@ -2409,14 +2409,14 @@
   {
    "fala": "No terço final, a Sarah, amiga do Bear, confessa que gosta dele.",
    "cena": {
-    "imagem": "imagens/04_nikki_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/04_nikki_carro_ab3eb19219_11.3.mp4"
    }
   },
   {
@@ -2447,11 +2447,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/11_maos_sofa.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/11_maos_sofa_13534a68d5_8.3.mp4"
     }
    ],
    "pausa_antes_s": 6.7
@@ -2465,17 +2465,17 @@
   {
    "fala": "O Bear volta à loja, desesperado, para desfazer o desejo.",
    "cena": {
-    "imagem": "imagens/08_prateleira_vazia.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/08_prateleira_vazia_631dd16ede_8.3.mp4"
    }
   },
   {
@@ -2506,14 +2506,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/02_caixa_loja.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.45
-     }
+     },
+     "video": "camera3d/02_caixa_loja_a894084294_6.5.mp4"
     }
    ],
    "pausa_antes_s": 14.1
@@ -2521,14 +2521,14 @@
   {
    "fala": "Ele implora ao amigo Ian que deseje que o Bear nunca tivesse desejado nada.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_0126e092b4_11.5.mp4"
    }
   },
   {
@@ -2559,11 +2559,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/09_porta_banheiro.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/09_porta_banheiro_e6893fc75d_6.5.mp4"
     }
    ],
    "pausa_antes_s": 7.7
@@ -2587,14 +2587,14 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/10_comprimidos.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/10_comprimidos_fc329c1272_6.5.mp4"
    }
   },
   {
@@ -2622,11 +2622,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/09_porta_banheiro.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/09_porta_banheiro_44059b7f59_6.5.mp4"
     }
    ],
    "pausa_antes_s": 6.8
@@ -2634,14 +2634,14 @@
   {
    "fala": "Ela quebra o galho.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_994755aeab_10.5.mp4"
    }
   },
   {
@@ -2669,14 +2669,14 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/10_comprimidos.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/10_comprimidos_7861b7fe15_8.3.mp4"
    }
   },
   {
@@ -2700,11 +2700,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/11_maos_sofa.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/11_maos_sofa_3aedd1d757_6.5.mp4"
     }
    ],
    "pausa_antes_s": 8.6
@@ -2734,11 +2734,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/11_maos_sofa.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/11_maos_sofa_2c34c0dfcd_11.2.mp4"
     }
    ],
    "pausa_antes_s": 9.6
@@ -2774,14 +2774,14 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/01_sala.png",
      "zoom": [
       1.0,
-      1.06
+      1.0
      ],
      "atmos": {
       "poeira": 0.35
-     }
+     },
+     "video": "camera3d/01_sala_0dcb3bf99a_9.5.mp4"
     }
    ],
    "pausa_antes_s": 4.0
@@ -2798,14 +2798,14 @@
   {
    "fala": "O desejo só acaba com a morte de quem desejou.",
    "cena": {
-    "imagem": "imagens/09_porta_banheiro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/09_porta_banheiro_5139947a22_7.6.mp4"
    }
   },
   {
@@ -2833,17 +2833,17 @@
   {
    "fala": "No filme, a Nikki fica viva, livre, e sozinha com tudo o que fez.",
    "cena": {
-    "imagem": "imagens/08_prateleira_vazia.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/08_prateleira_vazia_07a7695417_8.9.mp4"
    }
   },
   {
@@ -2884,17 +2884,17 @@
   {
    "fala": "A pata do macaco é o avô do filme.",
    "cena": {
-    "imagem": "imagens/17_pata_macaco.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/17_pata_macaco_4125f3bdf6_7.3.mp4"
    }
   },
   {
@@ -2903,14 +2903,14 @@
   {
    "fala": "E o diretor disse o contrário: o salgueiro não é amaldiçoado.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_9de897b0cd_10.2.mp4"
    }
   },
   {
@@ -2919,14 +2919,14 @@
   {
    "fala": "O veneno não está no galho.",
    "cena": {
-    "imagem": "imagens/10_comprimidos.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/10_comprimidos_114b99f0c2_6.5.mp4"
    }
   },
   {
@@ -2965,17 +2965,17 @@
    "fala": "O gênio parecia perfeito.",
    "pausa_antes_s": 1.2,
    "cena": {
-    "imagem": "imagens/15_genio_jarro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "fumaca": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.6
+    "antecipar": 0.6,
+    "video": "camera3d/15_genio_jarro_a680f6b075_10.5.mp4"
    }
   },
   {
@@ -2997,14 +2997,14 @@
   {
    "fala": "A coisa na Nikki não quer nada para si.",
    "cena": {
-    "imagem": "imagens/11_maos_sofa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/11_maos_sofa_20a791e339_7.2.mp4"
    }
   },
   {
@@ -3071,17 +3071,17 @@
   {
    "fala": "O dybbuk e a amarração explicam quase as mesmas pistas.",
    "cena": {
-    "imagem": "imagens/16_noiva_dybbuk.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/16_noiva_dybbuk_0d156e92d0_12.1.mp4"
    }
   },
   {
@@ -3120,17 +3120,17 @@
   {
    "fala": "No dybbuk, quem ama é o morto.",
    "cena": {
-    "imagem": "imagens/16_noiva_dybbuk.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/16_noiva_dybbuk_0eed384f75_8.9.mp4"
    }
   },
   {
@@ -3152,17 +3152,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/13_tabua_prego.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/13_tabua_prego_59dbe4caa3_9.0.mp4"
    }
   },
   {
@@ -3190,17 +3190,17 @@
   {
    "fala": "A Nikki não sente amor.",
    "cena": {
-    "imagem": "imagens/01_sala.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.35
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/01_sala_f3f20aead2_6.5.mp4"
    }
   },
   {
@@ -3209,30 +3209,30 @@
   {
    "fala": "E lembra da frase do telefone: ter escolhido isso pra ela não torna menos verdadeiro.",
    "cena": {
-    "imagem": "imagens/05_telefone.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/05_telefone_5f18384981_8.0.mp4"
    }
   },
   {
    "fala": "E a \"outra\" da madrugada, a que dorme enquanto a Nikki pede para morrer?",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_2012166c99_16.7.mp4"
    }
   },
   {
@@ -3247,14 +3247,14 @@
   {
    "fala": "E a prova final é o fim do filme.",
    "cena": {
-    "imagem": "imagens/11_maos_sofa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/11_maos_sofa_eca6023ba2_8.5.mp4"
    }
   },
   {
@@ -3298,7 +3298,8 @@
    "sons": []
   },
   {
-   "fala": "Quando ele morre, o nó se desfaz."
+   "fala": "Quando ele morre, o nó se desfaz.",
+   "sons": []
   },
   {
    "fala": "O meu veredito: aquilo dentro da Nikki é uma amarração.",
@@ -3308,7 +3309,7 @@
      "som": "veredito.mp4.som",
      "volume_db": -9,
      "depois": false,
-     "atraso": -5.95,
+     "atraso": -6.95,
      "arquivo": "/home/user/jogo/video/episodios/cinema02-obsessao/identidade/pecas/veredito.mp4.som.wav"
     }
    ],
@@ -3322,7 +3323,7 @@
      "tipo_cartao": true,
      "congelar": true,
      "sem_look": true,
-     "antecipar": 6.0,
+     "antecipar": 7.0,
      "antecipar_fixo": true,
      "entrada": "corte"
     },
@@ -3346,7 +3347,7 @@
      "em": "amarração"
     }
    ],
-   "pausa_antes_s": 6.35
+   "pausa_antes_s": 7.35
   },
   {
    "fala": "E, se você acha que amarração é coisa leve, simpatia de amor… espera.",
@@ -3410,17 +3411,17 @@
   {
    "fala": "O gênio quer alguma coisa.",
    "cena": {
-    "imagem": "imagens/15_genio_jarro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "fumaca": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/15_genio_jarro_f0c2b79de1_7.2.mp4"
    }
   },
   {
@@ -3429,17 +3430,17 @@
   {
    "fala": "O dybbuk é um morto dentro de você.",
    "cena": {
-    "imagem": "imagens/16_noiva_dybbuk.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.4
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/16_noiva_dybbuk_0a3ad0a128_9.4.mp4"
    }
   },
   {
@@ -3448,17 +3449,17 @@
   {
    "fala": "A pata do macaco é um objeto.",
    "cena": {
-    "imagem": "imagens/17_pata_macaco.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/17_pata_macaco_935920068f_6.9.mp4"
    }
   },
   {
@@ -3470,17 +3471,17 @@
   {
    "fala": "A amarração não quer nada.",
    "cena": {
-    "imagem": "imagens/13_tabua_prego.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/13_tabua_prego_4f586e0235_9.9.mp4"
    }
   },
   {
@@ -3492,14 +3493,14 @@
   {
    "fala": "Ela é presa em uma pessoa viva.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_ad3921be0b_10.5.mp4"
    }
   },
   {
@@ -3539,17 +3540,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/14_boneca_pote.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.6
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/14_boneca_pote_34e27d0dd5_13.2.mp4"
    }
   },
   {
@@ -3574,17 +3575,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/14_boneca_pote.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.6
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/14_boneca_pote_07c0cddbf3_7.6.mp4"
    }
   },
   {
@@ -3679,17 +3680,17 @@
   {
    "fala": "Para ela não ver mais ninguém.",
    "cena": {
-    "imagem": "imagens/14_boneca_pote.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.6
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/14_boneca_pote_c0ec156561_12.5.mp4"
    }
   },
   {
@@ -3704,17 +3705,17 @@
   {
    "fala": "E o texto da tábua não pede amor.",
    "cena": {
-    "imagem": "imagens/13_tabua_prego.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/13_tabua_prego_7526b1d3dd_6.5.mp4"
    }
   },
   {
@@ -3723,17 +3724,17 @@
   {
    "fala": "Ele chama os espíritos dos mortos.",
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_d6b381e54c_9.8.mp4"
    }
   },
   {
@@ -3825,17 +3826,17 @@
   {
    "fala": "Mil e setecentos anos antes do filme… a regra já era essa.",
    "cena": {
-    "imagem": "imagens/14_boneca_pote.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.6
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/14_boneca_pote_e9bfe8bd5f_12.8.mp4"
    }
   },
   {
@@ -3866,11 +3867,11 @@
      "entrada": "corte"
     },
     {
-     "imagem": "imagens/05_telefone.png",
      "zoom": [
       1.0,
-      1.06
-     ]
+      1.0
+     ],
+     "video": "camera3d/05_telefone_5ec0ca7a48_6.8.mp4"
     }
    ],
    "pausa_antes_s": 4.8
@@ -3902,17 +3903,17 @@
   {
    "fala": "A pessoa amarrada não desaparece.",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_adedaeb777_8.8.mp4"
    }
   },
   {
@@ -3924,27 +3925,27 @@
   {
    "fala": "Vendo o próprio corpo beijar quem ela nunca amou.",
    "cena": {
-    "imagem": "imagens/07_festa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/07_festa_8654660a69_6.5.mp4"
    }
   },
   {
    "fala": "Vendo as próprias mãos matarem uma amiga.",
    "cena": {
-    "imagem": "imagens/04_nikki_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/04_nikki_carro_2380083135_7.6.mp4"
    }
   },
   {
@@ -3953,17 +3954,17 @@
   {
    "fala": "A não ser pedir, de madrugada, pra alguém acabar com aquilo.",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_881f077c04_7.7.mp4"
    }
   },
   {
@@ -4026,14 +4027,14 @@
   {
    "fala": "E repara no que a coisa dentro da Nikki fez no fim.",
    "cena": {
-    "imagem": "imagens/09_porta_banheiro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/09_porta_banheiro_44976c5b6c_11.5.mp4"
    }
   },
   {
@@ -4055,17 +4056,17 @@
     }
    ],
    "cena": {
-    "imagem": "imagens/19_no_salgueiro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/19_no_salgueiro_6943637870_6.6.mp4"
    }
   },
   {
@@ -4074,17 +4075,17 @@
   {
    "fala": "E o Bear comprou isso por menos de dez dólares, numa lojinha de cristais.",
    "cena": {
-    "imagem": "imagens/02_caixa_loja.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/02_caixa_loja_223ff1d128_7.4.mp4"
    }
   },
   {
@@ -4133,17 +4134,17 @@
   {
    "fala": "a tábua de chumbo era dobrada e furada.",
    "cena": {
-    "imagem": "imagens/13_tabua_prego.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/13_tabua_prego_59dbe4caa3_9.0.mp4"
    }
   },
   {
@@ -4167,17 +4168,17 @@
   {
    "fala": "é a fórmula de dezesseis séculos atrás: não dorme até chegar à casa de quem amarrou.",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_ce636b79d3_8.3.mp4"
    }
   },
   {
@@ -4226,27 +4227,27 @@
   {
    "fala": "a amarração não troca a pessoa.",
    "cena": {
-    "imagem": "imagens/05_telefone.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/05_telefone_ed03b9bb04_6.5.mp4"
    }
   },
   {
    "fala": "Prende a pessoa dentro de si mesma.",
    "cena": {
-    "imagem": "imagens/11_maos_sofa.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/11_maos_sofa_eca6023ba2_9.1.mp4"
    }
   },
   {
@@ -4270,17 +4271,17 @@
   {
    "fala": "é a definição que os estudiosos dão aos papiros, obrigar alguém contra a própria vontade.",
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_b9a73c95a0_8.1.mp4"
    }
   },
   {
@@ -4301,14 +4302,14 @@
   {
    "fala": "a magia faz exatamente o que se pede.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_0876ea263e_7.5.mp4"
    }
   },
   {
@@ -4333,17 +4334,17 @@
   {
    "fala": "O diretor diz que inventou o objeto.",
    "cena": {
-    "imagem": "imagens/02_caixa_loja.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.45
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/02_caixa_loja_6015993f48_11.1.mp4"
    }
   },
   {
@@ -4352,17 +4353,17 @@
   {
    "fala": "Num museu da Cornualha, na Inglaterra, existe um galho de salgueiro cheio de nós, que veio de Tavistock.",
    "cena": {
-    "imagem": "imagens/19_no_salgueiro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "neblina": 0.5
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/19_no_salgueiro_6c172c9b5e_17.5.mp4"
    }
   },
   {
@@ -4371,14 +4372,14 @@
   {
    "fala": "O objeto do filme existe.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_0876ea263e_8.2.mp4"
    }
   },
   {
@@ -4387,14 +4388,14 @@
   {
    "fala": "A diferença é que, no filme, o galho não é amarrado.",
    "cena": {
-    "imagem": "imagens/03_galho_carro.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/03_galho_carro_a1677280c7_7.0.mp4"
    }
   },
   {
@@ -4427,33 +4428,33 @@
   {
    "fala": "Por dezesseis séculos, as receitas falaram de quem amarra.",
    "cena": {
-    "imagem": "imagens/12_mago_lamparina.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "vela": 0.7
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/12_mago_lamparina_ae65ba531e_6.7.mp4"
    }
   },
   {
    "fala": "O filme é o primeiro a mostrar quem é amarrada.",
    "cena": {
-    "imagem": "imagens/01_sala.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.35
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/01_sala_0dcb3bf99a_9.7.mp4"
    }
   },
   {
@@ -4462,30 +4463,30 @@
   {
    "fala": "Existe só uma pessoa presa, gritando no fundo da linha.",
    "cena": {
-    "imagem": "imagens/05_telefone.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/05_telefone_fbdab5f0f7_6.5.mp4"
    }
   },
   {
    "fala": "E pedindo, de madrugada, para alguém acabar com aquilo.",
    "cena": {
-    "imagem": "imagens/06_quarto_3h.png",
     "zoom": [
      1.0,
-     1.06
+     1.0
     ],
     "atmos": {
      "poeira": 0.3
     },
     "entrada": "fundir",
     "duracao_entrada": 0.6,
-    "antecipar": 0.25
+    "antecipar": 0.25,
+    "video": "camera3d/06_quarto_3h_23b0ba4499_7.6.mp4"
    }
   },
   {
